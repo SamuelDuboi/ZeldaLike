@@ -47,7 +47,7 @@ namespace Player
             {
                 XAxis = Input.GetAxisRaw("Horizontal");
                 YAxis = Input.GetAxisRaw("Vertical");
-
+                
                 Move();
             }
             // to dash

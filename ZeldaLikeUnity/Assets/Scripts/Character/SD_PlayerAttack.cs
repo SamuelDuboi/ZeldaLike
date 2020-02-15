@@ -41,7 +41,8 @@ namespace Player
         bool cantAttack;
 
         void Update()
-        { 
+            {
+            #region attack;
             // input of attack needed to be change
             if (Input.GetButtonDown("Jump"))
             {
@@ -75,6 +76,7 @@ namespace Player
                     SD_PlayerAnimation.Instance.PlayerAnimator.SetInteger("AttackNumber", attackNumber);
 
                 }
+                #endregion
             }
 
             //timer to let the attack play and then return to the idle
