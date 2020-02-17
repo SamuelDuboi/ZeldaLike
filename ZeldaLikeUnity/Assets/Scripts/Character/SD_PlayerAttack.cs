@@ -26,7 +26,7 @@ namespace Player
 
 
         //if the player doesn't combo, he will ahve a cooldown befor atatcking again,the cooldown will change depending of the former combo
-        [Header ("Cooldowns")]
+        [Header ("Cooldowns")]        
         // cooldown after 1 combo
         [Range(0, 1)]
         public float cooldownAfterFirst;
@@ -43,6 +43,7 @@ namespace Player
         void Update()
             {
             #region attack;
+
             // input of attack needed to be change
             if (Input.GetButtonDown("Jump"))
             {

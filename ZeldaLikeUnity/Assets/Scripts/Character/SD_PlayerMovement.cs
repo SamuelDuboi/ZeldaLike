@@ -35,8 +35,8 @@ namespace Player
         bool isActive;
         void Start()
         {
-            initialSpeed = speed;
             MakeSingleton(true);
+            initialSpeed = speed;           
             playerRGB = GetComponent<Rigidbody2D>();
         }
 
@@ -63,7 +63,10 @@ namespace Player
             playerRGB.velocity = new Vector2(XAxis, YAxis) * speed;
 
         }
-
+        /// <summary>
+        /// Make the player dash forward
+        /// </summary>
+        /// <returns></returns>
         IEnumerator  Dash()
         {
             if (!isActive)
@@ -90,5 +93,7 @@ namespace Player
             }
 
         }
+
+
     }
 }
