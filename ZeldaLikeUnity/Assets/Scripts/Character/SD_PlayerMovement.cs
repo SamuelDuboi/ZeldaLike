@@ -30,6 +30,8 @@ namespace Player
         //enable movement on false
         [HideInInspector] public bool cantMove;
 
+        [HideInInspector] public bool cantDash;
+
         int initialSpeed;
 
         bool isActive;
@@ -68,32 +70,33 @@ namespace Player
         /// </summary>
         /// <returns></returns>
         IEnumerator  Dash()
-        {
-            if (!isActive)
+        {if (!cantDash)
             {
-                // the player can't dash during a dash
-                isActive = true;
-                //cancel of the current attack if they was an attack
-                StartCoroutine(SD_PlayerAttack.Instance.Cancel(0f));
-                
-                yield return new WaitForSeconds(0.01f);
-                // reset of the speed in case the player was attacking and so, speed was reduce
-                speed = initialSpeed;
-                // add a force for the dash
-                speed *= dashForce;
-                Move();
+                if (!isActive)
+                {
+                    // the player can't dash during a dash
+                    isActive = true;
+                    //cancel of the current attack if they was an attack
+                    StartCoroutine(SD_PlayerAttack.Instance.Cancel(0f));
 
-                cantMove = true;
-                
-                yield return new WaitForSeconds(dashTime);
-                // end of the dash, reset of the speed, the player can move and the player can dash again
-                speed = initialSpeed;
-                cantMove = false;
-                isActive = false;
-            }
+                    yield return new WaitForSeconds(0.01f);
+                    // reset of the speed in case the player was attacking and so, speed was reduce
+                    speed = initialSpeed;
+                    // add a force for the dash
+                    speed *= dashForce;
+                    Move();
+
+                    cantMove = true;
+
+                    yield return new WaitForSeconds(dashTime);
+                    // end of the dash, reset of the speed, the player can move and the player can dash again
+                    speed = initialSpeed;
+                    cantMove = false;
+                    isActive = false;
+                }
+
+            }           
 
         }
-
-
     }
 }
