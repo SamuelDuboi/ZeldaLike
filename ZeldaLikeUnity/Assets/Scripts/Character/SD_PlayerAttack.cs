@@ -23,7 +23,10 @@ namespace Player
         // the speed will be devided by this during the attack
         [Range(0,5)]
         public int slowOfAttack= 2;
+        // stack the attacks,this game object rotation will change according to the input of the player, so the attacks will have the good orientation
+        public GameObject attacks;
 
+        public float[] damage= new float[3];
 
         //if the player doesn't combo, he will ahve a cooldown befor atatcking again,the cooldown will change depending of the former combo
         [Header ("Cooldowns")]        
@@ -47,6 +50,16 @@ namespace Player
             // input of attack needed to be change
             if (Input.GetButtonDown("Jump"))
             {
+                Vector2 playerVelocity = SD_PlayerMovement.Instance.playerRGB.velocity.normalized;
+                if (playerVelocity.x > 0.7f )
+                    attacks.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+                else if (playerVelocity.x <-0.7f)
+                    attacks.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 180));
+                else if (playerVelocity.y <- 0.7f)
+                    attacks.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 270));
+                else if (playerVelocity.y > 0.7f)
+                    attacks.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 90));
+
                 //Set up of the timer that allow combo (after this timer the combo reset)
                 timeOn = true;
                 //start of the atatck
@@ -142,6 +155,12 @@ namespace Player
             yield return new WaitForSeconds(cooldown);
             cantAttack = false;
 
+        }
+
+        //attack the ennemy depending of the damage of the current attack
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+           // collision.GetComponent<EnemyBehavior>().GetHit(damage[attackNumber]);
         }
     }
 }

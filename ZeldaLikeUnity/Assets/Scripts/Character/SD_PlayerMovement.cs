@@ -20,7 +20,7 @@ namespace Player
         float XAxis;
         float YAxis;
         
-        Rigidbody2D playerRGB;
+        public Rigidbody2D playerRGB;
 
         [Range(0, 3)]
         public float dashTime;
@@ -57,6 +57,7 @@ namespace Player
             {
                StartCoroutine( Dash());
             }
+            Debug.Log(playerRGB.velocity.normalized);
         }
 
 
