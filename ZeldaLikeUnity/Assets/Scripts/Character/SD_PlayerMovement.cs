@@ -57,7 +57,7 @@ namespace Player
             {
                StartCoroutine( Dash());
             }
-            Debug.Log(playerRGB.velocity.normalized);
+
         }
 
 

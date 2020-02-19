@@ -26,7 +26,8 @@ namespace Player
         // stack the attacks,this game object rotation will change according to the input of the player, so the attacks will have the good orientation
         public GameObject attacks;
 
-        public float[] damage= new float[3];
+        public int[] damage= new int[3];
+       [HideInInspector] public int currentDamage;
 
         //if the player doesn't combo, he will ahve a cooldown befor atatcking again,the cooldown will change depending of the former combo
         [Header ("Cooldowns")]        
@@ -92,7 +93,7 @@ namespace Player
                 }
                 #endregion
             }
-
+            #region attackEnd
             //timer to let the attack play and then return to the idle
             if (timeOn)
             {                      
@@ -126,13 +127,16 @@ namespace Player
                     
                 }
             }
+            #endregion
+            if (attackNumber<4 && attackNumber>0 )
+            currentDamage = damage[attackNumber-1];
         }
         /// <summary>
         /// call to stop the attack after the time chosen
         /// </summary>
         /// <param name="timeToCancel"></param>
         /// <returns></returns>
-        
+
         public IEnumerator Cancel(float timeToCancel)
         {
             if(timeToCancel == 0)
@@ -157,10 +161,7 @@ namespace Player
 
         }
 
-        //attack the ennemy depending of the damage of the current attack
-        private void OnTriggerEnter2D(Collider2D collision)
-        {
-           // collision.GetComponent<EnemyBehavior>().GetHit(damage[attackNumber]);
-        }
+
+        
     }
 }
