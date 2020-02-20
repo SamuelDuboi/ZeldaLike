@@ -13,6 +13,8 @@ namespace Ennemy
         public float retreatDistance;
         [Range(0,10)]
         public float recoverytime;
+        [Range(0,50)]
+        public float bulletSpeed;
         bool canShoot = true;
         [HideInInspector]public GameObject target;
         public GameObject ennemyBullet;
@@ -62,7 +64,8 @@ namespace Ennemy
             target.GetComponent<SpriteRenderer>().color = Color.black;
             yield return new WaitForSeconds(0.5f);
             target.SetActive(false);
-            Instantiate(ennemyBullet, transform.position, Quaternion.identity);
+            GameObject bullet = Instantiate(ennemyBullet, transform.position, Quaternion.identity);
+            bullet.GetComponent<Rigidbody2D>().velocity = (target.transform.position - gameObject.transform.position).normalized *  bulletSpeed;
             yield return new WaitForSeconds(recoverytime);
             canMove = true;
             yield return new WaitForSeconds(recoverytime);
