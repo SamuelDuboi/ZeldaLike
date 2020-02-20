@@ -20,9 +20,9 @@ namespace Player
         }
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            if (collision.gameObject.layer == 12 || collision.gameObject.layer == 13)
+            if (collision.gameObject.layer == 12 )
             {
-              StartCoroutine( TakingDamage(collision.gameObject.GetComponent<SD_EnnemyGlobalBehavior>().damage, collision.gameObject));
+              StartCoroutine( TakingDamage(collision.gameObject.GetComponent<SD_EnnemyGlobalBehavior>().damage, collision.gameObject,false));
             }
             else if (collision.gameObject.tag == "Heal")
             {
@@ -33,7 +33,7 @@ namespace Player
               //  LifeUpgrade(collision.gameObject.GetComponent<LifeUpgrade>().lifeAmount);
             }
         }
-       public IEnumerator TakingDamage(int damage, GameObject ennemy)
+       public IEnumerator TakingDamage(int damage, GameObject ennemy, bool isDestroy)
         {
             Vector2 bump =  new Vector2( gameObject.transform.position.x- ennemy.transform.position.x, ennemy.transform.position.y-gameObject.transform.position.y );
             SD_PlayerMovement.Instance.cantMove = true;
@@ -47,6 +47,8 @@ namespace Player
             {
                 SceneManager.LoadScene("GameOver");
             }
+            if(isDestroy)
+                Destroy(ennemy);
 
         }
 

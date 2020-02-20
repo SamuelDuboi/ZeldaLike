@@ -7,10 +7,12 @@ namespace Ennemy
   public class CJ_ScoutRobot : SD_EnnemyGlobalBehavior
 
     {
-        [Range(0,10)]
+        [Range(0,20)]
         public float stopDistance;
-        [Range(0,10)]
+        [Range(0,20)]
         public float retreatDistance;
+        [Range(0, 20)]
+        public float retreatSpeed;
         [Range(0,10)]
         public float recoverytime;
         [Range(0,50)]
@@ -38,14 +40,14 @@ namespace Ennemy
             {
                 transform.position = Vector3.MoveTowards(transform.position, player.transform.position, Time.deltaTime * speed);
             }
-            else if(Vector2.Distance(transform.position,player.transform.position) < stopDistance && canShoot == true)
+            else if(Vector2.Distance(transform.position,player.transform.position) < stopDistance && Vector2.Distance(transform.position, player.transform.position) > retreatDistance && canShoot == true)
             {
                 canMove = false;
                 StartCoroutine(SniperShot());
             }
-            else if (Vector2.Distance(transform.position, player.transform.position) < stopDistance && canShoot == false)
+            else if (Vector2.Distance(transform.position, player.transform.position) < stopDistance && Vector2.Distance(transform.position, player.transform.position) < retreatDistance)
             {
-                transform.position = Vector3.MoveTowards(transform.position, player.transform.position, Time.deltaTime * -speed);
+                transform.position = Vector3.MoveTowards(transform.position, player.transform.position, Time.deltaTime * -retreatSpeed);
             }
         }
 
@@ -65,12 +67,12 @@ namespace Ennemy
             yield return new WaitForSeconds(0.5f);
             target.SetActive(false);
             GameObject bullet = Instantiate(ennemyBullet, transform.position, Quaternion.identity);
+            bullet.GetComponent<CJ_BulletBehaviour>().parent = gameObject;
             bullet.GetComponent<Rigidbody2D>().velocity = (target.transform.position - gameObject.transform.position).normalized *  bulletSpeed;
             yield return new WaitForSeconds(recoverytime);
             canMove = true;
-            yield return new WaitForSeconds(recoverytime);
+            //yield return new WaitForSeconds(recoverytime);
             canShoot = true;
-
         }
     }
 }

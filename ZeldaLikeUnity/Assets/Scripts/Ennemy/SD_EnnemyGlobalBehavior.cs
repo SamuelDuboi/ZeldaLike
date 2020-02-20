@@ -20,6 +20,8 @@ namespace Ennemy
         public int damage;
         public int life;
 
+
+        bool canTakeDamage;
         public virtual void Start()
         {
             ennemyRGB = GetComponent<Rigidbody2D>();
@@ -33,10 +35,12 @@ namespace Ennemy
             {
                 aggroZone.enabled = false;
                 canMove = true;
+                canTakeDamage = true;
                 player = collision.gameObject;
             }
             else if(collision.gameObject.layer == 8 )
             {
+                if(canTakeDamage)
                 StartCoroutine(TakingDamage(SD_PlayerAttack.Instance.currentDamage, collision.gameObject));
             }
         }

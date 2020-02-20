@@ -47,16 +47,10 @@ namespace Player
 
         // bool to unlock abbilities
 
-        bool canParry;
-        GameObject parry;
-        RaycastHit2D[] ennemyAimedForParry= new RaycastHit2D[30];
-        ContactFilter2D ennemyLayer = new ContactFilter2D();
 
+        public bool canParry;
 
-        private void Start()
-        {
-            ennemyLayer.SetLayerMask(Physics2D.GetLayerCollisionMask(12));
-        }
+    
         void Update()
             {
             #region attack;
@@ -176,26 +170,6 @@ namespace Player
 
         }
 
-        private void OnTriggerEnter2D(Collider2D collision)
-        {
-            // detect a projectile
-            if (collision.gameObject.layer == 14 )
-            {
-                Parry();
-            }
-        }
-
-        void Parry()
-        {
-            if (canParry)
-            {
-
-                parry.GetComponent<BoxCollider2D>().Cast(Vector2.up, ennemyLayer, ennemyAimedForParry);
-               // foreach()
-                
-            }
-
-        }
 
     }
 }
