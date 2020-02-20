@@ -49,7 +49,7 @@ namespace Ennemy
             
 
         }
-        public virtual void Mouvement()
+        public  virtual  void Mouvement()
         {
 
         }

@@ -9,7 +9,7 @@ using Ennemy;
 
 namespace Player
 {
-    public class SD_PlayerLife : Singleton<SD_PlayerAttack>
+    public class SD_PlayerLife : Singleton<SD_PlayerLife>
     {
         public static int life;
         public int MaxLife;
