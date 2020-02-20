@@ -44,6 +44,19 @@ namespace Player
         // bool that enable the attack on false
         bool cantAttack;
 
+
+        // bool to unlock abbilities
+
+        bool canParry;
+        GameObject parry;
+        RaycastHit2D[] ennemyAimedForParry= new RaycastHit2D[30];
+        ContactFilter2D ennemyLayer = new ContactFilter2D();
+
+
+        private void Start()
+        {
+            ennemyLayer.SetLayerMask(Physics2D.GetLayerCollisionMask(12));
+        }
         void Update()
             {
             #region attack;
@@ -60,6 +73,8 @@ namespace Player
                     attacks.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 270));
                 else if (playerVelocity.y > 0.7f)
                     attacks.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 90));
+                Debug.Log(attacks.transform.rotation.z);
+                
 
                 //Set up of the timer that allow combo (after this timer the combo reset)
                 timeOn = true;
@@ -161,7 +176,26 @@ namespace Player
 
         }
 
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            // detect a projectile
+            if (collision.gameObject.layer == 14 )
+            {
+                Parry();
+            }
+        }
 
-        
+        void Parry()
+        {
+            if (canParry)
+            {
+
+                parry.GetComponent<BoxCollider2D>().Cast(Vector2.up, ennemyLayer, ennemyAimedForParry);
+               // foreach()
+                
+            }
+
+        }
+
     }
 }
