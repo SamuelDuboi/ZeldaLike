@@ -67,7 +67,7 @@ namespace Player
                     attacks.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 270));
                 else if (playerVelocity.y > 0.7f)
                     attacks.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 90));
-                Debug.Log(attacks.transform.rotation.z);
+
                 
 
                 //Set up of the timer that allow combo (after this timer the combo reset)
