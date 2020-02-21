@@ -72,7 +72,7 @@ namespace Ennemy
             yield return new WaitForSeconds(recoverytime);
             canMove = true;
             //yield return new WaitForSeconds(recoverytime);
-            canShoot = true;
+            canShoot = true;  
         }
     }
 }
