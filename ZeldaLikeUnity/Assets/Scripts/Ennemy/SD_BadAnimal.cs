@@ -5,7 +5,7 @@ using Player;
 namespace Ennemy
 {
  public class SD_BadAnimal : SD_EnnemyGlobalBehavior
- {
+ {          
         public override void Start()
         {
             base.Start();
@@ -20,8 +20,8 @@ namespace Ennemy
         public override void FixedUpdate()
         {
             base.FixedUpdate();
-            if(canMove)
-            ennemyRGB.velocity = Vector2.zero;
+           
+            
         }
         public override void Mouvement()
         {
