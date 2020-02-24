@@ -329,6 +329,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxLife: 20
+  cantTakeDamage: 0
 --- !u!1 &555131775
 GameObject:
   m_ObjectHideFlags: 0
@@ -839,6 +840,7 @@ MonoBehaviour:
   ennemyRGB: {fileID: 0}
   speed: 5
   canMove: 0
+  isAvoidingObstacles: 0
   damage: 1
   life: 10
   isAggro: 0
@@ -1173,7 +1175,7 @@ PrefabInstance:
     - target: {fileID: 542599190043403194, guid: 95185c62acc195c42ab975a68b03a945,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 542599190043403194, guid: 95185c62acc195c42ab975a68b03a945,
         type: 3}
@@ -1705,6 +1707,7 @@ MonoBehaviour:
   cooldownAfterFirst: 0.5
   cooldownAfterSecond: 0.5
   cooldownAfterThird: 0.5
+  cantAttack: 0
   canParry: 1
 --- !u!212 &4455326354317215924
 SpriteRenderer:
@@ -1864,6 +1867,7 @@ MonoBehaviour:
   playerRGB: {fileID: 0}
   dashTime: 0.2
   dashForce: 3
+  fallDamage: 0
   cantMove: 0
   cantDash: 0
 --- !u!1 &4455326354574144823
