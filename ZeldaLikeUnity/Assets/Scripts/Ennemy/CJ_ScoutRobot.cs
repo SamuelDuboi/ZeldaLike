@@ -15,8 +15,6 @@ namespace Ennemy
         public float retreatSpeed;
         [Range(0,10)]
         public float recoverytime;
-        [Range(0,50)]
-        public float bulletSpeed;
         bool canShoot = true;
         [HideInInspector]public GameObject target;
         public GameObject ennemyBullet;
@@ -68,7 +66,7 @@ namespace Ennemy
             target.SetActive(false);
             GameObject bullet = Instantiate(ennemyBullet, transform.position, Quaternion.identity);
             bullet.GetComponent<CJ_BulletBehaviour>().parent = gameObject;
-            bullet.GetComponent<Rigidbody2D>().velocity = (target.transform.position - gameObject.transform.position).normalized *  bulletSpeed;
+            bullet.GetComponent<CJ_BulletBehaviour>().target = target;
             yield return new WaitForSeconds(recoverytime);
             canMove = true;
             //yield return new WaitForSeconds(recoverytime);

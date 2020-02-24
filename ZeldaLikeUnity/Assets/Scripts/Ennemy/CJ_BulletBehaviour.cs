@@ -12,6 +12,16 @@ namespace Ennemy
         bool isParry;
         [Range(20, 50)]
         public int bulletParrySpeed;
+        [Range(0, 50)]
+        public int bulletSpeed;
+       [HideInInspector] public GameObject target;
+
+        private void Start()
+        {
+
+            GetComponent<Rigidbody2D>().velocity = (target.transform.position - gameObject.transform.position).normalized * bulletSpeed;
+        }
+
         private void OnCollisionEnter2D(Collision2D collision)
         {
             if (collision.gameObject.CompareTag("Player"))
@@ -24,8 +34,22 @@ namespace Ennemy
             {
                 
             }
+            else if (collision.gameObject.CompareTag("Hole"))
+            {
+                GameObject target = parent.transform.GetChild(0).gameObject;
+                GetComponent<BoxCollider2D>().isTrigger = true;
+                GetComponent<Rigidbody2D>().velocity = (target.transform.position - gameObject.transform.position).normalized * bulletSpeed;
+            }
             
 
+        }
+
+        private void OnTriggerExit2D(Collider2D collision)
+        {
+            if (collision.CompareTag("Hole"))
+            {
+                GetComponent<BoxCollider2D>().isTrigger = false;
+            }
         }
         private void OnTriggerEnter2D(Collider2D collision)
         {
