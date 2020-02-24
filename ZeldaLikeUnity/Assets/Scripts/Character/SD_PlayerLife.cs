@@ -13,6 +13,7 @@ namespace Player
     {
         public static int life;
         public int MaxLife;
+        [HideInInspector] public bool cantTakeDamage;
         private void Start()
         {
             MakeSingleton(true);
@@ -20,7 +21,7 @@ namespace Player
         }
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            if (collision.gameObject.layer == 12 )
+            if (collision.gameObject.layer == 12 && !cantTakeDamage )
             {
               StartCoroutine( TakingDamage(collision.gameObject.GetComponent<SD_EnnemyGlobalBehavior>().damage, collision.gameObject,false));
             }
@@ -35,13 +36,19 @@ namespace Player
         }
        public IEnumerator TakingDamage(int damage, GameObject ennemy, bool isDestroy)
         {
-            Vector2 bump =  new Vector2( gameObject.transform.position.x- ennemy.transform.position.x, ennemy.transform.position.y-gameObject.transform.position.y );
+            
+            Vector2 bump =  new Vector2( gameObject.transform.position.x- ennemy.transform.position.x, gameObject.transform.position.y- ennemy.transform.position.y  );
+            SD_PlayerMovement.Instance.playerRGB.velocity = bump * SD_PlayerMovement.Instance.speed;
             SD_PlayerMovement.Instance.cantMove = true;
+            SD_PlayerMovement.Instance.cantDash = true;
+            SD_PlayerMovement.Instance.cantDash = true;
             life -= damage;
             SD_PlayerAnimation.Instance.sprite.color = Color.white;
-            SD_PlayerMovement.Instance.playerRGB.velocity = bump * SD_PlayerMovement.Instance.speed;
+            
             yield return new WaitForSeconds(0.2f);
             SD_PlayerMovement.Instance.cantMove = false;
+            SD_PlayerMovement.Instance.cantDash = false;
+            SD_PlayerMovement.Instance.cantDash = false;
             SD_PlayerAnimation.Instance.sprite.color = Color.red;
             if (life <= 0)
             {
