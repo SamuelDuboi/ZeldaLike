@@ -41,6 +41,7 @@ namespace Ennemy
             else if(Vector2.Distance(transform.position,player.transform.position) < stopDistance && Vector2.Distance(transform.position, player.transform.position) > retreatDistance && canShoot == true)
             {
                 canMove = false;
+                isAvoidingObstacles = false;
                 StartCoroutine(SniperShot());
             }
             else if (Vector2.Distance(transform.position, player.transform.position) < stopDistance && Vector2.Distance(transform.position, player.transform.position) < retreatDistance)
@@ -69,6 +70,7 @@ namespace Ennemy
             bullet.GetComponent<CJ_BulletBehaviour>().target = target;
             yield return new WaitForSeconds(recoverytime);
             canMove = true;
+            isAvoidingObstacles = true;
             //yield return new WaitForSeconds(recoverytime);
             canShoot = true;  
         }

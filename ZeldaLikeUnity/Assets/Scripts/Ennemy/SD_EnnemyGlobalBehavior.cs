@@ -18,6 +18,7 @@ namespace Ennemy
         [Range(0,10)]
         public float speed;
        [HideInInspector]public  bool canMove;
+       [HideInInspector] public bool isAvoidingObstacles;
         public int damage;
         public int life;
 
@@ -45,6 +46,7 @@ namespace Ennemy
                 aggroZone.enabled = false;
                 isAggro = true;
                 canMove = true;
+                isAvoidingObstacles = true;
                 canTakeDamage = true;
                 player = collision.gameObject;
             }
@@ -60,8 +62,8 @@ namespace Ennemy
             {
                 Mouvement();
             }
-
-            AvoidWalls();
+            if(isAvoidingObstacles)
+                AvoidWalls();
 
 
         }

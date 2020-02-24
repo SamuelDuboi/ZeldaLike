@@ -79,11 +79,13 @@ namespace Ennemy
         {
             canCharge = false;
             canMove = false;
+            isAvoidingObstacles = false;
             GetComponent<SpriteRenderer>().color = Color.blue;
             yield return new WaitForSeconds(1f);
             GetComponent<SpriteRenderer>().color = Color.white;
             yield return new WaitForSeconds(3f);
             canMove = true;
+            isAvoidingObstacles = true;
             canCharge = true;
         }
     }
