@@ -19,7 +19,7 @@ namespace Player
         float timeBeforReset;
 
         //the speed befor the attack, its use to reset the speed to initial after the attack
-        int speedBeforAttack;
+        float speedBeforAttack;
         // the speed will be devided by this during the attack
         [Range(0,5)]
         public int slowOfAttack= 2;
@@ -42,7 +42,7 @@ namespace Player
         public float cooldownAfterThird;
 
         // bool that enable the attack on false
-        bool cantAttack;
+       [HideInInspector] public bool cantAttack;
 
 
         // bool to unlock abbilities

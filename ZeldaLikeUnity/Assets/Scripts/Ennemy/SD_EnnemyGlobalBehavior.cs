@@ -2,6 +2,7 @@
 using UnityEngine;
 using System.Collections;
 using Player;
+using UnityEngine.Tilemaps;
 
 
 namespace Ennemy
@@ -85,7 +86,7 @@ namespace Ennemy
         /// <summary>
         /// test if their is any walls around the game object, disabled movement if yes and focus on avoiding it
         /// </summary>
-        void AvoidWalls()
+       void AvoidWalls()
         {// cast 2 ray cast for each poles, the ray are cast at the corner of the hitbox, the ray range is 2 (pretty small)
             LayerMask wallMask = LayerMask.GetMask("Wall");
             RaycastHit2D northRay = Physics2D.Raycast(rayStartCorner[0].transform.position, transform.TransformDirection(Vector3.up), 2, wallMask);
@@ -160,6 +161,30 @@ namespace Ennemy
 
             }
 
+        }
+        public void OnCollisionEnter2D(Collision2D collision)
+        {
+            if (collision.gameObject.tag == "Hole")
+                StartCoroutine(Fall(collision.GetContact(0).point));
+
+        }
+
+        IEnumerator Fall(Vector2 collision)
+        {            
+            canMove = false;
+            isAggro = false;          
+            
+            ennemyRGB.velocity = Vector2.zero;
+            GetComponent<BoxCollider2D>().isTrigger = true;
+            transform.position = Vector3.MoveTowards(transform.position, collision, 200);
+            
+            for (int i = 0; i < 100; i++)
+            {
+                Vector2 reduction = Vector2Extensions.addVector(transform.localScale, -new Vector2(0.01f, 0.01f));
+                transform.localScale = reduction;
+                yield return new WaitForSeconds(0.001f);
+            }
+            Destroy(gameObject);
         }
     }
 }
