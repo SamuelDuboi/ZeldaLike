@@ -16,7 +16,7 @@ namespace Player
         {
             MakeSingleton(true);
             PlayerAnimator = GetComponent<Animator>();
-            sprite = GetComponent<SpriteRenderer>();
+            sprite = GetComponent<SpriteRenderer>();           
         }
 
     }
