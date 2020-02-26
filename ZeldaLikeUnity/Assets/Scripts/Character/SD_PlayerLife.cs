@@ -12,12 +12,12 @@ namespace Player
     public class SD_PlayerLife : Singleton<SD_PlayerLife>
     {
         public static int life;
-        public int MaxLife;
+        public int maxLife;
         [HideInInspector] public bool cantTakeDamage;
         private void Start()
         {
             MakeSingleton(true);
-            life = MaxLife;
+            life = maxLife;
         }
         private void OnCollisionEnter2D(Collision2D collision)
         {
@@ -62,13 +62,13 @@ namespace Player
         public void Heal(int amount)
         {
             life += amount;
-            if (life > MaxLife)
-                life = MaxLife;
+            if (life > maxLife)
+                life = maxLife;
         }
 
         public void LifeUpgrade(int amount)
         {
-            MaxLife += amount;
+            maxLife += amount;
         }
 
 
