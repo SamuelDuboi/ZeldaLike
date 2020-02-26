@@ -47,7 +47,7 @@ namespace Player
         void FixedUpdate()
         {
             //get the input of the player raw (-1,0 or 1) and multply it by speed and then make the velocity equal to it
-            if (!cantMove)
+            if (!cantMove && Input.GetAxisRaw("Horizontal") !=0 || !cantMove && Input.GetAxisRaw("Vertical") != 0)
             {
                 XAxis = Input.GetAxisRaw("Horizontal");
                 YAxis = Input.GetAxisRaw("Vertical");
