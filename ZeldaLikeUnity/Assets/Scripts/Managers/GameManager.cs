@@ -19,15 +19,7 @@ namespace Management
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-           
-                Save save = CreateSave();
-
-
-                BinaryFormatter bf = new BinaryFormatter();
-                FileStream file = File.Create(Application.persistentDataPath + "/gamesave.save");
-                bf.Serialize(file, save);
-                file.Close();
-            
+            Saving();
             
         }
 
@@ -65,6 +57,19 @@ namespace Management
             {
                 Debug.Log("No game saved!");
             }
+        }
+
+        public void Saving()
+        {
+
+            Save save = CreateSave();
+
+
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = File.Create(Application.persistentDataPath + "/gamesave.save");
+            bf.Serialize(file, save);
+            file.Close();
+
         }
     }
 }

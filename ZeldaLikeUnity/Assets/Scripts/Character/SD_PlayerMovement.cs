@@ -55,7 +55,7 @@ namespace Player
                 Move();
             }
             // to dash
-            if (Input.GetKeyDown(KeyCode.V))
+            if (Input.GetButtonDown("Dash"))
             {
                 StartCoroutine(Dash());
             }

@@ -56,7 +56,7 @@ namespace Player
             #region attack;
 
             // input of attack needed to be change
-            if (Input.GetButtonDown("Jump"))
+            if (Input.GetButtonDown("Attack"))
             {
                 Vector2 playerVelocity = SD_PlayerMovement.Instance.playerRGB.velocity.normalized;
                 if (playerVelocity.x > 0.7f )
