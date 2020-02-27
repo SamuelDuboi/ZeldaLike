@@ -26,7 +26,7 @@ namespace Player
         [Range(0, 3)]
         public float dashTime;
         [Range(0, 10)]
-        public int dashForce;
+        public int dashForce ;
 
         public int fallDamage;
         //enable movement on false
@@ -34,9 +34,9 @@ namespace Player
 
         [HideInInspector] public bool cantDash;
 
-        
 
         bool isActive;
+        bool wind;
         void Start()
         {
             MakeSingleton(true);
@@ -54,19 +54,23 @@ namespace Player
 
                 Move();
             }
+           
+
+        }
+        private void Update()
+        {
             // to dash
             if (Input.GetButtonDown("Dash"))
             {
                 StartCoroutine(Dash());
             }
-
         }
 
 
         public void Move()
         {
-            playerRGB.velocity = new Vector2(XAxis, YAxis) * speed;
-
+            playerRGB.velocity = new Vector2(XAxis, YAxis) * speed;         
+            
         }
         /// <summary>
         /// Make the player dash forward
@@ -82,16 +86,13 @@ namespace Player
                     isActive = true;
                     //cancel of the current attack if they was an attack
                     StartCoroutine(SD_PlayerAttack.Instance.Cancel(0f));
-
                     yield return new WaitForSeconds(0.01f);
                     // reset of the speed in case the player was attacking and so, speed was reduce
                     speed = initialSpeed;
                     // add a force for the dash
                     speed *= dashForce;
                     Move();
-
                     cantMove = true;
-
                     yield return new WaitForSeconds(dashTime);
                     // end of the dash, reset of the speed, the player can move and the player can dash again
                     speed = initialSpeed;
@@ -103,13 +104,48 @@ namespace Player
 
         }
 
+       private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.gameObject.tag == "Wind" )
+            {
+                wind = true;       
+                cantMove = true;
+                cantDash = true;
+                Debug.Log("Vent");
+                
+            }
+            else if(collision.gameObject.tag == "Wall" && wind)
+            {
+                wind = false;
+                cantMove = false;
+                cantDash = false;
+                Debug.Log("Wall");
+            }
+        }
+        private void OnTriggerExit2D(Collider2D collision)
+        {
+            if (collision.gameObject.tag == "Wind" && wind)
+            {
+                wind = false;
+                cantMove = false;
+                cantDash = false;
+            }
+            else if (collision.gameObject.tag == "Wall" && !wind)
+            {
+                wind = true;
+                cantMove = true;
+                cantDash = true;
+            }
+        }
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
             if (collision.gameObject.tag == "Hole")
                 StartCoroutine(Fall(collision));
-
+            
         }
+
+
 
         IEnumerator Fall(Collision2D collisionPoint)
         {
