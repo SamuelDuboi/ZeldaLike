@@ -17,9 +17,11 @@ namespace Ennemy
         [Range(0, 20)]
         public float followSpeed;
         bool canCharge = true;
+        Animator robotAttacks;
     public override void Start()
     {
             base.Start();
+            robotAttacks = GetComponent<Animator>();
     }
     
      public override void FixedUpdate()
@@ -77,16 +79,39 @@ namespace Ennemy
 
         public IEnumerator SlashAttack()
         {
+            Vector2 Aim;
             canCharge = false;
             canMove = false;
             isAvoidingObstacles = false;
             GetComponent<SpriteRenderer>().color = Color.blue;
             yield return new WaitForSeconds(1f);
+            Aim = new Vector2(player.transform.position.x - transform.position.x,player.transform.position.y - transform.position.y);
+            if(Aim.y > 0.4)
+            {
+                robotAttacks.SetInteger("attackNumber", 2);
+            }
+            else if (Aim.y < -0.4)
+            {
+                robotAttacks.SetInteger("attackNumber", 4);
+            }
+            else if(Aim.x > 0.4)
+            {
+                robotAttacks.SetInteger("attackNumber", 3);
+            }
+            else if (Aim.x < -0.4)
+            {
+                robotAttacks.SetInteger("attackNumber", 1);
+            }
             GetComponent<SpriteRenderer>().color = Color.white;
             yield return new WaitForSeconds(3f);
             canMove = true;
             isAvoidingObstacles = true;
             canCharge = true;
+        }
+
+        public void ResetAttack()
+        {
+            robotAttacks.SetInteger("attackNumber", 0);
         }
     }
 }

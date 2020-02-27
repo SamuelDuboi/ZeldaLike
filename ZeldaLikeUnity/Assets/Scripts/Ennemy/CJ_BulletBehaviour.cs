@@ -32,7 +32,7 @@ namespace Ennemy
             }
             else if (collision.gameObject.CompareTag("Ennemy"))
             {
-                
+
             }
             else if (collision.gameObject.CompareTag("Hole"))
             {
