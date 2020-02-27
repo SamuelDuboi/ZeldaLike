@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 317867788}
   - component: {fileID: 317867789}
+  - component: {fileID: 2062720190}
   m_Layer: 11
   m_Name: PlayerColliderBody
   m_TagString: Player
@@ -29,7 +30,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4455326354814619345}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &317867789
 BoxCollider2D:
@@ -57,6 +58,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.7840945, y: 1.3505745}
   m_EdgeRadius: 0
+--- !u!114 &2062720190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 317867787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 718f135d28b24044b93b64fcddc464d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxLife: 20
+  cantTakeDamage: 0
 --- !u!1 &1027145828307560278
 GameObject:
   m_ObjectHideFlags: 0
@@ -256,7 +271,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4455326354814619345}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &943765891
 BoxCollider2D:
@@ -271,7 +286,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.054092586, y: -0.4651556}
+  m_Offset: {x: -0.054092586, y: -0.4219246}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -282,7 +297,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.8654841, y: 0.39424515}
+  m_Size: {x: 1.8654841, y: 0.48070717}
   m_EdgeRadius: 0
 --- !u!1 &4455326353815447490
 GameObject:
@@ -452,9 +467,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 317867788}
   - {fileID: 4455326355071513426}
   - {fileID: 4455326353691812999}
-  - {fileID: 317867788}
   m_Father: {fileID: 4455326355006402085}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -471,7 +486,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 5
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -495,6 +510,7 @@ MonoBehaviour:
   playerRGB: {fileID: 0}
   dashTime: 0.2
   dashForce: 10
+  fallDamage: 0
   cantMove: 0
   cantDash: 0
 --- !u!1 &4455326355006402086
@@ -561,7 +577,7 @@ Transform:
   m_Children:
   - {fileID: 5587348446778156989}
   m_Father: {fileID: 4455326354814619345}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &4455326355071513424
 Animator:
@@ -646,11 +662,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slowOfAttack: 2
   attacks: {fileID: 7523515021025365951}
-  damage: 010000000200000003000000
+  damage: 010000000100000002000000
   currentDamage: 0
   cooldownAfterFirst: 0.5
   cooldownAfterSecond: 0.5
   cooldownAfterThird: 0.5
+  cantAttack: 0
   canParry: 0
 --- !u!114 &4455326355071513431
 MonoBehaviour:
