@@ -559,11 +559,11 @@ GameObject:
   - component: {fileID: 555131776}
   m_Layer: 9
   m_Name: wallTEST
-  m_TagString: Hole
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &555131776
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1191,7 +1191,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1685780872
 Transform:
   m_ObjectHideFlags: 0
@@ -1726,7 +1726,7 @@ PrefabInstance:
     - target: {fileID: 542599190043403199, guid: 95185c62acc195c42ab975a68b03a945,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 542599190255423333, guid: 95185c62acc195c42ab975a68b03a945,
         type: 3}

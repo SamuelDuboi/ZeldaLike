@@ -46,7 +46,7 @@ namespace Ennemy
                 aggroZone.enabled = false;
                 isAggro = true;
                 canMove = true;
-                isAvoidingObstacles = true;
+                //isAvoidingObstacles = true;
                 canTakeDamage = true;
                 player = collision.gameObject;
             }
@@ -55,6 +55,13 @@ namespace Ennemy
                 if(canTakeDamage)
                 StartCoroutine(TakingDamage(SD_PlayerAttack.Instance.currentDamage, collision.gameObject));
             }
+            else if (collision.gameObject.layer == 14)
+                if (collision.gameObject.GetComponent<CJ_BulletBehaviour>().isParry == true)
+                {
+                    collision.gameObject.GetComponent<CJ_BulletBehaviour>().isParry = false;
+                    StartCoroutine(TakingDamage(3, collision.gameObject));
+                }
+
         }
         public virtual void FixedUpdate()
         {
@@ -168,7 +175,6 @@ namespace Ennemy
         {
             if (collision.gameObject.tag == "Hole")
                 StartCoroutine(Fall(collision.GetContact(0).point));
-
         }
 
         IEnumerator Fall(Vector2 collision)
