@@ -47,7 +47,7 @@ namespace Player
         void FixedUpdate()
         {
             //get the input of the player raw (-1,0 or 1) and multply it by speed and then make the velocity equal to it
-            if (!cantMove && Input.GetAxisRaw("Horizontal") !=0 || !cantMove && Input.GetAxisRaw("Vertical") != 0)
+            if (!cantMove && Input.GetAxisRaw("Horizontal") !=0 && !wind || !cantMove && Input.GetAxisRaw("Vertical") != 0 && !wind)
             {
                 XAxis = Input.GetAxisRaw("Horizontal");
                 YAxis = Input.GetAxisRaw("Vertical");
@@ -167,8 +167,11 @@ namespace Player
             transform.position = new Vector2(transform.position.x - bouncePoint.x, transform.position.y - bouncePoint.y);
             StartCoroutine(SD_PlayerLife.Instance.TakingDamage(fallDamage, collisionPoint.gameObject, false));
             speed = initialSpeed;
-            playerRGB.simulated = true; 
+            playerRGB.simulated = true;
+            cantDash = false;
+            cantMove = false;
             SD_PlayerLife.Instance.cantTakeDamage = false;
+            SD_PlayerAttack.Instance.cantAttack = false;
         }
     }
 }

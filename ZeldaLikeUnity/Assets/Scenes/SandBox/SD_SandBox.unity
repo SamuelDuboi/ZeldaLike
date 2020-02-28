@@ -1101,6 +1101,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 136063796727535632, guid: 544923880e92f1e4ebec1bac3631cebb,
+        type: 3}
+      propertyPath: m_ColliderMask.m_Bits
+      value: 13312
+      objectReference: {fileID: 0}
+    - target: {fileID: 136063796727535632, guid: 544923880e92f1e4ebec1bac3631cebb,
+        type: 3}
+      propertyPath: m_UseColliderMask
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 136063796727535635, guid: 544923880e92f1e4ebec1bac3631cebb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1239,6 +1249,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4455326353691812992, guid: 94f740b0faa1a664da745400ca412b64,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455326354814619346, guid: 94f740b0faa1a664da745400ca412b64,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 4455326355006402085, guid: 94f740b0faa1a664da745400ca412b64,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1298,6 +1318,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: --Player--
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455326355071513427, guid: 94f740b0faa1a664da745400ca412b64,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7523515021025365951, guid: 94f740b0faa1a664da745400ca412b64,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94f740b0faa1a664da745400ca412b64, type: 3}
