@@ -18,6 +18,9 @@ namespace Player
             PlayerAnimator = GetComponent<Animator>();
             sprite = GetComponent<SpriteRenderer>();           
         }
-
+        private void Update()
+        {
+            
+        }
     }
 }

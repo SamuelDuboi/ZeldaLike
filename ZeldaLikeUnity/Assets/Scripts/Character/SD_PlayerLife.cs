@@ -43,13 +43,13 @@ namespace Player
             SD_PlayerMovement.Instance.cantDash = true;
             SD_PlayerMovement.Instance.cantDash = true;
             life -= damage;
-            SD_PlayerAnimation.Instance.sprite.color = Color.white;
+            SD_PlayerAnimation.Instance.sprite.color = Color.red;
             
             yield return new WaitForSeconds(0.2f);
             SD_PlayerMovement.Instance.cantMove = false;
             SD_PlayerMovement.Instance.cantDash = false;
             SD_PlayerMovement.Instance.cantDash = false;
-            SD_PlayerAnimation.Instance.sprite.color = Color.red;
+            SD_PlayerAnimation.Instance.sprite.color = Color.white;
             if (life <= 0)
             {
                 SceneManager.LoadScene("GameOver");

@@ -47,13 +47,15 @@ namespace Player
         void FixedUpdate()
         {
             //get the input of the player raw (-1,0 or 1) and multply it by speed and then make the velocity equal to it
-            if (!cantMove && Input.GetAxisRaw("Horizontal") !=0 && !wind || !cantMove && Input.GetAxisRaw("Vertical") != 0 && !wind)
+            if (!cantMove && Input.GetAxisRaw("Horizontal") != 0 && !wind || !cantMove && Input.GetAxisRaw("Vertical") != 0 && !wind)
             {
                 XAxis = Input.GetAxisRaw("Horizontal");
                 YAxis = Input.GetAxisRaw("Vertical");
 
                 Move();
             }
+            else
+                SD_PlayerAnimation.Instance.PlayerAnimator.SetBool("IsMoving", false);
            
 
         }
@@ -69,8 +71,33 @@ namespace Player
 
         public void Move()
         {
-            playerRGB.velocity = new Vector2(XAxis, YAxis) * speed;         
-            
+            SD_PlayerAnimation.Instance.PlayerAnimator.SetBool("IsMoving", !cantMove);
+            playerRGB.velocity = new Vector2(XAxis, YAxis) * speed;
+            if (XAxis < 0.1 && XAxis > -0.1 && YAxis > 0.1)                
+            {
+                SD_PlayerAnimation.Instance.PlayerAnimator.SetFloat("YAxis", 1f);
+                SD_PlayerAnimation.Instance.PlayerAnimator.SetFloat("XAxis", 0f);
+            }
+            else if (XAxis < 0.1 && XAxis > -0.1 && YAxis < -0.1)
+            {
+                SD_PlayerAnimation.Instance.PlayerAnimator.SetFloat("YAxis", -1f);
+                SD_PlayerAnimation.Instance.PlayerAnimator.SetFloat("XAxis", 0f);
+
+            }               
+            else if (XAxis >= 0.1f)
+            {
+                SD_PlayerAnimation.Instance.PlayerAnimator.SetFloat("XAxis", 1f);
+                SD_PlayerAnimation.Instance.PlayerAnimator.SetFloat("YAxis", 0f);
+            }                
+            else if (XAxis <= 0.1)
+            {
+                SD_PlayerAnimation.Instance.PlayerAnimator.SetFloat("XAxis", -1f);
+                SD_PlayerAnimation.Instance.PlayerAnimator.SetFloat("YAxis", 0f);
+
+            }
+                
+
+
         }
         /// <summary>
         /// Make the player dash forward
