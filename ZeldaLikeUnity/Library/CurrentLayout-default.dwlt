@@ -113,10 +113,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 911, y: 442}
-  m_MaxSize: {x: 22006, y: 10021}
+  m_MinSize: {x: 909, y: 342}
+  m_MaxSize: {x: 22004, y: 10021}
   vertical: 0
-  controlID: 569
+  controlID: 7280
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -138,10 +138,10 @@ MonoBehaviour:
     y: 0
     width: 1312
     height: 947
-  m_MinSize: {x: 403, y: 442}
+  m_MinSize: {x: 403, y: 342}
   m_MaxSize: {x: 8003, y: 8042}
   vertical: 1
-  controlID: 492
+  controlID: 7365
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 493
+  controlID: 7366
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -230,7 +230,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: GameView
+  m_Name: AnimationWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -239,16 +239,16 @@ MonoBehaviour:
     y: 597
     width: 1312
     height: 350
-  m_MinSize: {x: 201, y: 221}
+  m_MinSize: {x: 101, y: 121}
   m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 13}
+  m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 17}
   - {fileID: 13}
   - {fileID: 18}
   - {fileID: 19}
-  m_Selected: 1
-  m_LastSelected: 0
+  m_Selected: 3
+  m_LastSelected: 1
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -268,8 +268,8 @@ MonoBehaviour:
     y: 0
     width: 297
     height: 947
-  m_MinSize: {x: 277, y: 71}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 20}
   m_Panes:
   - {fileID: 20}
@@ -338,7 +338,7 @@ MonoBehaviour:
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
-  m_MaximizeOnPlay: 1
+  m_MaximizeOnPlay: 0
   m_VSyncEnabled: 0
   m_Gizmos: 0
   m_Stats: 0
@@ -360,7 +360,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 1
+    m_EnableMouseInput: 0
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -422,21 +422,21 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 84f6ffff
+      m_ExpandedIDs: 1cf8ffff2ef8ffff3ef8ffff42f8ffff58f8ffff80f8ffffc2360000da360000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: PlayerColliderFeet
+        m_OriginalName: PlayerColliderFeet
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 0
+        m_UserData: -1996
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 0
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 8}
       m_SearchString: 
@@ -482,9 +482,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 6.782486, y: -0.7684921, z: -16.50586}
+    m_Target: {x: 10.588079, y: 0.7021264, z: -4.8221035}
     speed: 2
-    m_Value: {x: 6.782486, y: -0.7684921, z: -16.50586}
+    m_Value: {x: 10.588079, y: 0.7021264, z: -4.8221035}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -525,7 +525,7 @@ MonoBehaviour:
         m_Value: 1
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
-      m_Size: {x: 1, y: 1}
+      m_Size: {x: 2, y: 2}
     m_ShowGrid: 1
     m_GridAxis: 1
     m_gridOpacity: 0.5
@@ -534,9 +534,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 15.368765
+    m_Target: 9.165235
     speed: 2
-    m_Value: 15.368765
+    m_Value: 9.165235
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -594,14 +594,14 @@ MonoBehaviour:
     - {fileID: -4525918168824991804, guid: 163716d62fefc3745bb285ad8f003237, type: 2}
     - {fileID: -3984808626195892125, guid: 163716d62fefc3745bb285ad8f003237, type: 2}
     m_ValueSerializationHelper:
-    - e00: 1.055623
+    - e00: 0.16552588
       e01: 0
       e02: 0
-      e03: -380.31906
+      e03: 161.34119
       e10: 0
-      e11: 1.055623
+      e11: 0.16552588
       e12: 0
-      e13: 99.16525
+      e13: 214.27457
       e20: 0
       e21: 0
       e22: 1
@@ -760,7 +760,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -2692
+  m_LastSelectedObjectID: -25506
 --- !u!114 &20
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -875,14 +875,14 @@ MonoBehaviour:
   m_LastFolders:
   - Assets/Scripts/Ennemy
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\c.job\Documents\ZeldAction\ZeldaLike\ZeldaLikeUnity
+  m_LastProjectPath: D:\ZeldaLike\ZeldaLikeUnity
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 2e390000
-    m_LastClickedID: 14638
-    m_ExpandedIDs: 00000000083900000a3900000c3900000e39000010390000123900001439000000ca9a3b
+    m_SelectedIDs: 4e380000
+    m_LastClickedID: 14414
+    m_ExpandedIDs: 00000000283800002a3800002c3800002e38000030380000323800003438000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -910,7 +910,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000083900000a3900000c3900000e39000010390000123900001439000000ca9a3b
+    m_ExpandedIDs: 00000000283800002a3800002c3800002e38000030380000323800003438000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -937,7 +937,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000022e00001c3900002e39000028390000
     m_RenameOverlay:
       m_UserAcceptedRename: 0

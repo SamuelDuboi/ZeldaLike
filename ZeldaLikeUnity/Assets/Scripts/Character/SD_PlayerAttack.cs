@@ -46,12 +46,13 @@ namespace Player
         // bool that enable the attack on false
        [HideInInspector] public bool cantAttack;
 
+        [SerializeField] GameObject windAttack;
 
         // bool to unlock abbilities
 
 
         public bool canParry;
-
+        public bool hasWind;
     
         void Update()
             {
@@ -97,17 +98,16 @@ namespace Player
 
                         // set the animation to the new attack
                         SD_PlayerAnimation.Instance.PlayerAnimator.SetInteger("AttackNumber", attackNumber);
+                        if (hasWind)
+                            WindAttack();
 
                     }
 
                 }
                 #endregion
-                else
+                else if (hasWind)
                 {
-                    SD_PlayerAnimation.Instance.PlayerAnimator.SetTrigger("Wind");
-                    Debug.Log(attacks.transform.rotation.z);
-                    attacks.GetChildNamed("Wind").GetComponent<AreaEffector2D>().forceAngle = attacks.transform.eulerAngles.z;
-                    
+                    SD_PlayerAnimation.Instance.PlayerAnimator.SetTrigger("Wind");                                    
                 }
                 
             }
@@ -178,7 +178,13 @@ namespace Player
             cantAttack = false;
 
         }
-
+         public void WindAttack()
+        {
+            Vector2 velocity = SD_PlayerMovement.Instance.playerRGB.velocity.normalized;
+            GameObject currentWindAttack = GameObject.Instantiate(windAttack, new Vector2( attacks.transform.position.x + velocity.x, attacks.transform.position.y + velocity.y), Quaternion.identity);
+            currentWindAttack.GetComponent<Rigidbody2D>().velocity = velocity * 10;
+            currentWindAttack.transform.rotation = attacks.transform.rotation;
+        }
 
     }
 }
