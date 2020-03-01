@@ -8,7 +8,7 @@ namespace Player
 /// this classe will manage all this attack, it relat a lot with sd_PlayerAnimation
 /// </summary>
 /// 
-    [System.Obsolete]
+
     public class SD_PlayerAttack : Singleton<SD_PlayerAttack>
     {
         //count of the atatck combo, from one to 3
