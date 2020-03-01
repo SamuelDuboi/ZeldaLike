@@ -7,6 +7,8 @@ namespace Player
 {/// <summary>
 /// this classe will manage all this attack, it relat a lot with sd_PlayerAnimation
 /// </summary>
+/// 
+    [System.Obsolete]
     public class SD_PlayerAttack : Singleton<SD_PlayerAttack>
     {
         //count of the atatck combo, from one to 3
@@ -53,10 +55,8 @@ namespace Player
     
         void Update()
             {
-            #region attack;
-
             // input of attack needed to be change
-            if (Input.GetButtonDown("Attack"))
+            if (Input.GetButtonDown("Attack") || Input.GetButtonDown("Wind"))
             {
                 Vector2 playerVelocity = SD_PlayerMovement.Instance.playerRGB.velocity.normalized;
                 if (playerVelocity.x > 0.7f )
@@ -68,39 +68,48 @@ namespace Player
                 else if (playerVelocity.y > 0.7f)
                     attacks.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 90));
 
-                
-
-                //Set up of the timer that allow combo (after this timer the combo reset)
-                timeOn = true;
-                //start of the atatck
-                if (!cantAttack)
-                {                    
-                    attackNumber++;
-                    // if the player spam and does more than 3 inputs
-                    if (attackNumber >= 4)
-                        StartCoroutine(Cancel(timeBeforReset - timer));
-                    else if (attackNumber == 1)
+                #region attack;
+                if (Input.GetButtonDown("Attack"))
+                { //Set up of the timer that allow combo (after this timer the combo reset)
+                    timeOn = true;
+                    //start of the atatck
+                    if (!cantAttack)
                     {
-                        //get the speed of the player, devided it by slow attack, set the new velocity, add the new attack animation to the cooldown of the combo and disable the movement of the player
-                        speedBeforAttack = SD_PlayerMovement.Instance.speed;
-                        SD_PlayerMovement.Instance.speed = speedBeforAttack / slowOfAttack;
-                        SD_PlayerMovement.Instance.Move();
-                        timeBeforReset += SD_PlayerAnimation.Instance.attackAnimation[attackNumber - 1].length;
-                        SD_PlayerMovement.Instance.cantMove = true;
-                    }
-                    else
-                    {
-                        //add the new attack animation to the cooldown of the combo and disable the movement of the player
-                        timeBeforReset += SD_PlayerAnimation.Instance.attackAnimation[attackNumber - 1].length;
-                        SD_PlayerMovement.Instance.cantMove = true;
+                        attackNumber++;
+                        // if the player spam and does more than 3 inputs
+                        if (attackNumber >= 4)
+                            StartCoroutine(Cancel(timeBeforReset - timer));
+                        else if (attackNumber == 1)
+                        {
+                            //get the speed of the player, devided it by slow attack, set the new velocity, add the new attack animation to the cooldown of the combo and disable the movement of the player
+                            speedBeforAttack = SD_PlayerMovement.Instance.speed;
+                            SD_PlayerMovement.Instance.speed = speedBeforAttack / slowOfAttack;
+                            SD_PlayerMovement.Instance.Move();
+                            timeBeforReset += SD_PlayerAnimation.Instance.attackAnimation[attackNumber - 1].length;
+                            SD_PlayerMovement.Instance.cantMove = true;
+                        } else
+                        {
+                            //add the new attack animation to the cooldown of the combo and disable the movement of the player
+                            timeBeforReset += SD_PlayerAnimation.Instance.attackAnimation[attackNumber - 1].length;
+                            SD_PlayerMovement.Instance.cantMove = true;
+
+                        }
+
+                        // set the animation to the new attack
+                        SD_PlayerAnimation.Instance.PlayerAnimator.SetInteger("AttackNumber", attackNumber);
 
                     }
-
-                    // set the animation to the new attack
-                    SD_PlayerAnimation.Instance.PlayerAnimator.SetInteger("AttackNumber", attackNumber);
 
                 }
                 #endregion
+                else
+                {
+                    SD_PlayerAnimation.Instance.PlayerAnimator.SetTrigger("Wind");
+                    Debug.Log(attacks.transform.rotation.z);
+                    attacks.GetChildNamed("Wind").GetComponent<AreaEffector2D>().forceAngle = attacks.transform.eulerAngles.z;
+                    
+                }
+                
             }
             #region attackEnd
             //timer to let the attack play and then return to the idle
