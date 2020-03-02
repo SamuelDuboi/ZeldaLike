@@ -115,9 +115,10 @@ GameObject:
   - component: {fileID: 2523827873649776058}
   - component: {fileID: 7045281148664471073}
   - component: {fileID: 8857934653958882983}
-  m_Layer: 11
-  m_Name: Wind
-  m_TagString: Player
+  - component: {fileID: 3674336018587227087}
+  m_Layer: 9
+  m_Name: WindPush
+  m_TagString: Wind
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -146,8 +147,8 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 1
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.00000011920929, y: -0.011824131}
   m_SpriteTilingProperty:
@@ -170,14 +171,14 @@ AreaEffector2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3834187232453695320}
-  m_Enabled: 1
+  m_Enabled: 0
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 28672
   m_UseGlobalAngle: 0
   m_ForceAngle: 0
-  m_ForceMagnitude: 100
+  m_ForceMagnitude: 500
   m_ForceVariation: 0
   m_ForceTarget: 1
   m_Drag: 20
@@ -232,6 +233,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3674336018587227087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3834187232453695320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21bce86c6d526974e9b8ff4e6357afe4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  windForce: 50
 --- !u!1 &4455326353366131437
 GameObject:
   m_ObjectHideFlags: 0
@@ -798,7 +812,10 @@ MonoBehaviour:
   cooldownAfterSecond: 0.5
   cooldownAfterThird: 0.5
   cantAttack: 0
-  canParry: 0
+  windAttack: {fileID: 7512021111983014010, guid: 653393627bcc77b4aa4922c6b393b890,
+    type: 3}
+  canParry: 1
+  hasWind: 1
 --- !u!114 &4455326355071513431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -840,7 +857,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7523515021025365951}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
