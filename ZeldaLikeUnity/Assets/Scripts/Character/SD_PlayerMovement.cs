@@ -133,12 +133,12 @@ namespace Player
 
        private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.gameObject.tag == "Wind" )
+            if (collision.gameObject.tag == "Wind" && collision.gameObject.layer == 9 )
             {
                 wind = true;       
                 cantMove = true;
                 cantDash = true;
-                Debug.Log("Vent");
+
                 
             }
             else if(collision.gameObject.tag == "Wall" && wind)

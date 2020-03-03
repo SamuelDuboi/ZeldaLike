@@ -45,7 +45,7 @@ namespace Player
 
         // bool that enable the attack on false
        [HideInInspector] public bool cantAttack;
-
+        // game object de la lame de vent
         [SerializeField] GameObject windAttack;
 
         // bool to unlock abbilities
@@ -88,18 +88,21 @@ namespace Player
                             SD_PlayerMovement.Instance.Move();
                             timeBeforReset += SD_PlayerAnimation.Instance.attackAnimation[attackNumber - 1].length;
                             SD_PlayerMovement.Instance.cantMove = true;
+                            if (hasWind)
+                                WindAttack();
                         } else
                         {
                             //add the new attack animation to the cooldown of the combo and disable the movement of the player
                             timeBeforReset += SD_PlayerAnimation.Instance.attackAnimation[attackNumber - 1].length;
                             SD_PlayerMovement.Instance.cantMove = true;
+                            if (hasWind)
+                                WindAttack();
 
                         }
 
                         // set the animation to the new attack
                         SD_PlayerAnimation.Instance.PlayerAnimator.SetInteger("AttackNumber", attackNumber);
-                        if (hasWind)
-                            WindAttack();
+                        
 
                     }
 
@@ -181,8 +184,19 @@ namespace Player
          public void WindAttack()
         {
             Vector2 velocity = SD_PlayerMovement.Instance.playerRGB.velocity.normalized;
+            Vector2 direction = velocity;
+            // a ajouter si attaque en 4 direction
+            if (velocity.x > 0.7f)
+                direction = Vector2.right;
+            else if (velocity.x < -0.7f)
+                direction = Vector2.left;
+            else if (velocity.y < -0.7f)
+                direction = Vector2.down;
+            else if (velocity.y > 0.7f)
+                direction = Vector2.up;
+            
             GameObject currentWindAttack = GameObject.Instantiate(windAttack, new Vector2( attacks.transform.position.x + velocity.x, attacks.transform.position.y + velocity.y), Quaternion.identity);
-            currentWindAttack.GetComponent<Rigidbody2D>().velocity = velocity * 10;
+            currentWindAttack.GetComponent<Rigidbody2D>().velocity = direction * 10;
             currentWindAttack.transform.rotation = attacks.transform.rotation;
         }
 

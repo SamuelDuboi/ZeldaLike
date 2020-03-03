@@ -12,13 +12,13 @@ namespace Ennemy
     [RequireComponent(typeof(CircleCollider2D))]
     public abstract class SD_EnnemyGlobalBehavior : MonoBehaviour
     {
-      [HideInInspector] public  GameObject player;
-      [HideInInspector] public  Rigidbody2D ennemyRGB;
-       CircleCollider2D aggroZone;
-        [Range(0,10)]
+        [HideInInspector] public GameObject player;
+        [HideInInspector] public Rigidbody2D ennemyRGB;
+        CircleCollider2D aggroZone;
+        [Range(0, 10)]
         public float speed;
-       [HideInInspector]public  bool canMove;
-       [HideInInspector] public bool isAvoidingObstacles;
+        [HideInInspector] public bool canMove;
+        [HideInInspector] public bool isAvoidingObstacles;
         public int damage;
         public int life;
 
@@ -27,7 +27,7 @@ namespace Ennemy
         bool canTakeDamage;
 
         // to avoid wall
-        enum raycastDirection { North, North1,East, East1, South, South1, West, West1 }
+        enum raycastDirection { North, North1, East, East1, South, South1, West, West1 }
         RaycastHit2D[] hitPoints = new RaycastHit2D[8];
         int wallTouch = 4;
 
@@ -49,18 +49,24 @@ namespace Ennemy
                 //isAvoidingObstacles = true;
                 canTakeDamage = true;
                 player = collision.gameObject;
-            }
-            else if(collision.gameObject.layer == 8 )
+            }//if is attack by player
+            else if (collision.gameObject.layer == 8)
             {
-                if(canTakeDamage)
-                StartCoroutine(TakingDamage(SD_PlayerAttack.Instance.currentDamage, collision.gameObject));
-            }
-            else if (collision.gameObject.layer == 14)
+                if (canTakeDamage)
+                    StartCoroutine(TakingDamage(SD_PlayerAttack.Instance.currentDamage, collision.gameObject, false));
+            }//if is attack by projectile
+            else if (collision.gameObject.layer == 14 && collision.gameObject.tag != "Wind")
+            {
                 if (collision.gameObject.GetComponent<CJ_BulletBehaviour>().isParry == true)
                 {
                     collision.gameObject.GetComponent<CJ_BulletBehaviour>().isParry = false;
-                    StartCoroutine(TakingDamage(3, collision.gameObject));
+                    StartCoroutine(TakingDamage(3, collision.gameObject, true));
                 }
+            }//if is aattack by windSlash
+            else if (collision.gameObject.layer == 14 && collision.gameObject.tag == "Wind")
+            {
+                StartCoroutine(TakingDamage(1, collision.gameObject, true));
+            }
 
         }
         public virtual void FixedUpdate()
@@ -69,24 +75,26 @@ namespace Ennemy
             {
                 Mouvement();
             }
-            if(isAvoidingObstacles)
+            if (isAvoidingObstacles)
                 AvoidWalls();
 
 
         }
-        public  virtual  void Mouvement()
+        public virtual void Mouvement()
         {
 
         }
 
-        IEnumerator TakingDamage(int damage, GameObject attack)
+        public IEnumerator TakingDamage(int damage, GameObject attack, bool destroyContact)
         {
             canMove = false;
             life -= damage;
             if (life <= 0)
                 Destroy(gameObject);
-            ennemyRGB.velocity = new Vector2(  transform.position.x -attack.transform.position.x,
-                                              attack.transform.position.y - attack.transform.position.y).normalized *10;
+            ennemyRGB.velocity = new Vector2(transform.position.x - attack.transform.position.x,
+                                              attack.transform.position.y - attack.transform.position.y).normalized * 10;
+            if (destroyContact)
+                Destroy(attack);
             yield return new WaitForSeconds(0.5f);
             ennemyRGB.velocity = Vector2.zero;
             canMove = true;
@@ -95,7 +103,7 @@ namespace Ennemy
         /// <summary>
         /// test if their is any walls around the game object, disabled movement if yes and focus on avoiding it
         /// </summary>
-       void AvoidWalls()
+        void AvoidWalls()
         {// cast 2 ray cast for each poles, the ray are cast at the corner of the hitbox, the ray range is 2 (pretty small)
             LayerMask wallMask = LayerMask.GetMask("Wall");
             RaycastHit2D northRay = Physics2D.Raycast(rayStartCorner[0].transform.position, transform.TransformDirection(Vector3.up), 2, wallMask);
@@ -178,14 +186,14 @@ namespace Ennemy
         }
 
         IEnumerator Fall(Vector2 collision)
-        {            
+        {
             canMove = false;
-            isAggro = false;          
-            
+            isAggro = false;
+
             ennemyRGB.velocity = Vector2.zero;
             GetComponent<BoxCollider2D>().isTrigger = true;
             transform.position = Vector3.MoveTowards(transform.position, collision, 200);
-            
+
             for (int i = 0; i < 100; i++)
             {
                 Vector2 reduction = Vector2Extensions.addVector(transform.localScale, -new Vector2(0.01f, 0.01f));
