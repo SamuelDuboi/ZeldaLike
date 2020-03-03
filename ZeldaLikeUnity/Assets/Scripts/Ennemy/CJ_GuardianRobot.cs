@@ -33,14 +33,14 @@ namespace Ennemy
             if(Vector2.Distance(transform.position,player.transform.position) > attackRange)
             {
                 transform.position = Vector3.MoveTowards(transform.position, player.transform.position, Time.deltaTime * speed);
-                if(canAttack == true && limit < 2)
+                if(canAttack  && limit < 2)
                 {
                     StartCoroutine(Shoot());
                 }
             }
             else if (Vector2.Distance(transform.position, player.transform.position) <= attackRange)
             {
-                if (canAttack == true)
+                if (canAttack )
                 {
                     StartCoroutine(Smash());
                 }
@@ -75,7 +75,7 @@ namespace Ennemy
         public IEnumerator Smash()
         {
             float time = 0.8f;
-            isAggro = false;
+            canMove = false;
             canAttack = false;
             GetComponent<SpriteRenderer>().color = Color.blue;
             yield return new WaitForSeconds(1f);
@@ -91,7 +91,7 @@ namespace Ennemy
             smashImpact.SetActive(false);
             yield return new WaitForSeconds(3f);
             limit = 0;
-            isAggro = true;
+            canMove = true;
             canAttack = true;
         }
     }

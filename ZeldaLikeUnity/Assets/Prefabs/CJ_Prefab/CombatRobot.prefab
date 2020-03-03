@@ -46,7 +46,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 13.796072
+  m_Radius: 35
 --- !u!1 &3050688596633675071
 GameObject:
   m_ObjectHideFlags: 0
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 3050688596633675070}
   - component: {fileID: 3050688596633675068}
   - component: {fileID: 3050688596633675069}
-  m_Layer: 12
+  m_Layer: 17
   m_Name: Attack-right
   m_TagString: Ennemy
   m_Icon: {fileID: 0}
@@ -196,7 +196,7 @@ GameObject:
   - component: {fileID: 3050688596753177235}
   - component: {fileID: 3050688596753177233}
   - component: {fileID: 3050688596753177234}
-  m_Layer: 12
+  m_Layer: 17
   m_Name: Attack-up
   m_TagString: Ennemy
   m_Icon: {fileID: 0}
@@ -302,7 +302,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3050688597010067349}
-  m_Layer: 12
+  m_Layer: 17
   m_Name: Attacks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -338,7 +338,7 @@ GameObject:
   - component: {fileID: 3050688597144832417}
   - component: {fileID: 3050688597144832447}
   - component: {fileID: 3050688597144832416}
-  m_Layer: 12
+  m_Layer: 17
   m_Name: Attack-down
   m_TagString: Ennemy
   m_Icon: {fileID: 0}
@@ -446,7 +446,7 @@ GameObject:
   - component: {fileID: 3050688597297297738}
   - component: {fileID: 3050688597297297736}
   - component: {fileID: 3050688597297297737}
-  m_Layer: 12
+  m_Layer: 17
   m_Name: Attack-left
   m_TagString: Ennemy
   m_Icon: {fileID: 0}

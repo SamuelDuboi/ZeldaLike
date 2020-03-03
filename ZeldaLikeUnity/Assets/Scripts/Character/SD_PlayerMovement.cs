@@ -176,6 +176,7 @@ namespace Player
 
         IEnumerator Fall(Collision2D collisionPoint)
         {
+            Vector2 bouncePoint = -new Vector2(XAxis,YAxis)/2;
             cantDash = true;
             cantMove = true;
             SD_PlayerLife.Instance.cantTakeDamage = true;
@@ -190,8 +191,8 @@ namespace Player
             }
             SD_PlayerAnimation.Instance.gameObject.transform.localScale = Vector2.one;
             speed = 0;
-            Vector2 bouncePoint =  new Vector2(collisionPoint.GetContact(0).point.x - transform.position.x, collisionPoint.GetContact(0).point.y - transform.position.y+0.5f);
-            transform.position = new Vector2(transform.position.x - bouncePoint.x, transform.position.y - bouncePoint.y);
+            
+            transform.position = new Vector2(transform.position.x + bouncePoint.x, transform.position.y + bouncePoint.y);
             StartCoroutine(SD_PlayerLife.Instance.TakingDamage(fallDamage, collisionPoint.gameObject, false));
             speed = initialSpeed;
             playerRGB.simulated = true;

@@ -37,18 +37,18 @@ namespace Ennemy
             }
           else if(Vector2.Distance(transform.position, player.transform.position) <= chargeRange && Vector2.Distance(transform.position, player.transform.position) > slashRange)
             {
-                if(canCharge == true)
+                if(canCharge)
                 {
                     StartCoroutine(Charge());
                 }
-                else if(canCharge == false && isAggro == true)
+                else if(!canCharge  && isAggro )
                 {
                     transform.position = Vector3.MoveTowards(transform.position, player.transform.position, Time.deltaTime * speed);
                 }
             }
           else if(Vector2.Distance(transform.position, player.transform.position) <= slashRange)
             {
-                if(canCharge == true)
+                if(canCharge )
                 {
                     StartCoroutine(SlashAttack());
                 }

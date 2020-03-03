@@ -46,7 +46,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 22.675282
+  m_Radius: 40
 --- !u!1 &7998620807887986958
 GameObject:
   m_ObjectHideFlags: 0
@@ -199,7 +199,7 @@ GameObject:
   - component: {fileID: 7998620808855473958}
   - component: {fileID: 7998620808855473956}
   - component: {fileID: 7998620808855473959}
-  m_Layer: 12
+  m_Layer: 17
   m_Name: SmashAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}

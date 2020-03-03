@@ -24,7 +24,7 @@ namespace Ennemy
         [HideInInspector] public bool isAggro;
 
         bool canTakeDamage;
-
+        
         // to avoid wall
         enum raycastDirection { North, North1, East, East1, South, South1, West, West1 }
         RaycastHit2D[] hitPoints = new RaycastHit2D[8];
@@ -34,7 +34,7 @@ namespace Ennemy
         public virtual void Start()
         {
             ennemyRGB = GetComponent<Rigidbody2D>();
-            aggroZone = GetComponent<CircleCollider2D>();
+            aggroZone = GetComponentInChildren<CircleCollider2D>();
         }
 
 
@@ -45,7 +45,7 @@ namespace Ennemy
                 aggroZone.enabled = false;
                 isAggro = true;
                 canMove = true;
-                //isAvoidingObstacles = true;
+                isAvoidingObstacles = true;
                 canTakeDamage = true;
                 player = collision.gameObject;
             }//if is attack by player
@@ -64,7 +64,7 @@ namespace Ennemy
             }//if is aattack by windSlash
             else if (collision.gameObject.layer == 14 && collision.gameObject.tag == "Wind")
             {
-                StartCoroutine(TakingDamage(1, collision.gameObject, true));
+                StartCoroutine(TakingDamage(1, collision.gameObject, true ));
             }
 
         }
@@ -86,17 +86,24 @@ namespace Ennemy
 
         public IEnumerator TakingDamage(int damage, GameObject attack, bool destroyContact)
         {
-            canMove = false;
-            life -= damage;
-            if (life <= 0)
-                Destroy(gameObject);
-            ennemyRGB.velocity = new Vector2(transform.position.x - attack.transform.position.x,
-                                              attack.transform.position.y - attack.transform.position.y).normalized * 10;
-            if (destroyContact)
-                Destroy(attack);
-            yield return new WaitForSeconds(0.5f);
-            ennemyRGB.velocity = Vector2.zero;
-            canMove = true;
+            if (canTakeDamage)
+            {
+                canTakeDamage = false;
+                canMove = false;
+                life -= damage;
+                if (life <= 0)
+                    Destroy(gameObject);
+                ennemyRGB.velocity = new Vector2(transform.position.x - attack.transform.position.x,
+                                                  attack.transform.position.y - attack.transform.position.y).normalized * 10;
+                if (destroyContact)
+                    Destroy(attack);
+                yield return new WaitForSeconds(0.2f*damage);
+                ennemyRGB.velocity = Vector2.zero;
+                canMove = true;
+                canTakeDamage = true;
+
+            }
+            
 
         }
         /// <summary>
@@ -124,7 +131,7 @@ namespace Ennemy
             hitPoints[(int)raycastDirection.West] = westRay;
             hitPoints[(int)raycastDirection.West1] = westRay;
 
-
+          
 
 
             if (isAggro)
@@ -137,11 +144,11 @@ namespace Ennemy
                     if (hitPoints[i].collider != null)
                     {
                         // if the collision point is too close, the object go backward to avoid to fall in the holes
-                        if (Vector2.Distance(transform.position, hitPoints[i].point) <= 1.9f)
+                        if (Vector2.Distance(transform.position, hitPoints[i].point) <= 1.5)
                             transform.position = Vector2.MoveTowards(transform.position,
-                                                                        new Vector2(transform.position.x - (hitPoints[i].point.x - transform.position.x),
+                                                                     new Vector2(transform.position.x - (hitPoints[i].point.x - transform.position.x),
                                                                                      transform.position.y - (hitPoints[i].point.y - transform.position.y)),
-                                                                      Time.deltaTime * speed);
+                                                                     Time.deltaTime * speed);
 
                         wallTouch = i;
                         break;
@@ -152,6 +159,8 @@ namespace Ennemy
                         canMove = true;
                         wallTouch = 8;
                     }
+
+                    Debug.DrawLine(transform.position, hitPoints[i].point);
                 }
 
                 if (wallTouch < 8)
@@ -191,15 +200,23 @@ namespace Ennemy
 
             ennemyRGB.velocity = Vector2.zero;
             GetComponent<BoxCollider2D>().isTrigger = true;
+            GetComponent<SpriteRenderer>().color = Color.red;
             transform.position = Vector3.MoveTowards(transform.position, collision, 200);
-
-            for (int i = 0; i < 100; i++)
+            Vector3 currentScale = transform.localScale;
+            for (int i = 0; i < 20; i++)
             {
                 Vector2 reduction = Vector2Extensions.addVector(transform.localScale, -new Vector2(0.01f, 0.01f));
                 transform.localScale = reduction;
                 yield return new WaitForSeconds(0.001f);
             }
-            Destroy(gameObject);
+            GetComponent<SpriteRenderer>().color = Color.white;
+            transform.localScale = currentScale;
+            life --;
+            if (life <= 0)
+                Destroy(gameObject);
+            canMove = true;
+            isAggro = true;
+            GetComponent<BoxCollider2D>().isTrigger = false;
         }
     }
 }

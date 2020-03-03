@@ -34,10 +34,8 @@ namespace Ennemy
             else if (collision.gameObject.layer == 8)
             {
 
-                Debug.Log("ALLO");
                 if (SD_PlayerAttack.Instance.canParry)
                 {
-                    Debug.Log("ALLO2");
                     isParry = true;
                     GetComponent<Rigidbody2D>().velocity = Vector2.zero;
                 }                               
