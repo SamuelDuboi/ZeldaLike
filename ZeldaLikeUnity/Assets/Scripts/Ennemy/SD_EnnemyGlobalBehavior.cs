@@ -9,7 +9,6 @@ namespace Ennemy
 {
     [RequireComponent(typeof(Rigidbody2D))]
     [RequireComponent(typeof(BoxCollider2D))]
-    [RequireComponent(typeof(CircleCollider2D))]
     public abstract class SD_EnnemyGlobalBehavior : MonoBehaviour
     {
         [HideInInspector] public GameObject player;
