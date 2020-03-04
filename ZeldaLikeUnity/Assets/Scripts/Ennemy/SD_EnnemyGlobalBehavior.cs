@@ -13,7 +13,8 @@ namespace Ennemy
     {
         [HideInInspector] public GameObject player;
         [HideInInspector] public Rigidbody2D ennemyRGB;
-        CircleCollider2D aggroZone;
+        public GameObject aggroZone;
+        public GameObject desaggroZone;
         [Range(0, 10)]
         public float speed;
         [HideInInspector] public bool canMove;
@@ -24,7 +25,7 @@ namespace Ennemy
         [HideInInspector] public bool isAggro;
 
         bool canTakeDamage;
-        
+
         // to avoid wall
         enum raycastDirection { North, North1, East, East1, South, South1, West, West1 }
         RaycastHit2D[] hitPoints = new RaycastHit2D[8];
@@ -34,7 +35,6 @@ namespace Ennemy
         public virtual void Start()
         {
             ennemyRGB = GetComponent<Rigidbody2D>();
-            aggroZone = GetComponentInChildren<CircleCollider2D>();
         }
 
 
@@ -42,7 +42,8 @@ namespace Ennemy
         {
             if (collision.gameObject.tag == "Player")
             {
-                aggroZone.enabled = false;
+                aggroZone.SetActive( false);
+                desaggroZone.SetActive( true);
                 isAggro = true;
                 canMove = true;
                 isAvoidingObstacles = true;
@@ -64,9 +65,23 @@ namespace Ennemy
             }//if is aattack by windSlash
             else if (collision.gameObject.layer == 14 && collision.gameObject.tag == "Wind")
             {
-                StartCoroutine(TakingDamage(1, collision.gameObject, true ));
+                StartCoroutine(TakingDamage(1, collision.gameObject, true));
             }
 
+        }
+
+        private void OnTriggerExit2D(Collider2D collision)
+        {
+            if (collision.gameObject.tag == "Player")
+            {
+                aggroZone.SetActive(true);
+                desaggroZone.SetActive(false);
+                isAggro = false;
+                canMove = false;
+                isAvoidingObstacles = false;
+                canTakeDamage = false;
+
+            }
         }
         public virtual void FixedUpdate()
         {
@@ -97,13 +112,13 @@ namespace Ennemy
                                                   attack.transform.position.y - attack.transform.position.y).normalized * 10;
                 if (destroyContact)
                     Destroy(attack);
-                yield return new WaitForSeconds(0.2f*damage);
+                yield return new WaitForSeconds(0.2f * damage);
                 ennemyRGB.velocity = Vector2.zero;
                 canMove = true;
                 canTakeDamage = true;
 
             }
-            
+
 
         }
         /// <summary>
@@ -131,7 +146,7 @@ namespace Ennemy
             hitPoints[(int)raycastDirection.West] = westRay;
             hitPoints[(int)raycastDirection.West1] = westRay;
 
-          
+
 
 
             if (isAggro)
@@ -211,7 +226,7 @@ namespace Ennemy
             }
             GetComponent<SpriteRenderer>().color = Color.white;
             transform.localScale = currentScale;
-            life --;
+            life--;
             if (life <= 0)
                 Destroy(gameObject);
             canMove = true;

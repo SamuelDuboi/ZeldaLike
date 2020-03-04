@@ -179,8 +179,8 @@ namespace Player
             cantAttack = true;
             yield return new WaitForSeconds(cooldown);
             cantAttack = false;
-
         }
+
          public void WindAttack()
         {
             Vector2 velocity = SD_PlayerMovement.Instance.playerRGB.velocity.normalized;
