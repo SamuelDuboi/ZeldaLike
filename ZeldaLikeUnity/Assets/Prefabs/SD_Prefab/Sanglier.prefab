@@ -41,7 +41,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -88,7 +88,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -245,8 +245,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   ennemyRGB: {fileID: 0}
-  aggroZone: {fileID: 6701717999121237762}
-  desaggroZone: {fileID: 8829993890490745644}
+  aggroZone: {fileID: 2203752920297478274}
+  desaggroZone: {fileID: 2063323278548690224}
   speed: 5
   canMove: 0
   isAvoidingObstacles: 0

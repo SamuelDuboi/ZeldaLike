@@ -20,14 +20,17 @@ namespace Player
         //inputs on x and y axis
         float XAxis;
         float YAxis;
-
+        float sprint = 1f;
+        [Range(1,2)]
+        public float sprintForce;
         [HideInInspector] public Rigidbody2D playerRGB;
 
         [Range(0, 3)]
         public float dashTime;
         [Range(0, 10)]
         public int dashForce ;
-
+        [Range(0, 10)]
+        public float dashCooldown;
         public int fallDamage;
         //enable movement on false
         [HideInInspector] public bool cantMove;
@@ -55,8 +58,11 @@ namespace Player
                 Move();
             }
             else
+            {
                 SD_PlayerAnimation.Instance.PlayerAnimator.SetBool("IsMoving", false);
-           
+                sprint = 1;
+            }
+
 
         }
         private void Update()
@@ -72,7 +78,7 @@ namespace Player
         public void Move()
         {
             SD_PlayerAnimation.Instance.PlayerAnimator.SetBool("IsMoving", !cantMove);
-            playerRGB.velocity = new Vector2(XAxis, YAxis) * speed;
+            playerRGB.velocity = new Vector2(XAxis, YAxis) * speed*sprint;
             if (XAxis < 0.1 && XAxis > -0.1 && YAxis > 0.1)                
             {
                 SD_PlayerAnimation.Instance.PlayerAnimator.SetFloat("YAxis", 1f);
@@ -123,7 +129,9 @@ namespace Player
                     yield return new WaitForSeconds(dashTime);
                     // end of the dash, reset of the speed, the player can move and the player can dash again
                     speed = initialSpeed;
+                    sprint = sprintForce;
                     cantMove = false;
+                    yield return new WaitForSeconds(dashCooldown);
                     isActive = false;
                 }
 

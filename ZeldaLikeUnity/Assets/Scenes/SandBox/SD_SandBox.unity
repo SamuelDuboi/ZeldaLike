@@ -226,7 +226,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!156049354 &286729834
 Grid:
   m_ObjectHideFlags: 0
@@ -1457,6 +1457,16 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4455326354814619344, guid: 94f740b0faa1a664da745400ca412b64,
+        type: 3}
+      propertyPath: sprintForce
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455326354814619344, guid: 94f740b0faa1a664da745400ca412b64,
+        type: 3}
+      propertyPath: dashCooldown
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4455326355006402085, guid: 94f740b0faa1a664da745400ca412b64,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1536,6 +1546,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.y
       value: 1.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455326355071513430, guid: 94f740b0faa1a664da745400ca412b64,
+        type: 3}
+      propertyPath: slowOfAttack
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455326355071513430, guid: 94f740b0faa1a664da745400ca412b64,
+        type: 3}
+      propertyPath: hasWind
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94f740b0faa1a664da745400ca412b64, type: 3}
