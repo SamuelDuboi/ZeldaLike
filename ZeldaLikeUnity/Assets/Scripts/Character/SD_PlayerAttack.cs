@@ -23,16 +23,16 @@ namespace Player
         //the speed befor the attack, its use to reset the speed to initial after the attack
         float speedBeforAttack;
         // the speed will be devided by this during the attack
-        [Range(0,5)]
-        public float slowOfAttack= 2;
+        [Range(0, 5)]
+        public float slowOfAttack = 2;
         // stack the attacks,this game object rotation will change according to the input of the player, so the attacks will have the good orientation
         public GameObject attacks;
 
-        public int[] damage= new int[3];
-       [HideInInspector] public int currentDamage;
+        public int[] damage = new int[3];
+        [HideInInspector] public int currentDamage;
 
         //if the player doesn't combo, he will ahve a cooldown befor atatcking again,the cooldown will change depending of the former combo
-        [Header ("Cooldowns")]        
+        [Header("Cooldowns")]
         // cooldown after 1 combo
         [Range(0, 1)]
         public float cooldownAfterFirst;
@@ -44,7 +44,7 @@ namespace Player
         public float cooldownAfterThird;
 
         // bool that enable the attack on false
-       [HideInInspector] public bool cantAttack;
+        [HideInInspector] public bool cantAttack;
         // game object de la lame de vent
         [SerializeField] GameObject windAttack;
 
@@ -53,14 +53,22 @@ namespace Player
 
         public bool canParry;
         public bool hasWind;
-    
+
+        float energyPower;
+        float energySlash;
+
+        private void Start()
+        {
+            energyPower = SD_PlayerRessources.Instance.energyCostPower;
+            energySlash = SD_PlayerRessources.Instance.energyCostSlash;
+        }
         void Update()
-            {
+        {
             // input of attack needed to be change
             if (Input.GetButtonDown("Attack") || Input.GetButtonDown("Wind"))
             {
-                 playerVelocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-                SD_PlayerMovement.Instance.playerRGB.velocity = playerVelocity * speedBeforAttack*1.5f;
+                playerVelocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+                SD_PlayerMovement.Instance.playerRGB.velocity = playerVelocity * speedBeforAttack * 1.5f;
 
                 #region attack;
                 if (Input.GetButtonDown("Attack"))
@@ -76,44 +84,44 @@ namespace Player
                         else if (attackNumber == 1)
                         {
                             //get the speed of the player, devided it by slow attack, set the new velocity, add the new attack animation to the cooldown of the combo and disable the movement of the player
-                           
+
                             speedBeforAttack = SD_PlayerMovement.Instance.speed;
-                            SD_PlayerMovement.Instance.speed = speedBeforAttack / slowOfAttack;                            
+                            SD_PlayerMovement.Instance.speed = speedBeforAttack / slowOfAttack;
                             timeBeforReset += SD_PlayerAnimation.Instance.attackAnimation[attackNumber - 1].length;
-                            
-                            if (hasWind)
-                                WindAttack();
-                        } else
+
+
+                        }
+                        else
                         {
                             //add the new attack animation to the cooldown of the combo and disable the movement of the player
-                            timeBeforReset += SD_PlayerAnimation.Instance.attackAnimation[attackNumber - 1].length;                            
-                            if (hasWind)
-                                WindAttack();
+                            timeBeforReset += SD_PlayerAnimation.Instance.attackAnimation[attackNumber - 1].length;
+
 
                         }
 
                         // set the animation to the new attack
                         SD_PlayerAnimation.Instance.PlayerAnimator.SetInteger("AttackNumber", attackNumber);
                         SD_PlayerMovement.Instance.cantMove = true;
-                        
 
-                        
+
+
 
                     }
 
                 }
                 #endregion
-                else if (hasWind)
+                else if (hasWind && SD_PlayerRessources.Instance.currentEnergy >= energyPower && Input.GetAxis("Harmony") != 0)
                 {
-                    SD_PlayerAnimation.Instance.PlayerAnimator.SetTrigger("Wind");                                    
+                    SD_PlayerAnimation.Instance.PlayerAnimator.SetTrigger("Wind");
+                    SD_PlayerRessources.Instance.EnergyLose(energyPower);
                 }
-                
+
             }
             #region attackEnd
             //timer to let the attack play and then return to the idle
             if (timeOn)
-            {                
-               
+            {
+
                 if (playerVelocity.x > 0.7f)
                 {
                     attacks.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
@@ -141,7 +149,7 @@ namespace Player
                 }
                 timer += Time.deltaTime;
                 // if the time is higher than the some of the combo's animations time
-                if( timer>= timeBeforReset )
+                if (timer >= timeBeforReset)
                 {
                     //cooldown depending of the combo number
                     switch (attackNumber)
@@ -164,14 +172,14 @@ namespace Player
                     SD_PlayerAnimation.Instance.PlayerAnimator.SetInteger("AttackNumber", attackNumber);
                     timeBeforReset = 0;
                     SD_PlayerMovement.Instance.cantMove = false;
-                    SD_PlayerMovement.Instance.speed = speedBeforAttack;                    
-                    
-                    
+                    SD_PlayerMovement.Instance.speed = speedBeforAttack;
+
+
                 }
             }
             #endregion
-            if (attackNumber<4 && attackNumber>0 )
-            currentDamage = damage[attackNumber-1];
+            if (attackNumber < 4 && attackNumber > 0)
+                currentDamage = damage[attackNumber - 1];
         }
         /// <summary>
         /// call to stop the attack after the time chosen
@@ -181,7 +189,7 @@ namespace Player
 
         public IEnumerator Cancel(float timeToCancel)
         {
-            if(timeToCancel == 0)
+            if (timeToCancel == 0)
             {
                 timeBeforReset = timeToCancel;
             }
@@ -189,13 +197,13 @@ namespace Player
             attackNumber = 0;
             timer = 0;
         }
-       
+
         /// <summary>
         /// call to disable the attack for a certain amount of time after the end of the attack's animation
         /// </summary>
         /// <param name="cooldown"></param>
         /// <returns></returns>
-        IEnumerator Cooldown( float cooldown)
+        IEnumerator Cooldown(float cooldown)
         {
             cantAttack = true;
             yield return new WaitForSeconds(cooldown);
@@ -204,23 +212,28 @@ namespace Player
         /// <summary>
         /// instantiate wind blade in front of the player
         /// </summary>
-         public void WindAttack()
+        public void WindAttack()
         {
-            Vector2 velocity = SD_PlayerMovement.Instance.playerRGB.velocity.normalized;
-            Vector2 direction = velocity;
-            // a ajouter si attaque en 4 direction
-            if (velocity.x > 0.7f)
-                direction = Vector2.right;
-            else if (velocity.x < -0.7f)
-                direction = Vector2.left;
-            else if (velocity.y < -0.7f)
-                direction = Vector2.down;
-            else if (velocity.y > 0.7f)
-                direction = Vector2.up;
-            
-            GameObject currentWindAttack = GameObject.Instantiate(windAttack, new Vector2( attacks.transform.position.x + velocity.x, attacks.transform.position.y + velocity.y), Quaternion.identity);
-            currentWindAttack.GetComponent<Rigidbody2D>().velocity = direction * 10;
-            currentWindAttack.transform.rotation = attacks.transform.rotation;
+            if (hasWind && SD_PlayerRessources.Instance.currentEnergy >= energySlash && Input.GetAxis("Harmony") != 0)
+            {
+                Vector2 velocity = SD_PlayerMovement.Instance.playerRGB.velocity.normalized;
+                Vector2 direction = velocity;
+                // a ajouter si attaque en 4 direction
+                if (velocity.x > 0.7f)
+                    direction = Vector2.right;
+                else if (velocity.x < -0.7f)
+                    direction = Vector2.left;
+                else if (velocity.y < -0.7f)
+                    direction = Vector2.down;
+                else if (velocity.y > 0.7f)
+                    direction = Vector2.up;
+
+                GameObject currentWindAttack = GameObject.Instantiate(windAttack, new Vector2(attacks.transform.position.x + velocity.x, attacks.transform.position.y + velocity.y), Quaternion.identity);
+                currentWindAttack.GetComponent<Rigidbody2D>().velocity = direction * 10;
+                currentWindAttack.transform.rotation = attacks.transform.rotation;
+                SD_PlayerRessources.Instance.EnergyLose(energySlash);
+            }
+
         }
 
     }

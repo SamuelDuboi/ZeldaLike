@@ -187,7 +187,7 @@ namespace Player
             Vector2 bouncePoint = -new Vector2(XAxis,YAxis)/2;
             cantDash = true;
             cantMove = true;
-            SD_PlayerLife.Instance.cantTakeDamage = true;
+            SD_PlayerRessources.Instance.cantTakeDamage = true;
             SD_PlayerAttack.Instance.cantAttack = true;
             playerRGB.simulated = false;
 
@@ -201,12 +201,12 @@ namespace Player
             speed = 0;
             
             transform.position = new Vector2(transform.position.x + bouncePoint.x, transform.position.y + bouncePoint.y);
-            StartCoroutine(SD_PlayerLife.Instance.TakingDamage(fallDamage, collisionPoint.gameObject, false));
+            StartCoroutine(SD_PlayerRessources.Instance.TakingDamage(fallDamage, collisionPoint.gameObject, false));
             speed = initialSpeed;
             playerRGB.simulated = true;
             cantDash = false;
             cantMove = false;
-            SD_PlayerLife.Instance.cantTakeDamage = false;
+            SD_PlayerRessources.Instance.cantTakeDamage = false;
             SD_PlayerAttack.Instance.cantAttack = false;
         }
     }

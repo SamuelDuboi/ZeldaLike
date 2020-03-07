@@ -26,7 +26,7 @@ namespace Ennemy
         {
             if (collision.gameObject.CompareTag("Player"))
             {
-                StartCoroutine(SD_PlayerLife.Instance.TakingDamage(bulletDamage, gameObject, true));
+                StartCoroutine(SD_PlayerRessources.Instance.TakingDamage(bulletDamage, gameObject, true));
                 GetComponent<SpriteRenderer>().enabled = false;
                 GetComponent<BoxCollider2D>().enabled = false;
             }

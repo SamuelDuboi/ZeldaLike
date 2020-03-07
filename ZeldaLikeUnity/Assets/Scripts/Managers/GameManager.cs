@@ -28,7 +28,7 @@ namespace Management
             Save save = new Save();
             save.playerPositionX =  SD_PlayerMovement.Instance.transform.position.x;
             save.playerPositionY =  SD_PlayerMovement.Instance.transform.position.y;
-            save.pvMax = SD_PlayerLife.Instance.maxLife;
+            save.pvMax = SD_PlayerRessources.Instance.currentMaxLife;
             
 
             return save;
@@ -46,8 +46,8 @@ namespace Management
                 file.Close();
 
                 player.transform.position = new Vector2(save.playerPositionX, save.playerPositionY);
-                SD_PlayerLife.Instance.maxLife = save.pvMax;
-                SD_PlayerLife.Instance.Heal(save.pvMax);
+                SD_PlayerRessources.Instance.currentMaxLife = save.pvMax;
+                SD_PlayerRessources.Instance.Heal(save.pvMax);
 
                 Debug.Log("Game Loaded");
 
