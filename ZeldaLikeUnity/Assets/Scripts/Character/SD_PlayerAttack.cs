@@ -59,6 +59,7 @@ namespace Player
 
         private void Start()
         {
+            MakeSingleton(false);
             energyPower = SD_PlayerRessources.Instance.energyCostPower;
             energySlash = SD_PlayerRessources.Instance.energyCostSlash;
         }
@@ -85,7 +86,7 @@ namespace Player
                         {
                             //get the speed of the player, devided it by slow attack, set the new velocity, add the new attack animation to the cooldown of the combo and disable the movement of the player
 
-                            speedBeforAttack = SD_PlayerMovement.Instance.speed;
+                            speedBeforAttack = SD_PlayerMovement.Instance.initialSpeed;
                             SD_PlayerMovement.Instance.speed = speedBeforAttack / slowOfAttack;
                             timeBeforReset += SD_PlayerAnimation.Instance.attackAnimation[attackNumber - 1].length;
 
@@ -95,7 +96,6 @@ namespace Player
                         {
                             //add the new attack animation to the cooldown of the combo and disable the movement of the player
                             timeBeforReset += SD_PlayerAnimation.Instance.attackAnimation[attackNumber - 1].length;
-
 
                         }
 
@@ -219,14 +219,7 @@ namespace Player
                 Vector2 velocity = SD_PlayerMovement.Instance.playerRGB.velocity.normalized;
                 Vector2 direction = velocity;
                 // a ajouter si attaque en 4 direction
-                if (velocity.x > 0.7f)
-                    direction = Vector2.right;
-                else if (velocity.x < -0.7f)
-                    direction = Vector2.left;
-                else if (velocity.y < -0.7f)
-                    direction = Vector2.down;
-                else if (velocity.y > 0.7f)
-                    direction = Vector2.up;
+                direction = new Vector2(SD_PlayerAnimation.Instance.PlayerAnimator.GetFloat("XAxis"), SD_PlayerAnimation.Instance.PlayerAnimator.GetFloat("YAxis"));
 
                 GameObject currentWindAttack = GameObject.Instantiate(windAttack, new Vector2(attacks.transform.position.x + velocity.x, attacks.transform.position.y + velocity.y), Quaternion.identity);
                 currentWindAttack.GetComponent<Rigidbody2D>().velocity = direction * 10;

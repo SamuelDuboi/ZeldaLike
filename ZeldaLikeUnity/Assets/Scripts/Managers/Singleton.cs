@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace Management
 {
     public abstract class Singleton<T> : MonoBehaviour where T : Component
     {
-
+      public static List<GameObject> test = new List<GameObject>();
         /// <summary>
         /// The instance.
         /// </summary>
@@ -50,5 +52,6 @@ namespace Management
                 Destroy(gameObject);
             }
         }
+ 
     }
 }

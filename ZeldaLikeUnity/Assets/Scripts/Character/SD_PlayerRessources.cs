@@ -29,9 +29,10 @@ namespace Player
         [Range(0,1)]
         public float energyRegenCooldown;
         bool canRegenEnergy;
-        private void Start()
+        private void Awake()
         {
-            MakeSingleton(true);
+            
+            MakeSingleton(false);
             //life
             life = currentMaxLife;
             lifeEmpty = GameObject.FindGameObjectWithTag("Life").GetComponent<Image>();
@@ -48,6 +49,7 @@ namespace Player
         }
         private void Update()
         {
+            
             if (canRegenEnergy)
             {
                 currentEnergy+=0.01f;
@@ -58,7 +60,7 @@ namespace Player
                     canRegenEnergy = false;
                 }
             }
-                
+            
         }
         private void OnCollisionEnter2D(Collision2D collision)
         {

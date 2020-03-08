@@ -16,7 +16,7 @@ namespace Player
         // speed of the player
         [Range(0, 10)]
         public float speed;
-        float initialSpeed;
+        [HideInInspector] public float initialSpeed;
         //inputs on x and y axis
         float XAxis;
         float YAxis;
