@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Management;
+using Ennemy;
 
 
 
@@ -37,6 +38,7 @@ namespace Player
 
         [HideInInspector] public bool cantDash;
 
+        [HideInInspector] public bool hasWindShield;
 
         bool isActive;
         bool wind;
@@ -126,11 +128,23 @@ namespace Player
                     speed *= dashForce;
                     Move();
                     cantMove = true;
+                    if (Input.GetAxis("Harmony") != 0)
+                    {
+                        hasWindShield = true;
+                        SD_PlayerAttack.Instance.windShield.SetActive(true);
+                        SD_PlayerRessources.Instance.cantTakeDamage = true;
+                    }
                     yield return new WaitForSeconds(dashTime);
                     // end of the dash, reset of the speed, the player can move and the player can dash again
                     speed = initialSpeed;
                     sprint = sprintForce;
                     cantMove = false;
+                    if (SD_PlayerAttack.Instance.windShield.activeSelf)
+                    {
+                        hasWindShield = false;
+                        SD_PlayerAttack.Instance.windShield.SetActive(false);
+                        SD_PlayerRessources.Instance.cantTakeDamage = false;
+                    }
                     yield return new WaitForSeconds(dashCooldown);
                     isActive = false;
                 }
@@ -156,6 +170,7 @@ namespace Player
                 cantDash = false;
                 Debug.Log("Wall");
             }
+            
         }
         private void OnTriggerExit2D(Collider2D collision)
         {
@@ -177,7 +192,7 @@ namespace Player
         {
             if (collision.gameObject.tag == "Hole")
                 StartCoroutine(Fall(collision));
-            
+           
         }
 
 

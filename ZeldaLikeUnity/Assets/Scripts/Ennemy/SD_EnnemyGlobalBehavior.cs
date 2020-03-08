@@ -50,22 +50,26 @@ namespace Ennemy
                 canTakeDamage = true;
                 player = collision.gameObject;
             }//if is attack by player
-            else if (collision.gameObject.layer == 8)
+            else if (collision.gameObject.layer == 8 )
             {
                 if (canTakeDamage)
-                    StartCoroutine(TakingDamage(SD_PlayerAttack.Instance.currentDamage, collision.gameObject, false));
-            }//if is attack by projectile
+                    if (!SD_PlayerAttack.Instance.windShield)
+                        StartCoroutine(TakingDamage(SD_PlayerAttack.Instance.currentDamage, collision.gameObject, false, 10));
+                else
+                        StartCoroutine(TakingDamage(0, collision.gameObject, false, 20));
+
+            } //if is attack by projectile
             else if (collision.gameObject.layer == 14 && collision.gameObject.tag != "Wind")
             {
                 if (collision.gameObject.GetComponent<CJ_BulletBehaviour>().isParry == true)
                 {
                     collision.gameObject.GetComponent<CJ_BulletBehaviour>().isParry = false;
-                    StartCoroutine(TakingDamage(3, collision.gameObject, true));
+                    StartCoroutine(TakingDamage(3, collision.gameObject, true,10));
                 }
             }//if is aattack by windSlash
             else if (collision.gameObject.layer == 14 && collision.gameObject.tag == "Wind")
             {
-                StartCoroutine(TakingDamage(1, collision.gameObject, true));
+                StartCoroutine(TakingDamage(1, collision.gameObject, true,10));
             }
 
         }
@@ -99,23 +103,25 @@ namespace Ennemy
 
         }
 
-        public IEnumerator TakingDamage(int damage, GameObject attack, bool destroyContact)
+        public IEnumerator TakingDamage(int damage, GameObject attack, bool destroyContact, int projectionForce)
         {
             if (canTakeDamage)
             {
                 canTakeDamage = false;
                 canMove = false;
+                isAggro = false;
                 life -= damage;
                 if (life <= 0)
                     Destroy(gameObject);
                 ennemyRGB.velocity = new Vector2(transform.position.x - attack.transform.position.x,
-                                                  attack.transform.position.y - attack.transform.position.y).normalized * 10;
+                                                  attack.transform.position.y - attack.transform.position.y).normalized * projectionForce;
                 if (destroyContact)
                     Destroy(attack);
                 yield return new WaitForSeconds(0.2f * damage);
                 ennemyRGB.velocity = Vector2.zero;
                 canMove = true;
                 canTakeDamage = true;
+                isAggro = true;
 
             }
 

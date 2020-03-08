@@ -57,6 +57,8 @@ namespace Player
         float energyPower;
         float energySlash;
 
+
+        public GameObject windShield;
         private void Start()
         {
             MakeSingleton(false);
