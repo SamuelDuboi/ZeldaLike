@@ -29,7 +29,7 @@ namespace Player
         public GameObject attacks;
 
         public int[] damage = new int[3];
-        [HideInInspector] public int currentDamage;
+         public int currentDamage;
 
         //if the player doesn't combo, he will ahve a cooldown befor atatcking again,the cooldown will change depending of the former combo
         [Header("Cooldowns")]
@@ -91,14 +91,12 @@ namespace Player
                             speedBeforAttack = SD_PlayerMovement.Instance.initialSpeed;
                             SD_PlayerMovement.Instance.speed = speedBeforAttack / slowOfAttack;
                             timeBeforReset += SD_PlayerAnimation.Instance.attackAnimation[attackNumber - 1].length;
-
-
+                          
                         }
                         else
                         {
                             //add the new attack animation to the cooldown of the combo and disable the movement of the player
-                            timeBeforReset += SD_PlayerAnimation.Instance.attackAnimation[attackNumber - 1].length;
-
+                            timeBeforReset += SD_PlayerAnimation.Instance.attackAnimation[attackNumber - 1].length;                         
                         }
 
                         // set the animation to the new attack
@@ -180,8 +178,8 @@ namespace Player
                 }
             }
             #endregion
-            if (attackNumber < 4 && attackNumber > 0)
-                currentDamage = damage[attackNumber - 1];
+
+
         }
         /// <summary>
         /// call to stop the attack after the time chosen
@@ -229,6 +227,10 @@ namespace Player
                 SD_PlayerRessources.Instance.EnergyLose(energySlash);
             }
 
+        }
+        public void AttackMore(int number)
+        {
+            currentDamage = damage[number];
         }
 
     }

@@ -53,7 +53,7 @@ namespace Ennemy
             else if (collision.gameObject.layer == 8 )
             {
                 if (canTakeDamage)
-                    if (!SD_PlayerAttack.Instance.windShield)
+                    if (!SD_PlayerAttack.Instance.windShield.activeSelf && canTakeDamage)
                         StartCoroutine(TakingDamage(SD_PlayerAttack.Instance.currentDamage, collision.gameObject, false, 10));
                 else
                         StartCoroutine(TakingDamage(0, collision.gameObject, false, 20));
@@ -104,13 +104,12 @@ namespace Ennemy
         }
 
         public IEnumerator TakingDamage(int damage, GameObject attack, bool destroyContact, int projectionForce)
-        {
-            if (canTakeDamage)
-            {
-                canTakeDamage = false;
+        {canTakeDamage = false;
                 canMove = false;
                 isAggro = false;
                 life -= damage;
+            Debug.Log("damaeg" + damage);
+            Debug.Log("life" + life);
                 if (life <= 0)
                     Destroy(gameObject);
                 ennemyRGB.velocity = new Vector2(transform.position.x - attack.transform.position.x,
@@ -123,7 +122,7 @@ namespace Ennemy
                 canTakeDamage = true;
                 isAggro = true;
 
-            }
+            
 
 
         }
