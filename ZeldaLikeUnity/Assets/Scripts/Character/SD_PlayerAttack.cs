@@ -54,16 +54,9 @@ namespace Player
         public bool canParry;
         public bool hasWind;
 
-        float energyPower;
-        float energySlash;
-
-
-        public GameObject windShield;
         private void Start()
         {
             MakeSingleton(false);
-            energyPower = SD_PlayerRessources.Instance.energyCostPower;
-            energySlash = SD_PlayerRessources.Instance.energyCostSlash;
         }
         void Update()
         {
@@ -110,10 +103,10 @@ namespace Player
 
                 }
                 #endregion
-                else if (hasWind && SD_PlayerRessources.Instance.currentEnergy >= energyPower && Input.GetAxis("Harmony") != 0)
+                else if (hasWind )
                 {
                     SD_PlayerAnimation.Instance.PlayerAnimator.SetTrigger("Wind");
-                    SD_PlayerRessources.Instance.EnergyLose(energyPower);
+                    
                 }
 
             }
@@ -209,25 +202,7 @@ namespace Player
             yield return new WaitForSeconds(cooldown);
             cantAttack = false;
         }
-        /// <summary>
-        /// instantiate wind blade in front of the player
-        /// </summary>
-        public void WindAttack()
-        {
-            if (hasWind && SD_PlayerRessources.Instance.currentEnergy >= energySlash && Input.GetAxis("Harmony") != 0)
-            {
-                Vector2 velocity = SD_PlayerMovement.Instance.playerRGB.velocity.normalized;
-                Vector2 direction = velocity;
-                // a ajouter si attaque en 4 direction
-                direction = new Vector2(SD_PlayerAnimation.Instance.PlayerAnimator.GetFloat("XAxis"), SD_PlayerAnimation.Instance.PlayerAnimator.GetFloat("YAxis"));
-
-                GameObject currentWindAttack = GameObject.Instantiate(windAttack, new Vector2(attacks.transform.position.x + velocity.x, attacks.transform.position.y + velocity.y), Quaternion.identity);
-                currentWindAttack.GetComponent<Rigidbody2D>().velocity = direction * 10;
-                currentWindAttack.transform.rotation = attacks.transform.rotation;
-                SD_PlayerRessources.Instance.EnergyLose(energySlash);
-            }
-
-        }
+       
         public void AttackMore(int number)
         {
             currentDamage = damage[number];

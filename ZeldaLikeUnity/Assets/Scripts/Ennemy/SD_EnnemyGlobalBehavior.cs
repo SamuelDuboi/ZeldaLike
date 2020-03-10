@@ -52,8 +52,7 @@ namespace Ennemy
             }//if is attack by player
             else if (collision.gameObject.layer == 8 )
             {
-                if (canTakeDamage)
-                    if (!SD_PlayerAttack.Instance.windShield.activeSelf && canTakeDamage)
+                if (canTakeDamage)          
                         StartCoroutine(TakingDamage(SD_PlayerAttack.Instance.currentDamage, collision.gameObject, false, 10));
                 else
                         StartCoroutine(TakingDamage(0, collision.gameObject, false, 20));
@@ -66,10 +65,6 @@ namespace Ennemy
                     collision.gameObject.GetComponent<CJ_BulletBehaviour>().isParry = false;
                     StartCoroutine(TakingDamage(3, collision.gameObject, true,10));
                 }
-            }//if is aattack by windSlash
-            else if (collision.gameObject.layer == 14 && collision.gameObject.tag == "Wind")
-            {
-                StartCoroutine(TakingDamage(1, collision.gameObject, true,10));
             }
 
         }

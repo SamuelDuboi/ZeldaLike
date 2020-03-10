@@ -21,14 +21,7 @@ namespace Player
         public float maxLifePossible;
         [HideInInspector] public bool cantTakeDamage;
 
-        public float currentMaxEnergy;
-        [HideInInspector] public float currentEnergy;
-        public float maxEnergyPossible;
-        public float energyCostPower;
-        public float energyCostSlash;
-        [Range(0,1)]
-        public float energyRegenCooldown;
-        bool canRegenEnergy;
+       
         private void Awake()
         {
             
@@ -40,27 +33,7 @@ namespace Player
             lifeEmpty.fillAmount = currentMaxLife/maxLifePossible;
             lifeBar.fillAmount = currentMaxLife/ maxLifePossible;
 
-            //energy
-            currentEnergy = currentMaxEnergy;
-            energyEmpty = GameObject.FindGameObjectWithTag("Energy").GetComponent<Image>();
-            energyBar = energyEmpty.transform.GetChild(0).GetComponent<Image>();
-            energyEmpty.fillAmount = currentEnergy / maxEnergyPossible;
-            energyBar.fillAmount = currentEnergy / maxEnergyPossible;
-        }
-        private void Update()
-        {
-            
-            if (canRegenEnergy)
-            {
-                currentEnergy+=0.01f;
-                energyBar.fillAmount = currentEnergy / maxEnergyPossible;
-                if (currentEnergy >= currentMaxEnergy)
-                {
-                    currentEnergy = currentMaxEnergy;
-                    canRegenEnergy = false;
-                }
-            }
-            
+           
         }
         private void OnCollisionEnter2D(Collision2D collision)
         {
@@ -122,30 +95,9 @@ namespace Player
             lifeBar.fillAmount = life;
         }
        
-        public void EnergyUpgrade(float amount)
-        {
-            if (currentMaxEnergy != maxEnergyPossible)
-                currentMaxEnergy += amount;
-            currentEnergy = currentMaxEnergy;
-            
-
-        }
+        
         #endregion
-        #region energyLose
-        public void EnergyLose( float amount)
-        {
-            currentEnergy -= amount;
-            energyBar.fillAmount = currentEnergy / maxEnergyPossible;
-            StartCoroutine(CanRegenEnergy());
-        }
-
-        IEnumerator CanRegenEnergy()
-        {
-            canRegenEnergy = false;
-            yield return new WaitForSeconds(energyRegenCooldown);
-            canRegenEnergy = true;
-        }
-        #endregion
+      
     }
 
 

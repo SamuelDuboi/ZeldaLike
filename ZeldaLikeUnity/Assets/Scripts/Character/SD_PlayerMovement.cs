@@ -40,8 +40,17 @@ namespace Player
 
         [HideInInspector] public bool hasWindShield;
 
-        bool isActive;
+        bool dashIsActive;
         bool wind;
+
+        public GameObject windPlatform;
+        [HideInInspector] public bool isAbleToRunOnHole;
+        bool canSpawnPlatform;
+        [HideInInspector] public bool platformIsSpawned;
+        public float platformLifeTime;
+
+        
+        Vector2 playerRespawnAfterFall;
         void Start()
         {
             MakeSingleton(true);
@@ -115,10 +124,10 @@ namespace Player
         {
             if (!cantDash)
             {
-                if (!isActive)
+                if (!dashIsActive)
                 {
                     // the player can't dash during a dash
-                    isActive = true;
+                    dashIsActive = true;
                     //cancel of the current attack if they was an attack
                     StartCoroutine(SD_PlayerAttack.Instance.Cancel(0f));
                     yield return new WaitForSeconds(0.01f);
@@ -128,25 +137,23 @@ namespace Player
                     speed *= dashForce;
                     Move();
                     cantMove = true;
-                    if (Input.GetAxis("Harmony") != 0)
-                    {
-                        hasWindShield = true;
-                        SD_PlayerAttack.Instance.windShield.SetActive(true);
-                        SD_PlayerRessources.Instance.cantTakeDamage = true;
-                    }
+                    cantDash = true;
                     yield return new WaitForSeconds(dashTime);
                     // end of the dash, reset of the speed, the player can move and the player can dash again
                     speed = initialSpeed;
                     sprint = sprintForce;
-                    cantMove = false;
-                    if (SD_PlayerAttack.Instance.windShield.activeSelf)
+                    if (canSpawnPlatform && !platformIsSpawned)
                     {
-                        hasWindShield = false;
-                        SD_PlayerAttack.Instance.windShield.SetActive(false);
-                        SD_PlayerRessources.Instance.cantTakeDamage = false;
+                        Instantiate(windPlatform, new Vector2( transform.position.x + playerRGB.velocity.normalized.x*0.7f, transform.position.y +playerRGB.velocity.normalized.y*0.7f), Quaternion.identity);
+                        canSpawnPlatform = false;
+                        platformIsSpawned = true;
                     }
+                    
+                    yield return new WaitForSeconds(0.1f);
+                    cantMove = false;
+                    dashIsActive = false;
                     yield return new WaitForSeconds(dashCooldown);
-                    isActive = false;
+                    cantDash = false;
                 }
 
             }
@@ -154,23 +161,34 @@ namespace Player
         }
 
        private void OnTriggerEnter2D(Collider2D collision)
-        {
-            if (collision.gameObject.tag == "Wind" && collision.gameObject.layer == 9 )
+        { 
+                if (collision.gameObject.tag == "Wind" && collision.gameObject.layer == 9)
             {
-                wind = true;       
+                wind = true;
                 cantMove = true;
                 cantDash = true;
-
-                
             }
-            else if(collision.gameObject.tag == "Wall" && wind)
+            else if (collision.gameObject.tag == "Wall" && wind)
             {
                 wind = false;
                 cantMove = false;
                 cantDash = false;
                 Debug.Log("Wall");
             }
-            
+            if (collision.gameObject.tag == "Hole")
+                playerRespawnAfterFall = new Vector2( transform.position.x -XAxis*0.7f, transform.position.y - YAxis*0.7f);
+
+        }
+        private void OnTriggerStay2D(Collider2D collision)
+        {
+            if (collision.gameObject.tag == "WindPlatform")
+                isAbleToRunOnHole = true;
+            if (collision.gameObject.tag == "Hole")
+                if (!isAbleToRunOnHole && !dashIsActive)
+                    StartCoroutine(Fall(collision));
+                else if (SD_PlayerAttack.Instance.hasWind)
+                    canSpawnPlatform = true;
+
         }
         private void OnTriggerExit2D(Collider2D collision)
         {
@@ -186,43 +204,47 @@ namespace Player
                 cantMove = true;
                 cantDash = true;
             }
+            if (isAbleToRunOnHole && collision.tag == "WindPlatform" || collision.tag == "Hole")
+                isAbleToRunOnHole = false;
         }
 
-        private void OnCollisionEnter2D(Collision2D collision)
+     
+
+
+
+        IEnumerator Fall(Collider2D collisionPoint)
         {
-            if (collision.gameObject.tag == "Hole")
-                StartCoroutine(Fall(collision));
-           
-        }
+              
 
-
-
-        IEnumerator Fall(Collision2D collisionPoint)
-        {
-            Vector2 bouncePoint = -new Vector2(XAxis,YAxis)/2;
-            cantDash = true;
-            cantMove = true;
-            SD_PlayerRessources.Instance.cantTakeDamage = true;
-            SD_PlayerAttack.Instance.cantAttack = true;
-            playerRGB.simulated = false;
-
-            for (int i = 0; i < 50; i++)
+           if (!dashIsActive)
             {
-                Vector2 reduction = Vector2Extensions.addVector(SD_PlayerAnimation.Instance.gameObject.transform.localScale, -new Vector2(0.02f, 0.02f));
-                SD_PlayerAnimation.Instance.gameObject.transform.localScale = reduction;
-                yield return new WaitForSeconds(0.001f);
+                
+
+                cantDash = true;
+                cantMove = true;
+                SD_PlayerRessources.Instance.cantTakeDamage = true;
+                SD_PlayerAttack.Instance.cantAttack = true;
+                playerRGB.simulated = false;
+
+                for (int i = 0; i < 50; i++)
+                {
+                    Vector2 reduction = Vector2Extensions.addVector(SD_PlayerAnimation.Instance.gameObject.transform.localScale, -new Vector2(0.02f, 0.02f));
+                    SD_PlayerAnimation.Instance.gameObject.transform.localScale = reduction;
+                    yield return new WaitForSeconds(0.001f);
+                }
+                SD_PlayerAnimation.Instance.gameObject.transform.localScale = Vector2.one;
+                speed = 0;
+                if (!isAbleToRunOnHole)
+                    transform.position = new Vector2(playerRespawnAfterFall.x , playerRespawnAfterFall.y );                
+                StartCoroutine(SD_PlayerRessources.Instance.TakingDamage(fallDamage, collisionPoint.gameObject, false));
+                speed = initialSpeed;
+                playerRGB.simulated = true;
+                cantDash = false;
+                cantMove = false;
+                SD_PlayerRessources.Instance.cantTakeDamage = false;
+                SD_PlayerAttack.Instance.cantAttack = false;
             }
-            SD_PlayerAnimation.Instance.gameObject.transform.localScale = Vector2.one;
-            speed = 0;
             
-            transform.position = new Vector2(transform.position.x + bouncePoint.x, transform.position.y + bouncePoint.y);
-            StartCoroutine(SD_PlayerRessources.Instance.TakingDamage(fallDamage, collisionPoint.gameObject, false));
-            speed = initialSpeed;
-            playerRGB.simulated = true;
-            cantDash = false;
-            cantMove = false;
-            SD_PlayerRessources.Instance.cantTakeDamage = false;
-            SD_PlayerAttack.Instance.cantAttack = false;
         }
     }
 }
