@@ -49,7 +49,8 @@ namespace Player
         [HideInInspector] public bool platformIsSpawned;
         public float platformLifeTime;
 
-        
+        [Range(8,11)]
+        public float inertieAfterDash;
         Vector2 playerRespawnAfterFall;
         void Start()
         {
@@ -61,17 +62,23 @@ namespace Player
         void FixedUpdate()
         {
             //get the input of the player raw (-1,0 or 1) and multply it by speed and then make the velocity equal to it
-            if (!cantMove && Input.GetAxisRaw("Horizontal") != 0 && !wind || !cantMove && Input.GetAxisRaw("Vertical") != 0 && !wind)
+            if (!cantMove && Input.GetAxisRaw("Horizontal") != 0  && !wind || !cantMove && Input.GetAxisRaw("Vertical") != 0 && !wind )
             {
+                if (Input.GetAxis("Horizontal") >0.6f)
                 XAxis = Input.GetAxisRaw("Horizontal");
-                YAxis = Input.GetAxisRaw("Vertical");
-
+                else
+                    XAxis = Input.GetAxis("Horizontal");
+                if (Input.GetAxis("Vertical") > 0.6f)
+                    YAxis = Input.GetAxisRaw("Vertical");
+                else
+                    YAxis = Input.GetAxis("Vertical");
                 Move();
             }
             else
             {
                 SD_PlayerAnimation.Instance.PlayerAnimator.SetBool("IsMoving", false);
                 sprint = 1;
+                playerRGB.drag = 10;
             }
 
 
@@ -140,8 +147,8 @@ namespace Player
                     cantDash = true;
                     yield return new WaitForSeconds(dashTime);
                     // end of the dash, reset of the speed, the player can move and the player can dash again
-                    speed = initialSpeed;
-                    sprint = sprintForce;
+                    
+                  
                     if (canSpawnPlatform && !platformIsSpawned)
                     {
                         Instantiate(windPlatform, new Vector2( transform.position.x + playerRGB.velocity.normalized.x*0.7f, transform.position.y +playerRGB.velocity.normalized.y*0.7f), Quaternion.identity);
@@ -150,8 +157,11 @@ namespace Player
                     }
                     
                     yield return new WaitForSeconds(0.1f);
+                    speed = initialSpeed;
                     cantMove = false;
                     dashIsActive = false;
+                    sprint = sprintForce;
+                    playerRGB.drag = 10/ inertieAfterDash;
                     yield return new WaitForSeconds(dashCooldown);
                     cantDash = false;
                 }

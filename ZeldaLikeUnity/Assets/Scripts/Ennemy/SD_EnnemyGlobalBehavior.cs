@@ -102,7 +102,9 @@ namespace Ennemy
         }
 
         public IEnumerator TakingDamage(int damage, GameObject attack, bool destroyContact, int projectionForce)
-        {canTakeDamage = false;
+        {
+            attack.GetComponent<ParticleSystem>().Play();
+            canTakeDamage = false;
                 canMove = false;
                 isAggro = false;
                 life -= damage;
