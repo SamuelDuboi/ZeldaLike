@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Management;
 
 namespace Ennemy
 {
@@ -21,6 +22,8 @@ namespace Ennemy
             target.SetActive(false);
             smashImpact = gameObject.transform.GetChild(1).gameObject;
             smashImpact.SetActive(false);
+
+            GameManager.Instance.AddEnnemieToList(GameManager.ennemies.gardianRobot, gameObject);
         }
 
         public override void FixedUpdate()

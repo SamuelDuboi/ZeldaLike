@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Management;
 
 namespace Ennemy
 {
@@ -22,6 +23,7 @@ namespace Ennemy
     {
             base.Start();
             robotAttacks = GetComponent<Animator>();
+            GameManager.Instance.AddEnnemieToList(GameManager.ennemies.combatRobot, gameObject);
     }
     
      public override void FixedUpdate()

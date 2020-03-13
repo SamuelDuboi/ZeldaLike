@@ -3,6 +3,7 @@ using UnityEngine;
 using System.Collections;
 using Player;
 using UnityEngine.Tilemaps;
+using Management;
 
 
 namespace Ennemy
@@ -32,9 +33,11 @@ namespace Ennemy
         int wallTouch = 4;
 
         public GameObject[] rayStartCorner = new GameObject[4];
+        
         public virtual void Start()
         {
             ennemyRGB = GetComponent<Rigidbody2D>();
+            
         }
 
 

@@ -71,7 +71,7 @@ namespace Player
             SD_PlayerAnimation.Instance.sprite.color = Color.white;
             if (life <= 0)
             {
-                SceneManager.LoadScene("GameOver");
+               StartCoroutine( GameManager.Instance.Death());
             }
             if(isDestroy)
                 Destroy(ennemy);

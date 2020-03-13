@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using Player;
+using Management;
 
 namespace Ennemy
 {
@@ -9,6 +10,8 @@ namespace Ennemy
         public override void Start()
         {
             base.Start();
+
+            GameManager.Instance.AddEnnemieToList(GameManager.ennemies.ronchonchon, gameObject);
         }
        
         public override void FixedUpdate()

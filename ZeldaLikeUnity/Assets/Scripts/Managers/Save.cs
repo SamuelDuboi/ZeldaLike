@@ -10,5 +10,4 @@ using UnityEngine;
     public float pvMax;
     public float power;
 
-
  }

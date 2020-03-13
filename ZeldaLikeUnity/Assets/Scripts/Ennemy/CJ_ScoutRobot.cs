@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Management;
 
 namespace Ennemy
 {
@@ -23,7 +24,8 @@ namespace Ennemy
             base.Start();
             target = gameObject.transform.GetChild(0).gameObject;
             target.SetActive(false);
-    }
+            GameManager.Instance.AddEnnemieToList(GameManager.ennemies.scoutRobot, gameObject);
+        }
     
      public override void FixedUpdate()
     {
