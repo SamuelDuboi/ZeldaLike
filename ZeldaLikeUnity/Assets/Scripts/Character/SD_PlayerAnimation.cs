@@ -12,9 +12,12 @@ namespace Player
         public SpriteRenderer sprite;
        [HideInInspector] public Animator PlayerAnimator;
         public AnimationClip[] attackAnimation = new AnimationClip[3];
+        void Awake()
+        {
+            MakeSingleton(false);
+        }
         void Start()
         {
-            MakeSingleton(true);
             PlayerAnimator = GetComponent<Animator>();
             sprite = GetComponent<SpriteRenderer>();           
         }

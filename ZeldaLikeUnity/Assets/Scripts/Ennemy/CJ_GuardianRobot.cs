@@ -68,7 +68,7 @@ namespace Ennemy
             {
                 GameObject bullet = Instantiate(ennemyBullet, transform.position, Quaternion.identity);
                 bullet.GetComponent<CJ_BulletBehaviour>().parent = gameObject;
-                bullet.GetComponent<CJ_BulletBehaviour>().target = player;
+                bullet.GetComponent<CJ_BulletBehaviour>().target = player.transform.position;
                 yield return new WaitForSeconds(0.3f);
             }
             yield return new WaitForSeconds(2f);

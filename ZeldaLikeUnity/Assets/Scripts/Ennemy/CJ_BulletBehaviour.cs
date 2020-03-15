@@ -14,19 +14,19 @@ namespace Ennemy
         public int bulletParrySpeed;
         [Range(0, 50)]
         public int bulletSpeed;
-       [HideInInspector] public GameObject target;
+       [HideInInspector] public Vector3 target;
 
         private void Start()
         {
 
-            GetComponent<Rigidbody2D>().velocity = (target.transform.position - gameObject.transform.position).normalized * bulletSpeed;
+            GetComponent<Rigidbody2D>().velocity = (target- gameObject.transform.position).normalized * bulletSpeed;
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.gameObject.CompareTag("Player"))
             {
-                StartCoroutine(SD_PlayerRessources.Instance.TakingDamage(bulletDamage, gameObject, true));
+                StartCoroutine(SD_PlayerRessources.Instance.TakingDamage(bulletDamage, gameObject, true,1));
                 GetComponent<SpriteRenderer>().enabled = false;
                 GetComponent<BoxCollider2D>().enabled = false;
             }

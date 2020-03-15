@@ -67,6 +67,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f27cae7d4bfa914b9429f6bad8a9a1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ennemiesPrefabs:
+  - {fileID: 7449929291154221862, guid: abf51c92468fc48419c039a47bee775c, type: 3}
+  - {fileID: 542599190043403199, guid: 95185c62acc195c42ab975a68b03a945, type: 3}
+  - {fileID: 3050688598167191432, guid: b16e567055bbb444eaac689eb8d0c397, type: 3}
+  - {fileID: 7998620809461349176, guid: 2bf0284dda72e9e4289d0294ffa9a3de, type: 3}
 --- !u!1 &6334373687774898465
 GameObject:
   m_ObjectHideFlags: 0
@@ -93,7 +98,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6334373687774898465}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.48, y: -0.074, z: 0}
+  m_LocalPosition: {x: 3.3, y: -22.42, z: 0}
   m_LocalScale: {x: 0.331092, y: 0.589628, z: 1}
   m_Children: []
   m_Father: {fileID: 6334373686452283958}
@@ -166,7 +171,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 8.36, y: 5.93}
+    oldSize: {x: 4.18, y: 2.965}
     newSize: {x: 8.36, y: 5.93}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -274,7 +279,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 8.36, y: 5.93}
+    oldSize: {x: 4.18, y: 2.965}
     newSize: {x: 8.36, y: 5.93}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

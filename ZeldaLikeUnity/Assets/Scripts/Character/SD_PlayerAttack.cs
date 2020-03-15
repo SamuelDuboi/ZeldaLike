@@ -54,7 +54,7 @@ namespace Player
         public bool canParry;
         public bool hasWind;
 
-        private void Start()
+        void Awake()
         {
             MakeSingleton(false);
         }

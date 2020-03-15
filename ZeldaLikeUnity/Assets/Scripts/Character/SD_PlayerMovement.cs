@@ -52,9 +52,12 @@ namespace Player
         [Range(8,11)]
         public float inertieAfterDash;
         Vector2 playerRespawnAfterFall;
+        void Awake()
+        {
+            MakeSingleton(false);
+        }
         void Start()
         {
-            MakeSingleton(true);
             initialSpeed = speed;
             playerRGB = GetComponent<Rigidbody2D>();
         }
@@ -246,7 +249,7 @@ namespace Player
                 speed = 0;
                 if (!isAbleToRunOnHole)
                     transform.position = new Vector2(playerRespawnAfterFall.x , playerRespawnAfterFall.y );                
-                StartCoroutine(SD_PlayerRessources.Instance.TakingDamage(fallDamage, collisionPoint.gameObject, false));
+                StartCoroutine(SD_PlayerRessources.Instance.TakingDamage(fallDamage, collisionPoint.gameObject, false,1));
                 speed = initialSpeed;
                 playerRGB.simulated = true;
                 cantDash = false;

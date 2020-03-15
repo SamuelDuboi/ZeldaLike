@@ -69,7 +69,7 @@ namespace Ennemy
             target.SetActive(false);
             GameObject bullet = Instantiate(ennemyBullet, transform.position, Quaternion.identity);
             bullet.GetComponent<CJ_BulletBehaviour>().parent = gameObject;
-            bullet.GetComponent<CJ_BulletBehaviour>().target = target;
+            bullet.GetComponent<CJ_BulletBehaviour>().target = target.transform.position;
             yield return new WaitForSeconds(recoverytime);
             canMove = true;
             isAvoidingObstacles = true;

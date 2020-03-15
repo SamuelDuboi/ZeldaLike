@@ -31,15 +31,13 @@ namespace Player
             lifeEmpty = GameObject.FindGameObjectWithTag("Life").GetComponent<Image>();
             lifeBar = lifeEmpty.transform.GetChild(0).GetComponent<Image>();            
             lifeEmpty.fillAmount = currentMaxLife/maxLifePossible;
-            lifeBar.fillAmount = currentMaxLife/ maxLifePossible;
-
-           
+            lifeBar.fillAmount = currentMaxLife/ maxLifePossible;           
         }
         private void OnCollisionEnter2D(Collision2D collision)
         {
             if (collision.gameObject.layer == 12 && !cantTakeDamage )
             {
-              StartCoroutine( TakingDamage(collision.gameObject.GetComponent<SD_EnnemyGlobalBehavior>().damage, collision.gameObject,false));
+              StartCoroutine( TakingDamage(collision.gameObject.GetComponent<SD_EnnemyGlobalBehavior>().damage, collision.gameObject,false,1));
             }
             else if (collision.gameObject.tag == "Heal")
             {
@@ -52,11 +50,15 @@ namespace Player
         }
 
         #region LifeChange
-        public IEnumerator TakingDamage(int damage, GameObject ennemy, bool isDestroy)
+        public IEnumerator TakingDamage(int damage, GameObject ennemy, bool isDestroy, float bumpPower)
         {
             
             Vector2 bump =  new Vector2( gameObject.transform.position.x- ennemy.transform.position.x, gameObject.transform.position.y- ennemy.transform.position.y  );
-            SD_PlayerMovement.Instance.playerRGB.velocity = bump * SD_PlayerMovement.Instance.speed;
+            Debug.Log(gameObject.transform.position);
+            Debug.Log(ennemy.transform.position);
+            
+            
+            SD_PlayerMovement.Instance.playerRGB.velocity = bump * SD_PlayerMovement.Instance.speed*bumpPower;
             SD_PlayerMovement.Instance.cantMove = true;
             SD_PlayerMovement.Instance.cantDash = true;
             SD_PlayerMovement.Instance.cantDash = true;
