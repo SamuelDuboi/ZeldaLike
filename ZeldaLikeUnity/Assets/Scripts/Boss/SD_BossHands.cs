@@ -32,7 +32,9 @@ public class SD_BossHands : MonoBehaviour
     {
         if (SD_BossBehavior.Instance.canMove)
             handsRGB.velocity = Vector2.zero;
-        else if (SD_BossBehavior.Instance.phaseNumber ==2)
+        else if (SD_BossBehavior.Instance.phaseNumber == 1)
+            handsRGB.velocity = Vector2.up * laserSpeedPhase1;
+        else if (SD_BossBehavior.Instance.phaseNumber == 2)
             handsRGB.velocity = Vector2.up * laserSpeedPhase2;
         else if (SD_BossBehavior.Instance.phaseNumber == 3)
             handsRGB.velocity = Vector2.up * laserSpeedPhase3;
@@ -42,8 +44,10 @@ public class SD_BossHands : MonoBehaviour
         if (collision.gameObject.layer == 11)
         {
             bumpPoint.transform.position = new Vector2(collision.transform.position.x, collision.transform.position.y - 1f);
-           StartCoroutine( SD_PlayerRessources.Instance.TakingDamage(laserDamage,bumpPoint, false,5));
+            StartCoroutine(SD_PlayerRessources.Instance.TakingDamage(laserDamage, bumpPoint, false, 5));
         }
+        else
+            handsRGB.velocity = Vector2.zero;
             
     }
 }

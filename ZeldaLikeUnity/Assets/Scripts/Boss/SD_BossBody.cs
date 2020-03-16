@@ -45,6 +45,8 @@ public class SD_BossBody : MonoBehaviour
         bossCollider = GetComponent<Collider2D>();
         firstBullet = new Vector2(transform.position.x - bossCollider.bounds.extents.x, transform.position.y - bossCollider.bounds.extents.y);
         timerToReach = Random.Range(couldowBulletMin1, couldowBulletMax1);
+        armLeft.SetActive(false);
+        armRight.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -61,7 +63,8 @@ public class SD_BossBody : MonoBehaviour
                     Destroy(collider.gameObject);
                     if (weakPointNumber == 0)
                     {
-                        SD_BossBehavior.Instance.phaseNumber ++;
+                        SD_BossBehavior.Instance.phaseNumber++;
+                       
                         StartCoroutine(Moving());
 
                     }
@@ -113,6 +116,7 @@ public class SD_BossBody : MonoBehaviour
         }
 
     }
+   
 
     IEnumerator Moving()
     {
@@ -121,7 +125,24 @@ public class SD_BossBody : MonoBehaviour
         phaseWeakPoins[SD_BossBehavior.Instance.phaseNumber - 1].SetActive(true);
         phaseWeakPoins[SD_BossBehavior.Instance.phaseNumber - 2].SetActive(false);
         weakPointNumber = GetComponentsInChildren<Collider2D>().Length - 1;
-        Debug.Log(weakPointNumber);
+        StartCoroutine(handsMoving());
         SD_BossBehavior.Instance.canMove = false;
+    }
+
+    [Space]
+    [Header("Hands")]
+    public GameObject armLeft;
+    public GameObject armRight;
+    public GameObject armLeftPlaceHolder;
+    public GameObject armRightPlaceHolder;
+    public float timeBetwenHandsMin;
+    public float timeBetwenHandsMax;
+    IEnumerator handsMoving()
+    {
+        armLeft.transform.position = armLeftPlaceHolder.transform.position;
+        armRight.transform.position = armRightPlaceHolder.transform.position;
+        armRight.SetActive(true);
+        yield return new WaitForSeconds(Random.Range(timeBetwenHandsMin, timeBetwenHandsMax));
+        armLeft.SetActive(true);
     }
 }

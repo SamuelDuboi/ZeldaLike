@@ -12,11 +12,17 @@ public class SD_BossArms : MonoBehaviour
     public int rayDamage;
     public GameObject touche;
     public bool isLeft;
+    [Range(0.1f,5)]
+    public float speed;
+    float direction =1;
+
+    Rigidbody2D armRGB;
     void Start()
     {
         Vector3[] initLaserPositions = new Vector3[2] { Vector3.zero, Vector3.zero };
         laserLineRenderer.SetPositions(initLaserPositions);
         laserLineRenderer.startWidth =laserWidth;
+        armRGB = GetComponent<Rigidbody2D>();
     }
 
     void Update()
@@ -26,9 +32,17 @@ public class SD_BossArms : MonoBehaviour
         else
             ShootLaserFromTargetPosition(rayOrigine.transform.position, Vector3.left);
         laserLineRenderer.enabled = true;
-
+        if (!SD_BossBehavior.Instance.canMove)
+            armRGB.velocity = Vector2.down * direction* speed;
+        else
+            armRGB.velocity = Vector2.zero;
+            
     }
-
+    /// <summary>
+    /// shoot a laser in front of this, from targe position to infinity, the lineRenderer will be draw from target to the hitpoint
+    /// </summary>
+    /// <param name="targetPosition"></param>
+    /// <param name="direction"></param>
     void ShootLaserFromTargetPosition(Vector3 targetPosition, Vector3 direction)
     {
        
@@ -44,5 +58,9 @@ public class SD_BossArms : MonoBehaviour
 
         laserLineRenderer.SetPosition(0, targetPosition);
         laserLineRenderer.SetPosition(1, raycastHit.point);
+    }
+    private void OnCollisionEnter2D( Collision2D collision)
+    {
+        direction = -direction;
     }
 }
