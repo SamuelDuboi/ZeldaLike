@@ -189,7 +189,7 @@ namespace Player
                 Debug.Log("Wall");
             }
             if (collision.gameObject.tag == "Hole")
-                playerRespawnAfterFall = new Vector2( transform.position.x -XAxis*0.7f, transform.position.y - YAxis*0.7f);
+                playerRespawnAfterFall = new Vector2( transform.position.x -XAxis*0.5f, transform.position.y - YAxis*0.5f);
 
         }
         private void OnTriggerStay2D(Collider2D collision)

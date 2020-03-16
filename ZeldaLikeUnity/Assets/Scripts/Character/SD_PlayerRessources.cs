@@ -54,10 +54,8 @@ namespace Player
         {
             
             Vector2 bump =  new Vector2( gameObject.transform.position.x- ennemy.transform.position.x, gameObject.transform.position.y- ennemy.transform.position.y  );
-            Debug.Log(gameObject.transform.position);
-            Debug.Log(ennemy.transform.position);
-            
-            
+
+            Debug.Log("touche");
             SD_PlayerMovement.Instance.playerRGB.velocity = bump * SD_PlayerMovement.Instance.speed*bumpPower;
             SD_PlayerMovement.Instance.cantMove = true;
             SD_PlayerMovement.Instance.cantDash = true;

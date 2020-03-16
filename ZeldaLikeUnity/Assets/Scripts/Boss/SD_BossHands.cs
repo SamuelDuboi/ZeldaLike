@@ -7,14 +7,36 @@ public class SD_BossHands : MonoBehaviour
 {
     public GameObject bumpPoint;
     public int laserDamage;
-    [Range(1,10)]
-    public int laserSpeed;
-    // Start is called before the first frame update
+    [Space]
+    [Header("Phase1")]
+    [Range(0.1f,5)]
+    public float laserSpeedPhase1;
+
+    [Space]
+    [Header("Phase2")]
+    [Range(0.1f, 5)]
+    public float laserSpeedPhase2;
+
+    [Space]
+    [Header("Phase3")]
+    [Range(0.1f, 5)]
+    public float laserSpeedPhase3;
+
+    Rigidbody2D handsRGB;
     void Start()
     {
-        GetComponent<Rigidbody2D>().velocity = Vector2.up * laserSpeed;
+        handsRGB = GetComponent<Rigidbody2D>();
+        handsRGB.velocity = Vector2.up * laserSpeedPhase1;
     }
-
+    void FixedUpdate()
+    {
+        if (SD_BossBehavior.Instance.canMove)
+            handsRGB.velocity = Vector2.zero;
+        else if (SD_BossBehavior.Instance.phaseNumber ==2)
+            handsRGB.velocity = Vector2.up * laserSpeedPhase2;
+        else if (SD_BossBehavior.Instance.phaseNumber == 3)
+            handsRGB.velocity = Vector2.up * laserSpeedPhase3;
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.layer == 11)
