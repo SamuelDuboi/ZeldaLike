@@ -29,7 +29,7 @@ public class SD_WindPlatform : MonoBehaviour
         }
 
         SD_PlayerMovement.Instance.platformIsSpawned = false;
-        SD_PlayerMovement.Instance.isAbleToRunOnHole = false;
+        //SD_PlayerMovement.Instance.isAbleToRunOnHole = false;
         Destroy(gameObject);
 
     }

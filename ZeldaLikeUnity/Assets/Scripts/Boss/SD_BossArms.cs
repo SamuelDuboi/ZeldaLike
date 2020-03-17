@@ -14,15 +14,18 @@ public class SD_BossArms : MonoBehaviour
     public bool isLeft;
     [Range(0.1f,5)]
     public float speed;
-    float direction =1;
+    public float direction =1;
 
     Rigidbody2D armRGB;
+
+    LayerMask player;
     void Start()
     {
         Vector3[] initLaserPositions = new Vector3[2] { Vector3.zero, Vector3.zero };
         laserLineRenderer.SetPositions(initLaserPositions);
         laserLineRenderer.startWidth =laserWidth;
         armRGB = GetComponent<Rigidbody2D>();
+        player = ~(1 << 9); ;
     }
 
     void Update()
@@ -46,9 +49,9 @@ public class SD_BossArms : MonoBehaviour
     void ShootLaserFromTargetPosition(Vector3 targetPosition, Vector3 direction)
     {
        
-        RaycastHit2D raycastHit = Physics2D.Raycast(targetPosition,direction);
-        
-        if (raycastHit.transform.gameObject.tag == "Player")
+        RaycastHit2D raycastHit = Physics2D.Raycast(targetPosition,direction,2000,player);
+        Debug.Log(raycastHit.transform.gameObject);
+        if ( raycastHit.transform.gameObject.tag == "Player")
         {
             touche.transform.position = new Vector2(raycastHit.transform.position.x, raycastHit.transform.position.y + 1);
            StartCoroutine( SD_PlayerRessources.Instance.TakingDamage(rayDamage, touche, false, 1));

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Ennemy;
+using Player;
 
 public class SD_BossBody : MonoBehaviour
 {
@@ -35,7 +36,17 @@ public class SD_BossBody : MonoBehaviour
     [Space]
     public GameObject[] phaseWeakPoins = new GameObject[3];
 
-    
+    [Space]
+    [Header("Rocks")]
+
+    public int numberOfRocksPhase2;
+    public int numberOfRocksPhase3;
+    public float timeBetweenRockFallMin;
+    public float timeBetweenRockFallMax;
+    public GameObject RockPrefab;
+    public GameObject firstRock;
+    public List<GameObject> rockFallPhase2 = new List<GameObject>();
+    public List<GameObject> rockFallPhase3 = new List<GameObject>();
     void Start()
     {
         phaseWeakPoins[1].SetActive(false);
@@ -120,13 +131,21 @@ public class SD_BossBody : MonoBehaviour
 
     IEnumerator Moving()
     {
+        SD_PlayerMovement.Instance.cantDash = true;
         SD_BossBehavior.Instance.canMove = true;
-        yield return new WaitForSeconds(4f);
+        SD_PlayerMovement.Instance.cantMove = true;
+        yield return new WaitForSeconds(1f);
+        SD_PlayerMovement.Instance.cantMove = true;
+        yield return new WaitForSeconds(3f);
+
+        StartCoroutine(RockFall());
         phaseWeakPoins[SD_BossBehavior.Instance.phaseNumber - 1].SetActive(true);
         phaseWeakPoins[SD_BossBehavior.Instance.phaseNumber - 2].SetActive(false);
         weakPointNumber = GetComponentsInChildren<Collider2D>().Length - 1;
         StartCoroutine(handsMoving());
         SD_BossBehavior.Instance.canMove = false;
+        SD_PlayerMovement.Instance.cantDash = false;
+        SD_PlayerMovement.Instance.cantMove = false;
     }
 
     [Space]
@@ -139,10 +158,32 @@ public class SD_BossBody : MonoBehaviour
     public float timeBetwenHandsMax;
     IEnumerator handsMoving()
     {
-        armLeft.transform.position = armLeftPlaceHolder.transform.position;
         armRight.transform.position = armRightPlaceHolder.transform.position;
         armRight.SetActive(true);
-        yield return new WaitForSeconds(Random.Range(timeBetwenHandsMin, timeBetwenHandsMax));
+        armRight.GetComponent<SD_BossArms>().direction = 1;
+        yield return new WaitForSeconds(Random.Range(timeBetwenHandsMin, timeBetwenHandsMax));       
         armLeft.SetActive(true);
+        armLeft.transform.position = armLeftPlaceHolder.transform.position;
+        armLeft.GetComponent<SD_BossArms>().direction = 1;
+    }
+
+    IEnumerator RockFall()
+    {
+      if (  SD_BossBehavior.Instance.phaseNumber == 2)
+        {
+            firstRock.SetActive(true);
+            for (int i = 0; i < numberOfRocksPhase2; i++)
+            {
+                Instantiate(RockPrefab, rockFallPhase2[Random.Range(0, rockFallPhase2.Count)].transform);
+                yield return new WaitForSeconds(Random.Range(timeBetweenRockFallMin, timeBetweenRockFallMax));
+            }
+        }
+            
+      else
+            for (int i = 0; i < numberOfRocksPhase3; i++)
+            {
+                Instantiate(RockPrefab, rockFallPhase3[Random.Range(0, rockFallPhase2.Count)].transform.position, Quaternion.identity);
+                yield return new WaitForSeconds(Random.Range(timeBetweenRockFallMin, timeBetweenRockFallMax));
+            }
     }
 }

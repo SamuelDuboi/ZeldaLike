@@ -34,9 +34,9 @@ namespace Player
         public float dashCooldown;
         public int fallDamage;
         //enable movement on false
-        [HideInInspector] public bool cantMove;
+       public bool cantMove;
 
-        [HideInInspector] public bool cantDash;
+         public bool cantDash;
 
         [HideInInspector] public bool hasWindShield;
 
