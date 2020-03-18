@@ -42,6 +42,18 @@ namespace Management
         private void OnTriggerEnter2D(Collider2D collision)
         {
             Saving();
+            BoxCollider2D[] altar = GetComponentsInChildren<BoxCollider2D>();
+            
+            foreach (BoxCollider2D altarTriggered in altar)
+            {
+                if (altarTriggered.IsTouching(player.GetChildNamed("PlayerColliderFeet").GetComponent<BoxCollider2D>()))
+                    altarTriggered.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.blue;
+                else
+                {
+                    Debug.Log(altar.Length);
+                    altarTriggered.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.white;
+                }
+            }
             
         }
 
