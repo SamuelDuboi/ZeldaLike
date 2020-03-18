@@ -15,7 +15,8 @@ namespace Ennemy
         [Range(0, 50)]
         public int bulletSpeed;
        [HideInInspector] public Vector3 target;
-
+        public float lifeTime;
+        float time;
         private void Start()
         {
 
@@ -26,7 +27,7 @@ namespace Ennemy
         {
             if (collision.gameObject.CompareTag("Player"))
             {
-                StartCoroutine(SD_PlayerRessources.Instance.TakingDamage(bulletDamage, gameObject, true,1));
+                StartCoroutine(SD_PlayerRessources.Instance.TakingDamage(bulletDamage, gameObject, true, 1));
                 GetComponent<SpriteRenderer>().enabled = false;
                 GetComponent<BoxCollider2D>().enabled = false;
             }
@@ -38,7 +39,7 @@ namespace Ennemy
                 {
                     isParry = true;
                     GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-                }                               
+                }
             }
             else if (collision.gameObject.CompareTag("Ennemy"))
             {
@@ -48,12 +49,17 @@ namespace Ennemy
                     GetComponent<BoxCollider2D>().enabled = false;
                 }
             }
+            
 
         }
         private void FixedUpdate()
         {
             if(isParry)
                 transform.position = Vector2.MoveTowards(transform.position, parent.transform.position, Time.deltaTime * bulletParrySpeed);
+
+            time += Time.deltaTime;
+            if (time >= lifeTime)
+                Destroy(gameObject);
         }
     }
 }

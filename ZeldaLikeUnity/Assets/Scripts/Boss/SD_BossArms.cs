@@ -14,8 +14,8 @@ public class SD_BossArms : MonoBehaviour
     public bool isLeft;
     [Range(0.1f,5)]
     public float speed;
-    public float direction =1;
-
+  [HideInInspector]  public float direction =1;
+    public float timeBeforChangingDirection;
     Rigidbody2D armRGB;
 
     LayerMask player;
@@ -30,11 +30,19 @@ public class SD_BossArms : MonoBehaviour
 
     void Update()
     {
-      if (isLeft)
+      if (isLeft && direction == 1)
+        {
             ShootLaserFromTargetPosition(rayOrigine.transform.position, Vector3.right);
-        else
+            laserLineRenderer.enabled = true;
+        }
+        else if (!isLeft && direction == 1)
+        {
             ShootLaserFromTargetPosition(rayOrigine.transform.position, Vector3.left);
-        laserLineRenderer.enabled = true;
+            laserLineRenderer.enabled = true;
+        }
+            
+       else
+        laserLineRenderer.enabled =false;
         if (!SD_BossBehavior.Instance.canMove)
             armRGB.velocity = Vector2.down * direction* speed;
         else
@@ -66,4 +74,5 @@ public class SD_BossArms : MonoBehaviour
     {
         direction = -direction;
     }
+   
 }

@@ -148,4 +148,5 @@ MonoBehaviour:
   isParry: 0
   bulletParrySpeed: 39
   bulletSpeed: 25
-  target: {fileID: 0}
+  target: {x: 0, y: 0, z: 0}
+  lifeTime: 1000

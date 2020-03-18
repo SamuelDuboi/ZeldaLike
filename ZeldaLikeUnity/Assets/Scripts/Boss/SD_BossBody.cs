@@ -51,8 +51,8 @@ public class SD_BossBody : MonoBehaviour
     {
         phaseWeakPoins[1].SetActive(false);
         phaseWeakPoins[2].SetActive(false);
-        weakPointNumber = GetComponentsInChildren<Collider2D>().Length-1;
-        Debug.Log(weakPointNumber);
+        //- 3 car cllider du boss et des bord pour fair rebondire les mains a ne pas compter
+        weakPointNumber = GetComponentsInChildren<Collider2D>().Length-3;
         bossCollider = GetComponent<Collider2D>();
         firstBullet = new Vector2(transform.position.x - bossCollider.bounds.extents.x, transform.position.y - bossCollider.bounds.extents.y);
         timerToReach = Random.Range(couldowBulletMin1, couldowBulletMax1);
@@ -141,7 +141,7 @@ public class SD_BossBody : MonoBehaviour
         StartCoroutine(RockFall());
         phaseWeakPoins[SD_BossBehavior.Instance.phaseNumber - 1].SetActive(true);
         phaseWeakPoins[SD_BossBehavior.Instance.phaseNumber - 2].SetActive(false);
-        weakPointNumber = GetComponentsInChildren<Collider2D>().Length - 1;
+        weakPointNumber = GetComponentsInChildren<Collider2D>().Length - 3;
         StartCoroutine(handsMoving());
         SD_BossBehavior.Instance.canMove = false;
         SD_PlayerMovement.Instance.cantDash = false;
@@ -169,6 +169,7 @@ public class SD_BossBody : MonoBehaviour
 
     IEnumerator RockFall()
     {
+        Debug.Log(SD_BossBehavior.Instance.phaseNumber + "bose phase");
       if (  SD_BossBehavior.Instance.phaseNumber == 2)
         {
             firstRock.SetActive(true);
@@ -182,7 +183,7 @@ public class SD_BossBody : MonoBehaviour
       else
             for (int i = 0; i < numberOfRocksPhase3; i++)
             {
-                Instantiate(RockPrefab, rockFallPhase3[Random.Range(0, rockFallPhase2.Count)].transform.position, Quaternion.identity);
+                Instantiate(RockPrefab, rockFallPhase3[Random.Range(0, rockFallPhase3.Count)].transform.position, Quaternion.identity);
                 yield return new WaitForSeconds(Random.Range(timeBetweenRockFallMin, timeBetweenRockFallMax));
             }
     }
