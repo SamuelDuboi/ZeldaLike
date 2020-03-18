@@ -48,6 +48,7 @@ namespace Player
         bool canSpawnPlatform;
         [HideInInspector] public bool platformIsSpawned;
         public float platformLifeTime;
+        GameObject currentPlatform;
 
         [Range(8,11)]
         public float inertieAfterDash;
@@ -154,7 +155,7 @@ namespace Player
                   
                     if (canSpawnPlatform && !platformIsSpawned)
                     {
-                        Instantiate(windPlatform, new Vector2( transform.position.x + playerRGB.velocity.normalized.x*0.7f, transform.position.y +playerRGB.velocity.normalized.y*0.7f), Quaternion.identity);
+                       currentPlatform= Instantiate(windPlatform, new Vector2( transform.position.x + playerRGB.velocity.normalized.x*0.2f, transform.position.y +playerRGB.velocity.normalized.y*0.2f), Quaternion.identity);
                         canSpawnPlatform = false;
                         platformIsSpawned = true;
                     }
@@ -219,6 +220,11 @@ namespace Player
             }
             if (isAbleToRunOnHole && collision.tag == "WindPlatform" || collision.tag == "Hole")
                 isAbleToRunOnHole = false;
+            if (collision.tag == "Hole" && currentPlatform != null)
+            {
+                platformIsSpawned = false;
+                Destroy(currentPlatform);
+            }
         }
 
      
