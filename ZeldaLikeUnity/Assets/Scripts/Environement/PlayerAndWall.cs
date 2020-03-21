@@ -34,7 +34,8 @@ using Player;
         if (collision.gameObject.tag == "Player")
         {
             layer++;
-            if (layer == 1)
+            Debug.Log(layer);
+            if (layer == 2)
             {
                 SD_PlayerMovement.Instance.cantDash = false;
                 SD_PlayerMovement.Instance.cantMove = false;
