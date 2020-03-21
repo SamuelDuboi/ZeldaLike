@@ -45,6 +45,7 @@ namespace Ennemy
         {
             if (collision.gameObject.tag == "Player")
             {
+                CJ_PlayerCameraManager.Instance.ennemyList.Add(gameObject);
                 aggroZone.SetActive( false);
                 desaggroZone.SetActive( true);
                 isAggro = true;
@@ -80,6 +81,7 @@ namespace Ennemy
                 desaggroZone.SetActive(false);
                 isAggro = false;
                 canMove = false;
+                CJ_PlayerCameraManager.Instance.ennemyList.Remove(gameObject);
                 isAvoidingObstacles = false;
                 canTakeDamage = false;
 
@@ -111,6 +113,7 @@ namespace Ennemy
             Debug.Log("damaeg" + damage);
             Debug.Log("life" + life);
                 if (life <= 0)
+                    CJ_PlayerCameraManager.Instance.ennemyList.Remove(gameObject);
                     Destroy(gameObject);
                 ennemyRGB.velocity = new Vector2(transform.position.x - attack.transform.position.x,
                                                   attack.transform.position.y - attack.transform.position.y).normalized * projectionForce;

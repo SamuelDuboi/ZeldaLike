@@ -242,18 +242,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.02384758, y: -0.023856163}
+  m_Offset: {x: -0.014266968, y: 0.0905121}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 8.36, y: 5.93}
+    oldSize: {x: 4.18, y: 2.965}
     newSize: {x: 8.36, y: 5.93}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 8.394985, y: 5.914076}
+  m_Size: {x: 4.201412, y: 2.9404426}
   m_EdgeRadius: 0
 --- !u!114 &542599190043403198
 MonoBehaviour:
@@ -284,7 +284,7 @@ MonoBehaviour:
   - {fileID: 1901179047}
   stopDistance: 12
   retreatDistance: 10
-  retreatSpeed: 20
+  retreatSpeed: 2
   recoverytime: 1
   target: {fileID: 0}
   ennemyBullet: {fileID: 6087731643462856925, guid: 998d8c51e6fef04478c490bca838203c,
