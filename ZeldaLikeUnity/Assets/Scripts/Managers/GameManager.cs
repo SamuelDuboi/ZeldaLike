@@ -4,7 +4,7 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 using Player;
-
+using XInputDotNetPure;
 
 namespace Management
 {
@@ -25,6 +25,11 @@ namespace Management
 
         public GameObject[] ennemiesPrefabs = new GameObject[4];
         public enum ennemies { ronchonchon, scoutRobot, combatRobot, gardianRobot}
+
+        //gamepade shake;
+        PlayerIndex playerIndex;
+        GamePadState state;
+        GamePadState prevState;
         private void Awake()
         {
             MakeSingleton(true);
@@ -166,6 +171,13 @@ namespace Management
                     break;
 
             }
+        }
+
+        public IEnumerator GamePadeShake(float intensity, float time)
+        {
+            GamePad.SetVibration(playerIndex,intensity, intensity);
+            yield return new WaitForSeconds(time);
+            GamePad.SetVibration(playerIndex, 0, 0);
         }
     }
 }

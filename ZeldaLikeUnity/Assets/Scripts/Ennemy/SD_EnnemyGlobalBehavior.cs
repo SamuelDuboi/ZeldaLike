@@ -55,8 +55,11 @@ namespace Ennemy
             }//if is attack by player
             else if (collision.gameObject.layer == 8 )
             {
-                if (canTakeDamage)          
-                        StartCoroutine(TakingDamage(SD_PlayerAttack.Instance.currentDamage, collision.gameObject, false, 10));
+                if (canTakeDamage)
+                {
+                    StartCoroutine(GameManager.Instance.GamePadeShake(0.3f, .2f));
+                    StartCoroutine(TakingDamage(SD_PlayerAttack.Instance.currentDamage, collision.gameObject, false, 10));
+                }
                 else
                         StartCoroutine(TakingDamage(0, collision.gameObject, false, 20));
 
@@ -111,7 +114,11 @@ namespace Ennemy
             Debug.Log("damaeg" + damage);
             Debug.Log("life" + life);
                 if (life <= 0)
-                    Destroy(gameObject);
+            {
+                StartCoroutine(GameManager.Instance.GamePadeShake(0, .2f));
+                Destroy(gameObject);
+            }
+
                 ennemyRGB.velocity = new Vector2(transform.position.x - attack.transform.position.x,
                                                   attack.transform.position.y - attack.transform.position.y).normalized * projectionForce;
                 if (destroyContact)

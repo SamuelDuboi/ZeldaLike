@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Ennemy;
 using Player;
+using Management;
+
 
 public class SD_BossBody : MonoBehaviour
 {
@@ -47,6 +49,8 @@ public class SD_BossBody : MonoBehaviour
     public GameObject firstRock;
     public List<GameObject> rockFallPhase2 = new List<GameObject>();
     public List<GameObject> rockFallPhase3 = new List<GameObject>();
+
+
     void Start()
     {
         phaseWeakPoins[1].SetActive(false);
@@ -134,10 +138,10 @@ public class SD_BossBody : MonoBehaviour
         SD_PlayerMovement.Instance.cantDash = true;
         SD_BossBehavior.Instance.canMove = true;
         SD_PlayerMovement.Instance.cantMove = true;
+        StartCoroutine(GameManager.Instance.GamePadeShake(1, 3f));
         yield return new WaitForSeconds(1f);
         SD_PlayerMovement.Instance.cantMove = true;
         yield return new WaitForSeconds(3f);
-
         StartCoroutine(RockFall());
         phaseWeakPoins[SD_BossBehavior.Instance.phaseNumber - 1].SetActive(true);
         phaseWeakPoins[SD_BossBehavior.Instance.phaseNumber - 2].SetActive(false);
