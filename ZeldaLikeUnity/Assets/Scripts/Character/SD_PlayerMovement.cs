@@ -22,21 +22,21 @@ namespace Player
         float XAxis;
         float YAxis;
         float sprint = 1f;
-        [Range(1,2)]
+        [Range(1, 2)]
         public float sprintForce;
         [HideInInspector] public Rigidbody2D playerRGB;
 
         [Range(0, 3)]
         public float dashTime;
         [Range(0, 10)]
-        public int dashForce ;
+        public int dashForce;
         [Range(0, 10)]
         public float dashCooldown;
         public int fallDamage;
         //enable movement on false
-       public bool cantMove;
+        public bool cantMove;
 
-         public bool cantDash;
+        public bool cantDash;
 
         [HideInInspector] public bool hasWindShield;
 
@@ -46,11 +46,12 @@ namespace Player
         public GameObject windPlatform;
         [HideInInspector] public bool isAbleToRunOnHole;
         bool canSpawnPlatform;
-        [HideInInspector] public bool platformIsSpawned;
+
         public float platformLifeTime;
         GameObject currentPlatform;
+        int platformNumber = 1;
 
-        [Range(8,11)]
+        [Range(8, 11)]
         public float inertieAfterDash;
         Vector2 playerRespawnAfterFall;
         void Awake()
@@ -66,10 +67,10 @@ namespace Player
         void FixedUpdate()
         {
             //get the input of the player raw (-1,0 or 1) and multply it by speed and then make the velocity equal to it
-            if (!cantMove && Input.GetAxisRaw("Horizontal") != 0  && !wind || !cantMove && Input.GetAxisRaw("Vertical") != 0 && !wind )
+            if (!cantMove && Input.GetAxisRaw("Horizontal") != 0 && !wind || !cantMove && Input.GetAxisRaw("Vertical") != 0 && !wind)
             {
-                if (Input.GetAxis("Horizontal") >0.6f)
-                XAxis = Input.GetAxisRaw("Horizontal");
+                if (Input.GetAxis("Horizontal") > 0.6f)
+                    XAxis = Input.GetAxisRaw("Horizontal");
                 else
                     XAxis = Input.GetAxis("Horizontal");
                 if (Input.GetAxis("Vertical") > 0.6f)
@@ -100,8 +101,8 @@ namespace Player
         public void Move()
         {
             SD_PlayerAnimation.Instance.PlayerAnimator.SetBool("IsMoving", !cantMove);
-            playerRGB.velocity = new Vector2(XAxis, YAxis) * speed*sprint;
-            if (XAxis < 0.1 && XAxis > -0.1 && YAxis > 0.1)                
+            playerRGB.velocity = new Vector2(XAxis, YAxis) * speed * sprint;
+            if (XAxis < 0.1 && XAxis > -0.1 && YAxis > 0.1)
             {
                 SD_PlayerAnimation.Instance.PlayerAnimator.SetFloat("YAxis", 1f);
                 SD_PlayerAnimation.Instance.PlayerAnimator.SetFloat("XAxis", 0f);
@@ -111,19 +112,19 @@ namespace Player
                 SD_PlayerAnimation.Instance.PlayerAnimator.SetFloat("YAxis", -1f);
                 SD_PlayerAnimation.Instance.PlayerAnimator.SetFloat("XAxis", 0f);
 
-            }               
+            }
             else if (XAxis >= 0.1f)
             {
                 SD_PlayerAnimation.Instance.PlayerAnimator.SetFloat("XAxis", 1f);
                 SD_PlayerAnimation.Instance.PlayerAnimator.SetFloat("YAxis", 0f);
-            }                
+            }
             else if (XAxis <= 0.1)
             {
                 SD_PlayerAnimation.Instance.PlayerAnimator.SetFloat("XAxis", -1f);
                 SD_PlayerAnimation.Instance.PlayerAnimator.SetFloat("YAxis", 0f);
 
             }
-                
+
 
 
         }
@@ -151,21 +152,22 @@ namespace Player
                     cantDash = true;
                     yield return new WaitForSeconds(dashTime);
                     // end of the dash, reset of the speed, the player can move and the player can dash again
-                    
-                  
-                    if (canSpawnPlatform && !platformIsSpawned)
+
+
+                    if (canSpawnPlatform && platformNumber > 0)
                     {
-                       currentPlatform= Instantiate(windPlatform, new Vector2( transform.position.x + playerRGB.velocity.normalized.x*0.2f, transform.position.y +playerRGB.velocity.normalized.y*0.2f), Quaternion.identity);
+                        currentPlatform = Instantiate(windPlatform, new Vector2(transform.position.x + playerRGB.velocity.normalized.x * 0.2f, transform.position.y + playerRGB.velocity.normalized.y * 0.2f), Quaternion.identity);
                         canSpawnPlatform = false;
-                        platformIsSpawned = true;
+
+                        platformNumber--;
                     }
-                    
+
                     yield return new WaitForSeconds(0.1f);
                     speed = initialSpeed;
                     cantMove = false;
                     dashIsActive = false;
                     sprint = sprintForce;
-                    playerRGB.drag = 10/ inertieAfterDash;
+                    playerRGB.drag = 10 / inertieAfterDash;
                     yield return new WaitForSeconds(dashCooldown);
                     cantDash = false;
                 }
@@ -174,9 +176,9 @@ namespace Player
 
         }
 
-       private void OnTriggerEnter2D(Collider2D collision)
-        { 
-                if (collision.gameObject.tag == "Wind" && collision.gameObject.layer == 9)
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.gameObject.tag == "Wind" && collision.gameObject.layer == 9)
             {
                 wind = true;
                 cantMove = true;
@@ -189,8 +191,16 @@ namespace Player
                 cantDash = false;
                 Debug.Log("Wall");
             }
+            else if (collision.gameObject.layer == 18)
+            {
+                if (collision.gameObject.tag == "Cristal")
+                {
+                    platformNumber++;
+                    Destroy(collision.gameObject);
+                }
+            }
             if (collision.gameObject.tag == "Hole")
-                playerRespawnAfterFall = new Vector2( transform.position.x -XAxis*0.5f, transform.position.y - YAxis*0.5f);
+                playerRespawnAfterFall = new Vector2(transform.position.x - XAxis * 0.5f, transform.position.y - YAxis * 0.5f);
 
         }
         private void OnTriggerStay2D(Collider2D collision)
@@ -222,22 +232,22 @@ namespace Player
                 isAbleToRunOnHole = false;
             if (collision.tag == "Hole" && currentPlatform != null)
             {
-                platformIsSpawned = false;
+                platformNumber = 1;
                 Destroy(currentPlatform);
             }
         }
 
-     
+
 
 
 
         IEnumerator Fall(Collider2D collisionPoint)
         {
-              
 
-           if (!dashIsActive)
+
+            if (!dashIsActive)
             {
-                
+
 
                 cantDash = true;
                 cantMove = true;
@@ -254,8 +264,8 @@ namespace Player
                 SD_PlayerAnimation.Instance.gameObject.transform.localScale = Vector2.one;
                 speed = 0;
                 if (!isAbleToRunOnHole)
-                    transform.position = new Vector2(playerRespawnAfterFall.x , playerRespawnAfterFall.y );                
-                StartCoroutine(SD_PlayerRessources.Instance.TakingDamage(fallDamage, collisionPoint.gameObject, false,1));
+                    transform.position = new Vector2(playerRespawnAfterFall.x, playerRespawnAfterFall.y);
+                StartCoroutine(SD_PlayerRessources.Instance.TakingDamage(fallDamage, collisionPoint.gameObject, false, 1));
                 speed = initialSpeed;
                 playerRGB.simulated = true;
                 cantDash = false;
@@ -263,7 +273,7 @@ namespace Player
                 SD_PlayerRessources.Instance.cantTakeDamage = false;
                 SD_PlayerAttack.Instance.cantAttack = false;
             }
-            
+
         }
     }
 }
