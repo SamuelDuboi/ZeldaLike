@@ -10,7 +10,7 @@ namespace Player
     {
         public List<GameObject> ennemyList;
         public CinemachineVirtualCamera camera;
-        public CinemachineFramingTransposer cameraProfile;
+      [HideInInspector]  public CinemachineFramingTransposer cameraProfile;
         bool camSwitch = true;
 
         private void Start()

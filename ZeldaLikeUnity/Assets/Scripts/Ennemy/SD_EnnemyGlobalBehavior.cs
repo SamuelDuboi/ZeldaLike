@@ -118,6 +118,7 @@ namespace Ennemy
                 if (life <= 0)
             {
                 StartCoroutine(GameManager.Instance.GamePadeShake(0, .2f));
+                CJ_PlayerCameraManager.Instance.ennemyList.Remove(gameObject);
                 Destroy(gameObject);
             }
 
