@@ -45,6 +45,7 @@ namespace Ennemy
         {
             if (collision.gameObject.tag == "Player")
             {
+                CJ_PlayerCameraManager.Instance.ennemyList.Add(gameObject);
                 aggroZone.SetActive( false);
                 desaggroZone.SetActive( true);
                 isAggro = true;
@@ -83,6 +84,7 @@ namespace Ennemy
                 desaggroZone.SetActive(false);
                 isAggro = false;
                 canMove = false;
+                CJ_PlayerCameraManager.Instance.ennemyList.Remove(gameObject);
                 isAvoidingObstacles = false;
                 canTakeDamage = false;
 
