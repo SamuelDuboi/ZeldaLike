@@ -52,7 +52,8 @@ namespace Player
         #region LifeChange
         public IEnumerator TakingDamage(int damage, GameObject ennemy, bool isDestroy, float bumpPower)
         {
-            
+
+            SD_PlayerAnimation.Instance.PlayerAnimator.SetTrigger("Hit");
             Vector2 bump =  new Vector2( gameObject.transform.position.x- ennemy.transform.position.x, gameObject.transform.position.y- ennemy.transform.position.y  );
             StartCoroutine(GameManager.Instance.GamePadeShake(.2f, .2f));
             Debug.Log("touche");
@@ -62,13 +63,11 @@ namespace Player
             SD_PlayerMovement.Instance.cantDash = true;
             life -= damage;
             lifeBar.fillAmount = life/ maxLifePossible;
-            SD_PlayerAnimation.Instance.sprite.color = Color.red;
             Debug.Log(life);
             yield return new WaitForSeconds(0.2f);
             SD_PlayerMovement.Instance.cantMove = false;
             SD_PlayerMovement.Instance.cantDash = false;
             SD_PlayerMovement.Instance.cantDash = false;
-            SD_PlayerAnimation.Instance.sprite.color = Color.white;
             if (life <= 0)
             {
                StartCoroutine( GameManager.Instance.Death());

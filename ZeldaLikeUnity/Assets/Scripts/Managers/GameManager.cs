@@ -140,9 +140,8 @@ namespace Management
 
        public IEnumerator Death()
         {
-            //put death animation 
-            Time.timeScale = 0.1f;
-            yield return new WaitForSeconds(0.1f/*put animation time*/);
+            SD_PlayerAnimation.Instance.PlayerAnimator.SetTrigger("Death");
+            yield return new WaitForSeconds(1.5f);
             Time.timeScale = 0;
             death.SetActive(true);           
         }
