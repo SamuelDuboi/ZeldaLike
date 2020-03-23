@@ -115,29 +115,21 @@ namespace Player
             if (timeOn)
             {
 
-                if (playerVelocity.x > 0.7f)
+                if (SD_PlayerAnimation.Instance.PlayerAnimator.GetFloat("XAxis") == 1)
                 {
                     attacks.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
-                    SD_PlayerAnimation.Instance.PlayerAnimator.SetFloat("XAxis", 1);
-                    SD_PlayerAnimation.Instance.PlayerAnimator.SetFloat("YAxis", 0);
                 }
-                else if (playerVelocity.x < -0.7f)
+                else if (SD_PlayerAnimation.Instance.PlayerAnimator.GetFloat("XAxis") ==- 1)
                 {
                     attacks.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 180));
-                    SD_PlayerAnimation.Instance.PlayerAnimator.SetFloat("XAxis", -1);
-                    SD_PlayerAnimation.Instance.PlayerAnimator.SetFloat("YAxis", 0);
                 }
-                else if (playerVelocity.y < -0.7f)
+                else if (SD_PlayerAnimation.Instance.PlayerAnimator.GetFloat("YAxis") == -1)
                 {
                     attacks.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 270));
-                    SD_PlayerAnimation.Instance.PlayerAnimator.SetFloat("XAxis", 0);
-                    SD_PlayerAnimation.Instance.PlayerAnimator.SetFloat("YAxis", -1);
                 }
-                else if (playerVelocity.y > 0.7f)
+                else if (SD_PlayerAnimation.Instance.PlayerAnimator.GetFloat("YAxis") ==1)
                 {
-                    attacks.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 90));
-                    SD_PlayerAnimation.Instance.PlayerAnimator.SetFloat("XAxis", 0);
-                    SD_PlayerAnimation.Instance.PlayerAnimator.SetFloat("YAxis", 1);
+                    attacks.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 90));               
 
                 }
                 timer += Time.deltaTime;

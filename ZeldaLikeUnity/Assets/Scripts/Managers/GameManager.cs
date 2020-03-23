@@ -30,6 +30,8 @@ namespace Management
         PlayerIndex playerIndex;
         GamePadState state;
         GamePadState prevState;
+
+        bool deathActive;
         private void Awake()
         {
             MakeSingleton(true);
@@ -140,10 +142,15 @@ namespace Management
 
        public IEnumerator Death()
         {
-            SD_PlayerAnimation.Instance.PlayerAnimator.SetTrigger("Death");
-            yield return new WaitForSeconds(1.5f);
-            Time.timeScale = 0;
-            death.SetActive(true);           
+            if (!deathActive)
+            {
+                deathActive = true;
+                SD_PlayerAnimation.Instance.PlayerAnimator.SetTrigger("Death");
+                yield return new WaitForSeconds(1.5f);
+                Time.timeScale = 0;
+                death.SetActive(true);
+                deathActive = false;
+            }        
         }
 
         public void AddEnnemieToList(ennemies ennemies, GameObject position)

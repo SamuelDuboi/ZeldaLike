@@ -25,7 +25,8 @@ namespace Ennemy
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.gameObject.CompareTag("Player"))
+
+            if (collision.gameObject.CompareTag("Player") && collision.gameObject.layer == 11)
             {
                 StartCoroutine(SD_PlayerRessources.Instance.TakingDamage(bulletDamage, gameObject, true, 1));
                 GetComponent<SpriteRenderer>().enabled = false;
@@ -45,6 +46,7 @@ namespace Ennemy
             {
                 if (isParry == true)
                 {
+                    
                     GetComponent<SpriteRenderer>().enabled = false;
                     GetComponent<BoxCollider2D>().enabled = false;
                 }

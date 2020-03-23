@@ -27,8 +27,7 @@ public class SD_WindPlatform : MonoBehaviour
 
             yield return new WaitForSeconds(timer / 10);
         }
-        
-        //SD_PlayerMovement.Instance.isAbleToRunOnHole = false;
+        SD_PlayerMovement.Instance.isAbleToRunOnHole = false;
         Destroy(gameObject);
 
     }

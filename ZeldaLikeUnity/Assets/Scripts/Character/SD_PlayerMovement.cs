@@ -19,8 +19,8 @@ namespace Player
         public float speed;
         [HideInInspector] public float initialSpeed;
         //inputs on x and y axis
-        float XAxis;
-        float YAxis;
+       [HideInInspector] public float XAxis;
+        [HideInInspector] public float YAxis;
         float sprint = 1f;
         [Range(1, 2)]
         public float sprintForce;
@@ -44,7 +44,7 @@ namespace Player
         bool wind;
 
         public GameObject windPlatform;
-        [HideInInspector] public bool isAbleToRunOnHole;
+         public bool isAbleToRunOnHole;
         bool canSpawnPlatform;
 
         public float platformLifeTime;
@@ -184,12 +184,16 @@ namespace Player
                 cantMove = true;
                 cantDash = true;
             }
-            else if (collision.gameObject.tag == "Wall" && wind)
+            else if (collision.gameObject.tag == "Wall")
             {
-                wind = false;
-                cantMove = false;
-                cantDash = false;
-                Debug.Log("Wall");
+                if (wind)
+                {
+                    cantMove = false;
+                    cantDash = false;
+                    wind = false;
+                    Debug.Log("Wall");
+                }
+
             }
             else if (collision.gameObject.layer == 18)
             {
@@ -205,13 +209,18 @@ namespace Player
         }
         private void OnTriggerStay2D(Collider2D collision)
         {
+            Debug.Log("ca devrais tomber");
             if (collision.gameObject.tag == "WindPlatform")
                 isAbleToRunOnHole = true;
             if (collision.gameObject.tag == "Hole")
                 if (!isAbleToRunOnHole && !dashIsActive)
+                {
                     StartCoroutine(Fall(collision));
+                }
                 else if (SD_PlayerAttack.Instance.hasWind)
                     canSpawnPlatform = true;
+
+
 
         }
         private void OnTriggerExit2D(Collider2D collision)
@@ -221,12 +230,6 @@ namespace Player
                 wind = false;
                 cantMove = false;
                 cantDash = false;
-            }
-            else if (collision.gameObject.tag == "Wall" && !wind)
-            {
-                wind = true;
-                cantMove = true;
-                cantDash = true;
             }
             if (isAbleToRunOnHole && collision.tag == "WindPlatform" || collision.tag == "Hole")
                 isAbleToRunOnHole = false;
@@ -251,7 +254,6 @@ namespace Player
 
                 cantDash = true;
                 cantMove = true;
-                SD_PlayerRessources.Instance.cantTakeDamage = true;
                 SD_PlayerAttack.Instance.cantAttack = true;
                 playerRGB.simulated = false;
 
@@ -270,8 +272,8 @@ namespace Player
                 playerRGB.simulated = true;
                 cantDash = false;
                 cantMove = false;
-                SD_PlayerRessources.Instance.cantTakeDamage = false;
                 SD_PlayerAttack.Instance.cantAttack = false;
+                SD_PlayerRessources.Instance.cantTakeDamage = false;
             }
 
         }
