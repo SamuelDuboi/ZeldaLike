@@ -510,10 +510,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1667874979, guid: 94f740b0faa1a664da745400ca412b64, type: 3}
+      propertyPath: m_Name
+      value: PlayerCameraManager
+      objectReference: {fileID: 0}
     - target: {fileID: 1667874981, guid: 94f740b0faa1a664da745400ca412b64, type: 3}
       propertyPath: camera
       value: 
       objectReference: {fileID: 1606220808}
+    - target: {fileID: 2062720190, guid: 94f740b0faa1a664da745400ca412b64, type: 3}
+      propertyPath: currentMaxLife
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4455326355006402085, guid: 94f740b0faa1a664da745400ca412b64,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -574,7 +582,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: --Player--
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1667874982, guid: 94f740b0faa1a664da745400ca412b64, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 94f740b0faa1a664da745400ca412b64, type: 3}
 --- !u!1001 &542599190986505285
 PrefabInstance:
