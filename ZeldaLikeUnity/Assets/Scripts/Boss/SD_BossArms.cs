@@ -32,6 +32,7 @@ public class SD_BossArms : MonoBehaviour
     {
       if (isLeft && direction == 1)
         {
+            Debug.Log("hello" + gameObject);
             ShootLaserFromTargetPosition(rayOrigine.transform.position, Vector3.right);
             laserLineRenderer.enabled = true;
         }
@@ -44,7 +45,11 @@ public class SD_BossArms : MonoBehaviour
        else
         laserLineRenderer.enabled =false;
         if (!SD_BossBehavior.Instance.canMove)
-            armRGB.velocity = Vector2.down * direction* speed;
+        {
+
+            armRGB.velocity = Vector2.down * direction * speed;
+
+        }
         else
             armRGB.velocity = Vector2.zero;
             

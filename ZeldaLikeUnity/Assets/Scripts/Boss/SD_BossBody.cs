@@ -95,11 +95,33 @@ public class SD_BossBody : MonoBehaviour
         {
             transform.localPosition = Vector3.MoveTowards(transform.localPosition, bossPositionPhase2.transform.position, 10 * Time.deltaTime);
             firstBullet = new Vector2(transform.position.x - bossCollider.bounds.extents.x, transform.position.y - bossCollider.bounds.extents.y);
+            if ( Vector2.Distance(transform.localPosition, bossPositionPhase2.transform.position)< 0.5f)
+            {
+                StartCoroutine(RockFall());
+                phaseWeakPoins[SD_BossBehavior.Instance.phaseNumber - 1].SetActive(true);
+                phaseWeakPoins[SD_BossBehavior.Instance.phaseNumber - 2].SetActive(false);
+                weakPointNumber = GetComponentsInChildren<Collider2D>().Length - 3;
+                StartCoroutine(handsMoving());
+                SD_BossBehavior.Instance.canMove = false;
+                SD_PlayerMovement.Instance.cantDash = false;
+                SD_PlayerMovement.Instance.cantMove = false;
+            }
         }
         else if (SD_BossBehavior.Instance.canMove && SD_BossBehavior.Instance.phaseNumber == 3)
         {
             transform.localPosition = Vector3.MoveTowards(transform.localPosition, bossPositionPhase3.transform.position, 10 * Time.deltaTime);
             firstBullet = new Vector2(transform.position.x - bossCollider.bounds.extents.x, transform.position.y - bossCollider.bounds.extents.y);
+            if (Vector2.Distance(transform.localPosition, bossPositionPhase3.transform.position) < 0.5f)
+            {
+                StartCoroutine(RockFall());
+                phaseWeakPoins[SD_BossBehavior.Instance.phaseNumber - 1].SetActive(true);
+                phaseWeakPoins[SD_BossBehavior.Instance.phaseNumber - 2].SetActive(false);
+                weakPointNumber = GetComponentsInChildren<Collider2D>().Length - 3;
+                StartCoroutine(handsMoving());
+                SD_BossBehavior.Instance.canMove = false;
+                SD_PlayerMovement.Instance.cantDash = false;
+                SD_PlayerMovement.Instance.cantMove = false;
+            }
         }
         else
         {
@@ -138,18 +160,10 @@ public class SD_BossBody : MonoBehaviour
         SD_PlayerMovement.Instance.cantDash = true;
         SD_BossBehavior.Instance.canMove = true;
         SD_PlayerMovement.Instance.cantMove = true;
-        StartCoroutine(GameManager.Instance.GamePadeShake(1, 3f));
+        StartCoroutine(GameManager.Instance.GamePadeShake(1, 6f));
         yield return new WaitForSeconds(1f);
         SD_PlayerMovement.Instance.cantMove = true;
-        yield return new WaitForSeconds(3f);
-        StartCoroutine(RockFall());
-        phaseWeakPoins[SD_BossBehavior.Instance.phaseNumber - 1].SetActive(true);
-        phaseWeakPoins[SD_BossBehavior.Instance.phaseNumber - 2].SetActive(false);
-        weakPointNumber = GetComponentsInChildren<Collider2D>().Length - 3;
-        StartCoroutine(handsMoving());
-        SD_BossBehavior.Instance.canMove = false;
-        SD_PlayerMovement.Instance.cantDash = false;
-        SD_PlayerMovement.Instance.cantMove = false;
+       
     }
 
     [Space]
@@ -165,9 +179,9 @@ public class SD_BossBody : MonoBehaviour
         armRight.transform.position = armRightPlaceHolder.transform.position;
         armRight.SetActive(true);
         armRight.GetComponent<SD_BossArms>().direction = 1;
-        yield return new WaitForSeconds(Random.Range(timeBetwenHandsMin, timeBetwenHandsMax));       
-        armLeft.SetActive(true);
+        yield return new WaitForSeconds(Random.Range(timeBetwenHandsMin, timeBetwenHandsMax));
         armLeft.transform.position = armLeftPlaceHolder.transform.position;
+        armLeft.SetActive(true);
         armLeft.GetComponent<SD_BossArms>().direction = 1;
     }
 
