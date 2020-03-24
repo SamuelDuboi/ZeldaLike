@@ -1,18 +1,25 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuManagerForProto : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void LoadSandBox()
     {
-        
+        Time.timeScale = 1;
+        SceneManager.LoadScene(1);
     }
-
-    // Update is called once per frame
-    void Update()
+    public void LoadBossRoom()
     {
-        
+        Time.timeScale = 1;
+        SceneManager.LoadScene(2);
+    }
+    public void LoadMenu()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(0);
+    }
+    public void Quite()
+    {
+        Application.Quit();
     }
 }

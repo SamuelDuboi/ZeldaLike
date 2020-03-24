@@ -60,6 +60,7 @@ namespace Player
         }
         void Start()
         {
+            Debug.Log("Ca load");
             initialSpeed = speed;
             playerRGB = GetComponent<Rigidbody2D>();
         }
@@ -209,7 +210,7 @@ namespace Player
         }
         private void OnTriggerStay2D(Collider2D collision)
         {
-            Debug.Log("ca devrais tomber");
+
             if (collision.gameObject.tag == "WindPlatform")
                 isAbleToRunOnHole = true;
             if (collision.gameObject.tag == "Hole")

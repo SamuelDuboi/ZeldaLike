@@ -5,6 +5,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 using Player;
 using XInputDotNetPure;
+using UnityEngine.SceneManagement;
 
 namespace Management
 {
@@ -34,7 +35,8 @@ namespace Management
         bool deathActive;
         private void Awake()
         {
-            MakeSingleton(true);
+            // devra etre hanegr si on en laisse qu'un seul
+            MakeSingleton(false);
         }
         void Start()
         {
@@ -184,6 +186,13 @@ namespace Management
             GamePad.SetVibration(playerIndex,intensity, intensity);
             yield return new WaitForSeconds(time);
             GamePad.SetVibration(playerIndex, 0, 0);
+        }
+
+        public void Restart()
+        {
+            Time.timeScale = 1;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
         }
     }
 }
