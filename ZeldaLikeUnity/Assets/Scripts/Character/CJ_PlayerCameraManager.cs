@@ -9,13 +9,13 @@ namespace Player
     public class CJ_PlayerCameraManager : Singleton<CJ_PlayerCameraManager>
     {
         public List<GameObject> ennemyList;
-        public CinemachineVirtualCamera camera;
-      [HideInInspector]  public CinemachineFramingTransposer cameraProfile;
+        public CinemachineVirtualCamera camera1;
+        [HideInInspector]  public CinemachineFramingTransposer cameraProfile;
         bool camSwitch = true;
 
         private void Start()
         {
-            cameraProfile = camera.GetCinemachineComponent<CinemachineFramingTransposer>();
+            cameraProfile = camera1.GetCinemachineComponent<CinemachineFramingTransposer>();
         }
 
         private void Update()
