@@ -27,6 +27,8 @@ namespace Management
         public GameObject[] ennemiesPrefabs = new GameObject[4];
         public enum ennemies { ronchonchon, scoutRobot, combatRobot, gardianRobot}
 
+
+
         //gamepade shake;
         PlayerIndex playerIndex;
         GamePadState state;
@@ -56,11 +58,13 @@ namespace Management
             foreach (BoxCollider2D altarTriggered in altar)
             {
                 if (altarTriggered.IsTouching(player.GetChildNamed("PlayerColliderFeet").GetComponent<BoxCollider2D>()))
-                    altarTriggered.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.blue;
+                {
+                    altarTriggered.gameObject.GetComponentInChildren<Animator>().SetBool("On", true);
+                }
                 else
                 {
-                    Debug.Log(altar.Length);
-                    altarTriggered.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.white;
+                    Debug.Log("allo ?");
+                    altarTriggered.gameObject.GetComponentInChildren<Animator>().SetBool("On", false);
                 }
             }
             

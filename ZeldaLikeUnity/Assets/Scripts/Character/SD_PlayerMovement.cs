@@ -149,6 +149,7 @@ namespace Player
                     // add a force for the dash
                     speed *= dashForce;
                     Move();
+                    SD_PlayerAnimation.Instance.PlayerAnimator.SetTrigger("Dash");
                     cantMove = true;
                     cantDash = true;
                     yield return new WaitForSeconds(dashTime);
