@@ -60,8 +60,25 @@ namespace Player
         }
         void Update()
         {
+            if (SD_PlayerAnimation.Instance.PlayerAnimator.GetFloat("XAxis") == 1)
+            {
+                attacks.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+            }
+            else if (SD_PlayerAnimation.Instance.PlayerAnimator.GetFloat("XAxis") == -1)
+            {
+                attacks.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 180));
+            }
+            else if (SD_PlayerAnimation.Instance.PlayerAnimator.GetFloat("YAxis") == -1)
+            {
+                attacks.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 270));
+            }
+            else if (SD_PlayerAnimation.Instance.PlayerAnimator.GetFloat("YAxis") == 1)
+            {
+                attacks.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 90));
+
+            }
             // input of attack needed to be change
-            if (Input.GetButtonDown("Attack") || Input.GetButtonDown("Wind"))
+            if (Input.GetButtonDown("Attack") || Input.GetAxisRaw("Wind") > 0.1f)
             {
                 playerVelocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
                 SD_PlayerMovement.Instance.playerRGB.velocity = playerVelocity * speedBeforAttack * 1.5f;
@@ -95,10 +112,6 @@ namespace Player
                         // set the animation to the new attack
                         SD_PlayerAnimation.Instance.PlayerAnimator.SetInteger("AttackNumber", attackNumber);
                         SD_PlayerMovement.Instance.cantMove = true;
-
-
-
-
                     }
 
                 }
@@ -115,23 +128,6 @@ namespace Player
             if (timeOn)
             {
 
-                if (SD_PlayerAnimation.Instance.PlayerAnimator.GetFloat("XAxis") == 1)
-                {
-                    attacks.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
-                }
-                else if (SD_PlayerAnimation.Instance.PlayerAnimator.GetFloat("XAxis") ==- 1)
-                {
-                    attacks.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 180));
-                }
-                else if (SD_PlayerAnimation.Instance.PlayerAnimator.GetFloat("YAxis") == -1)
-                {
-                    attacks.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 270));
-                }
-                else if (SD_PlayerAnimation.Instance.PlayerAnimator.GetFloat("YAxis") ==1)
-                {
-                    attacks.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 90));               
-
-                }
                 timer += Time.deltaTime;
                 // if the time is higher than the some of the combo's animations time
                 if (timer >= timeBeforReset)
