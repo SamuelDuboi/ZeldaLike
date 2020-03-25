@@ -54,6 +54,9 @@ namespace Player
         [Range(8, 11)]
         public float inertieAfterDash;
         Vector2 playerRespawnAfterFall;
+
+
+         public bool hasKey; 
         void Awake()
         {
             MakeSingleton(false);
@@ -177,7 +180,7 @@ namespace Player
             }
 
         }
-
+        
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.gameObject.tag == "Wind" && collision.gameObject.layer == 9)
@@ -202,6 +205,11 @@ namespace Player
                 if (collision.gameObject.tag == "Cristal")
                 {
                     platformNumber++;
+                    Destroy(collision.gameObject);
+                }
+                else if (collision.gameObject.tag == "Key")
+                {
+                    hasKey = true;
                     Destroy(collision.gameObject);
                 }
             }
