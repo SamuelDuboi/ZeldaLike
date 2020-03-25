@@ -34,9 +34,9 @@ namespace Player
         public float dashCooldown;
         public int fallDamage;
         //enable movement on false
-        public bool cantMove;
+        [HideInInspector] public bool cantMove;
 
-        public bool cantDash;
+        [HideInInspector] public bool cantDash;
 
         [HideInInspector] public bool hasWindShield;
 
@@ -44,7 +44,7 @@ namespace Player
         bool wind;
 
         public GameObject windPlatform;
-         public bool isAbleToRunOnHole;
+        [HideInInspector] public bool isAbleToRunOnHole;
         bool canSpawnPlatform;
 
         public float platformLifeTime;
@@ -54,9 +54,11 @@ namespace Player
         [Range(8, 11)]
         public float inertieAfterDash;
         Vector2 playerRespawnAfterFall;
+        [Range(0,1)]
+        public float timeBeforAbleToMoveAfterFall;
 
-
-         public bool hasKey;
+       [HideInInspector]  public bool hasKey;
+        public GameObject keyUI;
         bool positionForDestroyedPlatformIsAlreadyChose;
         void Awake()
         {
@@ -189,6 +191,7 @@ namespace Player
                 wind = true;
                 cantMove = true;
                 cantDash = true;
+                SD_PlayerAttack.Instance.cantAttack = true;
             }
             else if (collision.gameObject.tag == "Wall")
             {
@@ -197,7 +200,8 @@ namespace Player
                     cantMove = false;
                     cantDash = false;
                     wind = false;
-                    Debug.Log("Wall");
+                    SD_PlayerAttack.Instance.cantAttack = false;
+
                 }
 
             }
@@ -211,6 +215,7 @@ namespace Player
                 else if (collision.gameObject.tag == "Key")
                 {
                     hasKey = true;
+                    keyUI.SetActive(true);
                     Destroy(collision.gameObject);
                 }
             }
@@ -246,6 +251,7 @@ namespace Player
                 wind = false;
                 cantMove = false;
                 cantDash = false;
+                SD_PlayerAttack.Instance.cantAttack = false;
             }
             if (isAbleToRunOnHole && collision.tag == "WindPlatform" || collision.tag == "Hole")
                 isAbleToRunOnHole = false;
@@ -286,6 +292,13 @@ namespace Player
                 StartCoroutine(SD_PlayerRessources.Instance.TakingDamage(fallDamage, collisionPoint.gameObject, false, 1));
                 speed = initialSpeed;
                 playerRGB.simulated = true;
+                yield return new WaitForSeconds(0.2f);
+                playerRGB.velocity = Vector2.zero;
+                cantDash = true;
+                cantMove = true;
+                SD_PlayerAttack.Instance.cantAttack = true;
+                SD_PlayerRessources.Instance.cantTakeDamage = true;
+                yield return new WaitForSeconds(timeBeforAbleToMoveAfterFall);
                 cantDash = false;
                 cantMove = false;
                 SD_PlayerAttack.Instance.cantAttack = false;

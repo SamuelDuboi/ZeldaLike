@@ -10,6 +10,7 @@ public class SD_LockedDoor : MonoBehaviour
         if (collision.gameObject.tag == "Player" && Input.GetButtonDown("Interact") && SD_PlayerMovement.Instance.hasKey)
         {
             SD_PlayerMovement.Instance.hasKey = false;
+            SD_PlayerMovement.Instance.keyUI.SetActive(false);
             Destroy(gameObject);
         }
     }

@@ -47,6 +47,7 @@ namespace Player
             else if (collision.gameObject.tag == "LifeUpgrade")
             {
                  LifeUpgrade(maxLifePossible/10);
+                Destroy(collision.gameObject);
             }
         }
 
@@ -69,6 +70,7 @@ namespace Player
                 yield return new WaitForSeconds(0.2f);
                 SD_PlayerMovement.Instance.cantMove = false;
                 SD_PlayerMovement.Instance.cantDash = false;
+                SD_PlayerMovement.Instance.playerRGB.velocity = Vector2.zero;
                 
                 if (life <= 0)
                 {
