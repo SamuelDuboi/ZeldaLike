@@ -46,7 +46,7 @@ namespace Player
             }
             else if (collision.gameObject.tag == "LifeUpgrade")
             {
-                //  LifeUpgrade(collision.gameObject.GetComponent<LifeUpgrade>().lifeAmount);
+                 LifeUpgrade(maxLifePossible/10);
             }
         }
 

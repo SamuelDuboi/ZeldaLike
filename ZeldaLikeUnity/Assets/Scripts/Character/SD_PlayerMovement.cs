@@ -49,14 +49,15 @@ namespace Player
 
         public float platformLifeTime;
         GameObject currentPlatform;
-        int platformNumber = 1;
+       [HideInInspector] public int platformNumber = 1;
 
         [Range(8, 11)]
         public float inertieAfterDash;
         Vector2 playerRespawnAfterFall;
 
 
-         public bool hasKey; 
+         public bool hasKey;
+        bool positionForDestroyedPlatformIsAlreadyChose;
         void Awake()
         {
             MakeSingleton(false);
@@ -215,6 +216,11 @@ namespace Player
             }
             if (collision.gameObject.tag == "Hole")
                 playerRespawnAfterFall = new Vector2(transform.position.x - XAxis * 0.5f, transform.position.y - YAxis * 0.5f);
+            if (collision.gameObject.tag == "DestroyedPlatform" && !positionForDestroyedPlatformIsAlreadyChose)
+            {
+                playerRespawnAfterFall = new Vector2(transform.position.x - XAxis * 0.5f, transform.position.y - YAxis * 0.5f);
+                positionForDestroyedPlatformIsAlreadyChose = true;
+            }
 
         }
         private void OnTriggerStay2D(Collider2D collision)
@@ -222,14 +228,14 @@ namespace Player
 
             if (collision.gameObject.tag == "WindPlatform")
                 isAbleToRunOnHole = true;
-            if (collision.gameObject.tag == "Hole")
+            if (collision.gameObject.tag == "Hole" || collision.gameObject.tag == "DestroyedPlatform")
                 if (!isAbleToRunOnHole && !dashIsActive)
                 {
                     StartCoroutine(Fall(collision));
                 }
                 else if (SD_PlayerAttack.Instance.hasWind)
                     canSpawnPlatform = true;
-
+           
 
 
         }

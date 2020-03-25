@@ -21,6 +21,6 @@ public class SD_DestructiblePlatform : MonoBehaviour
     {
         animator.SetTrigger("Fall");
         yield return new WaitForSeconds(animator.GetCurrentAnimatorClipInfo(0).Length);
-        tag = "Hole";
+        tag = "DestroyedPlatform";
     }
 }

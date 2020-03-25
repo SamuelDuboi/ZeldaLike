@@ -5,7 +5,7 @@ using Player;
 
 public class SD_WindPower : MonoBehaviour
 {
-    void OnCollisionStay2D(Collision2D collision)
+    void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player"  && Input.GetButtonDown("Interact"))
         {
@@ -17,5 +17,9 @@ public class SD_WindPower : MonoBehaviour
     public void Destroy()
     {
         Destroy(gameObject);
+    }
+    public void StopANimation()
+    {
+        GetComponent<Animator>().enabled = false;
     }
 }

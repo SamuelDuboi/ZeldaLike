@@ -28,6 +28,8 @@ public class SD_WindPlatform : MonoBehaviour
             yield return new WaitForSeconds(timer / 10);
         }
         SD_PlayerMovement.Instance.isAbleToRunOnHole = false;
+        if (SD_PlayerMovement.Instance.platformNumber == 0)
+            SD_PlayerMovement.Instance.platformNumber++;
         Destroy(gameObject);
 
     }
