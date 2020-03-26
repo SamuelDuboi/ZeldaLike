@@ -33,11 +33,11 @@ namespace Ennemy
         int wallTouch = 4;
 
         public GameObject[] rayStartCorner = new GameObject[4];
-        
+
         public virtual void Start()
         {
             ennemyRGB = GetComponent<Rigidbody2D>();
-            
+
         }
 
 
@@ -46,15 +46,19 @@ namespace Ennemy
             if (collision.gameObject.tag == "Player")
             {
                 CJ_PlayerCameraManager.Instance.ennemyList.Add(gameObject);
-                aggroZone.SetActive( false);
-                desaggroZone.SetActive( true);
+                if (aggroZone.activeSelf)
+                {
+                    aggroZone.SetActive(false);
+                    desaggroZone.SetActive(true);
+
+                }
                 isAggro = true;
                 canMove = true;
                 isAvoidingObstacles = true;
                 canTakeDamage = true;
                 player = collision.gameObject;
             }//if is attack by player
-            else if (collision.gameObject.layer == 8 )
+            else if (collision.gameObject.layer == 8)
             {
                 if (canTakeDamage)
                 {
@@ -62,7 +66,7 @@ namespace Ennemy
                     StartCoroutine(TakingDamage(SD_PlayerAttack.Instance.currentDamage, collision.gameObject, false, 10));
                 }
                 else
-                        StartCoroutine(TakingDamage(0, collision.gameObject, false, 20));
+                    StartCoroutine(TakingDamage(0, collision.gameObject, false, 20));
 
             } //if is attack by projectile
             else if (collision.gameObject.layer == 14 && collision.gameObject.tag != "Wind")
@@ -70,7 +74,7 @@ namespace Ennemy
                 if (collision.gameObject.GetComponent<CJ_BulletBehaviour>().isParry == true)
                 {
                     collision.gameObject.GetComponent<CJ_BulletBehaviour>().isParry = false;
-                    StartCoroutine(TakingDamage(3, collision.gameObject, true,10));
+                    StartCoroutine(TakingDamage(3, collision.gameObject, true, 10));
                 }
             }
 
@@ -80,8 +84,11 @@ namespace Ennemy
         {
             if (collision.gameObject.tag == "Player")
             {
-                aggroZone.SetActive(true);
-                desaggroZone.SetActive(false);
+                if (!aggroZone.activeSelf)
+                { 
+                    aggroZone.SetActive(true);
+                    desaggroZone.SetActive(false);
+                }
                 isAggro = false;
                 canMove = false;
                 CJ_PlayerCameraManager.Instance.ennemyList.Remove(gameObject);
@@ -110,29 +117,29 @@ namespace Ennemy
         {
             attack.GetComponent<ParticleSystem>().Play();
             canTakeDamage = false;
-                canMove = false;
-                isAggro = false;
-                life -= damage;
+            canMove = false;
+            isAggro = false;
+            life -= damage;
             Debug.Log("damaeg" + damage);
             Debug.Log("life" + life);
-                if (life <= 0)
+            if (life <= 0)
             {
                 StartCoroutine(GameManager.Instance.GamePadeShake(0, .2f));
                 CJ_PlayerCameraManager.Instance.ennemyList.Remove(gameObject);
                 Destroy(gameObject);
             }
 
-                ennemyRGB.velocity = new Vector2(transform.position.x - attack.transform.position.x,
-                                                  attack.transform.position.y - attack.transform.position.y).normalized * projectionForce;
-                if (destroyContact)
-                    Destroy(attack);
-                yield return new WaitForSeconds(0.2f * damage);
-                ennemyRGB.velocity = Vector2.zero;
-                canMove = true;
-                canTakeDamage = true;
-                isAggro = true;
+            ennemyRGB.velocity = new Vector2(transform.position.x - attack.transform.position.x,
+                                              attack.transform.position.y - attack.transform.position.y).normalized * projectionForce;
+            if (destroyContact)
+                Destroy(attack);
+            yield return new WaitForSeconds(0.2f * damage);
+            ennemyRGB.velocity = Vector2.zero;
+            canMove = true;
+            canTakeDamage = true;
+            isAggro = true;
 
-            
+
 
 
         }

@@ -66,7 +66,6 @@ namespace Player
         }
         void Start()
         {
-            Debug.Log("Ca load");
             initialSpeed = speed;
             playerRGB = GetComponent<Rigidbody2D>();
         }
@@ -145,6 +144,7 @@ namespace Player
             {
                 if (!dashIsActive)
                 {
+                    Debug.Log( new Vector2( XAxis, YAxis));
                     // the player can't dash during a dash
                     dashIsActive = true;
                     //cancel of the current attack if they was an attack
@@ -154,6 +154,25 @@ namespace Player
                     speed = initialSpeed;
                     // add a force for the dash
                     speed *= dashForce;
+                    sprint = 1;
+                    if (Mathf.Abs(XAxis) < 0.6f && Mathf.Abs(YAxis) < 0.6f)
+                    {
+
+                        if (Mathf.Abs(XAxis) > Mathf.Abs(YAxis))
+                        {
+                            if (XAxis < 0)
+                                XAxis = -1;
+                            else
+                                XAxis = 1;
+                        }
+                        else
+                        {
+                            if (YAxis < 0)
+                                YAxis = -1f;
+                            else
+                                YAxis = 1;
+                        }
+                    }
                     Move();
                     SD_PlayerAnimation.Instance.PlayerAnimator.SetTrigger("Dash");
                     cantMove = true;
@@ -186,25 +205,28 @@ namespace Player
         
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.gameObject.tag == "Wind" && collision.gameObject.layer == 9)
-            {
-                wind = true;
-                cantMove = true;
-                cantDash = true;
-                SD_PlayerAttack.Instance.cantAttack = true;
-            }
-            else if (collision.gameObject.tag == "Wall")
+            if (collision.gameObject.tag == "Wall")
             {
                 if (wind)
                 {
                     cantMove = false;
                     cantDash = false;
                     wind = false;
+                    Debug.LogError("ca touche le mur");
                     SD_PlayerAttack.Instance.cantAttack = false;
 
                 }
 
             }
+            if (collision.gameObject.tag == "Wind" && collision.gameObject.layer == 9)
+            {
+                wind = true;
+                cantMove = true;
+                cantDash = true;
+                Debug.LogError("ca touche le vent");
+                SD_PlayerAttack.Instance.cantAttack = true;
+            }
+            
             else if (collision.gameObject.layer == 18)
             {
                 if (collision.gameObject.tag == "Cristal")

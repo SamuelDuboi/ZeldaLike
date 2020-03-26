@@ -34,7 +34,7 @@ namespace Player
             lifeEmpty.fillAmount = currentMaxLife / maxLifePossible;
             lifeBar.fillAmount = currentMaxLife / maxLifePossible;
         }
-        private void OnCollisionEnter2D(Collision2D collision)
+        private void OnCollisionStay2D(Collision2D collision)
         {
             if (collision.gameObject.layer == 12)
             {
@@ -60,13 +60,13 @@ namespace Player
                 SD_PlayerAnimation.Instance.PlayerAnimator.SetTrigger("Hit");
                 Vector2 bump = new Vector2(gameObject.transform.position.x - ennemy.transform.position.x, gameObject.transform.position.y - ennemy.transform.position.y);
                 StartCoroutine(GameManager.Instance.GamePadeShake(.2f, .2f));
-                Debug.Log("touche");
+
                 SD_PlayerMovement.Instance.playerRGB.velocity = bump * SD_PlayerMovement.Instance.speed * bumpPower;
                 SD_PlayerMovement.Instance.cantMove = true;
                 SD_PlayerMovement.Instance.cantDash = true;
                 life -= damage;
                 lifeBar.fillAmount = life / maxLifePossible;
-                Debug.Log(life);
+
                 yield return new WaitForSeconds(0.2f);
                 SD_PlayerMovement.Instance.cantMove = false;
                 SD_PlayerMovement.Instance.cantDash = false;

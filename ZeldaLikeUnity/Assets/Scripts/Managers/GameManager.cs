@@ -42,7 +42,7 @@ namespace Management
         }
         void Start()
         {
-            player = GameObject.FindGameObjectWithTag("Player").GetChildNamed("PlayerMovement");
+            player = GameObject.Find("PlayerMovement");
             death = GameObject.FindGameObjectWithTag("Death");
             death.SetActive(false);
             
@@ -57,13 +57,13 @@ namespace Management
             
             foreach (BoxCollider2D altarTriggered in altar)
             {
-                if (altarTriggered.IsTouching(player.GetChildNamed("PlayerColliderFeet").GetComponent<BoxCollider2D>()))
+                if (altarTriggered.IsTouching(player.GetComponentInChildren< BoxCollider2D>()))
                 {
+                    Debug.Log("allo ?");
                     altarTriggered.gameObject.GetComponentInChildren<Animator>().SetBool("On", true);
                 }
                 else
                 {
-                    Debug.Log("allo ?");
                     altarTriggered.gameObject.GetComponentInChildren<Animator>().SetBool("On", false);
                 }
             }

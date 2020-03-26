@@ -6154,21 +6154,6 @@ PrefabInstance:
       propertyPath: camera1
       value: 
       objectReference: {fileID: 272532426}
-    - target: {fileID: 3834187232453695320, guid: 94f740b0faa1a664da745400ca412b64,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4455326354814619344, guid: 94f740b0faa1a664da745400ca412b64,
-        type: 3}
-      propertyPath: hasKey
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4455326354814619344, guid: 94f740b0faa1a664da745400ca412b64,
-        type: 3}
-      propertyPath: timeBeforAbleToMoveAfterFall
-      value: 0.4
-      objectReference: {fileID: 0}
     - target: {fileID: 4455326354814619344, guid: 94f740b0faa1a664da745400ca412b64,
         type: 3}
       propertyPath: keyUI
@@ -6233,11 +6218,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: --Player--
-      objectReference: {fileID: 0}
-    - target: {fileID: 4455326355071513430, guid: 94f740b0faa1a664da745400ca412b64,
-        type: 3}
-      propertyPath: hasWind
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94f740b0faa1a664da745400ca412b64, type: 3}
