@@ -37,9 +37,8 @@ public class SD_BossBody : MonoBehaviour
 
     [Space]
     public GameObject[] phaseWeakPoins = new GameObject[3];
-    public Transform[] shotPoint1 = new Transform[3];
-    public Transform[] shotPoint2 = new Transform[3];
-    public Transform[] shotPoint3 = new Transform[5];
+    public GameObject[] shotPoint1 = new GameObject[3];
+    public GameObject[] shotPoint2 = new GameObject[3];
     int shootSwitch = 0;
 
     [Space]
@@ -131,39 +130,60 @@ public class SD_BossBody : MonoBehaviour
         {
             timer += Time.deltaTime;
             if (timer > timerToReach && SD_BossBehavior.Instance.phaseNumber == 1)
-                Fire(couldowBulletMin1, couldowBulletMax2);
+               StartCoroutine(Fire(couldowBulletMin1, couldowBulletMax2));
             else if (timer > timerToReach && SD_BossBehavior.Instance.phaseNumber == 2)
-                Fire(couldowBulletMin2, couldowBulletMax2);
+                StartCoroutine(Fire(couldowBulletMin2, couldowBulletMax2));
             else if (timer > timerToReach && SD_BossBehavior.Instance.phaseNumber == 3)
-                Fire(couldowBulletMin3, couldowBulletMax3);
+                StartCoroutine(Fire(couldowBulletMin3, couldowBulletMax3));
         }
 
 
 
     }
-    void Fire(float TimerMin, float timerMax)
+    IEnumerator Fire(float TimerMin, float timerMax)
     {
         timer = 0;
         timerToReach = Random.Range(TimerMin, timerMax);
-        if (SD_BossBehavior.Instance.phaseNumber == 1)
-        {
             if (shootSwitch == 0)
             {
                 for (int i = 0; i < shotPoint1.Length; i++)
                 {
-                    Instantiate(bullet, shotPoint1[i].transform.position, Quaternion.identity);
+                shotPoint1[i].GetComponent<LineRenderer>().enabled = true;
+                shotPoint1[i].GetComponent<LineRenderer>().SetPosition(0, shotPoint1[i].transform.position);
+                shotPoint1[i].GetComponent<LineRenderer>().SetPosition(1, shotPoint1[i].transform.position - new Vector3(0,100,0));
+                yield return null;
+                }
+            yield return new WaitForSeconds(2f);
+                for (int i = 0; i < shotPoint1.Length; i++)
+                {
+                    shotPoint1[i].GetComponent<LineRenderer>().enabled = false;
+                    GameObject newBullet = Instantiate(bullet, shotPoint1[i].transform.position, Quaternion.identity);
+                    newBullet.GetComponent<CJ_BulletBehaviour>().target = new Vector2(newBullet.transform.position.x, newBullet.transform.position.y - 10f);
+                    newBullet.GetComponent<CJ_BulletBehaviour>().parent = gameObject;
+                yield return null;
                 }
                 shootSwitch = 1;
             }
-            if(shootSwitch == 1)
+            else if(shootSwitch == 1)
             {
-                for(int i = 0; i < shotPoint2.Length; i++)
+                for (int i = 0; i < shotPoint2.Length; i++)
                 {
-                    Instantiate(bullet, shotPoint2[i].transform.position, Quaternion.identity);
+                shotPoint2[i].GetComponent<LineRenderer>().enabled = true;
+                shotPoint2[i].GetComponent<LineRenderer>().SetPosition(0, shotPoint2[i].transform.position);
+                shotPoint2[i].GetComponent<LineRenderer>().SetPosition(1, shotPoint2[i].transform.position - new Vector3(0, 100, 0));
+                yield return null;
                 }
+            yield return new WaitForSeconds(2f);
+            for (int i = 0; i < shotPoint2.Length; i++)
+                {
+                    shotPoint2[i].GetComponent<LineRenderer>().enabled = false;
+                    GameObject newBullet = Instantiate(bullet, shotPoint2[i].transform.position, Quaternion.identity);
+                    newBullet.GetComponent<CJ_BulletBehaviour>().target = new Vector2(newBullet.transform.position.x, newBullet.transform.position.y - 10f);
+                    newBullet.GetComponent<CJ_BulletBehaviour>().parent = gameObject;
+                yield return null;
+            }
                 shootSwitch = 0;
             }
-        }
 
     }
    
