@@ -1,0 +1,319 @@
+fileFormatVersion: 2
+guid: 1db804bc6d8b23143baad4074807836b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1229145115488818278
+    second: CP_Attack_front3_0
+  - first:
+      213: -7990101896554713276
+    second: CP_Attack_front3_1
+  - first:
+      213: 1825249471145568830
+    second: CP_Attack_front3_2
+  - first:
+      213: 6022223955557280055
+    second: CP_Attack_front3_3
+  - first:
+      213: 7919950978028593103
+    second: CP_Attack_front3_4
+  - first:
+      213: -8474392748387183964
+    second: CP_Attack_front3_5
+  - first:
+      213: -601899651440705512
+    second: CP_Attack_front3_6
+  - first:
+      213: -5490153829953410233
+    second: CP_Attack_front3_7
+  - first:
+      213: -2599550016282136571
+    second: CP_Attack_front3_8
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: CP_Attack_front3_0
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 62
+        width: 57
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9be1ed970331fee0800000000000000
+      internalID: -1229145115488818278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CP_Attack_front3_1
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 18
+        width: 175
+        height: 112
+      alignment: 9
+      pivot: {x: 0.48516914, y: 0.5289667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44f6ea098a47d1190800000000000000
+      internalID: -7990101896554713276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CP_Attack_front3_2
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 16
+        width: 173
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5405535}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3ae91239b6945910800000000000000
+      internalID: 1825249471145568830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CP_Attack_front3_3
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 13
+        width: 175
+        height: 112
+      alignment: 9
+      pivot: {x: 0.4962922, y: 0.59269387}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 739e6dcc7cc339350800000000000000
+      internalID: 6022223955557280055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CP_Attack_front3_4
+      rect:
+        serializedVersion: 2
+        x: 974
+        y: 16
+        width: 173
+        height: 112
+      alignment: 9
+      pivot: {x: 0.46249408, y: 0.56372696}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcfd6ebe37159ed60800000000000000
+      internalID: 7919950978028593103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CP_Attack_front3_5
+      rect:
+        serializedVersion: 2
+        x: 1205
+        y: 18
+        width: 175
+        height: 113
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5344526}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a25c31d1b8e46a80800000000000000
+      internalID: -8474392748387183964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CP_Attack_front3_6
+      rect:
+        serializedVersion: 2
+        x: 1446
+        y: 16
+        width: 175
+        height: 112
+      alignment: 9
+      pivot: {x: 0.48146135, y: 0.56372696}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 810027db47f95a7f0800000000000000
+      internalID: -601899651440705512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CP_Attack_front3_7
+      rect:
+        serializedVersion: 2
+        x: 1755
+        y: 62
+        width: 28
+        height: 39
+      alignment: 9
+      pivot: {x: 0.47682843, y: 0.3669005}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74b60630e2e0fc3b0800000000000000
+      internalID: -5490153829953410233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CP_Attack_front3_8
+      rect:
+        serializedVersion: 2
+        x: 1999
+        y: 62
+        width: 14
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50074af780b8cebd0800000000000000
+      internalID: -2599550016282136571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
