@@ -37,6 +37,10 @@ public class SD_BossBody : MonoBehaviour
 
     [Space]
     public GameObject[] phaseWeakPoins = new GameObject[3];
+    public Transform[] shotPoint1 = new Transform[3];
+    public Transform[] shotPoint2 = new Transform[3];
+    public Transform[] shotPoint3 = new Transform[5];
+    int shootSwitch = 0;
 
     [Space]
     [Header("Rocks")]
@@ -141,15 +145,24 @@ public class SD_BossBody : MonoBehaviour
     {
         timer = 0;
         timerToReach = Random.Range(TimerMin, timerMax);
-        Vector2 formerBulletPosition = firstBullet;
-        while (formerBulletPosition.x <= firstBullet.x + bossCollider.bounds.size.x)
+        if (SD_BossBehavior.Instance.phaseNumber == 1)
         {
-            Vector2 newBulletPosition = new Vector2(formerBulletPosition.x + bossCollider.bounds.size.x / bulletNummber, formerBulletPosition.y);
-            GameObject newBullet = Instantiate(bullet, newBulletPosition, Quaternion.identity);
-            newBullet.GetComponent<CJ_BulletBehaviour>().target = new Vector2(newBulletPosition.x, newBulletPosition.y - 10f);
-            newBullet.GetComponent<CJ_BulletBehaviour>().parent = gameObject;
-
-            formerBulletPosition = newBulletPosition;
+            if (shootSwitch == 0)
+            {
+                for (int i = 0; i < shotPoint1.Length; i++)
+                {
+                    Instantiate(bullet, shotPoint1[i].transform.position, Quaternion.identity);
+                }
+                shootSwitch = 1;
+            }
+            if(shootSwitch == 1)
+            {
+                for(int i = 0; i < shotPoint2.Length; i++)
+                {
+                    Instantiate(bullet, shotPoint2[i].transform.position, Quaternion.identity);
+                }
+                shootSwitch = 0;
+            }
         }
 
     }
