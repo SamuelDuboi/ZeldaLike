@@ -78,7 +78,7 @@ namespace Player
 
             }
             // input of attack needed to be change
-            if (Input.GetButtonDown("Attack") || Input.GetAxisRaw("Wind") > 0.1f)
+            if (Input.GetButtonDown("Attack") || Input.GetAxisRaw("Wind") > 0.8f)
             {
                 playerVelocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
                 SD_PlayerMovement.Instance.playerRGB.velocity = playerVelocity * speedBeforAttack * 1.5f;
@@ -118,7 +118,7 @@ namespace Player
                 #endregion
                 else if (hasWind )
                 {
-                    SD_PlayerAnimation.Instance.PlayerAnimator.SetTrigger("Wind");
+                    SD_PlayerAnimation.Instance.PlayerAnimator.SetBool("Wind",true);
                     
                 }
 
@@ -196,5 +196,22 @@ namespace Player
             currentDamage = damage[number];
         }
 
+
+        public void CantMoveWind()
+        {
+            SD_PlayerMovement.Instance.cantDash = true;
+            SD_PlayerMovement.Instance.cantMove = true;
+            SD_PlayerMovement.Instance.playerRGB.velocity = Vector2.zero;
+            SD_PlayerMovement.Instance.sprint = 0;
+            cantAttack = true;
+        }
+        public void CanMoveWind()
+        {
+            SD_PlayerAnimation.Instance.PlayerAnimator.SetBool("Wind", false);
+            SD_PlayerMovement.Instance.cantDash = false;
+            SD_PlayerMovement.Instance.cantMove = false;
+            SD_PlayerMovement.Instance.sprint = 1;
+            cantAttack = false;
+        }
     }
 }

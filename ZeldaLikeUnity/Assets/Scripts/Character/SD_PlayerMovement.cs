@@ -21,7 +21,7 @@ namespace Player
         //inputs on x and y axis
        [HideInInspector] public float XAxis;
         [HideInInspector] public float YAxis;
-        float sprint = 1f;
+        [HideInInspector] public float sprint = 1f;
         [Range(1, 2)]
         public float sprintForce;
         [HideInInspector] public Rigidbody2D playerRGB;
