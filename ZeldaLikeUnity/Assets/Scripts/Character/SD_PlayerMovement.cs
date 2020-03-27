@@ -223,7 +223,6 @@ namespace Player
                 wind = true;
                 cantMove = true;
                 cantDash = true;
-                Debug.LogError("ca touche le vent");
                 SD_PlayerAttack.Instance.cantAttack = true;
             }
             
