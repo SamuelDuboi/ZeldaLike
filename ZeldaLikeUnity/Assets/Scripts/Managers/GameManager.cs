@@ -13,6 +13,7 @@ namespace Management
     {
          GameObject player;
          GameObject death;
+         GameObject pause;
         //  public List<GameObject> ennemies
          List<Vector3> ronchonchonsPositions= new List<Vector3>();
          List<Vector3> robotScoutPosition = new List<Vector3>();
@@ -27,7 +28,7 @@ namespace Management
         public GameObject[] ennemiesPrefabs = new GameObject[4];
         public enum ennemies { ronchonchon, scoutRobot, combatRobot, gardianRobot}
 
-
+        public GameObject evenSystem;
 
         //gamepade shake;
         PlayerIndex playerIndex;
@@ -44,11 +45,18 @@ namespace Management
         {
             player = GameObject.Find("PlayerMovement");
             death = GameObject.FindGameObjectWithTag("Death");
+            pause = GameObject.FindGameObjectWithTag("Pause");
             death.SetActive(false);
+            pause.SetActive(false);
             
             Saving();
         }
-        
+        private void Update()
+        {
+            if (Input.GetButtonDown("Pause"))
+                Pause();
+        }
+
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
@@ -155,6 +163,7 @@ namespace Management
                 yield return new WaitForSeconds(1.5f);
                 Time.timeScale = 0;
                 death.SetActive(true);
+                evenSystem.GetComponent<SD_EventSystem>().ChangePanel();
                 deathActive = false;
             }        
         }
@@ -197,6 +206,18 @@ namespace Management
             Time.timeScale = 1;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
+        }
+
+        public void Pause()
+        {
+            Time.timeScale = 0;
+            pause.SetActive(true);
+            evenSystem.GetComponent<SD_EventSystem>().ChangePanel();
+        }
+        public void Unpause()
+        {
+            Time.timeScale = 1;
+            pause.SetActive(false);
         }
     }
 }
