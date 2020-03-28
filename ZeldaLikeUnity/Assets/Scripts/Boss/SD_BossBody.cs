@@ -37,8 +37,8 @@ public class SD_BossBody : MonoBehaviour
 
     [Space]
     public GameObject[] phaseWeakPoins = new GameObject[3];
-    public GameObject[] shotPoint1 = new GameObject[3];
-    public GameObject[] shotPoint2 = new GameObject[3];
+    public GameObject[] shotPoint1 = new GameObject[0];
+    public GameObject[] shotPoint2 = new GameObject[0];
     int shootSwitch = 0;
 
     [Space]
