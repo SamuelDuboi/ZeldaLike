@@ -103,7 +103,7 @@ MonoBehaviour:
   m_MinSize: {x: 202, y: 563}
   m_MaxSize: {x: 4002, y: 12063}
   vertical: 1
-  controlID: 238
+  controlID: 122
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -178,7 +178,7 @@ MonoBehaviour:
     y: 0
     width: 1536
     height: 781
-  m_MinSize: {x: 875, y: 613}
+  m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &8
 MonoBehaviour:
@@ -201,7 +201,7 @@ MonoBehaviour:
     height: 30
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
-  m_LastLoadedLayoutName: Sam
+  m_LastLoadedLayoutName: 
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -249,7 +249,7 @@ MonoBehaviour:
   m_MinSize: {x: 911, y: 563}
   m_MaxSize: {x: 22006, y: 12063}
   vertical: 0
-  controlID: 280
+  controlID: 71
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -296,8 +296,8 @@ MonoBehaviour:
     y: 0
     width: 332
     height: 731
-  m_MinSize: {x: 277, y: 71}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 22}
   m_Panes:
   - {fileID: 22}
@@ -404,7 +404,7 @@ MonoBehaviour:
   m_MaximizeOnPlay: 0
   m_VSyncEnabled: 0
   m_Gizmos: 0
-  m_Stats: 1
+  m_Stats: 0
   m_SelectedSizes: 05000000000000000000000000000000000000000000000000000000000000000000000000000000
   m_ZoomArea:
     m_HRangeLocked: 0
@@ -483,20 +483,20 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: baf6ffff
-      m_LastClickedID: -2374
-      m_ExpandedIDs: caf6ffffa4f9ffffdef9ffff60faffff3e4200009e420000
+      m_SelectedIDs: 38610000
+      m_LastClickedID: 24888
+      m_ExpandedIDs: 9acaffffc0cbffff3accffffecccffffeccdffffe8ceffffa8cfffffe6cfffff18d0ffff4cd2ffff4ed2ffffaed3fffff4d6fffff6d6ffff08d8ffffdcd9ffffded9fffffcd9ffffa6deffffbee1ffffc0e1ffffeee2ffff1ae9fffff8eaffffd6f7ffffe8faffffeafaffff6cfbffffe6360000d458000072610000aa610000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: RobotScout
-        m_OriginalName: RobotScout
+        m_Name: CombatRobot (2)
+        m_OriginalName: CombatRobot (2)
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: -1726
+        m_UserData: -12856
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
         m_OriginalEventType: 0
@@ -545,9 +545,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -17.08556, y: 5.5450068, z: -56.33008}
+    m_Target: {x: -10.98224, y: 1.3596451, z: -3.3523438}
     speed: 2
-    m_Value: {x: -17.08556, y: 5.5450068, z: -56.33008}
+    m_Value: {x: -10.98224, y: 1.3596451, z: -3.3523438}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -597,9 +597,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 14.830581
+    m_Target: 23.991093
     speed: 2
-    m_Value: 15.529404
+    m_Value: 22.957983
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -663,20 +663,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes/SandBox
+    - Assets/Prefabs/SD_Prefab
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Scenes/SandBox
+  - Assets/Prefabs/SD_Prefab
   m_LastFoldersGridSize: 16
   m_LastProjectPath: D:\git\ZeldaLike\ZeldaLikeUnity
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 3c3c0000
-    m_LastClickedID: 15420
-    m_ExpandedIDs: 00000000063c0000083c00000a3c00000c3c00000e3c0000103c0000123c0000143c0000163c0000183c000000ca9a3b
+    m_SelectedIDs: 1c420000
+    m_LastClickedID: 16924
+    m_ExpandedIDs: 00000000de410000e0410000e2410000e4410000e6410000e8410000ea410000ec410000ee410000f041000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -692,7 +692,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 0}
+      m_ClientGUIView: {fileID: 5}
     m_SearchString: 
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
@@ -704,7 +704,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000063c0000083c00000a3c00000c3c00000e3c0000103c0000123c0000143c0000163c0000183c000000ca9a3b
+    m_ExpandedIDs: 00000000de410000e0410000e2410000e4410000e6410000e8410000ea410000ec410000ee410000f0410000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
