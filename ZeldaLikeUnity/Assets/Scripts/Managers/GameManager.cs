@@ -219,7 +219,7 @@ namespace Management
         {
             Time.timeScale = 1;
             pause.SetActive(false);
-            SD_PlayerMovement.Instance.cantDash = true;
+            SD_PlayerMovement.Instance.cantDash = false;
         }
     }
 }

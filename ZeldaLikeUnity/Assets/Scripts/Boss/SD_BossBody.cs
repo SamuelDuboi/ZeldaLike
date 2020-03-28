@@ -82,11 +82,14 @@ public class SD_BossBody : MonoBehaviour
                     if (weakPointNumber == 0)
                     {
                         SD_BossBehavior.Instance.phaseNumber++;
-                       
-                        StartCoroutine(Moving());
+
+                        if (SD_BossBehavior.Instance.phaseNumber == 4)
+                            Destroy(transform.parent.gameObject);
+                        else
+                            StartCoroutine(Moving());
 
                     }
-                        
+
                 }
             }
         }
