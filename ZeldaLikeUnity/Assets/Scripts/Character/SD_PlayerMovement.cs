@@ -228,12 +228,8 @@ namespace Player
             
             else if (collision.gameObject.layer == 18)
             {
-                if (collision.gameObject.tag == "Cristal")
-                {
-                    platformNumber++;
-                    Destroy(collision.gameObject);
-                }
-                else if (collision.gameObject.tag == "Key")
+                
+                 if (collision.gameObject.tag == "Key")
                 {
                     hasKey = true;
                     keyUI.SetActive(true);

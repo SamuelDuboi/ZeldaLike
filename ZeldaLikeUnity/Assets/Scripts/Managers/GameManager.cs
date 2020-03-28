@@ -213,11 +213,13 @@ namespace Management
             Time.timeScale = 0;
             pause.SetActive(true);
             evenSystem.GetComponent<SD_EventSystem>().ChangePanel();
+            SD_PlayerMovement.Instance.cantDash = true;
         }
         public void Unpause()
         {
             Time.timeScale = 1;
             pause.SetActive(false);
+            SD_PlayerMovement.Instance.cantDash = true;
         }
     }
 }

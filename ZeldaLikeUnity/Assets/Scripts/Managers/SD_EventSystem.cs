@@ -17,11 +17,11 @@ public class SD_EventSystem : MonoBehaviour
     }
     public void ChangePanel()
     {
-        if (pause.activeSelf)
+        if (pause.activeInHierarchy)
         {
             GetComponent<EventSystem>().SetSelectedGameObject(pause);
         }
-         if (death.activeSelf)
+         if (death.activeInHierarchy)
             GetComponent<EventSystem>().SetSelectedGameObject(death);
     }
 }

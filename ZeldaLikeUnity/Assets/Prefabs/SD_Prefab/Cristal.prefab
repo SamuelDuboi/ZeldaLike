@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4764245867308087089}
   - component: {fileID: 4764245867308087090}
   - component: {fileID: 5285756138160966479}
+  - component: {fileID: 4883393725868050469}
   m_Layer: 18
   m_Name: Cristal
   m_TagString: Cristal
@@ -128,3 +129,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4883393725868050469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4764245867308087091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 580e20dd66b7ffe4b8d6bccab4a44e10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

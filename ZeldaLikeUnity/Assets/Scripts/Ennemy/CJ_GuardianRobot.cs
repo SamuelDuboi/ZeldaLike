@@ -29,13 +29,14 @@ namespace Ennemy
         public override void FixedUpdate()
         {
             base.FixedUpdate();
+            
         }
 
         public override void Mouvement()
         {
             if(Vector2.Distance(transform.position,player.transform.position) > attackRange)
             {
-                transform.position = Vector3.MoveTowards(transform.position, player.transform.position, Time.deltaTime * speed);
+                transform.position = Vector2.MoveTowards(transform.position, player.transform.position, Time.deltaTime * speed);
                 if(canAttack  && limit < 2)
                 {
                     StartCoroutine(Shoot());
