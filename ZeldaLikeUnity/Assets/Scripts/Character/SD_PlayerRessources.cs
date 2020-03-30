@@ -16,7 +16,7 @@ namespace Player
         Image lifeBar;
         Image energyEmpty;
         Image energyBar;
-        public static float life;
+        public  float life;
         public float currentMaxLife;
         public float maxLifePossible;
         [HideInInspector] public bool cantTakeDamage;
@@ -59,7 +59,7 @@ namespace Player
                 cantTakeDamage = true;
                 SD_PlayerAnimation.Instance.PlayerAnimator.SetTrigger("Hit");
                 Vector2 bump = new Vector2(gameObject.transform.position.x - ennemy.transform.position.x, gameObject.transform.position.y - ennemy.transform.position.y);
-                StartCoroutine(GameManager.Instance.GamePadeShake(.2f, .2f));
+                StartCoroutine(GameManagerV2.Instance.GamePadeShake(.2f, .2f));
 
                 SD_PlayerMovement.Instance.playerRGB.velocity = bump * SD_PlayerMovement.Instance.speed * bumpPower;
                 SD_PlayerMovement.Instance.cantMove = true;
@@ -74,7 +74,7 @@ namespace Player
                 
                 if (life <= 0)
                 {
-                    StartCoroutine(GameManager.Instance.Death());
+                    StartCoroutine(GameManagerV2.Instance.Death());
                 }
                 if (isDestroy)
                     Destroy(ennemy);

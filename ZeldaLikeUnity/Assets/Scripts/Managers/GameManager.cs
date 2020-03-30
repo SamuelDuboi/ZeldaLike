@@ -49,7 +49,7 @@ namespace Management
             death.SetActive(false);
             pause.SetActive(false);
             
-            Saving();
+           Saving();
         }
         private void Update()
         {
@@ -84,6 +84,9 @@ namespace Management
             save.playerPositionX =  SD_PlayerMovement.Instance.transform.position.x;
             save.playerPositionY =  SD_PlayerMovement.Instance.transform.position.y;
             save.pvMax = SD_PlayerRessources.Instance.currentMaxLife;
+            save.scenceIndex = SceneManager.GetActiveScene().buildIndex;
+            save.hasWind = SD_PlayerAttack.Instance.hasWind;
+            save.canParry = SD_PlayerAttack.Instance.canParry;
 
             return save;
         }
@@ -98,9 +101,14 @@ namespace Management
                 FileStream file = File.Open(Application.persistentDataPath + "/gamesave.save", FileMode.Open);
                 Save save = (Save)bf.Deserialize(file);
                 file.Close();
+                if (save.scenceIndex != SceneManager.GetActiveScene().buildIndex)
+                    SceneManager.LoadScene(save.scenceIndex);
+
                 player.transform.position = new Vector2(save.playerPositionX, save.playerPositionY);
                 SD_PlayerRessources.Instance.currentMaxLife = save.pvMax;
-                SD_PlayerRessources.Instance.Heal(save.pvMax);
+                SD_PlayerAttack.Instance.canParry = save.canParry;
+                SD_PlayerAttack.Instance.hasWind = save.hasWind;
+
                 if (ronchonchons != null)
                 foreach (GameObject ennemi in ronchonchons)
                     Destroy(ennemi);
@@ -151,6 +159,7 @@ namespace Management
             bf.Serialize(file, save);
             file.Close();
 
+            SD_PlayerRessources.Instance.Heal(SD_PlayerRessources.Instance.currentMaxLife);
         }
 
 

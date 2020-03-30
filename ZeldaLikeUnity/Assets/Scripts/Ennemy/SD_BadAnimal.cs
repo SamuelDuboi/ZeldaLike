@@ -11,7 +11,7 @@ namespace Ennemy
         {
             base.Start();
 
-            GameManager.Instance.AddEnnemieToList(GameManager.ennemies.ronchonchon, gameObject);
+            GameManagerV2.Instance.AddEnnemieToList(GameManagerV2.ennemies.ronchonchon, gameObject);
         }
        
         public override void FixedUpdate()

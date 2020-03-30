@@ -24,7 +24,7 @@ namespace Ennemy
             base.Start();
             target = gameObject.transform.GetChild(0).gameObject;
             target.SetActive(false);
-            GameManager.Instance.AddEnnemieToList(GameManager.ennemies.scoutRobot, gameObject);
+            GameManagerV2.Instance.AddEnnemieToList(GameManagerV2.ennemies.scoutRobot, gameObject);
         }
     
      public override void FixedUpdate()

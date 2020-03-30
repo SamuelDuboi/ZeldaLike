@@ -62,7 +62,7 @@ namespace Ennemy
             {
                 if (canTakeDamage)
                 {
-                    StartCoroutine(GameManager.Instance.GamePadeShake(0.3f, .2f));
+                    StartCoroutine(GameManagerV2.Instance.GamePadeShake(0.3f, .2f));
                     StartCoroutine(TakingDamage(SD_PlayerAttack.Instance.currentDamage, collision.gameObject, false, 10));
                 }
                 else
@@ -124,7 +124,7 @@ namespace Ennemy
             Debug.Log("life" + life);
             if (life <= 0)
             {
-                StartCoroutine(GameManager.Instance.GamePadeShake(0, .2f));
+                StartCoroutine(GameManagerV2.Instance.GamePadeShake(0, .2f));
                 CJ_PlayerCameraManager.Instance.ennemyList.Remove(gameObject);
                 Destroy(gameObject);
             }

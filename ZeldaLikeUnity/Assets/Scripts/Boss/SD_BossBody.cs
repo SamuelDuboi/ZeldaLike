@@ -196,7 +196,7 @@ public class SD_BossBody : MonoBehaviour
         SD_PlayerMovement.Instance.cantDash = true;
         SD_BossBehavior.Instance.canMove = true;
         SD_PlayerMovement.Instance.cantMove = true;
-        StartCoroutine(GameManager.Instance.GamePadeShake(1, 6f));
+        StartCoroutine(GameManagerV2.Instance.GamePadeShake(1, 6f));
         yield return new WaitForSeconds(1f);
         SD_PlayerMovement.Instance.cantMove = true;
        
