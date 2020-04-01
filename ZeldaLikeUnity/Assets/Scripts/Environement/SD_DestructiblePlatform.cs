@@ -7,6 +7,9 @@ public class SD_DestructiblePlatform : MonoBehaviour
 {
 
     Animator animator;
+    public bool onePath;
+    [Range(0,10)]
+    public float respawnCooldown = 5;
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -16,11 +19,23 @@ public class SD_DestructiblePlatform : MonoBehaviour
         if (collision.gameObject.layer == 10 || collision.gameObject.layer == 12)
             StartCoroutine(Destruction());
     }
-
+    bool isActive;
     IEnumerator Destruction()
     {
-        animator.SetTrigger("Fall");
-        yield return new WaitForSeconds(animator.GetCurrentAnimatorClipInfo(0).Length);
-        tag = "DestroyedPlatform";
+        if (!isActive)
+        {
+            isActive = true;
+            animator.SetTrigger("Fall");
+            yield return new WaitForSeconds(animator.GetCurrentAnimatorClipInfo(0).Length);
+            tag = "DestroyedPlatform";
+            if (!onePath)
+            {
+                yield return new WaitForSeconds(respawnCooldown);
+                animator.SetTrigger("Respawn");
+                tag = "Untagged";
+            }
+            isActive = false;
+        }
+        
     }
 }
