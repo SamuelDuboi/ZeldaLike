@@ -70,6 +70,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 718f135d28b24044b93b64fcddc464d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  life: 0
   currentMaxLife: 5
   maxLifePossible: 10
   cantTakeDamage: 0
@@ -10105,14 +10106,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3896ba33f8c54dd419c7cb43bbc8f05a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 5
   initialSpeed: 0
   XAxis: 0
   YAxis: 0
-  sprintForce: 1.4
+  sprint: 1
+  sprintForce: 1.55
   playerRGB: {fileID: 0}
   dashTime: 0.2
-  dashForce: 5
+  dashForce: 6
   dashCooldown: 0
   fallDamage: 1
   cantMove: 0
@@ -10280,8 +10282,8 @@ MonoBehaviour:
   attacks: {fileID: 7523515021025365951}
   damage: 010000000100000002000000
   currentDamage: 0
-  cooldownAfterFirst: 0.5
-  cooldownAfterSecond: 0.5
+  cooldownAfterFirst: 0
+  cooldownAfterSecond: 0
   cooldownAfterThird: 0.5
   cantAttack: 0
   windAttack: {fileID: 7512021111983014010, guid: 653393627bcc77b4aa4922c6b393b890,
