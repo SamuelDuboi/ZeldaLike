@@ -65065,6 +65065,11 @@ PrefabInstance:
       propertyPath: evenSystem
       value: 
       objectReference: {fileID: 88502581}
+    - target: {fileID: 2851683357391159762, guid: ba637cf92df012c4e91590b2e1c49b49,
+        type: 3}
+      propertyPath: wantToGetAttributeOfPreviousScene
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3270239394900743230, guid: ba637cf92df012c4e91590b2e1c49b49,
         type: 3}
       propertyPath: m_Offset.x

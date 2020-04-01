@@ -60,13 +60,9 @@ namespace Player
                 cantTakeDamage = true;
                 SD_PlayerAnimation.Instance.PlayerAnimator.SetTrigger("Hit");
                 Vector2 bump = new Vector2(gameObject.transform.position.x - ennemy.transform.position.x, gameObject.transform.position.y - ennemy.transform.position.y);
-                if (ennemy.GetComponent<SD_EnnemyGlobalBehavior>() != null)
-                {
-                    if (ennemy.GetComponent<SD_EnnemyGlobalBehavior>().IsInMainScene)
-                        StartCoroutine(GameManagerV2.Instance.GamePadeShake(.2f, .2f));
-                    else
-                        StartCoroutine(GameManager.Instance.GamePadeShake(.2f, .2f));
-                }
+                // remove at the end of the game
+                if (GameObject.Find("GameManagerV2") != null)
+                    StartCoroutine(GameManagerV2.Instance.GamePadeShake(.2f, .2f));
                 else
                     StartCoroutine(GameManager.Instance.GamePadeShake(.2f, .2f));
 
@@ -82,15 +78,10 @@ namespace Player
                 SD_PlayerMovement.Instance.playerRGB.velocity = Vector2.zero;
                 
                 if (life <= 0)
-                {
+                {  // remove at the end of the game
 
-                    if (ennemy.GetComponent<SD_EnnemyGlobalBehavior>() != null)
-                    {
-                        if (ennemy.GetComponent<SD_EnnemyGlobalBehavior>().IsInMainScene)
-                            StartCoroutine(GameManagerV2.Instance.Death());
-                        else
-                            StartCoroutine(GameManager.Instance.Death());
-                    }
+                    if (GameObject.Find("GameManagerV2") != null)
+                        StartCoroutine(GameManagerV2.Instance.Death());
                     else
                         StartCoroutine(GameManager.Instance.Death());
                 }

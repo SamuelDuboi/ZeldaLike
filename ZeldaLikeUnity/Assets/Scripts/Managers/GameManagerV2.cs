@@ -38,6 +38,8 @@ namespace Management
         bool deathActive;
 
         public bool wantToGetAttributeOfPreviousScene;
+
+        public GameObject LoadPlayerPosition;
         private void Awake()
         {
             // devra etre hanegr si on en laisse qu'un seul
@@ -52,7 +54,7 @@ namespace Management
             pause.SetActive(false);
             if(wantToGetAttributeOfPreviousScene)
              NewScene(false);
-            Saving(false);
+           // Saving(false);
         }
         private void Update()
         {
@@ -70,7 +72,6 @@ namespace Management
             {
                 if (altarTriggered.IsTouching(player.GetComponentInChildren< BoxCollider2D>()))
                 {
-                    Debug.Log("allo ?");
                     altarTriggered.gameObject.GetComponentInChildren<Animator>().SetBool("On", true);
                 }
                 else
@@ -111,7 +112,11 @@ namespace Management
                 Save save = (Save)bf.Deserialize(file);
                 file.Close();
                 if (save.scenceIndex != SceneManager.GetActiveScene().buildIndex && loadScene)
+                {
+                    Instantiate(LoadPlayerPosition, transform.position, Quaternion.identity);
                     SceneManager.LoadScene(save.scenceIndex);
+
+                }
 
                 player.transform.position = new Vector2(save.playerPositionX, save.playerPositionY);
                 SD_PlayerRessources.Instance.currentMaxLife = save.pvMax;
@@ -260,7 +265,24 @@ namespace Management
 
             }
         }
-
+        private Save NEwCreateSave()
+        {
+            Save save = new Save();           
+            save.pvMax = SD_PlayerRessources.Instance.currentMaxLife;
+            save.scenceIndex = 0;
+            save.scenceIndex = SceneManager.GetActiveScene().buildIndex;
+            
+            return save;
+        }
+        public void newGame()
+        {
+            Save save = NEwCreateSave();
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = File.Create(Application.persistentDataPath + "/gamesave.save");
+            bf.Serialize(file, save);
+            file.Close();
+            SceneManager.LoadScene(1);
+        }
         public IEnumerator GamePadeShake(float intensity, float time)
         {
             GamePad.SetVibration(playerIndex,intensity, intensity);

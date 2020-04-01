@@ -13931,6 +13931,11 @@ PrefabInstance:
       propertyPath: evenSystem
       value: 
       objectReference: {fileID: 1892532422}
+    - target: {fileID: 2851683357391159762, guid: ba637cf92df012c4e91590b2e1c49b49,
+        type: 3}
+      propertyPath: wantToGetAttributeOfPreviousScene
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3270239394900743230, guid: ba637cf92df012c4e91590b2e1c49b49,
         type: 3}
       propertyPath: m_Offset.x
@@ -51355,6 +51360,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: LoadSave
+      objectReference: {fileID: 0}
+    - target: {fileID: 8585356139235949650, guid: a27f3579b88612742b84d27cc7d9bf40,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8585356139235949650, guid: a27f3579b88612742b84d27cc7d9bf40,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a27f3579b88612742b84d27cc7d9bf40, type: 3}
