@@ -155,7 +155,7 @@ namespace Player
                     // add a force for the dash
                     speed *= dashForce;
                     sprint = 1;
-                    if (Mathf.Abs(XAxis) < 0.6f && Mathf.Abs(YAxis) < 0.6f)
+                  /*  if (Mathf.Abs(XAxis) < 0.6f && Mathf.Abs(YAxis) < 0.6f)
                     {
 
                         if (Mathf.Abs(XAxis) > Mathf.Abs(YAxis))
@@ -172,8 +172,8 @@ namespace Player
                             else
                                 YAxis = 1;
                         }
-                    }
-                    Move();
+                    }*/
+                    playerRGB.velocity = new Vector2(XAxis, YAxis).normalized * speed * sprint;
                     SD_PlayerAnimation.Instance.PlayerAnimator.SetTrigger("Dash");
                     cantMove = true;
                     cantDash = true;

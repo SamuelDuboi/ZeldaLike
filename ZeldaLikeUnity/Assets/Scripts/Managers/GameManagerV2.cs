@@ -6,7 +6,7 @@ using UnityEngine;
 using Player;
 using XInputDotNetPure;
 using UnityEngine.SceneManagement;
-
+using Ennemy;
 namespace Management
 {
     public class GameManagerV2 : Singleton<GameManagerV2>
@@ -132,13 +132,29 @@ namespace Management
                     foreach (GameObject ennemi in gardianRobot)
                     Destroy(ennemi);
                 foreach (Vector3 position in ronchonchonsPositions)
-                    Instantiate(ennemiesPrefabs[(int)ennemies.ronchonchon], position, Quaternion.identity);
+                {
+                    GameObject newRonchonchon = Instantiate(ennemiesPrefabs[(int)ennemies.ronchonchon], position, Quaternion.identity);
+                    newRonchonchon.GetComponent<SD_EnnemyGlobalBehavior>().IsInMainScene = true;
+                }
+                  
                 foreach (Vector3 position in robotScoutPosition)
-                    Instantiate(ennemiesPrefabs[(int)ennemies.scoutRobot], position, Quaternion.identity);
+                {
+                    GameObject newScout= Instantiate(ennemiesPrefabs[(int)ennemies.scoutRobot], position, Quaternion.identity);
+                    newScout.GetComponent<SD_EnnemyGlobalBehavior>().IsInMainScene = true;
+                }
+                    
                 foreach (Vector3 position in combatRobotPosition)
-                    Instantiate(ennemiesPrefabs[(int)ennemies.combatRobot], position, Quaternion.identity);
+                {
+                    GameObject newCombat= Instantiate(ennemiesPrefabs[(int)ennemies.combatRobot], position, Quaternion.identity);
+                    newCombat.GetComponent<SD_EnnemyGlobalBehavior>().IsInMainScene = true;
+                }
+                   
                 foreach (Vector3 position in gardianRobotPosition)
-                    Instantiate(ennemiesPrefabs[(int)ennemies.gardianRobot], position, Quaternion.identity);
+                {
+                    GameObject newGardian= Instantiate(ennemiesPrefabs[(int)ennemies.gardianRobot], position, Quaternion.identity);
+                    newGardian.GetComponent<SD_EnnemyGlobalBehavior>().IsInMainScene = true;
+                }
+                   
 
                 ronchonchons.Clear();
                 combatRobot.Clear();
@@ -268,8 +284,13 @@ namespace Management
         }
         public void Unpause()
         {
+            StartCoroutine(UnpauseCoroutine());
+        }
+        IEnumerator UnpauseCoroutine()
+        {
             Time.timeScale = 1;
             pause.SetActive(false);
+            yield return new WaitForSeconds(0.2f);
             SD_PlayerMovement.Instance.cantDash = false;
         }
     }

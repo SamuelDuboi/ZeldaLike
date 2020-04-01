@@ -32,6 +32,7 @@ namespace Ennemy
         RaycastHit2D[] hitPoints = new RaycastHit2D[8];
         int wallTouch = 4;
 
+        public bool IsInMainScene;
         public GameObject[] rayStartCorner = new GameObject[4];
 
         public virtual void Start()
@@ -124,7 +125,11 @@ namespace Ennemy
             Debug.Log("life" + life);
             if (life <= 0)
             {
-                StartCoroutine(GameManagerV2.Instance.GamePadeShake(0, .2f));
+                if (IsInMainScene)
+                    StartCoroutine(GameManagerV2.Instance.GamePadeShake(0, .2f));
+                else
+                    StartCoroutine(GameManager.Instance.GamePadeShake(0, .2f));
+
                 CJ_PlayerCameraManager.Instance.ennemyList.Remove(gameObject);
                 Destroy(gameObject);
             }

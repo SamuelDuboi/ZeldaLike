@@ -22,8 +22,10 @@ namespace Ennemy
             target.SetActive(false);
             smashImpact = gameObject.transform.GetChild(1).gameObject;
             smashImpact.SetActive(false);
-
+            if( IsInMainScene)
             GameManagerV2.Instance.AddEnnemieToList(GameManagerV2.ennemies.gardianRobot, gameObject);
+            else
+                GameManager.Instance.AddEnnemieToList(GameManager.ennemies.gardianRobot, gameObject);
         }
 
         public override void FixedUpdate()

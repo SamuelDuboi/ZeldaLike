@@ -12537,6 +12537,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 454365754}
     m_Modifications:
+    - target: {fileID: 3050688598167191429, guid: b16e567055bbb444eaac689eb8d0c397,
+        type: 3}
+      propertyPath: IsInMainScene
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3050688598167191430, guid: b16e567055bbb444eaac689eb8d0c397,
         type: 3}
       propertyPath: m_SortingOrder
@@ -46695,6 +46700,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 454365754}
     m_Modifications:
+    - target: {fileID: 3050688598167191429, guid: b16e567055bbb444eaac689eb8d0c397,
+        type: 3}
+      propertyPath: IsInMainScene
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3050688598167191430, guid: b16e567055bbb444eaac689eb8d0c397,
         type: 3}
       propertyPath: m_SortingOrder
@@ -64410,6 +64420,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 454365754}
     m_Modifications:
+    - target: {fileID: 3050688598167191429, guid: b16e567055bbb444eaac689eb8d0c397,
+        type: 3}
+      propertyPath: IsInMainScene
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3050688598167191430, guid: b16e567055bbb444eaac689eb8d0c397,
         type: 3}
       propertyPath: m_SortingOrder
@@ -64935,6 +64950,11 @@ PrefabInstance:
         type: 3}
       propertyPath: speed
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 542599190043403198, guid: 95185c62acc195c42ab975a68b03a945,
+        type: 3}
+      propertyPath: IsInMainScene
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 542599190043403199, guid: 95185c62acc195c42ab975a68b03a945,
         type: 3}
@@ -99140,6 +99160,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7998620809461349182, guid: 2bf0284dda72e9e4289d0294ffa9a3de,
+        type: 3}
+      propertyPath: IsInMainScene
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2bf0284dda72e9e4289d0294ffa9a3de, type: 3}

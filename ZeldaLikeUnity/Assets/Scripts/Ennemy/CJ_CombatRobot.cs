@@ -23,10 +23,13 @@ namespace Ennemy
     {
             base.Start();
             robotAttacks = GetComponent<Animator>();
-            GameManagerV2.Instance.AddEnnemieToList(GameManagerV2.ennemies.combatRobot, gameObject);
-    }
-    
-     public override void FixedUpdate()
+            if (IsInMainScene)
+                GameManagerV2.Instance.AddEnnemieToList(GameManagerV2.ennemies.combatRobot, gameObject);
+            else
+                GameManager.Instance.AddEnnemieToList(GameManager.ennemies.combatRobot, gameObject);
+        }
+
+        public override void FixedUpdate()
     {
             base.FixedUpdate();
     }

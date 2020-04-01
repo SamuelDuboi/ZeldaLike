@@ -23,6 +23,7 @@ namespace Player
         [Range(0.2f,1.5f)]
         public float invincibleTime;
 
+
         private void Awake()
         {
 
@@ -59,7 +60,15 @@ namespace Player
                 cantTakeDamage = true;
                 SD_PlayerAnimation.Instance.PlayerAnimator.SetTrigger("Hit");
                 Vector2 bump = new Vector2(gameObject.transform.position.x - ennemy.transform.position.x, gameObject.transform.position.y - ennemy.transform.position.y);
-                StartCoroutine(GameManagerV2.Instance.GamePadeShake(.2f, .2f));
+                if (ennemy.GetComponent<SD_EnnemyGlobalBehavior>() != null)
+                {
+                    if (ennemy.GetComponent<SD_EnnemyGlobalBehavior>().IsInMainScene)
+                        StartCoroutine(GameManagerV2.Instance.GamePadeShake(.2f, .2f));
+                    else
+                        StartCoroutine(GameManager.Instance.GamePadeShake(.2f, .2f));
+                }
+                else
+                    StartCoroutine(GameManager.Instance.GamePadeShake(.2f, .2f));
 
                 SD_PlayerMovement.Instance.playerRGB.velocity = bump * SD_PlayerMovement.Instance.speed * bumpPower;
                 SD_PlayerMovement.Instance.cantMove = true;
@@ -74,7 +83,16 @@ namespace Player
                 
                 if (life <= 0)
                 {
-                    StartCoroutine(GameManagerV2.Instance.Death());
+
+                    if (ennemy.GetComponent<SD_EnnemyGlobalBehavior>() != null)
+                    {
+                        if (ennemy.GetComponent<SD_EnnemyGlobalBehavior>().IsInMainScene)
+                            StartCoroutine(GameManagerV2.Instance.Death());
+                        else
+                            StartCoroutine(GameManager.Instance.Death());
+                    }
+                    else
+                        StartCoroutine(GameManager.Instance.Death());
                 }
                 if (isDestroy)
                     Destroy(ennemy);
