@@ -57,8 +57,8 @@ namespace Player
         [Range(0,1)]
         public float timeBeforAbleToMoveAfterFall;
 
-       [HideInInspector]  public bool hasKey;
-        public GameObject keyUI;
+       [HideInInspector]  public int keyNumber;
+        public GameObject[] keyUI;
         bool positionForDestroyedPlatformIsAlreadyChose;
         void Awake()
         {
@@ -231,8 +231,8 @@ namespace Player
                 
                  if (collision.gameObject.tag == "Key")
                 {
-                    hasKey = true;
-                    keyUI.SetActive(true);
+                    keyNumber ++;
+                    keyUI[keyNumber -1].SetActive(true);
                     Destroy(collision.gameObject);
                 }
             }
