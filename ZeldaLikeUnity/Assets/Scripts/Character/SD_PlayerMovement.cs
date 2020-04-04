@@ -295,13 +295,14 @@ namespace Player
                 cantMove = true;
                 SD_PlayerAttack.Instance.cantAttack = true;
                 playerRGB.simulated = false;
-
+                SD_PlayerAnimation.Instance.PlayerAnimator.SetBool("Fall", true);
                 for (int i = 0; i < 50; i++)
                 {
                     Vector2 reduction = Vector2Extensions.addVector(SD_PlayerAnimation.Instance.gameObject.transform.localScale, -new Vector2(0.02f, 0.02f));
                     SD_PlayerAnimation.Instance.gameObject.transform.localScale = reduction;
                     yield return new WaitForSeconds(0.001f);
                 }
+                SD_PlayerAnimation.Instance.PlayerAnimator.SetBool("Fall", false);
                 SD_PlayerAnimation.Instance.gameObject.transform.localScale = Vector2.one;
                 speed = 0;
                 if (!isAbleToRunOnHole)
