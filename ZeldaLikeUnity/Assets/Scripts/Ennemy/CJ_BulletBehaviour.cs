@@ -52,6 +52,7 @@ namespace Ennemy
                 }
             }
             
+            
 
         }
         private void FixedUpdate()

@@ -60,6 +60,8 @@ namespace Player
        [HideInInspector]  public int keyNumber;
         public GameObject[] keyUI;
         bool positionForDestroyedPlatformIsAlreadyChose;
+
+        bool canWind;
         void Awake()
         {
             MakeSingleton(false);
@@ -223,7 +225,11 @@ namespace Player
                 wind = true;
                 cantMove = true;
                 cantDash = true;
+
                 SD_PlayerAttack.Instance.cantAttack = true;
+                if (SD_PlayerAttack.Instance.hasWind)
+                    canWind = true;
+                SD_PlayerAttack.Instance.hasWind = false; 
             }
             
             else if (collision.gameObject.layer == 18)
@@ -268,7 +274,9 @@ namespace Player
                 wind = false;
                 cantMove = false;
                 cantDash = false;
-                SD_PlayerAttack.Instance.cantAttack = false;
+                SD_PlayerAttack.Instance.cantAttack = false; 
+                if (canWind)
+                SD_PlayerAttack.Instance.hasWind = true;
             }
             if (isAbleToRunOnHole && collision.tag == "WindPlatform" || collision.tag == "Hole")
                 isAbleToRunOnHole = false;

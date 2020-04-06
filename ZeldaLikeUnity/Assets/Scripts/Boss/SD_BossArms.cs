@@ -77,7 +77,8 @@ public class SD_BossArms : MonoBehaviour
     }
     private void OnCollisionEnter2D( Collision2D collision)
     {
-        direction = -direction;
+        if (collision.gameObject.layer!= 11 )
+            direction = -direction;
     }
    
 }

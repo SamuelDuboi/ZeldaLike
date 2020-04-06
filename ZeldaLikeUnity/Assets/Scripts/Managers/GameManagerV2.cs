@@ -65,14 +65,19 @@ namespace Management
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            Saving(true);
+            
             BoxCollider2D[] altar = GetComponentsInChildren<BoxCollider2D>();
             
             foreach (BoxCollider2D altarTriggered in altar)
             {
                 if (altarTriggered.IsTouching(player.GetComponentInChildren< BoxCollider2D>()))
                 {
-                    altarTriggered.gameObject.GetComponentInChildren<Animator>().SetBool("On", true);
+                    if (!altarTriggered.gameObject.GetComponentInChildren<Animator>().GetBool("On"))
+                    {
+                        altarTriggered.gameObject.GetComponentInChildren<Animator>().SetBool("On", true);
+                        Saving(true);
+                    }
+                    
                 }
                 else
                 {
@@ -123,6 +128,7 @@ namespace Management
                 SD_PlayerAttack.Instance.canParry = save.canParry;
                 SD_PlayerAttack.Instance.hasWind = save.hasWind;
                 SD_PlayerRessources.Instance.life = save.currentPv;
+                SD_PlayerRessources.Instance.Heal(SD_PlayerRessources.Instance.currentMaxLife);
 
                 if (ronchonchons != null)
                 foreach (GameObject ennemi in ronchonchons)
@@ -169,9 +175,13 @@ namespace Management
                 combatRobotPosition.Clear();
                 gardianRobotPosition.Clear();
                 robotScoutPosition.Clear();
+               
                 Time.timeScale = 1;
                 death.SetActive(false);
                 Debug.Log("Game Loaded");
+                SD_PlayerAttack.Instance.cantAttack = false;
+                SD_PlayerMovement.Instance.cantDash = false;
+                SD_PlayerMovement.Instance.cantMove = false;
 
 
             }
@@ -232,7 +242,12 @@ namespace Management
             {
                 deathActive = true;
                 SD_PlayerAnimation.Instance.PlayerAnimator.SetTrigger("Death");
-                yield return new WaitForSeconds(1.5f);
+                SD_PlayerAttack.Instance.cantAttack = true;
+                SD_PlayerAttack.Instance.hasWind = false;
+                SD_PlayerMovement.Instance.cantDash = true;
+                SD_PlayerMovement.Instance.cantMove = true;
+                GamePadeShake(0, 0);
+                yield return new WaitForSeconds(1f);
                 Time.timeScale = 0;
                 death.SetActive(true);
                 evenSystem.GetComponent<SD_EventSystem>().ChangePanel();

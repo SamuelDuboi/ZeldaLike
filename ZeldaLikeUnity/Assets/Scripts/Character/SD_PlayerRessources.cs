@@ -85,11 +85,12 @@ namespace Player
                     else
                         StartCoroutine(GameManager.Instance.Death());
                 }
-                if (isDestroy)
-                    Destroy(ennemy);
+              
 
                 yield return new WaitForSeconds(invincibleTime - 0.2f);
                 cantTakeDamage = false;
+                if (isDestroy)
+                    Destroy(ennemy);
             }
 
 
@@ -97,10 +98,11 @@ namespace Player
 
         public void Heal(float amount)
         {
-            life += amount;
-            lifeBar.fillAmount = life / maxLifePossible;
+            life += amount; 
             if (life > currentMaxLife)
                 life = currentMaxLife;
+            lifeBar.fillAmount = life / maxLifePossible;
+
         }
         #endregion
         #region RessourcesUpgrade

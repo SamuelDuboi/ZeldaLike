@@ -31471,6 +31471,10 @@ PrefabInstance:
       propertyPath: camera1
       value: 
       objectReference: {fileID: 924863868}
+    - target: {fileID: 2062720190, guid: 94f740b0faa1a664da745400ca412b64, type: 3}
+      propertyPath: currentMaxLife
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4455326355006402085, guid: 94f740b0faa1a664da745400ca412b64,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -31539,6 +31543,11 @@ PrefabInstance:
     - target: {fileID: 4455326355071513430, guid: 94f740b0faa1a664da745400ca412b64,
         type: 3}
       propertyPath: hasWind
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455326355071513430, guid: 94f740b0faa1a664da745400ca412b64,
+        type: 3}
+      propertyPath: windCD
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

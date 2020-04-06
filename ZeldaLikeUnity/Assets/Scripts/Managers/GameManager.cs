@@ -169,7 +169,8 @@ namespace Management
             {
                 deathActive = true;
                 SD_PlayerAnimation.Instance.PlayerAnimator.SetTrigger("Death");
-                yield return new WaitForSeconds(1.5f);
+                GamePadeShake(0, 0);
+                yield return new WaitForSeconds(1f);
                 Time.timeScale = 0;
                 death.SetActive(true);
                 evenSystem.GetComponent<SD_EventSystem>().ChangePanel();

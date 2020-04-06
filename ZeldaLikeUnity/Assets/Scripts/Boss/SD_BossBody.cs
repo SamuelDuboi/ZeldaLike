@@ -59,7 +59,7 @@ public class SD_BossBody : MonoBehaviour
         phaseWeakPoins[1].SetActive(false);
         phaseWeakPoins[2].SetActive(false);
         //- 3 car cllider du boss et des bord pour fair rebondire les mains a ne pas compter
-        weakPointNumber = GetComponentsInChildren<Collider2D>().Length-3;
+        weakPointNumber = GetComponentsInChildren<BoxCollider2D>().Length-3;
         bossCollider = GetComponent<Collider2D>();
         firstBullet = new Vector2(transform.position.x - bossCollider.bounds.extents.x, transform.position.y - bossCollider.bounds.extents.y);
         timerToReach = Random.Range(couldowBulletMin1, couldowBulletMax1);

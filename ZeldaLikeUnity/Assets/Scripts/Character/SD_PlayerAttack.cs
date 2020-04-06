@@ -53,7 +53,9 @@ namespace Player
 
         public bool canParry;
         public bool hasWind;
-
+        public float windCD =101;
+        bool cantWind ;
+        
         void Awake()
         {
             MakeSingleton(false);
@@ -78,7 +80,7 @@ namespace Player
 
             }
             // input of attack needed to be change
-            if (Input.GetButtonDown("Attack") || Input.GetAxisRaw("Wind") > 0.8f)
+            if (Input.GetButtonDown("Attack") || Input.GetAxisRaw("Wind") > 0.8f && hasWind)
             {
                 playerVelocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
                 SD_PlayerMovement.Instance.playerRGB.velocity = playerVelocity * speedBeforAttack * 1.5f;
@@ -118,7 +120,7 @@ namespace Player
                 #endregion
                 else if (hasWind )
                 {
-                    SD_PlayerAnimation.Instance.PlayerAnimator.SetBool("Wind",true);
+                   StartCoroutine(WindPower());
                     
                 }
 
@@ -212,6 +214,19 @@ namespace Player
             SD_PlayerMovement.Instance.cantMove = false;
             SD_PlayerMovement.Instance.sprint = 1;
             cantAttack = false;
+        }
+        IEnumerator WindPower()
+        {
+            if (!cantWind)
+            { 
+                cantWind = true;
+                CantMoveWind();
+                SD_PlayerAnimation.Instance.PlayerAnimator.SetBool("Wind", true);
+                yield return new WaitForSeconds(windCD);
+                CanMoveWind();
+                cantWind = false;
+            }
+           
         }
     }
 }
