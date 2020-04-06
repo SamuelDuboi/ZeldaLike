@@ -106,7 +106,7 @@ public class SD_BossBody : MonoBehaviour
                 StartCoroutine(RockFall());
                 phaseWeakPoins[SD_BossBehavior.Instance.phaseNumber - 1].SetActive(true);
                 phaseWeakPoins[SD_BossBehavior.Instance.phaseNumber - 2].SetActive(false);
-                weakPointNumber = GetComponentsInChildren<Collider2D>().Length - 3;
+                weakPointNumber = GetComponentsInChildren<BoxCollider2D>().Length - 3;
                 StartCoroutine(handsMoving());
                 SD_BossBehavior.Instance.canMove = false;
                 SD_PlayerMovement.Instance.cantDash = false;
@@ -122,7 +122,7 @@ public class SD_BossBody : MonoBehaviour
                 StartCoroutine(RockFall());
                 phaseWeakPoins[SD_BossBehavior.Instance.phaseNumber - 1].SetActive(true);
                 phaseWeakPoins[SD_BossBehavior.Instance.phaseNumber - 2].SetActive(false);
-                weakPointNumber = GetComponentsInChildren<Collider2D>().Length - 3;
+                weakPointNumber = GetComponentsInChildren<BoxCollider2D>().Length - 3;
                 StartCoroutine(handsMoving());
                 SD_BossBehavior.Instance.canMove = false;
                 SD_PlayerMovement.Instance.cantDash = false;

@@ -44,12 +44,12 @@ namespace Player
         bool wind;
 
         public GameObject windPlatform;
-        [HideInInspector] public bool isAbleToRunOnHole;
+         public bool isAbleToRunOnHole;
         bool canSpawnPlatform;
 
         public float platformLifeTime;
         GameObject currentPlatform;
-       [HideInInspector] public int platformNumber = 1;
+        public int platformNumber = 1;
 
         [Range(8, 11)]
         public float inertieAfterDash;
@@ -243,7 +243,11 @@ namespace Player
                 }
             }
             if (collision.gameObject.tag == "Hole")
+            {
                 playerRespawnAfterFall = new Vector2(transform.position.x - XAxis * 0.5f, transform.position.y - YAxis * 0.5f);
+                isAbleToRunOnHole = false;
+            }
+                
             if (collision.gameObject.tag == "DestroyedPlatform" && !positionForDestroyedPlatformIsAlreadyChose)
             {
                 playerRespawnAfterFall = new Vector2(transform.position.x - XAxis * 0.5f, transform.position.y - YAxis * 0.5f);
@@ -282,13 +286,21 @@ namespace Player
                 isAbleToRunOnHole = false;
             if (collision.tag == "Hole" && currentPlatform != null)
             {
-                platformNumber = 1;
+                StartCoroutine(PlatfromCantSwpanAfterTrigger());
                 Destroy(currentPlatform);
             }
         }
 
 
-
+        IEnumerator PlatfromCantSwpanAfterTrigger()
+        {
+            if(dashIsActive)
+            {
+                yield return new WaitForSeconds(0.2f);
+            }
+           
+            platformNumber = 1;
+        }
 
 
         IEnumerator Fall(Collider2D collisionPoint)

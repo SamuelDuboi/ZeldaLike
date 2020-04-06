@@ -108,7 +108,8 @@ namespace Management
                 SD_PlayerRessources.Instance.currentMaxLife = save.pvMax;
                 SD_PlayerAttack.Instance.canParry = save.canParry;
                 SD_PlayerAttack.Instance.hasWind = save.hasWind;
-
+                SD_PlayerRessources.Instance.Heal(SD_PlayerRessources.Instance.currentMaxLife);
+                SD_PlayerMovement.Instance.platformNumber = 1;
                 if (ronchonchons != null)
                 foreach (GameObject ennemi in ronchonchons)
                     Destroy(ennemi);
@@ -140,14 +141,21 @@ namespace Management
                 robotScoutPosition.Clear();
                 Time.timeScale = 1;
                 death.SetActive(false);
-                Debug.Log("Game Loaded");
-
+                SD_PlayerAttack.Instance.cantAttack = false;
+                SD_PlayerMovement.Instance.cantMove = false;
+                StartCoroutine(waitToNotDash());
 
             }
             else
             {
                 Debug.Log("No game saved!");
             }
+        }
+        IEnumerator waitToNotDash()
+        {
+            yield return new WaitForSeconds(0.2f);
+
+            SD_PlayerMovement.Instance.cantDash = false;
         }
 
         public void Saving()
@@ -173,6 +181,8 @@ namespace Management
                 yield return new WaitForSeconds(1f);
                 Time.timeScale = 0;
                 death.SetActive(true);
+
+                SD_PlayerMovement.Instance.cantDash = true;
                 evenSystem.GetComponent<SD_EventSystem>().ChangePanel();
                 deathActive = false;
             }        

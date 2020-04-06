@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
-
+using Player;
 public class SD_DestructiblePlatform : MonoBehaviour
 {
 
@@ -28,6 +28,7 @@ public class SD_DestructiblePlatform : MonoBehaviour
             animator.SetTrigger("Fall");
             yield return new WaitForSeconds(animator.GetCurrentAnimatorClipInfo(0).Length);
             tag = "DestroyedPlatform";
+            SD_PlayerMovement.Instance.isAbleToRunOnHole = false;
             if (!onePath)
             {
                 yield return new WaitForSeconds(respawnCooldown);

@@ -73,9 +73,6 @@ namespace Player
                 lifeBar.fillAmount = life / maxLifePossible;
 
                 yield return new WaitForSeconds(0.2f);
-                SD_PlayerMovement.Instance.cantMove = false;
-                SD_PlayerMovement.Instance.cantDash = false;
-                SD_PlayerMovement.Instance.playerRGB.velocity = Vector2.zero;
                 
                 if (life <= 0)
                 {  // remove at the end of the game
@@ -85,12 +82,19 @@ namespace Player
                     else
                         StartCoroutine(GameManager.Instance.Death());
                 }
+                else
+                {
+                    SD_PlayerMovement.Instance.cantMove = false;
+                    SD_PlayerMovement.Instance.cantDash = false;
+                    SD_PlayerMovement.Instance.playerRGB.velocity = Vector2.zero;
+                    yield return new WaitForSeconds(invincibleTime - 0.2f);
+                    cantTakeDamage = false;
+                    if (isDestroy)
+                        Destroy(ennemy);
+                }
               
 
-                yield return new WaitForSeconds(invincibleTime - 0.2f);
-                cantTakeDamage = false;
-                if (isDestroy)
-                    Destroy(ennemy);
+               
             }
 
 
