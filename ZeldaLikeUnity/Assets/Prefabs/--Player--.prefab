@@ -10127,8 +10127,9 @@ MonoBehaviour:
   platformNumber: 1
   inertieAfterDash: 11
   timeBeforAbleToMoveAfterFall: 0.4
-  hasKey: 0
-  keyUI: {fileID: 0}
+  keyNumber: 0
+  keyUI:
+  - {fileID: 0}
 --- !u!1 &4455326355006402086
 GameObject:
   m_ObjectHideFlags: 0
@@ -10290,6 +10291,7 @@ MonoBehaviour:
     type: 3}
   canParry: 1
   hasWind: 0
+  windCD: 101
 --- !u!114 &4455326355071513431
 MonoBehaviour:
   m_ObjectHideFlags: 0
