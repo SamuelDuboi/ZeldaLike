@@ -29,7 +29,7 @@ namespace Player
         public GameObject attacks;
 
         public int[] damage = new int[3];
-         public int currentDamage;
+        public int currentDamage;
 
         //if the player doesn't combo, he will ahve a cooldown befor atatcking again,the cooldown will change depending of the former combo
         [Header("Cooldowns")]
@@ -53,9 +53,13 @@ namespace Player
 
         public bool canParry;
         public bool hasWind;
-        public float windCD =101;
-        bool cantWind ;
-        
+        [Header("WindProjectile")]
+        public float windCD = 101;
+        bool cantWind;
+        public GameObject arrow;
+        public GameObject projectile;
+        public float projectilSpeed = 10;
+        bool cantAim;
         void Awake()
         {
             MakeSingleton(false);
@@ -103,12 +107,12 @@ namespace Player
                             speedBeforAttack = SD_PlayerMovement.Instance.initialSpeed;
                             SD_PlayerMovement.Instance.speed = speedBeforAttack / slowOfAttack;
                             timeBeforReset += SD_PlayerAnimation.Instance.attackAnimation[attackNumber - 1].length;
-                          
+
                         }
                         else
                         {
                             //add the new attack animation to the cooldown of the combo and disable the movement of the player
-                            timeBeforReset += SD_PlayerAnimation.Instance.attackAnimation[attackNumber - 1].length;                         
+                            timeBeforReset += SD_PlayerAnimation.Instance.attackAnimation[attackNumber - 1].length;
                         }
 
                         // set the animation to the new attack
@@ -118,10 +122,34 @@ namespace Player
 
                 }
                 #endregion
-                else if (hasWind )
+                else if (hasWind && !cantAim)
                 {
-                   StartCoroutine(WindPower());
+                    float angle = 0;
+                    cantWind = true;
+                    CantMoveWind();
+                    arrow.SetActive(true);
+                    if (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
+                    {
+                         angle = Vector2.Angle(transform.position,
+                                                new Vector2(Input.GetAxisRaw("Horizontal") * 90 + transform.position.x,
+                                                             Input.GetAxisRaw("Vertical") * 90 + transform.position.y));
+
+                        if (Input.GetAxis("Vertical") < 0.0f)
+                            angle = 360.0f - angle;
+                    }
+                    else
+                    {
+                        angle = Vector2.Angle(transform.position,
+                                                    new Vector2(SD_PlayerAnimation.Instance.PlayerAnimator.GetFloat("XAxis") * 90,
+                                                                SD_PlayerAnimation.Instance.PlayerAnimator.GetFloat("YAxis") * 90));
+                        if (SD_PlayerAnimation.Instance.PlayerAnimator.GetFloat("YAxis") < 0.0f)
+                            angle = 360.0f - angle;
+                    }
+                        
+
                     
+                    arrow.transform.rotation = Quaternion.Euler(0, 0, angle);
+
                 }
 
             }
@@ -162,7 +190,20 @@ namespace Player
             }
             #endregion
 
-
+            if (Input.GetAxis("Wind") < 0.2f && cantWind)
+            {
+                cantWind = false;
+                GameObject currentprojectil = Instantiate(projectile, transform.position, Quaternion.identity);
+                if (Input.GetAxisRaw("Horizontal")!= 0 || Input.GetAxisRaw("Vertical")!=0)
+                currentprojectil.GetComponent<Rigidbody2D>().velocity = new Vector2(Input.GetAxisRaw("Horizontal"),
+                                                                                    Input.GetAxisRaw("Vertical"))*projectilSpeed ;
+                else
+                    currentprojectil.GetComponent<Rigidbody2D>().velocity = new Vector2(SD_PlayerAnimation.Instance.PlayerAnimator.GetFloat("XAxis"),
+                                                                                        SD_PlayerAnimation.Instance.PlayerAnimator.GetFloat("YAxis"))*projectilSpeed;
+                CanMoveWind();
+                StartCoroutine(WindCooldown());
+                arrow.SetActive(false);
+            }
         }
         /// <summary>
         /// call to stop the attack after the time chosen
@@ -192,7 +233,7 @@ namespace Player
             yield return new WaitForSeconds(cooldown);
             cantAttack = false;
         }
-       
+
         public void AttackMore(int number)
         {
             currentDamage = damage[number];
@@ -215,18 +256,13 @@ namespace Player
             SD_PlayerMovement.Instance.sprint = 1;
             cantAttack = false;
         }
-        IEnumerator WindPower()
+
+        IEnumerator WindCooldown()
         {
-            if (!cantWind)
-            { 
-                cantWind = true;
-                CantMoveWind();
-                SD_PlayerAnimation.Instance.PlayerAnimator.SetBool("Wind", true);
-                yield return new WaitForSeconds(windCD);
-                CanMoveWind();
-                cantWind = false;
-            }
-           
+            cantAim = true;
+            yield return new WaitForSeconds(windCD);
+            cantWind = false;
+            cantAim = false;
         }
-    }
+    } 
 }

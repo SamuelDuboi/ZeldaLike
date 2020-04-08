@@ -72,7 +72,7 @@ namespace Ennemy
             } //if is attack by projectile
             else if (collision.gameObject.layer == 14 && collision.gameObject.tag != "Wind")
             {
-                if (collision.gameObject.GetComponent<CJ_BulletBehaviour>().isParry == true)
+                if (collision.gameObject.GetComponent<CJ_BulletBehaviour>()!= null &&collision.gameObject.GetComponent<CJ_BulletBehaviour>().isParry == true)
                 {
                     collision.gameObject.GetComponent<CJ_BulletBehaviour>().isParry = false;
                     StartCoroutine(TakingDamage(3, collision.gameObject, true, 10));
@@ -259,6 +259,17 @@ namespace Ennemy
             canMove = true;
             isAggro = true;
             GetComponent<BoxCollider2D>().isTrigger = false;
+        }
+        public void StunLunch(float timer)
+        {
+           StartCoroutine( Stun(timer));
+        }
+
+         IEnumerator Stun(float timer)
+        {
+            canMove = false;
+            yield return new WaitForSeconds(timer);
+            canMove = true;
         }
     }
 }
