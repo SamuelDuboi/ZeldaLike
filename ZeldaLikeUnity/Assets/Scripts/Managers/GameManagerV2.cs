@@ -98,6 +98,12 @@ namespace Management
             save.hasWind = SD_PlayerAttack.Instance.hasWind;
             save.canParry = SD_PlayerAttack.Instance.canParry;
             save.currentPv = SD_PlayerRessources.Instance.life;
+            save.Alyah1 = SD_PlayerRessources.Instance.Alyah1;
+            save.Alyah2 = SD_PlayerRessources.Instance.Alyah2;
+            save.Henry1 = SD_PlayerRessources.Instance.Henry1;
+            save.Henry2 = SD_PlayerRessources.Instance.Henry2;
+            save.WindMother = SD_PlayerRessources.Instance.WindMother;
+            save.Pepe = SD_PlayerRessources.Instance.Pepe;
             return save;
         }
 
@@ -131,6 +137,13 @@ namespace Management
                 SD_PlayerRessources.Instance.Heal(SD_PlayerRessources.Instance.currentMaxLife);
                 SD_PlayerMovement.Instance.platformNumber = 1;
 
+                //load the cpt of the dialogue so it doesnt repeat itself
+                SD_PlayerRessources.Instance.Alyah1 = save.Alyah1 ;
+                SD_PlayerRessources.Instance.Alyah2 = save.Alyah2 ;
+                SD_PlayerRessources.Instance.Henry1 = save.Henry1 ;
+                SD_PlayerRessources.Instance.Henry2 = save.Henry2 ;
+                SD_PlayerRessources.Instance.WindMother = save.WindMother ;
+                SD_PlayerRessources.Instance.Pepe = save.Pepe ;
                 if (ronchonchons != null)
                 foreach (GameObject ennemi in ronchonchons)
                     Destroy(ennemi);
@@ -293,7 +306,12 @@ namespace Management
             save.pvMax = SD_PlayerRessources.Instance.currentMaxLife;
             save.scenceIndex = 0;
             save.scenceIndex = SceneManager.GetActiveScene().buildIndex;
-            
+            save.Alyah1 = 0;
+            save.Alyah2 = 0;
+            save.Henry1 = 0;
+            save.Henry2 = 0;
+            save.WindMother = 0;
+            save.Pepe = 0;
             return save;
         }
         public void newGame()

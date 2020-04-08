@@ -14,4 +14,11 @@ using UnityEngine;
     public bool hasWind;
     public bool canParry;
 
- }
+    [HideInInspector] public int Alyah1;
+    [HideInInspector] public int Alyah2;
+    [HideInInspector] public int Henry1;
+    [HideInInspector] public int Henry2;
+    [HideInInspector] public int WindMother;
+    [HideInInspector] public int Pepe;
+
+}

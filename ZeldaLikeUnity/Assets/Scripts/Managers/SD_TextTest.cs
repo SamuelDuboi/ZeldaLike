@@ -10,8 +10,14 @@ public class SD_TextTest : MonoBehaviour
     public List<SD_TextScriptable> textDialogue = new List<SD_TextScriptable>();
     bool cantContinue;
     int listnumber;
+   [HideInInspector] public int pnj;
    public Image characterImage;
-    // Start is called before the first frame update
+
+    private void Start()
+    {
+        pnj =(int) textDialogue[0].pnj;
+    }
+
     IEnumerator Text( )
     {
         if (listnumber >= textDialogue.Count)

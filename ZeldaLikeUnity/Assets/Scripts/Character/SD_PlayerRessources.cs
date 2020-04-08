@@ -23,6 +23,13 @@ namespace Player
         [Range(0.2f,1.5f)]
         public float invincibleTime;
 
+        [HideInInspector] public int Alyah1;
+        [HideInInspector] public int Alyah2;
+        [HideInInspector] public int Henry1;
+        [HideInInspector] public int Henry2;
+        [HideInInspector] public int WindMother;
+        [HideInInspector] public int Pepe;
+
 
         private void Awake()
         {
