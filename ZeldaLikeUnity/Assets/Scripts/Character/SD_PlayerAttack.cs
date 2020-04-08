@@ -55,11 +55,12 @@ namespace Player
         public bool hasWind;
         [Header("WindProjectile")]
         public float windCD = 101;
-        bool cantWind;
+        [HideInInspector] public bool cantWind;
         public GameObject arrow;
         public GameObject projectile;
         public float projectilSpeed = 10;
-        bool cantAim;
+       [HideInInspector] public bool cantAim;
+        public bool slow;
         void Awake()
         {
             MakeSingleton(false);
@@ -124,25 +125,30 @@ namespace Player
                 #endregion
                 else if (hasWind && !cantAim)
                 {
+                    if(slow)
+                    Time.timeScale = 0.2f;
+                    SD_PlayerAnimation.Instance.PlayerAnimator.SetBool("Wind", true);
                     float angle = 0;
                     cantWind = true;
                     CantMoveWind();
                     arrow.SetActive(true);
-                    if (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
+                    if (Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") == 0)
                     {
-                         angle = Vector2.Angle(transform.position,
-                                                new Vector2(Input.GetAxisRaw("Horizontal") * 90 + transform.position.x,
-                                                             Input.GetAxisRaw("Vertical") * 90 + transform.position.y));
-
-                        if (Input.GetAxis("Vertical") < 0.0f)
+                        angle = Vector2.Angle(transform.position,
+                                                       new Vector2(SD_PlayerAnimation.Instance.PlayerAnimator.GetFloat("XAxis") * 90,
+                                                                   SD_PlayerAnimation.Instance.PlayerAnimator.GetFloat("YAxis") * 90));
+                        if (SD_PlayerAnimation.Instance.PlayerAnimator.GetFloat("YAxis") < 0.0f)
                             angle = 360.0f - angle;
+
                     }
                     else
                     {
+                        
                         angle = Vector2.Angle(transform.position,
-                                                    new Vector2(SD_PlayerAnimation.Instance.PlayerAnimator.GetFloat("XAxis") * 90,
-                                                                SD_PlayerAnimation.Instance.PlayerAnimator.GetFloat("YAxis") * 90));
-                        if (SD_PlayerAnimation.Instance.PlayerAnimator.GetFloat("YAxis") < 0.0f)
+                                                new Vector2(Input.GetAxisRaw("Horizontal") * -90 + transform.position.x,
+                                                             Input.GetAxisRaw("Vertical") * 90 + transform.position.y));
+
+                        if (Input.GetAxis("Vertical") < 0.0f)
                             angle = 360.0f - angle;
                     }
                         
@@ -192,15 +198,17 @@ namespace Player
 
             if (Input.GetAxis("Wind") < 0.2f && cantWind)
             {
+                Time.timeScale = 1;
                 cantWind = false;
                 GameObject currentprojectil = Instantiate(projectile, transform.position, Quaternion.identity);
-                if (Input.GetAxisRaw("Horizontal")!= 0 || Input.GetAxisRaw("Vertical")!=0)
-                currentprojectil.GetComponent<Rigidbody2D>().velocity = new Vector2(Input.GetAxisRaw("Horizontal"),
-                                                                                    Input.GetAxisRaw("Vertical"))*projectilSpeed ;
-                else
+                if (Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") == 0)
                     currentprojectil.GetComponent<Rigidbody2D>().velocity = new Vector2(SD_PlayerAnimation.Instance.PlayerAnimator.GetFloat("XAxis"),
-                                                                                        SD_PlayerAnimation.Instance.PlayerAnimator.GetFloat("YAxis"))*projectilSpeed;
+                                                                                        SD_PlayerAnimation.Instance.PlayerAnimator.GetFloat("YAxis")) * projectilSpeed;
+                else
+                    currentprojectil.GetComponent<Rigidbody2D>().velocity = new Vector2(Input.GetAxisRaw("Horizontal"),
+                                                                        Input.GetAxisRaw("Vertical")) * projectilSpeed;
                 CanMoveWind();
+                SD_PlayerAnimation.Instance.PlayerAnimator.SetBool("Wind", false);
                 StartCoroutine(WindCooldown());
                 arrow.SetActive(false);
             }
@@ -244,8 +252,12 @@ namespace Player
         {
             SD_PlayerMovement.Instance.cantDash = true;
             SD_PlayerMovement.Instance.cantMove = true;
-            SD_PlayerMovement.Instance.playerRGB.velocity = Vector2.zero;
-            SD_PlayerMovement.Instance.sprint = 0;
+            if (!slow)
+            {
+                SD_PlayerMovement.Instance.playerRGB.velocity = Vector2.zero;
+                SD_PlayerMovement.Instance.sprint = 0;
+            }
+            
             cantAttack = true;
         }
         public void CanMoveWind()
