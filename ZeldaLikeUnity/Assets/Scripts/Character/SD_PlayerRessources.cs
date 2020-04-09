@@ -30,6 +30,7 @@ namespace Player
         [HideInInspector] public int WindMother;
         [HideInInspector] public int Pepe;
 
+       
 
         private void Awake()
         {
@@ -127,7 +128,7 @@ namespace Player
 
 
         #endregion
-
+       
     }
 
 

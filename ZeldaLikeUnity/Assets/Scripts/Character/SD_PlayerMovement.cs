@@ -96,12 +96,35 @@ namespace Player
 
 
         }
+        float timer;
+        public int burnStade;
+        float damageTimer;
+        GameObject fire;
         private void Update()
         {
             // to dash
             if (Input.GetButtonDown("Dash"))
             {
                 StartCoroutine(Dash());
+            }
+            if (burnStade > 0)
+            {
+                timer += Time.deltaTime;
+                if (timer >= 2f)
+                {
+                    burnStade = 2;
+                }
+            }
+
+            if (burnStade == 2)
+            {
+                damageTimer += Time.deltaTime;
+                if (damageTimer >= 1)
+                {
+                    StartCoroutine(SD_PlayerRessources.Instance.TakingDamage(1, fire, false, 1));
+                    damageTimer = 0;
+                    timer = 0;
+                }
             }
         }
 
@@ -179,6 +202,12 @@ namespace Player
                     SD_PlayerAnimation.Instance.PlayerAnimator.SetTrigger("Dash");
                     cantMove = true;
                     cantDash = true;
+
+                    timer = 0;
+                    burnStade--;
+                    if (burnStade <= 0)
+                        burnStade = 0;
+
                     yield return new WaitForSeconds(dashTime);
                     // end of the dash, reset of the speed, the player can move and the player can dash again
 
@@ -267,8 +296,17 @@ namespace Player
                 }
                 else if (SD_PlayerAttack.Instance.hasWind)
                     canSpawnPlatform = true;
-           
 
+            if (collision.tag == "Fire")
+            {
+                if (burnStade == 0)
+                {
+                    burnStade++;
+                    timer = 0;
+                    fire = collision.gameObject;
+                }
+
+            }
 
         }
         private void OnTriggerExit2D(Collider2D collision)
@@ -288,6 +326,16 @@ namespace Player
             {
                 StartCoroutine(PlatfromCantSwpanAfterTrigger());
                 Destroy(currentPlatform);
+            }
+
+            if (collision.tag == "Fire")
+            {
+                if (burnStade != 2)
+                {
+                    burnStade = 0;
+                    timer = 0;
+                }
+
             }
         }
 
@@ -344,5 +392,6 @@ namespace Player
             }
 
         }
+
     }
 }

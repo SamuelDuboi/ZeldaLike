@@ -8,7 +8,9 @@ public class SD_Loupiotte : MonoBehaviour
     public GameObject playerCam;
     bool move;
     bool OpenDoor;
+    bool OpenDoor2;
     bool closeDoor;
+    bool closeDoor2;
     float timer;
     [Range(1,20)]
     public float timeToReach;
@@ -43,14 +45,26 @@ public class SD_Loupiotte : MonoBehaviour
             if(transform.GetChild(0).localScale.x >= 0.1f)
             {
                 OpenDoor = true;
-
+               
             }
             else
             {
                 closeDoor = true;
-            }    
-                   
-            
+            }
+            if (transform.childCount > 1)
+            {
+                if (transform.GetChild(1).localScale.x >= 0.1f)
+                {
+                    OpenDoor2 = true;
+
+                }
+                else
+                {
+                    closeDoor2 = true;
+                }
+            }
+
+
         }
         if (OpenDoor)
         {
@@ -86,7 +100,7 @@ public class SD_Loupiotte : MonoBehaviour
             timer += 0.01f;
             if (timer > timeToReach)
             {
-                if (transform.GetChild(0).localScale.x <= 1f)
+                if (transform.GetChild(0).localScale.x <= 1.1f)
                 {
                     transform.GetChild(0).position += new Vector3(0.02f, 0, 0);
                     transform.GetChild(0).localScale += new Vector3(0.01f, 0, 0);
@@ -105,6 +119,52 @@ public class SD_Loupiotte : MonoBehaviour
                     
                 }
                     
+            }
+        }
+
+        if (OpenDoor2)
+        {
+          
+            if (timer > timeToReach)
+            {
+                if (transform.GetChild(1).localScale.x >= 0.1f)
+                {
+                    transform.GetChild(1).position -= new Vector3(0.02f, 0, 0);
+                    transform.GetChild(1).localScale -= new Vector3(0.01f, 0, 0);
+
+                }
+                else
+                {
+                    if (cpt == 0)
+                    {                     
+                        closeDoor2 = true;
+                    }
+                    OpenDoor2 = false;
+
+                }
+            }
+        }
+        if (closeDoor2)
+        {
+           
+            if (timer > timeToReach)
+            {
+                if (transform.GetChild(1).localScale.x <= 1.1f)
+                {
+                    transform.GetChild(1).position += new Vector3(0.02f, 0, 0);
+                    transform.GetChild(1).localScale += new Vector3(0.01f, 0, 0);
+
+                }
+                else
+                {
+                    if (cpt == 0)
+                    {
+                        OpenDoor2 = true;
+                    }
+                    closeDoor2 = false;
+
+                }
+
             }
         }
         if (moveBack)

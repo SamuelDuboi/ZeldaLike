@@ -117,7 +117,7 @@ MonoBehaviour:
   m_MinSize: {x: 1011, y: 663}
   m_MaxSize: {x: 22006, y: 12063}
   vertical: 0
-  controlID: 13447
+  controlID: 6674
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -169,7 +169,7 @@ MonoBehaviour:
   m_MinSize: {x: 302, y: 663}
   m_MaxSize: {x: 4002, y: 12063}
   vertical: 1
-  controlID: 13448
+  controlID: 6735
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -422,23 +422,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: e0360000
-      m_LastClickedID: 14048
-      m_ExpandedIDs: 782cffff20d6ffff44faffffd0faffffe2faffffe8faffff6cfbffff78360000
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 749dfffffc9dffff0e9effff149effff229effffdea3ffff62a4ffffe8b6fffffab6ffff00b7ffff0eb7ffff8ebcffffa0bcffffa6bcffffaebcffffdebdfffff0bdffff34beffff60c0ffff62c0ffff04c2ffff32c2ffff22ceffffceceffffe0ceffffe6ceffff4ed0ffff50d0ffff76d3ffffe8d5ffffa4dcffffbce1ffffcee1ffffd4e1ffffdae1ffffe2e1ffffeee6ffffe6e9ffff38ebffff8eecffff40f4ffff52f4ffff58f4ffff5ef4ffffc2f5ffff66f9ffff6cfbffff6cd7000092d700006ad80000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: Door (1)
+        m_OriginalName: Door (1)
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 0
+        m_UserData: -41140
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 4
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 6}
       m_SearchString: 
@@ -512,10 +512,10 @@ MonoBehaviour:
       e32: 0
       e33: 1
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 9100000, guid: 26abfb223cf814346b6c54b681a871c1,
+  m_AnimatorController: {fileID: 9100000, guid: 163716d62fefc3745bb285ad8f003237,
     type: 2}
   m_BreadCrumbs:
-  - m_Target: {fileID: 7022579548119101816, guid: 26abfb223cf814346b6c54b681a871c1,
+  - m_Target: {fileID: 2759255078094050332, guid: 163716d62fefc3745bb285ad8f003237,
       type: 2}
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
@@ -565,9 +565,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 2.961503, y: 2.7927277, z: -9.836896}
+    m_Target: {x: 9.643321, y: -4.4900937, z: -0.52734375}
     speed: 2
-    m_Value: {x: 2.961503, y: 2.7927277, z: -9.836896}
+    m_Value: {x: 9.643321, y: -4.4900937, z: -0.52734375}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -617,9 +617,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 14.92109
+    m_Target: 13.733173
     speed: 2
-    m_Value: 14.92109
+    m_Value: 13.733173
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -698,7 +698,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -54152
+  m_LastSelectedObjectID: 55256
 --- !u!114 &19
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -766,7 +766,7 @@ MonoBehaviour:
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 100
+  m_LastVerticalScrollValue: 34
 --- !u!114 &21
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -837,20 +837,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs/SD_Prefab
+    - Assets/Prefabs
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Prefabs/SD_Prefab
+  - Assets/Prefabs
   m_LastFoldersGridSize: 16
   m_LastProjectPath: D:\git\ZeldaLike\ZeldaLikeUnity
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 34410000
-    m_LastClickedID: 16692
-    m_ExpandedIDs: 00000000ec400000ee400000f0400000f2400000f4400000f6400000f8400000fa400000fc400000304100004641000000ca9a3b
+    m_SelectedIDs: fe400000
+    m_LastClickedID: 16638
+    m_ExpandedIDs: 00000000ec400000ee400000f0400000f2400000f4400000f6400000f8400000fa400000fc400000fe4000003241000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -878,7 +878,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000ec400000ee400000f0400000f2400000f4400000f6400000f8400000fa400000fc4000003041000000ca9a3b
+    m_ExpandedIDs: 00000000ec400000ee400000f0400000f2400000f4400000f6400000f8400000fa400000fc400000fe40000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

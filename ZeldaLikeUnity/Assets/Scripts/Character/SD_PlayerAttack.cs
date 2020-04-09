@@ -134,24 +134,16 @@ namespace Player
                     arrow.SetActive(true);
                     if (Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") == 0)
                     {
-                        angle = Vector2.Angle(transform.position,
-                                                       new Vector2(SD_PlayerAnimation.Instance.PlayerAnimator.GetFloat("XAxis") * 90,
-                                                                   SD_PlayerAnimation.Instance.PlayerAnimator.GetFloat("YAxis") * 90));
-                        if (SD_PlayerAnimation.Instance.PlayerAnimator.GetFloat("YAxis") < 0.0f)
-                            angle = 360.0f - angle;
+
+                       angle = Mathf.Atan2(SD_PlayerAnimation.Instance.PlayerAnimator.GetFloat("YAxis"), SD_PlayerAnimation.Instance.PlayerAnimator.GetFloat("XAxis")) * Mathf.Rad2Deg;
+
 
                     }
                     else
                     {
-                        
-                        angle = Vector2.Angle(transform.position,
-                                                new Vector2(Input.GetAxisRaw("Horizontal") * -90 + transform.position.x,
-                                                             Input.GetAxisRaw("Vertical") * 90 + transform.position.y));
+                        angle = Mathf.Atan2(Input.GetAxisRaw("Vertical"), Input.GetAxisRaw("Horizontal")) * Mathf.Rad2Deg;
 
-                        if (Input.GetAxis("Vertical") < 0.0f)
-                            angle = 360.0f - angle;
                     }
-                        
 
                     
                     arrow.transform.rotation = Quaternion.Euler(0, 0, angle);
@@ -252,11 +244,10 @@ namespace Player
         {
             SD_PlayerMovement.Instance.cantDash = true;
             SD_PlayerMovement.Instance.cantMove = true;
-            if (!slow)
-            {
+
                 SD_PlayerMovement.Instance.playerRGB.velocity = Vector2.zero;
                 SD_PlayerMovement.Instance.sprint = 0;
-            }
+
             
             cantAttack = true;
         }
