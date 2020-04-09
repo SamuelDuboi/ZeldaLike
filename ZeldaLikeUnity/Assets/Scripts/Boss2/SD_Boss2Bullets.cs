@@ -38,7 +38,7 @@ public class SD_Boss2Bullets : MonoBehaviour
         }
         else
             bulletRGB.velocity = new Vector2(transform.parent.position.x - transform.position.x,
-                                              transform.parent.position.y - transform.position.y).normalized* bulletSpeed;
+                                              transform.parent.position.y - transform.position.y +1.5f ).normalized* bulletSpeed;
 
 
     }

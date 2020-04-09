@@ -38,8 +38,10 @@ public class SD_BossBody : MonoBehaviour
     [Space]
     public GameObject[] phaseWeakPoins = new GameObject[3];
     public GameObject[] shotPoint1 = new GameObject[0];
+    public GameObject[] shield = new GameObject[3];
     public GameObject[] shotPoint2 = new GameObject[0];
     int shootSwitch = 0;
+
 
     [Space]
     [Header("Rocks")]
@@ -58,6 +60,7 @@ public class SD_BossBody : MonoBehaviour
     {
         phaseWeakPoins[1].SetActive(false);
         phaseWeakPoins[2].SetActive(false);
+        phaseWeakPoins[0].SetActive(false);
         //- 3 car cllider du boss et des bord pour fair rebondire les mains a ne pas compter
         weakPointNumber = GetComponentsInChildren<BoxCollider2D>().Length-3;
         bossCollider = GetComponent<Collider2D>();
@@ -93,6 +96,11 @@ public class SD_BossBody : MonoBehaviour
                 }
             }
         }
+        if(collision.gameObject.layer ==14 && collision.gameObject.tag == "WindProjectil")
+        {
+            shield[SD_BossBehavior.Instance.phaseNumber - 1].SetActive(false);
+            phaseWeakPoins[SD_BossBehavior.Instance.phaseNumber - 1].SetActive(true);
+        }
     }
 
     void Update()
@@ -104,8 +112,8 @@ public class SD_BossBody : MonoBehaviour
             if ( Vector2.Distance(transform.localPosition, bossPositionPhase2.transform.position)< 0.5f)
             {
                 StartCoroutine(RockFall());
-                phaseWeakPoins[SD_BossBehavior.Instance.phaseNumber - 1].SetActive(true);
                 phaseWeakPoins[SD_BossBehavior.Instance.phaseNumber - 2].SetActive(false);
+                shield[SD_BossBehavior.Instance.phaseNumber - 1].SetActive(true);
                 weakPointNumber = GetComponentsInChildren<BoxCollider2D>().Length - 3;
                 StartCoroutine(handsMoving());
                 SD_BossBehavior.Instance.canMove = false;
@@ -120,8 +128,8 @@ public class SD_BossBody : MonoBehaviour
             if (Vector2.Distance(transform.localPosition, bossPositionPhase3.transform.position) < 0.5f)
             {
                 StartCoroutine(RockFall());
-                phaseWeakPoins[SD_BossBehavior.Instance.phaseNumber - 1].SetActive(true);
                 phaseWeakPoins[SD_BossBehavior.Instance.phaseNumber - 2].SetActive(false);
+                shield[SD_BossBehavior.Instance.phaseNumber - 1].SetActive(true);
                 weakPointNumber = GetComponentsInChildren<BoxCollider2D>().Length - 3;
                 StartCoroutine(handsMoving());
                 SD_BossBehavior.Instance.canMove = false;

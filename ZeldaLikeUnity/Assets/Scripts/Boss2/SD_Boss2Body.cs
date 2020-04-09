@@ -19,6 +19,13 @@ public class SD_Boss2Body : MonoBehaviour
     float currentLife;
     
     public Image lifeBar;
+    public SD_MegaLaser megaLaserScript;
+   [Header("Napalm")]
+    public List<GameObject> napalmPoint = new List<GameObject>();
+    public GameObject Napalm;
+    [Range(0,10)]
+    public float TimmeBetweenNapalm =1;
+    public int NapalmNumber = 6;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +43,14 @@ public class SD_Boss2Body : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W))
         {
             LunchBullet();
+        }
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+           StartCoroutine( NapalmLunch());
+        }
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            StartCoroutine(megaLaserScript.LaserBeam());
         }
         if (isStun)
         {           
@@ -81,5 +96,16 @@ public class SD_Boss2Body : MonoBehaviour
         currentLife = life;
         weakPoint.SetActive(true);
         shield.SetActive(false);
+    }
+
+    IEnumerator NapalmLunch()
+    {
+       for(int i=0; i<NapalmNumber;i++)
+        {
+            Instantiate(Napalm, SD_PlayerMovement.Instance.transform.position, Quaternion.identity);
+            yield return new WaitForSeconds(TimmeBetweenNapalm);
+        }
+        
+        
     }
 }

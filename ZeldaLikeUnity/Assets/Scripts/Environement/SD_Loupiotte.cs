@@ -18,7 +18,7 @@ public class SD_Loupiotte : MonoBehaviour
     int cpt;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == 14 && !closeDoor)
+        if (collision.gameObject.layer == 14 && !closeDoor && !OpenDoor)
         {
             Time.timeScale= 0;
             SD_PlayerMovement.Instance.cantDash = true;
@@ -39,7 +39,7 @@ public class SD_Loupiotte : MonoBehaviour
             camera.transform.position = Vector3.MoveTowards(camera.transform.position,
                                                             new Vector3( transform.GetChild(0).position.x,transform.GetChild(0).position.y,-10),
                                                             0.05f);
-        if (Mathf.Abs( camera.transform.position.x - transform.GetChild(0).position.x) < 0.1f)
+        if (Mathf.Abs( camera.transform.position.x - transform.GetChild(0).position.x) <= 0.1f)
         {
             move = false;
             if(transform.GetChild(0).localScale.x >= 0.1f)
@@ -78,7 +78,7 @@ public class SD_Loupiotte : MonoBehaviour
                     transform.GetChild(0).position -= new Vector3(0.02f, 0, 0);
                     transform.GetChild(0).localScale -= new Vector3(0.01f, 0, 0);
 
-                }
+                }              
                 else
                 {
                     if (cpt == 0)
@@ -90,6 +90,11 @@ public class SD_Loupiotte : MonoBehaviour
                     }
                     OpenDoor = false;
 
+                }
+                if (transform.GetChild(0).localScale.x >= 0.0909f && !OpenDoor || transform.GetChild(0).localScale.x <= 0.101f && !OpenDoor)
+                {
+
+                    transform.GetChild(0).localScale = new Vector3(0.05f, 1, 0);
                 }
             }
         }
@@ -118,7 +123,8 @@ public class SD_Loupiotte : MonoBehaviour
                     closeDoor = false;
                     
                 }
-                    
+                
+
             }
         }
 

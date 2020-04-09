@@ -9,7 +9,7 @@ public class SD_WindProjectile : MonoBehaviour
         if (collision.tag == "Fire")
             Destroy(collision.gameObject);
 
-        if (collision.gameObject.layer == 9 && collision.gameObject.tag != "Hole")
+        if (collision.gameObject.layer == 9 && collision.gameObject.tag != "Hole" && collision.gameObject.tag != "Fire")
             Destroy(gameObject);
     }
 }

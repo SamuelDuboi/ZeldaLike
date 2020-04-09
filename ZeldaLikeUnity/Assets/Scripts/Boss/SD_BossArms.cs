@@ -25,7 +25,7 @@ public class SD_BossArms : MonoBehaviour
         laserLineRenderer.SetPositions(initLaserPositions);
         laserLineRenderer.startWidth =laserWidth;
         armRGB = GetComponent<Rigidbody2D>();
-        player = ~(1 << 9); ;
+        player = ~(1 << 9); 
     }
 
     void Update()
