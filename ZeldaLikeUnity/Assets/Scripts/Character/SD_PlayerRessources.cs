@@ -77,6 +77,10 @@ namespace Player
                 SD_PlayerMovement.Instance.playerRGB.velocity = bump * SD_PlayerMovement.Instance.speed * bumpPower;
                 SD_PlayerMovement.Instance.cantMove = true;
                 SD_PlayerMovement.Instance.cantDash = true;
+                if (SD_PlayerMovement.Instance.dashIsActive)
+                {
+                    StopCoroutine(SD_PlayerMovement.Instance.Dash());
+                }
                 life -= damage;
                 lifeBar.fillAmount = life / maxLifePossible;
 

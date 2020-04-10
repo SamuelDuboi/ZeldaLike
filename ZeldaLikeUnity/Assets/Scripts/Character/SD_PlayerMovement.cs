@@ -40,7 +40,7 @@ namespace Player
 
         [HideInInspector] public bool hasWindShield;
 
-        bool dashIsActive;
+        [HideInInspector] public bool dashIsActive;
         bool wind;
 
         public GameObject windPlatform;
@@ -163,7 +163,7 @@ namespace Player
         /// Make the player dash forward
         /// </summary>
         /// <returns></returns>
-        IEnumerator Dash()
+      public  IEnumerator Dash()
         {
             if (!cantDash)
             {

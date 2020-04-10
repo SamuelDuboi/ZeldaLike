@@ -268,7 +268,10 @@ namespace Ennemy
          IEnumerator Stun(float timer)
         {
             canMove = false;
+            ennemyRGB.velocity = Vector2.zero;
+            isAvoidingObstacles = false;
             yield return new WaitForSeconds(timer);
+            isAvoidingObstacles = true;
             canMove = true;
         }
     }

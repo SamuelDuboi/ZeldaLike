@@ -20,10 +20,12 @@ public class SD_Boss2Body : MonoBehaviour
     
     public Image lifeBar;
     public SD_MegaLaser megaLaserScript;
+
+    public SD_LaserAAA2[] laserAA = new SD_LaserAAA2[2];
    [Header("Napalm")]
     public List<GameObject> napalmPoint = new List<GameObject>();
     public GameObject Napalm;
-    [Range(0,10)]
+    [Range(0,2)]
     public float TimmeBetweenNapalm =1;
     public int NapalmNumber = 6;
     // Start is called before the first frame update
@@ -51,6 +53,13 @@ public class SD_Boss2Body : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.C))
         {
             StartCoroutine(megaLaserScript.LaserBeam());
+        }
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            foreach(SD_LaserAAA2 laserscript in laserAA)
+            {
+                StartCoroutine(laserscript.Shoot());
+            }
         }
         if (isStun)
         {           

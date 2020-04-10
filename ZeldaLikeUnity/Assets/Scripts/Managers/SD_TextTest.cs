@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using Player;
 public class SD_TextTest : MonoBehaviour
 {
     public TextMeshProUGUI firstTextmeshPro;
@@ -20,6 +21,11 @@ public class SD_TextTest : MonoBehaviour
 
     IEnumerator Text( )
     {
+        SD_PlayerMovement.Instance.cantDash = true;
+        SD_PlayerMovement.Instance.cantMove = true;
+        SD_PlayerAttack.Instance.cantAim = true;
+        SD_PlayerAttack.Instance.cantAttack = true;
+        SD_PlayerRessources.Instance.cantTakeDamage = true;
         if (listnumber >= textDialogue.Count)
         {
             listnumber = 0;
@@ -48,6 +54,11 @@ public class SD_TextTest : MonoBehaviour
         }
         cantContinue = false;
         listnumber++;
+        SD_PlayerMovement.Instance.cantDash = false;
+        SD_PlayerMovement.Instance.cantMove = false;
+        SD_PlayerAttack.Instance.cantAim = false;
+        SD_PlayerAttack.Instance.cantAttack = false;
+        SD_PlayerRessources.Instance.cantTakeDamage = false;
     }
 
     private void Update()
