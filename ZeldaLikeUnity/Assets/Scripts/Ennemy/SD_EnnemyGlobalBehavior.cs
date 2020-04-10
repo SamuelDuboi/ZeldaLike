@@ -27,6 +27,8 @@ namespace Ennemy
 
         bool canTakeDamage;
 
+        [Range(0, 1)]
+        public float freezTime = 1;
         // to avoid wall
         enum raycastDirection { North, North1, East, East1, South, South1, West, West1 }
         RaycastHit2D[] hitPoints = new RaycastHit2D[8];
@@ -79,6 +81,9 @@ namespace Ennemy
                 }
             }
 
+            if (collision.gameObject.tag == "Hole")
+                StartCoroutine(Fall(new Vector2(transform.position.x + ennemyRGB.velocity.x, transform.position.y + ennemyRGB.velocity.y)));
+
         }
 
         private void OnTriggerExit2D(Collider2D collision)
@@ -97,6 +102,7 @@ namespace Ennemy
                 canTakeDamage = false;
 
             }
+
         }
         public virtual void FixedUpdate()
         {
@@ -116,6 +122,7 @@ namespace Ennemy
 
         public IEnumerator TakingDamage(int damage, GameObject attack, bool destroyContact, int projectionForce)
         {
+            Time.timeScale = 0.1f;
             attack.GetComponent<ParticleSystem>().Play();
             canTakeDamage = false;
             canMove = false;
@@ -123,6 +130,8 @@ namespace Ennemy
             life -= damage;
             Debug.Log("damaeg" + damage);
             Debug.Log("life" + life);
+            yield return new WaitForSeconds(0.1f* freezTime);
+            Time.timeScale = 1;
             if (life <= 0)
             {
                 if (IsInMainScene)
@@ -139,6 +148,7 @@ namespace Ennemy
             if (destroyContact)
                 Destroy(attack);
             yield return new WaitForSeconds(0.2f * damage);
+            
             ennemyRGB.velocity = Vector2.zero;
             canMove = true;
             canTakeDamage = true;
@@ -229,11 +239,7 @@ namespace Ennemy
             }
 
         }
-        public void OnCollisionEnter2D(Collision2D collision)
-        {
-            if (collision.gameObject.tag == "Hole")
-                StartCoroutine(Fall(collision.GetContact(0).point));
-        }
+
 
         IEnumerator Fall(Vector2 collision)
         {
