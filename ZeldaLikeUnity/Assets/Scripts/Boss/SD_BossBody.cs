@@ -4,7 +4,7 @@ using UnityEngine;
 using Ennemy;
 using Player;
 using Management;
-
+using Cinemachine;
 
 public class SD_BossBody : MonoBehaviour
 {
@@ -55,6 +55,8 @@ public class SD_BossBody : MonoBehaviour
     public List<GameObject> rockFallPhase2 = new List<GameObject>();
     public List<GameObject> rockFallPhase3 = new List<GameObject>();
 
+    public GameObject cameranormal;
+    public GameObject camerashake;
 
     void Start()
     {
@@ -107,10 +109,19 @@ public class SD_BossBody : MonoBehaviour
     {
         if (SD_BossBehavior.Instance.canMove && SD_BossBehavior.Instance.phaseNumber == 2)
         {
+            cameranormal.SetActive(false);
+            camerashake.SetActive(true);
             transform.localPosition = Vector3.MoveTowards(transform.localPosition, bossPositionPhase2.transform.position, 10 * Time.deltaTime);
             firstBullet = new Vector2(transform.position.x - bossCollider.bounds.extents.x, transform.position.y - bossCollider.bounds.extents.y);
+
             if ( Vector2.Distance(transform.localPosition, bossPositionPhase2.transform.position)< 0.5f)
             {
+                if (!cameranormal.activeInHierarchy)
+                {
+                    cameranormal.SetActive(true);
+                    camerashake.SetActive(false);
+
+                }
                 StartCoroutine(RockFall());
                 phaseWeakPoins[SD_BossBehavior.Instance.phaseNumber - 2].SetActive(false);
                 shield[SD_BossBehavior.Instance.phaseNumber - 1].SetActive(true);
@@ -123,10 +134,18 @@ public class SD_BossBody : MonoBehaviour
         }
         else if (SD_BossBehavior.Instance.canMove && SD_BossBehavior.Instance.phaseNumber == 3)
         {
+            cameranormal.SetActive(false);
+            camerashake.SetActive(true);
             transform.localPosition = Vector3.MoveTowards(transform.localPosition, bossPositionPhase3.transform.position, 10 * Time.deltaTime);
             firstBullet = new Vector2(transform.position.x - bossCollider.bounds.extents.x, transform.position.y - bossCollider.bounds.extents.y);
             if (Vector2.Distance(transform.localPosition, bossPositionPhase3.transform.position) < 0.5f)
             {
+                if (!cameranormal.activeInHierarchy)
+                {
+                    cameranormal.SetActive(true);
+                    camerashake.SetActive(false);
+
+                }
                 StartCoroutine(RockFall());
                 phaseWeakPoins[SD_BossBehavior.Instance.phaseNumber - 2].SetActive(false);
                 shield[SD_BossBehavior.Instance.phaseNumber - 1].SetActive(true);

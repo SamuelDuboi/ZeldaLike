@@ -7,6 +7,8 @@ using Player;
 using XInputDotNetPure;
 using UnityEngine.SceneManagement;
 using Ennemy;
+using UnityEngine.UI;
+using TMPro;
 namespace Management
 {
     public class GameManagerV2 : Singleton<GameManagerV2>
@@ -40,12 +42,14 @@ namespace Management
         public bool wantToGetAttributeOfPreviousScene;
 
         public GameObject LoadPlayerPosition;
+        GameObject fade;
+        TextMeshProUGUI scenName;
         private void Awake()
         {
             // devra etre hanegr si on en laisse qu'un seul
             MakeSingleton(false);
         }
-        void Start()
+        IEnumerator Start()
         {
             player = GameObject.Find("PlayerMovement");
             death = GameObject.FindGameObjectWithTag("Death");
@@ -54,8 +58,24 @@ namespace Management
             pause.SetActive(false);
             if(wantToGetAttributeOfPreviousScene)
              NewScene(false);
-           // Saving(false);
+            // Saving(false);
+            fade = GameObject.FindGameObjectWithTag("Fade");
+            scenName = fade.GetComponentInChildren<TextMeshProUGUI>();
+            scenName.text = SceneManager.GetActiveScene().name;
+            fade.GetComponent<Image>().color = Color.black;
+            scenName.color = Color.black;
+            for(float i=0; i < 1; i += 0.01f)
+            {
+                fade.GetComponent<Image>().color = new Color(0, 0, 0, 1 - i);
+               if(i>0.15)
+                    scenName.color = new Color(162 ,97,16,  i);
+                yield return new WaitForSeconds(0.01f);
+
+            }
+            scenName.color = new Color(0, 0, 0, 0);
+            
         }
+
         private void Update()
         {
             if (Input.GetButtonDown("Pause"))
@@ -267,7 +287,11 @@ namespace Management
                 SD_PlayerMovement.Instance.cantDash = true;
                 SD_PlayerMovement.Instance.cantMove = true;
                 GamePadeShake(0, 0);
-                yield return new WaitForSeconds(1f);
+                for (float i = 0; i < 1; i += 0.01f)
+                {
+                    fade.GetComponent<Image>().color = new Color(0, 0, 0, 1 - i);
+                    yield return new WaitForSeconds(0.01f);
+                }
                 Time.timeScale = 0;
                 death.SetActive(true);
                 evenSystem.GetComponent<SD_EventSystem>().ChangePanel();

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Management;
 using Ennemy;
-
+using UnityEngine.UI;
 
 
 namespace Player
@@ -61,6 +61,8 @@ namespace Player
         public GameObject[] keyUI;
         bool positionForDestroyedPlatformIsAlreadyChose;
 
+
+        GameObject fade;
         bool canWind;
         void Awake()
         {
@@ -70,6 +72,8 @@ namespace Player
         {
             initialSpeed = speed;
             playerRGB = GetComponent<Rigidbody2D>();
+            fade = GameObject.FindGameObjectWithTag("Fade");
+            fade.GetComponent<Image>().color = new Color(0, 0, 0, 0);
         }
 
         void FixedUpdate()
@@ -364,12 +368,15 @@ namespace Player
                 SD_PlayerAttack.Instance.cantAttack = true;
                 playerRGB.simulated = false;
                 SD_PlayerAnimation.Instance.PlayerAnimator.SetBool("Fall", true);
-                for (int i = 0; i < 50; i++)
+                for (float i = 0; i < 50; i++)
                 {
+                    fade.GetComponent<Image>().color = new Color(0, 0, 0, i/50);
+                    Debug.Log(fade.GetComponent<Image>().color.a);
                     Vector2 reduction = Vector2Extensions.addVector(SD_PlayerAnimation.Instance.gameObject.transform.localScale, -new Vector2(0.02f, 0.02f));
                     SD_PlayerAnimation.Instance.gameObject.transform.localScale = reduction;
-                    yield return new WaitForSeconds(0.001f);
+                    yield return new WaitForSeconds(0.01f);
                 }
+                fade.GetComponent<Image>().color = new Color(0, 0, 0, 0);
                 SD_PlayerAnimation.Instance.PlayerAnimator.SetBool("Fall", false);
                 SD_PlayerAnimation.Instance.gameObject.transform.localScale = Vector2.one;
                 speed = 0;
