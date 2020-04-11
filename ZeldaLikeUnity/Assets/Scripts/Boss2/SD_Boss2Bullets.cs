@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Player;
 public class SD_Boss2Bullets : MonoBehaviour
 {
     [HideInInspector] public GameObject target;
@@ -11,6 +11,7 @@ public class SD_Boss2Bullets : MonoBehaviour
     [Range(0,10)]
     public int bulletSpeed = 5;
     bool isParry;
+    public int bulletDamage = 1;
     void Awake()
     {
         bulletRGB = GetComponent<Rigidbody2D>();
@@ -52,6 +53,10 @@ public class SD_Boss2Bullets : MonoBehaviour
         {
             collision.transform.parent.GetComponent<SD_Boss2Body>().Stun();
             Destroy(gameObject);
+        }
+        else if (collision.gameObject.layer == 11)
+        {
+           StartCoroutine( SD_PlayerRessources.Instance.TakingDamage(bulletDamage, gameObject, true, 1));
         }
 
     }

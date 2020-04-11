@@ -22,17 +22,26 @@ public class SD_Boss2Body : MonoBehaviour
     public SD_MegaLaser megaLaserScript;
 
     public SD_LaserAAA2[] laserAA = new SD_LaserAAA2[2];
+
    [Header("Napalm")]
     public List<GameObject> napalmPoint = new List<GameObject>();
     public GameObject Napalm;
     [Range(0,2)]
     public float TimmeBetweenNapalm =1;
     public int NapalmNumber = 6;
+    int napalmCPT;
+    int bulletCPT;
     // Start is called before the first frame update
     void Start()
     {
         target = SD_PlayerMovement.Instance.gameObject;
         maxLife = life;
+        StartCoroutine(NapalmLunch());
+        foreach (SD_LaserAAA2 laserscript in laserAA)
+        {
+            StartCoroutine(laserscript.Shoot());
+        }
+        StartCoroutine(LunchBullet());
     }
 
     // Update is called once per frame
@@ -44,23 +53,14 @@ public class SD_Boss2Body : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.W))
         {
-            LunchBullet();
+           
         }
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-           StartCoroutine( NapalmLunch());
-        }
+       
         if (Input.GetKeyDown(KeyCode.C))
         {
             StartCoroutine(megaLaserScript.LaserBeam());
         }
-        if (Input.GetKeyDown(KeyCode.V))
-        {
-            foreach(SD_LaserAAA2 laserscript in laserAA)
-            {
-                StartCoroutine(laserscript.Shoot());
-            }
-        }
+       
         if (isStun)
         {           
             timer += Time.deltaTime;
@@ -84,20 +84,47 @@ public class SD_Boss2Body : MonoBehaviour
     }
 
 
-    void LunchBullet()
+    IEnumerator LunchBullet()
     {
-        GameObject currentBullet = Instantiate(bulletPrefab,
+        yield return new WaitForSeconds(16f);
+        //anim
+        yield return new WaitForSeconds(1.5f);
+        int x = 1000;
+
+        while (bulletCPT < x)
+        {
+            GameObject currentBullet = Instantiate(bulletPrefab,
                                                 RocketLunchPoint[0].transform.position,
                                                 Quaternion.identity);
-        currentBullet.GetComponent<SD_Boss2Bullets>().target = target;
-        currentBullet.GetComponent<SD_Boss2Bullets>().bulletRGB.velocity = new Vector2( -5,10);
-        currentBullet.transform.SetParent(transform);
-        GameObject currentBullet2 = Instantiate(bulletPrefab, 
-                                                RocketLunchPoint[1].transform.position,
-                                                 Quaternion.identity);
-        currentBullet2.GetComponent<SD_Boss2Bullets>().target = target;
-        currentBullet2.GetComponent<SD_Boss2Bullets>().bulletRGB.velocity = new Vector2(5, 10);
-        currentBullet2.transform.SetParent(transform);
+            currentBullet.GetComponent<SD_Boss2Bullets>().target = target;
+            currentBullet.GetComponent<SD_Boss2Bullets>().bulletRGB.velocity = new Vector2(-5, 10);
+            currentBullet.transform.SetParent(transform);
+            bulletCPT++;
+            yield return new WaitForSeconds(13.5f);
+
+        }
+
+    }
+    IEnumerator Lunch2Bullet()
+    {
+        yield return new WaitForSeconds(16f);
+        int x = 1000;
+        while (bulletCPT < x)
+        {
+            GameObject currentBullet = Instantiate(bulletPrefab,
+                                                RocketLunchPoint[0].transform.position,
+                                                Quaternion.identity);
+            currentBullet.GetComponent<SD_Boss2Bullets>().target = target;
+            currentBullet.GetComponent<SD_Boss2Bullets>().bulletRGB.velocity = new Vector2(-5, 10);
+            currentBullet.transform.SetParent(transform);
+            GameObject currentBullet2 = Instantiate(bulletPrefab,
+                                                    RocketLunchPoint[1].transform.position,
+                                                     Quaternion.identity);
+            currentBullet2.GetComponent<SD_Boss2Bullets>().target = target;
+            currentBullet2.GetComponent<SD_Boss2Bullets>().bulletRGB.velocity = new Vector2(5, 10);
+            currentBullet2.transform.SetParent(transform);
+        }
+
     }
     public void Stun()
     {
@@ -109,11 +136,21 @@ public class SD_Boss2Body : MonoBehaviour
 
     IEnumerator NapalmLunch()
     {
-       for(int i=0; i<NapalmNumber;i++)
+        yield return new WaitForSeconds(2);
+        //anime
+        yield return new WaitForSeconds(1.5f);
+        int t = 1000;
+        while (napalmCPT < t)
         {
-            Instantiate(Napalm, SD_PlayerMovement.Instance.transform.position, Quaternion.identity);
-            yield return new WaitForSeconds(TimmeBetweenNapalm);
+            for (int i = 0; i < NapalmNumber; i++)
+            {
+                Instantiate(Napalm, SD_PlayerMovement.Instance.transform.position, Quaternion.identity);
+                yield return new WaitForSeconds(TimmeBetweenNapalm);
+            }
+            t++;
+            yield return new WaitForSeconds(6.9f);
         }
+      
         
         
     }

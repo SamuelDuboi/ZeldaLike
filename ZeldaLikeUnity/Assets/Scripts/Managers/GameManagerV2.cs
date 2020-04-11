@@ -49,7 +49,7 @@ namespace Management
             // devra etre hanegr si on en laisse qu'un seul
             MakeSingleton(false);
         }
-        IEnumerator Start()
+        void Start()
         {
             player = GameObject.Find("PlayerMovement");
             death = GameObject.FindGameObjectWithTag("Death");
@@ -64,15 +64,7 @@ namespace Management
             scenName.text = SceneManager.GetActiveScene().name;
             fade.GetComponent<Image>().color = Color.black;
             scenName.color = Color.black;
-            for(float i=0; i < 1; i += 0.01f)
-            {
-                fade.GetComponent<Image>().color = new Color(0, 0, 0, 1 - i);
-               if(i>0.15)
-                    scenName.color = new Color(162 ,97,16,  i);
-                yield return new WaitForSeconds(0.01f);
-
-            }
-            scenName.color = new Color(0, 0, 0, 0);
+            StartCoroutine(FadeOut());
             
         }
 
@@ -209,7 +201,7 @@ namespace Management
                 combatRobotPosition.Clear();
                 gardianRobotPosition.Clear();
                 robotScoutPosition.Clear();
-               
+                StartCoroutine(FadeOut());
                 Time.timeScale = 1;
                 death.SetActive(false);
                 Debug.Log("Game Loaded");
@@ -286,12 +278,10 @@ namespace Management
                 SD_PlayerAttack.Instance.hasWind = false;
                 SD_PlayerMovement.Instance.cantDash = true;
                 SD_PlayerMovement.Instance.cantMove = true;
+
                 GamePadeShake(0, 0);
-                for (float i = 0; i < 1; i += 0.01f)
-                {
-                    fade.GetComponent<Image>().color = new Color(0, 0, 0, 1 - i);
-                    yield return new WaitForSeconds(0.01f);
-                }
+                yield return new WaitForSeconds(1);
+                StartCoroutine(FadeUp());
                 Time.timeScale = 0;
                 death.SetActive(true);
                 evenSystem.GetComponent<SD_EventSystem>().ChangePanel();
@@ -378,6 +368,28 @@ namespace Management
             pause.SetActive(false);
             yield return new WaitForSeconds(0.2f);
             SD_PlayerMovement.Instance.cantDash = false;
+        }
+
+        IEnumerator FadeUp()
+        {
+            for (float i = 0; i < 1; i += 0.01f)
+            {
+                fade.GetComponent<Image>().color = new Color(0, 0, 0,  i);
+                yield return new WaitForSeconds(0.01f);
+            }
+            fade.GetComponent<Image>().color = new Color(0, 0, 0, 0);
+        }
+        IEnumerator FadeOut()
+        {
+            for (float i = 0; i < 1; i += 0.01f)
+            {
+                fade.GetComponent<Image>().color = new Color(0, 0, 0, 1 - i);
+                if (i > 0.15)
+                    scenName.color = new Color(162, 97, 16, i);
+                yield return new WaitForSeconds(0.01f);
+
+            }
+            scenName.color = new Color(0, 0, 0, 0);
         }
     }
 }

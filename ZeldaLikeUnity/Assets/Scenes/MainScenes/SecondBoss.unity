@@ -8130,9 +8130,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc59689174c568d43b6e2a5e1313d655, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeSmallBigRay: 2
+  timeSmallBigRay: 0.1
   laserDamage: 1
-  timeLAserStay: 2
+  timeLAserStay: 1
   Left: 1
 --- !u!1 &201985047
 GameObject:
@@ -22402,9 +22402,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc59689174c568d43b6e2a5e1313d655, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeSmallBigRay: 2
+  timeSmallBigRay: 0.1
   laserDamage: 1
-  timeLAserStay: 2
+  timeLAserStay: 1
   Left: 0
 --- !u!4 &1643440107
 Transform:
@@ -23552,8 +23552,8 @@ MonoBehaviour:
   - {fileID: 614349508}
   - {fileID: 995713672}
   Napalm: {fileID: 6378659419842937922, guid: f4bdc3da506cf304395f91a881c560e0, type: 3}
-  TimmeBetweenNapalm: 0.56
-  NapalmNumber: 6
+  TimmeBetweenNapalm: 0.4
+  NapalmNumber: 5
 --- !u!61 &2145292202
 BoxCollider2D:
   m_ObjectHideFlags: 0
