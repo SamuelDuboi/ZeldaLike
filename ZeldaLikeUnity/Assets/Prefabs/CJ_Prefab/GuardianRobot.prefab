@@ -454,6 +454,8 @@ MonoBehaviour:
   damage: 1
   life: 15
   isAggro: 0
+  freezTime: 0.047
+  IsInMainScene: 0
   rayStartCorner:
   - {fileID: 7998620809476861482}
   - {fileID: 7998620808353130390}
