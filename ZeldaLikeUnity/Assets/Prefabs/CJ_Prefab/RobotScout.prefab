@@ -145,7 +145,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2136672590}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 78.2, y: 20, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 542599190043403194}
@@ -164,9 +164,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.71, y: 0}
   serializedVersion: 2
-  m_Radius: 48.3
+  m_Radius: 3
 --- !u!1 &542599190043403199
 GameObject:
   m_ObjectHideFlags: 0
@@ -271,19 +271,21 @@ MonoBehaviour:
   ennemyRGB: {fileID: 0}
   aggroZone: {fileID: 2136672590}
   desaggroZone: {fileID: 2588135463784189841}
-  speed: 10
+  speed: 0
   canMove: 0
   isAvoidingObstacles: 0
   damage: 1
   life: 3
   isAggro: 0
+  freezTime: 0.047
+  IsInMainScene: 1
   rayStartCorner:
   - {fileID: 1129962582}
   - {fileID: 1575223450}
   - {fileID: 1942248840}
   - {fileID: 1901179047}
-  stopDistance: 12
-  retreatDistance: 10
+  stopDistance: 20
+  retreatDistance: 0
   retreatSpeed: 2
   recoverytime: 1
   target: {fileID: 0}
@@ -327,7 +329,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 15
   m_Sprite: {fileID: 21300000, guid: 4674669e7594857458d6c50a69c1b2a5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -464,6 +466,6 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 35.84, y: 20.8}
   serializedVersion: 2
-  m_Radius: 44.8
+  m_Radius: 59.8

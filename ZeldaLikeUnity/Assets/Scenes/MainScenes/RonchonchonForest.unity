@@ -89979,16 +89979,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 454365754}
     m_Modifications:
-    - target: {fileID: 6701717999121237762, guid: abf51c92468fc48419c039a47bee775c,
-        type: 3}
-      propertyPath: m_Radius
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7449929291154221860, guid: abf51c92468fc48419c039a47bee775c,
-        type: 3}
-      propertyPath: IsInMainScene
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7449929291154221861, guid: abf51c92468fc48419c039a47bee775c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -90048,11 +90038,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Sanglier (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 7449929291154221864, guid: abf51c92468fc48419c039a47bee775c,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abf51c92468fc48419c039a47bee775c, type: 3}
@@ -93316,16 +93301,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 454365754}
     m_Modifications:
-    - target: {fileID: 6701717999121237762, guid: abf51c92468fc48419c039a47bee775c,
-        type: 3}
-      propertyPath: m_Radius
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7449929291154221860, guid: abf51c92468fc48419c039a47bee775c,
-        type: 3}
-      propertyPath: IsInMainScene
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7449929291154221861, guid: abf51c92468fc48419c039a47bee775c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -93385,11 +93360,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Sanglier
-      objectReference: {fileID: 0}
-    - target: {fileID: 7449929291154221864, guid: abf51c92468fc48419c039a47bee775c,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abf51c92468fc48419c039a47bee775c, type: 3}
@@ -143651,21 +143621,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 454365754}
     m_Modifications:
-    - target: {fileID: 6701717999121237762, guid: abf51c92468fc48419c039a47bee775c,
-        type: 3}
-      propertyPath: m_Radius
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7449929291154221860, guid: abf51c92468fc48419c039a47bee775c,
-        type: 3}
-      propertyPath: IsInMainScene
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7449929291154221860, guid: abf51c92468fc48419c039a47bee775c,
-        type: 3}
-      propertyPath: freezTime
-      value: 0.1
-      objectReference: {fileID: 0}
     - target: {fileID: 7449929291154221861, guid: abf51c92468fc48419c039a47bee775c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -143725,16 +143680,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Sanglier (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 7449929291154221864, guid: abf51c92468fc48419c039a47bee775c,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 8829993890490745644, guid: abf51c92468fc48419c039a47bee775c,
-        type: 3}
-      propertyPath: m_Radius
-      value: 9.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abf51c92468fc48419c039a47bee775c, type: 3}
@@ -144187,27 +144132,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 454365754}
     m_Modifications:
-    - target: {fileID: 2136672591, guid: 95185c62acc195c42ab975a68b03a945, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 78.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2136672591, guid: 95185c62acc195c42ab975a68b03a945, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 2136672592, guid: 95185c62acc195c42ab975a68b03a945, type: 3}
-      propertyPath: m_Offset.x
-      value: 0.71
-      objectReference: {fileID: 0}
-    - target: {fileID: 2136672592, guid: 95185c62acc195c42ab975a68b03a945, type: 3}
-      propertyPath: m_Radius
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 542599190043401285, guid: 95185c62acc195c42ab975a68b03a945,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 15
-      objectReference: {fileID: 0}
     - target: {fileID: 542599190043403194, guid: 95185c62acc195c42ab975a68b03a945,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -144263,45 +144187,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 542599190043403198, guid: 95185c62acc195c42ab975a68b03a945,
-        type: 3}
-      propertyPath: speed
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 542599190043403198, guid: 95185c62acc195c42ab975a68b03a945,
-        type: 3}
-      propertyPath: retreatDistance
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 542599190043403198, guid: 95185c62acc195c42ab975a68b03a945,
-        type: 3}
-      propertyPath: stopDistance
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 542599190043403198, guid: 95185c62acc195c42ab975a68b03a945,
-        type: 3}
-      propertyPath: IsInMainScene
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 542599190043403199, guid: 95185c62acc195c42ab975a68b03a945,
         type: 3}
       propertyPath: m_Name
       value: RobotScout (6)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6311445871517618672, guid: 95185c62acc195c42ab975a68b03a945,
-        type: 3}
-      propertyPath: m_Radius
-      value: 59.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6311445871517618672, guid: 95185c62acc195c42ab975a68b03a945,
-        type: 3}
-      propertyPath: m_Offset.x
-      value: 35.84
-      objectReference: {fileID: 0}
-    - target: {fileID: 6311445871517618672, guid: 95185c62acc195c42ab975a68b03a945,
-        type: 3}
-      propertyPath: m_Offset.y
-      value: 20.8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95185c62acc195c42ab975a68b03a945, type: 3}

@@ -46,7 +46,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 100
+  m_Radius: 9.6
 --- !u!1 &2203752920297478274
 GameObject:
   m_ObjectHideFlags: 0
@@ -93,7 +93,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 35
+  m_Radius: 5
 --- !u!1 &7449929291154221862
 GameObject:
   m_ObjectHideFlags: 0
@@ -172,7 +172,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 15
   m_Sprite: {fileID: 21300000, guid: 2016d5e1b40558e498fdbcbd604f4424, type: 3}
   m_Color: {r: 0.49056602, g: 0.23433207, b: 0.039337847, a: 1}
   m_FlipX: 0
@@ -253,6 +253,8 @@ MonoBehaviour:
   damage: 1
   life: 5
   isAggro: 0
+  freezTime: 0.047
+  IsInMainScene: 1
   rayStartCorner:
   - {fileID: 7449929292717943422}
   - {fileID: 7449929291971450576}
