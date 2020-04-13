@@ -61,6 +61,8 @@ namespace Player
         public float projectilSpeed = 10;
        [HideInInspector] public bool cantAim;
         public bool slow;
+
+        public bool canPushBack;
         void Awake()
         {
             MakeSingleton(false);
@@ -266,6 +268,14 @@ namespace Player
             yield return new WaitForSeconds(windCD);
             cantWind = false;
             cantAim = false;
+        }
+        public void CanPushBack()
+        {
+            canPushBack = true;
+        }
+        public void CantPushBack()
+        {
+            canPushBack = false;
         }
     } 
 }

@@ -34,9 +34,14 @@ namespace Ennemy
     {
             base.FixedUpdate();
             if (canMove)
+            {
                 ennemyRGB.velocity = Vector2.zero;
-    }
+                if (!isAttacking)
+                    StartCoroutine(SniperShot());
+            }
 
+    }
+/*
         public override void Mouvement()
         {
             if(Vector2.Distance(transform.position,player.transform.position) > stopDistance)
@@ -54,9 +59,10 @@ namespace Ennemy
                 transform.position = Vector3.MoveTowards(transform.position, player.transform.position, Time.deltaTime * -retreatSpeed);
             }
         }
-
+*/
         IEnumerator SniperShot()
         {
+            isAttacking = true;
             float timer = 2f;
             canShoot = false;
             target.GetComponent<SpriteRenderer>().color = Color.white;
@@ -66,8 +72,18 @@ namespace Ennemy
                 timer -= Time.deltaTime;
                 target.transform.position = player.transform.position;
                 yield return null;
+                if (!isAttacking)
+                    break;
             }
             target.GetComponent<SpriteRenderer>().color = Color.black;
+            if (!isAttacking)
+            {
+                target.SetActive(false);
+                target.GetComponent<SpriteRenderer>().color = Color.white;
+                canShoot = true;
+                yield break;
+
+            }
             yield return new WaitForSeconds(0.5f);
             target.SetActive(false);
             GameObject bullet = Instantiate(ennemyBullet, transform.position, Quaternion.identity);

@@ -18,8 +18,8 @@ namespace Ennemy
         public GameObject desaggroZone;
         [Range(0, 10)]
         public float speed;
-        [HideInInspector] public bool canMove;
-        [HideInInspector] public bool isAvoidingObstacles;
+         public bool canMove;
+         public bool isAvoidingObstacles;
         public int damage;
         public int life;
 
@@ -37,10 +37,12 @@ namespace Ennemy
         public bool IsInMainScene;
         public GameObject[] rayStartCorner = new GameObject[4];
 
+        public bool isAttacking;
+
+        [HideInInspector] public Vector2 startPosition;
         public virtual void Start()
         {
             ennemyRGB = GetComponent<Rigidbody2D>();
-
         }
 
 
@@ -59,7 +61,7 @@ namespace Ennemy
                 canMove = true;
                 isAvoidingObstacles = true;
                 canTakeDamage = true;
-                player = collision.gameObject;
+                player = collision.transform.parent.gameObject;
             }//if is attack by player
             else if (collision.gameObject.layer == 8)
             {
@@ -94,9 +96,11 @@ namespace Ennemy
                 { 
                     aggroZone.SetActive(true);
                     desaggroZone.SetActive(false);
+                    startPosition = transform.position;
                 }
                 isAggro = false;
                 canMove = false;
+                isAttacking = false;
                 CJ_PlayerCameraManager.Instance.ennemyList.Remove(gameObject);
                 isAvoidingObstacles = false;
                 canTakeDamage = false;
@@ -110,8 +114,8 @@ namespace Ennemy
             {
                 Mouvement();
             }
-            if (isAvoidingObstacles)
-                AvoidWalls();
+           // if (isAvoidingObstacles)
+              //  AvoidWalls();
 
 
         }
@@ -124,6 +128,7 @@ namespace Ennemy
         {
             Time.timeScale = 0.1f;
             attack.GetComponent<ParticleSystem>().Play();
+            isAttacking = false;
             canTakeDamage = false;
             canMove = false;
             isAggro = false;
@@ -142,13 +147,15 @@ namespace Ennemy
                 CJ_PlayerCameraManager.Instance.ennemyList.Remove(gameObject);
                 Destroy(gameObject);
             }
-
-            ennemyRGB.velocity = new Vector2(transform.position.x - attack.transform.position.x,
+            if(SD_PlayerAttack.Instance.canPushBack)
+                ennemyRGB.velocity = new Vector2(transform.position.x - attack.transform.position.x,
                                               attack.transform.position.y - attack.transform.position.y).normalized * projectionForce;
+
             if (destroyContact)
                 Destroy(attack);
             yield return new WaitForSeconds(0.2f * damage);
-            
+
+            StartCoroutine(Stun(1f));
             ennemyRGB.velocity = Vector2.zero;
             canMove = true;
             canTakeDamage = true;
@@ -188,13 +195,14 @@ namespace Ennemy
 
             if (isAggro)
             {
-                ennemyRGB.velocity = Vector2.zero;
+
 
                 for (int i = 0; i < hitPoints.Length; i++)
                 {
                     // true if the racast has touch something, stock the number of the raycast that hitted in the array into wall touch
                     if (hitPoints[i].collider != null)
                     {
+                        ennemyRGB.velocity = Vector2.zero;
                         // if the collision point is too close, the object go backward to avoid to fall in the holes
                         if (Vector2.Distance(transform.position, hitPoints[i].point) <= 1.5)
                             transform.position = Vector2.MoveTowards(transform.position,
@@ -259,24 +267,23 @@ namespace Ennemy
             }
             GetComponent<SpriteRenderer>().color = Color.white;
             transform.localScale = currentScale;
-            life--;
-            if (life <= 0)
+
                 Destroy(gameObject);
-            canMove = true;
-            isAggro = true;
-            GetComponent<BoxCollider2D>().isTrigger = false;
+            
         }
         public void StunLunch(float timer)
         {
            StartCoroutine( Stun(timer));
         }
 
-         IEnumerator Stun(float timer)
+      public  virtual IEnumerator Stun(float timer)
         {
             canMove = false;
             ennemyRGB.velocity = Vector2.zero;
             isAvoidingObstacles = false;
+            isAttacking = true;
             yield return new WaitForSeconds(timer);
+            isAttacking = false;
             isAvoidingObstacles = true;
             canMove = true;
         }

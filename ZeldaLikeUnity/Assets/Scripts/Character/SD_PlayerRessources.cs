@@ -47,6 +47,7 @@ namespace Player
         {
             if (collision.gameObject.layer == 12)
             {
+                if(collision.gameObject.GetComponent<SD_EnnemyGlobalBehavior>().isAttacking)
                 StartCoroutine(TakingDamage(collision.gameObject.GetComponent<SD_EnnemyGlobalBehavior>().damage, collision.gameObject, false, 1));
             }
             else if (collision.gameObject.tag == "Heal")
