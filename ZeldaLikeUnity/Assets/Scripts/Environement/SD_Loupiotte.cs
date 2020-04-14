@@ -16,21 +16,31 @@ public class SD_Loupiotte : MonoBehaviour
     public float timeToReach;
     bool moveBack;
     int cpt;
+
+   public bool willBeBack;
+    public List<GameObject> loupiottes = new List<GameObject>();
+ [HideInInspector]  public int loupiottesCount;
+
+    private void Start()
+    {
+        loupiottesCount = 0;
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == 14 && !closeDoor && !OpenDoor)
+        if (collision.gameObject.layer == 14 && !closeDoor && !OpenDoor && loupiottesCount == loupiottes.Count - 1)
         {
-            Time.timeScale= 0;
+            Time.timeScale = 0;
             SD_PlayerMovement.Instance.cantDash = true;
             SD_PlayerMovement.Instance.cantMove = true;
             SD_PlayerAttack.Instance.cantAttack = true;
             SD_PlayerAttack.Instance.cantAim = true;
             camera.SetActive(true);
             playerCam.SetActive(false);
-            camera.transform.position = new Vector3( SD_PlayerMovement.Instance.transform.position.x, SD_PlayerMovement.Instance.transform.position.y,-10);
+            camera.transform.position = new Vector3(SD_PlayerMovement.Instance.transform.position.x, SD_PlayerMovement.Instance.transform.position.y, -10);
             move = true;
             cpt = 0;
         }
+
     }
 
     private void Update()
@@ -88,6 +98,17 @@ public class SD_Loupiotte : MonoBehaviour
                         closeDoor = true;
                         cpt++;
                     }
+                    else
+                    {
+                        if (willBeBack)
+                        {
+                            loupiottes[loupiottesCount].GetComponent<SD_LoupiotteActivated>().activated = false;
+                            loupiottes[loupiottesCount].GetComponent<SpriteRenderer>().color = Color.white;
+                            loupiottes[0].GetComponent<SD_LoupiotteActivated>().activated = true;
+                            loupiottes[0].GetComponent<SpriteRenderer>().color = Color.blue;
+                        }
+                    }
+                    if(willBeBack)
                     OpenDoor = false;
 
                 }
@@ -117,7 +138,19 @@ public class SD_Loupiotte : MonoBehaviour
                         OpenDoor = true;
                         cpt++;
                     }
-                    closeDoor = false;
+                    else
+                    {
+                        if (willBeBack)
+                        {
+                            loupiottes[loupiottesCount].GetComponent<SD_LoupiotteActivated>().activated = false;
+                            loupiottes[loupiottesCount].GetComponent<SpriteRenderer>().color = Color.white;
+                            loupiottes[0].GetComponent<SD_LoupiotteActivated>().activated = true;
+                            loupiottes[0].GetComponent<SpriteRenderer>().color = Color.blue;
+                            
+                        }
+                    }
+                    if (willBeBack)
+                        closeDoor = false;
                     
                 }
                 
@@ -142,7 +175,9 @@ public class SD_Loupiotte : MonoBehaviour
                     {                     
                         closeDoor2 = true;
                     }
-                    OpenDoor2 = false;
+                    
+                    if (willBeBack)
+                        OpenDoor2 = false;
 
                 }
             }
@@ -164,7 +199,9 @@ public class SD_Loupiotte : MonoBehaviour
                     {
                         OpenDoor2 = true;
                     }
-                    closeDoor2 = false;
+                   
+                    if (willBeBack)
+                        closeDoor2 = false;
 
                 }
 
@@ -186,6 +223,52 @@ public class SD_Loupiotte : MonoBehaviour
             SD_PlayerAttack.Instance.cantAim = false;
             camera.SetActive(false);
             playerCam.SetActive(true);
+            
+        }
+    }
+    public void Triggered(Collider2D collision)
+    {
+        if (collision.gameObject.layer == 14 && !closeDoor && !OpenDoor && loupiottesCount == loupiottes.Count - 1)
+        {
+            Time.timeScale = 0;
+            SD_PlayerMovement.Instance.cantDash = true;
+            SD_PlayerMovement.Instance.cantMove = true;
+            SD_PlayerAttack.Instance.cantAttack = true;
+            SD_PlayerAttack.Instance.cantAim = true;
+            camera.SetActive(true);
+            playerCam.SetActive(false);
+            camera.transform.position = new Vector3(SD_PlayerMovement.Instance.transform.position.x, SD_PlayerMovement.Instance.transform.position.y, -10);
+            move = true;
+            cpt = 0;
+            loupiottesCount = 0;
+            foreach (GameObject loupiots in loupiottes)
+            {
+                loupiots.GetComponent<SpriteRenderer>().color =Color.white;
+                loupiots.GetComponent<SD_LoupiotteActivated>().activated = false;
+
+            }
+            
+        }
+       else if (collision.gameObject.layer == 14 && loupiottes.Count > 1)
+        {
+            float i = -1;
+            foreach (GameObject loupiots in loupiottes)
+            {
+                i++;
+                if (loupiots.GetComponent<SD_LoupiotteActivated>().isTriggered &&
+                    loupiots.GetComponent<SD_LoupiotteActivated>().activated)
+                {
+                    loupiottesCount ++;
+                    break;
+                }
+            }
+            if (i > -1)
+            {
+                loupiottes[(int)i].GetComponent<SD_LoupiotteActivated>().activated = false;
+                loupiottes[(int)i].GetComponent<SpriteRenderer>().color = Color.white;
+                loupiottes[(int)i + 1].GetComponent<SD_LoupiotteActivated>().activated = true;
+                loupiottes[(int)i + 1].GetComponent<SpriteRenderer>().color = Color.blue;
+            }
         }
     }
 }
