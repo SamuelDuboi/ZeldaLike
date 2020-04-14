@@ -32,6 +32,15 @@ TextureImporter:
   - first:
       213: -1399422130611844137
     second: tronc_arbre_9
+  - first:
+      213: 586563302245989324
+    second: tronc_arbre_10
+  - first:
+      213: 8807434028007628425
+    second: tronc_arbre_11
+  - first:
+      213: 77941953332721751
+    second: tronc_arbre_12
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -119,16 +128,47 @@ TextureImporter:
       name: tronc_arbre_0
       rect:
         serializedVersion: 2
-        x: 39
-        y: 95
+        x: 42
+        y: 104
         width: 24
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 44
+      alignment: 9
+      pivot: {x: 0.48791537, y: 0.22974223}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: 12, y: -19}
+        - {x: 11, y: -18}
+        - {x: 9, y: -18}
+        - {x: 9, y: -17}
+        - {x: 7, y: -14}
+        - {x: 7, y: -11}
+        - {x: 5, y: -8}
+        - {x: 5, y: -1}
+        - {x: 7, y: 1}
+        - {x: 7, y: 2}
+        - {x: 6, y: 3}
+        - {x: 6, y: 16}
+        - {x: 2, y: 20}
+        - {x: -2, y: 19}
+        - {x: -2, y: 22}
+        - {x: -8, y: 22}
+        - {x: -8, y: 12}
+        - {x: -6, y: 10}
+        - {x: -7, y: 8}
+        - {x: -8, y: -10}
+        - {x: -12, y: -16}
+        - {x: -12, y: -22}
+        - {x: -7, y: -22}
+        - {x: -4, y: -18}
+        - {x: 1, y: -22}
+        - {x: 12, y: -22}
+      - - {x: 8, y: 9}
+        - {x: 11, y: 6}
+        - {x: 12, y: 6}
+        - {x: 12, y: 14}
+        - {x: 9, y: 13}
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: 1
       bones: []
       spriteID: 314920e50748eff10800000000000000
       internalID: 2305425677408703507
@@ -140,12 +180,12 @@ TextureImporter:
       name: tronc_arbre_1
       rect:
         serializedVersion: 2
-        x: 119
-        y: 99
-        width: 29
-        height: 14
+        x: 64
+        y: 133
+        width: 8
+        height: 9
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -161,16 +201,53 @@ TextureImporter:
       name: tronc_arbre_2
       rect:
         serializedVersion: 2
-        x: 200
-        y: 100
-        width: 24
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 134
+        y: 104
+        width: 30
+        height: 36
+      alignment: 9
+      pivot: {x: 0.4419937, y: 0.14551565}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: -3, y: -18}
+        - {x: 4, y: -18}
+        - {x: 10, y: -13}
+        - {x: 12, y: -15}
+        - {x: 15, y: -15}
+        - {x: 15, y: -7}
+        - {x: 14, y: -6}
+        - {x: 6, y: -6}
+        - {x: 5, y: -4}
+        - {x: 6, y: -3}
+        - {x: 6, y: -1}
+        - {x: 5, y: 0}
+        - {x: 5, y: 6}
+        - {x: 4, y: 9}
+        - {x: 0, y: 12}
+        - {x: -2, y: 12}
+        - {x: -3, y: 13}
+        - {x: -7, y: 13}
+        - {x: -7, y: 14}
+        - {x: -8, y: 15}
+        - {x: -8, y: 18}
+        - {x: -14, y: 18}
+        - {x: -15, y: 17}
+        - {x: -15, y: 5}
+        - {x: -14, y: 4}
+        - {x: -13, y: 4}
+        - {x: -10, y: 0}
+        - {x: -9, y: -1}
+        - {x: -9, y: -5}
+        - {x: -8, y: -6}
+        - {x: -8, y: -8}
+        - {x: -12, y: -9}
+        - {x: -15, y: -12}
+        - {x: -15, y: -18}
+        - {x: -9, y: -18}
+        - {x: -9, y: -16}
+        - {x: -6, y: -16}
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: 1
       bones: []
       spriteID: 207ab9db536e390a0800000000000000
       internalID: -6875899087575865598
@@ -182,16 +259,53 @@ TextureImporter:
       name: tronc_arbre_3
       rect:
         serializedVersion: 2
-        x: 288
-        y: 103
-        width: 29
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 216
+        y: 105
+        width: 24
+        height: 45
+      alignment: 9
+      pivot: {x: 0.5, y: 0.30019972}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: 12, y: -19.5}
+        - {x: 11, y: -18.5}
+        - {x: 9, y: -18.5}
+        - {x: 9, y: -17.5}
+        - {x: 7, y: -14.5}
+        - {x: 7, y: -11.5}
+        - {x: 5, y: -8.5}
+        - {x: 5, y: -1.5}
+        - {x: 8, y: 1.5}
+        - {x: 8, y: 2.5}
+        - {x: 6, y: 4.5}
+        - {x: 6, y: 15.5}
+        - {x: 2, y: 19.5}
+        - {x: -2, y: 18.5}
+        - {x: -2, y: 22.5}
+        - {x: -7, y: 22.5}
+        - {x: -8, y: 21.5}
+        - {x: -8, y: 11.5}
+        - {x: -6, y: 9.5}
+        - {x: -7, y: 7.5}
+        - {x: -7, y: 4.5}
+        - {x: -8, y: 2.5}
+        - {x: -7, y: 1.5}
+        - {x: -7, y: -1.5}
+        - {x: -8, y: -2.5}
+        - {x: -8, y: -10.5}
+        - {x: -12, y: -16.5}
+        - {x: -12, y: -22.5}
+        - {x: -7, y: -22.5}
+        - {x: -4, y: -18.5}
+        - {x: 1, y: -22.5}
+        - {x: 12, y: -22.5}
+      - - {x: 8, y: 8.5}
+        - {x: 11, y: 5.5}
+        - {x: 12, y: 5.5}
+        - {x: 12, y: 13.5}
+        - {x: 9, y: 12.5}
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: 1
       bones: []
       spriteID: f2a8b49fd0aad8ea0800000000000000
       internalID: -5868847762400114129
@@ -203,12 +317,12 @@ TextureImporter:
       name: tronc_arbre_4
       rect:
         serializedVersion: 2
-        x: 384
-        y: 98
-        width: 25
-        height: 22
+        x: 238
+        y: 134
+        width: 8
+        height: 9
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -224,16 +338,54 @@ TextureImporter:
       name: tronc_arbre_5
       rect:
         serializedVersion: 2
-        x: 37
-        y: 23
-        width: 31
-        height: 16
+        x: 303
+        y: 108
+        width: 30
+        height: 36
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: -3, y: -18}
+        - {x: 4, y: -18}
+        - {x: 10, y: -14}
+        - {x: 11, y: -15}
+        - {x: 15, y: -15}
+        - {x: 15, y: -7}
+        - {x: 14, y: -6}
+        - {x: 6, y: -6}
+        - {x: 5, y: -4}
+        - {x: 8, y: -1}
+        - {x: 8, y: 3}
+        - {x: 9, y: 5}
+        - {x: 7, y: 7}
+        - {x: 4, y: 7}
+        - {x: 4, y: 8}
+        - {x: 0, y: 12}
+        - {x: -2, y: 12}
+        - {x: -3, y: 13}
+        - {x: -7, y: 13}
+        - {x: -7, y: 14}
+        - {x: -8, y: 15}
+        - {x: -8, y: 18}
+        - {x: -14, y: 18}
+        - {x: -15, y: 17}
+        - {x: -15, y: 5}
+        - {x: -14, y: 4}
+        - {x: -13, y: 4}
+        - {x: -10, y: 0}
+        - {x: -9, y: -1}
+        - {x: -9, y: -5}
+        - {x: -8, y: -6}
+        - {x: -8, y: -8}
+        - {x: -12, y: -9}
+        - {x: -15, y: -12}
+        - {x: -15, y: -18}
+        - {x: -9, y: -18}
+        - {x: -9, y: -16}
+        - {x: -6, y: -16}
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: 1
       bones: []
       spriteID: 2ed2eddde3f05f8f0800000000000000
       internalID: -507482620324598302
@@ -245,16 +397,54 @@ TextureImporter:
       name: tronc_arbre_6
       rect:
         serializedVersion: 2
-        x: 127
-        y: 16
+        x: 400
+        y: 103
         width: 25
-        height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 47
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33955628}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: 3.5, y: -20.5}
+        - {x: 9.5, y: -23.5}
+        - {x: 12.5, y: -23.5}
+        - {x: 12.5, y: -18.5}
+        - {x: 9.5, y: -15.5}
+        - {x: 8.5, y: -15.5}
+        - {x: 5.5, y: -11.5}
+        - {x: 4.5, y: -10.5}
+        - {x: 4.5, y: -0.5}
+        - {x: 5.5, y: 0.5}
+        - {x: 5.5, y: 5.5}
+        - {x: 6.5, y: 6.5}
+        - {x: 6.5, y: 9.5}
+        - {x: 4.5, y: 11.5}
+        - {x: 4.5, y: 14.5}
+        - {x: 5.5, y: 15.5}
+        - {x: 5.5, y: 21.5}
+        - {x: 3.5, y: 23.5}
+        - {x: -1.5, y: 22.5}
+        - {x: -1.5, y: 23.5}
+        - {x: -6.5, y: 23.5}
+        - {x: -6.5, y: 22.5}
+        - {x: -8.5, y: 20.5}
+        - {x: -8.5, y: 16.5}
+        - {x: -9.5, y: 15.5}
+        - {x: -9.5, y: 9.5}
+        - {x: -10.5, y: 8.5}
+        - {x: -10.5, y: -2.5}
+        - {x: -9.5, y: -3.5}
+        - {x: -9.5, y: -5.5}
+        - {x: -12.5, y: -8.5}
+        - {x: -12.5, y: -18.5}
+        - {x: -9.5, y: -18.5}
+        - {x: -10.5, y: -19.5}
+        - {x: -10.5, y: -23.5}
+        - {x: -3.5, y: -23.5}
+        - {x: -2.5, y: -19.5}
+        - {x: -1.5, y: -20.5}
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: 1
       bones: []
       spriteID: ee3600af069816b00800000000000000
       internalID: 820087656762336238
@@ -266,16 +456,65 @@ TextureImporter:
       name: tronc_arbre_7
       rect:
         serializedVersion: 2
-        x: 200
-        y: 19
-        width: 29
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 38
+        y: 28
+        width: 31
+        height: 41
+      alignment: 9
+      pivot: {x: 0.47193244, y: 0.30192873}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: 13.5, y: -14.5}
+        - {x: 13.5, y: -13.5}
+        - {x: 12.5, y: -10.5}
+        - {x: 8.5, y: -7.5}
+        - {x: 6.5, y: -7.5}
+        - {x: 6.5, y: -5.5}
+        - {x: 9.5, y: -1.5}
+        - {x: 9.5, y: 1.5}
+        - {x: 13.5, y: 5.5}
+        - {x: 13.5, y: 11.5}
+        - {x: 11.5, y: 13.5}
+        - {x: 8.5, y: 12.5}
+        - {x: 8.5, y: 9.5}
+        - {x: 7.5, y: 11.5}
+        - {x: 7.5, y: 17.5}
+        - {x: 5.5, y: 19.5}
+        - {x: 5.5, y: 20.5}
+        - {x: 0.5, y: 20.5}
+        - {x: 0.5, y: 19.5}
+        - {x: -0.5, y: 18.5}
+        - {x: -3.5, y: 18.5}
+        - {x: -5.5, y: 16.5}
+        - {x: -5.5, y: 14.5}
+        - {x: -5.5, y: 20.5}
+        - {x: -12.5, y: 20.5}
+        - {x: -12.5, y: 12.5}
+        - {x: -11.5, y: 11.5}
+        - {x: -11.5, y: 9.5}
+        - {x: -8.5, y: 6.5}
+        - {x: -7.5, y: 6.5}
+        - {x: -5.5, y: 4.5}
+        - {x: -6.5, y: 3.5}
+        - {x: -7.5, y: -4.5}
+        - {x: -8.5, y: -5.5}
+        - {x: -14.5, y: -12.5}
+        - {x: -14.5, y: -13.5}
+        - {x: -15.5, y: -14.5}
+        - {x: -15.5, y: -20.5}
+        - {x: -11.5, y: -20.5}
+        - {x: -9.5, y: -19.5}
+        - {x: -9.5, y: -17.5}
+        - {x: -8.5, y: -18.5}
+        - {x: -1.5, y: -18.5}
+        - {x: -0.5, y: -17.5}
+        - {x: 1.5, y: -20.5}
+        - {x: 9.5, y: -20.5}
+        - {x: 10.5, y: -19.5}
+        - {x: 15.5, y: -19.5}
+        - {x: 15.5, y: -14.5}
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: 1
       bones: []
       spriteID: 57f45e73a5a3ce9a0800000000000000
       internalID: -6202518427636773003
@@ -287,16 +526,57 @@ TextureImporter:
       name: tronc_arbre_8
       rect:
         serializedVersion: 2
-        x: 290
-        y: 19
-        width: 31
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 135
+        y: 21
+        width: 26
+        height: 47
+      alignment: 9
+      pivot: {x: 0.48884523, y: 0.413607}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: 3, y: -20.5}
+        - {x: 9, y: -23.5}
+        - {x: 13, y: -23.5}
+        - {x: 13, y: -19.5}
+        - {x: 9, y: -15.5}
+        - {x: 8, y: -15.5}
+        - {x: 5, y: -11.5}
+        - {x: 4, y: -10.5}
+        - {x: 4, y: -0.5}
+        - {x: 5, y: 0.5}
+        - {x: 5, y: 4.5}
+        - {x: 4, y: 5.5}
+        - {x: 4, y: 14.5}
+        - {x: 5, y: 15.5}
+        - {x: 5, y: 21.5}
+        - {x: 3, y: 23.5}
+        - {x: -2, y: 22.5}
+        - {x: -2, y: 23.5}
+        - {x: -7, y: 23.5}
+        - {x: -7, y: 22.5}
+        - {x: -9, y: 20.5}
+        - {x: -9, y: 16.5}
+        - {x: -10, y: 15.5}
+        - {x: -10, y: 8.5}
+        - {x: -12, y: 6.5}
+        - {x: -12, y: 1.5}
+        - {x: -11, y: 0.5}
+        - {x: -10, y: -5.5}
+        - {x: -13, y: -8.5}
+        - {x: -13, y: -18.5}
+        - {x: -10, y: -18.5}
+        - {x: -11, y: -19.5}
+        - {x: -11, y: -23.5}
+        - {x: -4, y: -23.5}
+        - {x: -3, y: -19.5}
+        - {x: -2, y: -20.5}
+      - - {x: 10, y: 5.5}
+        - {x: 12, y: 3.5}
+        - {x: 13, y: 3.5}
+        - {x: 13, y: 8.5}
+        - {x: 11, y: 8.5}
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: 1
       bones: []
       spriteID: 8139594f1aa63a460800000000000000
       internalID: 7251757068822352664
@@ -308,19 +588,193 @@ TextureImporter:
       name: tronc_arbre_9
       rect:
         serializedVersion: 2
-        x: 386
-        y: 14
+        x: 216
+        y: 24
+        width: 29
+        height: 36
+      alignment: 9
+      pivot: {x: 0.6100138, y: 0.3147013}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 9.5, y: -18}
+        - {x: 14.5, y: -18}
+        - {x: 14.5, y: -10}
+        - {x: 13.5, y: -9}
+        - {x: 11.5, y: -9}
+        - {x: 8.5, y: -7}
+        - {x: 8.5, y: -1}
+        - {x: 14.5, y: 6}
+        - {x: 14.5, y: 17}
+        - {x: 13.5, y: 18}
+        - {x: 6.5, y: 18}
+        - {x: 6.5, y: 15}
+        - {x: 5.5, y: 13}
+        - {x: 1.5, y: 13}
+        - {x: -1.5, y: 12}
+        - {x: -6.5, y: 6}
+        - {x: -6.5, y: 2}
+        - {x: -5.5, y: 1}
+        - {x: -5.5, y: -5}
+        - {x: -6.5, y: -7}
+        - {x: -10.5, y: -7}
+        - {x: -14.5, y: -9}
+        - {x: -14.5, y: -17}
+        - {x: -11.5, y: -17}
+        - {x: -8.5, y: -15}
+        - {x: -5.5, y: -18}
+        - {x: 3.5, y: -18}
+        - {x: 5.5, y: -16}
+        - {x: 9.5, y: -16}
+      physicsShape: []
+      tessellationDetail: 1
+      bones: []
+      spriteID: 7db8f069cf0449ce0800000000000000
+      internalID: -1399422130611844137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tronc_arbre_10
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 24
+        width: 31
+        height: 41
+      alignment: 9
+      pivot: {x: 0.48128977, y: 0.25948483}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 13.5, y: -14.5}
+        - {x: 13.5, y: -13.5}
+        - {x: 12.5, y: -10.5}
+        - {x: 8.5, y: -7.5}
+        - {x: 6.5, y: -7.5}
+        - {x: 6.5, y: -5.5}
+        - {x: 10.5, y: -3.5}
+        - {x: 10.5, y: 2.5}
+        - {x: 13.5, y: 5.5}
+        - {x: 13.5, y: 11.5}
+        - {x: 11.5, y: 13.5}
+        - {x: 8.5, y: 12.5}
+        - {x: 8.5, y: 9.5}
+        - {x: 7.5, y: 11.5}
+        - {x: 7.5, y: 17.5}
+        - {x: 5.5, y: 19.5}
+        - {x: 5.5, y: 20.5}
+        - {x: 0.5, y: 20.5}
+        - {x: 0.5, y: 19.5}
+        - {x: -0.5, y: 18.5}
+        - {x: -3.5, y: 18.5}
+        - {x: -5.5, y: 16.5}
+        - {x: -5.5, y: 14.5}
+        - {x: -5.5, y: 20.5}
+        - {x: -12.5, y: 20.5}
+        - {x: -12.5, y: 12.5}
+        - {x: -11.5, y: 11.5}
+        - {x: -11.5, y: 9.5}
+        - {x: -9.5, y: 6.5}
+        - {x: -7.5, y: 6.5}
+        - {x: -8.5, y: 5.5}
+        - {x: -8.5, y: 2.5}
+        - {x: -7.5, y: 1.5}
+        - {x: -7.5, y: -4.5}
+        - {x: -8.5, y: -5.5}
+        - {x: -14.5, y: -12.5}
+        - {x: -14.5, y: -13.5}
+        - {x: -15.5, y: -14.5}
+        - {x: -15.5, y: -20.5}
+        - {x: -11.5, y: -20.5}
+        - {x: -9.5, y: -19.5}
+        - {x: -9.5, y: -17.5}
+        - {x: -8.5, y: -18.5}
+        - {x: -1.5, y: -18.5}
+        - {x: -0.5, y: -17.5}
+        - {x: 1.5, y: -20.5}
+        - {x: 9.5, y: -20.5}
+        - {x: 10.5, y: -19.5}
+        - {x: 15.5, y: -19.5}
+        - {x: 15.5, y: -14.5}
+      physicsShape: []
+      tessellationDetail: 1
+      bones: []
+      spriteID: ccbf6a43734e32800800000000000000
+      internalID: 586563302245989324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tronc_arbre_11
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 19
         width: 24
-        height: 21
+        height: 45
+      alignment: 9
+      pivot: {x: 0.48791632, y: 0.1841866}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 12, y: -19.5}
+        - {x: 11, y: -18.5}
+        - {x: 9, y: -18.5}
+        - {x: 9, y: -17.5}
+        - {x: 7, y: -14.5}
+        - {x: 7, y: -11.5}
+        - {x: 5, y: -8.5}
+        - {x: 5, y: -1.5}
+        - {x: 6, y: -0.5}
+        - {x: 6, y: 15.5}
+        - {x: 2, y: 19.5}
+        - {x: -2, y: 18.5}
+        - {x: -2, y: 22.5}
+        - {x: -7, y: 22.5}
+        - {x: -8, y: 21.5}
+        - {x: -8, y: 11.5}
+        - {x: -6, y: 9.5}
+        - {x: -7, y: 7.5}
+        - {x: -7, y: 0.5}
+        - {x: -8, y: -0.5}
+        - {x: -8, y: -10.5}
+        - {x: -12, y: -16.5}
+        - {x: -12, y: -22.5}
+        - {x: -7, y: -22.5}
+        - {x: -4, y: -18.5}
+        - {x: 1, y: -22.5}
+        - {x: 12, y: -22.5}
+      - - {x: 8, y: 8.5}
+        - {x: 11, y: 5.5}
+        - {x: 12, y: 5.5}
+        - {x: 12, y: 13.5}
+        - {x: 9, y: 12.5}
+      physicsShape: []
+      tessellationDetail: 1
+      bones: []
+      spriteID: 98e151ea59a4a3a70800000000000000
+      internalID: 8807434028007628425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tronc_arbre_12
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 48
+        width: 8
+        height: 9
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7db8f069cf0449ce0800000000000000
-      internalID: -1399422130611844137
+      spriteID: 7583f792bc7e41100800000000000000
+      internalID: 77941953332721751
       vertices: []
       indices: 
       edges: []
