@@ -29,6 +29,8 @@ namespace Player
         [HideInInspector] public int Henry2;
         [HideInInspector] public int WindMother;
         [HideInInspector] public int Pepe;
+        
+        [HideInInspector] public float chanceDropHeal = 2;
 
        
 
@@ -42,6 +44,7 @@ namespace Player
             lifeBar = lifeEmpty.transform.GetChild(0).GetComponent<Image>();
             lifeEmpty.fillAmount = currentMaxLife / maxLifePossible;
             lifeBar.fillAmount = currentMaxLife / maxLifePossible;
+            chanceDropHeal = 2;
         }
         private void OnCollisionStay2D(Collision2D collision)
         {
@@ -52,7 +55,8 @@ namespace Player
             }
             else if (collision.gameObject.tag == "Heal")
             {
-                // Heal(collision.gameObject.GetComponent<Heal>().healAmount);
+                 Heal(collision.gameObject.GetComponent<Heal>().healAmount);
+                Destroy(collision.gameObject);
             }
             else if (collision.gameObject.tag == "LifeUpgrade")
             {

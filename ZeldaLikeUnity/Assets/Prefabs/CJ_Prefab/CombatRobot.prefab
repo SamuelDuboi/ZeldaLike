@@ -691,9 +691,12 @@ MonoBehaviour:
   - {fileID: 3050688598026690586}
   - {fileID: 3050688596750769003}
   - {fileID: 3050688598388052216}
+  isAttacking: 0
+  startPosition: {x: 0, y: 0}
+  healDrop: {fileID: 7435818835512353066, guid: 85e9539271ca936479b5b4621a349221,
+    type: 3}
   chargeRange: 15
   slashRange: 5
-  stopRange: 0
   chargeSpeed: 20
   followSpeed: 2
 --- !u!212 &3050688598167191430

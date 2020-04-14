@@ -40,6 +40,8 @@ namespace Ennemy
         public bool isAttacking;
 
         [HideInInspector] public Vector2 startPosition;
+
+        public GameObject healDrop;
         public virtual void Start()
         {
             ennemyRGB = GetComponent<Rigidbody2D>();
@@ -114,8 +116,8 @@ namespace Ennemy
             {
                 Mouvement();
             }
-           // if (isAvoidingObstacles)
-              //  AvoidWalls();
+            if (isAvoidingObstacles)
+                AvoidWalls();
 
 
         }
@@ -143,7 +145,14 @@ namespace Ennemy
                     StartCoroutine(GameManagerV2.Instance.GamePadeShake(0, .2f));
                 else
                     StartCoroutine(GameManager.Instance.GamePadeShake(0, .2f));
-
+                float randomHeal = Random.Range(0, 11);
+                if (randomHeal <= SD_PlayerRessources.Instance.chanceDropHeal)
+                {
+                    Instantiate(healDrop, transform.position, Quaternion.identity);
+                    SD_PlayerRessources.Instance.chanceDropHeal = 2;
+                }
+                else
+                    SD_PlayerRessources.Instance.chanceDropHeal++;
                 CJ_PlayerCameraManager.Instance.ennemyList.Remove(gameObject);
                 Destroy(gameObject);
             }

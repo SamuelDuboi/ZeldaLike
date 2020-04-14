@@ -260,6 +260,12 @@ MonoBehaviour:
   - {fileID: 7449929291971450576}
   - {fileID: 7449929292648617194}
   - {fileID: 7449929292177419728}
+  isAttacking: 0
+  startPosition: {x: 0, y: 0}
+  healDrop: {fileID: 7435818835512353066, guid: 85e9539271ca936479b5b4621a349221,
+    type: 3}
+  timeCharging: 1
+  timeResting: 4
 --- !u!1 &7449929291971450576
 GameObject:
   m_ObjectHideFlags: 0

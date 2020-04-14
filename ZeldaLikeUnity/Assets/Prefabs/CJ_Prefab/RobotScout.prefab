@@ -284,6 +284,10 @@ MonoBehaviour:
   - {fileID: 1575223450}
   - {fileID: 1942248840}
   - {fileID: 1901179047}
+  isAttacking: 0
+  startPosition: {x: 0, y: 0}
+  healDrop: {fileID: 7435818835512353066, guid: 85e9539271ca936479b5b4621a349221,
+    type: 3}
   stopDistance: 20
   retreatDistance: 0
   retreatSpeed: 2
