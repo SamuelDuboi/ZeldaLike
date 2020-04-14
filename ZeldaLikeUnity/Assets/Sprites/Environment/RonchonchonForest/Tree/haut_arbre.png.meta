@@ -1,154 +1,37 @@
 fileFormatVersion: 2
-guid: 14448fa021a145046aa0f091c14b624a
+guid: 26730d715e2b7f3489d4e6ab95eadad9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6163504471847414402
-    second: haut_arbre_0
+      213: -373877431332701572
+    second: haut_arbre 1_0
   - first:
-      213: -6936130199505861626
-    second: haut_arbre_1
+      213: 321570187089550783
+    second: haut_arbre 1_1
   - first:
-      213: 1411837936387611390
-    second: haut_arbre_2
+      213: 2208982690728034030
+    second: haut_arbre 1_2
   - first:
-      213: -2945171792351796518
-    second: haut_arbre_3
+      213: 8382112113359826031
+    second: haut_arbre 1_3
   - first:
-      213: 2914226193941915193
-    second: haut_arbre_4
+      213: 7020330740805981267
+    second: haut_arbre 1_4
   - first:
-      213: -3311341156264191862
-    second: haut_arbre_5
+      213: -8492256273853066762
+    second: haut_arbre 1_5
   - first:
-      213: -6881955234390853655
-    second: haut_arbre_6
+      213: -6460043442990276283
+    second: haut_arbre 1_6
   - first:
-      213: 7838842468354128945
-    second: haut_arbre_7
+      213: -5289502776086325675
+    second: haut_arbre 1_7
   - first:
-      213: 7562655498048113396
-    second: haut_arbre_8
+      213: -5779772628322450930
+    second: haut_arbre 1_8
   - first:
-      213: 7007346395288193590
-    second: haut_arbre_9
-  - first:
-      213: -3187127914054927070
-    second: haut_arbre_10
-  - first:
-      213: -1229657732834756039
-    second: haut_arbre_11
-  - first:
-      213: -5117550252009996203
-    second: haut_arbre_12
-  - first:
-      213: -5853079633855829516
-    second: haut_arbre_13
-  - first:
-      213: 2994796385215575574
-    second: haut_arbre_14
-  - first:
-      213: 1064153235398733967
-    second: haut_arbre_15
-  - first:
-      213: -3874495402518753929
-    second: haut_arbre_16
-  - first:
-      213: 6172678442216745815
-    second: haut_arbre_17
-  - first:
-      213: 71167057715010864
-    second: haut_arbre_18
-  - first:
-      213: 7656935746742175468
-    second: haut_arbre_19
-  - first:
-      213: 7416477612871099956
-    second: haut_arbre_20
-  - first:
-      213: -8405257101428834914
-    second: haut_arbre_21
-  - first:
-      213: 1439433590298004540
-    second: haut_arbre_22
-  - first:
-      213: 492117385720489582
-    second: haut_arbre_23
-  - first:
-      213: -3545181988905841052
-    second: haut_arbre_24
-  - first:
-      213: 2005834424464641400
-    second: haut_arbre_25
-  - first:
-      213: -3904860850240882367
-    second: haut_arbre_26
-  - first:
-      213: 5493475761016950773
-    second: haut_arbre_27
-  - first:
-      213: -4559042516338958182
-    second: haut_arbre_28
-  - first:
-      213: -8855741644907526088
-    second: haut_arbre_29
-  - first:
-      213: 6962698156574805896
-    second: haut_arbre_30
-  - first:
-      213: 7416042735895142119
-    second: haut_arbre_31
-  - first:
-      213: -2222816002388938824
-    second: haut_arbre_32
-  - first:
-      213: 2140718309805366607
-    second: haut_arbre_33
-  - first:
-      213: 8906448332744860670
-    second: haut_arbre_34
-  - first:
-      213: 1134512567860064569
-    second: haut_arbre_35
-  - first:
-      213: 1100578373016044984
-    second: haut_arbre_36
-  - first:
-      213: 7440230765797651817
-    second: haut_arbre_37
-  - first:
-      213: -4381119349236663239
-    second: haut_arbre_38
-  - first:
-      213: 338385698665884433
-    second: haut_arbre_39
-  - first:
-      213: -7810162499634184363
-    second: haut_arbre_40
-  - first:
-      213: 2413684161021358617
-    second: haut_arbre_41
-  - first:
-      213: 2623313123545404981
-    second: haut_arbre_42
-  - first:
-      213: 8138537272490987484
-    second: haut_arbre_43
-  - first:
-      213: -1481817703621976663
-    second: haut_arbre_44
-  - first:
-      213: -5838586911895865959
-    second: haut_arbre_45
-  - first:
-      213: 1653402876481028809
-    second: haut_arbre_46
-  - first:
-      213: -2201839321582576811
-    second: haut_arbre_47
-  - first:
-      213: 6610708119081173520
-    second: haut_arbre_48
+      213: 4254245155693134098
+    second: haut_arbre 1_9
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -233,211 +116,695 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: haut_arbre_0
+      name: haut_arbre 1_0
       rect:
         serializedVersion: 2
-        x: 6
-        y: 84
+        x: 19
+        y: 105
         width: 71
         height: 46
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: 0.5, y: -21}
+        - {x: 3.5, y: -23}
+        - {x: 21.5, y: -23}
+        - {x: 23.5, y: -21}
+        - {x: 25.5, y: -21}
+        - {x: 26.5, y: -22}
+        - {x: 28.5, y: -22}
+        - {x: 32.5, y: -18}
+        - {x: 32.5, y: -17}
+        - {x: 35.5, y: -15}
+        - {x: 35.5, y: -7}
+        - {x: 33.5, y: -5}
+        - {x: 31.5, y: -5}
+        - {x: 31.5, y: -4}
+        - {x: 28.5, y: -1}
+        - {x: 28.5, y: 1}
+        - {x: 27.5, y: 2}
+        - {x: 28.5, y: 4}
+        - {x: 24.5, y: 8}
+        - {x: 22.5, y: 8}
+        - {x: 21.5, y: 10}
+        - {x: 17.5, y: 12}
+        - {x: 14.5, y: 15}
+        - {x: 12.5, y: 15}
+        - {x: 12.5, y: 17}
+        - {x: 9.5, y: 20}
+        - {x: 8.5, y: 20}
+        - {x: 6.5, y: 22}
+        - {x: 3.5, y: 22}
+        - {x: 2.5, y: 23}
+        - {x: -10.5, y: 23}
+        - {x: -11.5, y: 22}
+        - {x: -15.5, y: 21}
+        - {x: -21.5, y: 16}
+        - {x: -23.5, y: 12}
+        - {x: -26.5, y: 8}
+        - {x: -27.5, y: 8}
+        - {x: -32.5, y: 3}
+        - {x: -32.5, y: 0}
+        - {x: -30.5, y: -3}
+        - {x: -34.5, y: -6}
+        - {x: -35.5, y: -7}
+        - {x: -35.5, y: -16}
+        - {x: -30.5, y: -21}
+        - {x: -27.5, y: -20}
+        - {x: -24.5, y: -23}
+        - {x: -19.5, y: -23}
+        - {x: -17.5, y: -22}
+        - {x: -16.5, y: -23}
+        - {x: -7.5, y: -23}
+        - {x: -4.5, y: -22}
+        - {x: -3.5, y: -20}
+        - {x: -0.5, y: -20}
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: 1
       bones: []
-      spriteID: e75d008a655d67aa0800000000000000
-      internalID: -6163504471847414402
+      spriteID: c7af0e30578bfcaf0800000000000000
+      internalID: -373877431332701572
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: haut_arbre_1
+      name: haut_arbre 1_1
       rect:
         serializedVersion: 2
-        x: 101
-        y: 82
+        x: 110
+        y: 101
         width: 65
         height: 40
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: -2.5, y: -19}
+        - {x: -1.5, y: -18}
+        - {x: 0.5, y: -18}
+        - {x: 3.5, y: -16}
+        - {x: 6.5, y: -16}
+        - {x: 6.5, y: -18}
+        - {x: 8.5, y: -20}
+        - {x: 11.5, y: -20}
+        - {x: 14.5, y: -18}
+        - {x: 14.5, y: -16}
+        - {x: 17.5, y: -18}
+        - {x: 19.5, y: -18}
+        - {x: 21.5, y: -16}
+        - {x: 24.5, y: -16}
+        - {x: 27.5, y: -13}
+        - {x: 30.5, y: -14}
+        - {x: 32.5, y: -12}
+        - {x: 32.5, y: -3}
+        - {x: 31.5, y: -1}
+        - {x: 27.5, y: 0}
+        - {x: 28.5, y: 3}
+        - {x: 26.5, y: 5}
+        - {x: 27.5, y: 6}
+        - {x: 27.5, y: 8}
+        - {x: 25.5, y: 10}
+        - {x: 24.5, y: 10}
+        - {x: 22.5, y: 12}
+        - {x: 20.5, y: 12}
+        - {x: 19.5, y: 14}
+        - {x: 14.5, y: 16}
+        - {x: 12.5, y: 13}
+        - {x: 10.5, y: 16}
+        - {x: 10.5, y: 17}
+        - {x: 7.5, y: 20}
+        - {x: 1.5, y: 20}
+        - {x: 0.5, y: 19}
+        - {x: 0.5, y: 20}
+        - {x: -17.5, y: 20}
+        - {x: -22.5, y: 15}
+        - {x: -22.5, y: 11}
+        - {x: -23.5, y: 11}
+        - {x: -29.5, y: 7}
+        - {x: -28.5, y: 5}
+        - {x: -31.5, y: 3}
+        - {x: -32.5, y: 0}
+        - {x: -32.5, y: -14}
+        - {x: -26.5, y: -20}
+        - {x: -9.5, y: -20}
+        - {x: -9.5, y: -19}
+        - {x: -7.5, y: -20}
+        - {x: -6.5, y: -19}
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: 1
       bones: []
-      spriteID: 604089e255aedbf90800000000000000
-      internalID: -6936130199505861626
+      spriteID: fbd14d3a162767400800000000000000
+      internalID: 321570187089550783
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: haut_arbre_2
+      name: haut_arbre 1_2
       rect:
         serializedVersion: 2
-        x: 185
-        y: 81
+        x: 193
+        y: 106
         width: 65
         height: 51
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: -1.5, y: -20.5}
+        - {x: -0.5, y: -21.5}
+        - {x: 5.5, y: -21.5}
+        - {x: 9.5, y: -25.5}
+        - {x: 17.5, y: -25.5}
+        - {x: 17.5, y: -24.5}
+        - {x: 19.5, y: -22.5}
+        - {x: 22.5, y: -22.5}
+        - {x: 29.5, y: -15.5}
+        - {x: 29.5, y: -13.5}
+        - {x: 30.5, y: -13.5}
+        - {x: 32.5, y: -11.5}
+        - {x: 32.5, y: 1.5}
+        - {x: 31.5, y: 4.5}
+        - {x: 28.5, y: 6.5}
+        - {x: 28.5, y: 8.5}
+        - {x: 26.5, y: 10.5}
+        - {x: 25.5, y: 10.5}
+        - {x: 23.5, y: 13.5}
+        - {x: 21.5, y: 14.5}
+        - {x: 21.5, y: 16.5}
+        - {x: 20.5, y: 18.5}
+        - {x: 16.5, y: 19.5}
+        - {x: 9.5, y: 25.5}
+        - {x: -9.5, y: 25.5}
+        - {x: -11.5, y: 23.5}
+        - {x: -13.5, y: 23.5}
+        - {x: -19.5, y: 17.5}
+        - {x: -20.5, y: 17.5}
+        - {x: -23.5, y: 14.5}
+        - {x: -23.5, y: 12.5}
+        - {x: -26.5, y: 9.5}
+        - {x: -26.5, y: 7.5}
+        - {x: -28.5, y: 5.5}
+        - {x: -28.5, y: 4.5}
+        - {x: -26.5, y: 2.5}
+        - {x: -26.5, y: 0.5}
+        - {x: -28.5, y: 0.5}
+        - {x: -32.5, y: -3.5}
+        - {x: -32.5, y: -14.5}
+        - {x: -31.5, y: -15.5}
+        - {x: -31.5, y: -17.5}
+        - {x: -28.5, y: -20.5}
+        - {x: -26.5, y: -20.5}
+        - {x: -21.5, y: -25.5}
+        - {x: -15.5, y: -25.5}
+        - {x: -11.5, y: -23.5}
+        - {x: -8.5, y: -25.5}
+        - {x: -6.5, y: -25.5}
+        - {x: -1.5, y: -23.5}
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: 1
       bones: []
-      spriteID: efaddc67f1bd79310800000000000000
-      internalID: 1411837936387611390
+      spriteID: eeeb4d3bd02e7ae10800000000000000
+      internalID: 2208982690728034030
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: haut_arbre_3
+      name: haut_arbre 1_3
       rect:
         serializedVersion: 2
-        x: 277
-        y: 85
+        x: 279
+        y: 105
         width: 65
         height: 40
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: -2.5, y: -19}
+        - {x: 3.5, y: -16}
+        - {x: 8.5, y: -20}
+        - {x: 11.5, y: -20}
+        - {x: 14.5, y: -18}
+        - {x: 14.5, y: -16}
+        - {x: 17.5, y: -18}
+        - {x: 19.5, y: -18}
+        - {x: 21.5, y: -16}
+        - {x: 24.5, y: -16}
+        - {x: 27.5, y: -13}
+        - {x: 30.5, y: -14}
+        - {x: 32.5, y: -12}
+        - {x: 32.5, y: -3}
+        - {x: 31.5, y: -1}
+        - {x: 27.5, y: 0}
+        - {x: 28.5, y: 3}
+        - {x: 26.5, y: 5}
+        - {x: 27.5, y: 6}
+        - {x: 27.5, y: 8}
+        - {x: 25.5, y: 10}
+        - {x: 24.5, y: 10}
+        - {x: 22.5, y: 12}
+        - {x: 20.5, y: 12}
+        - {x: 19.5, y: 14}
+        - {x: 14.5, y: 16}
+        - {x: 12.5, y: 13}
+        - {x: 10.5, y: 16}
+        - {x: 10.5, y: 17}
+        - {x: 7.5, y: 20}
+        - {x: 1.5, y: 20}
+        - {x: 0.5, y: 19}
+        - {x: 0.5, y: 20}
+        - {x: -17.5, y: 20}
+        - {x: -22.5, y: 15}
+        - {x: -22.5, y: 11}
+        - {x: -23.5, y: 11}
+        - {x: -29.5, y: 7}
+        - {x: -28.5, y: 5}
+        - {x: -31.5, y: 3}
+        - {x: -32.5, y: 0}
+        - {x: -32.5, y: -14}
+        - {x: -26.5, y: -20}
+        - {x: -9.5, y: -20}
+        - {x: -9.5, y: -19}
+        - {x: -8.5, y: -20}
+        - {x: -6.5, y: -19}
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: 1
       bones: []
-      spriteID: ad2ee5aebd5a027d0800000000000000
-      internalID: -2945171792351796518
+      spriteID: f6caf488e8e335470800000000000000
+      internalID: 8382112113359826031
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: haut_arbre_4
+      name: haut_arbre 1_4
       rect:
         serializedVersion: 2
-        x: 365
-        y: 87
-        width: 65
-        height: 45
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 936eb0d7849617820800000000000000
-      internalID: 2914226193941915193
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: haut_arbre_5
-      rect:
-        serializedVersion: 2
-        x: 9
-        y: 6
-        width: 65
-        height: 51
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a88ddba33c0cb02d0800000000000000
-      internalID: -3311341156264191862
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: haut_arbre_6
-      rect:
-        serializedVersion: 2
-        x: 101
-        y: 8
+        x: 378
+        y: 109
         width: 65
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: -5.5, y: -22}
+        - {x: -1.5, y: -20}
+        - {x: -0.5, y: -21}
+        - {x: 2.5, y: -21}
+        - {x: 3.5, y: -22}
+        - {x: 24.5, y: -22}
+        - {x: 25.5, y: -21}
+        - {x: 27.5, y: -21}
+        - {x: 32.5, y: -16}
+        - {x: 32.5, y: -8}
+        - {x: 28.5, y: -4}
+        - {x: 28.5, y: -3}
+        - {x: 26.5, y: -1}
+        - {x: 27.5, y: 0}
+        - {x: 27.5, y: 2}
+        - {x: 20.5, y: 11}
+        - {x: 18.5, y: 11}
+        - {x: 18.5, y: 14}
+        - {x: 16.5, y: 16}
+        - {x: 16.5, y: 18}
+        - {x: 13.5, y: 21}
+        - {x: 9.5, y: 21}
+        - {x: 8.5, y: 22}
+        - {x: -8.5, y: 22}
+        - {x: -15.5, y: 16}
+        - {x: -17.5, y: 15}
+        - {x: -19.5, y: 16}
+        - {x: -21.5, y: 14}
+        - {x: -23.5, y: 14}
+        - {x: -27.5, y: 10}
+        - {x: -28.5, y: 4}
+        - {x: -31.5, y: 1}
+        - {x: -31.5, y: 0}
+        - {x: -30.5, y: -2}
+        - {x: -31.5, y: -3}
+        - {x: -31.5, y: -6}
+        - {x: -32.5, y: -7}
+        - {x: -32.5, y: -15}
+        - {x: -30.5, y: -18}
+        - {x: -27.5, y: -19}
+        - {x: -24.5, y: -19}
+        - {x: -22.5, y: -21}
+        - {x: -20.5, y: -21}
+        - {x: -19.5, y: -22}
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: 1
       bones: []
-      spriteID: 9e73efd2d226e70a0800000000000000
-      internalID: -6881955234390853655
+      spriteID: 354de7b0d993d6160800000000000000
+      internalID: 7020330740805981267
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: haut_arbre_7
+      name: haut_arbre 1_5
       rect:
         serializedVersion: 2
-        x: 186
-        y: 7
-        width: 65
-        height: 45
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 13c7e7861b929cc60800000000000000
-      internalID: 7838842468354128945
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: haut_arbre_8
-      rect:
-        serializedVersion: 2
-        x: 280
-        y: 5
+        x: 20
+        y: 26
         width: 65
         height: 51
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: -3.5, y: -24.5}
+        - {x: -1.5, y: -22.5}
+        - {x: 2.5, y: -21.5}
+        - {x: 5.5, y: -23.5}
+        - {x: 7.5, y: -23.5}
+        - {x: 9.5, y: -25.5}
+        - {x: 17.5, y: -25.5}
+        - {x: 17.5, y: -24.5}
+        - {x: 19.5, y: -22.5}
+        - {x: 22.5, y: -22.5}
+        - {x: 29.5, y: -15.5}
+        - {x: 29.5, y: -13.5}
+        - {x: 30.5, y: -13.5}
+        - {x: 32.5, y: -11.5}
+        - {x: 32.5, y: 1.5}
+        - {x: 31.5, y: 4.5}
+        - {x: 28.5, y: 6.5}
+        - {x: 28.5, y: 8.5}
+        - {x: 26.5, y: 10.5}
+        - {x: 25.5, y: 10.5}
+        - {x: 23.5, y: 13.5}
+        - {x: 21.5, y: 14.5}
+        - {x: 21.5, y: 16.5}
+        - {x: 20.5, y: 18.5}
+        - {x: 16.5, y: 19.5}
+        - {x: 9.5, y: 25.5}
+        - {x: -9.5, y: 25.5}
+        - {x: -11.5, y: 23.5}
+        - {x: -13.5, y: 23.5}
+        - {x: -19.5, y: 17.5}
+        - {x: -20.5, y: 17.5}
+        - {x: -23.5, y: 14.5}
+        - {x: -23.5, y: 12.5}
+        - {x: -26.5, y: 9.5}
+        - {x: -26.5, y: 7.5}
+        - {x: -28.5, y: 5.5}
+        - {x: -28.5, y: 4.5}
+        - {x: -26.5, y: 2.5}
+        - {x: -26.5, y: 0.5}
+        - {x: -28.5, y: 0.5}
+        - {x: -32.5, y: -3.5}
+        - {x: -32.5, y: -14.5}
+        - {x: -31.5, y: -15.5}
+        - {x: -31.5, y: -17.5}
+        - {x: -28.5, y: -20.5}
+        - {x: -26.5, y: -20.5}
+        - {x: -21.5, y: -25.5}
+        - {x: -15.5, y: -25.5}
+        - {x: -11.5, y: -23.5}
+        - {x: -8.5, y: -25.5}
+        - {x: -6.5, y: -25.5}
+        - {x: -5.5, y: -24.5}
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: 1
       bones: []
-      spriteID: 4fa00d75b13f3f860800000000000000
-      internalID: 7562655498048113396
+      spriteID: 6f1d76fa9e1752a80800000000000000
+      internalID: -8492256273853066762
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: haut_arbre_9
+      name: haut_arbre 1_6
       rect:
         serializedVersion: 2
-        x: 366
-        y: 7
+        x: 113
+        y: 27
+        width: 65
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5.5, y: -21}
+        - {x: 2.5, y: -21}
+        - {x: 3.5, y: -22}
+        - {x: 24.5, y: -22}
+        - {x: 25.5, y: -21}
+        - {x: 27.5, y: -21}
+        - {x: 32.5, y: -16}
+        - {x: 32.5, y: -8}
+        - {x: 28.5, y: -4}
+        - {x: 28.5, y: -3}
+        - {x: 26.5, y: -1}
+        - {x: 27.5, y: 0}
+        - {x: 27.5, y: 2}
+        - {x: 20.5, y: 11}
+        - {x: 18.5, y: 11}
+        - {x: 18.5, y: 14}
+        - {x: 16.5, y: 16}
+        - {x: 16.5, y: 18}
+        - {x: 13.5, y: 21}
+        - {x: 9.5, y: 21}
+        - {x: 8.5, y: 22}
+        - {x: -8.5, y: 22}
+        - {x: -15.5, y: 16}
+        - {x: -17.5, y: 15}
+        - {x: -19.5, y: 16}
+        - {x: -21.5, y: 14}
+        - {x: -23.5, y: 14}
+        - {x: -27.5, y: 10}
+        - {x: -28.5, y: 4}
+        - {x: -31.5, y: 1}
+        - {x: -31.5, y: 0}
+        - {x: -30.5, y: -2}
+        - {x: -31.5, y: -3}
+        - {x: -31.5, y: -6}
+        - {x: -32.5, y: -7}
+        - {x: -32.5, y: -15}
+        - {x: -30.5, y: -18}
+        - {x: -27.5, y: -19}
+        - {x: -24.5, y: -19}
+        - {x: -22.5, y: -21}
+        - {x: -20.5, y: -21}
+        - {x: -19.5, y: -22}
+        - {x: -6.5, y: -22}
+      physicsShape: []
+      tessellationDetail: 1
+      bones: []
+      spriteID: 54129f227b05956a0800000000000000
+      internalID: -6460043442990276283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: haut_arbre 1_7
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 25
+        width: 65
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -4.5, y: -20.5}
+        - {x: -1.5, y: -22.5}
+        - {x: 0.5, y: -22.5}
+        - {x: 2.5, y: -21.5}
+        - {x: 3.5, y: -22.5}
+        - {x: 24.5, y: -22.5}
+        - {x: 25.5, y: -21.5}
+        - {x: 27.5, y: -21.5}
+        - {x: 32.5, y: -16.5}
+        - {x: 32.5, y: -7.5}
+        - {x: 28.5, y: -2.5}
+        - {x: 27.5, y: -1.5}
+        - {x: 27.5, y: 2.5}
+        - {x: 20.5, y: 11.5}
+        - {x: 18.5, y: 11.5}
+        - {x: 18.5, y: 14.5}
+        - {x: 16.5, y: 16.5}
+        - {x: 16.5, y: 18.5}
+        - {x: 13.5, y: 21.5}
+        - {x: 9.5, y: 21.5}
+        - {x: 8.5, y: 22.5}
+        - {x: -8.5, y: 22.5}
+        - {x: -15.5, y: 16.5}
+        - {x: -17.5, y: 15.5}
+        - {x: -19.5, y: 16.5}
+        - {x: -21.5, y: 14.5}
+        - {x: -23.5, y: 14.5}
+        - {x: -27.5, y: 10.5}
+        - {x: -28.5, y: 4.5}
+        - {x: -31.5, y: 1.5}
+        - {x: -31.5, y: -0.5}
+        - {x: -30.5, y: -1.5}
+        - {x: -31.5, y: -2.5}
+        - {x: -31.5, y: -5.5}
+        - {x: -32.5, y: -6.5}
+        - {x: -32.5, y: -15.5}
+        - {x: -30.5, y: -18.5}
+        - {x: -27.5, y: -19.5}
+        - {x: -24.5, y: -19.5}
+        - {x: -22.5, y: -21.5}
+        - {x: -20.5, y: -21.5}
+        - {x: -19.5, y: -22.5}
+        - {x: -6.5, y: -22.5}
+      physicsShape: []
+      tessellationDetail: 1
+      bones: []
+      spriteID: 5569ee80049e796b0800000000000000
+      internalID: -5289502776086325675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: haut_arbre 1_8
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 22
+        width: 65
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 5.5, y: -22.5}
+        - {x: 6.5, y: -22.5}
+        - {x: 9.5, y: -25.5}
+        - {x: 17.5, y: -25.5}
+        - {x: 17.5, y: -24.5}
+        - {x: 19.5, y: -22.5}
+        - {x: 22.5, y: -22.5}
+        - {x: 29.5, y: -15.5}
+        - {x: 29.5, y: -13.5}
+        - {x: 30.5, y: -13.5}
+        - {x: 32.5, y: -11.5}
+        - {x: 32.5, y: 1.5}
+        - {x: 31.5, y: 4.5}
+        - {x: 28.5, y: 6.5}
+        - {x: 28.5, y: 8.5}
+        - {x: 26.5, y: 10.5}
+        - {x: 25.5, y: 10.5}
+        - {x: 23.5, y: 13.5}
+        - {x: 21.5, y: 14.5}
+        - {x: 21.5, y: 16.5}
+        - {x: 20.5, y: 18.5}
+        - {x: 16.5, y: 19.5}
+        - {x: 9.5, y: 25.5}
+        - {x: -9.5, y: 25.5}
+        - {x: -11.5, y: 23.5}
+        - {x: -13.5, y: 23.5}
+        - {x: -19.5, y: 17.5}
+        - {x: -20.5, y: 17.5}
+        - {x: -23.5, y: 14.5}
+        - {x: -23.5, y: 12.5}
+        - {x: -26.5, y: 9.5}
+        - {x: -26.5, y: 7.5}
+        - {x: -28.5, y: 5.5}
+        - {x: -28.5, y: 4.5}
+        - {x: -26.5, y: 2.5}
+        - {x: -26.5, y: 0.5}
+        - {x: -28.5, y: 0.5}
+        - {x: -32.5, y: -3.5}
+        - {x: -32.5, y: -14.5}
+        - {x: -31.5, y: -15.5}
+        - {x: -31.5, y: -17.5}
+        - {x: -28.5, y: -20.5}
+        - {x: -26.5, y: -20.5}
+        - {x: -21.5, y: -25.5}
+        - {x: -15.5, y: -25.5}
+        - {x: -11.5, y: -23.5}
+        - {x: -8.5, y: -25.5}
+        - {x: -6.5, y: -25.5}
+        - {x: 3.5, y: -20.5}
+      physicsShape: []
+      tessellationDetail: 1
+      bones: []
+      spriteID: e028056ca6f1acfa0800000000000000
+      internalID: -5779772628322450930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: haut_arbre 1_9
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 20
         width: 71
         height: 46
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: 3.5, y: -23}
+        - {x: 21.5, y: -23}
+        - {x: 23.5, y: -21}
+        - {x: 25.5, y: -21}
+        - {x: 26.5, y: -22}
+        - {x: 28.5, y: -22}
+        - {x: 32.5, y: -18}
+        - {x: 32.5, y: -17}
+        - {x: 35.5, y: -15}
+        - {x: 35.5, y: -7}
+        - {x: 33.5, y: -5}
+        - {x: 31.5, y: -5}
+        - {x: 31.5, y: -4}
+        - {x: 28.5, y: -1}
+        - {x: 28.5, y: 1}
+        - {x: 27.5, y: 2}
+        - {x: 28.5, y: 4}
+        - {x: 24.5, y: 8}
+        - {x: 22.5, y: 8}
+        - {x: 21.5, y: 10}
+        - {x: 17.5, y: 12}
+        - {x: 14.5, y: 15}
+        - {x: 12.5, y: 15}
+        - {x: 12.5, y: 17}
+        - {x: 9.5, y: 20}
+        - {x: 8.5, y: 20}
+        - {x: 6.5, y: 22}
+        - {x: 3.5, y: 22}
+        - {x: 2.5, y: 23}
+        - {x: -10.5, y: 23}
+        - {x: -11.5, y: 22}
+        - {x: -15.5, y: 21}
+        - {x: -21.5, y: 16}
+        - {x: -23.5, y: 12}
+        - {x: -26.5, y: 8}
+        - {x: -27.5, y: 8}
+        - {x: -32.5, y: 3}
+        - {x: -32.5, y: 0}
+        - {x: -30.5, y: -3}
+        - {x: -34.5, y: -6}
+        - {x: -35.5, y: -7}
+        - {x: -35.5, y: -16}
+        - {x: -30.5, y: -21}
+        - {x: -27.5, y: -20}
+        - {x: -24.5, y: -23}
+        - {x: -19.5, y: -23}
+        - {x: -17.5, y: -22}
+        - {x: -16.5, y: -23}
+        - {x: -7.5, y: -23}
+        - {x: -4.5, y: -22}
+        - {x: -3.5, y: -20}
+        - {x: 0.5, y: -20}
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: 1
       bones: []
-      spriteID: 63a44458b681f3160800000000000000
-      internalID: 7007346395288193590
+      spriteID: 211048cdd6d1a0b30800000000000000
+      internalID: 4254245155693134098
       vertices: []
       indices: 
       edges: []
