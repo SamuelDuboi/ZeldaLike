@@ -91,11 +91,8 @@ public class SD_Loupiotte : MonoBehaviour
                     OpenDoor = false;
 
                 }
-                if (transform.GetChild(0).localScale.x >= 0.0909f && !OpenDoor || transform.GetChild(0).localScale.x <= 0.101f && !OpenDoor)
-                {
-
-                    transform.GetChild(0).localScale = new Vector3(0.05f, 1, 0);
-                }
+                if (transform.GetChild(0).localScale.x >= 0.0909f && !OpenDoor || transform.GetChild(0).localScale.x <= 0.101f && !OpenDoor)                
+                    transform.GetChild(0).localScale = new Vector3(0.05f, 1, 0);                
             }
         }
         if (closeDoor)
