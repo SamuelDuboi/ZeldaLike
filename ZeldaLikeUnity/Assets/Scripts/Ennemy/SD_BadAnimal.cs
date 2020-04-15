@@ -28,7 +28,7 @@ namespace Ennemy
         {
             base.FixedUpdate();
            
-            if(!canMove && !isAvoidingObstacles)
+            if(!canMove && !isAvoidingObstacles && !isCharging)
             {
                 if (!isActive)
                     StartCoroutine(MovingRandom());
@@ -81,12 +81,14 @@ namespace Ennemy
         {
             isCharging = true;
             isAttacking = true;
+            isAvoidingObstacles = false;
             float cpt =0;
             GetComponent<SpriteRenderer>().color = Color.red;
             yield return new WaitForSeconds(2);
             GetComponent<SpriteRenderer>().color = new  Color32 (125,60,10,255);
             while (cpt < timeCharging)
             {
+                isAvoidingObstacles = false;
                 if (!canMove)
                     break;
                 ennemyRGB.velocity = new Vector2(player.transform.position.x - transform.position.x, player.transform.position.y - transform.position.y).normalized * speed;
@@ -106,6 +108,8 @@ namespace Ennemy
             GetComponent<SpriteRenderer>().color = Color.blue;
             yield return new WaitForSeconds(timeResting);
 
+            GetComponent<SpriteRenderer>().color = new Color32(125, 60, 10, 255); 
+            isAvoidingObstacles = false;
             isCharging = false;
         }
     }

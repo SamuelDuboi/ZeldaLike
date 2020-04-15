@@ -81,6 +81,7 @@ MonoBehaviour:
   Henry2: 0
   WindMother: 0
   Pepe: 0
+  chanceDropHeal: 2
 --- !u!1 &1667874979
 GameObject:
   m_ObjectHideFlags: 0
@@ -310,7 +311,7 @@ Transform:
   m_GameObject: {fileID: 4455326353366131437}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.08, y: -0.44, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_Children: []
   m_Father: {fileID: 4455326353559910815}
   m_RootOrder: 0
@@ -10157,6 +10158,7 @@ MonoBehaviour:
   cantMove: 0
   cantDash: 0
   hasWindShield: 0
+  dashIsActive: 0
   windPlatform: {fileID: 6539879599454388918, guid: 231fb5cf83a866e4aaa6de418eef4998,
     type: 3}
   isAbleToRunOnHole: 0
@@ -10167,6 +10169,7 @@ MonoBehaviour:
   keyNumber: 0
   keyUI:
   - {fileID: 0}
+  burnStade: 0
 --- !u!1 &4455326355006402086
 GameObject:
   m_ObjectHideFlags: 0
@@ -10299,10 +10302,10 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.38, y: 1.18}
+  m_Size: {x: 5.40625, y: 3.46875}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &4455326355071513430
@@ -10319,8 +10322,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slowOfAttack: 1
   attacks: {fileID: 7523515021025365951}
-  damage: 010000000100000002000000
-  currentDamage: 0
+  Damage: 1
   cooldownAfterFirst: 0
   cooldownAfterSecond: 0
   cooldownAfterThird: 0.5
@@ -10337,6 +10339,7 @@ MonoBehaviour:
   projectilSpeed: 10
   cantAim: 0
   slow: 1
+  canPushBack: 0
 --- !u!114 &4455326355071513431
 MonoBehaviour:
   m_ObjectHideFlags: 0

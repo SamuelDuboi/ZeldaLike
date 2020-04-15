@@ -36,33 +36,97 @@ AnimationClip:
     path: PlayerAttacks/Attack3
     classID: 1
     script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.18
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.32
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.49
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.64
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.9
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_IsActive
+    path: PlayerAttacks/Attack3/HitBox1
+    classID: 1
+    script: {fileID: 0}
   m_PPtrCurves:
   - curve:
     - time: 0
       value: {fileID: 1261446833824191051, guid: 726275c8e0296694f9386356d7aad681,
         type: 3}
-    - time: 0.06
+    - time: 0.11
       value: {fileID: 1302813758028845048, guid: 726275c8e0296694f9386356d7aad681,
         type: 3}
-    - time: 0.12
+    - time: 0.21
       value: {fileID: -1227045863019085504, guid: 726275c8e0296694f9386356d7aad681,
         type: 3}
-    - time: 0.19
+    - time: 0.34
       value: {fileID: -4450008841207853528, guid: 726275c8e0296694f9386356d7aad681,
         type: 3}
-    - time: 0.25
+    - time: 0.44
       value: {fileID: 8256654034823700031, guid: 726275c8e0296694f9386356d7aad681,
         type: 3}
-    - time: 0.31
+    - time: 0.55
       value: {fileID: -2099300871745153905, guid: 726275c8e0296694f9386356d7aad681,
         type: 3}
-    - time: 0.38
+    - time: 0.67
       value: {fileID: -161881702681982004, guid: 726275c8e0296694f9386356d7aad681,
         type: 3}
-    - time: 0.44
+    - time: 0.78
       value: {fileID: -2449779005411693815, guid: 726275c8e0296694f9386356d7aad681,
         type: 3}
-    - time: 0.5
+    - time: 0.88
       value: {fileID: -3103977928796542106, guid: 726275c8e0296694f9386356d7aad681,
         type: 3}
     attribute: m_Sprite
@@ -78,6 +142,13 @@ AnimationClip:
     genericBindings:
     - serializedVersion: 2
       path: 2663679939
+      attribute: 2086281974
+      script: {fileID: 0}
+      typeID: 1
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 2285908484
       attribute: 2086281974
       script: {fileID: 0}
       typeID: 1
@@ -105,7 +176,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.51
+    m_StopTime: 0.9
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -140,14 +211,85 @@ AnimationClip:
     path: PlayerAttacks/Attack3
     classID: 1
     script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.18
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.32
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.49
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.64
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.9
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_IsActive
+    path: PlayerAttacks/Attack3/HitBox1
+    classID: 1
+    script: {fileID: 0}
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0
-    functionName: AttackMore
+  - time: 0.55
+    functionName: CanPushBack
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
-    intParameter: 2
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.84
+    functionName: CantPushBack
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
     messageOptions: 0

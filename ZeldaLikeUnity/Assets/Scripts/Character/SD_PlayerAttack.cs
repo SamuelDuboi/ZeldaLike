@@ -28,8 +28,7 @@ namespace Player
         // stack the attacks,this game object rotation will change according to the input of the player, so the attacks will have the good orientation
         public GameObject attacks;
 
-        public int[] damage = new int[3];
-        public int currentDamage;
+        public int Damage =1;
 
         //if the player doesn't combo, he will ahve a cooldown befor atatcking again,the cooldown will change depending of the former combo
         [Header("Cooldowns")]
@@ -236,11 +235,7 @@ namespace Player
             cantAttack = false;
         }
 
-        public void AttackMore(int number)
-        {
-            currentDamage = damage[number];
-        }
-
+      
 
         public void CantMoveWind()
         {

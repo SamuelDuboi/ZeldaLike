@@ -25,7 +25,7 @@ namespace Ennemy
 
         [HideInInspector] public bool isAggro;
 
-        bool canTakeDamage;
+         public bool canTakeDamage;
 
         [Range(0, 1)]
         public float freezTime = 1;
@@ -47,9 +47,29 @@ namespace Ennemy
             ennemyRGB = GetComponent<Rigidbody2D>();
         }
 
+        private void OnTriggerStay2D(Collider2D collision)
+        {
+            if (collision.gameObject.layer == 8)
+            {
+                if (canTakeDamage)
+                {
+                    StartCoroutine(GameManagerV2.Instance.GamePadeShake(0.3f, .2f));
+                    StartCoroutine(TakingDamage(SD_PlayerAttack.Instance.Damage, collision.gameObject, false, 10));
+                }
 
+            }
+        }
         public virtual void OnTriggerEnter2D(Collider2D collision)
         {
+            if (collision.gameObject.layer == 8)
+            {
+                if (canTakeDamage)
+                {
+                    StartCoroutine(GameManagerV2.Instance.GamePadeShake(0.3f, .2f));
+                    StartCoroutine(TakingDamage(SD_PlayerAttack.Instance.Damage, collision.gameObject, false, 10));
+                }
+
+            }
             if (collision.gameObject.tag == "Player")
             {
                 CJ_PlayerCameraManager.Instance.ennemyList.Add(gameObject);
@@ -65,18 +85,9 @@ namespace Ennemy
                 canTakeDamage = true;
                 player = collision.transform.parent.gameObject;
             }//if is attack by player
-            else if (collision.gameObject.layer == 8)
-            {
-                if (canTakeDamage)
-                {
-                    StartCoroutine(GameManagerV2.Instance.GamePadeShake(0.3f, .2f));
-                    StartCoroutine(TakingDamage(SD_PlayerAttack.Instance.currentDamage, collision.gameObject, false, 10));
-                }
-                else
-                    StartCoroutine(TakingDamage(0, collision.gameObject, false, 20));
-
-            } //if is attack by projectile
-            else if (collision.gameObject.layer == 14 && collision.gameObject.tag != "Wind")
+             //if is attack by projectile
+            
+            if (collision.gameObject.layer == 14 && collision.gameObject.tag != "Wind")
             {
                 if (collision.gameObject.GetComponent<CJ_BulletBehaviour>()!= null &&collision.gameObject.GetComponent<CJ_BulletBehaviour>().isParry == true)
                 {
@@ -128,10 +139,10 @@ namespace Ennemy
 
         public IEnumerator TakingDamage(int damage, GameObject attack, bool destroyContact, int projectionForce)
         {
+            canTakeDamage = false;
             Time.timeScale = 0.1f;
             attack.GetComponent<ParticleSystem>().Play();
             isAttacking = false;
-            canTakeDamage = false;
             canMove = false;
             isAggro = false;
             life -= damage;
@@ -156,18 +167,23 @@ namespace Ennemy
                 CJ_PlayerCameraManager.Instance.ennemyList.Remove(gameObject);
                 Destroy(gameObject);
             }
-            if(SD_PlayerAttack.Instance.canPushBack)
-                ennemyRGB.velocity = new Vector2(transform.position.x - attack.transform.position.x,
-                                              attack.transform.position.y - attack.transform.position.y).normalized * projectionForce;
-
-            if (destroyContact)
-                Destroy(attack);
-            yield return new WaitForSeconds(0.2f * damage);
+            
+            if (SD_PlayerAttack.Instance.canPushBack)
+            {
+                ennemyRGB.velocity = new Vector2(transform.position.x - SD_PlayerMovement.Instance.transform.position.x,
+                                               transform.position.y - SD_PlayerMovement.Instance.transform.position.y).normalized * projectionForce;
+                yield return new WaitForSeconds(0.5f);
+                ennemyRGB.velocity = Vector2.zero;
+            }
+            yield return new WaitForSeconds(0.3f);
+            canTakeDamage = true;
 
             StartCoroutine(Stun(1f));
-            ennemyRGB.velocity = Vector2.zero;
+            if (destroyContact)
+                Destroy(attack);
+            
+            
             canMove = true;
-            canTakeDamage = true;
             isAggro = true;
 
 
@@ -179,7 +195,7 @@ namespace Ennemy
         /// </summary>
         void AvoidWalls()
         {// cast 2 ray cast for each poles, the ray are cast at the corner of the hitbox, the ray range is 2 (pretty small)
-            LayerMask wallMask = LayerMask.GetMask("Wall");
+            LayerMask wallMask = 1<<9;
             RaycastHit2D northRay = Physics2D.Raycast(rayStartCorner[0].transform.position, transform.TransformDirection(Vector3.up), 2, wallMask);
             RaycastHit2D northRay1 = Physics2D.Raycast(rayStartCorner[1].transform.position, transform.TransformDirection(Vector3.up), 2, wallMask);
             RaycastHit2D eastRay = Physics2D.Raycast(rayStartCorner[1].transform.position, transform.TransformDirection(Vector3.right), 2, wallMask);
@@ -209,7 +225,7 @@ namespace Ennemy
                 for (int i = 0; i < hitPoints.Length; i++)
                 {
                     // true if the racast has touch something, stock the number of the raycast that hitted in the array into wall touch
-                    if (hitPoints[i].collider != null)
+                    if (hitPoints[i].collider != null && hitPoints[i].collider.gameObject.tag == "Hole")
                     {
                         ennemyRGB.velocity = Vector2.zero;
                         // if the collision point is too close, the object go backward to avoid to fall in the holes
