@@ -8,7 +8,7 @@ public class SD_DestructiblePlatform : MonoBehaviour
 
     Animator animator;
     public bool onePath;
-    [Range(0,10)]
+    [Range(0,100)]
     public float respawnCooldown = 5;
     void Start()
     {
