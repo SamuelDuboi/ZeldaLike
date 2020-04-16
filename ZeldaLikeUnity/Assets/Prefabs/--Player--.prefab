@@ -70,6 +70,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 718f135d28b24044b93b64fcddc464d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  halfHeartEmpty: {fileID: 5756834547717613857, guid: ecf86acb4ddd4db4fa906dc025c890f2,
+    type: 3}
+  halfHeart: {fileID: -8605808858452017685, guid: ecf86acb4ddd4db4fa906dc025c890f2,
+    type: 3}
+  completHeartEmpty: {fileID: 7163623785362704099, guid: ecf86acb4ddd4db4fa906dc025c890f2,
+    type: 3}
+  completHeart: {fileID: -739628380078485500, guid: ecf86acb4ddd4db4fa906dc025c890f2,
+    type: 3}
   life: 0
   currentMaxLife: 1
   maxLifePossible: 10

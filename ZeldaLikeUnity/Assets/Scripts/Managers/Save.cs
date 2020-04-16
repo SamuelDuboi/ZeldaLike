@@ -7,8 +7,8 @@ using UnityEngine;
  {
     public float playerPositionX;
     public float playerPositionY;
-    public float pvMax;
-    public float currentPv;
+    public int pvMax;
+    public int currentPv;
     public float power;
     public int scenceIndex;
     public bool hasWind;

@@ -12,13 +12,17 @@ namespace Player
 {
     public class SD_PlayerRessources : Singleton<SD_PlayerRessources>
     {
-        Image lifeEmpty;
-        Image lifeBar;
+        GameObject[] lifes;
+        public Sprite halfHeartEmpty;
+        public Sprite halfHeart;
+        public Sprite completHeartEmpty;
+        public Sprite completHeart;
+        public Sprite none;
         Image energyEmpty;
         Image energyBar;
-        public  float life;
-        public float currentMaxLife;
-        public float maxLifePossible;
+        public  int life;
+        public int currentMaxLife;
+        public int maxLifePossible;
         [HideInInspector] public bool cantTakeDamage;
         [Range(0.2f,1.5f)]
         public float invincibleTime;
@@ -40,10 +44,20 @@ namespace Player
             MakeSingleton(false);
             //life
             life = currentMaxLife;
-            lifeEmpty = GameObject.FindGameObjectWithTag("Life").GetComponent<Image>();
-            lifeBar = lifeEmpty.transform.GetChild(0).GetComponent<Image>();
-            lifeEmpty.fillAmount = currentMaxLife / maxLifePossible;
-            lifeBar.fillAmount = currentMaxLife / maxLifePossible;
+            lifes = GameObject.FindGameObjectsWithTag("Life");
+
+            for(int i=0; i<maxLifePossible- currentMaxLife; i++)
+            {
+                lifes[lifes.Length - 1 - i].SetActive(false);                
+            }
+            for(int x=0; x<life; x++)
+            {
+                if (x % 2 == 0)
+                    lifes[x].GetComponent<Image>().sprite = halfHeart ;
+                else
+                    lifes[x].GetComponent<Image>().sprite = completHeart;
+            }
+
             chanceDropHeal = 2;
         }
         private void OnCollisionStay2D(Collision2D collision)
@@ -60,7 +74,7 @@ namespace Player
             }
             else if (collision.gameObject.tag == "LifeUpgrade")
             {
-                 LifeUpgrade(maxLifePossible/10);
+                 LifeUpgrade(1);
                 Destroy(collision.gameObject);
             }
         }
@@ -86,9 +100,15 @@ namespace Player
                 {
                     StopCoroutine(SD_PlayerMovement.Instance.Dash());
                 }
+                if (life % 2 == 0)
+                    lifes[life-1].GetComponent<Image>().sprite = completHeartEmpty;
+                else if(!lifes[life].activeInHierarchy)
+                    lifes[life-1].GetComponent<Image>().sprite = halfHeartEmpty ;
+                else
+                    lifes[life - 1].GetComponent<Image>().color = new Color32 (0,0,0,0);
                 life -= damage;
-                lifeBar.fillAmount = life / maxLifePossible;
-
+               
+               
                 yield return new WaitForSeconds(0.2f);
                 
                 if (life <= 0)
@@ -117,22 +137,34 @@ namespace Player
 
         }
 
-        public void Heal(float amount)
+        public void Heal(int amount)
         {
             life += amount; 
             if (life > currentMaxLife)
                 life = currentMaxLife;
-            lifeBar.fillAmount = life / maxLifePossible;
+
+            if (life % 2 == 0)
+                lifes[life].GetComponent<Image>().sprite = halfHeart;
+            else
+                lifes[life].GetComponent<Image>().sprite = completHeart ;
 
         }
         #endregion
         #region RessourcesUpgrade
-        public void LifeUpgrade(float amount)
+        public void LifeUpgrade(int amount)
         {
             currentMaxLife += amount;
             life = currentMaxLife;
-            lifeEmpty.fillAmount = currentMaxLife / maxLifePossible;
-            lifeBar.fillAmount = life;
+            lifes[currentMaxLife-1].SetActive(true);
+
+            for (int x = 0; x < life; x++)
+            {
+                if (x % 2 == 0)
+                    lifes[x].GetComponent<Image>().sprite = halfHeart;
+                else
+                    lifes[x].GetComponent<Image>().sprite = completHeart;
+            }
+
         }
 
 
