@@ -35,11 +35,16 @@ public class SD_Boss2Bullets : MonoBehaviour
             else
                 bulletRGB.velocity = new Vector2(target.transform.position.x - transform.position.x,
                                                     target.transform.position.y - transform.position.y).normalized * bulletSpeed;
-
+            
         }
         else
+        {
             bulletRGB.velocity = new Vector2(transform.parent.position.x - transform.position.x,
-                                              transform.parent.position.y - transform.position.y +1.5f ).normalized* bulletSpeed;
+                                             transform.parent.position.y - transform.position.y + 1.5f).normalized * bulletSpeed;
+            if(Mathf.Abs( transform.position.x - transform.parent.position.x)<0.1f)
+                Destroy(gameObject);
+        }
+           
 
 
     }
@@ -57,6 +62,7 @@ public class SD_Boss2Bullets : MonoBehaviour
         else if (collision.gameObject.layer == 11)
         {
            StartCoroutine( SD_PlayerRessources.Instance.TakingDamage(bulletDamage, gameObject, true, 1));
+            Destroy(gameObject);
         }
 
     }

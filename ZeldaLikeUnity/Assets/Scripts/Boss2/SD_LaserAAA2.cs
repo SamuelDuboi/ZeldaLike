@@ -14,8 +14,19 @@ public class SD_LaserAAA2 : MonoBehaviour
     public float timeLAserStay ;
     float timer;
     public bool Left;
-
+    public GameObject otherLaser;
     int laserCPT;
+    int cpt = 0;
+
+    LayerMask playermask = 1 << 11;
+
+    public Transform positionVertical;
+
+    Vector2 postionWhenCast;
+    Vector2 initialPosition;
+    float max;
+    Vector2 positionToGo ;
+    float random;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +34,10 @@ public class SD_LaserAAA2 : MonoBehaviour
         {
             targets.Add(transform.GetChild(i).gameObject);
         }
+        initialPosition = transform.position;
 
+         positionToGo = otherLaser.transform.position;
+        max = 11;
     }
 
     public IEnumerator Shoot()
@@ -34,6 +48,7 @@ public class SD_LaserAAA2 : MonoBehaviour
         int x = 1000;
         while (laserCPT < x)
         {
+
             float angle = 0;
             float sign = 1;
             if (!Left)
@@ -43,32 +58,31 @@ public class SD_LaserAAA2 : MonoBehaviour
             }
 
             timer = 0;
-            LayerMask playermask = 1 << 11;
             int degrees = 15;
+            if(random == SD_Boss2Body.Instance.random)
+            SD_Boss2Body.Instance.random = Random.Range(0, max);
+            yield return new WaitForEndOfFrame();
+             random = SD_Boss2Body.Instance.random;
 
-            foreach (GameObject target in targets)
+            if (random > 5)
             {
-                Vector2 direction = new Vector2((float)Mathf.Cos(Mathf.Deg2Rad * (angle - degrees * sign)), (float)Mathf.Sin(Mathf.Deg2Rad * (angle - degrees * sign)));
-                target.transform.position = new Vector2(transform.position.x + direction.x * 100, transform.position.y + direction.y * 100);
-                target.GetComponent<LineRenderer>().SetPosition(0, transform.position);
-                target.GetComponent<LineRenderer>().SetPosition(1, target.transform.position);
-                target.GetComponent<LineRenderer>().startWidth = 0.2f;
-                degrees += 15;
-                yield return new WaitForSeconds(0.1f);
-            }
-            yield return new WaitForSeconds(timeSmallBigRay);
-            degrees = 15; 
-            float number = 0.8f;
-           foreach (GameObject target in targets)
-            {
+                foreach (GameObject target in targets)
+                {
+                    StartCoroutine(ShootDiagonal(angle, degrees, sign, playermask, target));
 
-                StartCoroutine(laserActif(angle, degrees, sign, playermask,target,number));
-                number -= 0.089f;
-                degrees += 15;
-                yield return new WaitForSeconds(0.1f);
+                    degrees += 15;
+                    yield return new WaitForSeconds(0.2f);
+                }
+                if (Left)
+                    max--;
             }
-            
+            else if (Left && SD_Boss2Body.Instance.leftTurn || !Left && !SD_Boss2Body.Instance.leftTurn)
+                StartCoroutine(ShootVertical());
+            else
+                StartCoroutine(ShootHorizontal());
 
+            while (cpt < targets.Count)
+                yield return new WaitForSeconds(0.01f);
 
             laserCPT++;
             yield return new WaitForSeconds(10f);
@@ -76,13 +90,21 @@ public class SD_LaserAAA2 : MonoBehaviour
 
     }
 
-    IEnumerator laserActif(float angle, float degrees, float sign, LayerMask playermask, GameObject target, float number)
+    IEnumerator ShootDiagonal(float angle, float degrees, float sign, LayerMask playermask, GameObject target)
     {
+        Vector2 direction = new Vector2((float)Mathf.Cos(Mathf.Deg2Rad * (angle - degrees * sign)), (float)Mathf.Sin(Mathf.Deg2Rad * (angle - degrees * sign)));
+        target.transform.position = new Vector2(transform.position.x + direction.x * 100, transform.position.y + direction.y * 100);
+        target.GetComponent<LineRenderer>().SetPosition(0, transform.position);
+        target.GetComponent<LineRenderer>().SetPosition(1, target.transform.position);
+        target.GetComponent<LineRenderer>().startWidth = 0.2f;
+
+        yield return new WaitForSeconds(timeSmallBigRay);
+
         float timerWhile = 0;
-        while (timerWhile < timeLAserStay+number)
+        while (timerWhile < timeLAserStay)
         {
           
-                Vector2 direction = new Vector2((float)Mathf.Cos(Mathf.Deg2Rad * (angle - degrees * sign)), (float)Mathf.Sin(Mathf.Deg2Rad * (angle - degrees * sign)));
+                 direction = new Vector2((float)Mathf.Cos(Mathf.Deg2Rad * (angle - degrees * sign)), (float)Mathf.Sin(Mathf.Deg2Rad * (angle - degrees * sign)));
                 RaycastHit2D raycastHit = Physics2D.Raycast(transform.position,
                                                                  direction,
                                                                  2000,
@@ -108,9 +130,186 @@ public class SD_LaserAAA2 : MonoBehaviour
             timerWhile += 0.01f;
             yield return new WaitForSeconds(0.01f);
         }
-
         target.GetComponent<LineRenderer>().SetPosition(0, transform.position);
         target.GetComponent<LineRenderer>().SetPosition(1, transform.position);
+
+        cpt++;
+    }
+    public IEnumerator ShootVertical()
+    {
+        if (Left)
+            max++;
+        StartCoroutine(ShootStraight(true));
+        while (Mathf.Abs( Vector2.Distance(transform.position,positionToGo)) >0.1f)
+        {
+            transform.position = Vector2.MoveTowards(transform.position,positionToGo, 0.25f);
+            yield return new WaitForSeconds(0.01f);
+        }
+        yield return new WaitForSeconds(0.1f);
+
+        transform.position = initialPosition;
+    }
+    public IEnumerator ShootHorizontal()
+    {
+        if (Left)
+            max++;
+        StartCoroutine(ShootStraight(false));
+        while (Mathf.Abs(Vector2.Distance(transform.position, positionVertical.position)) > 0.1f)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, positionVertical.position, 0.25f);
+            yield return new WaitForSeconds(0.01f);
+        }
+        yield return new WaitForSeconds(0.1f);
+        if (Left)
+            SD_Boss2Body.Instance.leftTurn = true;
+        else
+            SD_Boss2Body.Instance.leftTurn = false;
+        transform.position = initialPosition;
+    }
+    public IEnumerator ShootStraight(bool vertical)
+    {
+        foreach(GameObject target in targets)
+        {
+            postionWhenCast = transform.position;
+            StartCoroutine(ShootStraightLaser(vertical,target,postionWhenCast));
+            yield return new WaitForSeconds(0.2f);
+        }
+    }
+
+    public IEnumerator ShootStraightLaser(bool vertical, GameObject target, Vector2 position)
+    {
+        if (vertical)
+        {
+            target.transform.position = new Vector2(position.x, position.y -100);
+            target.GetComponent<LineRenderer>().SetPosition(0, position);
+            target.GetComponent<LineRenderer>().SetPosition(1, target.transform.position);
+            target.GetComponent<LineRenderer>().startWidth = 0.2f;
+            yield return new WaitForSeconds(timeSmallBigRay);
+
+            float timerWhile = 0;
+            while (timerWhile < timeLAserStay)
+            {
+                              
+                RaycastHit2D raycastHit = Physics2D.Raycast(position,
+                                                            Vector2.down,
+                                                            2000,
+                                                            playermask);
+                if (raycastHit.collider != null)
+                {
+                    target.transform.position = raycastHit.point;
+                    StartCoroutine(SD_PlayerRessources.Instance.TakingDamage(laserDamage, target.gameObject, false, 1));
+
+                }
+
+                else
+                {
+                    target.transform.position = new Vector2(position.x, position.y -100);
+
+                }
+                if (timer == 0)
+                {
+                    target.GetComponent<LineRenderer>().SetPosition(0, position);
+                    target.GetComponent<LineRenderer>().SetPosition(1, target.transform.position);
+                    target.GetComponent<LineRenderer>().startWidth = 1;
+                }
+                timerWhile += 0.01f;
+                yield return new WaitForSeconds(0.01f);
+            }
+            target.GetComponent<LineRenderer>().SetPosition(0, transform.position);
+            target.GetComponent<LineRenderer>().SetPosition(1, transform.position);
+
+            cpt++;
+
+        }
+        else
+        {
+            if(Left)
+            {
+                target.transform.position = new Vector2(position.x +100, position.y );
+                target.GetComponent<LineRenderer>().SetPosition(0, position);
+                target.GetComponent<LineRenderer>().SetPosition(1, target.transform.position);
+                target.GetComponent<LineRenderer>().startWidth = 0.2f;
+                yield return new WaitForSeconds(timeSmallBigRay);
+
+                float timerWhile = 0;
+                while (timerWhile < timeLAserStay)
+                {
+
+                    RaycastHit2D raycastHit = Physics2D.Raycast(position,
+                                                                Vector2.right,
+                                                                2000,
+                                                                playermask);
+                    if (raycastHit.collider != null)
+                    {
+                        target.transform.position = raycastHit.point;
+                        StartCoroutine(SD_PlayerRessources.Instance.TakingDamage(laserDamage, target.gameObject, false, 1));
+
+                    }
+
+                    else
+                    {
+                        target.transform.position = new Vector2(position.x+100, position.y );
+
+                    }
+                    if (timer == 0)
+                    {
+                        target.GetComponent<LineRenderer>().SetPosition(0, position);
+                        target.GetComponent<LineRenderer>().SetPosition(1, target.transform.position);
+                        target.GetComponent<LineRenderer>().startWidth = 1;
+                    }
+                    timerWhile += 0.01f;
+                    yield return new WaitForSeconds(0.01f);
+                }
+                target.GetComponent<LineRenderer>().SetPosition(0, transform.position);
+                target.GetComponent<LineRenderer>().SetPosition(1, transform.position);
+
+                cpt++;
+            }
+            else
+            {
+                target.transform.position = new Vector2(position.x - 100, position.y);
+                target.GetComponent<LineRenderer>().SetPosition(0, position);
+                target.GetComponent<LineRenderer>().SetPosition(1, target.transform.position);
+                target.GetComponent<LineRenderer>().startWidth = 0.2f;
+                yield return new WaitForSeconds(timeSmallBigRay);
+
+                float timerWhile = 0;
+                while (timerWhile < timeLAserStay)
+                {
+
+                    RaycastHit2D raycastHit = Physics2D.Raycast(position,
+                                                                Vector2.left,
+                                                                2000,
+                                                                playermask);
+                    if (raycastHit.collider != null)
+                    {
+                        target.transform.position = raycastHit.point;
+                        StartCoroutine(SD_PlayerRessources.Instance.TakingDamage(laserDamage, target.gameObject, false, 1));
+
+                    }
+
+                    else
+                    {
+                        target.transform.position = new Vector2(position.x - 100, position.y);
+
+                    }
+                    if (timer == 0)
+                    {
+                        target.GetComponent<LineRenderer>().SetPosition(0, position);
+                        target.GetComponent<LineRenderer>().SetPosition(1, target.transform.position);
+                        target.GetComponent<LineRenderer>().startWidth = 1;
+                    }
+                    timerWhile += 0.01f;
+                    yield return new WaitForSeconds(0.01f);
+                }
+                target.GetComponent<LineRenderer>().SetPosition(0, transform.position);
+                target.GetComponent<LineRenderer>().SetPosition(1, transform.position);
+
+                cpt++;
+            }
+
+        }
+            
 
     }
 }

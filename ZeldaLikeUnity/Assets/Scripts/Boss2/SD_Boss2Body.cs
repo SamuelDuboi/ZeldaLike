@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Player;
 using UnityEngine.UI;
-
-public class SD_Boss2Body : MonoBehaviour
+using Management;
+public class SD_Boss2Body : Singleton<SD_Boss2Body>
 {
      bool isStun;
     public float life;
@@ -31,9 +31,16 @@ public class SD_Boss2Body : MonoBehaviour
     public int NapalmNumber = 6;
     int napalmCPT;
     int bulletCPT;
+    [Range(0, 5)]
+    public float animationSpeed = 1f;
+
+    [HideInInspector] public float random;
+    [HideInInspector] public bool leftTurn;
+
     // Start is called before the first frame update
     void Start()
     {
+        MakeSingleton(false);
         target = SD_PlayerMovement.Instance.gameObject;
         maxLife = life;
         StartCoroutine(NapalmLunch());
@@ -144,7 +151,9 @@ public class SD_Boss2Body : MonoBehaviour
         {
             for (int i = 0; i < NapalmNumber; i++)
             {
-                Instantiate(Napalm, SD_PlayerMovement.Instance.transform.position, Quaternion.identity);
+                GameObject currentNapalm = Instantiate(Napalm, SD_PlayerMovement.Instance.transform.position, Quaternion.identity);
+                foreach( Animator fire in currentNapalm.GetComponentsInChildren<Animator>())
+                fire.speed = animationSpeed;
                 yield return new WaitForSeconds(TimmeBetweenNapalm);
             }
             t++;

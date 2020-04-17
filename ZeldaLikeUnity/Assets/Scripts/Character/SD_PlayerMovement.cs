@@ -64,6 +64,17 @@ namespace Player
 
         GameObject fade;
         bool canWind;
+
+        [Space]
+        [Header("Fire")]
+        float timer;
+        public int burnStade;
+        float damageTimer;
+        GameObject fire;
+        [Range(0, 5)]
+        public float timeBeforBurning = 2f;
+        [Range(0, 5)]
+        public float timeBetweenBurn = 1f;
         void Awake()
         {
             MakeSingleton(false);
@@ -100,10 +111,7 @@ namespace Player
 
 
         }
-        float timer;
-        public int burnStade;
-        float damageTimer;
-        GameObject fire;
+
         private void Update()
         {
             // to dash
@@ -114,7 +122,7 @@ namespace Player
             if (burnStade > 0)
             {
                 timer += Time.deltaTime;
-                if (timer >= 2f)
+                if (timer >= timeBeforBurning)
                 {
                     burnStade = 2;
                 }
@@ -123,7 +131,7 @@ namespace Player
             if (burnStade == 2)
             {
                 damageTimer += Time.deltaTime;
-                if (damageTimer >= 1)
+                if (damageTimer >= timeBetweenBurn)
                 {
                     StartCoroutine(SD_PlayerRessources.Instance.TakingDamage(1, fire, false, 1));
                     damageTimer = 0;
@@ -309,7 +317,8 @@ namespace Player
                     timer = 0;
                     fire = collision.gameObject;
                 }
-
+                if(!collision.GetComponent<Animator>().GetBool("Burning"))
+                    StartCoroutine(SD_PlayerRessources.Instance.TakingDamage(1, fire, false, 5));
             }
 
         }
