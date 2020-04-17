@@ -337,6 +337,12 @@ namespace Management
             file.Close();
             SceneManager.LoadScene(1);
         }
+        /// <summary>
+        /// make the game pas shake, intensity betwenn 0 and 1
+        /// </summary>
+        /// <param name="intensity"></param>
+        /// <param name="time"></param>
+        /// <returns></returns>
         public IEnumerator GamePadeShake(float intensity, float time)
         {
             GamePad.SetVibration(playerIndex,intensity, intensity);

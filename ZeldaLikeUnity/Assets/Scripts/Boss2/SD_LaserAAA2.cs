@@ -12,6 +12,9 @@ public class SD_LaserAAA2 : MonoBehaviour
 
     [Range(0, 10)]
     public float timeLAserStay ;
+
+    [Range(0, 20)]
+    public float CDLaser = 10;
     float timer;
     public bool Left;
     public GameObject otherLaser;
@@ -27,6 +30,18 @@ public class SD_LaserAAA2 : MonoBehaviour
     float max;
     Vector2 positionToGo ;
     float random;
+
+   [HideInInspector] public bool p2;
+    [Space]
+    [Header("P2")]
+
+    public float timeLAserStay2;
+    [Range(0, 10)]
+    public float timeSmallBigRay2 = 2f;
+    [Range(0, 10)]
+    public float CDLaser2;
+    float firstTiming  =7;
+    float secondTiming  =2;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,13 +57,14 @@ public class SD_LaserAAA2 : MonoBehaviour
 
     public IEnumerator Shoot()
     {
-        yield return new WaitForSeconds(7);
-        //anim 
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(firstTiming);
+        
+        
         int x = 1000;
         while (laserCPT < x)
         {
-
+            //anim 
+            yield return new WaitForSeconds(1.5f);
             float angle = 0;
             float sign = 1;
             if (!Left)
@@ -61,6 +77,8 @@ public class SD_LaserAAA2 : MonoBehaviour
             int degrees = 15;
             if(random == SD_Boss2Body.Instance.random)
             SD_Boss2Body.Instance.random = Random.Range(0, max);
+            if (p2)
+                break;
             yield return new WaitForEndOfFrame();
              random = SD_Boss2Body.Instance.random;
 
@@ -69,7 +87,8 @@ public class SD_LaserAAA2 : MonoBehaviour
                 foreach (GameObject target in targets)
                 {
                     StartCoroutine(ShootDiagonal(angle, degrees, sign, playermask, target));
-
+                    if (p2)
+                        break;
                     degrees += 15;
                     yield return new WaitForSeconds(0.2f);
                 }
@@ -83,9 +102,10 @@ public class SD_LaserAAA2 : MonoBehaviour
 
             while (cpt < targets.Count)
                 yield return new WaitForSeconds(0.01f);
-
+            if (p2)
+                break;
             laserCPT++;
-            yield return new WaitForSeconds(10f);
+            yield return new WaitForSeconds(CDLaser);
         }
 
     }
@@ -103,8 +123,10 @@ public class SD_LaserAAA2 : MonoBehaviour
         float timerWhile = 0;
         while (timerWhile < timeLAserStay)
         {
-          
-                 direction = new Vector2((float)Mathf.Cos(Mathf.Deg2Rad * (angle - degrees * sign)), (float)Mathf.Sin(Mathf.Deg2Rad * (angle - degrees * sign)));
+            if (p2)
+                break;
+
+            direction = new Vector2((float)Mathf.Cos(Mathf.Deg2Rad * (angle - degrees * sign)), (float)Mathf.Sin(Mathf.Deg2Rad * (angle - degrees * sign)));
                 RaycastHit2D raycastHit = Physics2D.Raycast(transform.position,
                                                                  direction,
                                                                  2000,
@@ -142,6 +164,8 @@ public class SD_LaserAAA2 : MonoBehaviour
         StartCoroutine(ShootStraight(true));
         while (Mathf.Abs( Vector2.Distance(transform.position,positionToGo)) >0.1f)
         {
+            if (p2)
+                break;
             transform.position = Vector2.MoveTowards(transform.position,positionToGo, 0.25f);
             yield return new WaitForSeconds(0.01f);
         }
@@ -156,6 +180,8 @@ public class SD_LaserAAA2 : MonoBehaviour
         StartCoroutine(ShootStraight(false));
         while (Mathf.Abs(Vector2.Distance(transform.position, positionVertical.position)) > 0.1f)
         {
+            if (p2)
+                break;
             transform.position = Vector2.MoveTowards(transform.position, positionVertical.position, 0.25f);
             yield return new WaitForSeconds(0.01f);
         }
@@ -189,7 +215,8 @@ public class SD_LaserAAA2 : MonoBehaviour
             float timerWhile = 0;
             while (timerWhile < timeLAserStay)
             {
-                              
+                if (p2)
+                    break;
                 RaycastHit2D raycastHit = Physics2D.Raycast(position,
                                                             Vector2.down,
                                                             2000,
@@ -276,7 +303,8 @@ public class SD_LaserAAA2 : MonoBehaviour
                 float timerWhile = 0;
                 while (timerWhile < timeLAserStay)
                 {
-
+                    if (p2)
+                        break;
                     RaycastHit2D raycastHit = Physics2D.Raycast(position,
                                                                 Vector2.left,
                                                                 2000,
@@ -312,5 +340,22 @@ public class SD_LaserAAA2 : MonoBehaviour
             
 
     }
+
+    public void ToP2()
+    {
+        StopAllCoroutines();
+        transform.position = initialPosition;
+        foreach (GameObject target in targets)
+        {
+            target.GetComponent<LineRenderer>().SetPosition(0, transform.position);
+            target.GetComponent<LineRenderer>().SetPosition(1, transform.position);
+        }
+        p2 = true;
+        timeLAserStay = timeLAserStay2;
+        timeSmallBigRay = timeSmallBigRay2;
+        CDLaser = CDLaser2;
+        firstTiming = secondTiming;
+
+        }
 }
 

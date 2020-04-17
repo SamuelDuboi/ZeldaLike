@@ -12,6 +12,8 @@ public class SD_Boss2Bullets : MonoBehaviour
     public int bulletSpeed = 5;
     bool isParry;
     public int bulletDamage = 1;
+    bool gonnaDie;
+    float timerDeath;
     void Awake()
     {
         bulletRGB = GetComponent<Rigidbody2D>();
@@ -44,7 +46,12 @@ public class SD_Boss2Bullets : MonoBehaviour
             if(Mathf.Abs( transform.position.x - transform.parent.position.x)<0.1f)
                 Destroy(gameObject);
         }
-           
+        if (gonnaDie)
+        {
+            timerDeath += Time.deltaTime;
+            if (timer > 3f)
+                Destroy(gameObject);
+        } 
 
 
     }
@@ -62,7 +69,9 @@ public class SD_Boss2Bullets : MonoBehaviour
         else if (collision.gameObject.layer == 11)
         {
            StartCoroutine( SD_PlayerRessources.Instance.TakingDamage(bulletDamage, gameObject, true, 1));
-            Destroy(gameObject);
+            GetComponent<SpriteRenderer>().enabled = false;
+            GetComponent<BoxCollider2D>().enabled = false;
+            gonnaDie = true;
         }
 
     }
