@@ -10,7 +10,7 @@ public class SD_Trigger : MonoBehaviour
     bool OpenDoor;
     bool closeDoor;
     float timer;
-    [Range(1, 20)]
+    [Range(1, 100)]
     public float timeToReach;
     bool moveBack;
     int cpt;
