@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Children:
   - {fileID: 3}
+<<<<<<< HEAD
   - {fileID: 5}
 <<<<<<< HEAD
   - {fileID: 14}
@@ -22,10 +23,14 @@ MonoBehaviour:
   - {fileID: 13}
   - {fileID: 16}
 >>>>>>> Clémen_GA
+=======
+  - {fileID: 10}
+>>>>>>> ThibautGDt
   m_Position:
     serializedVersion: 2
     x: 0
     y: 30
+<<<<<<< HEAD
 <<<<<<< HEAD
     width: 1280
     height: 891
@@ -41,6 +46,14 @@ MonoBehaviour:
   vertical: 0
   controlID: 110136
 >>>>>>> Clémen_GA
+=======
+    width: 1920
+    height: 947
+  m_MinSize: {x: 644, y: 492}
+  m_MaxSize: {x: 14002, y: 14042}
+  vertical: 0
+  controlID: 46329
+>>>>>>> ThibautGDt
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -58,14 +71,19 @@ MonoBehaviour:
   m_TitleContent:
     m_Text: Game
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Image: {fileID: -2087823869225018852, guid: 0000000000000000d000000000000000,
 =======
     m_Image: {fileID: 257045534191678443, guid: 0000000000000000d000000000000000,
 >>>>>>> Clémen_GA
+=======
+    m_Image: {fileID: -2087823869225018852, guid: 0000000000000000d000000000000000,
+>>>>>>> ThibautGDt
       type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
 <<<<<<< HEAD
     x: 1737
     y: 73
@@ -77,6 +95,12 @@ MonoBehaviour:
     width: 517
     height: 589
 >>>>>>> Clémen_GA
+=======
+    x: 0
+    y: 73
+    width: 1345
+    height: 200
+>>>>>>> ThibautGDt
   m_ViewDataDictionary: {fileID: 0}
   m_SerializedViewsNames: []
   m_SerializedViewsValues: []
@@ -103,6 +127,7 @@ MonoBehaviour:
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_HBaseRangeMin: -206
     m_HBaseRangeMax: 206
     m_VBaseRangeMin: -116
@@ -113,6 +138,12 @@ MonoBehaviour:
     m_VBaseRangeMin: -116.4
     m_VBaseRangeMax: 116.4
 >>>>>>> Clémen_GA
+=======
+    m_HBaseRangeMin: -159
+    m_HBaseRangeMax: 159
+    m_VBaseRangeMin: -89.5
+    m_VBaseRangeMax: 89.5
+>>>>>>> ThibautGDt
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -135,6 +166,7 @@ MonoBehaviour:
       x: 0
       y: 21
 <<<<<<< HEAD
+<<<<<<< HEAD
       width: 453
       height: 232
     m_Scale: {x: 1.1940521, y: 1.1940521}
@@ -145,12 +177,19 @@ MonoBehaviour:
     m_Scale: {x: 1.8489317, y: 1.8489317}
     m_Translation: {x: 258.49994, y: 283.99985}
 >>>>>>> Clémen_GA
+=======
+      width: 1345
+      height: 179
+    m_Scale: {x: 1, y: 1}
+    m_Translation: {x: 672.5, y: 89.5}
+>>>>>>> ThibautGDt
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
+<<<<<<< HEAD
 <<<<<<< HEAD
       x: -206
       y: -116
@@ -168,9 +207,18 @@ MonoBehaviour:
   m_defaultScale: 1
   m_LastWindowPixelSize: {x: 646.25, y: 736.25}
 >>>>>>> Clémen_GA
+=======
+      x: -672.5
+      y: -89.5
+      width: 1345
+      height: 179
+    m_MinimalGUI: 1
+  m_defaultScale: 1
+  m_LastWindowPixelSize: {x: 1345, y: 200}
+>>>>>>> ThibautGDt
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
-  m_LowResolutionForAspectRatios: 01000000000100000100
+  m_LowResolutionForAspectRatios: 01000000000000000000
   m_XRRenderMode: 0
   m_RenderTexture: {fileID: 0}
 --- !u!114 &3
@@ -181,6 +229,7 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
+<<<<<<< HEAD
   m_EditorHideFlags: 0
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: SceneHierarchyWindow
@@ -279,10 +328,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
+=======
+  m_EditorHideFlags: 1
+>>>>>>> ThibautGDt
   m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Children:
+<<<<<<< HEAD
   - {fileID: 6}
 <<<<<<< HEAD
   - {fileID: 8}
@@ -310,6 +363,21 @@ MonoBehaviour:
   controlID: 110137
 >>>>>>> Clémen_GA
 --- !u!114 &6
+=======
+  - {fileID: 4}
+  - {fileID: 5}
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1346
+    height: 947
+  m_MinSize: {x: 201, y: 421}
+  m_MaxSize: {x: 4001, y: 8021}
+  vertical: 1
+  controlID: 46330
+--- !u!114 &4
+>>>>>>> ThibautGDt
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -317,7 +385,7 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
-  m_EditorHideFlags: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: GameView
   m_EditorClassIdentifier: 
@@ -327,6 +395,7 @@ MonoBehaviour:
     x: 0
     y: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     width: 455
     height: 274
 =======
@@ -335,12 +404,18 @@ MonoBehaviour:
 >>>>>>> Clémen_GA
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
+=======
+    width: 1346
+    height: 221
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+>>>>>>> ThibautGDt
   m_ActualView: {fileID: 2}
   m_Panes:
 <<<<<<< HEAD
   - {fileID: 2}
-  - {fileID: 7}
   m_Selected: 0
+<<<<<<< HEAD
   m_LastSelected: 1
 --- !u!114 &7
 MonoBehaviour:
@@ -424,6 +499,10 @@ MonoBehaviour:
   m_LayerEditor:
     m_SelectedLayerIndex: 0
 --- !u!114 &8
+=======
+  m_LastSelected: 0
+--- !u!114 &5
+>>>>>>> ThibautGDt
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -431,7 +510,7 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
-  m_EditorHideFlags: 0
+  m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: SceneView
   m_EditorClassIdentifier: 
@@ -439,16 +518,29 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
     y: 274
     width: 455
     height: 274
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 9}
+=======
+    y: 221
+    width: 1346
+    height: 726
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
+  m_ActualView: {fileID: 6}
+>>>>>>> ThibautGDt
   m_Panes:
+  - {fileID: 6}
+  - {fileID: 7}
+  - {fileID: 8}
   - {fileID: 9}
   m_Selected: 0
   m_LastSelected: 0
+<<<<<<< HEAD
 --- !u!114 &9
 =======
   - {fileID: 7}
@@ -458,6 +550,9 @@ MonoBehaviour:
   m_LastSelected: 0
 --- !u!114 &7
 >>>>>>> Clémen_GA
+=======
+--- !u!114 &6
+>>>>>>> ThibautGDt
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -474,22 +569,33 @@ MonoBehaviour:
   m_TitleContent:
     m_Text: Scene
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Image: {fileID: 2318424515335265636, guid: 0000000000000000d000000000000000,
 =======
     m_Image: {fileID: -131512000283675692, guid: 0000000000000000d000000000000000,
 >>>>>>> Clémen_GA
+=======
+    m_Image: {fileID: 2318424515335265636, guid: 0000000000000000d000000000000000,
+>>>>>>> ThibautGDt
       type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
     x: 1737
     y: 347
     width: 453
     height: 253
+=======
+    x: 0
+    y: 294
+    width: 1345
+    height: 705
+>>>>>>> ThibautGDt
   m_ViewDataDictionary: {fileID: 0}
   m_ShowContextualTools: 0
-  m_WindowGUID: aa7aeaa20c46d6c42b0524fb758741e9
+  m_WindowGUID: 8be200ce7ac7b0943acb929a1867aa8c
   m_Gizmos: 1
 =======
     x: 268
@@ -509,6 +615,7 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_Position:
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: {x: -19.128971, y: 31.142845, z: -34.67383}
     speed: 2
     m_Value: {x: -19.128971, y: 31.142845, z: -34.67383}
@@ -517,6 +624,11 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 12.116141, y: 14.008156, z: -27.179688}
 >>>>>>> Clémen_GA
+=======
+    m_Target: {x: 13.470606, y: -78.072876, z: 15773.406}
+    speed: 2
+    m_Value: {x: 13.470606, y: -78.072876, z: 15773.406}
+>>>>>>> ThibautGDt
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -557,7 +669,7 @@ MonoBehaviour:
         m_Value: 1
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
-      m_Size: {x: 1, y: 1}
+      m_Size: {x: 2, y: 2}
     m_ShowGrid: 0
     m_GridAxis: 1
     m_gridOpacity: 0.5
@@ -567,6 +679,7 @@ MonoBehaviour:
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: 11.263959
     speed: 2
     m_Value: 11.263959
@@ -575,6 +688,11 @@ MonoBehaviour:
     speed: 2
     m_Value: 46.989685
 >>>>>>> Clémen_GA
+=======
+    m_Target: 210.284
+    speed: 2
+    m_Value: 210.284
+>>>>>>> ThibautGDt
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -599,6 +717,7 @@ MonoBehaviour:
   m_SceneVisActive: 1
   m_LastLockedObject: {fileID: 0}
   m_ViewIsLockedToObject: 0
+<<<<<<< HEAD
 <<<<<<< HEAD
 --- !u!114 &10
 =======
@@ -668,6 +787,9 @@ MonoBehaviour:
     m_SelectedLayerIndex: 0
 --- !u!114 &9
 >>>>>>> Clémen_GA
+=======
+--- !u!114 &7
+>>>>>>> ThibautGDt
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -675,14 +797,27 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
+<<<<<<< HEAD
   m_EditorHideFlags: 0
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: AnimationWindow
+=======
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12003, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+>>>>>>> ThibautGDt
   m_EditorClassIdentifier: 
-  m_Children: []
-  m_Position:
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Console
+    m_Image: {fileID: 111653112392082826, guid: 0000000000000000d000000000000000,
+      type: 0}
+    m_Tooltip: 
+  m_Pos:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
 <<<<<<< HEAD
     y: 548
     width: 455
@@ -710,6 +845,13 @@ MonoBehaviour:
   m_LastSelected: 0
 --- !u!114 &10
 >>>>>>> Clémen_GA
+=======
+    y: 625
+    width: 1329
+    height: 320
+  m_ViewDataDictionary: {fileID: 0}
+--- !u!114 &8
+>>>>>>> ThibautGDt
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -717,23 +859,29 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12003, guid: 0000000000000000e000000000000000, type: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 13854, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MinSize: {x: 100, y: 100}
+  m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
+<<<<<<< HEAD
     m_Text: Console
 <<<<<<< HEAD
     m_Image: {fileID: 111653112392082826, guid: 0000000000000000d000000000000000,
 =======
     m_Image: {fileID: -3303252850963283158, guid: 0000000000000000d000000000000000,
 >>>>>>> Clémen_GA
+=======
+    m_Text: Project Settings
+    m_Image: {fileID: 8487775502441791945, guid: 0000000000000000d000000000000000,
+>>>>>>> ThibautGDt
       type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 200.8
 <<<<<<< HEAD
     y: 515.2
@@ -748,6 +896,18 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
 --- !u!114 &11
 >>>>>>> Clémen_GA
+=======
+    x: 1536
+    y: 643
+    width: 747
+    height: 300
+  m_ViewDataDictionary: {fileID: 0}
+  m_PosLeft: {x: 0, y: 0}
+  m_PosRight: {x: 0, y: 0}
+  m_Scope: 1
+  m_SplitterFlex: 0.2
+--- !u!114 &9
+>>>>>>> ThibautGDt
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -755,7 +915,7 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
-  m_EditorHideFlags: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 12071, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -764,14 +924,19 @@ MonoBehaviour:
   m_TitleContent:
     m_Text: Animation
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Image: {fileID: 1561878555887300916, guid: 0000000000000000d000000000000000,
 =======
     m_Image: {fileID: -8967370667835289719, guid: 0000000000000000d000000000000000,
 >>>>>>> Clémen_GA
+=======
+    m_Image: {fileID: 1561878555887300916, guid: 0000000000000000d000000000000000,
+>>>>>>> ThibautGDt
       type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
 <<<<<<< HEAD
     x: 1737
     y: 621
@@ -793,6 +958,17 @@ MonoBehaviour:
   m_LastSelectedObjectID: -95592
 --- !u!114 &12
 >>>>>>> Clémen_GA
+=======
+    x: 1536
+    y: 815
+    width: 747
+    height: 128
+  m_ViewDataDictionary: {fileID: 0}
+  m_LockTracker:
+    m_IsLocked: 0
+  m_LastSelectedObjectID: -2190
+--- !u!114 &10
+>>>>>>> ThibautGDt
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -801,22 +977,104 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 13854, guid: 0000000000000000e000000000000000, type: 0}
+  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MinSize: {x: 300, y: 200}
+  m_Children:
+  - {fileID: 11}
+  - {fileID: 17}
+  m_Position:
+    serializedVersion: 2
+    x: 1346
+    y: 0
+    width: 574
+    height: 947
+  m_MinSize: {x: 443, y: 492}
+  m_MaxSize: {x: 10001, y: 14042}
+  vertical: 1
+  controlID: 46269
+--- !u!114 &11
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children:
+  - {fileID: 12}
+  - {fileID: 14}
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 574
+    height: 631
+  m_MinSize: {x: 443, y: 221}
+  m_MaxSize: {x: 8003, y: 4021}
+  vertical: 0
+  controlID: 46270
+--- !u!114 &12
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: SceneHierarchyWindow
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 255
+    height: 631
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
+  m_ActualView: {fileID: 13}
+  m_Panes:
+  - {fileID: 13}
+  m_Selected: 0
+  m_LastSelected: 0
+--- !u!114 &13
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12061, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
+<<<<<<< HEAD
     m_Text: Project Settings
 <<<<<<< HEAD
     m_Image: {fileID: 8487775502441791945, guid: 0000000000000000d000000000000000,
 =======
     m_Image: {fileID: -6304849327172165113, guid: 0000000000000000d000000000000000,
 >>>>>>> Clémen_GA
+=======
+    m_Text: Hierarchy
+    m_Image: {fileID: -590624980919486359, guid: 0000000000000000d000000000000000,
+>>>>>>> ThibautGDt
       type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 200.8
 <<<<<<< HEAD
     y: 515.2
@@ -833,6 +1091,42 @@ MonoBehaviour:
   m_Scope: 1
   m_SplitterFlex: 0.2
 <<<<<<< HEAD
+=======
+    x: 1346
+    y: 73
+    width: 253
+    height: 610
+  m_ViewDataDictionary: {fileID: 0}
+  m_SceneHierarchy:
+    m_TreeViewState:
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: b223ffff6ef7ffffbaf8ffff6cfbffff903d0000b4480000
+      m_RenameOverlay:
+        m_UserAcceptedRename: 0
+        m_Name: 
+        m_OriginalName: 
+        m_EditFieldRect:
+          serializedVersion: 2
+          x: 0
+          y: 0
+          width: 0
+          height: 0
+        m_UserData: 0
+        m_IsWaitingForDelay: 0
+        m_IsRenaming: 0
+        m_OriginalEventType: 11
+        m_IsRenamingFilename: 0
+        m_ClientGUIView: {fileID: 12}
+      m_SearchString: 
+    m_ExpandedScenes: []
+    m_CurrenRootInstanceID: 0
+    m_LockTracker:
+      m_IsLocked: 0
+    m_CurrentSortingName: TransformSorting
+  m_WindowGUID: 1120362ab444d8848a81ae602993e53a
+>>>>>>> ThibautGDt
 --- !u!114 &14
 =======
 --- !u!114 &13
@@ -844,13 +1138,14 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
-  m_EditorHideFlags: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: InspectorWindow
+  m_Name: GridPaintPaletteWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
     serializedVersion: 2
+<<<<<<< HEAD
 <<<<<<< HEAD
     x: 656
     y: 0
@@ -868,12 +1163,28 @@ MonoBehaviour:
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 14}
 >>>>>>> Clémen_GA
+=======
+    x: 255
+    y: 0
+    width: 319
+    height: 631
+  m_MinSize: {x: 241, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
+  m_ActualView: {fileID: 16}
+>>>>>>> ThibautGDt
   m_Panes:
   - {fileID: 14}
   - {fileID: 15}
+<<<<<<< HEAD
   m_Selected: 0
   m_LastSelected: 0
 --- !u!114 &14
+=======
+  - {fileID: 16}
+  m_Selected: 1
+  m_LastSelected: 0
+--- !u!114 &15
+>>>>>>> ThibautGDt
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -890,14 +1201,19 @@ MonoBehaviour:
   m_TitleContent:
     m_Text: Inspector
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Image: {fileID: -6905738622615590433, guid: 0000000000000000d000000000000000,
 =======
     m_Image: {fileID: 8356117983803934776, guid: 0000000000000000d000000000000000,
 >>>>>>> Clémen_GA
+=======
+    m_Image: {fileID: -6905738622615590433, guid: 0000000000000000d000000000000000,
+>>>>>>> ThibautGDt
       type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
 <<<<<<< HEAD
     x: 2192
     y: 73
@@ -909,6 +1225,12 @@ MonoBehaviour:
     width: 400
     height: 710
 >>>>>>> Clémen_GA
+=======
+    x: 1601
+    y: 73
+    width: 318
+    height: 610
+>>>>>>> ThibautGDt
   m_ViewDataDictionary: {fileID: 0}
   m_OpenAddComponentMenu: 0
   m_ObjectsLockedBeforeSerialization: []
@@ -916,12 +1238,16 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
   m_PreviewResizer:
-    m_CachedPref: 160
+    m_CachedPref: 151
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_LastInspectedObjectInstanceID: -47946
+=======
+  m_LastInspectedObjectInstanceID: 18232
+>>>>>>> ThibautGDt
   m_LastVerticalScrollValue: 0
 --- !u!114 &16
 =======
@@ -948,13 +1274,13 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1024.8
-    y: 73.6
-    width: 278
-    height: 710
+    x: 1601
+    y: 73
+    width: 318
+    height: 610
   m_ViewDataDictionary: {fileID: 0}
   m_PreviewResizer:
-    m_CachedPref: 50
+    m_CachedPref: -50
     m_ControlHash: 1964396721
     m_PrefName: Preview_TilemapBrushInspector
   m_Palette: {fileID: 8875647702784111766, guid: 4aea2a71fea431d4da227817947896cd,
@@ -975,10 +1301,17 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
     x: 933
     y: 0
     width: 347
     height: 891
+=======
+    x: 0
+    y: 631
+    width: 574
+    height: 316
+>>>>>>> ThibautGDt
   m_MinSize: {x: 231, y: 271}
   m_MaxSize: {x: 10001, y: 10021}
   m_ActualView: {fileID: 18}
@@ -1012,14 +1345,19 @@ MonoBehaviour:
   m_TitleContent:
     m_Text: Project
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Image: {fileID: -7501376956915960154, guid: 0000000000000000d000000000000000,
 =======
     m_Image: {fileID: -2032128904892744680, guid: 0000000000000000d000000000000000,
 >>>>>>> Clémen_GA
+=======
+    m_Image: {fileID: -7501376956915960154, guid: 0000000000000000d000000000000000,
+>>>>>>> ThibautGDt
       type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
 <<<<<<< HEAD
     x: 2469
     y: 73
@@ -1031,6 +1369,12 @@ MonoBehaviour:
     width: 346
     height: 710
 >>>>>>> Clémen_GA
+=======
+    x: 1346
+    y: 704
+    width: 573
+    height: 295
+>>>>>>> ThibautGDt
   m_ViewDataDictionary: {fileID: 0}
   m_SearchFilter:
     m_NameFilter: 
@@ -1045,6 +1389,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
+<<<<<<< HEAD
 <<<<<<< HEAD
     - Assets/Scripts/Boss2
   m_ViewMode: 1
@@ -1073,6 +1418,22 @@ MonoBehaviour:
     m_LastClickedID: 21422
     m_ExpandedIDs: 00000000225300002453000026530000285300002a5300002c5300002e53000000ca9a3b
 >>>>>>> Clémen_GA
+=======
+    - Assets/Prefabs/SD_Prefab/LD
+  m_ViewMode: 1
+  m_StartGridSize: 16
+  m_LastFolders:
+  - Assets/Prefabs/SD_Prefab/LD
+  m_LastFoldersGridSize: 16
+  m_LastProjectPath: C:\Users\thiba\OneDrive\Documents\Projet Rogue Like\ZeldaLike\ZeldaLike\ZeldaLikeUnity
+  m_LockTracker:
+    m_IsLocked: 0
+  m_FolderTreeState:
+    scrollPos: {x: 0, y: 180}
+    m_SelectedIDs: 48610000
+    m_LastClickedID: 24904
+    m_ExpandedIDs: 00000000086100000a6100000c6100000e610000106100001261000014610000166100004461000000ca9a3b
+>>>>>>> ThibautGDt
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1088,7 +1449,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 0}
+      m_ClientGUIView: {fileID: 17}
     m_SearchString: 
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
@@ -1101,10 +1462,14 @@ MonoBehaviour:
     m_SelectedIDs: 
     m_LastClickedID: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_ExpandedIDs: 000000008a4500008c4500008e45000090450000924500009445000096450000984500009a45000000ca9a3b
 =======
     m_ExpandedIDs: 00000000225300002453000026530000285300002a5300002c5300002e53000000ca9a3b
 >>>>>>> Clémen_GA
+=======
+    m_ExpandedIDs: 00000000086100000a6100000c6100000e6100001061000012610000146100001661000000ca9a3b
+>>>>>>> ThibautGDt
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1130,6 +1495,7 @@ MonoBehaviour:
       m_ResourceFile: 
   m_ListAreaState:
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_SelectedInstanceIDs: b644ffff
     m_LastClickedInstanceID: -47946
     m_HadKeyboardFocusLastEvent: 0
@@ -1140,6 +1506,12 @@ MonoBehaviour:
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000
 >>>>>>> Clémen_GA
+=======
+    m_SelectedInstanceIDs: 38470000
+    m_LastClickedInstanceID: 18232
+    m_HadKeyboardFocusLastEvent: 0
+    m_ExpandedInstanceIDs: c6230000022e000012450000303d0000183d0000e6620000f2390000643c0000
+>>>>>>> ThibautGDt
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1167,7 +1539,11 @@ MonoBehaviour:
     m_GridSize: 16
   m_SkipHiddenPackages: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_DirectoriesAreaWidth: 110
 =======
   m_DirectoriesAreaWidth: 144
 >>>>>>> Clémen_GA
+=======
+  m_DirectoriesAreaWidth: 216
+>>>>>>> ThibautGDt
