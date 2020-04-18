@@ -15,18 +15,32 @@ MonoBehaviour:
   m_Children:
   - {fileID: 3}
   - {fileID: 5}
+<<<<<<< HEAD
   - {fileID: 14}
   - {fileID: 17}
+=======
+  - {fileID: 13}
+  - {fileID: 16}
+>>>>>>> Clémen_GA
   m_Position:
     serializedVersion: 2
     x: 0
     y: 30
+<<<<<<< HEAD
     width: 1280
     height: 891
   m_MinSize: {x: 911, y: 563}
   m_MaxSize: {x: 22006, y: 12063}
   vertical: 0
   controlID: 13075
+=======
+    width: 1536
+    height: 731
+  m_MinSize: {x: 911, y: 342}
+  m_MaxSize: {x: 22006, y: 10021}
+  vertical: 0
+  controlID: 110136
+>>>>>>> Clémen_GA
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -43,15 +57,26 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Game
+<<<<<<< HEAD
     m_Image: {fileID: -2087823869225018852, guid: 0000000000000000d000000000000000,
+=======
+    m_Image: {fileID: 257045534191678443, guid: 0000000000000000d000000000000000,
+>>>>>>> Clémen_GA
       type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 1737
     y: 73
     width: 453
     height: 253
+=======
+    x: 1
+    y: 19
+    width: 517
+    height: 589
+>>>>>>> Clémen_GA
   m_ViewDataDictionary: {fileID: 0}
   m_SerializedViewsNames: []
   m_SerializedViewsValues: []
@@ -59,7 +84,11 @@ MonoBehaviour:
   m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
+<<<<<<< HEAD
   m_TargetSize: {x: 412, y: 232}
+=======
+  m_TargetSize: {x: 517, y: 291}
+>>>>>>> Clémen_GA
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
@@ -73,10 +102,17 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
+<<<<<<< HEAD
     m_HBaseRangeMin: -206
     m_HBaseRangeMax: 206
     m_VBaseRangeMin: -116
     m_VBaseRangeMax: 116
+=======
+    m_HBaseRangeMin: -206.8
+    m_HBaseRangeMax: 206.8
+    m_VBaseRangeMin: -116.4
+    m_VBaseRangeMax: 116.4
+>>>>>>> Clémen_GA
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -85,7 +121,11 @@ MonoBehaviour:
     m_HSlider: 1
     m_VSlider: 1
     m_IgnoreScrollWheelUntilClicked: 0
+<<<<<<< HEAD
     m_EnableMouseInput: 1
+=======
+    m_EnableMouseInput: 0
+>>>>>>> Clémen_GA
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -94,16 +134,24 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
+<<<<<<< HEAD
       width: 453
       height: 232
     m_Scale: {x: 1.1940521, y: 1.1940521}
     m_Translation: {x: 245.97473, y: 138.51004}
+=======
+      width: 517
+      height: 568
+    m_Scale: {x: 1.8489317, y: 1.8489317}
+    m_Translation: {x: 258.49994, y: 283.99985}
+>>>>>>> Clémen_GA
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
+<<<<<<< HEAD
       x: -206
       y: -116
       width: 379.38043
@@ -111,6 +159,15 @@ MonoBehaviour:
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_LastWindowPixelSize: {x: 453, y: 253}
+=======
+      x: -139.81044
+      y: -153.60213
+      width: 279.62094
+      height: 307.20444
+    m_MinimalGUI: 1
+  m_defaultScale: 1
+  m_LastWindowPixelSize: {x: 646.25, y: 736.25}
+>>>>>>> Clémen_GA
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000100000100
@@ -133,8 +190,13 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 201
     height: 891
+=======
+    width: 268
+    height: 731
+>>>>>>> Clémen_GA
   m_MinSize: {x: 201, y: 221}
   m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 4}
@@ -163,17 +225,28 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 1536
     y: 73
     width: 200
     height: 870
+=======
+    x: 0
+    y: 73.6
+    width: 267
+    height: 710
+>>>>>>> Clémen_GA
   m_ViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
+<<<<<<< HEAD
       m_ExpandedIDs: a457ffff5afbffff6cfbffffea37000090380000
+=======
+      m_ExpandedIDs: 308bfeff328bfeff7e8dfeff6eb6feff92bffeff9830ffffa430ffff26b6ffff36b6ffff10b8ffff26560000
+>>>>>>> Clémen_GA
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -211,18 +284,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Children:
   - {fileID: 6}
+<<<<<<< HEAD
   - {fileID: 8}
   - {fileID: 10}
+=======
+  - {fileID: 9}
+>>>>>>> Clémen_GA
   m_Position:
     serializedVersion: 2
-    x: 201
+    x: 268
     y: 0
+<<<<<<< HEAD
     width: 455
     height: 891
   m_MinSize: {x: 202, y: 563}
   m_MaxSize: {x: 4002, y: 12063}
   vertical: 1
   controlID: 12981
+=======
+    width: 519
+    height: 731
+  m_MinSize: {x: 202, y: 342}
+  m_MaxSize: {x: 4002, y: 8042}
+  vertical: 1
+  controlID: 110137
+>>>>>>> Clémen_GA
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -240,12 +326,18 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 455
     height: 274
+=======
+    width: 519
+    height: 610
+>>>>>>> Clémen_GA
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 2}
   m_Panes:
+<<<<<<< HEAD
   - {fileID: 2}
   - {fileID: 7}
   m_Selected: 0
@@ -358,6 +450,14 @@ MonoBehaviour:
   m_Selected: 0
   m_LastSelected: 0
 --- !u!114 &9
+=======
+  - {fileID: 7}
+  - {fileID: 2}
+  - {fileID: 8}
+  m_Selected: 1
+  m_LastSelected: 0
+--- !u!114 &7
+>>>>>>> Clémen_GA
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -373,11 +473,16 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Scene
+<<<<<<< HEAD
     m_Image: {fileID: 2318424515335265636, guid: 0000000000000000d000000000000000,
+=======
+    m_Image: {fileID: -131512000283675692, guid: 0000000000000000d000000000000000,
+>>>>>>> Clémen_GA
       type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 1737
     y: 347
     width: 453
@@ -386,6 +491,16 @@ MonoBehaviour:
   m_ShowContextualTools: 0
   m_WindowGUID: aa7aeaa20c46d6c42b0524fb758741e9
   m_Gizmos: 1
+=======
+    x: 268
+    y: 73.6
+    width: 517
+    height: 589
+  m_ViewDataDictionary: {fileID: 0}
+  m_ShowContextualTools: 0
+  m_WindowGUID: aa7aeaa20c46d6c42b0524fb758741e9
+  m_Gizmos: 0
+>>>>>>> Clémen_GA
   m_SceneIsLit: 1
   m_SceneLighting: 1
   m_2DMode: 1
@@ -393,9 +508,15 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
+<<<<<<< HEAD
     m_Target: {x: -19.128971, y: 31.142845, z: -34.67383}
     speed: 2
     m_Value: {x: -19.128971, y: 31.142845, z: -34.67383}
+=======
+    m_Target: {x: 12.116141, y: 14.008156, z: -27.179688}
+    speed: 2
+    m_Value: {x: 12.116141, y: 14.008156, z: -27.179688}
+>>>>>>> Clémen_GA
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -428,7 +549,7 @@ MonoBehaviour:
         m_Value: 0
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
-      m_Size: {x: 0, y: 0}
+      m_Size: {x: 1, y: 1}
     zGrid:
       m_Fade:
         m_Target: 0
@@ -445,9 +566,15 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
+<<<<<<< HEAD
     m_Target: 11.263959
     speed: 2
     m_Value: 11.263959
+=======
+    m_Target: 46.989685
+    speed: 2
+    m_Value: 46.989685
+>>>>>>> Clémen_GA
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -472,7 +599,75 @@ MonoBehaviour:
   m_SceneVisActive: 1
   m_LastLockedObject: {fileID: 0}
   m_ViewIsLockedToObject: 0
+<<<<<<< HEAD
 --- !u!114 &10
+=======
+--- !u!114 &8
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12914, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Animator
+    m_Image: {fileID: -6973158847631862895, guid: 0000000000000000d000000000000000,
+      type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 200.8
+    y: 73.6
+    width: 822
+    height: 245
+  m_ViewDataDictionary: {fileID: 0}
+  m_ViewTransforms:
+    m_KeySerializationHelper:
+    - {fileID: 2759255078094050332, guid: 163716d62fefc3745bb285ad8f003237, type: 2}
+    m_ValueSerializationHelper:
+    - e00: 0.6465555
+      e01: 0
+      e02: 0
+      e03: -54.869125
+      e10: 0
+      e11: 0.6465555
+      e12: 0
+      e13: 58.332497
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+  m_PreviewAnimator: {fileID: 0}
+  m_AnimatorController: {fileID: 9100000, guid: 163716d62fefc3745bb285ad8f003237,
+    type: 2}
+  m_BreadCrumbs:
+  - m_Target: {fileID: 2759255078094050332, guid: 163716d62fefc3745bb285ad8f003237,
+      type: 2}
+    m_ScrollPosition: {x: 0, y: 0}
+  stateMachineGraph: {fileID: 0}
+  stateMachineGraphGUI: {fileID: 0}
+  blendTreeGraph: {fileID: 0}
+  blendTreeGraphGUI: {fileID: 0}
+  m_AutoLiveLink: 1
+  m_MiniTool: 0
+  m_LockTracker:
+    m_IsLocked: 0
+  m_CurrentEditor: 0
+  m_LayerEditor:
+    m_SelectedLayerIndex: 0
+--- !u!114 &9
+>>>>>>> Clémen_GA
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -488,19 +683,33 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
     y: 548
     width: 455
     height: 343
   m_MinSize: {x: 102, y: 121}
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 12}
+=======
+    y: 610
+    width: 519
+    height: 121
+  m_MinSize: {x: 102, y: 121}
+  m_MaxSize: {x: 4002, y: 4021}
+  m_ActualView: {fileID: 11}
+>>>>>>> Clémen_GA
   m_Panes:
+  - {fileID: 10}
   - {fileID: 11}
   - {fileID: 12}
-  - {fileID: 13}
   m_Selected: 1
+<<<<<<< HEAD
   m_LastSelected: 2
 --- !u!114 &11
+=======
+  m_LastSelected: 0
+--- !u!114 &10
+>>>>>>> Clémen_GA
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -516,17 +725,29 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Console
+<<<<<<< HEAD
     m_Image: {fileID: 111653112392082826, guid: 0000000000000000d000000000000000,
+=======
+    m_Image: {fileID: -3303252850963283158, guid: 0000000000000000d000000000000000,
+>>>>>>> Clémen_GA
       type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
     x: 200.8
+<<<<<<< HEAD
     y: 515.2
     width: 639
     height: 268
   m_ViewDataDictionary: {fileID: 0}
 --- !u!114 &12
+=======
+    y: 683.2
+    width: 670
+    height: 100
+  m_ViewDataDictionary: {fileID: 0}
+--- !u!114 &11
+>>>>>>> Clémen_GA
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -542,11 +763,16 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Animation
+<<<<<<< HEAD
     m_Image: {fileID: 1561878555887300916, guid: 0000000000000000d000000000000000,
+=======
+    m_Image: {fileID: -8967370667835289719, guid: 0000000000000000d000000000000000,
+>>>>>>> Clémen_GA
       type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 1737
     y: 621
     width: 453
@@ -556,6 +782,17 @@ MonoBehaviour:
     m_IsLocked: 0
   m_LastSelectedObjectID: -47946
 --- !u!114 &13
+=======
+    x: 268
+    y: 683.2
+    width: 517
+    height: 100
+  m_ViewDataDictionary: {fileID: 0}
+  m_LockTracker:
+    m_IsLocked: 0
+  m_LastSelectedObjectID: -95592
+--- !u!114 &12
+>>>>>>> Clémen_GA
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -571,21 +808,35 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Project Settings
+<<<<<<< HEAD
     m_Image: {fileID: 8487775502441791945, guid: 0000000000000000d000000000000000,
+=======
+    m_Image: {fileID: -6304849327172165113, guid: 0000000000000000d000000000000000,
+>>>>>>> Clémen_GA
       type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
     x: 200.8
+<<<<<<< HEAD
     y: 515.2
     width: 639
     height: 268
+=======
+    y: 560
+    width: 822
+    height: 223
+>>>>>>> Clémen_GA
   m_ViewDataDictionary: {fileID: 0}
   m_PosLeft: {x: 0, y: 0}
   m_PosRight: {x: 0, y: 656}
   m_Scope: 1
   m_SplitterFlex: 0.2
+<<<<<<< HEAD
 --- !u!114 &14
+=======
+--- !u!114 &13
+>>>>>>> Clémen_GA
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -600,6 +851,7 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 656
     y: 0
     width: 277
@@ -607,12 +859,21 @@ MonoBehaviour:
   m_MinSize: {x: 277, y: 71}
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 15}
+=======
+    x: 787
+    y: 0
+    width: 402
+    height: 731
+  m_MinSize: {x: 277, y: 71}
+  m_MaxSize: {x: 4002, y: 4021}
+  m_ActualView: {fileID: 14}
+>>>>>>> Clémen_GA
   m_Panes:
+  - {fileID: 14}
   - {fileID: 15}
-  - {fileID: 16}
   m_Selected: 0
-  m_LastSelected: 1
---- !u!114 &15
+  m_LastSelected: 0
+--- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -628,15 +889,26 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Inspector
+<<<<<<< HEAD
     m_Image: {fileID: -6905738622615590433, guid: 0000000000000000d000000000000000,
+=======
+    m_Image: {fileID: 8356117983803934776, guid: 0000000000000000d000000000000000,
+>>>>>>> Clémen_GA
       type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 2192
     y: 73
     width: 275
     height: 870
+=======
+    x: 787.2
+    y: 73.6
+    width: 400
+    height: 710
+>>>>>>> Clémen_GA
   m_ViewDataDictionary: {fileID: 0}
   m_OpenAddComponentMenu: 0
   m_ObjectsLockedBeforeSerialization: []
@@ -648,9 +920,15 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
+<<<<<<< HEAD
   m_LastInspectedObjectInstanceID: -47946
   m_LastVerticalScrollValue: 0
 --- !u!114 &16
+=======
+  m_LastInspectedObjectInstanceID: -95592
+  m_LastVerticalScrollValue: 0
+--- !u!114 &15
+>>>>>>> Clémen_GA
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -681,7 +959,7 @@ MonoBehaviour:
     m_PrefName: Preview_TilemapBrushInspector
   m_Palette: {fileID: 8875647702784111766, guid: 4aea2a71fea431d4da227817947896cd,
     type: 3}
---- !u!114 &17
+--- !u!114 &16
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -696,6 +974,7 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 933
     y: 0
     width: 347
@@ -703,11 +982,20 @@ MonoBehaviour:
   m_MinSize: {x: 231, y: 271}
   m_MaxSize: {x: 10001, y: 10021}
   m_ActualView: {fileID: 18}
+=======
+    x: 1189
+    y: 0
+    width: 347
+    height: 731
+  m_MinSize: {x: 231, y: 271}
+  m_MaxSize: {x: 10001, y: 10021}
+  m_ActualView: {fileID: 17}
+>>>>>>> Clémen_GA
   m_Panes:
-  - {fileID: 18}
+  - {fileID: 17}
   m_Selected: 0
   m_LastSelected: 0
---- !u!114 &18
+--- !u!114 &17
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -723,15 +1011,26 @@ MonoBehaviour:
   m_MaxSize: {x: 10000, y: 10000}
   m_TitleContent:
     m_Text: Project
+<<<<<<< HEAD
     m_Image: {fileID: -7501376956915960154, guid: 0000000000000000d000000000000000,
+=======
+    m_Image: {fileID: -2032128904892744680, guid: 0000000000000000d000000000000000,
+>>>>>>> Clémen_GA
       type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 2469
     y: 73
     width: 346
     height: 870
+=======
+    x: 1188.8
+    y: 73.6
+    width: 346
+    height: 710
+>>>>>>> Clémen_GA
   m_ViewDataDictionary: {fileID: 0}
   m_SearchFilter:
     m_NameFilter: 
@@ -746,20 +1045,34 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
+<<<<<<< HEAD
     - Assets/Scripts/Boss2
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
   - Assets/Scripts/Boss2
+=======
+    - Assets/Prefabs/FX
+  m_ViewMode: 1
+  m_StartGridSize: 16
+  m_LastFolders:
+  - Assets/Prefabs/FX
+>>>>>>> Clémen_GA
   m_LastFoldersGridSize: 16
-  m_LastProjectPath: D:\git\ZeldaLike\ZeldaLikeUnity
+  m_LastProjectPath: "C:\\Users\\cleme\\Documents\\\xE9cole\\AAAZeldalike\\ZeldaLike\\ZeldaLikeUnity"
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
     m_SelectedIDs: cc450000
     m_LastClickedID: 17868
     m_ExpandedIDs: 000000008a4500008c4500008e45000090450000924500009445000096450000984500009a45000000ca9a3b
+=======
+    m_SelectedIDs: ae530000
+    m_LastClickedID: 21422
+    m_ExpandedIDs: 00000000225300002453000026530000285300002a5300002c5300002e53000000ca9a3b
+>>>>>>> Clémen_GA
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -787,7 +1100,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
     m_ExpandedIDs: 000000008a4500008c4500008e45000090450000924500009445000096450000984500009a45000000ca9a3b
+=======
+    m_ExpandedIDs: 00000000225300002453000026530000285300002a5300002c5300002e53000000ca9a3b
+>>>>>>> Clémen_GA
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -812,10 +1129,17 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
+<<<<<<< HEAD
     m_SelectedInstanceIDs: b644ffff
     m_LastClickedInstanceID: -47946
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000684f010010390000
+=======
+    m_SelectedInstanceIDs: 988afeff
+    m_LastClickedInstanceID: -95592
+    m_HadKeyboardFocusLastEvent: 0
+    m_ExpandedInstanceIDs: c6230000
+>>>>>>> Clémen_GA
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -831,7 +1155,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 17}
+      m_ClientGUIView: {fileID: 16}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -842,4 +1166,8 @@ MonoBehaviour:
     m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 16
   m_SkipHiddenPackages: 0
+<<<<<<< HEAD
   m_DirectoriesAreaWidth: 110
+=======
+  m_DirectoriesAreaWidth: 144
+>>>>>>> Clémen_GA
