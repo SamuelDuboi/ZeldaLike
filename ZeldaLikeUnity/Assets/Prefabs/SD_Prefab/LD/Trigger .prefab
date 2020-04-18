@@ -399,6 +399,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: InteractButton
       objectReference: {fileID: 0}
+    - target: {fileID: 7467951763243395957, guid: 85f7988a72399944dacd075a5cc52aaa,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85f7988a72399944dacd075a5cc52aaa, type: 3}
 --- !u!4 &5514162634925854899 stripped
