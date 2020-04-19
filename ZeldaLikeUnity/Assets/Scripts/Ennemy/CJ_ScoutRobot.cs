@@ -33,33 +33,38 @@ namespace Ennemy
      public override void FixedUpdate()
     {
             base.FixedUpdate();
+            isAggro = false;
             if (canMove)
             {
-                ennemyRGB.velocity = Vector2.zero;
                 if (!isAttacking)
                     StartCoroutine(SniperShot());
             }
 
     }
-/*
-        public override void Mouvement()
+        /*
+                public override void Mouvement()
+                {
+                    if(Vector2.Distance(transform.position,player.transform.position) > stopDistance)
+                    {
+                        transform.position = Vector3.MoveTowards(transform.position, player.transform.position, Time.deltaTime * speed);
+                    }
+                    else if(Vector2.Distance(transform.position,player.transform.position) < stopDistance && Vector2.Distance(transform.position, player.transform.position) > retreatDistance && canShoot == true)
+                    {
+                        canMove = false;
+                        isAvoidingObstacles = false;
+                        StartCoroutine(SniperShot());
+                    }
+                    else if (Vector2.Distance(transform.position, player.transform.position) < stopDistance && Vector2.Distance(transform.position, player.transform.position) < retreatDistance)
+                    {
+                        transform.position = Vector3.MoveTowards(transform.position, player.transform.position, Time.deltaTime * -retreatSpeed);
+                    }
+                }
+        */
+        public override void OnTriggerEnter2D(Collider2D collision)
         {
-            if(Vector2.Distance(transform.position,player.transform.position) > stopDistance)
-            {
-                transform.position = Vector3.MoveTowards(transform.position, player.transform.position, Time.deltaTime * speed);
-            }
-            else if(Vector2.Distance(transform.position,player.transform.position) < stopDistance && Vector2.Distance(transform.position, player.transform.position) > retreatDistance && canShoot == true)
-            {
-                canMove = false;
-                isAvoidingObstacles = false;
-                StartCoroutine(SniperShot());
-            }
-            else if (Vector2.Distance(transform.position, player.transform.position) < stopDistance && Vector2.Distance(transform.position, player.transform.position) < retreatDistance)
-            {
-                transform.position = Vector3.MoveTowards(transform.position, player.transform.position, Time.deltaTime * -retreatSpeed);
-            }
+            base.OnTriggerEnter2D(collision);
+            isAggro = false;
         }
-*/
         IEnumerator SniperShot()
         {
             isAttacking = true;

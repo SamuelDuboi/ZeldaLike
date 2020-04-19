@@ -29,6 +29,11 @@ public class SD_TextTest : MonoBehaviour
         if (listnumber >= textDialogue.Count)
         {
             listnumber = 0;
+            SD_PlayerMovement.Instance.cantDash = false;
+            SD_PlayerMovement.Instance.cantMove = false;
+            SD_PlayerAttack.Instance.cantAim = false;
+            SD_PlayerAttack.Instance.cantAttack = false;
+            SD_PlayerRessources.Instance.cantTakeDamage = false;
             transform.parent.gameObject.SetActive(false);
             yield break;
         }
@@ -54,11 +59,6 @@ public class SD_TextTest : MonoBehaviour
         }
         cantContinue = false;
         listnumber++;
-        SD_PlayerMovement.Instance.cantDash = false;
-        SD_PlayerMovement.Instance.cantMove = false;
-        SD_PlayerAttack.Instance.cantAim = false;
-        SD_PlayerAttack.Instance.cantAttack = false;
-        SD_PlayerRessources.Instance.cantTakeDamage = false;
     }
 
     private void Update()

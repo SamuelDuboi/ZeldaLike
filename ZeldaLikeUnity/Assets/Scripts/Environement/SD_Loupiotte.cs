@@ -17,13 +17,15 @@ public class SD_Loupiotte : MonoBehaviour
     bool moveBack;
     int cpt;
 
-   public bool willBeBack;
     public List<GameObject> loupiottes = new List<GameObject>();
  [HideInInspector]  public int loupiottesCount;
 
 
     Animator doorAnimator;
     public bool Open;
+    public bool stayOpen;
+    float distance;
+    public float timeCameraMoving;
     private void Start()
     {
         loupiottesCount = 0;
@@ -49,6 +51,8 @@ public class SD_Loupiotte : MonoBehaviour
             cpt = 0;
             timer = 1;
             closeDoor = true;
+            distance = Mathf.Abs( Vector2.Distance(new Vector3(transform.GetChild(0).position.x, transform.GetChild(0).position.y, -10), camera.transform.position));
+
         }
 
     }
@@ -63,7 +67,10 @@ public class SD_Loupiotte : MonoBehaviour
     {
         timer = 1;
         yield return new WaitForSeconds(timeToReach);
-        doorAnimator.SetTrigger("ComeBack");
+        if (!stayOpen)
+            doorAnimator.SetTrigger("ComeBack");
+        else
+            closeDoor = true;
 
 
     }
@@ -72,7 +79,7 @@ public class SD_Loupiotte : MonoBehaviour
         if (move)
             camera.transform.position = Vector3.MoveTowards(camera.transform.position,
                                                             new Vector3(transform.GetChild(0).position.x, transform.GetChild(0).position.y, -10),
-                                                            0.05f);
+                                                            distance/timeCameraMoving);
         if (timer == 0)
         {
             StartCoroutine(WaitToComeBack());
@@ -90,7 +97,7 @@ public class SD_Loupiotte : MonoBehaviour
         {
             Time.timeScale = 0;
             camera.transform.position = Vector3.MoveTowards(camera.transform.position,
-                                                           playerCam.transform.GetChild(0).position, 0.05f);
+                                                           playerCam.transform.GetChild(0).position, distance / timeCameraMoving);
             if (Mathf.Abs(camera.transform.position.x - playerCam.transform.GetChild(0).position.x) < 0.1f && moveBack)
             {
                 moveBack = false;
@@ -117,7 +124,7 @@ public class SD_Loupiotte : MonoBehaviour
     {
         if (Open)
         {
-            if (willBeBack)
+            if (!stayOpen)
             {
                 loupiottes[loupiottesCount].GetComponent<SD_LoupiotteActivated>().activated = false;
                 loupiottes[loupiottesCount].GetComponent<SpriteRenderer>().color = Color.white;
@@ -131,7 +138,7 @@ public class SD_Loupiotte : MonoBehaviour
     {
         if (!Open)
         {
-            if (willBeBack)
+            if (!stayOpen)
             {
                 loupiottes[loupiottesCount].GetComponent<SD_LoupiotteActivated>().activated = false;
                 loupiottes[loupiottesCount].GetComponent<SpriteRenderer>().color = Color.white;
@@ -166,7 +173,7 @@ public class SD_Loupiotte : MonoBehaviour
                 loupiots.GetComponent<SD_LoupiotteActivated>().activated = false;
 
             }
-            
+            distance = Mathf.Abs(Vector2.Distance(new Vector3(transform.GetChild(0).position.x, transform.GetChild(0).position.y, -10), camera.transform.position))*0.1f;
         }
        else if (collision.gameObject.layer == 14 && loupiottes.Count > 1)
         {

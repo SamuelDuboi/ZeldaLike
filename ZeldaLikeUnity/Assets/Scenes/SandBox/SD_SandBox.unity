@@ -62011,6 +62011,21 @@ PrefabInstance:
       propertyPath: loupiottes.Array.data[1]
       value: 
       objectReference: {fileID: 1476466951}
+    - target: {fileID: 170975813492720857, guid: 44a192e3a6f1c6d4cb369d09db98a52c,
+        type: 3}
+      propertyPath: timeCameraMoving
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 170975813492720857, guid: 44a192e3a6f1c6d4cb369d09db98a52c,
+        type: 3}
+      propertyPath: Open
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 170975813492720857, guid: 44a192e3a6f1c6d4cb369d09db98a52c,
+        type: 3}
+      propertyPath: stayOpen
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 170975813492720860, guid: 44a192e3a6f1c6d4cb369d09db98a52c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -63280,6 +63295,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2848149164483280397, guid: 4e2d6f25f1206a44aa146983844656c0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4622336011126484905, guid: 4e2d6f25f1206a44aa146983844656c0,
         type: 3}
       propertyPath: m_Name
@@ -63295,6 +63315,11 @@ PrefabInstance:
       propertyPath: playerCam
       value: 
       objectReference: {fileID: 588194715}
+    - target: {fileID: 4622336011126484907, guid: 4e2d6f25f1206a44aa146983844656c0,
+        type: 3}
+      propertyPath: timeCameraMoving
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4622336011126484910, guid: 4e2d6f25f1206a44aa146983844656c0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -63349,6 +63374,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4622336011821882095, guid: 4e2d6f25f1206a44aa146983844656c0,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 4622336011821882095, guid: 4e2d6f25f1206a44aa146983844656c0,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 336.4
       objectReference: {fileID: 0}
     - target: {fileID: 6247063545277398011, guid: 4e2d6f25f1206a44aa146983844656c0,
         type: 3}

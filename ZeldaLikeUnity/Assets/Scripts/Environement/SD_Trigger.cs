@@ -17,6 +17,9 @@ public class SD_Trigger : MonoBehaviour
     GameObject interactButton;
     Animator doorAnimator;
     public bool Open;
+    public bool stayOpen;
+    float distance;
+    public float timeCameraMoving = 1;
     private void Start()
     { 
 
@@ -52,6 +55,7 @@ public class SD_Trigger : MonoBehaviour
             cpt = 0;
             closeDoor = true;
             interactButton.SetActive(false);
+            distance = Mathf.Abs(Vector2.Distance(new Vector3(transform.GetChild(0).position.x, transform.GetChild(0).position.y, -10), camera.transform.position))*0.1f;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -67,7 +71,10 @@ public class SD_Trigger : MonoBehaviour
     {
         timer = 1;
         yield return new WaitForSeconds(timeToReach);
-        doorAnimator.SetTrigger("ComeBack");
+        if (!stayOpen)
+            doorAnimator.SetTrigger("ComeBack");
+        else
+            closeDoor = true;
 
 
     }
@@ -76,7 +83,7 @@ public class SD_Trigger : MonoBehaviour
         if (move)
             camera.transform.position = Vector3.MoveTowards(camera.transform.position,
                                                             new Vector3(transform.GetChild(0).position.x, transform.GetChild(0).position.y, -10),
-                                                            0.05f);
+                                                            distance / timeCameraMoving);
         if (timer == 0)
         {
             StartCoroutine(WaitToComeBack());
@@ -94,7 +101,7 @@ public class SD_Trigger : MonoBehaviour
         {
             Time.timeScale = 0;
             camera.transform.position = Vector3.MoveTowards(camera.transform.position,
-                                                           playerCam.transform.GetChild(0).position, 0.05f);
+                                                           playerCam.transform.GetChild(0).position, distance / timeCameraMoving);
             if (Mathf.Abs(camera.transform.position.x - playerCam.transform.GetChild(0).position.x) < 0.1f && moveBack)
             {
                 moveBack = false;

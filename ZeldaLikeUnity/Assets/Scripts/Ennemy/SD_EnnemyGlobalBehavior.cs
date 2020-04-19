@@ -105,17 +105,18 @@ namespace Ennemy
         {
             if (collision.gameObject.tag == "Player")
             {
-                if (!aggroZone.activeSelf)
+                if (!aggroZone.activeInHierarchy)
                 { 
                     aggroZone.SetActive(true);
                     desaggroZone.SetActive(false);
                     startPosition = transform.position;
+
+                    isAggro = false;
+                    canMove = false;
+                    isAttacking = false;
+                    CJ_PlayerCameraManager.Instance.ennemyList.Remove(gameObject);
+                    isAvoidingObstacles = false;
                 }
-                isAggro = false;
-                canMove = false;
-                isAttacking = false;
-                CJ_PlayerCameraManager.Instance.ennemyList.Remove(gameObject);
-                isAvoidingObstacles = false;
                 canTakeDamage = false;
 
             }
