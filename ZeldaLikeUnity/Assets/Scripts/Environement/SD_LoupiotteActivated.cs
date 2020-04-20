@@ -8,6 +8,12 @@ public class SD_LoupiotteActivated : MonoBehaviour
     public bool isTriggered;
    public  SD_Loupiotte script;
 
+
+    private void Start()
+    {
+        if (activated)
+            GetComponent<Animator>().SetTrigger("On");
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.layer == 14 && script.loupiottes.Count > 1)

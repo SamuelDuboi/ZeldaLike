@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Player;
+using Management;
 public class SD_Trigger : MonoBehaviour
 {
     public GameObject camera;
@@ -65,6 +66,7 @@ public class SD_Trigger : MonoBehaviour
     void Activation()
     {
         doorAnimator.SetTrigger("Activated");
+       StartCoroutine( GameManagerV2.Instance.GamePadeShake(0.5f, 0.1f));
         doorAnimator.speed = 10f;
     }
     IEnumerator WaitToComeBack()
@@ -72,7 +74,10 @@ public class SD_Trigger : MonoBehaviour
         timer = 1;
         yield return new WaitForSeconds(timeToReach);
         if (!stayOpen)
+        {
+            StartCoroutine(GameManagerV2.Instance.GamePadeShake(0.5f, 1));
             doorAnimator.SetTrigger("ComeBack");
+        }
         else
             closeDoor = true;
 

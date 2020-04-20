@@ -127,9 +127,9 @@ public class SD_Loupiotte : MonoBehaviour
             if (!stayOpen)
             {
                 loupiottes[loupiottesCount].GetComponent<SD_LoupiotteActivated>().activated = false;
-                loupiottes[loupiottesCount].GetComponent<SpriteRenderer>().color = Color.white;
+                loupiottes[loupiottesCount].GetComponent<Animator>().SetTrigger("Off");
                 loupiottes[0].GetComponent<SD_LoupiotteActivated>().activated = true;
-                loupiottes[0].GetComponent<SpriteRenderer>().color = Color.blue;
+                loupiottes[0].GetComponent<Animator>().SetTrigger("On");
             }
             closeDoor = false;
         }
@@ -141,9 +141,9 @@ public class SD_Loupiotte : MonoBehaviour
             if (!stayOpen)
             {
                 loupiottes[loupiottesCount].GetComponent<SD_LoupiotteActivated>().activated = false;
-                loupiottes[loupiottesCount].GetComponent<SpriteRenderer>().color = Color.white;
+                loupiottes[loupiottesCount].GetComponent<Animator>().SetTrigger("Off");
                 loupiottes[0].GetComponent<SD_LoupiotteActivated>().activated = true;
-                loupiottes[0].GetComponent<SpriteRenderer>().color = Color.blue;
+                loupiottes[0].GetComponent<Animator>().SetTrigger("On");
             }
             closeDoor = false;
         }
@@ -169,7 +169,7 @@ public class SD_Loupiotte : MonoBehaviour
             closeDoor = true;
             foreach (GameObject loupiots in loupiottes)
             {
-                loupiots.GetComponent<SpriteRenderer>().color =Color.white;
+                loupiots.GetComponent<Animator>().SetTrigger("Off");
                 loupiots.GetComponent<SD_LoupiotteActivated>().activated = false;
 
             }
@@ -191,9 +191,9 @@ public class SD_Loupiotte : MonoBehaviour
             if (i > -1)
             {
                 loupiottes[(int)i].GetComponent<SD_LoupiotteActivated>().activated = false;
-                loupiottes[(int)i].GetComponent<SpriteRenderer>().color = Color.white;
+                loupiottes[(int)i].GetComponent<Animator>().SetTrigger("Off");
                 loupiottes[(int)i + 1].GetComponent<SD_LoupiotteActivated>().activated = true;
-                loupiottes[(int)i + 1].GetComponent<SpriteRenderer>().color = Color.blue;
+                loupiottes[(int)i + 1].GetComponent<Animator>().SetTrigger("On");
             }
         }
     }
