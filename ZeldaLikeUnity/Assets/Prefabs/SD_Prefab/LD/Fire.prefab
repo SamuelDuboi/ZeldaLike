@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6253273024831455071}
   - component: {fileID: 6253273024831455068}
   - component: {fileID: 6253273024831455069}
+  - component: {fileID: 6036617489098125108}
   m_Layer: 9
   m_Name: Fire
   m_TagString: Fire
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_SortingOrder: 2
   m_Sprite: {fileID: -1259112719936753150, guid: 027ddc1626db89c4cb23336d3262b2cd,
     type: 3}
-  m_Color: {r: 1, g: 0.3909036, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -109,3 +110,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!111 &6036617489098125108
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6253273024831455066}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: ecaa5b2e8baf64d49ae5b66d3b363ee4, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: ecaa5b2e8baf64d49ae5b66d3b363ee4, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
