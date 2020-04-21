@@ -180,6 +180,7 @@ GameObject:
   - component: {fileID: 542599190043403192}
   - component: {fileID: 542599190043403198}
   - component: {fileID: 542599190043401285}
+  - component: {fileID: 3678598991428035164}
   m_Layer: 12
   m_Name: RobotScout
   m_TagString: Ennemy
@@ -276,7 +277,9 @@ MonoBehaviour:
   isAvoidingObstacles: 0
   damage: 1
   life: 3
+  ennemyAnimator: {fileID: 0}
   isAggro: 0
+  canTakeDamage: 0
   freezTime: 0.047
   IsInMainScene: 1
   rayStartCorner:
@@ -345,6 +348,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &3678598991428035164
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 542599190043403199}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8abafa10d10209646a93dfcb7d7304ad, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &542599190255423323
 GameObject:
   m_ObjectHideFlags: 0

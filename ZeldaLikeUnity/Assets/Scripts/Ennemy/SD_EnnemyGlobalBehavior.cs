@@ -22,6 +22,7 @@ namespace Ennemy
          public bool isAvoidingObstacles;
         public int damage;
         public int life;
+        [HideInInspector] public Animator ennemyAnimator;
 
         [HideInInspector] public bool isAggro;
 
@@ -45,6 +46,7 @@ namespace Ennemy
         public virtual void Start()
         {
             ennemyRGB = GetComponent<Rigidbody2D>();
+            ennemyAnimator = GetComponent<Animator>();
         }
 
         private void OnTriggerStay2D(Collider2D collision)
@@ -166,7 +168,8 @@ namespace Ennemy
                 else
                     SD_PlayerRessources.Instance.chanceDropHeal++;
                 CJ_PlayerCameraManager.Instance.ennemyList.Remove(gameObject);
-                Destroy(gameObject);
+                GetComponent<SpriteRenderer>().color = Color.white;
+                ennemyAnimator.SetTrigger("Death");
             }
             
             if (SD_PlayerAttack.Instance.canPushBack)
@@ -312,6 +315,11 @@ namespace Ennemy
             isAttacking = false;
             isAvoidingObstacles = true;
             canMove = true;
+        }
+
+        public void Death()
+        {
+            Destroy(gameObject);
         }
     }
 }
