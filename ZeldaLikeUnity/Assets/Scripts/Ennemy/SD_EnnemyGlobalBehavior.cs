@@ -74,18 +74,7 @@ namespace Ennemy
             }
             if (collision.gameObject.tag == "Player")
             {
-                CJ_PlayerCameraManager.Instance.ennemyList.Add(gameObject);
-                if (aggroZone.activeSelf)
-                {
-                    aggroZone.SetActive(false);
-                    desaggroZone.SetActive(true);
-
-                }
-                isAggro = true;
-                canMove = true;
-                isAvoidingObstacles = true;
-                canTakeDamage = true;
-                player = collision.transform.parent.gameObject;
+                Aggro(collision);
             }//if is attack by player
              //if is attack by projectile
             
@@ -107,20 +96,8 @@ namespace Ennemy
         {
             if (collision.gameObject.tag == "Player")
             {
-                if (!aggroZone.activeInHierarchy)
-                { 
-                    aggroZone.SetActive(true);
-                    desaggroZone.SetActive(false);
-                    startPosition = transform.position;
 
-                    isAggro = false;
-                    canMove = false;
-                    isAttacking = false;
-                    CJ_PlayerCameraManager.Instance.ennemyList.Remove(gameObject);
-                    isAvoidingObstacles = false;
-                }
-                canTakeDamage = false;
-
+                Desaggro(collision);
             }
 
         }
@@ -170,6 +147,7 @@ namespace Ennemy
                 CJ_PlayerCameraManager.Instance.ennemyList.Remove(gameObject);
                 GetComponent<SpriteRenderer>().color = Color.white;
                 ennemyAnimator.SetTrigger("Death");
+                yield break;
             }
             
             if (SD_PlayerAttack.Instance.canPushBack)
@@ -307,6 +285,7 @@ namespace Ennemy
 
       public  virtual IEnumerator Stun(float timer)
         {
+            ennemyAnimator.SetBool("Stun", true);
             canMove = false;
             ennemyRGB.velocity = Vector2.zero;
             isAvoidingObstacles = false;
@@ -315,11 +294,46 @@ namespace Ennemy
             isAttacking = false;
             isAvoidingObstacles = true;
             canMove = true;
+            ennemyAnimator.SetBool("Stun", false);
         }
 
         public void Death()
         {
             Destroy(gameObject);
+        }
+
+        public virtual void Aggro(Collider2D collision)
+        {
+            CJ_PlayerCameraManager.Instance.ennemyList.Add(gameObject);
+            if (aggroZone.activeSelf)
+            {
+                aggroZone.SetActive(false);
+                desaggroZone.SetActive(true);
+
+            }
+
+            isAggro = true;
+            canMove = true;
+            isAvoidingObstacles = true;
+            canTakeDamage = true;
+            player = collision.transform.parent.gameObject;
+        }
+
+        public virtual void Desaggro(Collider2D collision)
+        {
+            if (!aggroZone.activeInHierarchy)
+            {
+                aggroZone.SetActive(true);
+                desaggroZone.SetActive(false);
+                startPosition = transform.position;
+
+                isAggro = false;
+                canMove = false;
+                isAttacking = false;
+                CJ_PlayerCameraManager.Instance.ennemyList.Remove(gameObject);
+                isAvoidingObstacles = false;
+            }
+            canTakeDamage = false;
         }
     }
 }
