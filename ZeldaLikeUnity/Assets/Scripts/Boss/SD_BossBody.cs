@@ -13,6 +13,8 @@ public class SD_BossBody : MonoBehaviour
     Collider2D bossCollider;
     Vector2 firstBullet;
     public float bulletNummber;
+
+    public Sprite weakPointDestroyed;
     [Space]
     [Header("Phase1")]
     public float couldowBulletMin1;
@@ -83,9 +85,9 @@ public class SD_BossBody : MonoBehaviour
                 {
                     weakPointNumber--;
                     Debug.Log(weakPointNumber);
-                    Destroy(collider.gameObject);
-                    if (weakPointNumber == 0)
-                    {
+                    collider.GetComponent<BoxCollider2D>().enabled = false;
+                    collider.GetComponent<SpriteRenderer>().sprite = weakPointDestroyed;
+                    
                         SD_BossBehavior.Instance.phaseNumber++;
 
                         if (SD_BossBehavior.Instance.phaseNumber == 4)
@@ -93,7 +95,7 @@ public class SD_BossBody : MonoBehaviour
                         else
                             StartCoroutine(Moving());
 
-                    }
+                    
 
                 }
             }
