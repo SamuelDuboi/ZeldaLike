@@ -98,7 +98,12 @@ namespace Ennemy
                 ennemyAnimator.SetFloat("Left", 0f);
             ennemyAnimator.SetTrigger("PrepareCharge");
             yield return new WaitForSeconds(1.6f);
-
+            if (player.transform.position.x - transform.position.x > 0)
+            {
+                ennemyAnimator.SetFloat("Left", 1f);
+            }
+            else
+                ennemyAnimator.SetFloat("Left", 0f);
             ennemyAnimator.SetBool("Charging",true);
             while (cpt < timeCharging)
             {
@@ -106,12 +111,12 @@ namespace Ennemy
                 if (!canMove)
                     break;
                 ennemyRGB.velocity = new Vector2(player.transform.position.x - transform.position.x, player.transform.position.y - transform.position.y).normalized * speed;
-                if (Vector2.Distance(transform.position, player.transform.position) > 0)
+                if (player.transform.position.x - transform.position.x > 0)
                 {
-                    Debug.Log("a gauche");
+                    ennemyAnimator.SetFloat("Left", 1f);
                 }
                 else
-                    Debug.Log("a droite");
+                    ennemyAnimator.SetFloat("Left", 0f);
 
                 cpt += 0.05f;
                 yield return new WaitForSeconds(0.05f);
