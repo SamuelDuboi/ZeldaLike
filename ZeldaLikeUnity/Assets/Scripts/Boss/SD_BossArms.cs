@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Player;
+using UnityEngine.Timeline;
 
 [RequireComponent(typeof(LineRenderer))]
 public class SD_BossArms : MonoBehaviour
@@ -15,10 +16,15 @@ public class SD_BossArms : MonoBehaviour
     [Range(0.1f,5)]
     public float speed;
   [HideInInspector]  public float direction =1;
+    
     public float timeBeforChangingDirection;
     Rigidbody2D armRGB;
-
+    bool cantShoot;
     LayerMask player;
+    float timer;
+    [Range(0.1f, 5)]
+    public float timeOff;
+    public GameObject shield;
     void Start()
     {
         Vector3[] initLaserPositions = new Vector3[2] { Vector3.zero, Vector3.zero };
@@ -32,14 +38,13 @@ public class SD_BossArms : MonoBehaviour
     {
       if (isLeft && direction == 1)
         {
-            Debug.Log("hello" + gameObject);
             ShootLaserFromTargetPosition(rayOrigine.transform.position, Vector3.right);
-            laserLineRenderer.enabled = true;
+
         }
         else if (!isLeft && direction == 1)
         {
             ShootLaserFromTargetPosition(rayOrigine.transform.position, Vector3.left);
-            laserLineRenderer.enabled = true;
+            
         }
             
        else
@@ -52,7 +57,18 @@ public class SD_BossArms : MonoBehaviour
         }
         else
             armRGB.velocity = Vector2.zero;
-            
+
+        if (cantShoot)
+        {
+            timer += Time.deltaTime;
+            if(timer> timeOff)
+            {
+                laserLineRenderer.enabled =true;
+                shield.SetActive(true);
+                cantShoot = false;
+                timer = 0;
+            }
+        }
     }
     /// <summary>
     /// shoot a laser in front of this, from targe position to infinity, the lineRenderer will be draw from target to the hitpoint
@@ -61,24 +77,39 @@ public class SD_BossArms : MonoBehaviour
     /// <param name="direction"></param>
     void ShootLaserFromTargetPosition(Vector3 targetPosition, Vector3 direction)
     {
-       
-        RaycastHit2D raycastHit = Physics2D.Raycast(targetPosition,direction,2000,player);
-        Debug.Log(raycastHit.transform.gameObject);
-        if ( raycastHit.transform.gameObject.tag == "Player")
+        if (!cantShoot)
         {
-            touche.transform.position = new Vector2(raycastHit.transform.position.x, raycastHit.transform.position.y + 1);
-           StartCoroutine( SD_PlayerRessources.Instance.TakingDamage(rayDamage, touche, false, 1));
+            laserLineRenderer.enabled = true;
+            RaycastHit2D raycastHit = Physics2D.Raycast(targetPosition, direction, 2000, player);
+            Debug.Log(raycastHit.transform.gameObject);
+            if (raycastHit.transform.gameObject.tag == "Player")
+            {
+                touche.transform.position = new Vector2(raycastHit.transform.position.x, raycastHit.transform.position.y + 1);
+                StartCoroutine(SD_PlayerRessources.Instance.TakingDamage(rayDamage, touche, false, 1));
 
+            }
+
+
+            laserLineRenderer.SetPosition(0, targetPosition);
+            laserLineRenderer.SetPosition(1, raycastHit.point);
         }
-          
-
-        laserLineRenderer.SetPosition(0, targetPosition);
-        laserLineRenderer.SetPosition(1, raycastHit.point);
+       
     }
     private void OnCollisionEnter2D( Collision2D collision)
     {
         if (collision.gameObject.layer!= 11 )
             direction = -direction;
     }
-   
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == 14 && collision.gameObject.tag == "WindProjectil")
+        {
+            if (!cantShoot)
+            {
+                shield.SetActive(false);
+                laserLineRenderer.enabled=false ;
+                cantShoot = true;
+            }
+        }
+    }
 }

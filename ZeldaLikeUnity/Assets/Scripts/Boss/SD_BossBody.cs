@@ -135,7 +135,7 @@ public class SD_BossBody : MonoBehaviour
                     camerashake.SetActive(false);
 
                 }
-                StartCoroutine(RockFall());
+               // StartCoroutine(RockFall());
                 phaseWeakPoins[SD_BossBehavior.Instance.phaseNumber - 2].SetActive(false);
                 shield[SD_BossBehavior.Instance.phaseNumber - 1].SetActive(true);
                 weakPointNumber = GetComponentsInChildren<BoxCollider2D>().Length - 3;
@@ -159,7 +159,7 @@ public class SD_BossBody : MonoBehaviour
                     camerashake.SetActive(false);
 
                 }
-                StartCoroutine(RockFall());
+               // StartCoroutine(RockFall());
                 phaseWeakPoins[SD_BossBehavior.Instance.phaseNumber - 2].SetActive(false);
                 shield[SD_BossBehavior.Instance.phaseNumber - 1].SetActive(true);
                 weakPointNumber = GetComponentsInChildren<BoxCollider2D>().Length - 3;
