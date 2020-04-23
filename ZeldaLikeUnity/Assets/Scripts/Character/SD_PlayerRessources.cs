@@ -45,18 +45,8 @@ namespace Player
             //life
             life = currentMaxLife;
             lifes = GameObject.FindGameObjectsWithTag("Life");
+            LoadLife();
 
-            for(int i=0; i<maxLifePossible- currentMaxLife; i++)
-            {
-                lifes[lifes.Length - 1 - i].SetActive(false);                
-            }
-            for(int x=0; x<life; x++)
-            {
-                if (x % 2 == 0)
-                    lifes[x].GetComponent<Image>().sprite = halfHeart ;
-                else
-                    lifes[x].GetComponent<Image>().sprite = completHeart;
-            }
 
             chanceDropHeal = 2;
         }
@@ -100,13 +90,8 @@ namespace Player
                 {
                     StopCoroutine(SD_PlayerMovement.Instance.Dash());
                 }
-                if (life % 2 == 0)
-                    lifes[life-1].GetComponent<Image>().sprite = completHeartEmpty;
-                else if(!lifes[life].activeInHierarchy)
-                    lifes[life-1].GetComponent<Image>().sprite = halfHeartEmpty ;
-                else
-                    lifes[life - 1].GetComponent<Image>().color = new Color32 (0,0,0,0);
                 life -= damage;
+                LoadLife();
                
                
                 yield return new WaitForSeconds(0.2f);
@@ -142,12 +127,7 @@ namespace Player
             life += amount; 
             if (life > currentMaxLife)
                 life = currentMaxLife;
-
-            if (life % 2 == 0)
-                lifes[life].GetComponent<Image>().sprite = halfHeart;
-            else
-                lifes[life].GetComponent<Image>().sprite = completHeart ;
-
+            LoadLife();
         }
         #endregion
         #region RessourcesUpgrade
@@ -170,6 +150,21 @@ namespace Player
 
         #endregion
        
+
+        void LoadLife()
+        {
+            for (int i = 0; i < maxLifePossible - life; i++)
+            {
+                lifes[lifes.Length - 1 - i].SetActive(false);
+            }
+            for (int x = 0; x < life; x++)
+            {
+                if (x % 2 == 0)
+                    lifes[x].GetComponent<Image>().sprite = halfHeart;
+                else
+                    lifes[x].GetComponent<Image>().sprite = completHeart;
+            }
+        }
     }
 
 
