@@ -5,7 +5,7 @@ using Player;
 
 public class SD_LaserLD : MonoBehaviour
 {
-    GameObject target;
+   public  GameObject target;
     LayerMask playerMask;
     public int laserDamage;
     bool cantShoot;
@@ -14,7 +14,7 @@ public class SD_LaserLD : MonoBehaviour
      float timer;
     void Start()
     {
-        target = transform.GetChild(0).gameObject;
+       
         playerMask = 1 << 11;
     }
 
@@ -24,8 +24,6 @@ public class SD_LaserLD : MonoBehaviour
         if (!cantShoot)
         {
             playerMask = 1 << 11;
-            Debug.Log("direction" +new Vector2(target.transform.position.x - transform.position.x, target.transform.position.y - transform.position.y).normalized);
-            Debug.Log("distance" + Vector2.Distance(transform.position, target.transform.position));
             RaycastHit2D raycastHit = Physics2D.Raycast(transform.position,
                                                     new Vector2(target.transform.position.x -transform.position.x, target.transform.position.y -transform.position.y).normalized,
                                                           Vector2.Distance(transform.position, target.transform.position),

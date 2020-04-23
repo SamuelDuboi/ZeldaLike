@@ -7,10 +7,11 @@ public class SD_LoupiotteActivated : MonoBehaviour
     public bool activated;
     public bool isTriggered;
    public  SD_Loupiotte script;
-
+    public GameObject shield;
 
     private void Start()
     {
+        shield.SetActive(false);
         if (activated)
             GetComponent<Animator>().SetTrigger("On");
     }

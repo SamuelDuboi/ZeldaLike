@@ -128,8 +128,10 @@ public class SD_Loupiotte : MonoBehaviour
             {
                 loupiottes[loupiottesCount].GetComponent<SD_LoupiotteActivated>().activated = false;
                 loupiottes[loupiottesCount].GetComponent<Animator>().SetTrigger("Off");
+                loupiottes[loupiottesCount].GetComponent<SD_LoupiotteActivated>().shield.SetActive(false);
                 loupiottes[0].GetComponent<SD_LoupiotteActivated>().activated = true;
                 loupiottes[0].GetComponent<Animator>().SetTrigger("On");
+                loupiottes[0].GetComponent<SD_LoupiotteActivated>().shield.SetActive(true);
             }
             closeDoor = false;
         }
@@ -141,9 +143,11 @@ public class SD_Loupiotte : MonoBehaviour
             if (!stayOpen)
             {
                 loupiottes[loupiottesCount].GetComponent<SD_LoupiotteActivated>().activated = false;
+                loupiottes[loupiottesCount].GetComponent<SD_LoupiotteActivated>().shield.SetActive(false);
                 loupiottes[loupiottesCount].GetComponent<Animator>().SetTrigger("Off");
                 loupiottes[0].GetComponent<SD_LoupiotteActivated>().activated = true;
                 loupiottes[0].GetComponent<Animator>().SetTrigger("On");
+                loupiottes[0].GetComponent<SD_LoupiotteActivated>().shield.SetActive(true);
             }
             closeDoor = false;
         }
@@ -192,8 +196,10 @@ public class SD_Loupiotte : MonoBehaviour
             {
                 loupiottes[(int)i].GetComponent<SD_LoupiotteActivated>().activated = false;
                 loupiottes[(int)i].GetComponent<Animator>().SetTrigger("Off");
+                loupiottes[(int)i].GetComponent<SD_LoupiotteActivated>().shield.SetActive(false);
                 loupiottes[(int)i + 1].GetComponent<SD_LoupiotteActivated>().activated = true;
                 loupiottes[(int)i + 1].GetComponent<Animator>().SetTrigger("On");
+                loupiottes[(int)i].GetComponent<SD_LoupiotteActivated>().shield.SetActive(true);
             }
         }
     }
