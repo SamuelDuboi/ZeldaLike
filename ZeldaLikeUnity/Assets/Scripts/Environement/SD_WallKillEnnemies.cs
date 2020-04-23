@@ -5,7 +5,8 @@ using UnityEngine;
 public class SD_WallKillEnnemies : MonoBehaviour
 {
     public List<GameObject> ennemies = new List<GameObject>();
-
+    float timer;
+   
     // Update is called once per frame
     void Update()
     {
@@ -15,6 +16,15 @@ public class SD_WallKillEnnemies : MonoBehaviour
                 ennemies.Remove(ennemy);
         }
         if (ennemies.Count == 0)
-            Destroy(gameObject);
+        {
+            timer += Time.deltaTime;
+            if(timer> 0.5f)
+            {
+                Destroy(gameObject);
+            }
+        }
+        else
+            timer = 0;
+           
     }
 }

@@ -19,15 +19,20 @@ namespace Ennemy
         bool canShoot = true;
         [HideInInspector]public GameObject target;
         public GameObject ennemyBullet;
+        public bool wontBeReset;
       public override void Start()
     {
             base.Start();
             target = gameObject.transform.GetChild(0).gameObject;
             target.SetActive(false);
-            if (IsInMainScene)
-                GameManagerV2.Instance.AddEnnemieToList(GameManagerV2.ennemies.scoutRobot, gameObject);
-            else
-                GameManager.Instance.AddEnnemieToList(GameManager.ennemies.scoutRobot, gameObject);
+            if (!wontBeReset)
+            {
+                if (IsInMainScene)
+                    GameManagerV2.Instance.AddEnnemieToList(GameManagerV2.ennemies.scoutRobot, gameObject);
+                else
+                    GameManager.Instance.AddEnnemieToList(GameManager.ennemies.scoutRobot, gameObject);
+
+            }
         }
     
      public override void FixedUpdate()
