@@ -25,6 +25,7 @@ public class SD_BossArms : MonoBehaviour
     [Range(0.1f, 5)]
     public float timeOff;
     public GameObject shield;
+    public GameObject laserBoule;
     void Start()
     {
         Vector3[] initLaserPositions = new Vector3[2] { Vector3.zero, Vector3.zero };
@@ -64,6 +65,7 @@ public class SD_BossArms : MonoBehaviour
             if(timer> timeOff)
             {
                 laserLineRenderer.enabled =true;
+                laserBoule.SetActive(true);
                 shield.SetActive(true);
                 cantShoot = false;
                 timer = 0;
@@ -79,6 +81,7 @@ public class SD_BossArms : MonoBehaviour
     {
         if (!cantShoot)
         {
+            laserBoule.SetActive(true);
             laserLineRenderer.enabled = true;
             RaycastHit2D raycastHit = Physics2D.Raycast(targetPosition, direction, 2000, player);
             Debug.Log(raycastHit.transform.gameObject);
@@ -107,6 +110,7 @@ public class SD_BossArms : MonoBehaviour
             if (!cantShoot)
             {
                 shield.SetActive(false);
+                laserBoule.SetActive(false);
                 laserLineRenderer.enabled=false ;
                 cantShoot = true;
             }

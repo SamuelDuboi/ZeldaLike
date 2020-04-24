@@ -26,6 +26,7 @@ namespace Player
         public float sprintForce;
         [HideInInspector] public Rigidbody2D playerRGB;
 
+        [Header ("Dash")]
         [Range(0, 3)]
         public float dashTime;
         [Range(0, 10)]
@@ -33,6 +34,7 @@ namespace Player
         [Range(0, 10)]
         public float dashCooldown;
         public int fallDamage;
+        public GameObject dashTrail;
         //enable movement on false
         [HideInInspector] public bool cantMove;
 
@@ -41,6 +43,9 @@ namespace Player
         [HideInInspector] public bool hasWindShield;
 
         [HideInInspector] public bool dashIsActive;
+        
+
+        [Header("Platform")]
         bool wind;
 
         public GameObject windPlatform;
@@ -75,6 +80,9 @@ namespace Player
         public float timeBeforBurning = 2f;
         [Range(0, 5)]
         public float timeBetweenBurn = 1f;
+
+
+        public GameObject grosPoussière;
         void Awake()
         {
             MakeSingleton(false);
@@ -107,6 +115,9 @@ namespace Player
                 SD_PlayerAnimation.Instance.PlayerAnimator.SetBool("IsMoving", false);
                 sprint = 1;
                 playerRGB.drag = 10;
+
+                if (grosPoussière.activeInHierarchy)
+                    grosPoussière.SetActive(false);
             }
 
 
@@ -187,6 +198,9 @@ namespace Player
                     //cancel of the current attack if they was an attack
                     StartCoroutine(SD_PlayerAttack.Instance.Cancel(0f));
                     yield return new WaitForSeconds(0.01f);
+
+                    if (!grosPoussière.activeInHierarchy)
+                        grosPoussière.SetActive(true);
                     // reset of the speed in case the player was attacking and so, speed was reduce
                     speed = initialSpeed;
                     // add a force for the dash
@@ -214,7 +228,9 @@ namespace Player
                     SD_PlayerAnimation.Instance.PlayerAnimator.SetTrigger("Dash");
                     cantMove = true;
                     cantDash = true;
-
+                    dashTrail.SetActive(true);
+                    float angle = Mathf.Atan2(YAxis, XAxis) * Mathf.Rad2Deg;
+                    dashTrail.transform.rotation =Quaternion.Euler(0,0, angle);
                     timer = 0;
                     burnStade--;
                     if (burnStade <= 0)
@@ -222,8 +238,7 @@ namespace Player
 
                     yield return new WaitForSeconds(dashTime);
                     // end of the dash, reset of the speed, the player can move and the player can dash again
-
-
+                   
                     if (canSpawnPlatform && platformNumber > 0)
                     {
                         currentPlatform = Instantiate(windPlatform, new Vector2(transform.position.x + playerRGB.velocity.normalized.x * 0.2f, transform.position.y + playerRGB.velocity.normalized.y * 0.2f), Quaternion.identity);
@@ -237,7 +252,10 @@ namespace Player
                     cantMove = false;
                     dashIsActive = false;
                     sprint = sprintForce;
+                    if (!grosPoussière.activeInHierarchy)
+                        grosPoussière.SetActive(true);
                     playerRGB.drag = 10 / inertieAfterDash;
+                    dashTrail.SetActive(false);
                     yield return new WaitForSeconds(dashCooldown);
                     cantDash = false;
                 }

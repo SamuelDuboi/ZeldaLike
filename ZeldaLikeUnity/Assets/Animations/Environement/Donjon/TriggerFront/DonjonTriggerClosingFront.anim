@@ -349,6 +349,70 @@ AnimationClip:
     path: Door
     classID: 212
     script: {fileID: 0}
+  - curve:
+    - time: 0
+      value: {fileID: 4064108181643117540, guid: 34f5301a3d7499941b9751cd2639a2a1,
+        type: 3}
+    - time: 0.68333334
+      value: {fileID: 4064108181643117540, guid: 34f5301a3d7499941b9751cd2639a2a1,
+        type: 3}
+    - time: 0.71666664
+      value: {fileID: -8196670772037506923, guid: 34f5301a3d7499941b9751cd2639a2a1,
+        type: 3}
+    - time: 0.76666665
+      value: {fileID: 4863845740374846427, guid: 34f5301a3d7499941b9751cd2639a2a1,
+        type: 3}
+    - time: 0.8333333
+      value: {fileID: -1034257732834211977, guid: 34f5301a3d7499941b9751cd2639a2a1,
+        type: 3}
+    - time: 0.8666667
+      value: {fileID: 312280733740245656, guid: 34f5301a3d7499941b9751cd2639a2a1,
+        type: 3}
+    - time: 0.9166667
+      value: {fileID: -6539704781248993418, guid: 34f5301a3d7499941b9751cd2639a2a1,
+        type: 3}
+    - time: 0.96666664
+      value: {fileID: -4309195615895553921, guid: 34f5301a3d7499941b9751cd2639a2a1,
+        type: 3}
+    - time: 1.0166667
+      value: {fileID: 2420658973523119187, guid: 34f5301a3d7499941b9751cd2639a2a1,
+        type: 3}
+    attribute: m_Sprite
+    path: LF_Asset_Donjon_DallePorte_0
+    classID: 212
+    script: {fileID: 0}
+  - curve:
+    - time: 0
+      value: {fileID: 4064108181643117540, guid: 34f5301a3d7499941b9751cd2639a2a1,
+        type: 3}
+    - time: 0.68333334
+      value: {fileID: 4064108181643117540, guid: 34f5301a3d7499941b9751cd2639a2a1,
+        type: 3}
+    - time: 0.71666664
+      value: {fileID: 4064108181643117540, guid: 34f5301a3d7499941b9751cd2639a2a1,
+        type: 3}
+    - time: 0.76666665
+      value: {fileID: 4863845740374846427, guid: 34f5301a3d7499941b9751cd2639a2a1,
+        type: 3}
+    - time: 0.8333333
+      value: {fileID: -1034257732834211977, guid: 34f5301a3d7499941b9751cd2639a2a1,
+        type: 3}
+    - time: 0.8666667
+      value: {fileID: 312280733740245656, guid: 34f5301a3d7499941b9751cd2639a2a1,
+        type: 3}
+    - time: 0.9166667
+      value: {fileID: -6539704781248993418, guid: 34f5301a3d7499941b9751cd2639a2a1,
+        type: 3}
+    - time: 0.96666664
+      value: {fileID: -4309195615895553921, guid: 34f5301a3d7499941b9751cd2639a2a1,
+        type: 3}
+    - time: 1.0166667
+      value: {fileID: 2420658973523119187, guid: 34f5301a3d7499941b9751cd2639a2a1,
+        type: 3}
+    attribute: m_Sprite
+    path: LF_Asset_Donjon_DallePorte_0 (1)
+    classID: 212
+    script: {fileID: 0}
   m_SampleRate: 60
   m_WrapMode: 0
   m_Bounds:
@@ -386,6 +450,20 @@ AnimationClip:
       isPPtrCurve: 0
     - serializedVersion: 2
       path: 718797587
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 212
+      customType: 23
+      isPPtrCurve: 1
+    - serializedVersion: 2
+      path: 2261286510
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 212
+      customType: 23
+      isPPtrCurve: 1
+    - serializedVersion: 2
+      path: 2980660893
       attribute: 0
       script: {fileID: 0}
       typeID: 212
@@ -430,12 +508,30 @@ AnimationClip:
     - {fileID: -8757053568548973634, guid: 42ef5bb8478fa634e9dda683fb6527da, type: 3}
     - {fileID: -3150076751367006912, guid: 42ef5bb8478fa634e9dda683fb6527da, type: 3}
     - {fileID: -2615486233819845910, guid: 42ef5bb8478fa634e9dda683fb6527da, type: 3}
+    - {fileID: 4064108181643117540, guid: 34f5301a3d7499941b9751cd2639a2a1, type: 3}
+    - {fileID: 4064108181643117540, guid: 34f5301a3d7499941b9751cd2639a2a1, type: 3}
+    - {fileID: -8196670772037506923, guid: 34f5301a3d7499941b9751cd2639a2a1, type: 3}
+    - {fileID: 4863845740374846427, guid: 34f5301a3d7499941b9751cd2639a2a1, type: 3}
+    - {fileID: -1034257732834211977, guid: 34f5301a3d7499941b9751cd2639a2a1, type: 3}
+    - {fileID: 312280733740245656, guid: 34f5301a3d7499941b9751cd2639a2a1, type: 3}
+    - {fileID: -6539704781248993418, guid: 34f5301a3d7499941b9751cd2639a2a1, type: 3}
+    - {fileID: -4309195615895553921, guid: 34f5301a3d7499941b9751cd2639a2a1, type: 3}
+    - {fileID: 2420658973523119187, guid: 34f5301a3d7499941b9751cd2639a2a1, type: 3}
+    - {fileID: 4064108181643117540, guid: 34f5301a3d7499941b9751cd2639a2a1, type: 3}
+    - {fileID: 4064108181643117540, guid: 34f5301a3d7499941b9751cd2639a2a1, type: 3}
+    - {fileID: 4064108181643117540, guid: 34f5301a3d7499941b9751cd2639a2a1, type: 3}
+    - {fileID: 4863845740374846427, guid: 34f5301a3d7499941b9751cd2639a2a1, type: 3}
+    - {fileID: -1034257732834211977, guid: 34f5301a3d7499941b9751cd2639a2a1, type: 3}
+    - {fileID: 312280733740245656, guid: 34f5301a3d7499941b9751cd2639a2a1, type: 3}
+    - {fileID: -6539704781248993418, guid: 34f5301a3d7499941b9751cd2639a2a1, type: 3}
+    - {fileID: -4309195615895553921, guid: 34f5301a3d7499941b9751cd2639a2a1, type: 3}
+    - {fileID: 2420658973523119187, guid: 34f5301a3d7499941b9751cd2639a2a1, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1.0166667
+    m_StopTime: 1.0333333
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
