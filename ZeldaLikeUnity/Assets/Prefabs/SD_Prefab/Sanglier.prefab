@@ -94,6 +94,36 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 5
+--- !u!1 &4381900845571631297
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4381900845571631298}
+  m_Layer: 0
+  m_Name: "\xE9tincelle"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &4381900845571631298
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4381900845571631297}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7449929291154221861}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7449929291154221862
 GameObject:
   m_ObjectHideFlags: 0
@@ -132,6 +162,7 @@ Transform:
   - {fileID: 7449929292177419735}
   - {fileID: 6196916012362840101}
   - {fileID: 7647029555542830403}
+  - {fileID: 4381900845571631298}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -173,7 +204,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 15
+  m_SortingOrder: 3
   m_Sprite: {fileID: -3056641150716744651, guid: 53cdee61bb2845847a09be964ae393f8,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -268,6 +299,7 @@ MonoBehaviour:
   startPosition: {x: 0, y: 0}
   healDrop: {fileID: 7435818835512353066, guid: 85e9539271ca936479b5b4621a349221,
     type: 3}
+  etincelles: {fileID: 4381900845571631297}
   timeCharging: 1
   timeResting: 4
 --- !u!95 &5725253169311120615

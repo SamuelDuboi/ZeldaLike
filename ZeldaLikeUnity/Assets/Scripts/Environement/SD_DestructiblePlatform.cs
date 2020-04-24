@@ -27,13 +27,13 @@ public class SD_DestructiblePlatform : MonoBehaviour
             isActive = true;
             animator.SetTrigger("Fall");
             yield return new WaitForSeconds(animator.GetCurrentAnimatorClipInfo(0).Length);
-            tag = "DestroyedPlatform";
+            tag = "Hole";
             SD_PlayerMovement.Instance.isAbleToRunOnHole = false;
             if (!onePath)
             {
                 yield return new WaitForSeconds(respawnCooldown);
                 animator.SetTrigger("Respawn");
-                tag = "Untagged";
+                tag = "DestroyedPlatform";
             }
             isActive = false;
         }
