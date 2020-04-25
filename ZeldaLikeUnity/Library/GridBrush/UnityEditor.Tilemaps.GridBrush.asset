@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: Default Brush
   m_EditorClassIdentifier: 
   m_Cells:
+<<<<<<< HEAD
   - m_Tile: {fileID: 11400000, guid: 925e231538643804fb8626852fdcb191, type: 2}
+=======
+  - m_Tile: {fileID: 11400000, guid: 0c7916694cf2b8d4fa0583e80d430e4b, type: 2}
+>>>>>>> SamuelM
     m_Matrix:
       e00: 1
       e01: 0
@@ -32,6 +36,7 @@ MonoBehaviour:
       e32: 0
       e33: 1
     m_Color: {r: 1, g: 1, b: 1, a: 1}
+<<<<<<< HEAD
 <<<<<<< HEAD
   m_Size: {x: 1, y: 1, z: 1}
   m_Pivot: {x: 0, y: 0, z: 0}
@@ -96,4 +101,8 @@ MonoBehaviour:
   m_Size: {x: 4, y: 1, z: 1}
   m_Pivot: {x: 3, y: 0, z: 0}
 >>>>>>> ThibautGDt
+=======
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Pivot: {x: 0, y: 0, z: 0}
+>>>>>>> SamuelM
   m_CanChangeZPosition: 0
