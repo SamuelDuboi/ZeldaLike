@@ -140,7 +140,7 @@ namespace Management
                     SceneManager.LoadScene(save.scenceIndex);
 
                 }
-
+                SD_PlayerMovement.Instance.isAbleToRunOnHole = true;
                 player.transform.position = new Vector2(save.playerPositionX, save.playerPositionY);
                 SD_PlayerRessources.Instance.currentMaxLife = save.pvMax;
                 SD_PlayerAttack.Instance.canParry = save.canParry;
@@ -208,7 +208,7 @@ namespace Management
                 SD_PlayerAttack.Instance.cantAttack = false;
                 SD_PlayerMovement.Instance.cantMove = false;
                 StartCoroutine(waitToNotDash());
-
+                SD_PlayerMovement.Instance.isAbleToRunOnHole = false;
             }
             else
             {

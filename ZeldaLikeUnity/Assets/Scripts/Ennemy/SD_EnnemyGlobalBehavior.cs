@@ -131,14 +131,29 @@ namespace Ennemy
             life -= damage;
 
             yield return new WaitForSeconds(0.1f* freezTime);
-
-            RaycastHit2D raycastHit2D = Physics2D.Raycast(transform.position,
-                                                            new Vector2(transform.position.x - attack.transform.parent.position.x,
-                                                             transform.position.y - attack.transform.parent.position.y),
-                                                            2,
-                                                            attackMask);
-            etincelles.transform.position = raycastHit2D.point;
-            etincelles.SetActive(true);
+            RaycastHit2D raycastHit2D;
+            if (attack.layer ==8)
+            {
+                 raycastHit2D = Physics2D.Raycast(transform.position,
+                                                           new Vector2(transform.position.x - attack.transform.parent.position.x,
+                                                            transform.position.y - attack.transform.parent.position.y),
+                                                           2,
+                                                           attackMask);
+            }
+            else
+            {
+                 raycastHit2D = Physics2D.Raycast(transform.position,
+                                                               new Vector2(transform.position.x - attack.transform.position.x,
+                                                                transform.position.y - attack.transform.position.y),
+                                                               2,
+                                                               attackMask);
+            }
+               
+            if (raycastHit2D.collider != null)
+            {
+                etincelles.transform.position = raycastHit2D.point;
+                etincelles.SetActive(true);
+            }
             Time.timeScale = 1;
             if (life <= 0)
             {

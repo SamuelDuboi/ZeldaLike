@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Ennemy;
-using UnityEditor.ShaderGraph.Internal;
 
 public class SD_WindProjectile : MonoBehaviour
 {

@@ -123,7 +123,7 @@ public class SD_Trigger : MonoBehaviour
                 playerCam.SetActive(true);
                 Time.timeScale = 1;
                 timer = 0;
-                if(SceneManager.GetActiveScene().buildIndex == 1 && useForHenry)
+                if(SceneManager.GetActiveScene().buildIndex == 2 && useForHenry)
                 {
                     HenryBehavior.Instance.NextHenry();
                 }
