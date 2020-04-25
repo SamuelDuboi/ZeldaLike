@@ -31,7 +31,6 @@ public class SD_MegaLaser : MonoBehaviour
             LineRenderer laserRender = GetComponent<LineRenderer>();
             laserRender.enabled = true;
             laserRender.startWidth = 0.2f;
-            laserRender.startColor = Color.red;
             for (float i = 0; i < 100 * (chargeTimer- esquiveTime); i++)
             {
                 if (stop)
@@ -51,7 +50,6 @@ public class SD_MegaLaser : MonoBehaviour
                 if (stop)
                     break;
                 laserRender.startWidth = 1;
-                laserRender.startColor = new Color32(132, 50, 192, 255);
                 laserRender.SetPosition(0, transform.position);
                 laserRender.SetPosition(1, target.position);
                 RaycastHit2D hitpoint = Physics2D.Raycast(transform.position,

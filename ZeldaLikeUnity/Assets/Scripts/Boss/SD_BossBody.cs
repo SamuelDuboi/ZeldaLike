@@ -19,6 +19,7 @@ public class SD_BossBody : MonoBehaviour
     [Header("Phase1")]
     public float couldowBulletMin1;
     public float couldowBulletMax1;
+    public GameObject laser;
 
     [Space]
     [Header("Phase2")]
@@ -102,8 +103,18 @@ public class SD_BossBody : MonoBehaviour
         }
         if(collision.gameObject.layer ==14 && collision.gameObject.tag == "WindProjectil")
         {
-            shield[SD_BossBehavior.Instance.phaseNumber - 1].SetActive(false);
-            phaseWeakPoins[SD_BossBehavior.Instance.phaseNumber - 1].SetActive(true);
+            int cpt = 0;
+            foreach (GameObject collider in shield)
+            {
+                if (collider.GetComponent<BoxCollider2D>().IsTouching(collision))
+                {
+                    weakPointNumber--;
+                    Debug.Log(weakPointNumber);
+                    shield[cpt].SetActive(false);
+                    phaseWeakPoins[cpt].SetActive(true);
+                }
+                cpt++;
+            }
         }
     }
 
@@ -124,7 +135,7 @@ public class SD_BossBody : MonoBehaviour
                     camerashake.SetActive(false);
 
                 }
-                StartCoroutine(RockFall());
+               // StartCoroutine(RockFall());
                 phaseWeakPoins[SD_BossBehavior.Instance.phaseNumber - 2].SetActive(false);
                 shield[SD_BossBehavior.Instance.phaseNumber - 1].SetActive(true);
                 weakPointNumber = GetComponentsInChildren<BoxCollider2D>().Length - 3;
@@ -148,7 +159,7 @@ public class SD_BossBody : MonoBehaviour
                     camerashake.SetActive(false);
 
                 }
-                StartCoroutine(RockFall());
+               // StartCoroutine(RockFall());
                 phaseWeakPoins[SD_BossBehavior.Instance.phaseNumber - 2].SetActive(false);
                 shield[SD_BossBehavior.Instance.phaseNumber - 1].SetActive(true);
                 weakPointNumber = GetComponentsInChildren<BoxCollider2D>().Length - 3;
@@ -176,51 +187,26 @@ public class SD_BossBody : MonoBehaviour
     {
         timer = 0;
         timerToReach = Random.Range(TimerMin, timerMax);
-            if (shootSwitch == 0)
-            {
-                for (int i = 0; i < shotPoint1.Length; i++)
-                {
-                shotPoint1[i].GetComponent<LineRenderer>().enabled = true;
-                shotPoint1[i].GetComponent<LineRenderer>().SetPosition(0, shotPoint1[i].transform.position);
-                shotPoint1[i].GetComponent<LineRenderer>().SetPosition(1, shotPoint1[i].transform.position - new Vector3(0,100,0));
-                yield return null;
-                }
-            yield return new WaitForSeconds(2f);
-                for (int i = 0; i < shotPoint1.Length; i++)
-                {
-                    shotPoint1[i].GetComponent<LineRenderer>().enabled = false;
-                    GameObject newBullet = Instantiate(bullet, shotPoint1[i].transform.position, Quaternion.identity);
-                    newBullet.GetComponent<CJ_BulletBehaviour>().target = new Vector2(newBullet.transform.position.x, newBullet.transform.position.y - 10f);
-                    newBullet.GetComponent<CJ_BulletBehaviour>().parent = gameObject;
-                yield return null;
-                }
-                shootSwitch = 1;
-            }
-            else if(shootSwitch == 1)
-            {
-                for (int i = 0; i < shotPoint2.Length; i++)
-                {
-                shotPoint2[i].GetComponent<LineRenderer>().enabled = true;
-                shotPoint2[i].GetComponent<LineRenderer>().SetPosition(0, shotPoint2[i].transform.position);
-                shotPoint2[i].GetComponent<LineRenderer>().SetPosition(1, shotPoint2[i].transform.position - new Vector3(0, 100, 0));
-                yield return null;
-                }
-            yield return new WaitForSeconds(2f);
-            for (int i = 0; i < shotPoint2.Length; i++)
-                {
-                    shotPoint2[i].GetComponent<LineRenderer>().enabled = false;
-                    GameObject newBullet = Instantiate(bullet, shotPoint2[i].transform.position, Quaternion.identity);
-                    newBullet.GetComponent<CJ_BulletBehaviour>().target = new Vector2(newBullet.transform.position.x, newBullet.transform.position.y - 10f);
-                    newBullet.GetComponent<CJ_BulletBehaviour>().parent = gameObject;
-                yield return null;
-            }
-                shootSwitch = 0;
-            }
+        if (shootSwitch == 0)
+        {
+            GameObject currentLaser = Instantiate(laser, transform);
+            currentLaser.GetComponent<Animator>().SetBool("Right", true);
+            shootSwitch++;
+        }
+        else if (shootSwitch == 1)
+        {
+            GameObject currentLaser = Instantiate(laser, transform);
+            currentLaser.GetComponent<Animator>().SetBool("Right", false);
 
+            shootSwitch = 0;
+        }
+        yield return new WaitForSeconds(timerToReach);
     }
    
 
-    IEnumerator Moving()
+
+
+IEnumerator Moving()
     {
         SD_PlayerMovement.Instance.cantDash = true;
         SD_BossBehavior.Instance.canMove = true;

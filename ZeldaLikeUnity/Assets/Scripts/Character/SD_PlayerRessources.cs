@@ -12,7 +12,7 @@ namespace Player
 {
     public class SD_PlayerRessources : Singleton<SD_PlayerRessources>
     {
-        GameObject[] lifes;
+        public GameObject[] lifes ;
         public Sprite halfHeartEmpty;
         public Sprite halfHeart;
         public Sprite completHeartEmpty;
@@ -44,19 +44,9 @@ namespace Player
             MakeSingleton(false);
             //life
             life = currentMaxLife;
-            lifes = GameObject.FindGameObjectsWithTag("Life");
+            
+            LoadLife();
 
-            for(int i=0; i<maxLifePossible- currentMaxLife; i++)
-            {
-                lifes[lifes.Length - 1 - i].SetActive(false);                
-            }
-            for(int x=0; x<life; x++)
-            {
-                if (x % 2 == 0)
-                    lifes[x].GetComponent<Image>().sprite = halfHeart ;
-                else
-                    lifes[x].GetComponent<Image>().sprite = completHeart;
-            }
 
             chanceDropHeal = 2;
         }
@@ -100,13 +90,23 @@ namespace Player
                 {
                     StopCoroutine(SD_PlayerMovement.Instance.Dash());
                 }
-                if (life % 2 == 0)
-                    lifes[life-1].GetComponent<Image>().sprite = completHeartEmpty;
-                else if(!lifes[life].activeInHierarchy)
-                    lifes[life-1].GetComponent<Image>().sprite = halfHeartEmpty ;
+                life-= damage;
+                if(life %2 ==0)
+                {
+                    if (maxLifePossible == life + 1)
+                        lifes[life ].GetComponent<Image>().sprite = halfHeartEmpty;
+                    else
+                        lifes[life].GetComponent<Image>().color = new Color(0,0,0,0);
+                   
+                }
+
                 else
-                    lifes[life - 1].GetComponent<Image>().color = new Color32 (0,0,0,0);
-                life -= damage;
+                {
+                    lifes[life ].GetComponent<Image>().sprite = completHeartEmpty;
+
+                }
+                
+
                
                
                 yield return new WaitForSeconds(0.2f);
@@ -142,12 +142,14 @@ namespace Player
             life += amount; 
             if (life > currentMaxLife)
                 life = currentMaxLife;
-
-            if (life % 2 == 0)
-                lifes[life].GetComponent<Image>().sprite = halfHeart;
-            else
-                lifes[life].GetComponent<Image>().sprite = completHeart ;
-
+            for (int x = 0; x < life; x++)
+            {
+                lifes[x].GetComponent<Image>().color = new Color(1, 1, 1, 1);
+                if (x % 2 == 0)
+                    lifes[x].GetComponent<Image>().sprite = halfHeart;
+                else
+                    lifes[x].GetComponent<Image>().sprite = completHeart;
+            }
         }
         #endregion
         #region RessourcesUpgrade
@@ -159,6 +161,7 @@ namespace Player
 
             for (int x = 0; x < life; x++)
             {
+                lifes[x].GetComponent<Image>().color = new Color(1, 1, 1, 1);
                 if (x % 2 == 0)
                     lifes[x].GetComponent<Image>().sprite = halfHeart;
                 else
@@ -170,6 +173,21 @@ namespace Player
 
         #endregion
        
+
+        void LoadLife()
+        {
+            for (int i = 0; i < maxLifePossible - life; i++)
+            {
+                lifes[lifes.Length - 1 - i].GetComponent<Image>().color = new Color(0, 0, 0, 0);
+            }
+            for (int x = 0; x < life; x++)
+            {
+                if (x % 2 == 0)
+                    lifes[x].GetComponent<Image>().sprite = halfHeart;
+                else
+                    lifes[x].GetComponent<Image>().sprite = completHeart;
+            }
+        }
     }
 
 

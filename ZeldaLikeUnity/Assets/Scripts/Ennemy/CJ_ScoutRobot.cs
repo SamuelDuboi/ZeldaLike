@@ -69,18 +69,31 @@ namespace Ennemy
         {
             isAttacking = true;
             float timer = 2f;
+            float swapColor = 0;
             canShoot = false;
             target.GetComponent<SpriteRenderer>().color = Color.white;
+            ennemyAnimator.SetBool("Attack", true);
             while (timer > 0)
             {
                 target.SetActive(true);
-                timer -= Time.deltaTime;
+                timer -= 0.01f;
+                swapColor  ++;
                 target.transform.position = player.transform.position;
-                yield return null;
+                yield return new WaitForSeconds(0.01f);
+                if (swapColor > 15)
+                { if (swapColor > 30)
+                        swapColor = 0;
+                    target.GetComponent<SpriteRenderer>().color = Color.white;
+                }
+                else
+                    target.GetComponent<SpriteRenderer>().color = Color.red;
+
+
                 if (!isAttacking)
                     break;
             }
-            target.GetComponent<SpriteRenderer>().color = Color.black;
+            
+            target.GetComponent<SpriteRenderer>().color = Color.red;
             if (!isAttacking)
             {
                 target.SetActive(false);
@@ -94,11 +107,32 @@ namespace Ennemy
             GameObject bullet = Instantiate(ennemyBullet, transform.position, Quaternion.identity);
             bullet.GetComponent<CJ_BulletBehaviour>().parent = gameObject;
             bullet.GetComponent<CJ_BulletBehaviour>().target = target.transform.position;
+            ennemyAnimator.SetBool("Attack", false);
             yield return new WaitForSeconds(recoverytime);
             canMove = true;
             isAvoidingObstacles = true;
             //yield return new WaitForSeconds(recoverytime);
-            canShoot = true;  
+            canShoot = true;
+            isAttacking = false;
+        }
+
+        public override void Aggro(Collider2D collision)
+        {
+            base.Aggro(collision);
+            ennemyAnimator.SetTrigger("WakeUp");
+        }
+        public override void Desaggro(Collider2D collision)
+        {
+            base.Desaggro(collision);
+            ennemyAnimator.SetTrigger("Sleep");
+        }
+        public void Desapear()
+        {
+           for(int i = 0; i<transform.childCount-1; i++)
+            {
+                transform.GetChild(i).gameObject.SetActive(false);
+            }
+            GetComponent<BoxCollider2D>().enabled = false;
         }
     }
 }
