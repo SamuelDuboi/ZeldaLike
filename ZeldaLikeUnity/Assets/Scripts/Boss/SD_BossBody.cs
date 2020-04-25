@@ -26,7 +26,7 @@ public class SD_BossBody : MonoBehaviour
     public float couldowBulletMin2;
     public float couldowBulletMax2;
     public GameObject bossPositionPhase2;
-
+    public GameObject fakeArms;
 
     [Space]
     [Header("Phase3")]
@@ -122,6 +122,7 @@ public class SD_BossBody : MonoBehaviour
     {
         if (SD_BossBehavior.Instance.canMove && SD_BossBehavior.Instance.phaseNumber == 2)
         {
+            
             cameranormal.SetActive(false);
             camerashake.SetActive(true);
             transform.localPosition = Vector3.MoveTowards(transform.localPosition, bossPositionPhase2.transform.position, 10 * Time.deltaTime);
@@ -129,6 +130,7 @@ public class SD_BossBody : MonoBehaviour
 
             if ( Vector2.Distance(transform.localPosition, bossPositionPhase2.transform.position)< 0.5f)
             {
+                fakeArms.SetActive(false);
                 if (!cameranormal.activeInHierarchy)
                 {
                     cameranormal.SetActive(true);
