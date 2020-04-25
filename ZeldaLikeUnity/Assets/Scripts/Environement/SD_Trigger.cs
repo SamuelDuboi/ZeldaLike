@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Player;
 using Management;
+using UnityEngine.SceneManagement;
+
 public class SD_Trigger : MonoBehaviour
 {
     public GameObject camera;
@@ -21,6 +23,8 @@ public class SD_Trigger : MonoBehaviour
     public bool stayOpen;
     float distance;
     public float timeCameraMoving = 1;
+
+    public bool useForHenry;
     private void Start()
     { 
 
@@ -119,6 +123,10 @@ public class SD_Trigger : MonoBehaviour
                 playerCam.SetActive(true);
                 Time.timeScale = 1;
                 timer = 0;
+                if(SceneManager.GetActiveScene().buildIndex == 1 && useForHenry)
+                {
+                    HenryBehavior.Instance.NextHenry();
+                }
             }
 
         }

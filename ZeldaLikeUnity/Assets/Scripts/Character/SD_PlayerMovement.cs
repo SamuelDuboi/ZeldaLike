@@ -26,6 +26,7 @@ namespace Player
         public float sprintForce;
         [HideInInspector] public Rigidbody2D playerRGB;
 
+        [Header ("Dash")]
         [Range(0, 3)]
         public float dashTime;
         [Range(0, 10)]
@@ -33,6 +34,7 @@ namespace Player
         [Range(0, 10)]
         public float dashCooldown;
         public int fallDamage;
+        public GameObject dashTrail;
         //enable movement on false
         [HideInInspector] public bool cantMove;
 
@@ -41,6 +43,9 @@ namespace Player
         [HideInInspector] public bool hasWindShield;
 
         [HideInInspector] public bool dashIsActive;
+        
+
+        [Header("Platform")]
         bool wind;
 
         public GameObject windPlatform;
@@ -57,6 +62,8 @@ namespace Player
         [Range(0,1)]
         public float timeBeforAbleToMoveAfterFall;
 
+        bool isOnPlatformDestructible;
+        float timerPLaftormDestructible;
        [HideInInspector]  public int keyNumber;
         public GameObject[] keyUI;
         bool positionForDestroyedPlatformIsAlreadyChose;
@@ -75,6 +82,9 @@ namespace Player
         public float timeBeforBurning = 2f;
         [Range(0, 5)]
         public float timeBetweenBurn = 1f;
+
+
+        public GameObject grosPoussière;
         void Awake()
         {
             MakeSingleton(false);
@@ -107,6 +117,9 @@ namespace Player
                 SD_PlayerAnimation.Instance.PlayerAnimator.SetBool("IsMoving", false);
                 sprint = 1;
                 playerRGB.drag = 10;
+
+                if (grosPoussière.activeInHierarchy)
+                    grosPoussière.SetActive(false);
             }
 
 
@@ -136,6 +149,16 @@ namespace Player
                     StartCoroutine(SD_PlayerRessources.Instance.TakingDamage(1, fire, false, 1));
                     damageTimer = 0;
                     timer = 0;
+                }
+            }
+
+            if (!isOnPlatformDestructible && positionForDestroyedPlatformIsAlreadyChose)
+            {
+                timerPLaftormDestructible += Time.deltaTime;
+                if (timerPLaftormDestructible > 0.5f && playerRGB.simulated)
+                {
+                    timerPLaftormDestructible = 0;
+                    positionForDestroyedPlatformIsAlreadyChose = false;
                 }
             }
         }
@@ -187,6 +210,7 @@ namespace Player
                     //cancel of the current attack if they was an attack
                     StartCoroutine(SD_PlayerAttack.Instance.Cancel(0f));
                     yield return new WaitForSeconds(0.01f);
+
                     // reset of the speed in case the player was attacking and so, speed was reduce
                     speed = initialSpeed;
                     // add a force for the dash
@@ -214,15 +238,15 @@ namespace Player
                     SD_PlayerAnimation.Instance.PlayerAnimator.SetTrigger("Dash");
                     cantMove = true;
                     cantDash = true;
-
+                    dashTrail.SetActive(true);
+                    float angle = Mathf.Atan2(YAxis, XAxis) * Mathf.Rad2Deg;
+                    dashTrail.transform.rotation =Quaternion.Euler(0,0, angle);
                     timer = 0;
                     burnStade--;
                     if (burnStade <= 0)
                         burnStade = 0;
-
                     yield return new WaitForSeconds(dashTime);
                     // end of the dash, reset of the speed, the player can move and the player can dash again
-
 
                     if (canSpawnPlatform && platformNumber > 0)
                     {
@@ -233,11 +257,16 @@ namespace Player
                     }
 
                     yield return new WaitForSeconds(0.1f);
+
+                    if (!grosPoussière.activeInHierarchy)
+                        grosPoussière.SetActive(true);
                     speed = initialSpeed;
                     cantMove = false;
                     dashIsActive = false;
                     sprint = sprintForce;
+                    
                     playerRGB.drag = 10 / inertieAfterDash;
+                    dashTrail.SetActive(false);
                     yield return new WaitForSeconds(dashCooldown);
                     cantDash = false;
                 }
@@ -283,17 +312,13 @@ namespace Player
                     Destroy(collision.gameObject);
                 }
             }
-            if (collision.gameObject.tag == "Hole")
+            if (collision.gameObject.tag == "Hole" && !positionForDestroyedPlatformIsAlreadyChose)
             {
                 playerRespawnAfterFall = new Vector2(transform.position.x - XAxis * 0.5f, transform.position.y - YAxis * 0.5f);
                 isAbleToRunOnHole = false;
             }
                 
-            if (collision.gameObject.tag == "DestroyedPlatform" && !positionForDestroyedPlatformIsAlreadyChose)
-            {
-                playerRespawnAfterFall = new Vector2(transform.position.x - XAxis * 0.5f, transform.position.y - YAxis * 0.5f);
-                positionForDestroyedPlatformIsAlreadyChose = true;
-            }
+          
 
         }
         private void OnTriggerStay2D(Collider2D collision)
@@ -301,7 +326,20 @@ namespace Player
 
             if (collision.gameObject.tag == "WindPlatform")
                 isAbleToRunOnHole = true;
-            if (collision.gameObject.tag == "Hole" || collision.gameObject.tag == "DestroyedPlatform")
+            if (collision.gameObject.tag == "DestroyedPlatform")
+            {
+                isOnPlatformDestructible = true;
+
+                timerPLaftormDestructible = 0;
+                if (!positionForDestroyedPlatformIsAlreadyChose)
+                {
+                    playerRespawnAfterFall = new Vector2(transform.position.x - (XAxis) +(-SD_PlayerAnimation.Instance.PlayerAnimator.GetFloat("XAxis"))* collision.GetComponent<Collider2D>().bounds.size.x * 0.1f,
+                                                       transform.position.y - (YAxis) +(- SD_PlayerAnimation.Instance.PlayerAnimator.GetFloat("YAxis")) * collision.GetComponent<Collider2D>().bounds.size.y * 0.1f);
+                    positionForDestroyedPlatformIsAlreadyChose = true;
+                }
+                
+            }
+            if (collision.gameObject.tag == "Hole")
                 if (!isAbleToRunOnHole && !dashIsActive)
                 {
                     StartCoroutine(Fall(collision));
@@ -334,11 +372,18 @@ namespace Player
                 SD_PlayerAttack.Instance.hasWind = true;
             }
             if (isAbleToRunOnHole && collision.tag == "WindPlatform" || collision.tag == "Hole")
+            {
                 isAbleToRunOnHole = false;
+                isOnPlatformDestructible = false;
+            }
             if (collision.tag == "Hole" && currentPlatform != null)
             {
                 StartCoroutine(PlatfromCantSwpanAfterTrigger());
                 Destroy(currentPlatform);
+            }
+            if (collision.gameObject.tag == "DestroyedPlatform" )
+            {
+                isOnPlatformDestructible = false;
             }
 
             if (collision.tag == "Fire")
@@ -401,6 +446,8 @@ namespace Player
                 SD_PlayerAttack.Instance.cantAttack = true;
                 SD_PlayerRessources.Instance.cantTakeDamage = true;
                 yield return new WaitForSeconds(timeBeforAbleToMoveAfterFall);
+
+                isOnPlatformDestructible = false;
                 cantDash = false;
                 cantMove = false;
                 SD_PlayerAttack.Instance.cantAttack = false;

@@ -11,8 +11,10 @@ public class SD_ParryNote : MonoBehaviour
         if (collision.gameObject.tag == "Player" && Input.GetButtonDown("Interact"))
         {
             SD_PlayerAttack.Instance.canParry = true;
-            scoutRobot[1].SetActive(true);
-            scoutRobot[0].SetActive(true);
+            foreach(GameObject scout in scoutRobot)
+            {
+                scout.SetActive(true);
+            }
             GetComponent<Animator>().enabled = true;
         }
     }

@@ -43,8 +43,12 @@ namespace Ennemy
         [HideInInspector] public Vector2 startPosition;
 
         public GameObject healDrop;
+
+        public GameObject etincelles;
+        LayerMask attackMask;
         public virtual void Start()
         {
+            attackMask = 1 << 8;
             ennemyRGB = GetComponent<Rigidbody2D>();
             ennemyAnimator = GetComponent<Animator>();
         }
@@ -121,14 +125,20 @@ namespace Ennemy
         {
             canTakeDamage = false;
             Time.timeScale = 0.1f;
-            attack.GetComponent<ParticleSystem>().Play();
             isAttacking = false;
             canMove = false;
             isAggro = false;
             life -= damage;
-            Debug.Log("damaeg" + damage);
-            Debug.Log("life" + life);
+
             yield return new WaitForSeconds(0.1f* freezTime);
+
+            RaycastHit2D raycastHit2D = Physics2D.Raycast(transform.position,
+                                                            new Vector2(transform.position.x - attack.transform.parent.position.x,
+                                                             transform.position.y - attack.transform.parent.position.y),
+                                                            2,
+                                                            attackMask);
+            etincelles.transform.position = raycastHit2D.point;
+            etincelles.SetActive(true);
             Time.timeScale = 1;
             if (life <= 0)
             {
@@ -158,6 +168,7 @@ namespace Ennemy
                 ennemyRGB.velocity = Vector2.zero;
             }
             yield return new WaitForSeconds(0.3f);
+            etincelles.SetActive(false);
             canTakeDamage = true;
 
             StartCoroutine(Stun(1f));
