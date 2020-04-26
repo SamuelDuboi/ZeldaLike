@@ -26,7 +26,7 @@ public class FIrstBossEntry : MonoBehaviour
     {
         if(cameraMove && camera.transform.position.y > currentPosition)
         {
-            cameraCam.orthographicSize += 0.015f;
+            cameraCam.orthographicSize += 0.015f * SD_PlayerMovement.Instance.sprint;
            camera.transform.position += Vector3.up * 0.01f;
             currentPosition = camera.transform.position.y;
             if(cameraCam.orthographicSize >= 10f)
@@ -62,24 +62,52 @@ public class FIrstBossEntry : MonoBehaviour
 
         StartCoroutine(GameManagerV2.Instance.GamePadeShake(0.3f, 0.5f));
         AwakeForce.SetActive(true);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.1f);
+        AwakeForce.SetActive(false);
+        yield return new WaitForSeconds(0.1f);
+        AwakeForce.SetActive(true);
+        yield return new WaitForSeconds(0.3f);
         AwakeForce.SetActive(false);
         yield return new WaitForSeconds(2f);
 
         StartCoroutine(GameManagerV2.Instance.GamePadeShake(0.5f, 1f));
         AwakeForce.SetActive(true);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.1f);
+        AwakeForce.SetActive(false);
+        yield return new WaitForSeconds(0.1f);
+        AwakeForce.SetActive(true); 
+        yield return new WaitForSeconds(0.1f);
+        AwakeForce.SetActive(false);
+        yield return new WaitForSeconds(0.1f);
+        AwakeForce.SetActive(true);
+        yield return new WaitForSeconds(0.2f);
+        AwakeForce.SetActive(false);
+        yield return new WaitForSeconds(0.2f);
+        AwakeForce.SetActive(true);
+        yield return new WaitForSeconds(0.5f);
         AwakeForce.SetActive(false);
         yield return new WaitForSeconds(2f);
 
         StartCoroutine(GameManagerV2.Instance.GamePadeShake(0.7f, 1f));
         AwakeForce.SetActive(true);
+        yield return new WaitForSeconds(0.1f);
+        AwakeForce.SetActive(false);
+        yield return new WaitForSeconds(0.1f);
+        AwakeForce.SetActive(true);
+        yield return new WaitForSeconds(0.1f);
+        AwakeForce.SetActive(false);
+        yield return new WaitForSeconds(0.1f);
+        AwakeForce.SetActive(true);
+        yield return new WaitForSeconds(0.2f);
+        AwakeForce.SetActive(false);
+        yield return new WaitForSeconds(0.2f);
+        AwakeForce.SetActive(true);
         yield return new WaitForSeconds(1f);
         AwakeForce.SetActive(false);
         yield return new WaitForSeconds(2f);
 
-
         StartCoroutine(GameManagerV2.Instance.GamePadeShake(1, 1f));
+        transform.position = Vector3.back*15;
         Boss.SetActive(true);
         cameraPlayer.GetComponentInChildren<CinemachineVirtualCamera>().m_Lens.OrthographicSize = 10;
         cameraPlayer.transform.position = new Vector3(camera.transform.parent.position.x, camera.transform.parent.position.y, -10);

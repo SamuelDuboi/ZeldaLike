@@ -14,7 +14,6 @@ public class SD_BossBody : MonoBehaviour
     Vector2 firstBullet;
     public float bulletNummber;
 
-    public Sprite weakPointDestroyed;
     [Space]
     [Header("Phase1")]
     public float couldowBulletMin1;
@@ -61,13 +60,18 @@ public class SD_BossBody : MonoBehaviour
     public GameObject cameranormal;
     public GameObject camerashake;
 
+
+    [Space]
+    [Header("End")]
+    public GameObject BossEnd;
+
     void Start()
     {
         phaseWeakPoins[1].SetActive(false);
         phaseWeakPoins[2].SetActive(false);
         phaseWeakPoins[0].SetActive(false);
         //- 3 car cllider du boss et des bord pour fair rebondire les mains a ne pas compter
-        weakPointNumber = GetComponentsInChildren<BoxCollider2D>().Length-3;
+        weakPointNumber =3;
         bossCollider = GetComponent<Collider2D>();
         firstBullet = new Vector2(transform.position.x - bossCollider.bounds.extents.x, transform.position.y - bossCollider.bounds.extents.y);
         timerToReach = Random.Range(couldowBulletMin1, couldowBulletMax1);
@@ -85,16 +89,19 @@ public class SD_BossBody : MonoBehaviour
                 if (collider.IsTouching(collision))
                 {
                     weakPointNumber--;
-                    Debug.Log(weakPointNumber);
                     collider.GetComponent<BoxCollider2D>().enabled = false;
-                    collider.GetComponent<SpriteRenderer>().sprite = weakPointDestroyed;
+                    collider.GetComponent<Animator>().SetTrigger("Destroyed");
                     
                         SD_BossBehavior.Instance.phaseNumber++;
 
-                        if (SD_BossBehavior.Instance.phaseNumber == 4)
-                            Destroy(transform.parent.gameObject);
-                        else
-                            StartCoroutine(Moving());
+                    if (SD_BossBehavior.Instance.phaseNumber == 4)
+                    {
+
+                        BossEnd.SetActive(true);
+                        transform.parent.gameObject.SetActive(false);
+                    }
+                    else
+                        StartCoroutine(Moving());
 
                     
 
@@ -125,7 +132,8 @@ public class SD_BossBody : MonoBehaviour
             
             cameranormal.SetActive(false);
             camerashake.SetActive(true);
-            transform.localPosition = Vector3.MoveTowards(transform.localPosition, bossPositionPhase2.transform.position, 10 * Time.deltaTime);
+            transform.localPosition = Vector3.MoveTowards(transform.localPosition, bossPositionPhase2.transform.position, 10 * Time.deltaTime);           
+           fakeArms.transform.localPosition = Vector3.MoveTowards(transform.localPosition, bossPositionPhase2.transform.position, 10 * Time.deltaTime);
             firstBullet = new Vector2(transform.position.x - bossCollider.bounds.extents.x, transform.position.y - bossCollider.bounds.extents.y);
 
             if ( Vector2.Distance(transform.localPosition, bossPositionPhase2.transform.position)< 0.5f)
@@ -138,9 +146,7 @@ public class SD_BossBody : MonoBehaviour
 
                 }
                // StartCoroutine(RockFall());
-                phaseWeakPoins[SD_BossBehavior.Instance.phaseNumber - 2].SetActive(false);
-                shield[SD_BossBehavior.Instance.phaseNumber - 1].SetActive(true);
-                weakPointNumber = GetComponentsInChildren<BoxCollider2D>().Length - 3;
+                weakPointNumber = 2;
                 StartCoroutine(handsMoving());
                 SD_BossBehavior.Instance.canMove = false;
                 SD_PlayerMovement.Instance.cantDash = false;
@@ -162,9 +168,7 @@ public class SD_BossBody : MonoBehaviour
 
                 }
                // StartCoroutine(RockFall());
-                phaseWeakPoins[SD_BossBehavior.Instance.phaseNumber - 2].SetActive(false);
-                shield[SD_BossBehavior.Instance.phaseNumber - 1].SetActive(true);
-                weakPointNumber = GetComponentsInChildren<BoxCollider2D>().Length - 3;
+                weakPointNumber = 1;
                 StartCoroutine(handsMoving());
                 SD_BossBehavior.Instance.canMove = false;
                 SD_PlayerMovement.Instance.cantDash = false;
