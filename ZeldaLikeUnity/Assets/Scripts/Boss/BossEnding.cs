@@ -24,7 +24,7 @@ public class BossEnding : Singleton<BossEnding>
 
     public void Shaking()
     {
-        StartCoroutine(GameManagerV2.Instance.GamePadeShake(1, 2f));
+        StartCoroutine(GameManagerV2.Instance.GamePadeShake(1, 5f));
     }
     public void DestroyWall()
     {

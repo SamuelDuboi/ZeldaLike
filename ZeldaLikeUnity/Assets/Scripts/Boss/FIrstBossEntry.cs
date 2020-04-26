@@ -26,7 +26,15 @@ public class FIrstBossEntry : MonoBehaviour
     {
         if(cameraMove && camera.transform.position.y > currentPosition)
         {
-            cameraCam.orthographicSize += 0.015f * SD_PlayerMovement.Instance.sprint;
+            if (!SD_PlayerAnimation.Instance.PlayerAnimator.GetBool("IsMoving"))
+            {
+                SD_PlayerAnimation.Instance.PlayerAnimator.SetBool("IsMoving", true);
+                SD_PlayerAnimation.Instance.PlayerAnimator.SetFloat("YAxis", 1f);
+                SD_PlayerAnimation.Instance.PlayerAnimator.SetFloat("XAxis", 0);
+
+            }
+            SD_PlayerMovement.Instance.playerRGB.velocity = Vector2.up * 5;
+            cameraCam.orthographicSize += 0.013f ;
            camera.transform.position += Vector3.up * 0.01f;
             currentPosition = camera.transform.position.y;
             if(cameraCam.orthographicSize >= 10f)
@@ -42,16 +50,22 @@ public class FIrstBossEntry : MonoBehaviour
         if(collision.gameObject.layer == 11 &&!cameraMove)
         {
             SD_PlayerMovement.Instance.playerRGB.velocity = Vector2.zero;
-            camera.SetActive(true);
+            camera.transform.SetParent(collision.transform);
             camera.transform.position = new Vector3(collision.transform.position.x, collision.transform.position.y, -10);
-            camera.transform.SetParent(collision.transform);            
-            currentPosition = camera.transform.position.y;
+            currentPosition = camera.transform.position.y-0.01f;
+            camera.SetActive(true);      
+         
             cameraMove = true;
             cameraPlayer.SetActive(false);
+            SD_PlayerMovement.Instance.cantDash = true;
+            SD_PlayerMovement.Instance.cantMove = true;
+            SD_PlayerAttack.Instance.cantAim = true;
+            SD_PlayerAttack.Instance.cantAttack = true;
         }
     }
     IEnumerator WakeUp()
     {
+        SD_PlayerAnimation.Instance.PlayerAnimator.SetBool("IsMoving", false);
         SD_PlayerMovement.Instance.cantDash = true;
         SD_PlayerMovement.Instance.cantMove = true;
         SD_PlayerAttack.Instance.cantAim = true;
@@ -111,8 +125,8 @@ public class FIrstBossEntry : MonoBehaviour
         Boss.SetActive(true);
         cameraPlayer.GetComponentInChildren<CinemachineVirtualCamera>().m_Lens.OrthographicSize = 10;
         cameraPlayer.transform.position = new Vector3(camera.transform.parent.position.x, camera.transform.parent.position.y, -10);
-        camera.SetActive(false);
         cameraPlayer.SetActive(true);
+        camera.SetActive(false);
         SD_PlayerMovement.Instance.cantDash = false;
         SD_PlayerMovement.Instance.cantMove = false;
         SD_PlayerAttack.Instance.cantAim = false;
