@@ -63,6 +63,7 @@ public class SD_Boss2Bullets : MonoBehaviour
         }
         else if( collision.gameObject.layer == 16 && isParry)
         {
+            Debug.Log("rocket touche " + collision);
             collision.transform.parent.GetComponent<SD_Boss2Body>().Stun();
             Destroy(gameObject);
         }

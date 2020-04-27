@@ -49,6 +49,9 @@ public class SD_Boss2Body : Singleton<SD_Boss2Body>
    public GameObject objectForP2;
    public GameObject GG;
     bool finaleTouch;
+
+
+    public Animator mainAnimation;
     // Start is called before the first frame update
     void Start()
     {
@@ -83,8 +86,7 @@ public class SD_Boss2Body : Singleton<SD_Boss2Body>
             if (timer>= stunTime || life <= currentLife- maxLife*LifePourcentageBetweenShield/100 )
             {
                 isStun = false;
-                weakPoint.SetActive(false);
-                shield.SetActive(true);
+                mainAnimation.SetBool("Stun", false);
                 timer = 0;
             }
            
@@ -93,8 +95,7 @@ public class SD_Boss2Body : Singleton<SD_Boss2Body>
         if(laserAA[1] == null && laserAA[0] == null && !finaleTouch)
         {
             isStun = false;
-            weakPoint.SetActive(false);
-            shield.SetActive(true);
+            mainAnimation.SetBool("Stun", false);
             P2 = true;
             foreach (SD_LaserAAA2 laserscript in laserAA)
             {
@@ -159,18 +160,18 @@ public class SD_Boss2Body : Singleton<SD_Boss2Body>
     {
         isStun = true;
         currentLife = life;
-        weakPoint.SetActive(true);
-        shield.SetActive(false);
+        mainAnimation.SetBool("Stun", true);
+        Debug.Log(currentLife - maxLife * LifePourcentageBetweenShield / 100);
     }
 
     IEnumerator NapalmLunch()
     {
         yield return new WaitForSeconds(2);
-        //anime
-        yield return new WaitForSeconds(1.5f);
         int t = 1000;
         while (napalmCPT < t)
         {
+            mainAnimation.SetTrigger("Fire");
+            yield return new WaitForSeconds(1.5f);
             for (int i = 0; i < NapalmNumber; i++)
             {if (P2)
                     break;
