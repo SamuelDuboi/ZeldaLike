@@ -14,6 +14,7 @@ public class Boss2Entry : MonoBehaviour
     float currentPosition;
     bool cameraMove;
 
+    public GameObject grid;
     public GameObject[] bossParts = new GameObject[5];
 
     // Start is called before the first frame update
@@ -70,7 +71,9 @@ public class Boss2Entry : MonoBehaviour
         Boss.SetActive(true);
         yield return new WaitForSeconds(4);
         StartCoroutine(GameManagerV2.Instance.GamePadeShake(1f, 2f));
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(0.5f);
+        Destroy(grid);
+        yield return new WaitForSeconds(2f);
         cameraPlayer.GetComponentInChildren<CinemachineVirtualCamera>().m_Lens.OrthographicSize = 10;
         cameraPlayer.transform.position = new Vector3(camera.transform.parent.position.x, camera.transform.parent.position.y, -10);
         cameraPlayer.SetActive(true);

@@ -28,6 +28,7 @@ public class SD_Boss2Arms : MonoBehaviour
             timer += Time.deltaTime;
             if(timer >= stunTime)
             {
+                timer = 0;
                 canTakeDamage = false;
                 shield.SetActive(true);
                 weakpoint.GetComponent<BoxCollider2D>().enabled = false;
@@ -49,11 +50,19 @@ public class SD_Boss2Arms : MonoBehaviour
             {
                 SD_Boss2Body.Instance.life -= SD_Boss2Body.Instance.maxLife / 8;
                 SD_Boss2Body.Instance.lifeBar.fillAmount = SD_Boss2Body.Instance.life/ SD_Boss2Body.Instance.maxLife;
-                Destroy(Laser);
+                Laser.GetComponent<SD_LaserAAA2>().ToP2();
+                SD_Boss2Body.Instance.LosingArm();
                 weakpoint.SetActive(false);
-                GetComponent<SpriteRenderer>().color = Color.black;
+                GetComponent<Animator>().enabled = true;
                 dead = true;
             }
         }
+    }
+
+    public void AnimtorOff()
+    {
+        GetComponent<SpriteRenderer>().color = Color.black;
+
+        GetComponent<Animator>().enabled = false;
     }
 }

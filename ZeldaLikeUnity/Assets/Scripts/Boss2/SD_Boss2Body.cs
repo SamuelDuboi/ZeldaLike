@@ -92,40 +92,31 @@ public class SD_Boss2Body : Singleton<SD_Boss2Body>
            
              
         }
-        if(laserAA[1] == null && laserAA[0] == null && !finaleTouch)
-        {
-            isStun = false;
-            mainAnimation.SetBool("Stun", false);
-            P2 = true;
-            foreach (SD_LaserAAA2 laserscript in laserAA)
-            {
-                laserscript.ToP2();
-            }
-            megaLaserScript.stop = true;
-            StartCoroutine(GameManagerV2.Instance.GamePadeShake(1, 6f));
-            StopCoroutine(LunchBullet());
-            StopCoroutine(NapalmLunch());
-            StopCoroutine(megaLaserScript.LaserBeam());
-            finaleTouch = true;
 
-            GG.SetActive(true);
-            finaleTouch = true;
-        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
         if (collision.gameObject.layer == 8)
         {
-           
-            life--;
-            lifeBar.fillAmount = life / maxLife;
-            if (life <= maxLife / 4)
+            if (finaleTouch)
             {
-                life = maxLife / 4;
-                lifeBar.fillAmount = life / maxLife;
-                StartCoroutine(ToP2());
+                mainAnimation.SetTrigger("Death");
+                StartCoroutine(Death());
             }
+            else
+            {
+                life--;
+                lifeBar.fillAmount = life / maxLife;
+                if (life <= maxLife / 4)
+                {
+                    life = maxLife / 4;
+                    lifeBar.fillAmount = life / maxLife;
+                    StartCoroutine(ToP2());
+                }
+
+            }   
+           
 
           
         }
@@ -233,7 +224,7 @@ public class SD_Boss2Body : Singleton<SD_Boss2Body>
             SD_PlayerMovement.Instance.cantMove = false;
             SD_PlayerAttack.Instance.cantAim = false;
             SD_PlayerAttack.Instance.cantAttack = false;
-            SD_PlayerRessources.Instance.cantTakeDamage = true;
+            SD_PlayerRessources.Instance.cantTakeDamage = false;
             shield.SetActive(true);
             StartCoroutine(megaLaserScript.LaserBeam());
             objectForP2.SetActive(true);
@@ -246,5 +237,29 @@ public class SD_Boss2Body : Singleton<SD_Boss2Body>
         }
         
       
+    }
+
+    public IEnumerator Death()
+    {
+        yield return new WaitForSeconds(5.9f);
+        Destroy(gameObject);
+    }
+    int armcpt = 2;
+    public void LosingArm()
+    {
+        armcpt--;
+        if (armcpt == 0)
+        {
+            isStun = false;
+            mainAnimation.SetBool("Stun", true);
+            P2 = true;
+            megaLaserScript.stop = true;
+            StartCoroutine(GameManagerV2.Instance.GamePadeShake(1, 6f));
+            StopCoroutine(LunchBullet());
+            StopCoroutine(NapalmLunch());
+            StopCoroutine(megaLaserScript.LaserBeam());
+            finaleTouch = true;
+
+        }
     }
 }
