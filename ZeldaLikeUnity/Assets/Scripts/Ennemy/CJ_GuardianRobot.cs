@@ -12,11 +12,10 @@ namespace Ennemy
         [Range(0,20)]
         public float attackRange;
 
-        [HideInInspector] public GameObject target;
-        [HideInInspector] public GameObject smashImpact;
+        public GameObject target;
         public GameObject ennemyBullet;
         public GameObject shield;
-        bool canAttack = true;
+        bool canAttack = false;
         int limit = 0;
         bool isShielded;
 
@@ -32,10 +31,8 @@ namespace Ennemy
         public override void Start()
         {
             base.Start();
-            target = gameObject.transform.GetChild(0).gameObject;
+           
             target.SetActive(false);
-            smashImpact = gameObject.transform.GetChild(1).gameObject;
-            smashImpact.SetActive(false);
             if( IsInMainScene)
             GameManagerV2.Instance.AddEnnemieToList(GameManagerV2.ennemies.gardianRobot, gameObject);
             else
@@ -43,6 +40,7 @@ namespace Ennemy
 
             isShielded = true;
             laser = GetComponent<LineRenderer>();
+            StartCoroutine(waitToAttac());
         }
 
         public override void FixedUpdate()
@@ -65,10 +63,21 @@ namespace Ennemy
 
         public override void Mouvement()
         {
-            if (!isAttacking) 
-                transform.position = Vector2.MoveTowards(transform.position, 
-                                                         player.transform.position, 
-                                                         Time.deltaTime * speed);
+            if (!isAttacking)
+            {
+                transform.position = Vector2.MoveTowards(transform.position,
+                                                            player.transform.position,
+                                                            Time.deltaTime * speed);
+                if (player.transform.position.x - transform.position.x > 0)
+                    ennemyAnimator.SetFloat("Left", 0);
+                else
+                    ennemyAnimator.SetFloat("Left", 1);
+
+                    ennemyAnimator.SetTrigger("Moving");
+
+
+            }
+                
            
 
         }
@@ -81,8 +90,14 @@ namespace Ennemy
             isAttacking = true;
             target.GetComponent<SpriteRenderer>().color = Color.white;
             limit++;
+
+            ennemyAnimator.SetTrigger("LaserCharge");
             while (timer > 0)
             {
+                if (player.transform.position.x - transform.position.x > 0)
+                    ennemyAnimator.SetFloat("Left", 0);
+                else
+                    ennemyAnimator.SetFloat("Left", 1);
                 isAttacking = true;
                 canMove = false;
                 target.SetActive(true);
@@ -93,9 +108,14 @@ namespace Ennemy
 
             timer = 0;
             yield return new WaitForSeconds(0.5f);
+            ennemyAnimator.SetBool("LaserShoot", true);
             LayerMask playermask = 1 << 11;
             while (timer < laserDuration)
             {
+                if (player.transform.position.x - transform.position.x > 0)
+                    ennemyAnimator.SetFloat("Left", 0);
+                else
+                    ennemyAnimator.SetFloat("Left", 1);
                 isAttacking = true;
                 canMove = false;
                 laser.SetPosition(0, transform.position);
@@ -112,6 +132,7 @@ namespace Ennemy
                 }
                 yield return new WaitForSeconds(0.01f);
             }
+            ennemyAnimator.SetBool("LaserShoot", false);
             timer = 0;
             target.SetActive(false);
             laser.SetPosition(0, transform.position);
@@ -128,6 +149,10 @@ namespace Ennemy
             canMove = false;
             canAttack = false;
             isAttacking = true;
+            if (player.transform.position.x - transform.position.x > 0)
+                ennemyAnimator.SetFloat("Left", 0);
+            else
+                ennemyAnimator.SetFloat("Left", 1);
             GetComponent<Animator>().SetTrigger("Smash");
             float timer = 0;
             int formerDamage = damage;
@@ -164,6 +189,17 @@ namespace Ennemy
             yield return new WaitForSeconds(3);
             isShielded = true;
             shield.SetActive(true);
+        }
+        public override void Aggro(Collider2D collision)
+        {
+            base.Aggro(collision);
+            ennemyAnimator.SetTrigger("Aggro");
+        }
+
+        IEnumerator waitToAttac()
+        {
+            yield return new WaitForSeconds(2f);
+            canAttack = true;
         }
     }
 }

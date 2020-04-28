@@ -1,8 +1,6 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Management;
-using Ennemy;
 using UnityEngine.UI;
 
 
@@ -204,7 +202,6 @@ namespace Player
             {
                 if (!dashIsActive)
                 {
-                    Debug.Log( new Vector2( XAxis, YAxis));
                     // the player can't dash during a dash
                     dashIsActive = true;
                     //cancel of the current attack if they was an attack

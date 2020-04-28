@@ -1,0 +1,415 @@
+fileFormatVersion: 2
+guid: 0667d29b8888c0045ad91f43c024b763
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8568341808645097068
+    second: LF_Ennemi_Gardien_Onde_0
+  - first:
+      213: -4122617345331872605
+    second: LF_Ennemi_Gardien_Onde_1
+  - first:
+      213: 5493075069025552275
+    second: LF_Ennemi_Gardien_Onde_2
+  - first:
+      213: -6566549719249578254
+    second: LF_Ennemi_Gardien_Onde_3
+  - first:
+      213: 2931145462516125879
+    second: LF_Ennemi_Gardien_Onde_4
+  - first:
+      213: -4038221033027566648
+    second: LF_Ennemi_Gardien_Onde_5
+  - first:
+      213: -6138084373539191791
+    second: LF_Ennemi_Gardien_Onde_6
+  - first:
+      213: 4282144614446504765
+    second: LF_Ennemi_Gardien_Onde_7
+  - first:
+      213: 5166257049467455014
+    second: LF_Ennemi_Gardien_Onde_8
+  - first:
+      213: 6924112511592105746
+    second: LF_Ennemi_Gardien_Onde_9
+  - first:
+      213: 4183964332362720622
+    second: LF_Ennemi_Gardien_Onde_10
+  - first:
+      213: -825914148669240606
+    second: LF_Ennemi_Gardien_Onde_11
+  - first:
+      213: 2284957103555235131
+    second: LF_Ennemi_Gardien_Onde_12
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: LF_Ennemi_Gardien_Onde_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 63
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 499b495a582271980800000000000000
+      internalID: -8568341808645097068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LF_Ennemi_Gardien_Onde_1
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 0
+        width: 63
+        height: 67
+      alignment: 9
+      pivot: {x: 0.49493337, y: 0.48570752}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ac31a2fd5589c6c0800000000000000
+      internalID: -4122617345331872605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LF_Ennemi_Gardien_Onde_2
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 63
+        height: 69
+      alignment: 9
+      pivot: {x: 0.5050664, y: 0.47224355}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39782d5fba25b3c40800000000000000
+      internalID: 5493075069025552275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LF_Ennemi_Gardien_Onde_3
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 0
+        width: 61
+        height: 71
+      alignment: 9
+      pivot: {x: 0.49999976, y: 0.47302547}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f6103842ddeed4a0800000000000000
+      internalID: -6566549719249578254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LF_Ennemi_Gardien_Onde_4
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 0
+        width: 59
+        height: 70
+      alignment: 9
+      pivot: {x: 0.4891792, y: 0.45896038}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b0954ea4458da820800000000000000
+      internalID: 2931145462516125879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LF_Ennemi_Gardien_Onde_5
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 5
+        width: 59
+        height: 63
+      alignment: 9
+      pivot: {x: 0.5054099, y: 0.43413386}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c381e9ad5b55f7c0800000000000000
+      internalID: -4038221033027566648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LF_Ennemi_Gardien_Onde_6
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 12
+        width: 59
+        height: 57
+      alignment: 9
+      pivot: {x: 0.4945896, y: 0.36560124}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11402d188c421daa0800000000000000
+      internalID: -6138084373539191791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LF_Ennemi_Gardien_Onde_7
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 4
+        width: 59
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3b9fecc6db3d6b30800000000000000
+      internalID: 4282144614446504765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LF_Ennemi_Gardien_Onde_8
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 0
+        width: 59
+        height: 56
+      alignment: 9
+      pivot: {x: 0.49458855, y: 0.5797991}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6268ddb1a6b32b740800000000000000
+      internalID: 5166257049467455014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LF_Ennemi_Gardien_Onde_9
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 0
+        width: 59
+        height: 55
+      alignment: 9
+      pivot: {x: 0.4945896, y: 0.58705354}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 217094ec4a3671060800000000000000
+      internalID: 6924112511592105746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LF_Ennemi_Gardien_Onde_10
+      rect:
+        serializedVersion: 2
+        x: 721
+        y: 0
+        width: 60
+        height: 59
+      alignment: 9
+      pivot: {x: 0.499999, y: 0.53787065}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e656267846d601a30800000000000000
+      internalID: 4183964332362720622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LF_Ennemi_Gardien_Onde_11
+      rect:
+        serializedVersion: 2
+        x: 793
+        y: 0
+        width: 60
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2eac9992573c984f0800000000000000
+      internalID: -825914148669240606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LF_Ennemi_Gardien_Onde_12
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 0
+        width: 63
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3d4a64216cc5bf10800000000000000
+      internalID: 2284957103555235131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

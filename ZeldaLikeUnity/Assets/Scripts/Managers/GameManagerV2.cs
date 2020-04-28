@@ -134,7 +134,7 @@ namespace Management
                 FileStream file = File.Open(Application.persistentDataPath + "/gamesave.save", FileMode.Open);
                 Save save = (Save)bf.Deserialize(file);
                 file.Close();
-                if (save.scenceIndex != SceneManager.GetActiveScene().buildIndex && loadScene)
+                if (save.scenceIndex != SceneManager.GetActiveScene().buildIndex && loadScene || SceneManager.GetActiveScene().buildIndex ==5 || SceneManager.GetActiveScene().buildIndex == 7)
                 {
                     Instantiate(LoadPlayerPosition, transform.position, Quaternion.identity);
                     SceneManager.LoadScene(save.scenceIndex);
@@ -204,11 +204,13 @@ namespace Management
                 StartCoroutine(FadeOut());
                 Time.timeScale = 1;
                 death.SetActive(false);
+                pause.SetActive(false);
                 Debug.Log("Game Loaded");
                 SD_PlayerAttack.Instance.cantAttack = false;
                 SD_PlayerMovement.Instance.cantMove = false;
                 StartCoroutine(waitToNotDash());
                 SD_PlayerMovement.Instance.isAbleToRunOnHole = false;
+                SD_PlayerAttack.Instance.cantAim = false;
             }
             else
             {
@@ -278,6 +280,7 @@ namespace Management
                 SD_PlayerAttack.Instance.hasWind = false;
                 SD_PlayerMovement.Instance.cantDash = true;
                 SD_PlayerMovement.Instance.cantMove = true;
+                SD_PlayerAttack.Instance.cantAim = true;
 
                 GamePadeShake(0, 0);
                 yield return new WaitForSeconds(1);
