@@ -10541,12 +10541,12 @@ PrefabInstance:
     - target: {fileID: 6380926488250556453, guid: 58000ba8e5858ee47b9c026c84000d9b,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1
+      value: 46.875
       objectReference: {fileID: 0}
     - target: {fileID: 6380926488250556453, guid: 58000ba8e5858ee47b9c026c84000d9b,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 1
+      value: 53.125
       objectReference: {fileID: 0}
     - target: {fileID: 6380926488250556453, guid: 58000ba8e5858ee47b9c026c84000d9b,
         type: 3}
@@ -10563,6 +10563,12 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6380926488250556455, guid: 58000ba8e5858ee47b9c026c84000d9b,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -6989815626509117551, guid: bfa02da8ea0d89a41b9fab132edaca19,
+        type: 3}
     - target: {fileID: 6380926488345582082, guid: 58000ba8e5858ee47b9c026c84000d9b,
         type: 3}
       propertyPath: m_Enabled
@@ -10770,12 +10776,12 @@ PrefabInstance:
     - target: {fileID: 6380926488250556453, guid: 58000ba8e5858ee47b9c026c84000d9b,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1
+      value: 46.875
       objectReference: {fileID: 0}
     - target: {fileID: 6380926488250556453, guid: 58000ba8e5858ee47b9c026c84000d9b,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 1
+      value: 53.125
       objectReference: {fileID: 0}
     - target: {fileID: 6380926488250556453, guid: 58000ba8e5858ee47b9c026c84000d9b,
         type: 3}
@@ -10792,6 +10798,12 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6380926488250556455, guid: 58000ba8e5858ee47b9c026c84000d9b,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -6989815626509117551, guid: bfa02da8ea0d89a41b9fab132edaca19,
+        type: 3}
     - target: {fileID: 6380926488345582082, guid: 58000ba8e5858ee47b9c026c84000d9b,
         type: 3}
       propertyPath: m_Enabled
