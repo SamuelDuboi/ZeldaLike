@@ -379,7 +379,7 @@ namespace Management
             SD_PlayerMovement.Instance.cantDash = false;
         }
 
-        IEnumerator FadeUp()
+       public IEnumerator FadeUp()
         {
             for (float i = 0; i < 1; i += 0.01f)
             {
@@ -388,7 +388,7 @@ namespace Management
             }
             fade.GetComponent<Image>().color = new Color(0, 0, 0, 0);
         }
-        IEnumerator FadeOut()
+      public  IEnumerator FadeOut()
         {
             for (float i = 0; i < 1; i += 0.01f)
             {

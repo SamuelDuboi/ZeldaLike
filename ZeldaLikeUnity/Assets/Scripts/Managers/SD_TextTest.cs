@@ -14,12 +14,12 @@ public class SD_TextTest : MonoBehaviour
    [HideInInspector] public int pnj;
    public Image characterImage;
 
-    private void Start()
+    private void Awake()
     {
         pnj =(int) textDialogue[0].pnj;
     }
 
-    IEnumerator Text( )
+   public  IEnumerator Text( )
     {
         SD_PlayerMovement.Instance.cantDash = true;
         SD_PlayerMovement.Instance.cantMove = true;
