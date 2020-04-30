@@ -251,6 +251,7 @@ namespace Player
                         canSpawnPlatform = false;
 
                         platformNumber--;
+                        SD_PlayerAnimation.Instance.halo.SetActive(false);
                     }
 
                     yield return new WaitForSeconds(0.1f);
@@ -342,7 +343,10 @@ namespace Player
                     StartCoroutine(Fall(collision));
                 }
                 else if (SD_PlayerAttack.Instance.hasWind)
+                {
                     canSpawnPlatform = true;
+
+                }
 
             if (collision.tag == "Fire")
             {
@@ -403,6 +407,7 @@ namespace Player
             }
            
             platformNumber = 1;
+            SD_PlayerAnimation.Instance.halo.SetActive(true);
         }
 
 

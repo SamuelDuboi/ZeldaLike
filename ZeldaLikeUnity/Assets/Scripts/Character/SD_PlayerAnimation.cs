@@ -10,6 +10,7 @@ namespace Player
     public class SD_PlayerAnimation : Singleton<SD_PlayerAnimation>
     {
         public SpriteRenderer sprite;
+        public GameObject halo;
        [HideInInspector] public Animator PlayerAnimator;
         public AnimationClip[] attackAnimation = new AnimationClip[3];
         void Awake()
