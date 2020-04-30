@@ -14,19 +14,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Children:
   - {fileID: 3}
+<<<<<<< HEAD
   - {fileID: 5}
   - {fileID: 13}
   - {fileID: 16}
+=======
+  - {fileID: 11}
+>>>>>>> ThibautGDt
   m_Position:
     serializedVersion: 2
     x: 0
     y: 30
+<<<<<<< HEAD
     width: 1920
     height: 947
   m_MinSize: {x: 917, y: 321}
   m_MaxSize: {x: 16002, y: 8021}
   vertical: 0
   controlID: 7506
+=======
+    width: 1904
+    height: 931
+  m_MinSize: {x: 643, y: 492}
+  m_MaxSize: {x: 14002, y: 14042}
+  vertical: 0
+  controlID: 47853
+>>>>>>> ThibautGDt
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -48,10 +61,17 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 201
     y: 73
     width: 1164
     height: 805
+=======
+    x: 8
+    y: 81
+    width: 1307
+    height: 200
+>>>>>>> ThibautGDt
   m_ViewDataDictionary: {fileID: 0}
   m_SerializedViewsNames: []
   m_SerializedViewsValues: []
@@ -59,7 +79,11 @@ MonoBehaviour:
   m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
+<<<<<<< HEAD
   m_TargetSize: {x: 1164, y: 655}
+=======
+  m_TargetSize: {x: 318, y: 179}
+>>>>>>> ThibautGDt
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
@@ -73,10 +97,17 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
+<<<<<<< HEAD
     m_HBaseRangeMin: -582
     m_HBaseRangeMax: 582
     m_VBaseRangeMin: -327.5
     m_VBaseRangeMax: 327.5
+=======
+    m_HBaseRangeMin: -159
+    m_HBaseRangeMax: 159
+    m_VBaseRangeMin: -89.5
+    m_VBaseRangeMax: 89.5
+>>>>>>> ThibautGDt
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -94,16 +125,24 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
+<<<<<<< HEAD
       width: 1164
       height: 784
     m_Scale: {x: 1.1245538, y: 1.1245538}
     m_Translation: {x: 582, y: 392}
+=======
+      width: 1307
+      height: 179
+    m_Scale: {x: 1, y: 1}
+    m_Translation: {x: 653.5, y: 89.5}
+>>>>>>> ThibautGDt
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
+<<<<<<< HEAD
       x: -517.5386
       y: -348.5827
       width: 1035.0771
@@ -111,6 +150,15 @@ MonoBehaviour:
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_LastWindowPixelSize: {x: 1164, y: 805}
+=======
+      x: -653.5
+      y: -89.5
+      width: 1307
+      height: 179
+    m_MinimalGUI: 1
+  m_defaultScale: 1
+  m_LastWindowPixelSize: {x: 1307, y: 200}
+>>>>>>> ThibautGDt
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000100000100
@@ -133,6 +181,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 201
     height: 947
   m_MinSize: {x: 200, y: 200}
@@ -142,6 +191,14 @@ MonoBehaviour:
   - {fileID: 4}
   m_Selected: 0
   m_LastSelected: 0
+=======
+    width: 1308
+    height: 931
+  m_MinSize: {x: 201, y: 421}
+  m_MaxSize: {x: 4001, y: 8021}
+  vertical: 1
+  controlID: 47833
+>>>>>>> ThibautGDt
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -216,6 +273,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 201
     y: 0
+<<<<<<< HEAD
     width: 1166
     height: 947
   m_MinSize: {x: 202, y: 321}
@@ -223,6 +281,18 @@ MonoBehaviour:
   vertical: 1
   controlID: 7405
 --- !u!114 &6
+=======
+    width: 1308
+    height: 221
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 2}
+  m_Panes:
+  - {fileID: 2}
+  m_Selected: 0
+  m_LastSelected: 0
+--- !u!114 &5
+>>>>>>> ThibautGDt
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -238,19 +308,36 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
     y: 0
     width: 1166
     height: 826
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 2}
+=======
+    y: 221
+    width: 1308
+    height: 710
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
+  m_ActualView: {fileID: 6}
+>>>>>>> ThibautGDt
   m_Panes:
   - {fileID: 2}
   - {fileID: 7}
   - {fileID: 8}
+<<<<<<< HEAD
   m_Selected: 0
   m_LastSelected: 1
 --- !u!114 &7
+=======
+  - {fileID: 9}
+  - {fileID: 10}
+  m_Selected: 0
+  m_LastSelected: 1
+--- !u!114 &6
+>>>>>>> ThibautGDt
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -271,10 +358,17 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 201
     y: 73
     width: 1164
     height: 805
+=======
+    x: 8
+    y: 302
+    width: 1307
+    height: 689
+>>>>>>> ThibautGDt
   m_ViewDataDictionary: {fileID: 0}
   m_ShowContextualTools: 0
   m_WindowGUID: aa7aeaa20c46d6c42b0524fb758741e9
@@ -286,9 +380,15 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
+<<<<<<< HEAD
     m_Target: {x: 67.32819, y: 20.228376, z: -443.4401}
     speed: 2
     m_Value: {x: 67.32819, y: 20.228376, z: -443.4401}
+=======
+    m_Target: {x: 83.61269, y: 2.8509583, z: -1.1289062}
+    speed: 2
+    m_Value: {x: 83.61269, y: 2.8509583, z: -1.1289062}
+>>>>>>> ThibautGDt
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -338,9 +438,15 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
+<<<<<<< HEAD
     m_Target: 236.08873
     speed: 2
     m_Value: 236.08873
+=======
+    m_Target: 25.886684
+    speed: 2
+    m_Value: 25.886684
+>>>>>>> ThibautGDt
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -386,10 +492,17 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 200.8
     y: 73.6
     width: 822
     height: 245
+=======
+    x: 8
+    y: 302
+    width: 1307
+    height: 689
+>>>>>>> ThibautGDt
   m_ViewDataDictionary: {fileID: 0}
   m_ViewTransforms:
     m_KeySerializationHelper:
@@ -461,6 +574,7 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 0
     y: 826
     width: 1166
@@ -475,6 +589,18 @@ MonoBehaviour:
   m_Selected: 0
   m_LastSelected: 1
 --- !u!114 &10
+=======
+    x: 8
+    y: 302
+    width: 1307
+    height: 689
+  m_ViewDataDictionary: {fileID: 0}
+  m_PosLeft: {x: 0, y: 0}
+  m_PosRight: {x: 0, y: 0}
+  m_Scope: 1
+  m_SplitterFlex: 0.2
+--- !u!114 &9
+>>>>>>> ThibautGDt
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -495,12 +621,113 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 201
     y: 899
     width: 1164
     height: 100
   m_ViewDataDictionary: {fileID: 0}
 --- !u!114 &11
+=======
+    x: 8
+    y: 302
+    width: 1307
+    height: 689
+  m_ViewDataDictionary: {fileID: 0}
+  m_LockTracker:
+    m_IsLocked: 0
+  m_LastSelectedObjectID: 24510
+--- !u!114 &10
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12914, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Animator
+    m_Image: {fileID: 663490763026382308, guid: 0000000000000000d000000000000000,
+      type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 8
+    y: 302
+    width: 1307
+    height: 689
+  m_ViewDataDictionary: {fileID: 0}
+  m_ViewTransforms:
+    m_KeySerializationHelper:
+    - {fileID: -951626199129442016, guid: 811ed1f8c5327f04fab0e6b500ca2119, type: 2}
+    m_ValueSerializationHelper:
+    - e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+  m_PreviewAnimator: {fileID: 0}
+  m_AnimatorController: {fileID: 9100000, guid: 811ed1f8c5327f04fab0e6b500ca2119,
+    type: 2}
+  m_BreadCrumbs:
+  - m_Target: {fileID: -951626199129442016, guid: 811ed1f8c5327f04fab0e6b500ca2119,
+      type: 2}
+    m_ScrollPosition: {x: 0, y: 0}
+  stateMachineGraph: {fileID: 0}
+  stateMachineGraphGUI: {fileID: 0}
+  blendTreeGraph: {fileID: 0}
+  blendTreeGraphGUI: {fileID: 0}
+  m_AutoLiveLink: 1
+  m_MiniTool: 0
+  m_LockTracker:
+    m_IsLocked: 0
+  m_CurrentEditor: 0
+  m_LayerEditor:
+    m_SelectedLayerIndex: 0
+--- !u!114 &11
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children:
+  - {fileID: 12}
+  - {fileID: 18}
+  m_Position:
+    serializedVersion: 2
+    x: 1308
+    y: 0
+    width: 596
+    height: 931
+  m_MinSize: {x: 442, y: 492}
+  m_MaxSize: {x: 10001, y: 14042}
+  vertical: 1
+  controlID: 47854
+--- !u!114 &12
+>>>>>>> ThibautGDt
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -512,6 +739,7 @@ MonoBehaviour:
   m_Script: {fileID: 12071, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
@@ -530,6 +758,22 @@ MonoBehaviour:
     m_IsLocked: 0
   m_LastSelectedObjectID: 43512
 --- !u!114 &12
+=======
+  m_Children:
+  - {fileID: 13}
+  - {fileID: 15}
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 596
+    height: 586
+  m_MinSize: {x: 442, y: 221}
+  m_MaxSize: {x: 8002, y: 4021}
+  vertical: 0
+  controlID: 47855
+--- !u!114 &13
+>>>>>>> ThibautGDt
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -538,7 +782,37 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< HEAD
   m_Script: {fileID: 13854, guid: 0000000000000000e000000000000000, type: 0}
+=======
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: SceneHierarchyWindow
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 277
+    height: 586
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
+  m_ActualView: {fileID: 14}
+  m_Panes:
+  - {fileID: 14}
+  m_Selected: 0
+  m_LastSelected: 0
+--- !u!114 &14
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12061, guid: 0000000000000000e000000000000000, type: 0}
+>>>>>>> ThibautGDt
   m_Name: 
   m_EditorClassIdentifier: 
   m_MinSize: {x: 300, y: 200}
@@ -550,6 +824,7 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 201
     y: 706
     width: 1164
@@ -560,6 +835,43 @@ MonoBehaviour:
   m_Scope: 1
   m_SplitterFlex: 0.22418478
 --- !u!114 &13
+=======
+    x: 1316
+    y: 81
+    width: 275
+    height: 565
+  m_ViewDataDictionary: {fileID: 0}
+  m_SceneHierarchy:
+    m_TreeViewState:
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: aaaafeff5a4cffffa665ffff3e7cffff56e3ffff8ae8ffffa0e8ffff40fbffff84520000
+      m_RenameOverlay:
+        m_UserAcceptedRename: 0
+        m_Name: 
+        m_OriginalName: 
+        m_EditFieldRect:
+          serializedVersion: 2
+          x: 0
+          y: 0
+          width: 0
+          height: 0
+        m_UserData: 0
+        m_IsWaitingForDelay: 0
+        m_IsRenaming: 0
+        m_OriginalEventType: 11
+        m_IsRenamingFilename: 0
+        m_ClientGUIView: {fileID: 13}
+      m_SearchString: 
+    m_ExpandedScenes: []
+    m_CurrenRootInstanceID: 0
+    m_LockTracker:
+      m_IsLocked: 0
+    m_CurrentSortingName: TransformSorting
+  m_WindowGUID: 1120362ab444d8848a81ae602993e53a
+--- !u!114 &15
+>>>>>>> ThibautGDt
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -574,6 +886,7 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 1367
     y: 0
     width: 277
@@ -587,6 +900,21 @@ MonoBehaviour:
   m_Selected: 1
   m_LastSelected: 0
 --- !u!114 &14
+=======
+    x: 277
+    y: 0
+    width: 319
+    height: 586
+  m_MinSize: {x: 240, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 17}
+  m_Panes:
+  - {fileID: 16}
+  - {fileID: 17}
+  m_Selected: 1
+  m_LastSelected: 0
+--- !u!114 &16
+>>>>>>> ThibautGDt
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -607,10 +935,17 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 1367
     y: 73
     width: 275
     height: 926
+=======
+    x: 1593
+    y: 81
+    width: 318
+    height: 565
+>>>>>>> ThibautGDt
   m_ViewDataDictionary: {fileID: 0}
   m_OpenAddComponentMenu: 0
   m_ObjectsLockedBeforeSerialization: []
@@ -622,9 +957,15 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
+<<<<<<< HEAD
   m_LastInspectedObjectInstanceID: -19008
   m_LastVerticalScrollValue: 0
 --- !u!114 &15
+=======
+  m_LastInspectedObjectInstanceID: -46188
+  m_LastVerticalScrollValue: 0
+--- !u!114 &17
+>>>>>>> ThibautGDt
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -644,10 +985,17 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 1367
     y: 73
     width: 275
     height: 926
+=======
+    x: 1593
+    y: 81
+    width: 318
+    height: 565
+>>>>>>> ThibautGDt
   m_ViewDataDictionary: {fileID: 0}
   m_PreviewResizer:
     m_CachedPref: 50
@@ -655,7 +1003,11 @@ MonoBehaviour:
     m_PrefName: Preview_TilemapBrushInspector
   m_Palette: {fileID: 4170964066466707134, guid: 6a4bafdefae49014a869232e111112ae,
     type: 3}
+<<<<<<< HEAD
 --- !u!114 &16
+=======
+--- !u!114 &18
+>>>>>>> ThibautGDt
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -670,6 +1022,7 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 1644
     y: 0
     width: 276
@@ -683,6 +1036,20 @@ MonoBehaviour:
   m_Selected: 1
   m_LastSelected: 0
 --- !u!114 &17
+=======
+    x: 0
+    y: 586
+    width: 596
+    height: 345
+  m_MinSize: {x: 231, y: 271}
+  m_MaxSize: {x: 10001, y: 10021}
+  m_ActualView: {fileID: 19}
+  m_Panes:
+  - {fileID: 19}
+  m_Selected: 0
+  m_LastSelected: 0
+--- !u!114 &19
+>>>>>>> ThibautGDt
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -703,10 +1070,17 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 1644
     y: 73
     width: 275
     height: 926
+=======
+    x: 1316
+    y: 667
+    width: 595
+    height: 324
+>>>>>>> ThibautGDt
   m_ViewDataDictionary: {fileID: 0}
   m_SearchFilter:
     m_NameFilter: 
@@ -721,20 +1095,34 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
+<<<<<<< HEAD
     - Assets/Prefabs/SD_Prefab/LD
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
   - Assets/Prefabs/SD_Prefab/LD
+=======
+    - Assets/Prefabs/CJ_Prefab
+  m_ViewMode: 1
+  m_StartGridSize: 16
+  m_LastFolders:
+  - Assets/Prefabs/CJ_Prefab
+>>>>>>> ThibautGDt
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\Admin\Documents\Rubika\Zeldaction\ZeldaLike\ZeldaLikeUnity
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
     m_SelectedIDs: d2590000
     m_LastClickedID: 22994
     m_ExpandedIDs: 000000006a3e0000084f00000a4f00000c4f00000e4f0000c2590000cc590000d259000000ca9a3b
+=======
+    m_SelectedIDs: 368f0000
+    m_LastClickedID: 36662
+    m_ExpandedIDs: 000000006a3e0000f68e0000f88e0000fa8e0000fc8e0000068f0000348f00003e8f0000da8f0000e68f0000f08f000000ca9a3b
+>>>>>>> ThibautGDt
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -750,7 +1138,11 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
+<<<<<<< HEAD
       m_ClientGUIView: {fileID: 16}
+=======
+      m_ClientGUIView: {fileID: 18}
+>>>>>>> ThibautGDt
     m_SearchString: 
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
@@ -762,7 +1154,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
     m_ExpandedIDs: 000000006a3e0000064f0000084f00000a4f00000c4f00000e4f000000ca9a3b
+=======
+    m_ExpandedIDs: 000000006a3e0000f68e0000f88e0000fa8e0000fc8e0000068f0000348f00003e8f0000da8f0000e68f0000f08f000000ca9a3b
+>>>>>>> ThibautGDt
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -787,10 +1183,17 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
+<<<<<<< HEAD
     m_SelectedInstanceIDs: b0c4feff
     m_LastClickedInstanceID: -80720
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000
+=======
+    m_SelectedInstanceIDs: 944bffff
+    m_LastClickedInstanceID: -46188
+    m_HadKeyboardFocusLastEvent: 0
+    m_ExpandedInstanceIDs: c6230000022e000012450000303d0000183d0000e6620000f2390000643c000000000000b29d0000
+>>>>>>> ThibautGDt
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -806,7 +1209,11 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
+<<<<<<< HEAD
       m_ClientGUIView: {fileID: 16}
+=======
+      m_ClientGUIView: {fileID: 18}
+>>>>>>> ThibautGDt
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
