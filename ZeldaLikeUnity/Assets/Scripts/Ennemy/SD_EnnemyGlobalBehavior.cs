@@ -306,6 +306,7 @@ namespace Ennemy
         }
         public void StunLunch(float timer)
         {
+            if(canTakeDamage)
            StartCoroutine( Stun(timer));
         }
 

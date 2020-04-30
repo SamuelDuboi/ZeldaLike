@@ -49,6 +49,9 @@ public class SD_Boss2Body : Singleton<SD_Boss2Body>
    public GameObject objectForP2;
    public GameObject GG;
     bool finaleTouch;
+
+
+    public Animator mainAnimation;
     // Start is called before the first frame update
     void Start()
     {
@@ -83,48 +86,37 @@ public class SD_Boss2Body : Singleton<SD_Boss2Body>
             if (timer>= stunTime || life <= currentLife- maxLife*LifePourcentageBetweenShield/100 )
             {
                 isStun = false;
-                weakPoint.SetActive(false);
-                shield.SetActive(true);
+                mainAnimation.SetBool("Stun", false);
                 timer = 0;
             }
            
              
         }
-        if(laserAA[1] == null && laserAA[0] == null && !finaleTouch)
-        {
-            isStun = false;
-            weakPoint.SetActive(false);
-            shield.SetActive(true);
-            P2 = true;
-            foreach (SD_LaserAAA2 laserscript in laserAA)
-            {
-                laserscript.ToP2();
-            }
-            megaLaserScript.stop = true;
-            StartCoroutine(GameManagerV2.Instance.GamePadeShake(1, 6f));
-            StopCoroutine(LunchBullet());
-            StopCoroutine(NapalmLunch());
-            StopCoroutine(megaLaserScript.LaserBeam());
-            finaleTouch = true;
 
-            GG.SetActive(true);
-            finaleTouch = true;
-        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
         if (collision.gameObject.layer == 8)
         {
-           
-            life--;
-            lifeBar.fillAmount = life / maxLife;
-            if (life <= maxLife / 4)
+            if (finaleTouch)
             {
-                life = maxLife / 4;
-                lifeBar.fillAmount = life / maxLife;
-                StartCoroutine(ToP2());
+                mainAnimation.SetTrigger("Death");
+                StartCoroutine(Death());
             }
+            else
+            {
+                life--;
+                lifeBar.fillAmount = life / maxLife;
+                if (life <= maxLife / 4)
+                {
+                    life = maxLife / 4;
+                    lifeBar.fillAmount = life / maxLife;
+                    StartCoroutine(ToP2());
+                }
+
+            }   
+           
 
           
         }
@@ -159,18 +151,18 @@ public class SD_Boss2Body : Singleton<SD_Boss2Body>
     {
         isStun = true;
         currentLife = life;
-        weakPoint.SetActive(true);
-        shield.SetActive(false);
+        mainAnimation.SetBool("Stun", true);
+        Debug.Log(currentLife - maxLife * LifePourcentageBetweenShield / 100);
     }
 
     IEnumerator NapalmLunch()
     {
         yield return new WaitForSeconds(2);
-        //anime
-        yield return new WaitForSeconds(1.5f);
         int t = 1000;
         while (napalmCPT < t)
         {
+            mainAnimation.SetTrigger("Fire");
+            yield return new WaitForSeconds(1.5f);
             for (int i = 0; i < NapalmNumber; i++)
             {if (P2)
                     break;
@@ -232,7 +224,7 @@ public class SD_Boss2Body : Singleton<SD_Boss2Body>
             SD_PlayerMovement.Instance.cantMove = false;
             SD_PlayerAttack.Instance.cantAim = false;
             SD_PlayerAttack.Instance.cantAttack = false;
-            SD_PlayerRessources.Instance.cantTakeDamage = true;
+            SD_PlayerRessources.Instance.cantTakeDamage = false;
             shield.SetActive(true);
             StartCoroutine(megaLaserScript.LaserBeam());
             objectForP2.SetActive(true);
@@ -245,5 +237,29 @@ public class SD_Boss2Body : Singleton<SD_Boss2Body>
         }
         
       
+    }
+
+    public IEnumerator Death()
+    {
+        yield return new WaitForSeconds(5.9f);
+        Destroy(gameObject);
+    }
+    int armcpt = 2;
+    public void LosingArm()
+    {
+        armcpt--;
+        if (armcpt == 0)
+        {
+            isStun = false;
+            mainAnimation.SetBool("Stun", true);
+            P2 = true;
+            megaLaserScript.stop = true;
+            StartCoroutine(GameManagerV2.Instance.GamePadeShake(1, 6f));
+            StopCoroutine(LunchBullet());
+            StopCoroutine(NapalmLunch());
+            StopCoroutine(megaLaserScript.LaserBeam());
+            finaleTouch = true;
+
+        }
     }
 }

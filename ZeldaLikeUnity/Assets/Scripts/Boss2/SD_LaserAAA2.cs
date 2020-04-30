@@ -166,7 +166,7 @@ public class SD_LaserAAA2 : MonoBehaviour
         {
             if (p2)
                 break;
-            transform.position = Vector2.MoveTowards(transform.position,positionToGo, 0.25f);
+            transform.position = Vector2.MoveTowards(transform.position,positionToGo, 0.5f);
             yield return new WaitForSeconds(0.01f);
         }
         yield return new WaitForSeconds(0.1f);
@@ -182,7 +182,7 @@ public class SD_LaserAAA2 : MonoBehaviour
         {
             if (p2)
                 break;
-            transform.position = Vector2.MoveTowards(transform.position, positionVertical.position, 0.25f);
+            transform.position = Vector2.MoveTowards(transform.position, positionVertical.position, 0.5f);
             yield return new WaitForSeconds(0.01f);
         }
         yield return new WaitForSeconds(0.1f);
@@ -357,5 +357,6 @@ public class SD_LaserAAA2 : MonoBehaviour
         firstTiming = secondTiming;
 
         }
+     
 }
 
