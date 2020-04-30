@@ -348,7 +348,7 @@ namespace Ennemy
 
         public virtual void Desaggro(Collider2D collision)
         {
-            if (!aggroZone.activeInHierarchy)
+            if (!aggroZone.activeSelf)
             {
                 aggroZone.SetActive(true);
                 desaggroZone.SetActive(false);
