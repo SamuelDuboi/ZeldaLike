@@ -27,10 +27,8 @@ namespace Ennemy
             target.SetActive(false);
             if (!wontBeReset)
             {
-                if (IsInMainScene)
-                    GameManagerV2.Instance.AddEnnemieToList(GameManagerV2.ennemies.scoutRobot, gameObject);
-                else
-                    GameManager.Instance.AddEnnemieToList(GameManager.ennemies.scoutRobot, gameObject);
+                GameManagerV2.Instance.AddEnnemieToList(GameManagerV2.ennemies.scoutRobot, gameObject);
+
 
             }
         }

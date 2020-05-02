@@ -33,10 +33,9 @@ namespace Ennemy
             base.Start();
            
             target.SetActive(false);
-            if( IsInMainScene)
+
             GameManagerV2.Instance.AddEnnemieToList(GameManagerV2.ennemies.gardianRobot, gameObject);
-            else
-                GameManager.Instance.AddEnnemieToList(GameManager.ennemies.gardianRobot, gameObject);
+
 
             isShielded = true;
             laser = GetComponent<LineRenderer>();

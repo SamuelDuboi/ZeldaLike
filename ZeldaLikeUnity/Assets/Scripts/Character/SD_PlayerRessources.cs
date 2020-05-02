@@ -78,10 +78,9 @@ namespace Player
                 SD_PlayerAnimation.Instance.PlayerAnimator.SetTrigger("Hit");
                 Vector2 bump = new Vector2(gameObject.transform.position.x - ennemy.transform.position.x, gameObject.transform.position.y - ennemy.transform.position.y);
                 // remove at the end of the game
-                if (GameObject.Find("GameManagerV2") != null)
+
                     StartCoroutine(GameManagerV2.Instance.GamePadeShake(.2f, .2f));
-                else
-                    StartCoroutine(GameManager.Instance.GamePadeShake(.2f, .2f));
+
 
                 SD_PlayerMovement.Instance.playerRGB.velocity = bump * SD_PlayerMovement.Instance.speed * bumpPower;
                 SD_PlayerMovement.Instance.cantMove = true;
@@ -105,19 +104,18 @@ namespace Player
                     lifes[life ].GetComponent<Image>().sprite = completHeartEmpty;
 
                 }
-                
 
-               
-               
+
+
+
                 yield return new WaitForSeconds(0.2f);
-                
-                if (life <= 0)
-                {  // remove at the end of the game
 
-                    if (GameObject.Find("GameManagerV2") != null)
-                        StartCoroutine(GameManagerV2.Instance.Death());
-                    else
-                        StartCoroutine(GameManager.Instance.Death());
+                if (life <= 0)
+                {
+
+
+                    StartCoroutine(GameManagerV2.Instance.Death());
+
                 }
                 else
                 {
@@ -129,9 +127,9 @@ namespace Player
                     if (isDestroy)
                         Destroy(ennemy);
                 }
-              
 
-               
+
+
             }
 
 

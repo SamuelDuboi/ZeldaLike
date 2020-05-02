@@ -15,10 +15,8 @@ namespace Ennemy
         public override void Start()
         {
             base.Start();
-            if (IsInMainScene)
                 GameManagerV2.Instance.AddEnnemieToList(GameManagerV2.ennemies.ronchonchon, gameObject);
-            else
-                GameManager.Instance.AddEnnemieToList(GameManager.ennemies.ronchonchon, gameObject);
+
 
             wallMask =  1 << 9;
             startPosition = transform.position;

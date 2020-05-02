@@ -35,7 +35,6 @@ namespace Ennemy
         RaycastHit2D[] hitPoints = new RaycastHit2D[8];
         int wallTouch = 4;
 
-        public bool IsInMainScene;
         public GameObject[] rayStartCorner = new GameObject[4];
 
         public bool isAttacking;
@@ -157,10 +156,9 @@ namespace Ennemy
             Time.timeScale = 1;
             if (life <= 0)
             {
-                if (IsInMainScene)
+
                     StartCoroutine(GameManagerV2.Instance.GamePadeShake(0, .2f));
-                else
-                    StartCoroutine(GameManager.Instance.GamePadeShake(0, .2f));
+
                 float randomHeal = Random.Range(0, 11);
                 if (randomHeal <= SD_PlayerRessources.Instance.chanceDropHeal)
                 {

@@ -173,25 +173,21 @@ namespace Management
                 foreach (Vector3 position in ronchonchonsPositions)
                 {
                     GameObject newRonchonchon = Instantiate(ennemiesPrefabs[(int)ennemies.ronchonchon], position, Quaternion.identity);
-                    newRonchonchon.GetComponent<SD_EnnemyGlobalBehavior>().IsInMainScene = true;
                 }
                   
                 foreach (Vector3 position in robotScoutPosition)
                 {
                     GameObject newScout= Instantiate(ennemiesPrefabs[(int)ennemies.scoutRobot], position, Quaternion.identity);
-                    newScout.GetComponent<SD_EnnemyGlobalBehavior>().IsInMainScene = true;
                 }
                     
                 foreach (Vector3 position in combatRobotPosition)
                 {
                     GameObject newCombat= Instantiate(ennemiesPrefabs[(int)ennemies.combatRobot], position, Quaternion.identity);
-                    newCombat.GetComponent<SD_EnnemyGlobalBehavior>().IsInMainScene = true;
                 }
                    
                 foreach (Vector3 position in gardianRobotPosition)
                 {
                     GameObject newGardian= Instantiate(ennemiesPrefabs[(int)ennemies.gardianRobot], position, Quaternion.identity);
-                    newGardian.GetComponent<SD_EnnemyGlobalBehavior>().IsInMainScene = true;
                 }
                    
 
