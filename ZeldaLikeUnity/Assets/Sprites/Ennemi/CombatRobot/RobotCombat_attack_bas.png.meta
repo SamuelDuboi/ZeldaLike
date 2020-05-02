@@ -1,0 +1,286 @@
+fileFormatVersion: 2
+guid: f1799ed33617a744c849ed0813b01f12
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6705197566847945909
+    second: RobotCombat_attack_bas_0
+  - first:
+      213: 5017336489269523111
+    second: RobotCombat_attack_bas_1
+  - first:
+      213: -4204982934769087896
+    second: RobotCombat_attack_bas_2
+  - first:
+      213: -3345488351692891313
+    second: RobotCombat_attack_bas_3
+  - first:
+      213: -2489523121522950507
+    second: RobotCombat_attack_bas_4
+  - first:
+      213: -8641118437355397172
+    second: RobotCombat_attack_bas_5
+  - first:
+      213: -1826008774580931259
+    second: RobotCombat_attack_bas_6
+  - first:
+      213: 6946191938654782222
+    second: RobotCombat_attack_bas_7
+  - first:
+      213: 2005317967477471081
+    second: RobotCombat_attack_bas_8
+  - first:
+      213: 7205513775733822444
+    second: RobotCombat_attack_bas_9
+  - first:
+      213: -3105404325730979768
+    second: RobotCombat_attack_bas_10
+  - first:
+      213: -7257975868565308826
+    second: RobotCombat_attack_bas_11
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: RobotCombat_attack_bas_0
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 68
+        width: 31
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bc09c059a5ad0d50800000000000000
+      internalID: 6705197566847945909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotCombat_attack_bas_1
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 68
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.4846425, y: 0.5973458}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a2f38934f821a540800000000000000
+      internalID: 5017336489269523111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotCombat_attack_bas_2
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 68
+        width: 32
+        height: 30
+      alignment: 9
+      pivot: {x: 0.4835558, y: 0.6460673}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86a428ebc46e4a5c0800000000000000
+      internalID: -4204982934769087896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotCombat_attack_bas_3
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 68
+        width: 32
+        height: 30
+      alignment: 9
+      pivot: {x: 0.48594475, y: 0.6440661}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4b532db1107291d0800000000000000
+      internalID: -3345488351692891313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotCombat_attack_bas_4
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 11
+        width: 99
+        height: 88
+      alignment: 9
+      pivot: {x: 0.48172522, y: 0.8685835}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59eb08939ef637dd0800000000000000
+      internalID: -2489523121522950507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotCombat_attack_bas_6
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 13
+        width: 110
+        height: 86
+      alignment: 9
+      pivot: {x: 0.45964468, y: 0.86622494}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5457b52b1b6b8a6e0800000000000000
+      internalID: -1826008774580931259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotCombat_attack_bas_8
+      rect:
+        serializedVersion: 2
+        x: 843
+        y: 13
+        width: 110
+        height: 94
+      alignment: 9
+      pivot: {x: 0.44390148, y: 0.7698512}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 967f339111254db10800000000000000
+      internalID: 2005317967477471081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

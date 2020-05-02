@@ -1,0 +1,250 @@
+fileFormatVersion: 2
+guid: 7ba8e69fdf2a2184299ff0165bdcf492
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5840199618835771694
+    second: RobotCombat_reperage_Gauche_0
+  - first:
+      213: -8360786571698087284
+    second: RobotCombat_reperage_Gauche_1
+  - first:
+      213: -852899507975530118
+    second: RobotCombat_reperage_Gauche_2
+  - first:
+      213: -5165096475414599744
+    second: RobotCombat_reperage_Gauche_3
+  - first:
+      213: -8642602483278778979
+    second: RobotCombat_reperage_Gauche_4
+  - first:
+      213: 39444523567227919
+    second: RobotCombat_reperage_Gauche_5
+  - first:
+      213: 577478534548404177
+    second: RobotCombat_reperage_Gauche_6
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: RobotCombat_reperage_Gauche_0
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 3
+        width: 31
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e21f3125c9e8c0150800000000000000
+      internalID: 5840199618835771694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotCombat_reperage_Gauche_1
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 3
+        width: 35
+        height: 36
+      alignment: 9
+      pivot: {x: 0.49316776, y: 0.5265701}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8a541f09e488fb80800000000000000
+      internalID: -8360786571698087284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotCombat_reperage_Gauche_2
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 3
+        width: 54
+        height: 31
+      alignment: 9
+      pivot: {x: 0.4437411, y: 0.6197766}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7953069a64e924f0800000000000000
+      internalID: -852899507975530118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotCombat_reperage_Gauche_3
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 3
+        width: 55
+        height: 30
+      alignment: 9
+      pivot: {x: 0.44019, y: 0.65058434}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c76a481f14e158b0800000000000000
+      internalID: -5165096475414599744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotCombat_reperage_Gauche_5
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 3
+        width: 56
+        height: 31
+      alignment: 9
+      pivot: {x: 0.423863, y: 0.6265989}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f042f8fc5922c8000800000000000000
+      internalID: 39444523567227919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotCombat_reperage_Gauche_6
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 3
+        width: 56
+        height: 31
+      alignment: 9
+      pivot: {x: 0.43444988, y: 0.6575664}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d7bb25eaad930800800000000000000
+      internalID: 577478534548404177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

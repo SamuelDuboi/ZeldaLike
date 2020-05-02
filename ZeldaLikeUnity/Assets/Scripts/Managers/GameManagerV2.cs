@@ -65,7 +65,9 @@ namespace Management
             fade.GetComponent<Image>().color = Color.black;
             scenName.color = Color.black;
             StartCoroutine(FadeOut());
-            
+            if (SD_PlayerAttack.Instance.hasWind )
+                SD_PlayerAnimation.Instance.halo.SetActive(true);
+
         }
 
         private void Update()
