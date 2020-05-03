@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -73084,12 +73084,12 @@ PrefabInstance:
     - target: {fileID: 4455326355006402085, guid: 94f740b0faa1a664da745400ca412b64,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -51.41
+      value: -45.6
       objectReference: {fileID: 0}
     - target: {fileID: 4455326355006402085, guid: 94f740b0faa1a664da745400ca412b64,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 147
+      value: -17.5
       objectReference: {fileID: 0}
     - target: {fileID: 4455326355006402085, guid: 94f740b0faa1a664da745400ca412b64,
         type: 3}
@@ -96055,7 +96055,7 @@ PrefabInstance:
     - target: {fileID: 2851683357391159762, guid: ba637cf92df012c4e91590b2e1c49b49,
         type: 3}
       propertyPath: wantToGetAttributeOfPreviousScene
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2851683357391159762, guid: ba637cf92df012c4e91590b2e1c49b49,
         type: 3}
@@ -119744,7 +119744,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1665924458415865603}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.826258, y: 129.99619, z: 740.36237}
+  m_LocalPosition: {x: -7.016256, y: -34.503803, z: 740.36237}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1665924457537782670}
@@ -119787,7 +119787,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1665924458688144961}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.9941764, y: 129.97304, z: 740.36237}
+  m_LocalPosition: {x: -25.34146, y: -27.296144, z: 740.36237}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6552709594550739899}

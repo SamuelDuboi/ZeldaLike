@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class CharacterWindow : EditorWindow
 {
+#if Unity_Editor
     string characterName;
     Sprite characterSprite;
     Vector2 scroll;
@@ -168,6 +169,6 @@ public class CharacterWindow : EditorWindow
         }
 
     }
-
+#endif
 }
 

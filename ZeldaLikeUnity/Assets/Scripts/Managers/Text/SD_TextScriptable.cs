@@ -14,7 +14,7 @@ public class SD_TextScriptable : ScriptableObject
     public enum character { alyah1,alyah2,Henry1,Henry2,WindMother,Pepe,Note }
     public character pnj;
     //to make the creation prettier
-    [CustomPropertyDrawer(typeof(Sprite))]
+    /*[CustomPropertyDrawer(typeof(Sprite))]
     public class SpriteDrawer : PropertyDrawer
     {
 
@@ -57,6 +57,6 @@ public class SD_TextScriptable : ScriptableObject
         {
             return base.GetPropertyHeight(property, label) + 70f;
         }
-    }
+    }*/
 
 }
