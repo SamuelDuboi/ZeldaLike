@@ -32,9 +32,30 @@ namespace Ennemy
                     StartCoroutine(MovingRandom());
             }
         }
+
+        public override void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.gameObject.layer == 8 && canTakeDamage)
+            {
+
+                StopAllCoroutines();
+                ennemyRGB.velocity = Vector2.zero;
+                isCharging = true;
+                if (collision.transform.position.x - transform.position.x > 0)
+                {
+                    ennemyAnimator.SetFloat("Left", 1f);
+                }
+                else
+                    ennemyAnimator.SetFloat("Left", 0f);
+                ennemyAnimator.SetTrigger("hit");
+
+            }
+            base.OnTriggerEnter2D(collision);
+        
+        }
         public override void Mouvement()
         {
-            if(!isCharging)
+            if(!isCharging && !isAttacking)
             StartCoroutine(Charge());
         }
         bool isActive;
@@ -69,10 +90,11 @@ namespace Ennemy
                                                             2,
                                                             wallMask);
                 Debug.DrawRay(transform.position, new Vector2(randomx - transform.position.x, randomy - transform.position.y));
-                if(raycastHit.collider != null)
+                if(raycastHit.collider != null || isCharging == true)
                 {
                     break;
                 }
+                
                   transform.position = Vector2.MoveTowards(transform.position, randomPosition, .1f);
                 
                 yield return new WaitForSeconds(0.05f);
@@ -151,6 +173,11 @@ namespace Ennemy
                 ennemyRGB.velocity = Vector2.right * speed;
                 ennemyAnimator.SetFloat("Left", 1f);
             }
+        }
+        
+        public void EndStun()
+        {
+            isCharging = false;
         }
     }
 }

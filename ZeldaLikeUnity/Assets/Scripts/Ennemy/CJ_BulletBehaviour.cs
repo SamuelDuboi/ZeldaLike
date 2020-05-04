@@ -29,8 +29,8 @@ namespace Ennemy
             if (collision.gameObject.CompareTag("Player") && collision.gameObject.layer == 11)
             {
                 StartCoroutine(SD_PlayerRessources.Instance.TakingDamage(bulletDamage, gameObject, true, 1));
-                GetComponent<SpriteRenderer>().enabled = false;
-                GetComponent<BoxCollider2D>().enabled = false;
+                transform.position -= new Vector3(0,0,15);
+                GetComponent<Collider2D>().enabled = false;
             }
 
             else if (collision.gameObject.layer == 8)
@@ -46,9 +46,9 @@ namespace Ennemy
             {
                 if (isParry == true)
                 {
-                    
-                    GetComponent<SpriteRenderer>().enabled = false;
-                    GetComponent<BoxCollider2D>().enabled = false;
+
+                    transform.position -= new Vector3(0, 0, 15);
+                    GetComponent<Collider2D>().enabled = false;
                 }
             }
             

@@ -17,6 +17,7 @@ namespace Ennemy
         [Range(0,10)]
         public float recoverytime;
         bool canShoot = true;
+        bool activation;
         [HideInInspector]public GameObject target;
         public GameObject ennemyBullet;
         public bool wontBeReset;
@@ -39,7 +40,7 @@ namespace Ennemy
             isAggro = false;
             if (canMove)
             {
-                if (!isAttacking)
+                if (!isAttacking && activation)
                     StartCoroutine(SniperShot());
             }
 
@@ -79,12 +80,12 @@ namespace Ennemy
             while (timer > 0)
             {
                 target.SetActive(true);
-                timer -= 0.01f;
+                timer -= 0.1f;
                 swapColor  ++;
                 target.transform.position = player.transform.position;
-                yield return new WaitForSeconds(0.01f);
-                if (swapColor > 15)
-                { if (swapColor > 30)
+                yield return new WaitForSeconds(0.1f);
+                if (swapColor > 3)
+                { if (swapColor > 6)
                         swapColor = 0;
                     target.GetComponent<SpriteRenderer>().color = Color.white;
                 }
@@ -136,6 +137,11 @@ namespace Ennemy
                 transform.GetChild(i).gameObject.SetActive(false);
             }
             GetComponent<BoxCollider2D>().enabled = false;
+        }
+
+        public void Activation()
+        {
+            activation = true;
         }
     }
 }
