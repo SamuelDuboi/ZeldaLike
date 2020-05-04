@@ -10140,7 +10140,7 @@ MonoBehaviour:
   XAxis: 0
   YAxis: 0
   sprint: 1
-  sprintForce: 1.55
+  sprintForce: 1.4
   playerRGB: {fileID: 0}
   dashTime: 0.2
   dashForce: 6
@@ -15453,6 +15453,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5116123786809044375, guid: 9ce2571b8d99e29459533cf7df43d4c9,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ce2571b8d99e29459533cf7df43d4c9, type: 3}
 --- !u!4 &4625648380748017894 stripped
@@ -15632,6 +15637,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5116123786809044375, guid: 9ce2571b8d99e29459533cf7df43d4c9,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ce2571b8d99e29459533cf7df43d4c9, type: 3}
@@ -15834,6 +15844,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 7558759024866885741, guid: ed4b7b6f7cd10464786279edaf3f1ce6,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed4b7b6f7cd10464786279edaf3f1ce6, type: 3}
 --- !u!1 &1363325811594073696 stripped
