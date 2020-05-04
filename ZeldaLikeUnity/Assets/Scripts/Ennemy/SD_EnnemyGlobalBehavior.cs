@@ -16,6 +16,7 @@ namespace Ennemy
         [HideInInspector] public Rigidbody2D ennemyRGB;
         public GameObject aggroZone;
         public GameObject desaggroZone;
+        bool activeAggro;
         [Range(0, 10)]
         public float speed;
          public bool canMove;
@@ -75,7 +76,7 @@ namespace Ennemy
                 }
 
             }
-            if (collision.gameObject.tag == "Player")
+            if (collision.gameObject.tag == "Player" && !activeAggro)
             {
                 Aggro(collision);
             }//if is attack by player
@@ -97,7 +98,7 @@ namespace Ennemy
 
         private void OnTriggerExit2D(Collider2D collision)
         {
-            if (collision.gameObject.tag == "Player")
+            if (collision.gameObject.tag == "Player" && activeAggro)
             {
 
                 Desaggro(collision);
@@ -311,9 +312,11 @@ namespace Ennemy
       public  virtual IEnumerator Stun(float timer)
         {
             ennemyAnimator.SetBool("Stun", true);
+            ennemyAnimator.SetTrigger("Stunned");
             canMove = false;
             ennemyRGB.velocity = Vector2.zero;
             isAvoidingObstacles = false;
+            isAttacking = false;
             isAttacking = true;
             yield return new WaitForSeconds(timer);
             isAttacking = false;
@@ -329,6 +332,7 @@ namespace Ennemy
 
         public virtual void Aggro(Collider2D collision)
         {
+
             CJ_PlayerCameraManager.Instance.ennemyList.Add(gameObject);
             if (aggroZone.activeSelf)
             {
@@ -342,10 +346,12 @@ namespace Ennemy
             isAvoidingObstacles = true;
             canTakeDamage = true;
             player = collision.transform.parent.gameObject;
+            activeAggro = true;
         }
 
         public virtual void Desaggro(Collider2D collision)
         {
+
             if (!aggroZone.activeSelf)
             {
                 aggroZone.SetActive(true);
@@ -359,6 +365,7 @@ namespace Ennemy
                 isAvoidingObstacles = false;
             }
             canTakeDamage = false;
+            activeAggro = false;
         }
     }
 }
