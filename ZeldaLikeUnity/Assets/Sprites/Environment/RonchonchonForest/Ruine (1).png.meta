@@ -1,0 +1,532 @@
+fileFormatVersion: 2
+guid: 701d918310c61d245b7b1ef568be38ab
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1904076104977702103
+    second: Ruine (1)_0
+  - first:
+      213: 2250013266208848680
+    second: Ruine (1)_1
+  - first:
+      213: -2940422278348763246
+    second: Ruine (1)_2
+  - first:
+      213: 5913812163208866707
+    second: Ruine (1)_3
+  - first:
+      213: -3320211002357647635
+    second: Ruine (1)_4
+  - first:
+      213: 795165209830499098
+    second: Ruine (1)_5
+  - first:
+      213: 8804028102860781721
+    second: Ruine (1)_6
+  - first:
+      213: -1596388207393750391
+    second: Ruine (1)_7
+  - first:
+      213: -368935883106278569
+    second: Ruine (1)_8
+  - first:
+      213: -589042192162143549
+    second: Ruine (1)_9
+  - first:
+      213: -8414863930390728184
+    second: Ruine (1)_10
+  - first:
+      213: 2888983572139326076
+    second: Ruine (1)_11
+  - first:
+      213: -8261745130830104146
+    second: Ruine (1)_12
+  - first:
+      213: 2779678396414056903
+    second: Ruine (1)_13
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 1
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 1
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Ruine (1)_0
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 221
+        width: 70
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 35, y: -11}
+        - {x: 33, y: -9}
+        - {x: 16, y: -5}
+        - {x: 13, y: 1}
+        - {x: 3, y: 11}
+        - {x: 3, y: 17}
+        - {x: 0, y: 26}
+        - {x: -3, y: 29}
+        - {x: -8, y: 29}
+        - {x: -14, y: 21}
+        - {x: -21, y: 16}
+        - {x: -28, y: 8}
+        - {x: -29, y: 5}
+        - {x: -25, y: 3}
+        - {x: -27, y: -9}
+        - {x: -31, y: -11}
+        - {x: -35, y: -15}
+        - {x: -35, y: -22}
+        - {x: -31, y: -26}
+        - {x: -27, y: -28}
+        - {x: -24, y: -29}
+        - {x: 23, y: -29}
+        - {x: 30, y: -28}
+        - {x: 35, y: -24}
+      - - {x: -14, y: -3}
+        - {x: -9, y: 0}
+        - {x: -9, y: -5}
+        - {x: -15, y: -6}
+      physicsShape: []
+      tessellationDetail: 0.49
+      bones: []
+      spriteID: 923ae79eedc5395e0800000000000000
+      internalID: -1904076104977702103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruine (1)_1
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 202
+        width: 28
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 14, y: -0.5}
+        - {x: 8, y: 5.5}
+        - {x: 11, y: 6.5}
+        - {x: 10, y: 12.5}
+        - {x: 3, y: 17.5}
+        - {x: 3, y: 20.5}
+        - {x: 1, y: 22.5}
+        - {x: -5, y: 22.5}
+        - {x: -9, y: 15.5}
+        - {x: -9, y: 13.5}
+        - {x: -10, y: 5.5}
+        - {x: -14, y: -1.5}
+        - {x: -14, y: -21.5}
+        - {x: -13, y: -22.5}
+        - {x: 10, y: -22.5}
+        - {x: 14, y: -18.5}
+      physicsShape: []
+      tessellationDetail: 0.44
+      bones: []
+      spriteID: 82b7b400527a93f10800000000000000
+      internalID: 2250013266208848680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruine (1)_2
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 201
+        width: 36
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13, y: 9.5}
+        - {x: -18, y: -0.5}
+        - {x: -18, y: -6.5}
+        - {x: -14, y: -9.5}
+        - {x: 18, y: -9.5}
+        - {x: 18, y: 9.5}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29f806154858137d0800000000000000
+      internalID: -2940422278348763246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruine (1)_3
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 125
+        width: 70
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 34, y: 6.5}
+        - {x: 25, y: 10.5}
+        - {x: 24, y: 13.5}
+        - {x: 19, y: 19.5}
+        - {x: 15, y: 23.5}
+        - {x: 2, y: 23.5}
+        - {x: -3, y: 20.5}
+        - {x: -4, y: 23.5}
+        - {x: -20, y: 23.5}
+        - {x: -27, y: 15.5}
+        - {x: -28, y: 5.5}
+        - {x: -31, y: 0.5}
+        - {x: -33, y: -6.5}
+        - {x: -35, y: -7.5}
+        - {x: -35, y: -19.5}
+        - {x: -25, y: -22.5}
+        - {x: -23, y: -23.5}
+        - {x: 28, y: -23.5}
+        - {x: 35, y: -19.5}
+        - {x: 35, y: -4.5}
+      physicsShape: []
+      tessellationDetail: 0.36
+      bones: []
+      spriteID: 39be27864d4121250800000000000000
+      internalID: 5913812163208866707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruine (1)_4
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 138
+        width: 38
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 10, y: 26}
+        - {x: -1, y: 26}
+        - {x: -4, y: 25}
+        - {x: -7, y: 21}
+        - {x: -8, y: 17}
+        - {x: -19, y: -2}
+        - {x: -19, y: -26}
+        - {x: 17, y: -26}
+        - {x: 19, y: -21}
+        - {x: 19, y: -9}
+        - {x: 12, y: -4}
+      physicsShape: []
+      tessellationDetail: 0.44
+      bones: []
+      spriteID: de6f0214fad3ce1d0800000000000000
+      internalID: -3320211002357647635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruine (1)_5
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 138
+        width: 38
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 10, y: -3.5}
+        - {x: 11, y: 16.5}
+        - {x: 3, y: 25.5}
+        - {x: -7, y: 25.5}
+        - {x: -10, y: 0.5}
+        - {x: -19, y: -11.5}
+        - {x: -19, y: -22.5}
+        - {x: -15, y: -25.5}
+        - {x: 16, y: -25.5}
+        - {x: 19, y: -23.5}
+        - {x: 19, y: -11.5}
+        - {x: 18, y: -8.5}
+      physicsShape: []
+      tessellationDetail: 0.33
+      bones: []
+      spriteID: a1322bd9b8ef80b00800000000000000
+      internalID: 795165209830499098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruine (1)_6
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 99
+        width: 16
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 998b29fe9e03e2a70800000000000000
+      internalID: 8804028102860781721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruine (1)_7
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 64
+        width: 71
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9824ca6226d78d9e0800000000000000
+      internalID: -1596388207393750391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruine (1)_8
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 65
+        width: 60
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7532e8ed4c641eaf0800000000000000
+      internalID: -368935883106278569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruine (1)_9
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 69
+        width: 9
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c245724f3d43d7f0800000000000000
+      internalID: -589042192162143549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruine (1)_10
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 27
+        width: 30
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80230d3d6d5683b80800000000000000
+      internalID: -8414863930390728184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruine (1)_11
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 26
+        width: 46
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7abd4b904bb71820800000000000000
+      internalID: 2888983572139326076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruine (1)_12
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 35
+        width: 15
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea9fe0c7392685d80800000000000000
+      internalID: -8261745130830104146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruine (1)_13
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 22
+        width: 74
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c9561036c6639620800000000000000
+      internalID: 2779678396414056903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
