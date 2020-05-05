@@ -40,7 +40,7 @@ namespace Ennemy
             isAggro = false;
             if (canMove)
             {
-                if (!isAttacking && activation)
+                if (!isAttacking && activation && activeAggro)
                     StartCoroutine(SniperShot());
             }
 
@@ -103,6 +103,8 @@ namespace Ennemy
                 target.SetActive(false);
                 target.GetComponent<SpriteRenderer>().color = Color.white;
                 canShoot = true;
+                canMove = true;
+                ennemyAnimator.SetBool("Attack", false);
                 yield break;
 
             }

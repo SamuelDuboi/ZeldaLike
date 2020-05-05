@@ -16,7 +16,7 @@ namespace Ennemy
         [HideInInspector] public Rigidbody2D ennemyRGB;
         public GameObject aggroZone;
         public GameObject desaggroZone;
-        bool activeAggro;
+        [HideInInspector] public bool activeAggro;
         [Range(0, 10)]
         public float speed;
          public bool canMove;
