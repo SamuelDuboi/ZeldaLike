@@ -8,6 +8,7 @@ public class SD_DestructiblePlatform : MonoBehaviour
 
     Animator animator;
     public bool onePath;
+    bool destruct;
     [Range(0,100)]
     public float respawnCooldown = 5;
     void Start()
@@ -16,8 +17,28 @@ public class SD_DestructiblePlatform : MonoBehaviour
     }
     void OnTriggerEnter2D( Collider2D collision)
     {
-        if (collision.gameObject.layer == 10 || collision.gameObject.layer == 12)
+        if (collision.gameObject.layer == 10)
+        {
             StartCoroutine(Destruction());
+            SD_PlayerMovement.Instance.isOnPlatformDestructible = true;
+            SD_PlayerMovement.Instance.ChoosePosition(collision);
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == 10)
+        {
+            SD_PlayerMovement.Instance.isOnPlatformDestructible = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == 10 && destruct == false)
+        {
+            SD_PlayerMovement.Instance.isOnPlatformDestructible = false;
+        }
     }
     bool isActive;
     IEnumerator Destruction()
@@ -27,6 +48,7 @@ public class SD_DestructiblePlatform : MonoBehaviour
             isActive = true;
             animator.SetTrigger("Fall");
             yield return new WaitForSeconds(animator.GetCurrentAnimatorClipInfo(0).Length);
+            destruct = true;
             tag = "Hole";
             SD_PlayerMovement.Instance.isAbleToRunOnHole = false;
             if (!onePath)
@@ -36,6 +58,7 @@ public class SD_DestructiblePlatform : MonoBehaviour
                 tag = "DestroyedPlatform";
             }
             isActive = false;
+            destruct = false;
         }
         
     }

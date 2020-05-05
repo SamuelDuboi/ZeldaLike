@@ -60,7 +60,7 @@ namespace Player
         [Range(0,1)]
         public float timeBeforAbleToMoveAfterFall;
 
-        bool isOnPlatformDestructible;
+        public bool isOnPlatformDestructible;
         float timerPLaftormDestructible;
        [HideInInspector]  public int keyNumber;
         public GameObject[] keyUI;
@@ -166,23 +166,23 @@ namespace Player
         {
             SD_PlayerAnimation.Instance.PlayerAnimator.SetBool("IsMoving", !cantMove);
             playerRGB.velocity = new Vector2(XAxis, YAxis) * speed * sprint;
-            if (XAxis < 0.1 && XAxis > -0.1 && YAxis > 0.1)
+            if (YAxis > 0 && Mathf.Abs(YAxis) > Mathf.Abs(XAxis))
             {
                 SD_PlayerAnimation.Instance.PlayerAnimator.SetFloat("YAxis", 1f);
                 SD_PlayerAnimation.Instance.PlayerAnimator.SetFloat("XAxis", 0f);
             }
-            else if (XAxis < 0.1 && XAxis > -0.1 && YAxis < -0.1)
+            else if (YAxis < 0 && Mathf.Abs(YAxis) > Mathf.Abs(XAxis))
             {
                 SD_PlayerAnimation.Instance.PlayerAnimator.SetFloat("YAxis", -1f);
                 SD_PlayerAnimation.Instance.PlayerAnimator.SetFloat("XAxis", 0f);
 
             }
-            else if (XAxis >= 0.1f)
+            else if (XAxis > 0 && Mathf.Abs(XAxis) >= Mathf.Abs(YAxis))
             {
                 SD_PlayerAnimation.Instance.PlayerAnimator.SetFloat("XAxis", 1f);
                 SD_PlayerAnimation.Instance.PlayerAnimator.SetFloat("YAxis", 0f);
             }
-            else if (XAxis <= 0.1)
+            else if (XAxis < 0 && Mathf.Abs(XAxis) >= Mathf.Abs(YAxis))
             {
                 SD_PlayerAnimation.Instance.PlayerAnimator.SetFloat("XAxis", -1f);
                 SD_PlayerAnimation.Instance.PlayerAnimator.SetFloat("YAxis", 0f);
@@ -329,12 +329,7 @@ namespace Player
                 isOnPlatformDestructible = true;
 
                 timerPLaftormDestructible = 0;
-                if (!positionForDestroyedPlatformIsAlreadyChose)
-                {
-                    playerRespawnAfterFall = new Vector2(transform.position.x - (XAxis) +(-SD_PlayerAnimation.Instance.PlayerAnimator.GetFloat("XAxis"))* collision.GetComponent<Collider2D>().bounds.size.x * 0.1f,
-                                                       transform.position.y - (YAxis) +(- SD_PlayerAnimation.Instance.PlayerAnimator.GetFloat("YAxis")) * collision.GetComponent<Collider2D>().bounds.size.y * 0.1f);
-                    positionForDestroyedPlatformIsAlreadyChose = true;
-                }
+                ChoosePosition(collision);
                 
             }
             if (collision.gameObject.tag == "Hole")
@@ -375,7 +370,6 @@ namespace Player
             if (isAbleToRunOnHole && collision.tag == "WindPlatform" || collision.tag == "Hole")
             {
                 isAbleToRunOnHole = false;
-                isOnPlatformDestructible = false;
             }
             if (collision.tag == "Hole" && currentPlatform != null)
             {
@@ -449,13 +443,38 @@ namespace Player
                 SD_PlayerRessources.Instance.cantTakeDamage = true;
                 yield return new WaitForSeconds(timeBeforAbleToMoveAfterFall);
 
-                isOnPlatformDestructible = false;
+                //isOnPlatformDestructible = false;
                 cantDash = false;
                 cantMove = false;
                 SD_PlayerAttack.Instance.cantAttack = false;
                 SD_PlayerRessources.Instance.cantTakeDamage = false;
             }
 
+        }
+        public void Death()
+        {
+            StopAllCoroutines();
+            SD_PlayerAnimation.Instance.PlayerAnimator.SetBool("Fall", false);
+            SD_PlayerAnimation.Instance.gameObject.transform.localScale = Vector2.one;
+            speed = 0;
+            speed = initialSpeed;
+            playerRGB.simulated = true;
+            isOnPlatformDestructible = false;
+            cantDash = false;
+            cantMove = false;
+            SD_PlayerAttack.Instance.cantAttack = false;
+            SD_PlayerRessources.Instance.cantTakeDamage = false;
+        }
+
+        public void ChoosePosition(Collider2D collision)
+        {
+       
+            if (!positionForDestroyedPlatformIsAlreadyChose)
+            {
+                playerRespawnAfterFall = new Vector2(transform.position.x - (XAxis) + (-SD_PlayerAnimation.Instance.PlayerAnimator.GetFloat("XAxis")) * collision.bounds.size.x * 0.1f,
+                                                   transform.position.y - (YAxis) + (-SD_PlayerAnimation.Instance.PlayerAnimator.GetFloat("YAxis")) * collision.bounds.size.y * 0.1f);
+                positionForDestroyedPlatformIsAlreadyChose = true;
+            }
         }
 
     }
