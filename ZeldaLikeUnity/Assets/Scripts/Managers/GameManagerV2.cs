@@ -292,7 +292,9 @@ namespace Management
                 Time.timeScale = 0;
                 death.SetActive(true);
                 evenSystem.GetComponent<SD_EventSystem>().ChangePanel();
+                DestructiblePlateformeManager.Instance.ResetPlatform();
                 deathActive = false;
+
             }        
         }
 

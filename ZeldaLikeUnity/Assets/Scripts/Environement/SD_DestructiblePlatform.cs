@@ -48,6 +48,7 @@ public class SD_DestructiblePlatform : MonoBehaviour
             isActive = true;
             animator.SetTrigger("Fall");
             yield return new WaitForSeconds(animator.GetCurrentAnimatorClipInfo(0).Length);
+            DestructiblePlateformeManager.Instance.platfromDestroyed.Add(gameObject);
             destruct = true;
             tag = "Hole";
             SD_PlayerMovement.Instance.isAbleToRunOnHole = false;
@@ -56,10 +57,19 @@ public class SD_DestructiblePlatform : MonoBehaviour
                 yield return new WaitForSeconds(respawnCooldown);
                 animator.SetTrigger("Respawn");
                 tag = "DestroyedPlatform";
+                DestructiblePlateformeManager.Instance.platfromDestroyed.Remove(gameObject);
             }
             isActive = false;
             destruct = false;
         }
         
+    }
+    public void SelfReset()
+    {
+        StopAllCoroutines();
+        animator.SetTrigger("Respawn");
+        tag = "DestroyedPlatform";
+        isActive = false;
+        destruct = false;
     }
 }
