@@ -76,6 +76,7 @@ namespace Player
             {
                 cantTakeDamage = true;
                 SD_PlayerAnimation.Instance.PlayerAnimator.SetTrigger("Hit");
+                AudioManager.Instance.Play("Inoh_TakeDamage");
                 Vector2 bump = new Vector2(gameObject.transform.position.x - ennemy.transform.position.x, gameObject.transform.position.y - ennemy.transform.position.y);
                 // remove at the end of the game
 

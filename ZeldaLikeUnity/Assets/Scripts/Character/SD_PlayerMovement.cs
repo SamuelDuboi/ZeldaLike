@@ -31,6 +31,7 @@ namespace Player
         public int dashForce;
         [Range(0, 10)]
         public float dashCooldown;
+        public int dashSound;
         public int fallDamage;
         public GameObject dashTrail;
         //enable movement on false
@@ -108,6 +109,7 @@ namespace Player
                     YAxis = Input.GetAxisRaw("Vertical");
                 else
                     YAxis = Input.GetAxis("Vertical");
+                AudioManager.Instance.Play("Marche_Herbe");
                 Move();
             }
             else
@@ -118,6 +120,7 @@ namespace Player
 
                 if (grosPoussière.activeInHierarchy)
                     grosPoussière.SetActive(false);
+                AudioManager.Instance.Stop("Marche_Herbe");
             }
 
 
@@ -166,6 +169,7 @@ namespace Player
         {
             SD_PlayerAnimation.Instance.PlayerAnimator.SetBool("IsMoving", !cantMove);
             playerRGB.velocity = new Vector2(XAxis, YAxis) * speed * sprint;
+
             if (YAxis > 0 && Mathf.Abs(YAxis) > Mathf.Abs(XAxis))
             {
                 SD_PlayerAnimation.Instance.PlayerAnimator.SetFloat("YAxis", 1f);
@@ -236,6 +240,21 @@ namespace Player
                     cantMove = true;
                     cantDash = true;
                     dashTrail.SetActive(true);
+                    switch (dashSound)
+                    {
+                        case 0:
+                            AudioManager.Instance.Play("Inoh_Dash1");
+                            dashSound = 1;
+                            break;
+                        case 1:
+                            AudioManager.Instance.Play("Inoh_Dash2");
+                            dashSound = 2;
+                            break;
+                        case 2:
+                            AudioManager.Instance.Play("Inoh_Dash3");
+                            dashSound = 0;
+                            break;
+                    }
                     float angle = Mathf.Atan2(YAxis, XAxis) * Mathf.Rad2Deg;
                     dashTrail.transform.rotation =Quaternion.Euler(0,0, angle);
                     timer = 0;
@@ -418,6 +437,7 @@ namespace Player
                 SD_PlayerAttack.Instance.cantAttack = true;
                 playerRGB.simulated = false;
                 SD_PlayerAnimation.Instance.PlayerAnimator.SetBool("Fall", true);
+                AudioManager.Instance.Play("Inoh_Chute");
                 for (float i = 0; i < 50; i++)
                 {
                     fade.GetComponent<Image>().color = new Color(0, 0, 0, i/50);
