@@ -214,6 +214,7 @@ public class SD_Boss2Body : Singleton<SD_Boss2Body>
                 Destroy(napalm);
             SD_PlayerMovement.Instance.transform.position = respawnPoint.transform.position;
             fade.GetComponent<Image>().color = new Color(1, 1, 1, 1);
+            mainAnimation.SetTrigger("P2");
             yield return new WaitForSeconds(0.5f);
             for (float i = 0; i < 1; i += 0.01f)
             {

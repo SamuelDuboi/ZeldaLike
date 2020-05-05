@@ -36,6 +36,10 @@ public class Boss2Entry : MonoBehaviour
 
             }
             SD_PlayerMovement.Instance.playerRGB.velocity = Vector2.down * 5;
+            SD_PlayerMovement.Instance.cantDash = true;
+            SD_PlayerMovement.Instance.cantMove = true;
+            SD_PlayerAttack.Instance.cantAim = true;
+            SD_PlayerAttack.Instance.cantAttack = true;
             cameraCam.orthographicSize += 0.015f;
             currentPosition = camera.transform.position.y;
             if (cameraCam.orthographicSize >= 10f)
