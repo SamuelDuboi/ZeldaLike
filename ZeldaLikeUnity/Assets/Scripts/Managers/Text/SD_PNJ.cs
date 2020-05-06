@@ -89,15 +89,19 @@ public  class SD_PNJ : MonoBehaviour
                     {
                         case 0:
                             SD_PlayerRessources.Instance.Alyah1 = cpt;
+                            AudioManager.Instance.Play("Voix_Alyah");
                             break;
                         case 1:
                             SD_PlayerRessources.Instance.Alyah2 = cpt;
+                            AudioManager.Instance.Play("Voix_Alyah");
                             break;
                         case 2:
                             SD_PlayerRessources.Instance.Henry1 = cpt;
+                            AudioManager.Instance.Play("Voix_Henry");
                             break;
                         case 3:
                             SD_PlayerRessources.Instance.Henry2 = cpt;
+                            AudioManager.Instance.Play("Voix_Henry");
                             break;
                         case 4:
                             SD_PlayerRessources.Instance.WindMother = cpt;
