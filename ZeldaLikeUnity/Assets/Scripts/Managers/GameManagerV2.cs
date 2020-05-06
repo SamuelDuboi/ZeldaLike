@@ -142,6 +142,7 @@ namespace Management
                     SceneManager.LoadScene(save.scenceIndex);
 
                 }
+                StartCoroutine(SwitchCamera());
                 SD_PlayerMovement.Instance.isAbleToRunOnHole = true;
                 player.transform.position = new Vector2(save.playerPositionX, save.playerPositionY);
                 SD_PlayerRessources.Instance.currentMaxLife = save.pvMax;
@@ -208,6 +209,7 @@ namespace Management
                 Debug.Log("Game Loaded");
                 SD_PlayerAttack.Instance.cantAttack = false;
                 SD_PlayerMovement.Instance.cantMove = false;
+                SD_PlayerMovement.Instance.dashIsActive = false;
                 StartCoroutine(waitToNotDash());
                 SD_PlayerMovement.Instance.isAbleToRunOnHole = false;
                 SD_PlayerAttack.Instance.cantAim = false;
@@ -280,7 +282,9 @@ namespace Management
                 SD_PlayerAttack.Instance.hasWind = false;
                 SD_PlayerMovement.Instance.cantDash = true;
                 SD_PlayerMovement.Instance.cantMove = true;
+                SD_PlayerMovement.Instance.dashIsActive = true;
                 SD_PlayerAttack.Instance.cantAim = true;
+                SD_PlayerMovement.Instance.Death();
 
                 GamePadeShake(0, 0);
                 yield return new WaitForSeconds(1);
@@ -288,7 +292,9 @@ namespace Management
                 Time.timeScale = 0;
                 death.SetActive(true);
                 evenSystem.GetComponent<SD_EventSystem>().ChangePanel();
+                DestructiblePlateformeManager.Instance.ResetPlatform();
                 deathActive = false;
+
             }        
         }
 
@@ -399,6 +405,12 @@ namespace Management
 
             }
             scenName.color = new Color(0, 0, 0, 0);
+        }
+        public IEnumerator SwitchCamera()
+        {
+            CJ_PlayerCameraManager.Instance.camera1.enabled = false;
+            yield return new WaitForEndOfFrame();
+            CJ_PlayerCameraManager.Instance.camera1.enabled = true;
         }
     }
 }

@@ -6,8 +6,8 @@ using Management;
 
 namespace Ennemy
 {
- public class SD_BadAnimal : SD_EnnemyGlobalBehavior
- {
+    public class SD_BadAnimal : SD_EnnemyGlobalBehavior
+    {
         public float timeCharging;
         public float timeResting = 4;
         LayerMask wallMask;
@@ -15,18 +15,18 @@ namespace Ennemy
         public override void Start()
         {
             base.Start();
-                GameManagerV2.Instance.AddEnnemieToList(GameManagerV2.ennemies.ronchonchon, gameObject);
+            GameManagerV2.Instance.AddEnnemieToList(GameManagerV2.ennemies.ronchonchon, gameObject);
 
 
-            wallMask =  1 << 9;
+            wallMask = 1 << 9;
             startPosition = transform.position;
         }
 
         public override void FixedUpdate()
         {
             base.FixedUpdate();
-           
-            if(!canMove && !isAvoidingObstacles && !isCharging)
+
+            if (!canMove && !isAvoidingObstacles && !isCharging)
             {
                 if (!isActive)
                     StartCoroutine(MovingRandom());
@@ -48,15 +48,16 @@ namespace Ennemy
                 else
                     ennemyAnimator.SetFloat("Left", 0f);
                 ennemyAnimator.SetTrigger("hit");
+                AudioManager.Instance.Play("Hit_Ronchonchon");
 
             }
             base.OnTriggerEnter2D(collision);
-        
+
         }
         public override void Mouvement()
         {
-            if(!isCharging && !isAttacking)
-            StartCoroutine(Charge());
+            if (!isCharging && !isAttacking)
+                StartCoroutine(Charge());
         }
         bool isActive;
         IEnumerator MovingRandom()
@@ -66,8 +67,8 @@ namespace Ennemy
             yield return new WaitForSeconds(3f);
             float randomx = Random.Range(-3f, 3f);
             float randomy = Random.Range(-3f, 3f);
-            
-            while(randomx >-0.8f &&randomx<0.8f )
+
+            while (randomx > -0.8f && randomx < 0.8f)
                 randomx = Random.Range(-3f, 3f);
             while (randomy > -0.8f && randomy < 0.8f)
                 randomy = Random.Range(-3f, 3f);
@@ -75,7 +76,7 @@ namespace Ennemy
             randomy += transform.position.y;
 
 
-            Vector2 randomPosition = new Vector2(randomx,randomy);
+            Vector2 randomPosition = new Vector2(randomx, randomy);
             while (Mathf.Abs(Vector2.Distance(transform.position, randomPosition)) > 0.2f && (Mathf.Abs(Vector2.Distance(startPosition, randomPosition)) < 5))
             {
                 if (randomPosition.x - transform.position.x > 0)
@@ -84,19 +85,19 @@ namespace Ennemy
                 }
                 else
                     ennemyAnimator.SetFloat("Left", 0f);
-                ennemyAnimator.SetBool("Walk",true);
+                ennemyAnimator.SetBool("Walk", true);
                 RaycastHit2D raycastHit = Physics2D.Raycast(transform.position,
                                                             new Vector2(randomx - transform.position.x, randomy - transform.position.y),
                                                             2,
                                                             wallMask);
                 Debug.DrawRay(transform.position, new Vector2(randomx - transform.position.x, randomy - transform.position.y));
-                if(raycastHit.collider != null || isCharging == true)
+                if (raycastHit.collider != null || isCharging == true)
                 {
                     break;
                 }
-                
-                  transform.position = Vector2.MoveTowards(transform.position, randomPosition, .1f);
-                
+
+                transform.position = Vector2.MoveTowards(transform.position, randomPosition, .1f);
+
                 yield return new WaitForSeconds(0.05f);
             }
 
@@ -109,7 +110,7 @@ namespace Ennemy
             isCharging = true;
             isAttacking = true;
             isAvoidingObstacles = false;
-            float cpt =0;
+            float cpt = 0;
             if (player.transform.position.x - transform.position.x > 0)
             {
                 ennemyAnimator.SetFloat("Left", 1f);
@@ -117,14 +118,16 @@ namespace Ennemy
             else
                 ennemyAnimator.SetFloat("Left", 0f);
             ennemyAnimator.SetTrigger("PrepareCharge");
+            AudioManager.Instance.Play("Aggro_Ronchonchon");
             yield return new WaitForSeconds(1.6f);
+            AudioManager.Instance.Play("Charge_Ronchonchon");
             if (player.transform.position.x - transform.position.x > 0)
             {
                 ennemyAnimator.SetFloat("Left", 1f);
             }
             else
                 ennemyAnimator.SetFloat("Left", 0f);
-            ennemyAnimator.SetBool("Charging",true);
+            ennemyAnimator.SetBool("Charging", true);
             while (cpt < timeCharging)
             {
                 isAvoidingObstacles = false;
@@ -140,7 +143,7 @@ namespace Ennemy
 
                 cpt += 0.05f;
                 yield return new WaitForSeconds(0.05f);
-                
+
             }
             if (player.transform.position.x - transform.position.x > 0)
             {
@@ -163,6 +166,7 @@ namespace Ennemy
         {
             foreach (Collider2D collider in GetComponentsInChildren<Collider2D>())
                 collider.enabled = false;
+            AudioManager.Instance.Play("Fuite_Ronchonchon");
             if (player.transform.position.x - transform.position.x > 0)
             {
                 ennemyRGB.velocity = Vector2.left * speed;
@@ -174,7 +178,7 @@ namespace Ennemy
                 ennemyAnimator.SetFloat("Left", 1f);
             }
         }
-        
+
         public void EndStun()
         {
             isCharging = false;

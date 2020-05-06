@@ -57,8 +57,6 @@ public class Intro : MonoBehaviour
         fade.color = new Color32(0, 0, 0, 0);
         alyiahText.SetActive(true);
         StartCoroutine(alyiahText.GetComponentInChildren<SD_TextTest>().Text());
-        SD_PlayerMovement.Instance.cantDash = false;
-        SD_PlayerMovement.Instance.cantMove = false;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -78,6 +76,7 @@ public class Intro : MonoBehaviour
             yield return new WaitForSeconds(0.01f);
         }
         playerCam.SetActive(true);
+        StartCoroutine(GameManagerV2.Instance.SwitchCamera());
         SD_PlayerMovement.Instance.transform.position = playerCam.transform.position;
         StartCoroutine(GameManagerV2.Instance.FadeOut());
         GetComponent<Camera>().enabled = false;
@@ -87,6 +86,7 @@ public class Intro : MonoBehaviour
         SD_PlayerMovement.Instance.cantMove = false;
 
         SD_PlayerAttack.Instance.cantAttack = false;
+        yield return new WaitForSeconds(1f);
         gameObject.SetActive(false);
     }
 }

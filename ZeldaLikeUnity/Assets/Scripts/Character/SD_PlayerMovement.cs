@@ -31,6 +31,7 @@ namespace Player
         public int dashForce;
         [Range(0, 10)]
         public float dashCooldown;
+        public int dashSound;
         public int fallDamage;
         public GameObject dashTrail;
         //enable movement on false
@@ -60,7 +61,7 @@ namespace Player
         [Range(0,1)]
         public float timeBeforAbleToMoveAfterFall;
 
-        bool isOnPlatformDestructible;
+        public bool isOnPlatformDestructible;
         float timerPLaftormDestructible;
        [HideInInspector]  public int keyNumber;
         public GameObject[] keyUI;
@@ -108,6 +109,7 @@ namespace Player
                     YAxis = Input.GetAxisRaw("Vertical");
                 else
                     YAxis = Input.GetAxis("Vertical");
+                AudioManager.Instance.Play("Marche_Herbe");
                 Move();
             }
             else
@@ -118,6 +120,7 @@ namespace Player
 
                 if (grosPoussière.activeInHierarchy)
                     grosPoussière.SetActive(false);
+                AudioManager.Instance.Stop("Marche_Herbe");
             }
 
 
@@ -166,23 +169,24 @@ namespace Player
         {
             SD_PlayerAnimation.Instance.PlayerAnimator.SetBool("IsMoving", !cantMove);
             playerRGB.velocity = new Vector2(XAxis, YAxis) * speed * sprint;
-            if (XAxis < 0.1 && XAxis > -0.1 && YAxis > 0.1)
+
+            if (YAxis > 0 && Mathf.Abs(YAxis) > Mathf.Abs(XAxis))
             {
                 SD_PlayerAnimation.Instance.PlayerAnimator.SetFloat("YAxis", 1f);
                 SD_PlayerAnimation.Instance.PlayerAnimator.SetFloat("XAxis", 0f);
             }
-            else if (XAxis < 0.1 && XAxis > -0.1 && YAxis < -0.1)
+            else if (YAxis < 0 && Mathf.Abs(YAxis) > Mathf.Abs(XAxis))
             {
                 SD_PlayerAnimation.Instance.PlayerAnimator.SetFloat("YAxis", -1f);
                 SD_PlayerAnimation.Instance.PlayerAnimator.SetFloat("XAxis", 0f);
 
             }
-            else if (XAxis >= 0.1f)
+            else if (XAxis > 0 && Mathf.Abs(XAxis) >= Mathf.Abs(YAxis))
             {
                 SD_PlayerAnimation.Instance.PlayerAnimator.SetFloat("XAxis", 1f);
                 SD_PlayerAnimation.Instance.PlayerAnimator.SetFloat("YAxis", 0f);
             }
-            else if (XAxis <= 0.1)
+            else if (XAxis < 0 && Mathf.Abs(XAxis) >= Mathf.Abs(YAxis))
             {
                 SD_PlayerAnimation.Instance.PlayerAnimator.SetFloat("XAxis", -1f);
                 SD_PlayerAnimation.Instance.PlayerAnimator.SetFloat("YAxis", 0f);
@@ -236,6 +240,21 @@ namespace Player
                     cantMove = true;
                     cantDash = true;
                     dashTrail.SetActive(true);
+                    switch (dashSound)
+                    {
+                        case 0:
+                            AudioManager.Instance.Play("Inoh_Dash1");
+                            dashSound = 1;
+                            break;
+                        case 1:
+                            AudioManager.Instance.Play("Inoh_Dash2");
+                            dashSound = 2;
+                            break;
+                        case 2:
+                            AudioManager.Instance.Play("Inoh_Dash3");
+                            dashSound = 0;
+                            break;
+                    }
                     float angle = Mathf.Atan2(YAxis, XAxis) * Mathf.Rad2Deg;
                     dashTrail.transform.rotation =Quaternion.Euler(0,0, angle);
                     timer = 0;
@@ -329,12 +348,7 @@ namespace Player
                 isOnPlatformDestructible = true;
 
                 timerPLaftormDestructible = 0;
-                if (!positionForDestroyedPlatformIsAlreadyChose)
-                {
-                    playerRespawnAfterFall = new Vector2(transform.position.x - (XAxis) +(-SD_PlayerAnimation.Instance.PlayerAnimator.GetFloat("XAxis"))* collision.GetComponent<Collider2D>().bounds.size.x * 0.1f,
-                                                       transform.position.y - (YAxis) +(- SD_PlayerAnimation.Instance.PlayerAnimator.GetFloat("YAxis")) * collision.GetComponent<Collider2D>().bounds.size.y * 0.1f);
-                    positionForDestroyedPlatformIsAlreadyChose = true;
-                }
+                ChoosePosition(collision);
                 
             }
             if (collision.gameObject.tag == "Hole")
@@ -375,7 +389,6 @@ namespace Player
             if (isAbleToRunOnHole && collision.tag == "WindPlatform" || collision.tag == "Hole")
             {
                 isAbleToRunOnHole = false;
-                isOnPlatformDestructible = false;
             }
             if (collision.tag == "Hole" && currentPlatform != null)
             {
@@ -424,6 +437,7 @@ namespace Player
                 SD_PlayerAttack.Instance.cantAttack = true;
                 playerRGB.simulated = false;
                 SD_PlayerAnimation.Instance.PlayerAnimator.SetBool("Fall", true);
+                AudioManager.Instance.Play("Inoh_Chute");
                 for (float i = 0; i < 50; i++)
                 {
                     fade.GetComponent<Image>().color = new Color(0, 0, 0, i/50);
@@ -449,13 +463,38 @@ namespace Player
                 SD_PlayerRessources.Instance.cantTakeDamage = true;
                 yield return new WaitForSeconds(timeBeforAbleToMoveAfterFall);
 
-                isOnPlatformDestructible = false;
+                //isOnPlatformDestructible = false;
                 cantDash = false;
                 cantMove = false;
                 SD_PlayerAttack.Instance.cantAttack = false;
                 SD_PlayerRessources.Instance.cantTakeDamage = false;
             }
 
+        }
+        public void Death()
+        {
+            StopAllCoroutines();
+            SD_PlayerAnimation.Instance.PlayerAnimator.SetBool("Fall", false);
+            SD_PlayerAnimation.Instance.gameObject.transform.localScale = Vector2.one;
+            speed = 0;
+            speed = initialSpeed;
+            playerRGB.simulated = true;
+            isOnPlatformDestructible = false;
+            cantDash = false;
+            cantMove = false;
+            SD_PlayerAttack.Instance.cantAttack = false;
+            SD_PlayerRessources.Instance.cantTakeDamage = false;
+        }
+
+        public void ChoosePosition(Collider2D collision)
+        {
+       
+            if (!positionForDestroyedPlatformIsAlreadyChose)
+            {
+                playerRespawnAfterFall = new Vector2(transform.position.x - (XAxis) + (-SD_PlayerAnimation.Instance.PlayerAnimator.GetFloat("XAxis")) * collision.bounds.size.x * 0.1f,
+                                                   transform.position.y - (YAxis) + (-SD_PlayerAnimation.Instance.PlayerAnimator.GetFloat("YAxis")) * collision.bounds.size.y * 0.1f);
+                positionForDestroyedPlatformIsAlreadyChose = true;
+            }
         }
 
     }
