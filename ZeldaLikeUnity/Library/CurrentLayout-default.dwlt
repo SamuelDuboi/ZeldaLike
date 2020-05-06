@@ -15,7 +15,7 @@ MonoBehaviour:
   m_PixelRect:
     serializedVersion: 2
     x: 0
-    y: 43
+    y: 51
     width: 1920
     height: 997
   m_ShowMode: 4
@@ -23,7 +23,7 @@ MonoBehaviour:
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
-  m_Maximized: 1
+  m_Maximized: 0
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -48,6 +48,7 @@ MonoBehaviour:
     width: 1920
 <<<<<<< HEAD
     height: 947
+<<<<<<< HEAD
   m_MinSize: {x: 679, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
@@ -63,6 +64,12 @@ MonoBehaviour:
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 >>>>>>> SamuelLP
+=======
+  m_MinSize: {x: 644, y: 492}
+  m_MaxSize: {x: 14002, y: 14042}
+  vertical: 0
+  controlID: 75
+>>>>>>> SamuelM
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -72,12 +79,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 1
+<<<<<<< HEAD
   m_Script: {fileID: 12011, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
+=======
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: GridPaintPaletteWindow
+>>>>>>> SamuelM
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 0
     y: 0
 <<<<<<< HEAD
@@ -87,9 +100,19 @@ MonoBehaviour:
   m_MinSize: {x: 276, y: 71}
   m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 14}
+=======
+    x: 1390
+    y: 0
+    width: 530
+    height: 947
+  m_MinSize: {x: 241, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
+  m_ActualView: {fileID: 12}
+>>>>>>> SamuelM
   m_Panes:
-  - {fileID: 14}
-  m_Selected: 0
+  - {fileID: 15}
+  - {fileID: 12}
+  m_Selected: 1
   m_LastSelected: 0
 =======
     width: 1920
@@ -123,13 +146,21 @@ MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
     y: 0
+<<<<<<< HEAD
     width: 379
     height: 573
   m_MinSize: {x: 201, y: 221}
   m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 15}
+=======
+    width: 345
+    height: 596
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
+  m_ActualView: {fileID: 16}
+>>>>>>> SamuelM
   m_Panes:
-  - {fileID: 15}
+  - {fileID: 16}
   m_Selected: 0
   m_LastSelected: 0
 =======
@@ -174,15 +205,21 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     y: 573
     width: 1531
     height: 374
+=======
+    y: 596
+    width: 1390
+    height: 351
+>>>>>>> SamuelM
   m_MinSize: {x: 231, y: 271}
   m_MaxSize: {x: 10001, y: 10021}
-  m_ActualView: {fileID: 13}
+  m_ActualView: {fileID: 14}
   m_Panes:
-  - {fileID: 13}
-  - {fileID: 18}
+  - {fileID: 14}
+  - {fileID: 19}
   m_Selected: 0
   m_LastSelected: 0
 =======
@@ -351,11 +388,16 @@ MonoBehaviour:
     x: 379
     y: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     width: 1531
+=======
+    width: 1390
+>>>>>>> SamuelM
     height: 947
   m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
+<<<<<<< HEAD
   controlID: 47
 =======
     width: 1208
@@ -382,6 +424,9 @@ MonoBehaviour:
   m_Selected: 0
   m_LastSelected: 0
 >>>>>>> SamuelLP
+=======
+  controlID: 76
+>>>>>>> SamuelM
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -403,6 +448,7 @@ MonoBehaviour:
     x: 0
 <<<<<<< HEAD
     y: 0
+<<<<<<< HEAD
     width: 1531
     height: 573
   m_MinSize: {x: 403, y: 221}
@@ -439,6 +485,14 @@ MonoBehaviour:
   m_Selected: 0
   m_LastSelected: 1
 >>>>>>> SamuelLP
+=======
+    width: 1390
+    height: 596
+  m_MinSize: {x: 403, y: 221}
+  m_MaxSize: {x: 8003, y: 4021}
+  vertical: 0
+  controlID: 77
+>>>>>>> SamuelM
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -462,6 +516,7 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 983
     y: 0
 <<<<<<< HEAD
@@ -490,6 +545,19 @@ MonoBehaviour:
   - {fileID: 20}
   - {fileID: 21}
 >>>>>>> SamuelLP
+=======
+    x: 345
+    y: 0
+    width: 1045
+    height: 596
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
+  m_ActualView: {fileID: 17}
+  m_Panes:
+  - {fileID: 17}
+  - {fileID: 18}
+  - {fileID: 13}
+>>>>>>> SamuelM
   m_Selected: 0
   m_LastSelected: 0
 --- !u!114 &12
@@ -501,6 +569,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< HEAD
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
 <<<<<<< HEAD
   m_Name: AnimationWindow
@@ -568,6 +637,31 @@ MonoBehaviour:
   vertical: 1
   controlID: 68
 --- !u!114 &14
+=======
+  m_Script: {fileID: 11500000, guid: 3f683d99f24875748a6656966ca9cea0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 240, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Tile Palette
+    m_Image: {fileID: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 1390
+    y: 81
+    width: 529
+    height: 926
+  m_ViewDataDictionary: {fileID: 0}
+  m_PreviewResizer:
+    m_CachedPref: -50
+    m_ControlHash: 1964396721
+    m_PrefName: Preview_TilemapBrushInspector
+  m_Palette: {fileID: 8875647702784111766, guid: 4aea2a71fea431d4da227817947896cd,
+    type: 3}
+--- !u!114 &13
+>>>>>>> SamuelM
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -582,6 +676,7 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 0
     y: 0
     width: 333
@@ -622,6 +717,14 @@ MonoBehaviour:
   m_Selected: 0
   m_LastSelected: 0
 --- !u!114 &16
+=======
+    x: 468
+    y: 181
+    width: 973
+    height: 501
+  m_ViewDataDictionary: {fileID: 0}
+--- !u!114 &14
+>>>>>>> SamuelM
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -644,9 +747,15 @@ MonoBehaviour:
     serializedVersion: 2
 <<<<<<< HEAD
     x: 0
+<<<<<<< HEAD
     y: 646
     width: 1530
     height: 353
+=======
+    y: 677
+    width: 1389
+    height: 330
+>>>>>>> SamuelM
   m_ViewDataDictionary: {fileID: 0}
   m_SearchFilter:
     m_NameFilter: 
@@ -667,14 +776,20 @@ MonoBehaviour:
   m_LastFolders:
   - Assets/Scenes/MainScenes
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\Admin\Documents\Rubika\Zeldaction\ZeldaLike\ZeldaLikeUnity
+  m_LastProjectPath: D:\Projet groupe\ZeldaLike\ZeldaLikeUnity
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
     m_SelectedIDs: 9e4a0000
     m_LastClickedID: 19102
     m_ExpandedIDs: 000000009e3e0000104a0000124a0000144a0000164a0000184a00001a4a00001c4a00001e4a0000204a0000224a0000244a000000ca9a3b
+=======
+    m_SelectedIDs: 1e8f0000
+    m_LastClickedID: 36638
+    m_ExpandedIDs: 000000009a3e0000788e00007a8e00007c8e00007e8e0000808e0000828e0000848e0000868e0000888e00008a8e00008c8e000000ca9a3b
+>>>>>>> SamuelM
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -702,7 +817,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
     m_ExpandedIDs: 000000009e3e0000104a0000124a0000144a0000164a0000184a00001a4a00001c4a00001e4a0000204a0000224a0000244a0000
+=======
+    m_ExpandedIDs: 000000009a3e0000788e00007a8e00007c8e00007e8e0000808e0000828e0000848e0000868e0000888e00008a8e00008c8e0000
+>>>>>>> SamuelM
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -758,7 +877,7 @@ MonoBehaviour:
     m_GridSize: 64
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 115
---- !u!114 &14
+--- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -782,9 +901,15 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
     x: 1531
     y: 73
     width: 388
+=======
+    x: 1390
+    y: 81
+    width: 529
+>>>>>>> SamuelM
     height: 926
   m_ViewDataDictionary: {fileID: 0}
   m_OpenAddComponentMenu: 0
@@ -799,6 +924,7 @@ MonoBehaviour:
   m_PreviewWindow: {fileID: 0}
   m_LastInspectedObjectInstanceID: -1
   m_LastVerticalScrollValue: 0
+<<<<<<< HEAD
 --- !u!114 &15
 =======
     x: 380
@@ -899,6 +1025,9 @@ MonoBehaviour:
 =======
 --- !u!114 &14
 >>>>>>> SamuelLP
+=======
+--- !u!114 &16
+>>>>>>> SamuelM
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -920,6 +1049,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
     y: 73
     width: 378
 <<<<<<< HEAD
@@ -927,11 +1057,17 @@ MonoBehaviour:
 =======
     height: 553
 >>>>>>> CorentinGD
+=======
+    y: 81
+    width: 344
+    height: 575
+>>>>>>> SamuelM
   m_ViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
 <<<<<<< HEAD
       scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
 <<<<<<< HEAD
       m_SelectedIDs: 
       m_LastClickedID: 0
@@ -947,6 +1083,11 @@ MonoBehaviour:
       m_LastClickedID: 89252
       m_ExpandedIDs: 146ffdffc62cfeffea66ffff1267ffff2c67ffff3067ffff4268ffff2a8cffffcad5ffffe4d6ffff40fbffffcc970000f2970000d89a0000829b0000aa9b0000929c00009a4501000a590100ec590100025a0100c45a0100785b0100ee5b0100065c0100685c0100d25d01009c5e01003a600100
 >>>>>>> SamuelLP
+=======
+      m_SelectedIDs: fc0b0200
+      m_LastClickedID: 134140
+      m_ExpandedIDs: a689fdfff292fdff02affdff28befdffd8befdff2addfdffe605feffea05feff320ffeff54a8feffec94ffff6ed3ffff3cd4ffff58d6ffff36fbffff64940000a894000084960000fc0b0200
+>>>>>>> SamuelM
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -962,13 +1103,18 @@ MonoBehaviour:
         m_IsRenaming: 0
         m_OriginalEventType: 11
         m_IsRenamingFilename: 0
+<<<<<<< HEAD
         m_ClientGUIView: {fileID: 8}
+=======
+        m_ClientGUIView: {fileID: 4}
+>>>>>>> SamuelM
       m_SearchString: 
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
     m_LockTracker:
       m_IsLocked: 0
     m_CurrentSortingName: TransformSorting
+<<<<<<< HEAD
 <<<<<<< HEAD
   m_WindowGUID: bdb202252131bfe4bbf177cd96c93c55
 --- !u!114 &16
@@ -1129,6 +1275,10 @@ MonoBehaviour:
   m_LayerEditor:
     m_SelectedLayerIndex: 0
 --- !u!114 &16
+=======
+  m_WindowGUID: 3f0f2627464c9304e9a6d1a71d9dbc5f
+--- !u!114 &17
+>>>>>>> SamuelM
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1150,6 +1300,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
     x: 379
     y: 73
 <<<<<<< HEAD
@@ -1167,6 +1318,12 @@ MonoBehaviour:
     width: 780
     height: 278
 >>>>>>> SamuelLP
+=======
+    x: 345
+    y: 81
+    width: 1043
+    height: 575
+>>>>>>> SamuelM
   m_ViewDataDictionary: {fileID: 0}
   m_ShowContextualTools: 0
   m_WindowGUID: aa7aeaa20c46d6c42b0524fb758741e9
@@ -1179,6 +1336,7 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     m_Target: {x: 0, y: 0, z: 0}
@@ -1194,6 +1352,11 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 6.4431553, y: -44.077187, z: -0.24414062}
 >>>>>>> SamuelLP
+=======
+    m_Target: {x: 78.28986, y: -47.752953, z: -593.70544}
+    speed: 2
+    m_Value: {x: 78.057724, y: -48.006786, z: -593.58905}
+>>>>>>> SamuelM
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1245,6 +1408,7 @@ MonoBehaviour:
   m_Size:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: 10
     speed: 2
     m_Value: 10
@@ -1258,6 +1422,11 @@ MonoBehaviour:
     speed: 2
     m_Value: 14.4611845
 >>>>>>> SamuelLP
+=======
+    m_Target: 27.018044
+    speed: 2
+    m_Value: 25.854588
+>>>>>>> SamuelM
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1283,9 +1452,13 @@ MonoBehaviour:
   m_LastLockedObject: {fileID: 0}
   m_ViewIsLockedToObject: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!114 &19
 =======
 --- !u!114 &17
+=======
+--- !u!114 &18
+>>>>>>> SamuelM
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1306,6 +1479,7 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 200.8
     y: 593.60004
     width: 780
@@ -1647,6 +1821,12 @@ MonoBehaviour:
     y: 94
     width: 1532
     height: 790
+=======
+    x: 345
+    y: 81
+    width: 1043
+    height: 575
+>>>>>>> SamuelM
   m_ViewDataDictionary: {fileID: 0}
   m_SerializedViewsNames: []
   m_SerializedViewsValues: []
@@ -1654,7 +1834,11 @@ MonoBehaviour:
   m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
+<<<<<<< HEAD
   m_TargetSize: {x: 640, y: 480}
+=======
+  m_TargetSize: {x: 1043, y: 554}
+>>>>>>> SamuelM
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 0
@@ -1668,10 +1852,17 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
+<<<<<<< HEAD
     m_HBaseRangeMin: -766
     m_HBaseRangeMax: 766
     m_VBaseRangeMin: -395
     m_VBaseRangeMax: 395
+=======
+    m_HBaseRangeMin: -521.5
+    m_HBaseRangeMax: 521.5
+    m_VBaseRangeMin: -277
+    m_VBaseRangeMax: 277
+>>>>>>> SamuelM
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -1688,17 +1879,26 @@ MonoBehaviour:
     m_DrawArea:
       serializedVersion: 2
       x: 0
+<<<<<<< HEAD
       y: 0
       width: 1532
       height: 790
     m_Scale: {x: 1, y: 1}
     m_Translation: {x: 766, y: 395}
+=======
+      y: 21
+      width: 1043
+      height: 554
+    m_Scale: {x: 1, y: 1}
+    m_Translation: {x: 521.5, y: 277}
+>>>>>>> SamuelM
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
+<<<<<<< HEAD
       x: -766
       y: -395
       width: 1532
@@ -1706,11 +1906,21 @@ MonoBehaviour:
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_LastWindowPixelSize: {x: 1532, y: 790}
+=======
+      x: -521.5
+      y: -277
+      width: 1043
+      height: 554
+    m_MinimalGUI: 1
+  m_defaultScale: 1
+  m_LastWindowPixelSize: {x: 1043, y: 575}
+>>>>>>> SamuelM
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
   m_XRRenderMode: 0
   m_RenderTexture: {fileID: 0}
+<<<<<<< HEAD
 --- !u!114 &18
 =======
     x: 539
@@ -1838,6 +2048,9 @@ MonoBehaviour:
   m_LastSelectedObjectID: -3292
 --- !u!114 &22
 >>>>>>> CorentinGD
+=======
+--- !u!114 &19
+>>>>>>> SamuelM
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
