@@ -52,7 +52,6 @@ public class SD_Boss2Arms : MonoBehaviour
                 SD_Boss2Body.Instance.lifeBar.fillAmount = SD_Boss2Body.Instance.life/ SD_Boss2Body.Instance.maxLife;
                 Laser.GetComponent<SD_LaserAAA2>().ToP2();
                 SD_Boss2Body.Instance.LosingArm();
-                weakpoint.SetActive(false);
                 GetComponent<Animator>().enabled = true;
                 dead = true;
             }

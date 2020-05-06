@@ -35,14 +35,19 @@ public class SD_Boss2Bullets : MonoBehaviour
                 }
             }
             else
+            {
                 bulletRGB.velocity = new Vector2(target.transform.position.x - transform.position.x,
-                                                    target.transform.position.y - transform.position.y).normalized * bulletSpeed;
+                                                     target.transform.position.y - transform.position.y).normalized * bulletSpeed;
+                transform.rotation = Quaternion.Euler(0, 0, 180+Vector2.Angle(transform.position, target.transform.position));
+            }
+              
             
         }
         else
         {
             bulletRGB.velocity = new Vector2(transform.parent.position.x - transform.position.x,
                                              transform.parent.position.y - transform.position.y + 1.5f).normalized * bulletSpeed;
+            transform.rotation = Quaternion.Euler(0,0, Vector2.Angle(transform.position, transform.parent.position));
             if(Mathf.Abs( transform.position.x - transform.parent.position.x)<0.1f)
                 Destroy(gameObject);
         }
@@ -63,7 +68,6 @@ public class SD_Boss2Bullets : MonoBehaviour
         }
         else if( collision.gameObject.layer == 16 && isParry)
         {
-            Debug.Log("rocket touche " + collision);
             collision.transform.parent.GetComponent<SD_Boss2Body>().Stun();
             Destroy(gameObject);
         }
