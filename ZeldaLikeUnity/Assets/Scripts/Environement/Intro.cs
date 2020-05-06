@@ -12,6 +12,7 @@ public class Intro : MonoBehaviour
     public GameObject introImage;
     public GameObject deesse;
     public GameObject playerCam;
+    public Collider2D alya;
     Image fade;
     bool isActive;
     // Start is called before the first frame update
@@ -19,6 +20,7 @@ public class Intro : MonoBehaviour
     {
         StartCoroutine(Introduction());
         fade = introImage.GetComponent<Image>();
+        playerCam.GetComponentInChildren<AudioListener>().enabled = false;
     }
 
     // Update is called once per frame
@@ -76,17 +78,21 @@ public class Intro : MonoBehaviour
             yield return new WaitForSeconds(0.01f);
         }
         playerCam.SetActive(true);
+
         StartCoroutine(GameManagerV2.Instance.SwitchCamera());
         SD_PlayerMovement.Instance.transform.position = playerCam.transform.position;
         StartCoroutine(GameManagerV2.Instance.FadeOut());
         GetComponent<Camera>().enabled = false;
-        yield return new WaitForSeconds(2f);
+        GetComponent<AudioListener>().enabled = false;
 
+        playerCam.GetComponentInChildren<AudioListener>().enabled = true;
+        yield return new WaitForSeconds(2.5f);
+        alya.enabled = true;
         SD_PlayerMovement.Instance.cantDash = false;
         SD_PlayerMovement.Instance.cantMove = false;
 
         SD_PlayerAttack.Instance.cantAttack = false;
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(4f);
         gameObject.SetActive(false);
     }
 }

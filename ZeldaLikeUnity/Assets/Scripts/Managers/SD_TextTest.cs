@@ -13,7 +13,7 @@ public class SD_TextTest : MonoBehaviour
     int listnumber;
    [HideInInspector] public int pnj;
    public Image characterImage;
-
+    bool resetAttack;
     private void Awake()
     {
         pnj =(int) textDialogue[0].pnj;
@@ -24,8 +24,13 @@ public class SD_TextTest : MonoBehaviour
         SD_PlayerMovement.Instance.cantDash = true;
         SD_PlayerMovement.Instance.cantMove = true;
         SD_PlayerAttack.Instance.cantAim = true;
-        SD_PlayerAttack.Instance.cantAttack = true;
+
         SD_PlayerRessources.Instance.cantTakeDamage = true;
+        if (!SD_PlayerAttack.Instance.cantAttack)
+        {
+            SD_PlayerAttack.Instance.cantAttack = true;
+            resetAttack = true;
+        }
         if (listnumber >= textDialogue.Count)
         {
             listnumber = 0;
@@ -34,7 +39,13 @@ public class SD_TextTest : MonoBehaviour
             SD_PlayerAttack.Instance.cantAim = false;
             SD_PlayerAttack.Instance.cantAttack = false;
             SD_PlayerRessources.Instance.cantTakeDamage = false;
+            if (resetAttack)
+            {
+                SD_PlayerAttack.Instance.cantAttack = false;
+                resetAttack = false;
+            }
             transform.parent.gameObject.SetActive(false);
+
             yield break;
         }
         
@@ -63,11 +74,16 @@ public class SD_TextTest : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButtonDown("Interact"))
+        if (Input.GetButtonUp("Interact"))
         {
             breaking = true;
             if (!cantContinue)
+            {
                 StartCoroutine(Text());
+                firstTextmeshPro.text = "";
+                characterImage.sprite = textDialogue[listnumber].ImageCharacter;
+                characterImage.SetNativeSize();
+            }
         }
             
     }

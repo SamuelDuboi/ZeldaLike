@@ -9,6 +9,10 @@ public  class SD_PNJ : MonoBehaviour
     int cpt;
     int pnj;
     GameObject interactButton;
+    bool canIntercat;
+    GameObject player;
+    [Range(0, 10)]
+    public float range = 2f;
     public  void Start()
     {
         interactButton = transform.GetChild(0).gameObject;
@@ -36,30 +40,42 @@ public  class SD_PNJ : MonoBehaviour
     }
     // Start is called before the first frame update
 
-    private void OnTriggerExit2D(Collider2D collision)
+    private void Update()
     {
-        if (collision.tag == "Player")
-            interactButton.SetActive(false);
-
+        if (canIntercat)
+        {
+            if (Mathf.Abs(Vector2.Distance(transform.position, player.transform.position)) < range)
+            {
+                if (!interactButton.activeInHierarchy)
+                    interactButton.SetActive(true);
+                else
+                    PlayDialogue();
+            }
+            else if (Mathf.Abs(Vector2.Distance(transform.position, player.transform.position)) >= range)
+            {
+                interactButton.SetActive(false);
+            }
+        }
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player"&& !canIntercat)
         {
-            PlayDialogue();
+            if (!interactButton.activeInHierarchy && !text[cpt].activeInHierarchy)
+            {
+                interactButton.transform.SetParent(SD_PlayerMovement.Instance.transform);
+                interactButton.transform.position = new Vector2(interactButton.transform.parent.position.x,
+                                                                interactButton.transform.parent.position.y + 1);
+                canIntercat = true;
+                player = collision.gameObject;
+            }
+
         }
     }
 
     public void PlayDialogue()
     {
-        if (!interactButton.activeInHierarchy && !text[cpt].activeInHierarchy)
-        {
-            interactButton.SetActive(true);
-            interactButton.transform.SetParent(SD_PlayerMovement.Instance.transform);
-            interactButton.transform.position = new Vector2(interactButton.transform.parent.position.x,
-                                                            interactButton.transform.parent.position.y + 1);
-        }
-
+       
         if (Input.GetButtonDown("Interact"))
         {
             if (!text[cpt].activeInHierarchy)
