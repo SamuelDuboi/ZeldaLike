@@ -1,0 +1,194 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &209787192281212364
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 209787192281212366}
+  - component: {fileID: 209787192281212367}
+  m_Layer: 0
+  m_Name: SOUNDManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &209787192281212366
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 209787192281212364}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 86.29932, y: 28.974909, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &209787192281212367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 209787192281212364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 551c26dbbe9a4964fadff001c707071c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: BackGroundMusic
+    clip: {fileID: 8300000, guid: 78fdd2f458ef2ba43abd50e91f155cbc, type: 3}
+    source: {fileID: 0}
+    group: {fileID: -2934808699073203160, guid: 30074e79190fbb3438e58f58430b627d,
+      type: 2}
+    volume: 1
+    pitch: 1
+    loop: 1
+  - name: Charge_Ronchonchon
+    clip: {fileID: 8300000, guid: aa93ab3a70be260458d74814b7e11e31, type: 3}
+    source: {fileID: 0}
+    group: {fileID: 1071714251652373871, guid: 30074e79190fbb3438e58f58430b627d, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: Fuite_Ronchonchon
+    clip: {fileID: 8300000, guid: abb09794b0f239649817f83e9d80e160, type: 3}
+    source: {fileID: 0}
+    group: {fileID: 1071714251652373871, guid: 30074e79190fbb3438e58f58430b627d, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: Aggro_Ronchonchon
+    clip: {fileID: 8300000, guid: 1d6b27c352bfc074494f71e2bb5805da, type: 3}
+    source: {fileID: 0}
+    group: {fileID: 1071714251652373871, guid: 30074e79190fbb3438e58f58430b627d, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: Hit_Ronchonchon
+    clip: {fileID: 8300000, guid: 043c95d4b12898f47bd4c43f0685b2e3, type: 3}
+    source: {fileID: 0}
+    group: {fileID: 1071714251652373871, guid: 30074e79190fbb3438e58f58430b627d, type: 2}
+    volume: 0.65
+    pitch: 1
+    loop: 0
+  - name: Inoh_Slash1
+    clip: {fileID: 8300000, guid: a5e0782851f1c8d41ba18e6e1878f018, type: 3}
+    source: {fileID: 0}
+    group: {fileID: 1604241929038478150, guid: 30074e79190fbb3438e58f58430b627d, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: Inoh_Slash2
+    clip: {fileID: 8300000, guid: bd774dae5aa8a974ea000d57594a7c94, type: 3}
+    source: {fileID: 0}
+    group: {fileID: 1604241929038478150, guid: 30074e79190fbb3438e58f58430b627d, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: Inoh_Tourbillon
+    clip: {fileID: 8300000, guid: 02ca0d3fa0797a647bb3625adf3b4139, type: 3}
+    source: {fileID: 0}
+    group: {fileID: 1604241929038478150, guid: 30074e79190fbb3438e58f58430b627d, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: Inoh_Dash1
+    clip: {fileID: 8300000, guid: e111abb637cf88c469a8d76f29d90f1e, type: 3}
+    source: {fileID: 0}
+    group: {fileID: 1604241929038478150, guid: 30074e79190fbb3438e58f58430b627d, type: 2}
+    volume: 0.2
+    pitch: 1
+    loop: 0
+  - name: Inoh_Dash2
+    clip: {fileID: 8300000, guid: 81e3d26429700144e87980eaf11a34ce, type: 3}
+    source: {fileID: 0}
+    group: {fileID: 1604241929038478150, guid: 30074e79190fbb3438e58f58430b627d, type: 2}
+    volume: 0.2
+    pitch: 1
+    loop: 0
+  - name: Inoh_Dash3
+    clip: {fileID: 8300000, guid: cc4f7596b3db8024ba87edbe6ab5f4d0, type: 3}
+    source: {fileID: 0}
+    group: {fileID: 1604241929038478150, guid: 30074e79190fbb3438e58f58430b627d, type: 2}
+    volume: 0.2
+    pitch: 1
+    loop: 0
+  - name: Inoh_TakeDamage
+    clip: {fileID: 8300000, guid: 65b6c0b3931c77d4b8c736352389b286, type: 3}
+    source: {fileID: 0}
+    group: {fileID: 1604241929038478150, guid: 30074e79190fbb3438e58f58430b627d, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: Inoh_Chute
+    clip: {fileID: 8300000, guid: a53edf065a7c3a4469465b86c653ff66, type: 3}
+    source: {fileID: 0}
+    group: {fileID: 1604241929038478150, guid: 30074e79190fbb3438e58f58430b627d, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: Marche_Herbe
+    clip: {fileID: 8300000, guid: 922a89abcadcd8547bc512165e60524c, type: 3}
+    source: {fileID: 0}
+    group: {fileID: 1604241929038478150, guid: 30074e79190fbb3438e58f58430b627d, type: 2}
+    volume: 0.185
+    pitch: 1
+    loop: 1
+  - name: Sprint_Herbe
+    clip: {fileID: 8300000, guid: 70c197360189b414b85090cb66085843, type: 3}
+    source: {fileID: 0}
+    group: {fileID: 1604241929038478150, guid: 30074e79190fbb3438e58f58430b627d, type: 2}
+    volume: 0.185
+    pitch: 1
+    loop: 1
+  - name: Stun_Ronchonchon
+    clip: {fileID: 8300000, guid: 6a1a8b4ba9de00d4294f61643f8d6ebb, type: 3}
+    source: {fileID: 0}
+    group: {fileID: 1071714251652373871, guid: 30074e79190fbb3438e58f58430b627d, type: 2}
+    volume: 0.5
+    pitch: 1
+    loop: 1
+  - name: Activation_Scout
+    clip: {fileID: 8300000, guid: 9329fe7469a5e334280f9920ca85085b, type: 3}
+    source: {fileID: 0}
+    group: {fileID: 3724028032716579963, guid: 30074e79190fbb3438e58f58430b627d, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: Charge_Scout
+    clip: {fileID: 8300000, guid: a206f73b0989fd048906435b478dbf3b, type: 3}
+    source: {fileID: 0}
+    group: {fileID: 3724028032716579963, guid: 30074e79190fbb3438e58f58430b627d, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: Tir_Scout
+    clip: {fileID: 8300000, guid: f2eef3177f1d6094ca3be40b1c73d085, type: 3}
+    source: {fileID: 0}
+    group: {fileID: 3724028032716579963, guid: 30074e79190fbb3438e58f58430b627d, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: Explosion_Scout
+    clip: {fileID: 8300000, guid: 852be6e52430f7e419fde4ee83585426, type: 3}
+    source: {fileID: 0}
+    group: {fileID: 3724028032716579963, guid: 30074e79190fbb3438e58f58430b627d, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: Hit_Robot
+    clip: {fileID: 8300000, guid: 16f87c8fc957e22428fbf78dcfc7f8e0, type: 3}
+    source: {fileID: 0}
+    group: {fileID: -745629671045047629, guid: 30074e79190fbb3438e58f58430b627d, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0

@@ -77,6 +77,7 @@ namespace Ennemy
             canShoot = false;
             target.GetComponent<SpriteRenderer>().color = Color.white;
             ennemyAnimator.SetBool("Attack", true);
+            AudioManager.Instance.Play("Charge_Scout");
             while (timer > 0)
             {
                 target.SetActive(true);
@@ -101,6 +102,7 @@ namespace Ennemy
             if (!isAttacking)
             {
                 target.SetActive(false);
+                AudioManager.Instance.Stop("Charge_Scout");
                 target.GetComponent<SpriteRenderer>().color = Color.white;
                 canShoot = true;
                 canMove = true;
@@ -109,6 +111,8 @@ namespace Ennemy
 
             }
             yield return new WaitForSeconds(0.5f);
+            AudioManager.Instance.Stop("Charge_Scout");
+            AudioManager.Instance.Play("Tir_Scout");
             target.SetActive(false);
             GameObject bullet = Instantiate(ennemyBullet, transform.position, Quaternion.identity);
             bullet.GetComponent<CJ_BulletBehaviour>().parent = gameObject;
@@ -126,6 +130,7 @@ namespace Ennemy
         {
             base.Aggro(collision);
             ennemyAnimator.SetTrigger("WakeUp");
+            AudioManager.Instance.Play("Activation_Scout");
         }
         public override void Desaggro(Collider2D collision)
         {
@@ -144,6 +149,13 @@ namespace Ennemy
         public void Activation()
         {
             activation = true;
+
+        }
+
+        public override IEnumerator Stun(float timer)
+        {
+            AudioManager.Instance.Stop("Charge_Scout");
+            return base.Stun(timer);
         }
     }
 }

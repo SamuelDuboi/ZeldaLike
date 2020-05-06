@@ -109,22 +109,12 @@ namespace Player
                             speedBeforAttack = SD_PlayerMovement.Instance.initialSpeed;
                             SD_PlayerMovement.Instance.speed = speedBeforAttack / slowOfAttack;
                             timeBeforReset += SD_PlayerAnimation.Instance.attackAnimation[attackNumber - 1].length;
-                            AudioManager.Instance.Play("Inoh_Slash1");
 
                         }
                         else
                         {
                             //add the new attack animation to the cooldown of the combo and disable the movement of the player
                             timeBeforReset += SD_PlayerAnimation.Instance.attackAnimation[attackNumber - 1].length;
-                            switch (attackNumber)
-                            {
-                                case 2:
-                                    AudioManager.Instance.Play("Inoh_Slash2");
-                                    break;
-                                case 3:
-                                    AudioManager.Instance.Play("Inoh_Tourbillon");
-                                    break;
-                            }
                         }
 
                         // set the animation to the new attack
@@ -282,5 +272,16 @@ namespace Player
         {
             canPushBack = false;
         }
-    } 
+
+        public void PlaySound(string name)
+        {
+            AudioManager.Instance.Play(name);
+        }
+
+        public void StopSound(string name)
+        {
+            AudioManager.Instance.Stop(name);
+        }
+
+    }
 }
