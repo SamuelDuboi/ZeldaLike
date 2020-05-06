@@ -23,5 +23,15 @@ namespace Player
             sprite = GetComponent<SpriteRenderer>();           
         }
 
+        public void PlaySound(string name)
+        {
+            AudioManager.Instance.Play(name);
+        }
+
+        public void StopSound(string name)
+        {
+            AudioManager.Instance.Stop(name);
+        }
+
     }
 }

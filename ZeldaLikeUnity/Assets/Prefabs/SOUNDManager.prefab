@@ -80,13 +80,6 @@ MonoBehaviour:
     volume: 0.65
     pitch: 1
     loop: 0
-  - name: Marche_Herbe
-    clip: {fileID: 8300000, guid: 922a89abcadcd8547bc512165e60524c, type: 3}
-    source: {fileID: 0}
-    group: {fileID: 1604241929038478150, guid: 30074e79190fbb3438e58f58430b627d, type: 2}
-    volume: 0.185
-    pitch: 1
-    loop: 1
   - name: Inoh_Slash1
     clip: {fileID: 8300000, guid: a5e0782851f1c8d41ba18e6e1878f018, type: 3}
     source: {fileID: 0}
@@ -112,21 +105,21 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: e111abb637cf88c469a8d76f29d90f1e, type: 3}
     source: {fileID: 0}
     group: {fileID: 1604241929038478150, guid: 30074e79190fbb3438e58f58430b627d, type: 2}
-    volume: 1
+    volume: 0.2
     pitch: 1
     loop: 0
   - name: Inoh_Dash2
     clip: {fileID: 8300000, guid: 81e3d26429700144e87980eaf11a34ce, type: 3}
     source: {fileID: 0}
     group: {fileID: 1604241929038478150, guid: 30074e79190fbb3438e58f58430b627d, type: 2}
-    volume: 1
+    volume: 0.2
     pitch: 1
     loop: 0
   - name: Inoh_Dash3
     clip: {fileID: 8300000, guid: cc4f7596b3db8024ba87edbe6ab5f4d0, type: 3}
     source: {fileID: 0}
     group: {fileID: 1604241929038478150, guid: 30074e79190fbb3438e58f58430b627d, type: 2}
-    volume: 1
+    volume: 0.2
     pitch: 1
     loop: 0
   - name: Inoh_TakeDamage
@@ -140,6 +133,62 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: a53edf065a7c3a4469465b86c653ff66, type: 3}
     source: {fileID: 0}
     group: {fileID: 1604241929038478150, guid: 30074e79190fbb3438e58f58430b627d, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: Marche_Herbe
+    clip: {fileID: 8300000, guid: 922a89abcadcd8547bc512165e60524c, type: 3}
+    source: {fileID: 0}
+    group: {fileID: 1604241929038478150, guid: 30074e79190fbb3438e58f58430b627d, type: 2}
+    volume: 0.185
+    pitch: 1
+    loop: 1
+  - name: Sprint_Herbe
+    clip: {fileID: 8300000, guid: 70c197360189b414b85090cb66085843, type: 3}
+    source: {fileID: 0}
+    group: {fileID: 1604241929038478150, guid: 30074e79190fbb3438e58f58430b627d, type: 2}
+    volume: 0.185
+    pitch: 1
+    loop: 1
+  - name: Stun_Ronchonchon
+    clip: {fileID: 8300000, guid: 6a1a8b4ba9de00d4294f61643f8d6ebb, type: 3}
+    source: {fileID: 0}
+    group: {fileID: 1071714251652373871, guid: 30074e79190fbb3438e58f58430b627d, type: 2}
+    volume: 0.5
+    pitch: 1
+    loop: 1
+  - name: Activation_Scout
+    clip: {fileID: 8300000, guid: 9329fe7469a5e334280f9920ca85085b, type: 3}
+    source: {fileID: 0}
+    group: {fileID: 3724028032716579963, guid: 30074e79190fbb3438e58f58430b627d, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: Charge_Scout
+    clip: {fileID: 8300000, guid: a206f73b0989fd048906435b478dbf3b, type: 3}
+    source: {fileID: 0}
+    group: {fileID: 3724028032716579963, guid: 30074e79190fbb3438e58f58430b627d, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: Tir_Scout
+    clip: {fileID: 8300000, guid: f2eef3177f1d6094ca3be40b1c73d085, type: 3}
+    source: {fileID: 0}
+    group: {fileID: 3724028032716579963, guid: 30074e79190fbb3438e58f58430b627d, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: Explosion_Scout
+    clip: {fileID: 8300000, guid: 852be6e52430f7e419fde4ee83585426, type: 3}
+    source: {fileID: 0}
+    group: {fileID: 3724028032716579963, guid: 30074e79190fbb3438e58f58430b627d, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: Hit_Robot
+    clip: {fileID: 8300000, guid: 16f87c8fc957e22428fbf78dcfc7f8e0, type: 3}
+    source: {fileID: 0}
+    group: {fileID: -745629671045047629, guid: 30074e79190fbb3438e58f58430b627d, type: 2}
     volume: 1
     pitch: 1
     loop: 0

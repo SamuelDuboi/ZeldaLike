@@ -109,7 +109,6 @@ namespace Player
                     YAxis = Input.GetAxisRaw("Vertical");
                 else
                     YAxis = Input.GetAxis("Vertical");
-               AudioManager.Instance.Play("Marche_Herbe");
                 Move();
             }
             else
@@ -121,6 +120,7 @@ namespace Player
                 if (grosPoussière.activeInHierarchy)
                     grosPoussière.SetActive(false);
                 AudioManager.Instance.Stop("Marche_Herbe");
+                AudioManager.Instance.Stop("Sprint_Herbe");
             }
 
 
@@ -169,6 +169,14 @@ namespace Player
         {
             SD_PlayerAnimation.Instance.PlayerAnimator.SetBool("IsMoving", !cantMove);
             playerRGB.velocity = new Vector2(XAxis, YAxis) * speed * sprint;
+            if(sprint == 1)
+            {
+                AudioManager.Instance.Play("Marche_Herbe");
+            }
+            else if (sprint > 1)
+            {
+                AudioManager.Instance.Play("Sprint_Herbe");
+            }
 
             if (YAxis > 0 && Mathf.Abs(YAxis) > Mathf.Abs(XAxis))
             {

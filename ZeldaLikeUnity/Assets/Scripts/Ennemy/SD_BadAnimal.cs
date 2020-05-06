@@ -153,6 +153,7 @@ namespace Ennemy
                 ennemyAnimator.SetFloat("Left", 0f);
             ennemyAnimator.SetBool("Charging", false);
             ennemyAnimator.SetBool("Stun", true);
+            AudioManager.Instance.Play("Stun_Ronchonchon");
             isAttacking = false;
             ennemyRGB.velocity = Vector2.zero;
             yield return new WaitForSeconds(timeResting);
@@ -166,6 +167,7 @@ namespace Ennemy
         {
             foreach (Collider2D collider in GetComponentsInChildren<Collider2D>())
                 collider.enabled = false;
+            AudioManager.Instance.Stop("Stun_Ronchonchon");
             AudioManager.Instance.Play("Fuite_Ronchonchon");
             if (player.transform.position.x - transform.position.x > 0)
             {
@@ -182,6 +184,14 @@ namespace Ennemy
         public void EndStun()
         {
             isCharging = false;
+            AudioManager.Instance.Stop("Stun_Ronchonchon");
+        }
+
+        public override IEnumerator Stun(float timer)
+        {
+            AudioManager.Instance.Play("Stun_Ronchonchon");
+            return base.Stun(timer);
+
         }
     }
 }
