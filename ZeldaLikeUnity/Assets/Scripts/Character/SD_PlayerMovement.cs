@@ -109,7 +109,7 @@ namespace Player
                     YAxis = Input.GetAxisRaw("Vertical");
                 else
                     YAxis = Input.GetAxis("Vertical");
-                AudioManager.Instance.Play("Marche_Herbe");
+               AudioManager.Instance.Play("Marche_Herbe");
                 Move();
             }
             else
