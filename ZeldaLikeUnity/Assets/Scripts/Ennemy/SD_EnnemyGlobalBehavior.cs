@@ -22,6 +22,7 @@ namespace Ennemy
          public bool canMove;
          public bool isAvoidingObstacles;
         public int damage;
+        [HideInInspector] public bool dontAttackPlayerOnCOllision;
         public int life;
         [HideInInspector] public Animator ennemyAnimator;
 
@@ -53,7 +54,7 @@ namespace Ennemy
             ennemyAnimator = GetComponent<Animator>();
         }
 
-        private void OnTriggerStay2D(Collider2D collision)
+       /* private void OnTriggerStay2D(Collider2D collision)
         {
             if (collision.gameObject.layer == 8)
             {
@@ -64,7 +65,7 @@ namespace Ennemy
                 }
 
             }
-        }
+        }*/
         public virtual void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.gameObject.layer == 8)
@@ -181,7 +182,7 @@ namespace Ennemy
                 yield return new WaitForSeconds(0.5f);
                 ennemyRGB.velocity = Vector2.zero;
             }
-            yield return new WaitForSeconds(0.3f);
+            yield return new WaitForSeconds(0.2f);
             etincelles.SetActive(false);
             canTakeDamage = true;
 

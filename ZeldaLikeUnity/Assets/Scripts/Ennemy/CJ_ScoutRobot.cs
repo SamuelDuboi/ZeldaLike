@@ -29,9 +29,8 @@ namespace Ennemy
             if (!wontBeReset)
             {
                 GameManagerV2.Instance.AddEnnemieToList(GameManagerV2.ennemies.scoutRobot, gameObject);
-
-
             }
+            dontAttackPlayerOnCOllision = true;
         }
     
      public override void FixedUpdate()
@@ -154,7 +153,13 @@ namespace Ennemy
 
         public override IEnumerator Stun(float timer)
         {
+            StopAllCoroutines();
+            target.SetActive(false);
             AudioManager.Instance.Stop("Charge_Scout");
+            target.GetComponent<SpriteRenderer>().color = Color.white;
+            canShoot = true;
+            canMove = true;
+            ennemyAnimator.SetBool("Attack", false);
             return base.Stun(timer);
         }
     }

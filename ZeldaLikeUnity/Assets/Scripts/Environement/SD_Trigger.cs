@@ -5,6 +5,7 @@ using Player;
 using Management;
 using UnityEngine.SceneManagement;
 
+
 public class SD_Trigger : MonoBehaviour
 {
     public GameObject camera;
@@ -25,6 +26,10 @@ public class SD_Trigger : MonoBehaviour
     public float timeCameraMoving = 1;
 
     public bool useForHenry;
+    bool canInteract;
+    GameObject player;
+    [Range(0,10)]
+    public float range = 2f;
     private void Start()
     { 
 
@@ -36,18 +41,23 @@ public class SD_Trigger : MonoBehaviour
         doorAnimator.SetBool("Oppen", Open);
         timer = 1;
     }
+ 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(!closeDoor)
-        interactButton.SetActive(true);
+        if (!closeDoor && !canInteract)
+        {
+            player = collision.gameObject;
+            canInteract = true;
+            interactButton.SetActive(true);
+        }
         
     }
-    private void OnTriggerStay2D(Collider2D collision)
+   void Interact()
     {
         if (Input.GetButtonDown("Interact") && !closeDoor)
         {
             Time.timeScale = 0;
-            timer =1;
+            timer = 1;
             moveBack = false;
             SD_PlayerMovement.Instance.cantDash = true;
             SD_PlayerMovement.Instance.cantMove = true;
@@ -60,13 +70,10 @@ public class SD_Trigger : MonoBehaviour
             cpt = 0;
             closeDoor = true;
             interactButton.SetActive(false);
-            distance = Mathf.Abs(Vector2.Distance(new Vector3(transform.GetChild(0).position.x, transform.GetChild(0).position.y, -10), camera.transform.position))*0.1f;
+            distance = Mathf.Abs(Vector2.Distance(new Vector3(transform.GetChild(0).position.x, transform.GetChild(0).position.y, -10), camera.transform.position)) * 0.1f;
         }
     }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        interactButton.SetActive(false);
-    }
+
     void Activation()
     {
         doorAnimator.SetTrigger("Activated");
@@ -89,6 +96,20 @@ public class SD_Trigger : MonoBehaviour
     }
     private void Update()
     {
+        if (canInteract && !closeDoor)
+        {
+            if (Mathf.Abs(Vector2.Distance(transform.position, player.transform.position)) < range)
+            {
+                if (!interactButton.activeInHierarchy)
+                    interactButton.SetActive(true);
+                else
+                   Interact();
+            }
+            else if (Mathf.Abs(Vector2.Distance(transform.position, player.transform.position)) >= range)
+            {
+                interactButton.SetActive(false);
+            }
+        }
         if (move)
             camera.transform.position = Vector3.MoveTowards(camera.transform.position,
                                                             new Vector3(transform.GetChild(0).position.x, transform.GetChild(0).position.y, -10),
