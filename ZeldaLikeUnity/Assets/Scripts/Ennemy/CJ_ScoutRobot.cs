@@ -39,7 +39,7 @@ namespace Ennemy
             isAggro = false;
             if (canMove)
             {
-                if (!isAttacking && activation && activeAggro)
+                if (!isAttacking && activation && activeAggro && life > 0)
                     StartCoroutine(SniperShot());
             }
 
@@ -67,6 +67,10 @@ namespace Ennemy
         {
             base.OnTriggerEnter2D(collision);
             isAggro = false;
+            if(collision.gameObject.layer == 8)
+            {
+                //AudioManager.Instance.Stop("Charge_Scout");
+            }
         }
         IEnumerator SniperShot()
         {
@@ -101,7 +105,7 @@ namespace Ennemy
             if (!isAttacking)
             {
                 target.SetActive(false);
-                AudioManager.Instance.Stop("Charge_Scout");
+                //AudioManager.Instance.Stop("Charge_Scout");
                 target.GetComponent<SpriteRenderer>().color = Color.white;
                 canShoot = true;
                 canMove = true;
@@ -110,7 +114,7 @@ namespace Ennemy
 
             }
             yield return new WaitForSeconds(0.5f);
-            AudioManager.Instance.Stop("Charge_Scout");
+            //AudioManager.Instance.Stop("Charge_Scout");
             AudioManager.Instance.Play("Tir_Scout");
             target.SetActive(false);
             GameObject bullet = Instantiate(ennemyBullet, transform.position, Quaternion.identity);
@@ -154,8 +158,8 @@ namespace Ennemy
         public override IEnumerator Stun(float timer)
         {
             StopAllCoroutines();
+            //AudioManager.Instance.Stop("Charge_Scout");
             target.SetActive(false);
-            AudioManager.Instance.Stop("Charge_Scout");
             target.GetComponent<SpriteRenderer>().color = Color.white;
             canShoot = true;
             canMove = true;

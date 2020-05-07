@@ -56,6 +56,7 @@ public class SD_Trigger : MonoBehaviour
     {
         if (Input.GetButtonDown("Interact") && !closeDoor)
         {
+            AudioManager.Instance.Pause();
             Time.timeScale = 0;
             timer = 1;
             moveBack = false;
@@ -134,6 +135,7 @@ public class SD_Trigger : MonoBehaviour
                                                            playerCam.transform.GetChild(0).position, distance / timeCameraMoving);
             if (Mathf.Abs(camera.transform.position.x - playerCam.transform.GetChild(0).position.x) < 0.1f && moveBack)
             {
+                AudioManager.Instance.UnPause();
                 moveBack = false;
                 Time.timeScale = 1;
                 SD_PlayerMovement.Instance.cantDash = false;
@@ -167,5 +169,15 @@ public class SD_Trigger : MonoBehaviour
     {
         if (!Open)
             closeDoor = false;
+    }
+
+    public void PlaySound(string name)
+    {
+        AudioManager.Instance.Play(name);
+    }
+
+    public void StopSound(string name)
+    {
+        AudioManager.Instance.Stop(name);
     }
 }

@@ -87,4 +87,14 @@ public class TriggerActivated : MonoBehaviour
             isActivated = false;
             animator.SetBool("On", false);
     }
+
+    public void PlaySound(string name)
+    {
+        AudioManager.Instance.Play(name);
+    }
+
+    public void StopSound(string name)
+    {
+        AudioManager.Instance.Stop(name);
+    }
 }

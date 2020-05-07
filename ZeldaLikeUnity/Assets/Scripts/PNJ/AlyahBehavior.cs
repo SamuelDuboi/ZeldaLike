@@ -40,6 +40,7 @@ public class AlyahBehavior : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            AudioManager.Instance.Play("Voix_Alyah");
             PlayDialogue();
         }
     }

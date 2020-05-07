@@ -169,4 +169,14 @@ public class SD_TriggerRonchonchon : Singleton<SD_TriggerRonchonchon>
         if (!Open)
             closeDoor = false;
     }
+
+    public void PlaySound(string name)
+    {
+        AudioManager.Instance.Play(name);
+    }
+
+    public void StopSound(string name)
+    {
+        AudioManager.Instance.Stop(name);
+    }
 }
