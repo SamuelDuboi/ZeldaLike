@@ -51,7 +51,7 @@ namespace Ennemy
                     GetComponent<Collider2D>().enabled = false;
                 }
             }
-            else if(collision.gameObject.layer == 9 && collision.gameObject.tag != "Hole")
+            else if(collision.gameObject.layer == 9 && collision.gameObject.tag != "Hole" || collision.gameObject.layer == 9 && collision.gameObject.tag != "DestroyedPlatform")
             {
                 transform.position -= new Vector3(0, 0, 15);
                 GetComponent<Collider2D>().enabled = false;

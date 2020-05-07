@@ -74,15 +74,15 @@ public class SD_TextTest : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButtonUp("Interact"))
+        if (Input.GetButtonDown("Interact"))
         {
             breaking = true;
             if (!cantContinue)
             {
                 StartCoroutine(Text());
-                firstTextmeshPro.text = "";
+               /* firstTextmeshPro.text = "";
                 characterImage.sprite = textDialogue[listnumber].ImageCharacter;
-                characterImage.SetNativeSize();
+                characterImage.SetNativeSize();*/
             }
         }
             

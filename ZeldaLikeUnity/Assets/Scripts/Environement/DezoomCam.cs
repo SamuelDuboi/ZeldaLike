@@ -78,55 +78,59 @@ public class DezoomCam : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!up)
+        if(collision.gameObject.layer == 11)
         {
-            if (goRight)
+            if (!up)
             {
-                left.enabled = false;
-                right.enabled = true;
+                if (goRight)
+                {
+                    left.enabled = false;
+                    right.enabled = true;
+                }
+                else
+                {
+                    right.enabled = false;
+                    left.enabled = true;
+                }
+
+                moveUp = true;
+                moveDown = true;
+                up = true;
+                cam.transform.SetParent(collision.transform);
+                cam.transform.position = new Vector3(collision.transform.position.x, collision.transform.position.y, -10);
+                if (goRight)
+                    currentPosition = cam.transform.position.x - 0.01f;
+                else
+                    currentPosition = cam.transform.position.x + 0.01f;
+
+                cameraCam.orthographicSize = 5.6f;
+                cam.SetActive(true);
+                camPlayer.SetActive(false);
             }
             else
             {
-                right.enabled = false;
-                left.enabled = true;
+                if (cam.transform.position.x > currentPosition && goRight || cam.transform.position.x < currentPosition && !goRight)
+                {
+                    if (!moveUp)
+                        moveUp = true;
+                    else if (!moveDown)
+                        moveDown = false;
+                }
+                if (goRight)
+                {
+                    left.enabled = true;
+                    right.enabled = false;
+                    goRight = false;
+                }
+                else
+                {
+                    right.enabled = true;
+                    left.enabled = false;
+                    goRight = true;
+                }
+
             }
-
-            moveUp = true;
-            moveDown = true;
-            up = true;
-            cam.transform.SetParent(collision.transform);
-            cam.transform.position = new Vector3(collision.transform.position.x, collision.transform.position.y, -10);
-            if (goRight)
-                currentPosition = cam.transform.position.x - 0.01f;
-            else
-                currentPosition = cam.transform.position.x + 0.01f;
-
-            cameraCam.orthographicSize = 5.6f;
-            cam.SetActive(true);
-            camPlayer.SetActive(false);
         }
-        else
-        {
-            if (cam.transform.position.x > currentPosition && goRight || cam.transform.position.x < currentPosition && !goRight)
-            {
-                if (!moveUp)
-                    moveUp = true;
-                else if (!moveDown)
-                    moveDown = false;
-            }
-            if (goRight)
-            {
-                left.enabled = true;
-                right.enabled = false;
-                goRight = false;
-            }
-            else
-            {
-                right.enabled = true;
-                left.enabled = false;
-                goRight = true;
-            }
 
-        }
     }
 }

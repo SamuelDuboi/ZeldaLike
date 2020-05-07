@@ -78,10 +78,11 @@ public  class SD_PNJ : MonoBehaviour
        
         if (Input.GetButtonDown("Interact"))
         {
-            if (!text[cpt].activeInHierarchy)
+            if (cpt == 0 && !text[cpt].activeInHierarchy || !text[cpt - 1].activeInHierarchy && cpt > 0)
             {
                 interactButton.SetActive(false);
                 text[cpt].SetActive(true);
+                StartCoroutine(text[cpt].GetComponentInChildren<SD_TextTest>().Text());
                 if (cpt < text.Count - 1)
                 {
                     cpt++;
