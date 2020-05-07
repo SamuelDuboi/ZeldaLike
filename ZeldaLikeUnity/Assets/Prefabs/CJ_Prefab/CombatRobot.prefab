@@ -628,8 +628,8 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
+  m_Mass: 10000
+  m_LinearDrag: 100
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -679,10 +679,12 @@ MonoBehaviour:
   ennemyRGB: {fileID: 0}
   aggroZone: {fileID: 209899217}
   desaggroZone: {fileID: 8579030788120783253}
+  activeAggro: 0
   speed: 5
   canMove: 0
   isAvoidingObstacles: 0
   damage: 1
+  dontAttackPlayerOnCOllision: 0
   life: 10
   ennemyAnimator: {fileID: 0}
   isAggro: 0

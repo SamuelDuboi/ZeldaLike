@@ -305,8 +305,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 10000
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_LinearDrag: 100
+  m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -355,16 +355,17 @@ MonoBehaviour:
   ennemyRGB: {fileID: 0}
   aggroZone: {fileID: 2136672590}
   desaggroZone: {fileID: 2588135463784189841}
+  activeAggro: 0
   speed: 0
   canMove: 0
   isAvoidingObstacles: 0
   damage: 1
+  dontAttackPlayerOnCOllision: 0
   life: 3
   ennemyAnimator: {fileID: 0}
   isAggro: 0
   canTakeDamage: 0
   freezTime: 0.047
-  IsInMainScene: 1
   rayStartCorner:
   - {fileID: 1129962582}
   - {fileID: 1575223450}
