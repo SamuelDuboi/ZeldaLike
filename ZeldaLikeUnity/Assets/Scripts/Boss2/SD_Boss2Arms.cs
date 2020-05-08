@@ -60,7 +60,7 @@ public class SD_Boss2Arms : MonoBehaviour
 
     public void AnimtorOff()
     {
-        GetComponent<SpriteRenderer>().color = Color.black;
+        GetComponent<SpriteRenderer>().sprite = null;
 
         GetComponent<Animator>().enabled = false;
     }
