@@ -5,6 +5,17 @@ using Ennemy;
 
 public class SD_WindProjectile : MonoBehaviour
 {
+    public float timeAlive = 2f;
+    float cpt = 0;
+    private IEnumerator Start()
+    {
+        while (cpt < timeAlive)
+        {
+            cpt += 0.01f;
+            yield return new WaitForSeconds(0.01f);
+        }
+        Destroy(gameObject);
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Fire")
@@ -21,7 +32,7 @@ public class SD_WindProjectile : MonoBehaviour
     }
     IEnumerator Death()
     {
-        float cpt = 0;
+        cpt = 0;
         while (cpt < 0.2f)
         {
             cpt += 0.01f;

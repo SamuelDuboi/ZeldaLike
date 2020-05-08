@@ -172,6 +172,9 @@ namespace Ennemy
                 CJ_PlayerCameraManager.Instance.ennemyList.Remove(gameObject);
                 GetComponent<SpriteRenderer>().color = Color.white;
                 ennemyAnimator.SetTrigger("Death");
+                ennemyRGB.velocity = Vector2.zero;
+                isAggro = false;
+                canMove = false;
                 yield break;
             }
             
