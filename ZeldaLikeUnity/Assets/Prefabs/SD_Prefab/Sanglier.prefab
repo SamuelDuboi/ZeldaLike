@@ -288,7 +288,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1000
-  m_LinearDrag: 100
+  m_LinearDrag: 30
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -339,7 +339,7 @@ MonoBehaviour:
   aggroZone: {fileID: 2203752920297478274}
   desaggroZone: {fileID: 2063323278548690224}
   activeAggro: 0
-  speed: 5
+  speed: 10
   canMove: 0
   isAvoidingObstacles: 0
   damage: 1

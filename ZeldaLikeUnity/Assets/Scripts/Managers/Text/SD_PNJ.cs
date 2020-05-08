@@ -78,14 +78,38 @@ public  class SD_PNJ : MonoBehaviour
        
         if (Input.GetButtonDown("Interact"))
         {
-            if (cpt == 0 && !text[cpt].activeInHierarchy || !text[cpt - 1].activeInHierarchy && cpt > 0)
+            if (cpt == 0 && !text[cpt].activeInHierarchy || cpt > 0 && !text[cpt - 1].activeInHierarchy)
             {
                 interactButton.SetActive(false);
                 text[cpt].SetActive(true);
+                switch (text[cpt].GetClassInChildren<SD_TextTest>().pnj)
+                {
+                    case 0:
+                        AudioManager.Instance.Play("Voix_Alyah");
+                        break;
+                    case 1:
+                        AudioManager.Instance.Play("Voix_Alyah");
+                        break;
+                    case 2:
+                        AudioManager.Instance.Play("Voix_Henry");
+                        break;
+                    case 3:
+                        AudioManager.Instance.Play("Voix_Henry");
+                        break;
+                    case 4:
+                        break;
+                    case 5:
+                        break;
+                    case 6:
+                        AudioManager.Instance.Play("Note_Obtenu");
+                        break;
+                }
                 StartCoroutine(text[cpt].GetComponentInChildren<SD_TextTest>().Text());
                 if (cpt < text.Count - 1)
                 {
+            
                     cpt++;
+                  
                     switch (text[0].GetClassInChildren<SD_TextTest>().pnj)
                     {
                         case 0:
@@ -109,6 +133,9 @@ public  class SD_PNJ : MonoBehaviour
                             break;
                         case 5:
                             SD_PlayerRessources.Instance.Pepe = cpt;
+                            break;
+                        case 6:
+                            AudioManager.Instance.Play("Note_Obtenu");
                             break;
                     }
                     GameManagerV2.Instance.Saving(false);

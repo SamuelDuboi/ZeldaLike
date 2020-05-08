@@ -26,7 +26,6 @@ public class AudioManager : Singleton<AudioManager>
     void Start()
     {
         MakeSingleton(false);
-        Play("BackGroundMusic");
     }
 
    public void Play(string name)
