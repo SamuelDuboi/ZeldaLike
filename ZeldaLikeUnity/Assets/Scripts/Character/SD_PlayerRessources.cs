@@ -54,7 +54,7 @@ namespace Player
         {
             if (collision.gameObject.layer == 12)
             {
-                if(collision.gameObject.GetComponent<SD_EnnemyGlobalBehavior>().isAttacking)
+                if(collision.gameObject.GetComponent<SD_EnnemyGlobalBehavior>().isAttacking && !collision.gameObject.GetComponent<SD_EnnemyGlobalBehavior>().dontAttackPlayerOnCOllision)
                 StartCoroutine(TakingDamage(collision.gameObject.GetComponent<SD_EnnemyGlobalBehavior>().damage, collision.gameObject, false, 1));
             }
             else if (collision.gameObject.tag == "Heal")
@@ -158,6 +158,7 @@ namespace Player
             life = currentMaxLife;
             lifes[currentMaxLife-1].SetActive(true);
 
+            AudioManager.Instance.Play("Coeur_Up");
             for (int x = 0; x < life; x++)
             {
                 lifes[x].GetComponent<Image>().color = new Color(1, 1, 1, 1);

@@ -86,7 +86,7 @@ namespace Player
 
             }
             // input of attack needed to be change
-            if (Input.GetButtonDown("Attack") || Input.GetAxisRaw("Wind") > 0.8f && hasWind)
+            if (Input.GetButtonDown("Attack") && !cantAttack || Input.GetAxisRaw("Wind") > 0.8f && hasWind)
             {
                 playerVelocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
                 SD_PlayerMovement.Instance.playerRGB.velocity = playerVelocity * speedBeforAttack * 1.5f;

@@ -21,6 +21,7 @@ public class Baton : MonoBehaviour
                 if (Input.GetButtonDown("Interact"))
                 {
                     interactButton.SetActive(false);
+                    AudioManager.Instance.Play("Tresor_Obtenu");
                     AttackButton.SetActive(true);
                     AttackButton.transform.SetParent(SD_PlayerMovement.Instance.transform);
                     AttackButton.transform.position = new Vector2(AttackButton.transform.parent.position.x,

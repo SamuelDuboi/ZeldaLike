@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Management;
+using System;
 
 namespace Ennemy
 {
@@ -16,14 +17,11 @@ namespace Ennemy
         public float chargeSpeed;
         [Range(0, 20)]
         public float followSpeed;
-        bool canCharge = true;
-        Animator robotAttacks;
         int cacAttack;
         bool moveFirst;
     public override void Start()
     {
             base.Start();
-            robotAttacks = GetComponent<Animator>();
             GameManagerV2.Instance.AddEnnemieToList(GameManagerV2.ennemies.combatRobot, gameObject);
 
         }
@@ -34,7 +32,26 @@ namespace Ennemy
                 canMove = false;
             base.FixedUpdate();
     }
+        public override void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.gameObject.layer == 8 && canTakeDamage)
+            {
 
+                StopAllCoroutines();
+                ennemyRGB.velocity = Vector2.zero;
+                if (collision.transform.position.x - transform.position.x > 0)
+                {
+                    ennemyAnimator.SetFloat("Left", 1f);
+                }
+                else
+                    ennemyAnimator.SetFloat("Left", 0f);
+                ennemyAnimator.SetTrigger("hit");
+                AudioManager.Instance.Play("Hit_Ronchonchon");
+
+            }
+            base.OnTriggerEnter2D(collision);
+
+        }
         public override void Mouvement()
         {
           if(Vector2.Distance(transform.position,player.transform.position) > chargeRange)
@@ -68,7 +85,7 @@ namespace Ennemy
                         ennemyAnimator.SetFloat("Left", 0);
                     else
                         ennemyAnimator.SetFloat("Left", 1);
-                    ennemyAnimator.SetBool("Walk", false);
+                    ennemyAnimator.SetBool("Walk", true);
                     transform.position = Vector3.MoveTowards(transform.position, player.transform.position, Time.deltaTime * speed);
                 }
                
@@ -119,11 +136,19 @@ namespace Ennemy
             else
                 ennemyAnimator.SetFloat("Left", 1);
             ennemyAnimator.SetBool("Charge",true);
-            LayerMask playerLayer = LayerMask.GetMask("Player");
+            LayerMask playerLayer = 1<<11;
             RaycastHit2D chargeRay = Physics2D.Raycast(transform.position, new Vector2(player.transform.position.x - transform.position.x, player.transform.position.y - transform.position.y),Mathf.Infinity, playerLayer);
 
             ennemyRGB.velocity = new Vector2(chargeRay.point.x - transform.position.x, chargeRay.point.y -transform.position.y).normalized * chargeSpeed;
-            yield return new WaitForSeconds(1);
+            float cpt = 0;
+            while (cpt < 1f)
+            {
+                ennemyRGB.velocity = new Vector2(chargeRay.point.x - transform.position.x, chargeRay.point.y - transform.position.y).normalized * chargeSpeed;
+                cpt += 0.01f;
+                if (Mathf.Abs( Mathf.Abs(transform.position.x) - Mathf.Abs(chargeRay.point.x)) < 0.1f)
+                    break;
+                yield return new WaitForSeconds(0.01f);
+            }
             ennemyAnimator.SetBool("Stun", true);
             ennemyAnimator.SetBool("Charge", false);
             ennemyRGB.velocity = Vector2.zero;
@@ -142,21 +167,21 @@ namespace Ennemy
             canMove = false;
             isAvoidingObstacles = false;
             Aim = new Vector2(player.transform.position.x - transform.position.x, player.transform.position.y - transform.position.y);
-            if (Aim.y > 0.4)
+            if (Aim.y > 0.1 && Mathf.Abs(Aim.y) > Mathf.Abs(Aim.x))
             {
-                robotAttacks.SetInteger("attackNumber", 2);
+                ennemyAnimator.SetInteger("attackNumber", 2);
             }
-            else if (Aim.y < -0.4)
+            else if (Aim.y < -0.1 && Mathf.Abs(Aim.y) > Mathf.Abs(Aim.x))
             {
-                robotAttacks.SetInteger("attackNumber", 4);
+                ennemyAnimator.SetInteger("attackNumber", 4);
             }
-            else if (Aim.x > 0.4)
+            else if (Aim.x > 0.1 && Mathf.Abs(Aim.x) > Mathf.Abs(Aim.y))
             {
-                robotAttacks.SetInteger("attackNumber", 3);
+                ennemyAnimator.SetInteger("attackNumber", 3);
             }
-            else if (Aim.x < -0.4)
+            else if (Aim.x < -0.1 && Mathf.Abs(Aim.x) > Mathf.Abs(Aim.y))
             {
-                robotAttacks.SetInteger("attackNumber", 1);
+                ennemyAnimator.SetInteger("attackNumber", 1);
             }
             float cpt = 0;
             while (cpt < 1)
@@ -165,8 +190,8 @@ namespace Ennemy
                 {
                     canMove = false;
                     isAvoidingObstacles = false;
-                    robotAttacks.SetTrigger("Stun");
-                    robotAttacks.SetInteger("attackNumber", 0);
+                    ennemyAnimator.SetTrigger("Stun");
+                    ennemyAnimator.SetInteger("attackNumber", 0);
                     yield break;
                 }
                 cpt += 0.1f;
@@ -182,8 +207,8 @@ namespace Ennemy
                 {
                     canMove = false;
                     isAvoidingObstacles = false;
-                    robotAttacks.SetTrigger("Break");
-                    robotAttacks.SetInteger("attackNumber", 0);
+                    ennemyAnimator.SetTrigger("Break");
+                    ennemyAnimator.SetInteger("attackNumber", 0);
                     yield break;
                 }
                 cpt += 0.1f;
@@ -195,7 +220,7 @@ namespace Ennemy
         }
         public void ResetAttack()
         {
-            robotAttacks.SetInteger("attackNumber", 0);
+            ennemyAnimator.SetInteger("attackNumber", 0);
         }
         public void CanMove()
         {
@@ -207,6 +232,11 @@ namespace Ennemy
             ennemyAnimator.SetTrigger("Aggro");
 
         }
+        public override void Desaggro(Collider2D collision)
+        {
+            StopAllCoroutines();
+            base.Desaggro(collision);
 
+        }
     }
 }
