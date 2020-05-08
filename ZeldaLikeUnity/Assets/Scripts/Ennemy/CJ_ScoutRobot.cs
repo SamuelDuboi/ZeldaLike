@@ -21,11 +21,13 @@ namespace Ennemy
         [HideInInspector]public GameObject target;
         public GameObject ennemyBullet;
         public bool wontBeReset;
+        LineRenderer trail;
       public override void Start()
     {
             base.Start();
             target = gameObject.transform.GetChild(0).gameObject;
             target.SetActive(false);
+            trail = GetComponent<LineRenderer>();
             if (!wontBeReset)
             {
                 GameManagerV2.Instance.AddEnnemieToList(GameManagerV2.ennemies.scoutRobot, gameObject);
@@ -83,6 +85,8 @@ namespace Ennemy
             AudioManager.Instance.Play("Charge_Scout");
             while (timer > 0)
             {
+                trail.SetPosition(0, new Vector3(transform.position.x,transform.position.y + 0.4f,0));
+                trail.SetPosition(1, target.transform.position);
                 target.SetActive(true);
                 timer -= 0.1f;
                 swapColor  ++;
@@ -100,7 +104,8 @@ namespace Ennemy
                 if (!isAttacking)
                     break;
             }
-            
+
+            trail.SetPosition(1, new Vector3(transform.position.x, transform.position.y + 0.4f, 0));
             target.GetComponent<SpriteRenderer>().color = Color.red;
             if (!isAttacking)
             {
@@ -139,6 +144,7 @@ namespace Ennemy
         {
             base.Desaggro(collision);
             ennemyAnimator.SetTrigger("Sleep");
+            AudioManager.Instance.Stop("Charge_Scout");
         }
         public void Desapear()
         {
@@ -155,10 +161,16 @@ namespace Ennemy
 
         }
 
+        public void Desactivation()
+        {
+            activation = false;
+        }
+
         public override IEnumerator Stun(float timer)
         {
             StopAllCoroutines();
             //AudioManager.Instance.Stop("Charge_Scout");
+            trail.SetPosition(1, new Vector3(transform.position.x, transform.position.y + 0.4f, 0));
             target.SetActive(false);
             target.GetComponent<SpriteRenderer>().color = Color.white;
             canShoot = true;

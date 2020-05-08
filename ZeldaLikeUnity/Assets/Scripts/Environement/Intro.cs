@@ -19,6 +19,7 @@ public class Intro : MonoBehaviour
     void Start()
     {
         StartCoroutine(Introduction());
+        AudioManager.Instance.Play("Intro_Music");
         fade = introImage.GetComponent<Image>();
         playerCam.GetComponentInChildren<AudioListener>().enabled = false;
     }
@@ -47,6 +48,7 @@ public class Intro : MonoBehaviour
         isActive = true;
         deesse.SetActive(false);
         int i = 230;
+        AudioManager.Instance.Stop("Intro_Music");
         while (i > 0)
         {
             fade.color -= new Color32(0, 0, 0, 1);
@@ -56,6 +58,7 @@ public class Intro : MonoBehaviour
             SD_PlayerMovement.Instance.cantDash = true;
             SD_PlayerMovement.Instance.cantMove = true;
         }
+
         fade.color = new Color32(0, 0, 0, 0);
         alyiahText.SetActive(true);
         StartCoroutine(alyiahText.GetComponentInChildren<SD_TextTest>().Text());
@@ -78,7 +81,7 @@ public class Intro : MonoBehaviour
             yield return new WaitForSeconds(0.01f);
         }
         playerCam.SetActive(true);
-
+        AudioManager.Instance.Play("Village_Music");
         StartCoroutine(GameManagerV2.Instance.SwitchCamera());
         SD_PlayerMovement.Instance.transform.position = playerCam.transform.position;
         StartCoroutine(GameManagerV2.Instance.FadeOut());
@@ -87,6 +90,7 @@ public class Intro : MonoBehaviour
 
         playerCam.GetComponentInChildren<AudioListener>().enabled = true;
         yield return new WaitForSeconds(2.5f);
+
         alya.enabled = true;
         SD_PlayerMovement.Instance.cantDash = false;
         SD_PlayerMovement.Instance.cantMove = false;

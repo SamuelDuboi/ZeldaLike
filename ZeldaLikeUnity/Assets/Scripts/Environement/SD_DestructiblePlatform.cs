@@ -19,6 +19,7 @@ public class SD_DestructiblePlatform : MonoBehaviour
     {
         if (collision.gameObject.layer == 10)
         {
+           
             StartCoroutine(Destruction());
             SD_PlayerMovement.Instance.isOnPlatformDestructible = true;
             SD_PlayerMovement.Instance.ChoosePosition(collision);
@@ -45,6 +46,7 @@ public class SD_DestructiblePlatform : MonoBehaviour
     {
         if (!isActive)
         {
+            AudioManager.Instance.Play("Platform_Destruction");
             isActive = true;
             animator.SetTrigger("Fall");
             yield return new WaitForSeconds(animator.GetCurrentAnimatorClipInfo(0).Length);

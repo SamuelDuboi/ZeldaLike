@@ -48,7 +48,8 @@ public class SD_TextTest : MonoBehaviour
 
             yield break;
         }
-        
+        if (listnumber > 0)
+            AudioManager.Instance.Play("Dialogue_Skip");
 
         characterImage.sprite = textDialogue[listnumber].ImageCharacter;
         characterImage.SetNativeSize();
@@ -61,7 +62,9 @@ public class SD_TextTest : MonoBehaviour
         while (cpt < totalVisibleCharatcter)
         {
             if (breaking)
+            {
                 cpt = totalVisibleCharatcter;
+            }    
             int visibleCount = cpt % (totalVisibleCharatcter + 1);
             firstTextmeshPro.text = textDialogue[listnumber].text;
             firstTextmeshPro.maxVisibleCharacters = visibleCount;

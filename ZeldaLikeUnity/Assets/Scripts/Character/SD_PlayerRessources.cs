@@ -158,6 +158,7 @@ namespace Player
             life = currentMaxLife;
             lifes[currentMaxLife-1].SetActive(true);
 
+            AudioManager.Instance.Play("Coeur_Up");
             for (int x = 0; x < life; x++)
             {
                 lifes[x].GetComponent<Image>().color = new Color(1, 1, 1, 1);
