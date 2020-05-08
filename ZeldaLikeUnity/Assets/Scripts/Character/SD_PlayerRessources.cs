@@ -90,21 +90,28 @@ namespace Player
                 {
                     StopCoroutine(SD_PlayerMovement.Instance.Dash());
                 }
-                life-= damage;
-                if(life %2 ==0)
+                for (int i = 0; i<damage; i++)
                 {
-                    if (maxLifePossible == life + 1)
-                        lifes[life ].GetComponent<Image>().sprite = halfHeartEmpty;
+                    life --;
+                    if (life % 2 == 0)
+                    {
+                        if (currentMaxLife == life + 1 && currentMaxLife % 2 != 0)
+                        {
+                            lifes[life ].GetComponent<Image>().sprite = halfHeartEmpty;
+                        }
+                        else
+                            lifes[life].GetComponent<Image>().color = new Color(0, 0, 0, 0);
+
+                    }
+
                     else
-                        lifes[life].GetComponent<Image>().color = new Color(0,0,0,0);
-                   
-                }
+                    {
+                        lifes[life].GetComponent<Image>().sprite = completHeartEmpty;
 
-                else
-                {
-                    lifes[life ].GetComponent<Image>().sprite = completHeartEmpty;
+                    }
 
                 }
+               
 
 
 
