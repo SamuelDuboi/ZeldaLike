@@ -44,14 +44,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - name: BackGroundMusic
-    clip: {fileID: 8300000, guid: 78fdd2f458ef2ba43abd50e91f155cbc, type: 3}
-    source: {fileID: 0}
-    group: {fileID: -2934808699073203160, guid: 30074e79190fbb3438e58f58430b627d,
-      type: 2}
-    volume: 1
-    pitch: 1
-    loop: 1
   - name: Charge_Ronchonchon
     clip: {fileID: 8300000, guid: aa93ab3a70be260458d74814b7e11e31, type: 3}
     source: {fileID: 0}
@@ -201,6 +193,125 @@ MonoBehaviour:
     loop: 0
   - name: Voix_Alyah
     clip: {fileID: 8300000, guid: 834043a8cd9e68a49b3b2293e65e2df7, type: 3}
+    source: {fileID: 0}
+    group: {fileID: 4024073945416849157, guid: 30074e79190fbb3438e58f58430b627d, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: Intro_Music
+    clip: {fileID: 8300000, guid: c031d7808b848444b99bdd168fce1630, type: 3}
+    source: {fileID: 0}
+    group: {fileID: -2934808699073203160, guid: 30074e79190fbb3438e58f58430b627d,
+      type: 2}
+    volume: 1
+    pitch: 1
+    loop: 1
+  - name: Village_Music
+    clip: {fileID: 8300000, guid: 01dd1edca4e9b6443a455ce615980700, type: 3}
+    source: {fileID: 0}
+    group: {fileID: -2934808699073203160, guid: 30074e79190fbb3438e58f58430b627d,
+      type: 2}
+    volume: 1
+    pitch: 1
+    loop: 1
+  - name: Altar_Activation
+    clip: {fileID: 8300000, guid: bdb9a9c166006e044a36d2c79cd5f113, type: 3}
+    source: {fileID: 0}
+    group: {fileID: -7424492628125874587, guid: 30074e79190fbb3438e58f58430b627d,
+      type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: Tresor_Obtenu
+    clip: {fileID: 8300000, guid: 648a0376440c4534aa3a442893aee2c2, type: 3}
+    source: {fileID: 0}
+    group: {fileID: -6641241638245339165, guid: 30074e79190fbb3438e58f58430b627d,
+      type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: Grododo_Slap
+    clip: {fileID: 8300000, guid: 58fad265101fd004a8d6c1a05c06f07a, type: 3}
+    source: {fileID: 0}
+    group: {fileID: -7424492628125874587, guid: 30074e79190fbb3438e58f58430b627d,
+      type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: Grododo_Fuite
+    clip: {fileID: 8300000, guid: c7f0a8f639a1c114ea1ddbb56ca269cc, type: 3}
+    source: {fileID: 0}
+    group: {fileID: -7424492628125874587, guid: 30074e79190fbb3438e58f58430b627d,
+      type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: Grododo_Fuite
+    clip: {fileID: 8300000, guid: c7f0a8f639a1c114ea1ddbb56ca269cc, type: 3}
+    source: {fileID: 0}
+    group: {fileID: -7424492628125874587, guid: 30074e79190fbb3438e58f58430b627d,
+      type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: Coeur_Up
+    clip: {fileID: 8300000, guid: 7758354b0a29f0e48b689a68c5ebd1ee, type: 3}
+    source: {fileID: 0}
+    group: {fileID: -6641241638245339165, guid: 30074e79190fbb3438e58f58430b627d,
+      type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: Ambience_Ronchonchon
+    clip: {fileID: 8300000, guid: 28bb57017da7fef44867e2aace8fe330, type: 3}
+    source: {fileID: 0}
+    group: {fileID: -5340942388665521260, guid: 30074e79190fbb3438e58f58430b627d,
+      type: 2}
+    volume: 1
+    pitch: 1
+    loop: 1
+  - name: Door_Activation
+    clip: {fileID: 8300000, guid: 909c097af0ff22845b332d75890a33e0, type: 3}
+    source: {fileID: 0}
+    group: {fileID: -7424492628125874587, guid: 30074e79190fbb3438e58f58430b627d,
+      type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: Levier_Activation
+    clip: {fileID: 8300000, guid: 7f13e9f827a5274448119b07bcf4b354, type: 3}
+    source: {fileID: 0}
+    group: {fileID: -7424492628125874587, guid: 30074e79190fbb3438e58f58430b627d,
+      type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: Levier_Desactivation
+    clip: {fileID: 8300000, guid: c573da4db4a2d094889db517f8e7eca8, type: 3}
+    source: {fileID: 0}
+    group: {fileID: -7424492628125874587, guid: 30074e79190fbb3438e58f58430b627d,
+      type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: Platform_Destruction
+    clip: {fileID: 8300000, guid: 3260f99344fa21b4cb08444cab445356, type: 3}
+    source: {fileID: 0}
+    group: {fileID: -7424492628125874587, guid: 30074e79190fbb3438e58f58430b627d,
+      type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: Note_Obtenu
+    clip: {fileID: 8300000, guid: 9c0d7219cedea8f4cb17d62ba385a7a9, type: 3}
+    source: {fileID: 0}
+    group: {fileID: -6641241638245339165, guid: 30074e79190fbb3438e58f58430b627d,
+      type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: Dialogue_Skip
+    clip: {fileID: 8300000, guid: bde955d3e7e0b2d47997e6f8d943b47d, type: 3}
     source: {fileID: 0}
     group: {fileID: 4024073945416849157, guid: 30074e79190fbb3438e58f58430b627d, type: 2}
     volume: 1

@@ -189,7 +189,7 @@ namespace Ennemy
             isShielded = true;
             shield.SetActive(true);
         }
-        public override void Aggro(Collider2D collision)
+      public override void Aggro(Collider2D collision)
         {
             base.Aggro(collision);
             ennemyAnimator.SetTrigger("Aggro");

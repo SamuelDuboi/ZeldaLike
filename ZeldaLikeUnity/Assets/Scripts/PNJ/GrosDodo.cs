@@ -40,4 +40,14 @@ public class GrosDodo : MonoBehaviour
             run = true;
         }
     }
+
+    public void PlaySound(string name)
+    {
+        AudioManager.Instance.Play(name);
+    }
+
+    public void StopSound(string name)
+    {
+        AudioManager.Instance.Stop(name);
+    }
 }

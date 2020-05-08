@@ -11,6 +11,10 @@ public class TriggerActivated : MonoBehaviour
     public bool isActivated;
     public GameObject previousTrigger;
     public Animator animator;
+    GameObject player;
+    bool canInteract;
+    [Range(0, 10)]
+    public float range = 2f;
     private void Start()
     {
 
@@ -23,11 +27,32 @@ public class TriggerActivated : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(isActivated == false)
-        interactButton.SetActive(true);
-
+        if (isActivated == false && !canInteract)
+        {
+            player = collision.gameObject;
+            canInteract = true;
+            interactButton.SetActive(true);
+        }
     }
-    private void OnTriggerStay2D(Collider2D collision)
+    private void Update()
+    {
+        if (canInteract )
+        {
+            if (Mathf.Abs(Vector2.Distance(transform.position, player.transform.position)) < range)
+            {
+                if (!interactButton.activeInHierarchy)
+                    interactButton.SetActive(true);
+                else
+                    Interact();
+            }
+            else if (Mathf.Abs(Vector2.Distance(transform.position, player.transform.position)) >= range)
+            {
+                interactButton.SetActive(false);
+            }
+        }
+    }
+
+    void Interact()
     {
         if (Input.GetButtonDown("Interact"))
         {
@@ -47,22 +72,29 @@ public class TriggerActivated : MonoBehaviour
                 interactButton.SetActive(false);
                 SD_TriggerRonchonchon.Instance.TriggerUp();
             }
-            else if(isActivated == false)
+            else if (isActivated == false)
             {
                 SD_TriggerRonchonchon.Instance.ResetAll();
             }
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        interactButton.SetActive(false);
-    }
+   
 
     public IEnumerator resetTriger()
     {
             yield return new WaitForSeconds(0.1f);
             isActivated = false;
             animator.SetBool("On", false);
+    }
+
+    public void PlaySound(string name)
+    {
+        AudioManager.Instance.Play(name);
+    }
+
+    public void StopSound(string name)
+    {
+        AudioManager.Instance.Stop(name);
     }
 }

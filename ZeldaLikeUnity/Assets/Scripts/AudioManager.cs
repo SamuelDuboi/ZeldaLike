@@ -26,7 +26,6 @@ public class AudioManager : Singleton<AudioManager>
     void Start()
     {
         MakeSingleton(false);
-        Play("BackGroundMusic");
     }
 
    public void Play(string name)
@@ -46,7 +45,34 @@ public class AudioManager : Singleton<AudioManager>
     public void Stop(string name)
     {
         Sound s = sounds.Find(Sound => Sound.name == name);
+        if (s.name == null)
+        {
+            Debug.Log("Warning the sound" + name + "not found");
+            return;
+        }
         s.source.Stop();
     }
-    
+
+    public void Pause()
+    {
+        foreach(Sound s in sounds)
+        {
+            if(s.name != "BackGroundMusic")
+            {
+                s.source.Pause();
+            }
+        }
+    }
+
+    public void UnPause()
+    {
+        foreach (Sound s in sounds)
+        {
+            if (s.name != "BackGroundMusic")
+            {
+                s.source.UnPause();
+            }
+        }
+    }
+
 }

@@ -191,7 +191,17 @@ namespace Ennemy
         {
             AudioManager.Instance.Play("Stun_Ronchonchon");
             return base.Stun(timer);
+         
+        }
 
+        public void SafeSpot()
+        {
+            dontAttackPlayerOnCOllision = true;
+        }
+
+        public void UnsafeSpot()
+        {
+            dontAttackPlayerOnCOllision = false;
         }
     }
 }

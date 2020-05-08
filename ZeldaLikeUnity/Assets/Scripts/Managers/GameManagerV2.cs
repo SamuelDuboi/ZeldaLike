@@ -68,6 +68,26 @@ namespace Management
             if (SD_PlayerAttack.Instance.hasWind )
                 SD_PlayerAnimation.Instance.halo.SetActive(true);
 
+            switch (SceneManager.GetActiveScene().buildIndex)
+            {
+                case 2:
+                    AudioManager.Instance.Play("Ambience_Ronchonchon");
+                    break;
+
+                case 3:
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    break;
+                case 6:
+                    break;
+                case 7:
+                    break;
+
+                default: break;
+            }
+
         }
 
         private void Update()
@@ -89,6 +109,7 @@ namespace Management
                     if (!altarTriggered.gameObject.GetComponentInChildren<Animator>().GetBool("On"))
                     {
                         altarTriggered.gameObject.GetComponentInChildren<Animator>().SetBool("On", true);
+                        AudioManager.Instance.Play("Altar_Activation");
                         Saving(true);
                     }
                     

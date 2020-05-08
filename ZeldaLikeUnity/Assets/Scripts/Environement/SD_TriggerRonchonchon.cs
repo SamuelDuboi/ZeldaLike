@@ -92,6 +92,7 @@ public class SD_TriggerRonchonchon : Singleton<SD_TriggerRonchonchon>
     void Activation()
     {
         doorAnimator.SetTrigger("Activated");
+        AudioManager.Instance.Play("Door_Activation");
         StartCoroutine(GameManagerV2.Instance.GamePadeShake(0.5f, 0.1f));
         doorAnimator.speed = 10f;
     }
@@ -168,5 +169,15 @@ public class SD_TriggerRonchonchon : Singleton<SD_TriggerRonchonchon>
     {
         if (!Open)
             closeDoor = false;
+    }
+
+    public void PlaySound(string name)
+    {
+        AudioManager.Instance.Play(name);
+    }
+
+    public void StopSound(string name)
+    {
+        AudioManager.Instance.Stop(name);
     }
 }

@@ -600,6 +600,63 @@ PolygonCollider2D:
       - {x: 0.8125, y: -1.6875}
       - {x: 0.25, y: -1.8125}
       - {x: -0.40625, y: -1.8125}
+--- !u!1 &6780207820628505484
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1176588121748293848}
+  - component: {fileID: 628012450780366615}
+  m_Layer: 10
+  m_Name: Feet
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1176588121748293848
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6780207820628505484}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7998620809461349154}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &628012450780366615
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6780207820628505484}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.05985236, y: -0.7583153}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.7581306, y: 0.32150698}
+  m_EdgeRadius: 0
 --- !u!1 &7998620807887986958
 GameObject:
   m_ObjectHideFlags: 0
@@ -788,6 +845,7 @@ Transform:
   - {fileID: 1662744433734096343}
   - {fileID: 1783984901313259192}
   - {fileID: 8965897139733253055}
+  - {fileID: 1176588121748293848}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -803,8 +861,8 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 50
+  m_Mass: 10000
+  m_LinearDrag: 100
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -854,16 +912,17 @@ MonoBehaviour:
   ennemyRGB: {fileID: 0}
   aggroZone: {fileID: 1062186084}
   desaggroZone: {fileID: 438425972744626445}
+  activeAggro: 0
   speed: 2
   canMove: 0
   isAvoidingObstacles: 0
   damage: 1
+  dontAttackPlayerOnCOllision: 0
   life: 15
   ennemyAnimator: {fileID: 0}
   isAggro: 0
   canTakeDamage: 0
   freezTime: 0.047
-  IsInMainScene: 0
   rayStartCorner:
   - {fileID: 7998620809476861482}
   - {fileID: 7998620808353130390}
