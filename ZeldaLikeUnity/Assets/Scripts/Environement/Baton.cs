@@ -11,7 +11,8 @@ public class Baton : MonoBehaviour
     GameObject player;
     public float range;
     public GameObject halo;
-    
+    public GameObject Alyah2;
+    public GameObject Alyah3;
     private void Update()
     {
         if (canIntercat)
@@ -27,6 +28,11 @@ public class Baton : MonoBehaviour
                     AttackButton.transform.position = new Vector2(AttackButton.transform.parent.position.x,
                                                                     AttackButton.transform.parent.position.y + 1);
                     SD_PlayerAttack.Instance.cantAttack = false;
+                    if (Alyah2.activeSelf)
+                    {
+                        Alyah2.SetActive(false);
+                        Alyah3.SetActive(true);
+                    }
                     canCircle = true;
                     canIntercat = false;
                     GetComponent<SpriteRenderer>().enabled = false;

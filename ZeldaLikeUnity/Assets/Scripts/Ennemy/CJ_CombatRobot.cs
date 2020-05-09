@@ -46,6 +46,7 @@ namespace Ennemy
                 else
                     ennemyAnimator.SetFloat("Left", 0f);
                 ennemyAnimator.SetTrigger("hit");
+                AudioManager.Instance.Stop("Combat_Slash_Preparation");
                 AudioManager.Instance.Play("Hit_Robot");
 
             }
@@ -186,6 +187,8 @@ namespace Ennemy
             float cpt = 0;
             while (cpt < 1f)
             {
+                cpt += 0.1f;
+                AudioManager.Instance.Play("Combat_Slash_Preparation");
                 if (!isAttacking)
                 {
                     canMove = false;
@@ -193,10 +196,9 @@ namespace Ennemy
                     ennemyAnimator.SetTrigger("Stun");
                     ennemyAnimator.SetInteger("attackNumber", 0);
 
+                    AudioManager.Instance.Stop("Combat_Slash_Preparation");
                     yield break;
                 }
-                cpt += 0.1f;
-                AudioManager.Instance.Play("Combat_Slash_Preparation");
                 yield return new WaitForSeconds(0.1f);
             }
 

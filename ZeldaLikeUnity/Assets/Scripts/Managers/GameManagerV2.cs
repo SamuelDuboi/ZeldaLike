@@ -50,43 +50,46 @@ namespace Management
             MakeSingleton(false);
         }
         void Start()
-        {
-            player = GameObject.Find("PlayerMovement");
-            death = GameObject.FindGameObjectWithTag("Death");
-            pause = GameObject.FindGameObjectWithTag("Pause");
-            death.SetActive(false);
-            pause.SetActive(false);
-            if(wantToGetAttributeOfPreviousScene)
-             NewScene(false);
-            // Saving(false);
-            fade = GameObject.FindGameObjectWithTag("Fade");
-            scenName = fade.GetComponentInChildren<TextMeshProUGUI>();
-            scenName.text = SceneManager.GetActiveScene().name;
-            fade.GetComponent<Image>().color = Color.black;
-            scenName.color = Color.black;
-            StartCoroutine(FadeOut());
-            if (SD_PlayerAttack.Instance.hasWind )
-                SD_PlayerAnimation.Instance.halo.SetActive(true);
-
-            switch (SceneManager.GetActiveScene().buildIndex)
+        {if(SceneManager.GetActiveScene().buildIndex != 0)
             {
-                case 2:
-                    AudioManager.Instance.Play("Ambience_Ronchonchon");
-                    break;
+                player = GameObject.Find("PlayerMovement");
+                death = GameObject.FindGameObjectWithTag("Death");
+                pause = GameObject.FindGameObjectWithTag("Pause");
+                death.SetActive(false);
+                pause.SetActive(false);
+                if (wantToGetAttributeOfPreviousScene)
+                    NewScene(false);
+                // Saving(false);
+                fade = GameObject.FindGameObjectWithTag("Fade");
+                scenName = fade.GetComponentInChildren<TextMeshProUGUI>();
+                scenName.text = SceneManager.GetActiveScene().name;
+                fade.GetComponent<Image>().color = Color.black;
+                scenName.color = Color.black;
+                StartCoroutine(FadeOut());
+                if (SD_PlayerAttack.Instance.hasWind)
+                    SD_PlayerAnimation.Instance.halo.SetActive(true);
 
-                case 3:
-                    break;
-                case 4:
-                    break;
-                case 5:
-                    break;
-                case 6:
-                    break;
-                case 7:
-                    break;
+                switch (SceneManager.GetActiveScene().buildIndex)
+                {
+                    case 2:
+                        AudioManager.Instance.Play("Ambience_Ronchonchon");
+                        break;
 
-                default: break;
+                    case 3:
+                        break;
+                    case 4:
+                        break;
+                    case 5:
+                        break;
+                    case 6:
+                        break;
+                    case 7:
+                        break;
+
+                    default: break;
+                }
             }
+           
 
         }
 

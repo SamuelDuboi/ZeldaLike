@@ -41,7 +41,7 @@ public class SD_BossHands : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.layer == 11)
+        if (collision.gameObject.tag == "Player")
         {
             bumpPoint.transform.position = new Vector2(collision.transform.position.x, collision.transform.position.y - 1f);
             StartCoroutine(SD_PlayerRessources.Instance.TakingDamage(laserDamage, bumpPoint, false, 5));

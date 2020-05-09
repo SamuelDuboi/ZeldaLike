@@ -78,7 +78,7 @@ public class DezoomCam : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.layer == 11)
+        if(collision.gameObject.layer == 10 || collision.gameObject.layer == 11)
         {
             if (!up)
             {

@@ -32,7 +32,7 @@ public class SD_BossArms : MonoBehaviour
         laserLineRenderer.SetPositions(initLaserPositions);
         laserLineRenderer.startWidth =laserWidth;
         armRGB = GetComponent<Rigidbody2D>();
-        player = ~(1 << 9); 
+        player = 1 << 11; 
     }
 
     void Update()
@@ -85,18 +85,38 @@ public class SD_BossArms : MonoBehaviour
             laserLineRenderer.enabled = true;
             RaycastHit2D raycastHit = Physics2D.Raycast(targetPosition, direction, 2000, player);
             Debug.Log(raycastHit.transform.gameObject);
-            if (raycastHit.transform.gameObject.tag == "Player")
+            if (raycastHit.collider != null)
             {
-                touche.transform.position = new Vector2(raycastHit.transform.position.x, raycastHit.transform.position.y + 1);
-                StartCoroutine(SD_PlayerRessources.Instance.TakingDamage(rayDamage, touche, false, 1));
+                if (raycastHit.transform.gameObject.tag == "Player")
+                {
+                    touche.transform.position = new Vector2(raycastHit.transform.position.x, raycastHit.transform.position.y + 1);
+                    StartCoroutine(SD_PlayerRessources.Instance.TakingDamage(rayDamage, touche, false, 1));
+
+                    
+                }
+
+                laserLineRenderer.SetPosition(0, targetPosition);
+                laserLineRenderer.SetPosition(1, raycastHit.point);
 
             }
+            else
+            {
+                if (isLeft)
+                {
+                    laserLineRenderer.SetPosition(0, targetPosition);
+                    laserLineRenderer.SetPosition(1, new Vector2(targetPosition.x + 27, targetPosition.y));
 
+                }
+                else
+                {
 
-            laserLineRenderer.SetPosition(0, targetPosition);
-            laserLineRenderer.SetPosition(1, raycastHit.point);
+                    laserLineRenderer.SetPosition(0, targetPosition);
+                    laserLineRenderer.SetPosition(1, new Vector2(targetPosition.x - 27, targetPosition.y));
+
+                }
+            }
         }
-       
+
     }
     private void OnCollisionEnter2D( Collision2D collision)
     {

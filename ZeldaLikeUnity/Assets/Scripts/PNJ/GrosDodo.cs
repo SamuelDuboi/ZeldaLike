@@ -8,6 +8,8 @@ public class GrosDodo : MonoBehaviour
     public GameObject direction;
     bool run;
     float timer;
+    public GameObject Alyah3;
+    public GameObject Alyah4;
     // Update is called once per frame
     void Update()
     {
@@ -38,6 +40,8 @@ public class GrosDodo : MonoBehaviour
         {
             GetComponent<Animator>().SetTrigger("WakeUp");
             run = true;
+            Alyah3.SetActive(false);
+            Alyah4.SetActive(true);
         }
     }
 

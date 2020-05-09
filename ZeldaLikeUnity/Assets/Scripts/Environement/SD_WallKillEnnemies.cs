@@ -10,21 +10,22 @@ public class SD_WallKillEnnemies : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        foreach(GameObject ennemy in ennemies)
-        {
-            if (ennemy == null)
-                ennemies.Remove(ennemy);
-        }
         if (ennemies.Count == 0)
         {
             timer += Time.deltaTime;
-            if(timer> 0.5f)
+            if (timer > 0.5f)
             {
                 Destroy(gameObject);
             }
         }
         else
             timer = 0;
+        foreach (GameObject ennemy in ennemies)
+        {
+            if (ennemy == null)
+                ennemies.Remove(ennemy);
+        }
+       
            
     }
 }
