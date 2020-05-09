@@ -171,12 +171,12 @@ namespace Ennemy
             AudioManager.Instance.Play("Fuite_Ronchonchon");
             if (player.transform.position.x - transform.position.x > 0)
             {
-                ennemyRGB.velocity = Vector2.left * speed;
+                ennemyRGB.velocity = Vector2.left * speed * 5;
                 ennemyAnimator.SetFloat("Left", 0f);
             }
             else
             {
-                ennemyRGB.velocity = Vector2.right * speed;
+                ennemyRGB.velocity = Vector2.right * speed * 2;
                 ennemyAnimator.SetFloat("Left", 1f);
             }
         }

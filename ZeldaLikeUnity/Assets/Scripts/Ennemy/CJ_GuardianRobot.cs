@@ -91,6 +91,7 @@ namespace Ennemy
             limit++;
 
             ennemyAnimator.SetTrigger("LaserCharge");
+            AudioManager.Instance.Play("Gardien_Charge_Tir");
             while (timer > 0)
             {
                 if (player.transform.position.x - transform.position.x > 0)
@@ -107,6 +108,8 @@ namespace Ennemy
 
             timer = 0;
             yield return new WaitForSeconds(0.5f);
+            AudioManager.Instance.Stop("Gardien_Charge_Tir");
+            AudioManager.Instance.Play("Gardien_Tir");
             ennemyAnimator.SetBool("LaserShoot", true);
             LayerMask playermask = 1 << 11;
             while (timer < laserDuration)
@@ -184,6 +187,7 @@ namespace Ennemy
         IEnumerator ShieldPopOut()
         {
             shield.SetActive(false);
+            AudioManager.Instance.Play("Gardien_Bouclier_Desactiver");
             isShielded = false;
             yield return new WaitForSeconds(3);
             isShielded = true;
