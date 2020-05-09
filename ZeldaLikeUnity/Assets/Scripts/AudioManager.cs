@@ -25,7 +25,7 @@ public class AudioManager : Singleton<AudioManager>
     // Start is called before the first frame update
     void Start()
     {
-        MakeSingleton(false);
+        MakeSingleton(true);
     }
 
    public void Play(string name)

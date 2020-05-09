@@ -72,6 +72,7 @@ namespace Management
                 switch (SceneManager.GetActiveScene().buildIndex)
                 {
                     case 2:
+                        AudioManager.Instance.Stop("Village_Music");
                         AudioManager.Instance.Play("Ambience_Ronchonchon");
                         break;
 

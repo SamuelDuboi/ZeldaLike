@@ -88,7 +88,7 @@ public  class SD_PNJ : MonoBehaviour
                         AudioManager.Instance.Play("Voix_Alyah");
                         break;
                     case 1:
-                        AudioManager.Instance.Play("Voix_Alyah");
+                        AudioManager.Instance.Play("Voix_Alyah2");
                         break;
                     case 2:
                         AudioManager.Instance.Play("Voix_Henry");
