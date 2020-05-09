@@ -317,3 +317,94 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
+  - name: Combat_Activation
+    clip: {fileID: 8300000, guid: ba3b1124e7b832b4bbe89ef8045edf81, type: 3}
+    source: {fileID: 0}
+    group: {fileID: 4291617978152650875, guid: 30074e79190fbb3438e58f58430b627d, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: Combat_Charge
+    clip: {fileID: 8300000, guid: ee2939dcb502a404581b162357a41f83, type: 3}
+    source: {fileID: 0}
+    group: {fileID: 4291617978152650875, guid: 30074e79190fbb3438e58f58430b627d, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: Combat_Explosion
+    clip: {fileID: 8300000, guid: 56a7d707eeffc6a499099857bd215b12, type: 3}
+    source: {fileID: 0}
+    group: {fileID: 4291617978152650875, guid: 30074e79190fbb3438e58f58430b627d, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: Combat_Slash
+    clip: {fileID: 8300000, guid: dda042266d723b14fab9469edab69c88, type: 3}
+    source: {fileID: 0}
+    group: {fileID: 4291617978152650875, guid: 30074e79190fbb3438e58f58430b627d, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: Combat_Slash_Preparation
+    clip: {fileID: 8300000, guid: 79d7ee37f5b073043961ec56874bf887, type: 3}
+    source: {fileID: 0}
+    group: {fileID: 4291617978152650875, guid: 30074e79190fbb3438e58f58430b627d, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 1
+  - name: Gardien_Activation
+    clip: {fileID: 8300000, guid: 6bf532677e19d3443bc8c80f53c7b951, type: 3}
+    source: {fileID: 0}
+    group: {fileID: -369280520899531755, guid: 30074e79190fbb3438e58f58430b627d, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: Gardien_Bouclier_Actif
+    clip: {fileID: 8300000, guid: 022fb7d474db0f3488a1b3a3b3197b7e, type: 3}
+    source: {fileID: 0}
+    group: {fileID: -369280520899531755, guid: 30074e79190fbb3438e58f58430b627d, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: Gardien_Bouclier_Desactiver
+    clip: {fileID: 8300000, guid: 0568c54255d711e469c98dbd3933bb43, type: 3}
+    source: {fileID: 0}
+    group: {fileID: -369280520899531755, guid: 30074e79190fbb3438e58f58430b627d, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: Gardien_Charge_Tir
+    clip: {fileID: 8300000, guid: 22fd553cbeee344469b1a9a52fef0575, type: 3}
+    source: {fileID: 0}
+    group: {fileID: -369280520899531755, guid: 30074e79190fbb3438e58f58430b627d, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: Gardien_Explosion
+    clip: {fileID: 8300000, guid: 0a704bc58e4bc8442810d7607afa403b, type: 3}
+    source: {fileID: 0}
+    group: {fileID: -369280520899531755, guid: 30074e79190fbb3438e58f58430b627d, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: Gardien_Tir
+    clip: {fileID: 8300000, guid: 9a39406dd0c924146b7b6f786223f7f8, type: 3}
+    source: {fileID: 0}
+    group: {fileID: -369280520899531755, guid: 30074e79190fbb3438e58f58430b627d, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: Gardien_Choc
+    clip: {fileID: 8300000, guid: 6a088283afa124547ab28c95567650a9, type: 3}
+    source: {fileID: 0}
+    group: {fileID: -369280520899531755, guid: 30074e79190fbb3438e58f58430b627d, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: Gardien_Stomp
+    clip: {fileID: 8300000, guid: 7c2f0dce239506e419331a12660ee4b6, type: 3}
+    source: {fileID: 0}
+    group: {fileID: -369280520899531755, guid: 30074e79190fbb3438e58f58430b627d, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0

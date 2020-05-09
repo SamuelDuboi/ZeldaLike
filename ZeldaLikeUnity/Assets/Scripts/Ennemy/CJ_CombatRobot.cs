@@ -46,7 +46,7 @@ namespace Ennemy
                 else
                     ennemyAnimator.SetFloat("Left", 0f);
                 ennemyAnimator.SetTrigger("hit");
-                AudioManager.Instance.Play("Hit_Ronchonchon");
+                AudioManager.Instance.Play("Hit_Robot");
 
             }
             base.OnTriggerEnter2D(collision);
@@ -184,7 +184,7 @@ namespace Ennemy
                 ennemyAnimator.SetInteger("attackNumber", 1);
             }
             float cpt = 0;
-            while (cpt < 1)
+            while (cpt < 1f)
             {
                 if (!isAttacking)
                 {
@@ -192,13 +192,17 @@ namespace Ennemy
                     isAvoidingObstacles = false;
                     ennemyAnimator.SetTrigger("Stun");
                     ennemyAnimator.SetInteger("attackNumber", 0);
+
                     yield break;
                 }
                 cpt += 0.1f;
+                AudioManager.Instance.Play("Combat_Slash_Preparation");
                 yield return new WaitForSeconds(0.1f);
             }
 
-            ennemyAnimator.SetTrigger("Attack");           
+            ennemyAnimator.SetTrigger("Attack");
+            AudioManager.Instance.Stop("Combat_Slash_Preparation");
+            AudioManager.Instance.Play("Combat_Slash");
 
             cpt = 0;
             while (cpt < 0.2f)
