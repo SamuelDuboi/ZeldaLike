@@ -53,6 +53,7 @@ public class SD_DestructiblePlatform : MonoBehaviour
             DestructiblePlateformeManager.Instance.platfromDestroyed.Add(gameObject);
             destruct = true;
             tag = "Hole";
+            if(SD_PlayerMovement.Instance.currentPlatform == null)
             SD_PlayerMovement.Instance.isAbleToRunOnHole = false;
             if (!onePath)
             {

@@ -52,7 +52,7 @@ namespace Player
         bool canSpawnPlatform;
 
         public float platformLifeTime;
-        GameObject currentPlatform;
+        [HideInInspector] public GameObject currentPlatform;
         public int platformNumber = 1;
 
         [Range(8, 11)]
@@ -276,7 +276,7 @@ namespace Player
                     {
                         currentPlatform = Instantiate(windPlatform, new Vector2(transform.position.x + playerRGB.velocity.normalized.x * 0.2f, transform.position.y + playerRGB.velocity.normalized.y * 0.2f), Quaternion.identity);
                         canSpawnPlatform = false;
-
+                        isAbleToRunOnHole = true;
                         platformNumber--;
                         SD_PlayerAnimation.Instance.halo.SetActive(false);
                     }
@@ -394,15 +394,19 @@ namespace Player
                 if (canWind)
                 SD_PlayerAttack.Instance.hasWind = true;
             }
-            if (isAbleToRunOnHole && collision.tag == "WindPlatform" || collision.tag == "Hole")
+            if (isAbleToRunOnHole && collision.tag == "WindPlatform" )
             {
                 isAbleToRunOnHole = false;
+                StartCoroutine(PlatfromCantSwpanAfterTrigger());
+                Destroy(currentPlatform);
             }
-            if (collision.tag == "Hole" && currentPlatform != null)
+         
+            if (collision.tag == "Hole" && currentPlatform != null && !dashIsActive)
             {
                 StartCoroutine(PlatfromCantSwpanAfterTrigger());
                 Destroy(currentPlatform);
             }
+            
             if (collision.gameObject.tag == "DestroyedPlatform" )
             {
                 isOnPlatformDestructible = false;
