@@ -274,11 +274,17 @@ namespace Player
 
                     if (canSpawnPlatform && platformNumber > 0)
                     {
-                        currentPlatform = Instantiate(windPlatform, new Vector2(transform.position.x + playerRGB.velocity.normalized.x * 0.2f, transform.position.y + playerRGB.velocity.normalized.y * 0.2f), Quaternion.identity);
-                        canSpawnPlatform = false;
-                        isAbleToRunOnHole = true;
-                        platformNumber--;
-                        SD_PlayerAnimation.Instance.halo.SetActive(false);
+                        LayerMask wallMask= 1 << 9;
+                        RaycastHit2D Raycast = Physics2D.Raycast(transform.position, playerRGB.velocity.normalized, 1f, wallMask);
+                        if(Raycast.collider != null && Raycast.collider.gameObject.tag == "Hole")
+                        {
+                                                        currentPlatform = Instantiate(windPlatform, new Vector2(transform.position.x + playerRGB.velocity.normalized.x * 0.2f, transform.position.y + playerRGB.velocity.normalized.y * 0.2f), Quaternion.identity);
+                            canSpawnPlatform = false;
+                            isAbleToRunOnHole = true;
+                            platformNumber--;
+                            SD_PlayerAnimation.Instance.halo.SetActive(false);
+                        }
+
                     }
 
                     yield return new WaitForSeconds(0.1f);
