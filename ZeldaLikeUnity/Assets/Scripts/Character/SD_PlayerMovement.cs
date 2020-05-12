@@ -387,6 +387,17 @@ namespace Player
                 if(!collision.GetComponent<Animator>().GetBool("Burning"))
                     StartCoroutine(SD_PlayerRessources.Instance.TakingDamage(1, fire, false, 5));
             }
+            if (collision.gameObject.tag == "Wind" && collision.gameObject.layer == 9)
+            {
+                wind = true;
+                cantMove = true;
+                cantDash = true;
+
+                SD_PlayerAttack.Instance.cantAttack = true;
+                if (SD_PlayerAttack.Instance.hasWind)
+                    canWind = true;
+                SD_PlayerAttack.Instance.hasWind = false;
+            }
 
         }
         private void OnTriggerExit2D(Collider2D collision)

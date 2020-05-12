@@ -67,6 +67,10 @@ namespace Player
                  LifeUpgrade(1);
                 Destroy(collision.gameObject);
             }
+            else if (collision.gameObject.layer == 17)
+            {
+                StartCoroutine(TakingDamage(collision.gameObject.GetComponent<SD_EnnemyGlobalBehavior>().damage, collision.gameObject, false, 1));
+            }
         }
 
         #region LifeChange

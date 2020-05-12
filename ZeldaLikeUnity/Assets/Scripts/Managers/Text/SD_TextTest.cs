@@ -14,6 +14,8 @@ public class SD_TextTest : MonoBehaviour
    [HideInInspector] public int pnj;
    public Image characterImage;
     bool resetAttack;
+    [Range(0,0.1f)]
+    public float timeBetweenLetter = 0.1f;
     private void Awake()
     {
         pnj =(int) textDialogue[0].pnj;
@@ -69,7 +71,7 @@ public class SD_TextTest : MonoBehaviour
             firstTextmeshPro.text = textDialogue[listnumber].text;
             firstTextmeshPro.maxVisibleCharacters = visibleCount;
             cpt++;
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(timeBetweenLetter);
         }
         cantContinue = false;
         listnumber++;

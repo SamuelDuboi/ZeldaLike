@@ -37,6 +37,7 @@ public class Baton : MonoBehaviour
                     canIntercat = false;
                     GetComponent<SpriteRenderer>().enabled = false;
                     halo.SetActive(false);
+                    GetComponent<BoxCollider2D>().enabled = false;
                 }
             }
             else

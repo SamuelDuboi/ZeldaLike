@@ -196,10 +196,10 @@ namespace Player
                 GameObject currentprojectil = Instantiate(projectile, transform.position, Quaternion.identity);
                 if (Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") == 0)
                     currentprojectil.GetComponent<Rigidbody2D>().velocity = new Vector2(SD_PlayerAnimation.Instance.PlayerAnimator.GetFloat("XAxis"),
-                                                                                        SD_PlayerAnimation.Instance.PlayerAnimator.GetFloat("YAxis")) * projectilSpeed;
+                                                                                        SD_PlayerAnimation.Instance.PlayerAnimator.GetFloat("YAxis")).normalized * projectilSpeed;
                 else
                     currentprojectil.GetComponent<Rigidbody2D>().velocity = new Vector2(Input.GetAxisRaw("Horizontal"),
-                                                                        Input.GetAxisRaw("Vertical")) * projectilSpeed;
+                                                                        Input.GetAxisRaw("Vertical")).normalized * projectilSpeed;
                 CanMoveWind();
                 SD_PlayerAnimation.Instance.PlayerAnimator.SetBool("Wind", false);
                 StartCoroutine(WindCooldown());
