@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Management;
+using Cinemachine;
 public class BossEnding : Singleton<BossEnding>
 {
     public GameObject wall;
     Animator animator;
     public int cpt;
+    public GameObject cameraPlayer;
     private void Awake()
     {
         MakeSingleton(false);
@@ -28,6 +30,8 @@ public class BossEnding : Singleton<BossEnding>
     }
     public void DestroyWall()
     {
+
+        cameraPlayer.GetComponentInChildren<CinemachineVirtualCamera>().m_Lens.OrthographicSize = 5.6f;
         Destroy(wall);
     }
 }

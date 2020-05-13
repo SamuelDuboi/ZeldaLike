@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -2844,8 +2844,8 @@ Camera:
   m_GameObject: {fileID: 51032536}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -46065,6 +46065,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wall: {fileID: 26236609}
   cpt: 0
+  cameraPlayer: {fileID: 1491950427097700079}
 --- !u!95 &465782396
 Animator:
   serializedVersion: 3
@@ -46193,6 +46194,75 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &484028292
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 209787192281212364, guid: fb7f8b7b3826db141843fa5b4bd7cd5d,
+        type: 3}
+      propertyPath: m_Name
+      value: SOUNDManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 209787192281212366, guid: fb7f8b7b3826db141843fa5b4bd7cd5d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 86.29932
+      objectReference: {fileID: 0}
+    - target: {fileID: 209787192281212366, guid: fb7f8b7b3826db141843fa5b4bd7cd5d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 28.974909
+      objectReference: {fileID: 0}
+    - target: {fileID: 209787192281212366, guid: fb7f8b7b3826db141843fa5b4bd7cd5d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 209787192281212366, guid: fb7f8b7b3826db141843fa5b4bd7cd5d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 209787192281212366, guid: fb7f8b7b3826db141843fa5b4bd7cd5d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 209787192281212366, guid: fb7f8b7b3826db141843fa5b4bd7cd5d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 209787192281212366, guid: fb7f8b7b3826db141843fa5b4bd7cd5d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 209787192281212366, guid: fb7f8b7b3826db141843fa5b4bd7cd5d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 209787192281212366, guid: fb7f8b7b3826db141843fa5b4bd7cd5d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 209787192281212366, guid: fb7f8b7b3826db141843fa5b4bd7cd5d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 209787192281212366, guid: fb7f8b7b3826db141843fa5b4bd7cd5d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fb7f8b7b3826db141843fa5b4bd7cd5d, type: 3}
 --- !u!1 &492133338
 GameObject:
   m_ObjectHideFlags: 0
@@ -109514,7 +109584,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+      objectReference: {fileID: 2100000, guid: f0024ffbadb740b488ae6501fdfa243d, type: 2}
     - target: {fileID: 4380450535352376658, guid: 94f740b0faa1a664da745400ca412b64,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -109619,7 +109689,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+      objectReference: {fileID: 2100000, guid: f0024ffbadb740b488ae6501fdfa243d, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94f740b0faa1a664da745400ca412b64, type: 3}
 --- !u!4 &1051482806 stripped
@@ -132330,8 +132400,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 13ecf5ffac8dfe243a0eed526c67b522, type: 2}
+  m_sharedMaterial: {fileID: -3041260046588330127, guid: 13ecf5ffac8dfe243a0eed526c67b522,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -155080,7 +155151,7 @@ MonoBehaviour:
   m_Follow: {fileID: 2121046885}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 10
+    OrthographicSize: 5.6
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -155212,7 +155283,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 5.6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

@@ -74,5 +74,15 @@ public class AudioManager : Singleton<AudioManager>
             }
         }
     }
+    public void StopAll()
+    {
+        foreach (Sound s in sounds)
+        {
+            if (s.name != "BackGroundMusic")
+            {
+                s.source.Stop();
+            }
+        }
+    }
 
 }

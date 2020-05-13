@@ -44,6 +44,8 @@ namespace Management
         public GameObject LoadPlayerPosition;
         GameObject fade;
         TextMeshProUGUI scenName;
+
+  [HideInInspector]     public List<NameArea> nameAreas = new List<NameArea>();
         private void Awake()
         {
             // devra etre hanegr si on en laisse qu'un seul
@@ -393,6 +395,7 @@ namespace Management
 
         public void Pause()
         {
+            AudioManager.Instance.StopAll();
             Time.timeScale = 0;
             pause.SetActive(true);
             evenSystem.GetComponent<SD_EventSystem>().ChangePanel();
@@ -436,6 +439,31 @@ namespace Management
             CJ_PlayerCameraManager.Instance.camera1.enabled = false;
             yield return new WaitForEndOfFrame();
             CJ_PlayerCameraManager.Instance.camera1.enabled = true;
+        }
+        public IEnumerator NameAppearD(string name, NameArea area)
+        {
+            foreach( NameArea ccurrentArea in nameAreas)
+            {
+                if (ccurrentArea == null)
+                    nameAreas.Remove(ccurrentArea);
+                if( ccurrentArea != area)
+                {
+                    ccurrentArea.activated = false;
+                }
+            }
+            scenName.text = name;
+            for (float i = 0; i < 1; i += 0.05f)
+            { scenName.color = new Color(162, 97, 16, i);
+                yield return new WaitForSeconds(0.01f);
+            }
+            scenName.color = new Color(162, 97, 16, 1);
+            yield return new WaitForSeconds(1f);
+            for (float i = 1; i > 0.1; i -= 0.02f)
+            {
+                scenName.color = new Color(162, 97, 16, i);
+                yield return new WaitForSeconds(0.01f);
+            }
+            scenName.color = new Color(162, 97, 16, 0);
         }
     }
 }

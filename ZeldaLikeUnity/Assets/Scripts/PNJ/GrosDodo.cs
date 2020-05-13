@@ -23,7 +23,7 @@ public class GrosDodo : MonoBehaviour
                 SD_PlayerMovement.Instance.cantMove = true;
                 SD_PlayerAttack.Instance.cantAttack = true;
 ;            }
-            if (timer > 5f)
+            if (timer > 3f)
             {
                 SD_PlayerMovement.Instance.cantDash = false;
                 SD_PlayerMovement.Instance.cantMove = false;
