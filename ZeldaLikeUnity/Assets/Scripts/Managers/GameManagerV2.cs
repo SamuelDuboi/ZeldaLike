@@ -395,6 +395,7 @@ namespace Management
 
         public void Pause()
         {
+            AudioManager.Instance.StopAll();
             Time.timeScale = 0;
             pause.SetActive(true);
             evenSystem.GetComponent<SD_EventSystem>().ChangePanel();

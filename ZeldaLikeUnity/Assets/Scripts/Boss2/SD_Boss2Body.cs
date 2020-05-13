@@ -243,7 +243,8 @@ public class SD_Boss2Body : Singleton<SD_Boss2Body>
     public IEnumerator Death()
     {
         yield return new WaitForSeconds(5.9f);
-        Destroy(gameObject);
+        GG.SetActive(true);
+        Destroy(transform.parent.gameObject);
     }
     int armcpt = 2;
     public void LosingArm()

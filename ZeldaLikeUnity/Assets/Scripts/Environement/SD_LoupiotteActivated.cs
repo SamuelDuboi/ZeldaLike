@@ -21,7 +21,9 @@ public class SD_LoupiotteActivated : MonoBehaviour
         {
             isTriggered = true;
         }
+        
         script.Triggered(collision);
+
     }
 
 }

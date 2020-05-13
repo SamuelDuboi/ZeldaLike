@@ -77,12 +77,11 @@ public class SD_LaserBehavior : MonoBehaviour
             {
                 
                 StartCoroutine(SD_PlayerRessources.Instance.TakingDamage(laserDamage, SD_PlayerMovement.Instance.gameObject, false, 1));
-
+                targets[targetNUmber].transform.position = raycastHit.collider.transform.position;
             }
-
             else
             {
-                target.transform.position = new Vector2(position.x, position.y - 100);
+                targets[targetNUmber].transform.position = new Vector2(position.x, position.y - 100);
 
             }
 

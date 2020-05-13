@@ -26,7 +26,7 @@ public class SD_WindProjectile : MonoBehaviour
             Destroy(gameObject);
         }
         if (collision.gameObject.layer == 9 && collision.gameObject.tag != "Hole" && collision.gameObject.tag != "Fire")
-        {
+        {if( collision.GetComponent<SD_LoupiotteActivated>() == null)
             StartCoroutine(Death());
         }
     }
