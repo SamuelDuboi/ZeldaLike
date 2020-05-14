@@ -470,7 +470,6 @@ namespace Player
                 for (float i = 0; i < 50; i++)
                 {
                     fade.GetComponent<Image>().color = new Color(0, 0, 0, i/50);
-                    Debug.Log(fade.GetComponent<Image>().color.a);
                     Vector2 reduction = Vector2Extensions.addVector(SD_PlayerAnimation.Instance.gameObject.transform.localScale, -new Vector2(0.02f, 0.02f));
                     SD_PlayerAnimation.Instance.gameObject.transform.localScale = reduction;
                     yield return new WaitForSeconds(0.01f);

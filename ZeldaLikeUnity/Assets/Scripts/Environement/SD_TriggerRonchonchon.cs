@@ -78,10 +78,11 @@ public class SD_TriggerRonchonchon : Singleton<SD_TriggerRonchonchon>
         foreach (GameObject trigger in triggerList)
         {
            StartCoroutine(trigger.GetComponent<TriggerActivated>().resetTriger());
-            triggerCPt = 0;
+
         }
-        doorAnimator.SetTrigger("Activated");
+        triggerCPt = 0;
         doorAnimator.SetTrigger("ComeBack");
+        doorAnimator.SetTrigger("Activated");
     }
     public void TriggerUp()
     {

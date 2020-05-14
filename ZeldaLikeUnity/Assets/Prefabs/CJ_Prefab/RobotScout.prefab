@@ -506,7 +506,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.33673477
+        value: 0.30817032
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -518,9 +518,9 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0, g: 0.7921569, b: 0.59607846, a: 0.5882353}
-      key1: {r: 0, g: 0.7921569, b: 0.59607846, a: 0.5882353}
-      key2: {r: 0, g: 0, b: 0, a: 0}
+      key0: {r: 0, g: 0.7921569, b: 0.59607846, a: 0.50980395}
+      key1: {r: 0, g: 0.7921569, b: 0.59607846, a: 0.50980395}
+      key2: {r: 0, g: 0, b: 0, a: 0.5882353}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
@@ -536,7 +536,7 @@ LineRenderer:
       ctime7: 0
       atime0: 0
       atime1: 65535
-      atime2: 0
+      atime2: 65535
       atime3: 0
       atime4: 0
       atime5: 0

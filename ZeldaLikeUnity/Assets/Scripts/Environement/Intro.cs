@@ -12,6 +12,7 @@ public class Intro : MonoBehaviour
     public GameObject introImage;
     public GameObject deesse;
     public GameObject playerCam;
+    public GameObject Sky;
     public Collider2D alya;
     Image fade;
     bool isActive;
@@ -80,6 +81,7 @@ public class Intro : MonoBehaviour
             i+=10;
             yield return new WaitForSeconds(0.01f);
         }
+        Sky.SetActive(true);
         playerCam.SetActive(true);
         AudioManager.Instance.Play("Village_Music");
         StartCoroutine(GameManagerV2.Instance.SwitchCamera());
