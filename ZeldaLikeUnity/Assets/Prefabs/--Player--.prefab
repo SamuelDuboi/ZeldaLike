@@ -80,8 +80,8 @@ MonoBehaviour:
   completHeart: {fileID: -739628380078485500, guid: ecf86acb4ddd4db4fa906dc025c890f2,
     type: 3}
   none: {fileID: 0}
-  life: 0
-  currentMaxLife: 5
+  life: 6
+  currentMaxLife: 6
   maxLifePossible: 10
   cantTakeDamage: 0
   invincibleTime: 1
@@ -10157,6 +10157,7 @@ MonoBehaviour:
     type: 3}
   isAbleToRunOnHole: 0
   platformLifeTime: 4
+  currentPlatform: {fileID: 0}
   platformNumber: 1
   inertieAfterDash: 11
   timeBeforAbleToMoveAfterFall: 0.4

@@ -38,8 +38,7 @@ public class SD_TextTest : MonoBehaviour
             listnumber = 0;
             SD_PlayerMovement.Instance.cantDash = false;
             SD_PlayerMovement.Instance.cantMove = false;
-            SD_PlayerAttack.Instance.cantAim = false;
-            SD_PlayerAttack.Instance.cantAttack = false;
+            SD_PlayerAttack.Instance.cantAim = false;          
             SD_PlayerRessources.Instance.cantTakeDamage = false;
             if (resetAttack)
             {

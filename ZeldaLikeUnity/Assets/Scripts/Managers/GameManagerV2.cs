@@ -457,7 +457,7 @@ namespace Management
                 yield return new WaitForSeconds(0.01f);
             }
             scenName.color = new Color(162, 97, 16, 1);
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(1.5f);
             for (float i = 1; i > 0.1; i -= 0.02f)
             {
                 scenName.color = new Color(162, 97, 16, i);

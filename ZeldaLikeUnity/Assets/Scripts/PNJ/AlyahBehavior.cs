@@ -25,7 +25,7 @@ public class AlyahBehavior : MonoBehaviour
             SD_PlayerMovement.Instance.cantDash = true;
             SD_PlayerMovement.Instance.cantMove = true;
             SD_PlayerAttack.Instance.cantAttack = true;
-            if(Vector2.Distance(transform.position, alya2.transform.position) < 52)
+            if(Vector2.Distance(transform.position, alya2.transform.position) < 26)
             {
                 alya2.SetActive(true);
                 SD_PlayerMovement.Instance.cantDash = false;
