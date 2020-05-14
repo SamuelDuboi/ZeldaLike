@@ -5,97 +5,46 @@ using Player;
 public class SD_LaserBehavior : MonoBehaviour
 {
 
-    bool canMove;
-    public GameObject target;
     public int laserDamage;
-    bool isActive;
-    public List<GameObject> targets = new List<GameObject>();
     [Range(0,20)]
     public float timeBetwennLaser;
     [Range(0, 20)]
     public float timeBeforBigRay;
     [Range(0, 20)]
     public float timeBigRay;
+    LineRenderer line;
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<LineRenderer>();
+        line = GetComponent<LineRenderer>();
+        StartCoroutine(ShootingLaser());
     }
 
-    // Update is called once per frame
-    void Update()
+    IEnumerator ShootingLaser()
     {
-        if ( canMove)
-        {
-            if (!isActive)
-                StartCoroutine(Shoot());
-        }
-
-    }
-    IEnumerator Shoot()
-    {
-        isActive = true;
-       for (int i =0; i<targets.Count; i++)
-        {
-            StartCoroutine(ShootingLaser(i));
-            yield return new WaitForSeconds(timeBetwennLaser);
-        }
-        
-        isActive = false;
-    }
-
-    public void ShootRight()
-    {
-       
-        canMove = true;
-
-    }
-    public void ShootLeft()
-    {
-        canMove = true;
-    }
-
-    IEnumerator ShootingLaser(int targetNUmber)
-    {
-        Vector2 position = transform.position;
-        targets[targetNUmber].transform.position = new Vector2(position.x, position.y - 100);
-        targets[targetNUmber].GetComponent<LineRenderer>().SetPosition(0, position);
-        targets[targetNUmber].GetComponent<LineRenderer>().SetPosition(1, targets[targetNUmber].transform.position);
-        targets[targetNUmber].GetComponent<LineRenderer>().startWidth = 0.2f;
+        line.SetPosition(0, transform.position);
+        line.SetPosition(1, new Vector2(transform .position.x, transform.position.y - 100));
+        line.startWidth = 0.2f;
         yield return new WaitForSeconds(timeBeforBigRay);
-
         float timerWhile = 0;
+        LayerMask playermask = 1 << 11;
         while (timerWhile < timeBigRay)
         {
-            targets[targetNUmber].transform.position = new Vector2(position.x, position.y - 100);
-            LayerMask playermask = 1 << 11;
-            RaycastHit2D raycastHit = Physics2D.Raycast(position,
+            RaycastHit2D raycastHit = Physics2D.Raycast(transform.position,
                                                         Vector2.down,
                                                         2000,
                                                         playermask);
-            if (raycastHit.collider != null)
+            if (raycastHit.collider != null && raycastHit.collider.tag == "Player")
             {
-                
-                StartCoroutine(SD_PlayerRessources.Instance.TakingDamage(laserDamage, SD_PlayerMovement.Instance.gameObject, false, 1));
-                targets[targetNUmber].transform.position = raycastHit.collider.transform.position;
+                SD_PlayerRessources.Instance.StartTakingDamage(laserDamage);
             }
-            else
-            {
-                targets[targetNUmber].transform.position = new Vector2(position.x, position.y - 100);
-
-            }
-
-            targets[targetNUmber].GetComponent<LineRenderer>().SetPosition(0, position);
-            targets[targetNUmber].GetComponent<LineRenderer>().SetPosition(1, targets[targetNUmber].transform.position);
-            targets[targetNUmber].GetComponent<LineRenderer>().startWidth = 1;
+            line.startWidth = 1;
             timerWhile += 0.01f;
             yield return new WaitForSeconds(0.01f);
         }
-        targets[targetNUmber].GetComponent<LineRenderer>().SetPosition(0, transform.position);
-        targets[targetNUmber].GetComponent<LineRenderer>().SetPosition(1, transform.position);
-    }
-    public void OnDestroy()
-    {
+        line.SetPosition(0, transform.position);
+        line.SetPosition(1, transform.position);
         Destroy(gameObject);
     }
+
 }

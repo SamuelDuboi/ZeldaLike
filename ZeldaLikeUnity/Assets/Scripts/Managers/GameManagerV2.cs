@@ -52,7 +52,8 @@ namespace Management
             MakeSingleton(false);
         }
         void Start()
-        {if(SceneManager.GetActiveScene().buildIndex != 0)
+        {
+            if(SceneManager.GetActiveScene().buildIndex != 0)
             {
                 player = GameObject.Find("PlayerMovement");
                 death = GameObject.FindGameObjectWithTag("Death");
@@ -138,7 +139,7 @@ namespace Management
             save.scenceIndex = SceneManager.GetActiveScene().buildIndex;
             save.hasWind = SD_PlayerAttack.Instance.hasWind;
             save.canParry = SD_PlayerAttack.Instance.canParry;
-            save.currentPv = SD_PlayerRessources.Instance.life;
+            save.currentPv = (int)SD_PlayerRessources.Instance.life;
             save.Alyah1 = SD_PlayerRessources.Instance.Alyah1;
             save.Alyah2 = SD_PlayerRessources.Instance.Alyah2;
             save.Henry1 = SD_PlayerRessources.Instance.Henry1;

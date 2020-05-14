@@ -20,7 +20,7 @@ namespace Player
         public Sprite none;
         Image energyEmpty;
         Image energyBar;
-        public  int life;
+        public  float life;
         public int currentMaxLife;
         public int maxLifePossible;
         [HideInInspector] public bool cantTakeDamage;
@@ -94,42 +94,40 @@ namespace Player
                 {
                     StopCoroutine(SD_PlayerMovement.Instance.Dash());
                 }
+
+                bool dead = false;
                 for (int i = 0; i<damage; i++)
                 {
                     life --;
+                    if (life <= 0)
+                    {
+                        dead = true;
+
+                        StartCoroutine(GameManagerV2.Instance.Death());
+                        break;
+
+                    }
                     if (life % 2 == 0)
                     {
                         if (currentMaxLife == life + 1 && currentMaxLife % 2 != 0)
                         {
-                            lifes[life ].GetComponent<Image>().sprite = halfHeartEmpty;
+                            lifes[(int)life ].GetComponent<Image>().sprite = halfHeartEmpty;
                         }
                         else
-                            lifes[life].GetComponent<Image>().color = new Color(0, 0, 0, 0);
+                            lifes[(int)life].GetComponent<Image>().color = new Color(0, 0, 0, 0);
 
                     }
 
                     else
                     {
-                        lifes[life].GetComponent<Image>().sprite = completHeartEmpty;
-
+                        lifes[(int)life].GetComponent<Image>().sprite = completHeartEmpty;
                     }
-
                 }
-               
-
-
-
 
                 yield return new WaitForSeconds(0.2f);
 
-                if (life <= 0)
-                {
-
-
-                    StartCoroutine(GameManagerV2.Instance.Death());
-
-                }
-                else
+               
+                if(!dead)
                 {
                     SD_PlayerMovement.Instance.cantMove = false;
                     SD_PlayerMovement.Instance.cantDash = false;
@@ -152,9 +150,12 @@ namespace Player
             life += amount; 
             if (life > currentMaxLife)
                 life = currentMaxLife;
+            for (int i = 0; i < maxLifePossible - life; i++)
+            {
+                lifes[lifes.Length - 1 - i].GetComponent<Image>().color = new Color(0, 0, 0, 0);
+            }
             for (int x = 0; x < life; x++)
             {
-                lifes[x].GetComponent<Image>().color = new Color(1, 1, 1, 1);
                 if (x % 2 == 0)
                     lifes[x].GetComponent<Image>().sprite = halfHeart;
                 else
@@ -198,6 +199,11 @@ namespace Player
                 else
                     lifes[x].GetComponent<Image>().sprite = completHeart;
             }
+        }
+
+        public void StartTakingDamage(int damage)
+        {
+            StartCoroutine(TakingDamage(damage, SD_PlayerMovement.Instance.gameObject, false, 1));
         }
     }
 

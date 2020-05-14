@@ -60,7 +60,7 @@ public class SD_MegaLaser : MonoBehaviour
                 if (hitpoint.collider != null)
                 {
                     if (hitpoint.collider.gameObject.tag == "Player")
-                        StartCoroutine(SD_PlayerRessources.Instance.TakingDamage(SD_PlayerRessources.Instance.life, SD_PlayerMovement.Instance.gameObject, false, 0.1f));
+                        StartCoroutine(SD_PlayerRessources.Instance.TakingDamage(15, SD_PlayerMovement.Instance.gameObject, false, 0.1f));
                 }
                 yield return new WaitForSeconds(0.01f);
             }
