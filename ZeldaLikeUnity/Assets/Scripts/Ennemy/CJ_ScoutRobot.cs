@@ -20,7 +20,6 @@ namespace Ennemy
         bool activation;
         [HideInInspector]public GameObject target;
         public GameObject ennemyBullet;
-        public bool wontBeReset;
         LineRenderer trail;
       public override void Start()
     {
@@ -28,7 +27,7 @@ namespace Ennemy
             target = gameObject.transform.GetChild(0).gameObject;
             target.SetActive(false);
             trail = GetComponent<LineRenderer>();
-            if (!wontBeReset)
+            if (!WontRepop)
             {
                 GameManagerV2.Instance.AddEnnemieToList(GameManagerV2.ennemies.scoutRobot, gameObject);
             }

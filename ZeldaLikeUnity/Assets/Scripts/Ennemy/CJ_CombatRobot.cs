@@ -22,6 +22,7 @@ namespace Ennemy
     public override void Start()
     {
             base.Start();
+            if(!WontRepop)
             GameManagerV2.Instance.AddEnnemieToList(GameManagerV2.ennemies.combatRobot, gameObject);
 
         }
@@ -125,6 +126,7 @@ namespace Ennemy
             cacAttack = 0;
             isAttacking = true;
             canMove = false;
+            canTakeDamage = false;
             if (player.transform.position.x - transform.position.x > 0)
                 ennemyAnimator.SetFloat("Left", 0);
             else
@@ -144,6 +146,10 @@ namespace Ennemy
             float cpt = 0;
             while (cpt < 1f)
             {
+                if (player.transform.position.x - transform.position.x > 0)
+                    ennemyAnimator.SetFloat("Left", 0);
+                else
+                    ennemyAnimator.SetFloat("Left", 1);
                 ennemyRGB.velocity = new Vector2(chargeRay.point.x - transform.position.x, chargeRay.point.y - transform.position.y).normalized * chargeSpeed;
                 cpt += 0.01f;
                 if (Mathf.Abs( Mathf.Abs(transform.position.x) - Mathf.Abs(chargeRay.point.x)) < 0.1f)
@@ -156,6 +162,7 @@ namespace Ennemy
 
             yield return new WaitForSeconds(1f);
             ennemyAnimator.SetBool("Stun", false);
+            canTakeDamage = true;
             canMove = true;
             isAttacking = false;
         }
@@ -241,6 +248,13 @@ namespace Ennemy
         public override void Desaggro(Collider2D collision)
         {
             StopAllCoroutines();
+
+            ennemyAnimator.SetInteger("attackNumber", 0);
+            ennemyAnimator.ResetTrigger("Aggro");
+            ennemyAnimator.ResetTrigger("PreparCharge");
+            ennemyAnimator.ResetTrigger("Attack");
+            ennemyAnimator.SetTrigger("Stunned");
+            ennemyAnimator.SetBool("Stun", false);
             base.Desaggro(collision);
 
         }

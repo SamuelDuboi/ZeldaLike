@@ -150,7 +150,7 @@ namespace Player
             life += amount; 
             if (life > currentMaxLife)
                 life = currentMaxLife;
-            for (int i = 0; i < maxLifePossible - life; i++)
+            for (int i = 0; i < maxLifePossible - currentMaxLife; i++)
             {
                 lifes[lifes.Length - 1 - i].GetComponent<Image>().color = new Color(0, 0, 0, 0);
             }
@@ -160,6 +160,16 @@ namespace Player
                     lifes[x].GetComponent<Image>().sprite = halfHeart;
                 else
                     lifes[x].GetComponent<Image>().sprite = completHeart;
+                lifes[x].GetComponent<Image>().color = Color.white;
+
+            }
+            for (int x = (int)life; x < currentMaxLife; x++)
+            {
+                if (x % 2 == 0)
+                    lifes[x].GetComponent<Image>().sprite = halfHeartEmpty;
+                else
+                    lifes[x].GetComponent<Image>().sprite = completHeartEmpty;
+                lifes[x].GetComponent<Image>().color = Color.white;
             }
         }
         #endregion
@@ -171,13 +181,26 @@ namespace Player
             lifes[currentMaxLife-1].SetActive(true);
 
             AudioManager.Instance.Play("Coeur_Up");
+            for (int i = 0; i < maxLifePossible - currentMaxLife; i++)
+            {
+                lifes[lifes.Length - 1 - i].GetComponent<Image>().color = new Color(0, 0, 0, 0);
+            }
             for (int x = 0; x < life; x++)
             {
-                lifes[x].GetComponent<Image>().color = new Color(1, 1, 1, 1);
                 if (x % 2 == 0)
                     lifes[x].GetComponent<Image>().sprite = halfHeart;
                 else
                     lifes[x].GetComponent<Image>().sprite = completHeart;
+                lifes[x].GetComponent<Image>().color = Color.white;
+
+            }
+            for (int x = (int)life; x < currentMaxLife; x++)
+            {
+                if (x % 2 == 0)
+                    lifes[x].GetComponent<Image>().sprite = halfHeartEmpty;
+                else
+                    lifes[x].GetComponent<Image>().sprite = completHeartEmpty;
+                lifes[x].GetComponent<Image>().color = Color.white;
             }
 
         }

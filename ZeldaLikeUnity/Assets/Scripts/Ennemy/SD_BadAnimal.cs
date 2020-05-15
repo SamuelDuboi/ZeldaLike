@@ -15,6 +15,7 @@ namespace Ennemy
         public override void Start()
         {
             base.Start();
+            if(!WontRepop)
             GameManagerV2.Instance.AddEnnemieToList(GameManagerV2.ennemies.ronchonchon, gameObject);
 
 

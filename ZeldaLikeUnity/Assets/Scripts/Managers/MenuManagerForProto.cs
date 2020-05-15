@@ -1,8 +1,26 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.IO;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class MenuManagerForProto : MonoBehaviour
 {
+    public Button Continue;
+    public GameObject newLevel;
+    public GameObject evenSystem;
+    private void Start()
+    {
+        if(Continue != null)
+        {
+            if(!File.Exists(Application.persistentDataPath + "/gamesave.save"))
+            {
+                Continue.interactable = false ;
+                Continue.gameObject.GetComponent<Image>().color = new Color32(157,157,157,255);
+                evenSystem.GetComponent<EventSystem>().SetSelectedGameObject(newLevel);
+            }
+        }
+    }
     public void LoadRonchonchonForest()
     {
         Time.timeScale = 1;
@@ -36,5 +54,13 @@ public class MenuManagerForProto : MonoBehaviour
     public void Quite()
     {
         Application.Quit();
+    }
+
+    public void DeleteSave()
+    {
+        if (File.Exists(Application.persistentDataPath + "/gamesave.save"))
+        {
+            File.Delete(Application.persistentDataPath + "/gamesave.save");
+        }
     }
 }

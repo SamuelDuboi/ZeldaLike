@@ -12,6 +12,7 @@ namespace Ennemy
     [RequireComponent(typeof(BoxCollider2D))]
     public abstract class SD_EnnemyGlobalBehavior : MonoBehaviour
     {
+        public bool WontRepop;
         [HideInInspector] public GameObject player;
         [HideInInspector] public Rigidbody2D ennemyRGB;
         public GameObject aggroZone;
@@ -315,18 +316,21 @@ namespace Ennemy
 
       public  virtual IEnumerator Stun(float timer)
         {
-            ennemyAnimator.SetBool("Stun", true);
-            ennemyAnimator.SetTrigger("Stunned");
-            canMove = false;
-            ennemyRGB.velocity = Vector2.zero;
-            isAvoidingObstacles = false;
-            isAttacking = false;
-            isAttacking = true;
-            yield return new WaitForSeconds(timer);
-            isAttacking = false;
-            isAvoidingObstacles = true;
-            canMove = true;
-            ennemyAnimator.SetBool("Stun", false);
+            
+                ennemyAnimator.SetBool("Stun", true);
+                ennemyAnimator.SetTrigger("Stunned");
+                canMove = false;
+                ennemyRGB.velocity = Vector2.zero;
+                isAvoidingObstacles = false;
+                isAttacking = false;
+                isAttacking = true;
+                yield return new WaitForSeconds(timer);
+                isAttacking = false;
+                isAvoidingObstacles = true;
+                canMove = true;
+                ennemyAnimator.SetBool("Stun", false);
+            
+           
         }
 
         public void Death()

@@ -23,7 +23,11 @@ public class SD_WallKillEnnemies : MonoBehaviour
         foreach (GameObject ennemy in ennemies)
         {
             if (ennemy == null)
+            {
+
                 ennemies.Remove(ennemy);
+                break;
+            }
         }
        
            
