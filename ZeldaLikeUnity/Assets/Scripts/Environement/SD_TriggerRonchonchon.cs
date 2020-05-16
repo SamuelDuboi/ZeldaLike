@@ -48,6 +48,8 @@ public class SD_TriggerRonchonchon : Singleton<SD_TriggerRonchonchon>
     {
         if (Input.GetButtonDown("Interact") && !closeDoor & triggerCPt == 3)
         {
+            if (SD_PlayerMovement.Instance.grosPoussière.activeSelf)
+                SD_PlayerMovement.Instance.grosPoussière.SetActive(false);
             Time.timeScale = 0;
             timer = 1;
             moveBack = false;

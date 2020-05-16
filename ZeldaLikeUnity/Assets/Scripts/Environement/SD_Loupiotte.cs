@@ -38,6 +38,8 @@ public class SD_Loupiotte : MonoBehaviour
     {
         if (collision.gameObject.layer == 14 && !closeDoor  && loupiottesCount == loupiottes.Count - 1)
         {
+            if (SD_PlayerMovement.Instance.grosPoussière.activeSelf)
+                SD_PlayerMovement.Instance.grosPoussière.SetActive(false);
             Time.timeScale = 0;
             moveBack = false;
             SD_PlayerMovement.Instance.cantDash = true;
@@ -157,6 +159,8 @@ public class SD_Loupiotte : MonoBehaviour
     {
         if (collision.gameObject.layer == 14 && !closeDoor  && loupiottesCount == loupiottes.Count - 1)
         {
+            if (SD_PlayerMovement.Instance.grosPoussière.activeSelf)
+                SD_PlayerMovement.Instance.grosPoussière.SetActive(false);
             Time.timeScale = 0;
             moveBack = false;
             SD_PlayerMovement.Instance.cantDash = true;

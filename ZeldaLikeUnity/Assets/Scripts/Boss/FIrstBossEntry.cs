@@ -49,6 +49,7 @@ public class FIrstBossEntry : MonoBehaviour
     {
         if(collision.gameObject.layer == 11 &&!cameraMove)
         {
+            SD_PlayerMovement.Instance.cantSprint = true;
             SD_PlayerMovement.Instance.playerRGB.velocity = Vector2.zero;
             camera.transform.SetParent(collision.transform);
             camera.transform.position = new Vector3(collision.transform.position.x, collision.transform.position.y, -10);

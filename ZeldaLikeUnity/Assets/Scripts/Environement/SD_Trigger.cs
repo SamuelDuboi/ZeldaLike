@@ -56,6 +56,8 @@ public class SD_Trigger : MonoBehaviour
     {
         if (Input.GetButtonDown("Interact") && !closeDoor)
         {
+            if(SD_PlayerMovement.Instance.grosPoussière.activeSelf)
+            SD_PlayerMovement.Instance.grosPoussière.SetActive(false);
             AudioManager.Instance.Pause();
             Time.timeScale = 0;
             timer = 1;

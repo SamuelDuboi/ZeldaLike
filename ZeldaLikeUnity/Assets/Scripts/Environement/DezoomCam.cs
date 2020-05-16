@@ -29,6 +29,7 @@ public class DezoomCam : MonoBehaviour
     {
         if (up )
         {
+            SD_PlayerMovement.Instance.cantSprint = true;
             if (goRight)
             {
                 if (cam.transform.position.x > currentPosition && moveUp)
@@ -60,6 +61,8 @@ public class DezoomCam : MonoBehaviour
             }
             if (cameraCam.orthographicSize < 5.6f)
             {
+
+                SD_PlayerMovement.Instance.cantSprint = false;
                 up = false;
                 moveDown = false;
                 camPlayer.transform.position = new Vector3(SD_PlayerMovement.Instance.transform.position.x,
@@ -96,6 +99,8 @@ public class DezoomCam : MonoBehaviour
                 moveUp = true;
                 moveDown = true;
                 up = true;
+                if (SD_PlayerMovement.Instance.grosPoussière.activeSelf)
+                    SD_PlayerMovement.Instance.grosPoussière.SetActive(false);                
                 cam.transform.SetParent(collision.transform);
                 cam.transform.position = new Vector3(collision.transform.position.x, collision.transform.position.y, -10);
                 if (goRight)

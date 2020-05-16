@@ -60,6 +60,7 @@ public class Boss2Entry : MonoBehaviour
             currentPosition = camera.transform.position.y + 0.01f;
             camera.SetActive(true);
 
+            SD_PlayerMovement.Instance.cantSprint = true;
             cameraMove = true;
             cameraPlayer.SetActive(false);
             SD_PlayerMovement.Instance.cantDash = true;
