@@ -549,5 +549,10 @@ namespace Player
             }
         }
 
+        public void StopCoroutine()
+        {
+            StopAllCoroutines();
+        }
+
     }
 }

@@ -74,7 +74,7 @@ public class TriggerActivated : MonoBehaviour
             }
             else if (isActivated == false)
             {
-                SD_TriggerRonchonchon.Instance.ResetAll();
+              StartCoroutine(  SD_TriggerRonchonchon.Instance.ResetAll());
             }
         }
     }

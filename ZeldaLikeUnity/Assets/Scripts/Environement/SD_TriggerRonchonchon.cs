@@ -27,6 +27,10 @@ public class SD_TriggerRonchonchon : Singleton<SD_TriggerRonchonchon>
     public bool useForHenry;
     public GameObject[] triggerList = new GameObject[3];
     public int triggerCPt;
+    bool canInteract;
+    GameObject player;
+    public float range = 2f;
+
     private void Start()
     {
         MakeSingleton(false);
@@ -41,50 +45,31 @@ public class SD_TriggerRonchonchon : Singleton<SD_TriggerRonchonchon>
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!closeDoor)
+        {
             interactButton.SetActive(true);
+            canInteract = true;
+            player = collision.gameObject;
+        }
 
     }
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (Input.GetButtonDown("Interact") && !closeDoor & triggerCPt == 3)
-        {
-            if (SD_PlayerMovement.Instance.grosPoussière.activeSelf)
-                SD_PlayerMovement.Instance.grosPoussière.SetActive(false);
-            Time.timeScale = 0;
-            timer = 1;
-            moveBack = false;
-            SD_PlayerMovement.Instance.cantDash = true;
-            SD_PlayerMovement.Instance.cantMove = true;
-            SD_PlayerAttack.Instance.cantAttack = true;
-            SD_PlayerAttack.Instance.cantAim = true;
-            camera.SetActive(true);
-            playerCam.SetActive(false);
-            camera.transform.position = new Vector3(SD_PlayerMovement.Instance.transform.position.x, SD_PlayerMovement.Instance.transform.position.y, -10);
-            move = true;
-            cpt = 0;
-            closeDoor = true;
-            interactButton.SetActive(false);
-            distance = Mathf.Abs(Vector2.Distance(new Vector3(transform.GetChild(0).position.x, transform.GetChild(0).position.y, -10), camera.transform.position)) * 0.1f;
-        }
-        else if (Input.GetButtonDown("Interact") && !closeDoor & triggerCPt != 3)
-        {
-            ResetAll();
-        }
-    }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        interactButton.SetActive(false);
-    }
-    public void ResetAll()
-    {
-        foreach (GameObject trigger in triggerList)
-        {
-           StartCoroutine(trigger.GetComponent<TriggerActivated>().resetTriger());
 
+    bool isActive;
+    public IEnumerator ResetAll()
+    {
+        if (!isActive)
+        {
+            isActive = true;
+            foreach (GameObject trigger in triggerList)
+            {
+                StartCoroutine(trigger.GetComponent<TriggerActivated>().resetTriger());
+
+            }
+            triggerCPt = 0;
+            doorAnimator.SetTrigger("ComeBack");
+            doorAnimator.SetTrigger("Activated");
+            yield return new WaitForSeconds(2.2f);
+            isActive = false;
         }
-        triggerCPt = 0;
-        doorAnimator.SetTrigger("ComeBack");
-        doorAnimator.SetTrigger("Activated");
     }
     public void TriggerUp()
     {
@@ -113,8 +98,53 @@ public class SD_TriggerRonchonchon : Singleton<SD_TriggerRonchonchon>
 
 
     }
+    void Interact()
+    {
+        if (Input.GetButtonDown("Interact") && !closeDoor & triggerCPt == 3)
+        {
+            if (SD_PlayerMovement.Instance.grosPoussière.activeSelf)
+                SD_PlayerMovement.Instance.grosPoussière.SetActive(false);
+            Time.timeScale = 0;
+            timer = 1;
+            moveBack = false;
+            SD_PlayerMovement.Instance.cantDash = true;
+            SD_PlayerMovement.Instance.cantMove = true;
+            SD_PlayerAttack.Instance.cantAttack = true;
+            SD_PlayerAttack.Instance.cantAim = true;
+            camera.SetActive(true);
+            playerCam.SetActive(false);
+            camera.transform.position = new Vector3(SD_PlayerMovement.Instance.transform.position.x, SD_PlayerMovement.Instance.transform.position.y, -10);
+            move = true;
+            cpt = 0;
+            closeDoor = true;
+            interactButton.SetActive(false);
+            distance = Mathf.Abs(Vector2.Distance(new Vector3(transform.GetChild(0).position.x, transform.GetChild(0).position.y, -10), camera.transform.position)) * 0.1f;
+        }
+        else if (Input.GetButtonDown("Interact") && !closeDoor & triggerCPt != 3)
+        {
+           StartCoroutine( ResetAll());
+        }
+
+    }
     private void Update()
     {
+        if (canInteract)
+        {
+            if (Mathf.Abs(Vector2.Distance(transform.position, player.transform.position)) < range)
+            {
+                if (!interactButton.activeInHierarchy)
+                    interactButton.SetActive(true);
+                else
+                    Interact();
+            }
+            else if (Mathf.Abs(Vector2.Distance(transform.position, player.transform.position)) >= range)
+            {
+                interactButton.SetActive(false);
+            }
+           
+
+        }
+
         if (move)
             camera.transform.position = Vector3.MoveTowards(camera.transform.position,
                                                             new Vector3(transform.GetChild(0).position.x, transform.GetChild(0).position.y, -10),
