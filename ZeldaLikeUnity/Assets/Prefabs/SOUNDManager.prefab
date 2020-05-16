@@ -97,21 +97,21 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: e111abb637cf88c469a8d76f29d90f1e, type: 3}
     source: {fileID: 0}
     group: {fileID: 1604241929038478150, guid: 30074e79190fbb3438e58f58430b627d, type: 2}
-    volume: 0.2
+    volume: 0.12
     pitch: 1
     loop: 0
   - name: Inoh_Dash2
     clip: {fileID: 8300000, guid: 81e3d26429700144e87980eaf11a34ce, type: 3}
     source: {fileID: 0}
     group: {fileID: 1604241929038478150, guid: 30074e79190fbb3438e58f58430b627d, type: 2}
-    volume: 0.2
+    volume: 0.12
     pitch: 1
     loop: 0
   - name: Inoh_Dash3
     clip: {fileID: 8300000, guid: cc4f7596b3db8024ba87edbe6ab5f4d0, type: 3}
     source: {fileID: 0}
     group: {fileID: 1604241929038478150, guid: 30074e79190fbb3438e58f58430b627d, type: 2}
-    volume: 0.2
+    volume: 0.12
     pitch: 1
     loop: 0
   - name: Inoh_TakeDamage
@@ -125,7 +125,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: a53edf065a7c3a4469465b86c653ff66, type: 3}
     source: {fileID: 0}
     group: {fileID: 1604241929038478150, guid: 30074e79190fbb3438e58f58430b627d, type: 2}
-    volume: 1
+    volume: 0.4
     pitch: 1
     loop: 0
   - name: Marche_Herbe
@@ -160,7 +160,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: a206f73b0989fd048906435b478dbf3b, type: 3}
     source: {fileID: 0}
     group: {fileID: 3724028032716579963, guid: 30074e79190fbb3438e58f58430b627d, type: 2}
-    volume: 1
+    volume: 0.8
     pitch: 1
     loop: 0
   - name: Tir_Scout
@@ -181,7 +181,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 16f87c8fc957e22428fbf78dcfc7f8e0, type: 3}
     source: {fileID: 0}
     group: {fileID: -745629671045047629, guid: 30074e79190fbb3438e58f58430b627d, type: 2}
-    volume: 1
+    volume: 0.8
     pitch: 1
     loop: 0
   - name: Voix_Henry
