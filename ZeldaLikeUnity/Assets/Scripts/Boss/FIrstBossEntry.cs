@@ -104,6 +104,7 @@ public class FIrstBossEntry : MonoBehaviour
         yield return new WaitForSeconds(2f);
 
         StartCoroutine(GameManagerV2.Instance.GamePadeShake(0.7f, 1f));
+        AudioManager.Instance.Play("Boss_Tremblement");
         AwakeForce.SetActive(true);
         yield return new WaitForSeconds(0.1f);
         AwakeForce.SetActive(false);
@@ -123,6 +124,7 @@ public class FIrstBossEntry : MonoBehaviour
 
         StartCoroutine(GameManagerV2.Instance.GamePadeShake(1, 1f));
         transform.position = Vector3.back*15;
+        AudioManager.Instance.Play("Boss_Cri_Intro");
         Boss.SetActive(true);
         cameraPlayer.GetComponentInChildren<CinemachineVirtualCamera>().m_Lens.OrthographicSize = 10;
         cameraPlayer.transform.position = new Vector3(camera.transform.parent.position.x, camera.transform.parent.position.y, -10);

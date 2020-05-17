@@ -90,6 +90,7 @@ public class SD_BossBody : MonoBehaviour
                 {
                     weakPointNumber--;
                     collider.GetComponent<BoxCollider2D>().enabled = false;
+                    AudioManager.Instance.Play("Boss1_Explosion");
                     collider.GetComponent<Animator>().SetTrigger("Destroyed");
                     
                         SD_BossBehavior.Instance.phaseNumber++;
