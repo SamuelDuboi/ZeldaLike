@@ -158,7 +158,9 @@ namespace Management
         {
             if (File.Exists(Application.persistentDataPath + "/gamesave.save"))
             {
-
+                SD_PlayerMovement.Instance.StopCoroutine();
+                SD_PlayerMovement.Instance.dashIsActive = false;
+                SD_PlayerMovement.Instance.cantDash = true;
 
                 BinaryFormatter bf = new BinaryFormatter();
                 FileStream file = File.Open(Application.persistentDataPath + "/gamesave.save", FileMode.Open);
@@ -237,10 +239,10 @@ namespace Management
                 Debug.Log("Game Loaded");
                 SD_PlayerAttack.Instance.cantAttack = false;
                 SD_PlayerMovement.Instance.cantMove = false;
-                SD_PlayerMovement.Instance.dashIsActive = false;
                 StartCoroutine(waitToNotDash());
                 SD_PlayerMovement.Instance.isAbleToRunOnHole = false;
                 SD_PlayerAttack.Instance.cantAim = false;
+
             }
             else
             {

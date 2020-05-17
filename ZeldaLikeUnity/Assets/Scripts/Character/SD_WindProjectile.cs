@@ -25,8 +25,9 @@ public class SD_WindProjectile : MonoBehaviour
             collision.GetComponent<SD_EnnemyGlobalBehavior>().StunLunch(1);
             Destroy(gameObject);
         }
-        if (collision.gameObject.layer == 9 && collision.gameObject.tag != "Hole" && collision.gameObject.tag != "Fire" && collision.gameObject.tag != "DestroyedPlatform")
-        {if( collision.GetComponent<SD_LoupiotteActivated>() == null)
+        if (collision.gameObject.layer == 9 && collision.gameObject.tag != "Hole" && collision.gameObject.tag != "Fire" && collision.gameObject.tag != "DestroyedPlatform" && collision.gameObject.tag != "WindPlatform")
+        {
+            if( collision.GetComponent<SD_LoupiotteActivated>() == null)
             StartCoroutine(Death());
         }
     }
