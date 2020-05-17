@@ -1,0 +1,409 @@
+fileFormatVersion: 2
+guid: 8e4b8bb0ca5ad3140807b26187408d07
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -931937791243614844
+    second: Cp_Bras_Boss_spritsheet_0
+  - first:
+      213: -5072899524074604944
+    second: Cp_Bras_Boss_spritsheet_1
+  - first:
+      213: 2588370924598461701
+    second: Cp_Bras_Boss_spritsheet_2
+  - first:
+      213: -2231918906261949573
+    second: Cp_Bras_Boss_spritsheet_3
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Cp_Bras_Boss_spritsheet_0
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 14
+        width: 112
+        height: 304
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 37, y: -147}
+        - {x: 37, y: -146}
+        - {x: 39, y: -144}
+        - {x: 39, y: -139}
+        - {x: 40, y: -138}
+        - {x: 40, y: -131}
+        - {x: 41, y: -130}
+        - {x: 41, y: -108}
+        - {x: 39, y: -106}
+        - {x: 38, y: -101}
+        - {x: 39, y: -100}
+        - {x: 39, y: -93}
+        - {x: 40, y: -92}
+        - {x: 40, y: -84}
+        - {x: 39, y: -83}
+        - {x: 39, y: -75}
+        - {x: 40, y: -74}
+        - {x: 40, y: -72}
+        - {x: 42, y: -70}
+        - {x: 42, y: -68}
+        - {x: 41, y: -67}
+        - {x: 42, y: -66}
+        - {x: 42, y: -63}
+        - {x: 46, y: -57}
+        - {x: 46, y: -17}
+        - {x: 40, y: -11}
+        - {x: 30, y: -11}
+        - {x: 25, y: -16}
+        - {x: 24, y: -28}
+        - {x: 21, y: -31}
+        - {x: 16, y: -32}
+        - {x: 16, y: -25}
+        - {x: 17, y: -24}
+        - {x: 17, y: -20}
+        - {x: 21, y: -18}
+        - {x: 21, y: -13}
+        - {x: 23, y: -12}
+        - {x: 24, y: -11}
+        - {x: 34, y: -11}
+        - {x: 39, y: -8}
+        - {x: 38, y: -2}
+        - {x: 39, y: -1}
+        - {x: 39, y: 5}
+        - {x: 40, y: 6}
+        - {x: 40, y: 9}
+        - {x: 41, y: 10}
+        - {x: 41, y: 19}
+        - {x: 43, y: 23}
+        - {x: 44, y: 30}
+        - {x: 45, y: 31}
+        - {x: 46, y: 37}
+        - {x: 48, y: 41}
+        - {x: 48, y: 49}
+        - {x: 49, y: 50}
+        - {x: 49, y: 52}
+        - {x: 51, y: 56}
+        - {x: 51, y: 60}
+        - {x: 50, y: 62}
+        - {x: 51, y: 63}
+        - {x: 51, y: 70}
+        - {x: 52, y: 71}
+        - {x: 52, y: 74}
+        - {x: 53, y: 75}
+        - {x: 53, y: 84}
+        - {x: 52, y: 85}
+        - {x: 52, y: 89}
+        - {x: 50, y: 91}
+        - {x: 50, y: 92}
+        - {x: 52, y: 93}
+        - {x: 56, y: 101}
+        - {x: 56, y: 107}
+        - {x: 55, y: 108}
+        - {x: 55, y: 109}
+        - {x: 41, y: 123}
+        - {x: 41, y: 124}
+        - {x: 37, y: 128}
+        - {x: 35, y: 128}
+        - {x: 34, y: 127}
+        - {x: 30, y: 127}
+        - {x: 29, y: 128}
+        - {x: 19, y: 128}
+        - {x: 14, y: 125}
+        - {x: 13, y: 122}
+        - {x: 13, y: 116}
+        - {x: 12, y: 115}
+        - {x: 12, y: 111}
+        - {x: 11, y: 108}
+        - {x: 11, y: 131}
+        - {x: 13, y: 131}
+        - {x: 16, y: 134}
+        - {x: 16, y: 138}
+        - {x: 13, y: 141}
+        - {x: 11, y: 141}
+        - {x: 11, y: 152}
+        - {x: -2, y: 152}
+        - {x: -2, y: 141}
+        - {x: -3, y: 141}
+        - {x: -6, y: 138}
+        - {x: -6, y: 134}
+        - {x: -2, y: 131}
+        - {x: -2, y: 107}
+        - {x: -3, y: 109}
+        - {x: -5, y: 112}
+        - {x: -5, y: 118}
+        - {x: -6, y: 119}
+        - {x: -6, y: 123}
+        - {x: -8, y: 127}
+        - {x: -11, y: 128}
+        - {x: -28, y: 128}
+        - {x: -38, y: 119}
+        - {x: -38, y: 118}
+        - {x: -41, y: 116}
+        - {x: -45, y: 114}
+        - {x: -48, y: 111}
+        - {x: -49, y: 108}
+        - {x: -51, y: 105}
+        - {x: -51, y: 103}
+        - {x: -48, y: 99}
+        - {x: -46, y: 95}
+        - {x: -43, y: 93}
+        - {x: -47, y: 85}
+        - {x: -47, y: 80}
+        - {x: -48, y: 79}
+        - {x: -48, y: 77}
+        - {x: -47, y: 76}
+        - {x: -46, y: 68}
+        - {x: -45, y: 67}
+        - {x: -45, y: 63}
+        - {x: -44, y: 62}
+        - {x: -44, y: 56}
+        - {x: -43, y: 55}
+        - {x: -43, y: 51}
+        - {x: -42, y: 50}
+        - {x: -42, y: 45}
+        - {x: -41, y: 44}
+        - {x: -41, y: 41}
+        - {x: -40, y: 40}
+        - {x: -40, y: 36}
+        - {x: -39, y: 35}
+        - {x: -39, y: 32}
+        - {x: -38, y: 31}
+        - {x: -37, y: 25}
+        - {x: -35, y: 22}
+        - {x: -34, y: 14}
+        - {x: -33, y: 13}
+        - {x: -35, y: 10}
+        - {x: -38, y: 9}
+        - {x: -49, y: -2}
+        - {x: -50, y: -8}
+        - {x: -51, y: -9}
+        - {x: -51, y: -12}
+        - {x: -53, y: -14}
+        - {x: -53, y: -16}
+        - {x: -56, y: -18}
+        - {x: -56, y: -42}
+        - {x: -55, y: -43}
+        - {x: -55, y: -44}
+        - {x: -51, y: -48}
+        - {x: -51, y: -50}
+        - {x: -49, y: -52}
+        - {x: -48, y: -52}
+        - {x: -44, y: -55}
+        - {x: -40, y: -55}
+        - {x: -40, y: -57}
+        - {x: -37, y: -64}
+        - {x: -30, y: -70}
+        - {x: -30, y: -73}
+        - {x: -29, y: -74}
+        - {x: -29, y: -95}
+        - {x: -30, y: -96}
+        - {x: -30, y: -101}
+        - {x: -31, y: -102}
+        - {x: -32, y: -110}
+        - {x: -33, y: -111}
+        - {x: -33, y: -128}
+        - {x: -32, y: -129}
+        - {x: -32, y: -141}
+        - {x: -31, y: -142}
+        - {x: -31, y: -146}
+        - {x: -28, y: -149}
+        - {x: -10, y: -149}
+        - {x: -10, y: -152}
+        - {x: 18, y: -152}
+        - {x: 18, y: -150}
+        - {x: 19, y: -149}
+        - {x: 35, y: -149}
+      - - {x: -43, y: -38}
+        - {x: -43, y: -36}
+        - {x: -45, y: -32}
+        - {x: -45, y: -31}
+        - {x: -43, y: -33}
+        - {x: -40, y: -34}
+        - {x: -40, y: -40}
+        - {x: -41, y: -39}
+      - - {x: -16, y: -28}
+        - {x: -16, y: -16}
+        - {x: -19, y: -13}
+        - {x: -17, y: -14}
+        - {x: -17, y: -16}
+        - {x: -16, y: -19}
+        - {x: -12, y: -22}
+        - {x: -12, y: -32}
+        - {x: -14, y: -32}
+      - - {x: -38, y: -14}
+        - {x: -32, y: -8}
+        - {x: -31, y: -10}
+        - {x: -33, y: -10}
+        - {x: -36, y: -11}
+        - {x: -39, y: -15}
+        - {x: -38, y: -17}
+      physicsShape: []
+      tessellationDetail: 1
+      bones: []
+      spriteID: 485892834871113f0800000000000000
+      internalID: -931937791243614844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cp_Bras_Boss_spritsheet_1
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 14
+        width: 114
+        height: 301
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 076f84e92c07999b0800000000000000
+      internalID: -5072899524074604944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cp_Bras_Boss_spritsheet_2
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 14
+        width: 115
+        height: 298
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50504a364adbbe320800000000000000
+      internalID: 2588370924598461701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cp_Bras_Boss_spritsheet_3
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 14
+        width: 114
+        height: 301
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7337c87491a601e0800000000000000
+      internalID: -2231918906261949573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
