@@ -447,11 +447,10 @@ namespace Player
             if (isAbleToRunOnHole && collision.tag == "WindPlatform" )
             {
                 isAbleToRunOnHole = false;
-                StartCoroutine(PlatfromCantSwpanAfterTrigger());
                 Destroy(currentPlatform);
             }
          
-            if (collision.tag == "Hole" && currentPlatform != null && !dashIsActive)
+            if (collision.tag == "Hole" )
             {
                 StartCoroutine(PlatfromCantSwpanAfterTrigger());
                 Destroy(currentPlatform);
@@ -490,9 +489,6 @@ namespace Player
         {
 
 
-            if (!dashIsActive)
-            {
-                yield return new WaitForSeconds(0.1f);
                 if (!dashIsActive)
                 {
                     cantDash = true;
@@ -544,10 +540,6 @@ namespace Player
                     SD_PlayerAttack.Instance.cantAttack = false;
                     SD_PlayerRessources.Instance.cantTakeDamage = false;
                 }
-
-                
-            }
-
         }
         public void Death()
         {
