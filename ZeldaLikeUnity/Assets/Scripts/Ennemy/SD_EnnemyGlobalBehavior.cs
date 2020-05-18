@@ -48,6 +48,9 @@ namespace Ennemy
 
         public GameObject etincelles;
         LayerMask attackMask;
+
+
+        bool stunCantStun;
         public virtual void Start()
         {
             attackMask = 1 << 8;
@@ -122,7 +125,6 @@ namespace Ennemy
         {
 
         }
-
         public IEnumerator TakingDamage(int damage, GameObject attack, bool destroyContact, int projectionForce)
         {
             canTakeDamage = false;
@@ -188,8 +190,8 @@ namespace Ennemy
             }
             yield return new WaitForSeconds(0.2f);
             etincelles.SetActive(false);
+            if(!notStunable)
             canTakeDamage = true;
-
             StartCoroutine(Stun(1f));
             if (destroyContact)
                 Destroy(attack);
@@ -314,9 +316,12 @@ namespace Ennemy
            StartCoroutine( Stun(timer));
         }
 
+        [HideInInspector] public bool notStunable;
       public  virtual IEnumerator Stun(float timer)
         {
-            
+            if (!notStunable && !stunCantStun)
+            {
+                stunCantStun = true;
                 ennemyAnimator.SetBool("Stun", true);
                 ennemyAnimator.SetTrigger("Stunned");
                 canMove = false;
@@ -324,11 +329,26 @@ namespace Ennemy
                 isAvoidingObstacles = false;
                 isAttacking = false;
                 isAttacking = true;
-                yield return new WaitForSeconds(timer);
+                float cpt = 0;
+                while (cpt < timer)
+                {
+                    if (notStunable)
+                    {
+
+                        break;
+                    }
+                    else
+                    {
+                        cpt += 0.05f;
+                        yield return new WaitForSeconds(0.05f);
+                    }
+                }
                 isAttacking = false;
                 isAvoidingObstacles = true;
                 canMove = true;
                 ennemyAnimator.SetBool("Stun", false);
+                stunCantStun = false;
+            }
             
            
         }
