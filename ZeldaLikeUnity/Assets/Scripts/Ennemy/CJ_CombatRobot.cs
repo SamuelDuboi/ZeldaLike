@@ -1,16 +1,13 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Management;
 using System;
-
+using Player;
 namespace Ennemy
 {
-  public class CJ_CombatRobot : SD_EnnemyGlobalBehavior
-  {
+    public class CJ_CombatRobot : SD_EnnemyGlobalBehavior
+    {
         [Range(0, 20)]
-        public float chargeRange;
-        [Range(0,20)]
         public float slashRange;
 
         [Range(0, 20)]
@@ -19,27 +16,53 @@ namespace Ennemy
         public float followSpeed;
         int cacAttack;
         bool moveFirst;
-    public override void Start()
-    {
-            base.Start();
-            if(!WontRepop)
-            GameManagerV2.Instance.AddEnnemieToList(GameManagerV2.ennemies.combatRobot, gameObject);
 
+        float timerMove;
+        bool isMoving;
+        bool isCharging;
+        bool chargeOrRUn;
+        public override void Start()
+        {
+            base.Start();
+            if (!WontRepop)
+                GameManagerV2.Instance.AddEnnemieToList(GameManagerV2.ennemies.combatRobot, gameObject);
         }
 
         public override void FixedUpdate()
-    {
+        {
             if (!moveFirst)
                 canMove = false;
             base.FixedUpdate();
-    }
+
+            isAvoidingObstacles = false;
+
+            if (isMoving)
+            {
+                if (player.transform.position.x - transform.position.x > 0)
+                    ennemyAnimator.SetFloat("Left", 0);
+                else
+                    ennemyAnimator.SetFloat("Left", 1);
+                ennemyRGB.velocity = new Vector2(player.transform.position.x - transform.position.x, player.transform.position.y - transform.position.y).normalized * followSpeed;
+                timerMove += Time.deltaTime;
+                if (timerMove > 1f)
+                {
+                    ennemyAnimator.SetBool("Walk", false);
+                    isMoving = false;
+                    isAvoidingObstacles = false;
+                    timerMove = 0;
+                }
+            }
+        }
         public override void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.gameObject.layer == 8 && canTakeDamage)
+            if (collision.gameObject.layer == 8 && !isCharging && canTakeDamage)
             {
-
-                StopAllCoroutines();
+                isAttacking = true;
+                Time.timeScale = 1f;
                 ennemyRGB.velocity = Vector2.zero;
+
+                ennemyAnimator.SetBool("Charge", true);
+                ennemyAnimator.SetBool("Charge", false);
                 if (collision.transform.position.x - transform.position.x > 0)
                 {
                     ennemyAnimator.SetFloat("Left", 1f);
@@ -47,102 +70,96 @@ namespace Ennemy
                 else
                     ennemyAnimator.SetFloat("Left", 0f);
                 ennemyAnimator.SetTrigger("hit");
+                if(canTakeDamage)
+                cacAttack++;
+                ennemyAnimator.ResetTrigger("PreparCharge");
                 AudioManager.Instance.Stop("Combat_Slash_Preparation");
                 AudioManager.Instance.Play("Hit_Robot");
+                ennemyAnimator.SetInteger("attackNumber", 0);
+                ennemyAnimator.ResetTrigger("Attack");
+                isAttacking = false;
+                isCharging = false;
+                isAggro = false;                
 
             }
             base.OnTriggerEnter2D(collision);
+            if (collision.gameObject.layer == 11 && isCharging )
+            {
+                if (player.transform.position.x - transform.position.x > 0)
+                    ennemyAnimator.SetFloat("Left", 0);
+                else
+                    ennemyAnimator.SetFloat("Left", 1);
 
-        }
+                ennemyAnimator.SetBool("Stun", true);
+                ennemyAnimator.SetBool("Charge", false);
+                ennemyRGB.velocity = Vector2.zero;
+            }
+       }
+
         public override void Mouvement()
         {
-          if(Vector2.Distance(transform.position,player.transform.position) > chargeRange)
+            if (!isAttacking && !isCharging )
             {
-                if (!isAttacking)
+                
+                if (Mathf.Abs(Vector2.Distance(player.transform.position, transform.position)) < slashRange)
                 {
                     ennemyAnimator.SetBool("Walk", false);
-                    StartCoroutine(Charge());
-                }
-                else if (!isAttacking && canMove)
-                {
-                    if (player.transform.position.x - transform.position.x > 0)
-                        ennemyAnimator.SetFloat("Left", 0);
+                    ennemyRGB.velocity = Vector2.zero;
+                    isMoving = false;
+                    timerMove = 0;
+
+                    if (cacAttack < 3)
+                        StartCoroutine(SlashAttack());
                     else
-                        ennemyAnimator.SetFloat("Left", 1);
-                    ennemyAnimator.SetBool("Walk",true);
-                    transform.position = Vector3.MoveTowards(transform.position, player.transform.position, Time.deltaTime * followSpeed);
+                        StartCoroutine(Charge());
+                }
+                else
+                {
+                    if (cacAttack >= 3)
+                        StartCoroutine(Charge());
+                    else if (!isMoving)
+                    {
+                        if (chargeOrRUn)
+                            StartCoroutine(Charge());
+                        else
+                            isMoving = true;
+                        chargeOrRUn = !chargeOrRUn;
+                    }
                 }
             }
-          else if(Vector2.Distance(transform.position, player.transform.position) <= chargeRange &&
-                    Vector2.Distance(transform.position, player.transform.position) > slashRange)
-            {
-                if (!isAttacking && cacAttack >= 2)
-                {
-                    ennemyAnimator.SetBool("Walk", false);
-                    StartCoroutine(Charge());
-                }
-                else if (!isAttacking && canMove)
-                {
-                    if (player.transform.position.x - transform.position.x > 0)
-                        ennemyAnimator.SetFloat("Left", 0);
-                    else
-                        ennemyAnimator.SetFloat("Left", 1);
-                    ennemyAnimator.SetBool("Walk", true);
-                    transform.position = Vector3.MoveTowards(transform.position, player.transform.position, Time.deltaTime * speed);
-                }
-               
-            }
-          else if(Vector2.Distance(transform.position, player.transform.position) <= slashRange)
-            {
-                if(!isAttacking && cacAttack<2)
-                {
-                    ennemyAnimator.SetBool("Walk", false);
-                    StartCoroutine(SlashAttack());
-                }
-                else if (!isAttacking && cacAttack > 2)
-                {
-                    ennemyAnimator.SetBool("Walk", false);
-                    StartCoroutine(Charge());
-                }
-                else if (!isAttacking && canMove )
-                {
-                    if (player.transform.position.x - transform.position.x > 0)
-                        ennemyAnimator.SetFloat("Left", 0);
-                    else
-                        ennemyAnimator.SetFloat("Left", 1);
-                    ennemyAnimator.SetBool("Walk", true);
-                    transform.position = Vector3.MoveTowards(transform.position, player.transform.position, Time.deltaTime * followSpeed);
-                }
-                else if(!isAttacking && cacAttack >= 2)
-                {
-                    ennemyAnimator.SetBool("Walk", false);
-                    StartCoroutine(Charge());
-                }
-            }
+
+
         }
 
         public IEnumerator Charge()
         {
-            cacAttack = 0;
-            isAttacking = true;
+            isCharging = true;
+            isMoving = false;
             canMove = false;
+            timerMove = 0;
             canTakeDamage = false;
+            cacAttack = 0;
+            notStunable = true;
             if (player.transform.position.x - transform.position.x > 0)
                 ennemyAnimator.SetFloat("Left", 0);
             else
                 ennemyAnimator.SetFloat("Left", 1);
+            yield return new WaitForSeconds(0.3f);
+
             ennemyAnimator.SetTrigger("PreparCharge");
-
-            yield return new WaitForSeconds(1);
+            notStunable = true;
+            yield return new WaitForSeconds(1f);
+            GameManagerV2.Instance.GamePadeShake(0, 0);
+            isAttacking = true;
             if (player.transform.position.x - transform.position.x > 0)
                 ennemyAnimator.SetFloat("Left", 0);
             else
                 ennemyAnimator.SetFloat("Left", 1);
-            ennemyAnimator.SetBool("Charge",true);
-            LayerMask playerLayer = 1<<11;
-            RaycastHit2D chargeRay = Physics2D.Raycast(transform.position, new Vector2(player.transform.position.x - transform.position.x, player.transform.position.y - transform.position.y),Mathf.Infinity, playerLayer);
+            ennemyAnimator.SetBool("Charge", true);
+            LayerMask playerLayer = 1 << 11;
+            RaycastHit2D chargeRay = Physics2D.Raycast(transform.position, new Vector2(player.transform.position.x - transform.position.x, player.transform.position.y - transform.position.y), Mathf.Infinity, playerLayer);
 
-            ennemyRGB.velocity = new Vector2(chargeRay.point.x - transform.position.x, chargeRay.point.y -transform.position.y).normalized * chargeSpeed;
+            ennemyRGB.velocity = new Vector2(chargeRay.point.x - transform.position.x, chargeRay.point.y - transform.position.y).normalized * chargeSpeed;
             float cpt = 0;
             while (cpt < 1f)
             {
@@ -152,7 +169,7 @@ namespace Ennemy
                     ennemyAnimator.SetFloat("Left", 1);
                 ennemyRGB.velocity = new Vector2(chargeRay.point.x - transform.position.x, chargeRay.point.y - transform.position.y).normalized * chargeSpeed;
                 cpt += 0.01f;
-                if (Mathf.Abs( Mathf.Abs(transform.position.x) - Mathf.Abs(chargeRay.point.x)) < 0.1f)
+                if (Mathf.Abs(Mathf.Abs(transform.position.x) - Mathf.Abs(chargeRay.point.x)) < 0.1f)
                     break;
                 yield return new WaitForSeconds(0.01f);
             }
@@ -161,18 +178,22 @@ namespace Ennemy
             ennemyRGB.velocity = Vector2.zero;
 
             yield return new WaitForSeconds(1f);
+            notStunable = false;
             ennemyAnimator.SetBool("Stun", false);
-            canTakeDamage = true;
             canMove = true;
+            isMoving = true;
+            isCharging = false;
+            canTakeDamage = true;
             isAttacking = false;
         }
 
         public IEnumerator SlashAttack()
         {
-            cacAttack++;
+            isMoving = false;
             Vector2 Aim;
             isAttacking = true;
             canMove = false;
+            timerMove = 0;
             isAvoidingObstacles = false;
             Aim = new Vector2(player.transform.position.x - transform.position.x, player.transform.position.y - transform.position.y);
             if (Aim.y > 0.1 && Mathf.Abs(Aim.y) > Mathf.Abs(Aim.x))
@@ -230,6 +251,9 @@ namespace Ennemy
             canMove = true;
             isAvoidingObstacles = true;
             isAttacking = false;
+
+            cacAttack++;
+            isMoving = true;
         }
         public void ResetAttack()
         {
@@ -238,6 +262,7 @@ namespace Ennemy
         public void CanMove()
         {
             moveFirst = true;
+            canMove = true;
         }
         public override void Aggro(Collider2D collision)
         {
@@ -253,7 +278,8 @@ namespace Ennemy
             ennemyAnimator.ResetTrigger("Aggro");
             ennemyAnimator.ResetTrigger("PreparCharge");
             ennemyAnimator.ResetTrigger("Attack");
-            ennemyAnimator.SetTrigger("Stunned");
+            ennemyAnimator.ResetTrigger("Stunned");
+            ennemyAnimator.SetTrigger("Sleep");
             ennemyAnimator.SetBool("Stun", false);
             base.Desaggro(collision);
 

@@ -10,7 +10,8 @@ public class SD_Cristal : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            SD_PlayerMovement.Instance.platformNumber++;
+            if (SD_PlayerMovement.Instance.platformNumber == 0)
+                SD_PlayerMovement.Instance.platformNumber = 1;
             StartCoroutine(DesapearCooldown());
         }
     }

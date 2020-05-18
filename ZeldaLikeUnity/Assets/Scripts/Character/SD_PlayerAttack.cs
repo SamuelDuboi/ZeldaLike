@@ -62,12 +62,21 @@ namespace Player
         public bool slow;
 
         public bool canPushBack;
+        float XForWind;
+        float YForWind;
         void Awake()
         {
             MakeSingleton(false);
         }
         void Update()
         {
+            if(Input.GetAxisRaw("Horizontal") != 0 && Input.GetAxisRaw("Vertical") != 0)
+            {
+                XForWind = Input.GetAxisRaw("Horizontal");
+                YForWind = Input.GetAxisRaw("Vertical");
+            }
+
+
             if (SD_PlayerAnimation.Instance.PlayerAnimator.GetFloat("XAxis") == 1)
             {
                 attacks.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
@@ -132,21 +141,8 @@ namespace Player
                     float angle = 0;
                     cantWind = true;
                     CantMoveWind();
-                    arrow.SetActive(true);
-                    if (Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") == 0)
-                    {
-
-                       angle = Mathf.Atan2(SD_PlayerAnimation.Instance.PlayerAnimator.GetFloat("YAxis"), SD_PlayerAnimation.Instance.PlayerAnimator.GetFloat("XAxis")) * Mathf.Rad2Deg;
-
-
-                    }
-                    else
-                    {
-                        angle = Mathf.Atan2(Input.GetAxisRaw("Vertical"), Input.GetAxisRaw("Horizontal")) * Mathf.Rad2Deg;
-
-                    }
-
-                    
+                    arrow.SetActive(true);                    
+                    angle = Mathf.Atan2(YForWind, XForWind ) * Mathf.Rad2Deg;     
                     arrow.transform.rotation = Quaternion.Euler(0, 0, angle);
 
                 }
@@ -195,8 +191,7 @@ namespace Player
                 cantWind = false;
                 GameObject currentprojectil = Instantiate(projectile, transform.position, Quaternion.identity);
                 if (Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") == 0)
-                    currentprojectil.GetComponent<Rigidbody2D>().velocity = new Vector2(SD_PlayerAnimation.Instance.PlayerAnimator.GetFloat("XAxis"),
-                                                                                        SD_PlayerAnimation.Instance.PlayerAnimator.GetFloat("YAxis")).normalized * projectilSpeed;
+                    currentprojectil.GetComponent<Rigidbody2D>().velocity = new Vector2(XForWind, YForWind).normalized * projectilSpeed;
                 else
                     currentprojectil.GetComponent<Rigidbody2D>().velocity = new Vector2(Input.GetAxisRaw("Horizontal"),
                                                                         Input.GetAxisRaw("Vertical")).normalized * projectilSpeed;

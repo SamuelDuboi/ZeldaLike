@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 209899217}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.12, y: 0.18, z: 0}
-  m_LocalScale: {x: 0.5952381, y: 0.5952381, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 3050688598167191431}
   m_RootOrder: 5
@@ -46,7 +46,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 18
+  m_Radius: 4
 --- !u!1 &3050688596633675071
 GameObject:
   m_ObjectHideFlags: 0
@@ -676,6 +676,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb13a3c020a611c48b99e487052bb579, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WontRepop: 0
   player: {fileID: 0}
   ennemyRGB: {fileID: 0}
   aggroZone: {fileID: 209899217}
@@ -701,8 +702,8 @@ MonoBehaviour:
   healDrop: {fileID: 7435818835512353066, guid: 85e9539271ca936479b5b4621a349221,
     type: 3}
   etincelles: {fileID: 3226115373954393070}
-  chargeRange: 8
-  slashRange: 3
+  notStunable: 0
+  slashRange: 8
   chargeSpeed: 20
   followSpeed: 2
 --- !u!212 &3050688598167191430
@@ -918,7 +919,7 @@ Transform:
   m_GameObject: {fileID: 8579030788120783253}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.12, y: 0.18, z: 0}
-  m_LocalScale: {x: 0.5952381, y: 0.5952381, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 3050688598167191431}
   m_RootOrder: 7
@@ -938,7 +939,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 23
+  m_Radius: 8
 --- !u!1001 &4774758821473175813
 PrefabInstance:
   m_ObjectHideFlags: 0
