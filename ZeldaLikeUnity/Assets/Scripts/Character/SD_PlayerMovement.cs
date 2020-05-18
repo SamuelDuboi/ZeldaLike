@@ -2,7 +2,7 @@
 using UnityEngine;
 using Management;
 using UnityEngine.UI;
-
+using UnityEditor.ShaderGraph.Internal;
 
 namespace Player
 {
@@ -337,7 +337,8 @@ namespace Player
                 SD_PlayerAttack.Instance.cantAttack = true;
                 if (SD_PlayerAttack.Instance.hasWind)
                     canWind = true;
-                SD_PlayerAttack.Instance.hasWind = false; 
+                SD_PlayerAttack.Instance.hasWind = false;
+                SD_PlayerAnimation.Instance.PlayerAnimator.SetBool("Fly", true);
             }
             
             else if (collision.gameObject.layer == 18)
@@ -404,6 +405,29 @@ namespace Player
                 if (SD_PlayerAttack.Instance.hasWind)
                     canWind = true;
                 SD_PlayerAttack.Instance.hasWind = false;
+                float direction = collision.GetComponent<AreaEffector2D>().forceAngle;
+                switch (direction)
+                {
+                    case 0:
+                        SD_PlayerAnimation.Instance.PlayerAnimator.SetFloat("XAxis", 1);
+                        SD_PlayerAnimation.Instance.PlayerAnimator.SetFloat("YAxis", 0);
+                        break;
+                    case 90:
+                        SD_PlayerAnimation.Instance.PlayerAnimator.SetFloat("XAxis", 0);
+                        SD_PlayerAnimation.Instance.PlayerAnimator.SetFloat("YAxis", 1);
+                        break;
+                    case 180:
+                        SD_PlayerAnimation.Instance.PlayerAnimator.SetFloat("XAxis", -1);
+                        SD_PlayerAnimation.Instance.PlayerAnimator.SetFloat("YAxis", 0);
+                        break;
+                    case 270:
+                        SD_PlayerAnimation.Instance.PlayerAnimator.SetFloat("XAxis", 0);
+                        SD_PlayerAnimation.Instance.PlayerAnimator.SetFloat("YAxis", -1);
+                        break;
+
+                }
+                
+                SD_PlayerAnimation.Instance.PlayerAnimator.SetBool("Fly", true);
             }
 
         }
@@ -417,6 +441,8 @@ namespace Player
                 SD_PlayerAttack.Instance.cantAttack = false; 
                 if (canWind)
                 SD_PlayerAttack.Instance.hasWind = true;
+
+                SD_PlayerAnimation.Instance.PlayerAnimator.SetBool("Fly", false);
             }
             if (isAbleToRunOnHole && collision.tag == "WindPlatform" )
             {
