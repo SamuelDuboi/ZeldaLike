@@ -34,4 +34,9 @@ public class BossEnding : Singleton<BossEnding>
         cameraPlayer.GetComponentInChildren<CinemachineVirtualCamera>().m_Lens.OrthographicSize = 5.6f;
         Destroy(wall);
     }
+
+    public void Play(string name)
+    {
+        AudioManager.Instance.Play(name);
+    }
 }

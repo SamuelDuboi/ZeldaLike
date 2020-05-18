@@ -97,7 +97,7 @@ public class SD_BossBody : MonoBehaviour
 
                     if (SD_BossBehavior.Instance.phaseNumber == 4)
                     {
-
+                        AudioManager.Instance.Stop("Boss1_Laser_Mains");
                         BossEnd.SetActive(true);
                         transform.parent.gameObject.SetActive(false);
                     }

@@ -42,6 +42,17 @@ public class AudioManager : Singleton<AudioManager>
         }
     }
 
+    public void SpecialPlay(string name)
+    {
+        Sound s = sounds.Find(Sound => Sound.name == name);
+        if (s.name == null)
+        {
+            Debug.Log("Warning the sound" + name + "not found");
+            return;
+        }
+        s.source.Play();
+    }
+
     public void Stop(string name)
     {
         Sound s = sounds.Find(Sound => Sound.name == name);

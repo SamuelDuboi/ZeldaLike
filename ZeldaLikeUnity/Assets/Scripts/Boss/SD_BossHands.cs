@@ -33,7 +33,10 @@ public class SD_BossHands : MonoBehaviour
         if (SD_BossBehavior.Instance.canMove)
             handsRGB.velocity = Vector2.zero;
         else if (SD_BossBehavior.Instance.phaseNumber == 1)
+        {
+            AudioManager.Instance.Play("Boss1_Laser_Mains");
             handsRGB.velocity = Vector2.up * laserSpeedPhase1;
+        }
         else if (SD_BossBehavior.Instance.phaseNumber == 2)
             handsRGB.velocity = Vector2.up * laserSpeedPhase2;
         else if (SD_BossBehavior.Instance.phaseNumber == 3)
