@@ -28,6 +28,7 @@ public class SD_LaserBehavior : MonoBehaviour
         yield return new WaitForSeconds(timeBeforBigRay);
         float timerWhile = 0;
         LayerMask playermask = 1 << 11;
+        AudioManager.Instance.SpecialPlay("Boss_Laser_Corps");
         while (timerWhile < timeBigRay)
         {
             RaycastHit2D raycastHit = Physics2D.Raycast(transform.position,

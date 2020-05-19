@@ -9,6 +9,8 @@ public class AudioManager : Singleton<AudioManager>
 {
     public List<Sound> sounds = new List<Sound>();
 
+    int FallEffect = 0;
+
     private void Awake()
     {
         foreach(Sound sound in sounds)
@@ -40,6 +42,17 @@ public class AudioManager : Singleton<AudioManager>
         {
             s.source.Play();
         }
+    }
+
+    public void SpecialPlay(string name)
+    {
+        Sound s = sounds.Find(Sound => Sound.name == name);
+        if (s.name == null)
+        {
+            Debug.Log("Warning the sound" + name + "not found");
+            return;
+        }
+        s.source.Play();
     }
 
     public void Stop(string name)
@@ -82,6 +95,24 @@ public class AudioManager : Singleton<AudioManager>
             {
                 s.source.Stop();
             }
+        }
+    }
+
+    public void Fall(string name = "Inoh_Chute")
+    {
+        Sound s = sounds.Find(Sound => Sound.name == name);
+        if(FallEffect == 0)
+        {
+            s.source.Play();
+            FallEffect++;
+        }
+        else if (FallEffect > 0 && FallEffect < 5)
+        {
+            FallEffect++;
+        }
+        else if (FallEffect >= 5)
+        {
+            FallEffect = 0;
         }
     }
 

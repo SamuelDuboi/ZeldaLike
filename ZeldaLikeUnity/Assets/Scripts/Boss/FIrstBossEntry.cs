@@ -73,6 +73,7 @@ public class FIrstBossEntry : MonoBehaviour
         SD_PlayerAttack.Instance.cantAttack = true;
 
         StartCoroutine(GameManagerV2.Instance.GamePadeShake(0.1f, 0.2f));
+        AudioManager.Instance.Play("Boss_Tremblement");
         yield return new WaitForSeconds(2f);
 
         StartCoroutine(GameManagerV2.Instance.GamePadeShake(0.3f, 0.5f));
@@ -104,6 +105,7 @@ public class FIrstBossEntry : MonoBehaviour
         yield return new WaitForSeconds(2f);
 
         StartCoroutine(GameManagerV2.Instance.GamePadeShake(0.7f, 1f));
+        AudioManager.Instance.Play("Boss_Cri_Intro");
         AwakeForce.SetActive(true);
         yield return new WaitForSeconds(0.1f);
         AwakeForce.SetActive(false);

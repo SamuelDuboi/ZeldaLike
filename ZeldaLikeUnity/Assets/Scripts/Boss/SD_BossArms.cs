@@ -129,6 +129,7 @@ public class SD_BossArms : MonoBehaviour
         {
             if (!cantShoot)
             {
+                AudioManager.Instance.Play("Boss1_Laser_Bras");
                 shield.SetActive(false);
                 laserBoule.SetActive(false);
                 laserLineRenderer.enabled=false ;

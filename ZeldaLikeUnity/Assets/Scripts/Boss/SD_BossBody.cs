@@ -90,13 +90,14 @@ public class SD_BossBody : MonoBehaviour
                 {
                     weakPointNumber--;
                     collider.GetComponent<BoxCollider2D>().enabled = false;
+                    AudioManager.Instance.Play("Boss1_Explosion");
                     collider.GetComponent<Animator>().SetTrigger("Destroyed");
                     
                         SD_BossBehavior.Instance.phaseNumber++;
 
                     if (SD_BossBehavior.Instance.phaseNumber == 4)
                     {
-
+                        AudioManager.Instance.Stop("Boss1_Laser_Mains");
                         BossEnd.SetActive(true);
                         transform.parent.gameObject.SetActive(false);
                     }
