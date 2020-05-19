@@ -14,6 +14,7 @@ using UnityEngine;
     public bool hasWind;
     public bool canParry;
 
+    public int HenryNumber;
     [HideInInspector] public int Alyah1;
     [HideInInspector] public int Alyah2;
     [HideInInspector] public int Henry1;

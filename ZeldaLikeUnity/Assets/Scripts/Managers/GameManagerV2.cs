@@ -6,7 +6,6 @@ using UnityEngine;
 using Player;
 using XInputDotNetPure;
 using UnityEngine.SceneManagement;
-using Ennemy;
 using UnityEngine.UI;
 using TMPro;
 namespace Management
