@@ -487,7 +487,7 @@ namespace Player
 
         IEnumerator Fall(Collider2D collisionPoint)
         {
-
+            AudioManager.Instance.Fall();
 
                 if (!dashIsActive)
                 {
@@ -496,7 +496,6 @@ namespace Player
                     SD_PlayerAttack.Instance.cantAttack = true;
                     playerRGB.simulated = false;
                     SD_PlayerAnimation.Instance.PlayerAnimator.SetBool("Fall", true);
-                    AudioManager.Instance.Play("Inoh_Chute");
                     for (float i = 0; i < 50; i++)
                     {
                         fade.GetComponent<Image>().color = new Color(0, 0, 0, i / 50);
