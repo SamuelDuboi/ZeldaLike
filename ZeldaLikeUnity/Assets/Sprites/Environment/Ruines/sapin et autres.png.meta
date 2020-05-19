@@ -1,0 +1,909 @@
+fileFormatVersion: 2
+guid: cbb91167f82d04f4fa8139f3fb754cbc
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -668466653446860865
+    second: sapin et autres_0
+  - first:
+      213: -6590769964614673203
+    second: sapin et autres_1
+  - first:
+      213: 8209772871464717932
+    second: sapin et autres_2
+  - first:
+      213: 1426991838224424546
+    second: sapin et autres_3
+  - first:
+      213: -2736977192353073089
+    second: sapin et autres_4
+  - first:
+      213: 6633911192286450782
+    second: sapin et autres_5
+  - first:
+      213: -6950673495023414542
+    second: sapin et autres_6
+  - first:
+      213: -7253835321762519186
+    second: sapin et autres_7
+  - first:
+      213: -4389138048903050972
+    second: sapin et autres_8
+  - first:
+      213: 7793745432330854084
+    second: sapin et autres_9
+  - first:
+      213: 3518172928123406984
+    second: sapin et autres_0
+  - first:
+      213: 1513754029011175800
+    second: sapin et autres_10
+  - first:
+      213: -5788260488635856767
+    second: sapin et autres_11
+  - first:
+      213: -4821651253733354055
+    second: sapin et autres_12
+  - first:
+      213: 987074410602835510
+    second: sapin et autres_13
+  - first:
+      213: -3244038383919457161
+    second: sapin et autres_14
+  - first:
+      213: 5425483921411944227
+    second: sapin et autres_15
+  - first:
+      213: 5645611655452566296
+    second: sapin et autres_16
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: sapin et autres_0
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 102
+        width: 75
+        height: 24
+      alignment: 9
+      pivot: {x: 0.47155476, y: 0.76074696}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14.5, y: 8}
+        - {x: -28.5, y: -5}
+        - {x: -28.5, y: -7}
+        - {x: -27.5, y: -8}
+        - {x: 22.5, y: -8}
+        - {x: 22.5, y: -4}
+        - {x: 11.5, y: 8}
+      physicsShape:
+      - - {x: 25, y: -37.5}
+        - {x: 12, y: -28.5}
+        - {x: 7, y: -8.5}
+        - {x: 31, y: 16.5}
+        - {x: 36, y: 18.5}
+        - {x: 36, y: 24.5}
+        - {x: 32, y: 27.5}
+        - {x: 23, y: 31.5}
+        - {x: 14, y: 26.5}
+        - {x: 14, y: 22.5}
+        - {x: 8, y: 13.5}
+        - {x: 1, y: 8.5}
+        - {x: 3, y: 19.5}
+        - {x: 10, y: 32.5}
+        - {x: -1, y: 31.5}
+        - {x: -5, y: 39.5}
+        - {x: -16, y: 39.5}
+        - {x: -17, y: 36.5}
+        - {x: -11, y: 24.5}
+        - {x: -15, y: 12.5}
+        - {x: -23, y: 31.5}
+        - {x: -34, y: 38.5}
+        - {x: -36, y: 32.5}
+        - {x: -36, y: 15.5}
+        - {x: -33, y: 8.5}
+        - {x: -13, y: -3.5}
+        - {x: -13, y: -22.5}
+        - {x: -28, y: -37.5}
+        - {x: -27, y: -39.5}
+        - {x: 23, y: -39.5}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88a013753af03d030800000000000000
+      internalID: 3518172928123406984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sapin et autres_2
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 78
+        width: 63
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 13.5, y: -14.5}
+        - {x: 15.5, y: -16.5}
+        - {x: 16.5, y: -16.5}
+        - {x: 21.5, y: -14.5}
+        - {x: 23.5, y: -16.5}
+        - {x: 25.5, y: -16.5}
+        - {x: 31.5, y: -12.5}
+        - {x: 31.5, y: -0.5}
+        - {x: 26.5, y: 2.5}
+        - {x: 29.5, y: 3.5}
+        - {x: 26.5, y: 9.5}
+        - {x: 17.5, y: 15.5}
+        - {x: 15.5, y: 16.5}
+        - {x: 7.5, y: 16.5}
+        - {x: 5.5, y: 14.5}
+        - {x: 1.5, y: 15.5}
+        - {x: -6.5, y: 11.5}
+        - {x: -10.5, y: 7.5}
+        - {x: -11.5, y: 5.5}
+        - {x: -18.5, y: 5.5}
+        - {x: -21.5, y: 3.5}
+        - {x: -28.5, y: -2.5}
+        - {x: -27.5, y: -5.5}
+        - {x: -28.5, y: -8.5}
+        - {x: -28.5, y: -11.5}
+        - {x: -26.5, y: -13.5}
+        - {x: -21.5, y: -12.5}
+        - {x: -19.5, y: -15.5}
+        - {x: -15.5, y: -16.5}
+        - {x: -1.5, y: -16.5}
+        - {x: -1.5, y: -14.5}
+        - {x: 2.5, y: -16.5}
+        - {x: 7.5, y: -16.5}
+      - - {x: -28.5, y: -6.5}
+        - {x: -28.5, y: -3.5}
+        - {x: -31.5, y: -2.5}
+        - {x: -31.5, y: -7.5}
+      physicsShape:
+      - - {x: 25.5, y: -16.5}
+        - {x: 31.5, y: -13.5}
+        - {x: 31.5, y: 0.5}
+        - {x: 29.5, y: 3.5}
+        - {x: 26.5, y: 9.5}
+        - {x: 17.5, y: 15.5}
+        - {x: 15.5, y: 16.5}
+        - {x: 5.5, y: 16.5}
+        - {x: -7.5, y: 12.5}
+        - {x: -10.5, y: 7.5}
+        - {x: -19.5, y: 5.5}
+        - {x: -28.5, y: -1.5}
+        - {x: -28.5, y: -13.5}
+        - {x: -21.5, y: -16.5}
+        - {x: 7.5, y: -16.5}
+        - {x: 13.5, y: -14.5}
+        - {x: 14.5, y: -16.5}
+      - - {x: -28.5, y: -6.5}
+        - {x: -28.5, y: -3.5}
+        - {x: -31.5, y: -2.5}
+        - {x: -31.5, y: -7.5}
+      tessellationDetail: 0.55
+      bones: []
+      spriteID: c6e0b4aede8fee170800000000000000
+      internalID: 8209772871464717932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sapin et autres_3
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 24
+        width: 30
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 9, y: -18}
+        - {x: 10, y: -13}
+        - {x: 14, y: -8}
+        - {x: 15, y: -5}
+        - {x: 13, y: -3}
+        - {x: 11, y: -3}
+        - {x: 14, y: 1}
+        - {x: 13, y: 4}
+        - {x: 7, y: 4}
+        - {x: 10, y: 9}
+        - {x: 10, y: 15}
+        - {x: 13, y: 20}
+        - {x: 8, y: 22}
+        - {x: 7, y: 32}
+        - {x: 2, y: 32}
+        - {x: 1, y: 31}
+        - {x: -4, y: 23}
+        - {x: -4, y: 20}
+        - {x: -2, y: 12}
+        - {x: -3, y: 6}
+        - {x: -7, y: 8}
+        - {x: -9, y: 5}
+        - {x: -6, y: 1}
+        - {x: -3, y: -1}
+        - {x: -4, y: -6}
+        - {x: -14, y: 2}
+        - {x: -15, y: 2}
+        - {x: -15, y: -4}
+        - {x: -6, y: -14}
+        - {x: -5, y: -19}
+        - {x: -10, y: -14}
+        - {x: -14, y: -13}
+        - {x: -15, y: -14}
+        - {x: -15, y: -22}
+        - {x: -11, y: -21}
+        - {x: -8, y: -26}
+        - {x: -6, y: -32}
+        - {x: 9, y: -32}
+        - {x: 11, y: -31}
+        - {x: 15, y: -23}
+        - {x: 15, y: -17}
+      physicsShape:
+      - - {x: 9, y: -37}
+        - {x: 9, y: -32}
+        - {x: 7, y: -23}
+        - {x: 11, y: -20}
+        - {x: 15, y: -13}
+        - {x: 15, y: -6}
+        - {x: 9, y: -7}
+        - {x: 14, y: 3}
+        - {x: 15, y: 6}
+        - {x: 13, y: 8}
+        - {x: 11, y: 8}
+        - {x: 14, y: 12}
+        - {x: 13, y: 15}
+        - {x: 7, y: 15}
+        - {x: 10, y: 20}
+        - {x: 10, y: 26}
+        - {x: 13, y: 31}
+        - {x: 8, y: 33}
+        - {x: 7, y: 43}
+        - {x: 2, y: 43}
+        - {x: 1, y: 42}
+        - {x: -4, y: 34}
+        - {x: -4, y: 31}
+        - {x: -2, y: 23}
+        - {x: -3, y: 17}
+        - {x: -7, y: 19}
+        - {x: -9, y: 16}
+        - {x: -6, y: 12}
+        - {x: -3, y: 10}
+        - {x: -4, y: 5}
+        - {x: -14, y: 13}
+        - {x: -15, y: 13}
+        - {x: -15, y: 7}
+        - {x: -6, y: -3}
+        - {x: -5, y: -8}
+        - {x: -10, y: -3}
+        - {x: -15, y: 0}
+        - {x: -15, y: -10}
+        - {x: -8, y: -15}
+        - {x: -6, y: -25}
+        - {x: -10, y: -31}
+        - {x: -15, y: -37}
+        - {x: -15, y: -41}
+        - {x: -14, y: -42}
+        - {x: -11, y: -43}
+        - {x: 11, y: -43}
+        - {x: 13, y: -41}
+        - {x: 13, y: -40}
+      tessellationDetail: 0.56
+      bones: []
+      spriteID: 26e9fbe2481bdc310800000000000000
+      internalID: 1426991838224424546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sapin et autres_7
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 52
+        width: 66
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e67e9231533355b90800000000000000
+      internalID: -7253835321762519186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sapin et autres_8
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 4
+        width: 86
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 6, y: -13}
+        - {x: 15, y: -15}
+        - {x: 20, y: -15}
+        - {x: 23, y: -11}
+        - {x: 27, y: -13}
+        - {x: 36, y: -10}
+        - {x: 35, y: -12}
+        - {x: 37, y: -14}
+        - {x: 40, y: -13}
+        - {x: 43, y: -5}
+        - {x: 43, y: 7}
+        - {x: 41, y: 9}
+        - {x: 32, y: 8}
+        - {x: 31, y: 10}
+        - {x: 29, y: 12}
+        - {x: 21, y: 15}
+        - {x: -2, y: 15}
+        - {x: -7, y: 12}
+        - {x: -9, y: 13}
+        - {x: -14, y: 10}
+        - {x: -16, y: 8}
+        - {x: -24, y: 7}
+        - {x: -28, y: 3}
+        - {x: -28, y: 0}
+        - {x: -34, y: -1}
+        - {x: -36, y: 2}
+        - {x: -38, y: 2}
+        - {x: -39, y: -1}
+        - {x: -37, y: -7}
+        - {x: -35, y: -9}
+        - {x: -32, y: -9}
+        - {x: -30, y: -7}
+        - {x: -27, y: -13}
+        - {x: -21, y: -12}
+        - {x: -18, y: -15}
+        - {x: -6, y: -15}
+        - {x: -4, y: -14}
+        - {x: -2, y: -15}
+        - {x: 5, y: -15}
+      - - {x: -40, y: -9}
+        - {x: -40, y: -6}
+        - {x: -43, y: -5}
+        - {x: -43, y: -10}
+      physicsShape:
+      - - {x: 30, y: -12}
+        - {x: 37, y: -14}
+        - {x: 40, y: -13}
+        - {x: 43, y: -5}
+        - {x: 43, y: 7}
+        - {x: 41, y: 9}
+        - {x: 32, y: 8}
+        - {x: 31, y: 10}
+        - {x: 29, y: 12}
+        - {x: 21, y: 15}
+        - {x: -4, y: 15}
+        - {x: -9, y: 13}
+        - {x: -25, y: 8}
+        - {x: -29, y: 1}
+        - {x: -36, y: 2}
+        - {x: -38, y: 2}
+        - {x: -39, y: -1}
+        - {x: -36, y: -10}
+        - {x: -28, y: -14}
+        - {x: -23, y: -15}
+        - {x: 20, y: -15}
+        - {x: 27, y: -13}
+      - - {x: -40, y: -9}
+        - {x: -40, y: -6}
+        - {x: -43, y: -5}
+        - {x: -43, y: -10}
+      tessellationDetail: 0.62
+      bones: []
+      spriteID: 4298bfcf236a613c0800000000000000
+      internalID: -4389138048903050972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sapin et autres_9
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 8
+        width: 64
+        height: 29
+      alignment: 9
+      pivot: {x: 0.4421296, y: 0.5000001}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 7, y: -13.5}
+        - {x: 10, y: -14.5}
+        - {x: 19, y: -14.5}
+        - {x: 21, y: -12.5}
+        - {x: 26, y: -10.5}
+        - {x: 31, y: -10.5}
+        - {x: 32, y: -8.5}
+        - {x: 32, y: 1.5}
+        - {x: 27, y: 4.5}
+        - {x: 21, y: 9.5}
+        - {x: 11, y: 9.5}
+        - {x: 5, y: 14.5}
+        - {x: -5, y: 14.5}
+        - {x: -9, y: 10.5}
+        - {x: -15, y: 11.5}
+        - {x: -21, y: 7.5}
+        - {x: -29, y: 0.5}
+        - {x: -32, y: -1.5}
+        - {x: -32, y: -7.5}
+        - {x: -30, y: -10.5}
+        - {x: -28, y: -11.5}
+        - {x: -22, y: -12.5}
+        - {x: -16, y: -14.5}
+        - {x: 5, y: -14.5}
+      physicsShape:
+      - - {x: 32, y: 1.5}
+        - {x: 22, y: 10.5}
+        - {x: 12, y: 11.5}
+        - {x: 5, y: 14.5}
+        - {x: -5, y: 14.5}
+        - {x: -9, y: 10.5}
+        - {x: -15, y: 11.5}
+        - {x: -22, y: 8.5}
+        - {x: -32, y: 0.5}
+        - {x: -32, y: -9.5}
+        - {x: -31, y: -11.5}
+        - {x: -22, y: -14.5}
+        - {x: 21, y: -14.5}
+        - {x: 31, y: -10.5}
+        - {x: 32, y: -8.5}
+      tessellationDetail: 0.56
+      bones: []
+      spriteID: 4ce57eb7d22f82c60800000000000000
+      internalID: 7793745432330854084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sapin et autres_10
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 25
+        width: 55
+        height: 74
+      alignment: 9
+      pivot: {x: 0.50848806, y: 0.42132547}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 26.5, y: -24}
+        - {x: 22.5, y: -24}
+        - {x: 27.5, y: -20}
+        - {x: 27.5, y: -13}
+        - {x: 25.5, y: -10}
+        - {x: 27.5, y: -8}
+        - {x: 27.5, y: -3}
+        - {x: 20.5, y: -2}
+        - {x: 25.5, y: 1}
+        - {x: 24.5, y: 9}
+        - {x: 21.5, y: 10}
+        - {x: 16.5, y: 7}
+        - {x: 16.5, y: 11}
+        - {x: 19.5, y: 15}
+        - {x: 18.5, y: 18}
+        - {x: 13.5, y: 22}
+        - {x: 10.5, y: 22}
+        - {x: 7.5, y: 27}
+        - {x: 5.5, y: 37}
+        - {x: 0.5, y: 37}
+        - {x: -0.5, y: 36}
+        - {x: -1.5, y: 31}
+        - {x: -4.5, y: 27}
+        - {x: -9.5, y: 23}
+        - {x: -7.5, y: 20}
+        - {x: -16.5, y: 18}
+        - {x: -19.5, y: 16}
+        - {x: -19.5, y: 11}
+        - {x: -15.5, y: 7}
+        - {x: -19.5, y: 6}
+        - {x: -23.5, y: 1}
+        - {x: -23.5, y: -3}
+        - {x: -20.5, y: -8}
+        - {x: -26.5, y: -7}
+        - {x: -27.5, y: -10}
+        - {x: -27.5, y: -13}
+        - {x: -25.5, y: -17}
+        - {x: -27.5, y: -19}
+        - {x: -27.5, y: -25}
+        - {x: -23.5, y: -31}
+        - {x: -19.5, y: -35}
+        - {x: -12.5, y: -37}
+        - {x: 18.5, y: -37}
+        - {x: 20.5, y: -35}
+        - {x: 22.5, y: -31}
+        - {x: 27.5, y: -27}
+      physicsShape: []
+      tessellationDetail: 0.55
+      bones: []
+      spriteID: 8790788e44fe10510800000000000000
+      internalID: 1513754029011175800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sapin et autres_11
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 25
+        width: 58
+        height: 73
+      alignment: 9
+      pivot: {x: 0.4841206, y: 0.4593913}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 29, y: -28.5}
+        - {x: 28, y: -25.5}
+        - {x: 29, y: -22.5}
+        - {x: 29, y: -16.5}
+        - {x: 27, y: -15.5}
+        - {x: 27, y: -10.5}
+        - {x: 26, y: -5.5}
+        - {x: 25, y: -2.5}
+        - {x: 23, y: 2.5}
+        - {x: 21, y: 8.5}
+        - {x: 19, y: 11.5}
+        - {x: 19, y: 15.5}
+        - {x: 16, y: 20.5}
+        - {x: 16, y: 23.5}
+        - {x: 14, y: 25.5}
+        - {x: 7, y: 28.5}
+        - {x: 1, y: 36.5}
+        - {x: -5, y: 36.5}
+        - {x: -7, y: 32.5}
+        - {x: -13, y: 29.5}
+        - {x: -13, y: 27.5}
+        - {x: -18, y: 22.5}
+        - {x: -18, y: 21.5}
+        - {x: -22, y: 11.5}
+        - {x: -24, y: 8.5}
+        - {x: -24, y: 6.5}
+        - {x: -26, y: 3.5}
+        - {x: -26, y: 1.5}
+        - {x: -23, y: -0.5}
+        - {x: -28, y: -1.5}
+        - {x: -29, y: -4.5}
+        - {x: -29, y: -12.5}
+        - {x: -28, y: -16.5}
+        - {x: -29, y: -17.5}
+        - {x: -29, y: -23.5}
+        - {x: -26, y: -26.5}
+        - {x: -24, y: -29.5}
+        - {x: -21, y: -32.5}
+        - {x: -15, y: -36.5}
+        - {x: 6, y: -36.5}
+        - {x: 10, y: -32.5}
+        - {x: 20, y: -32.5}
+        - {x: 25, y: -31.5}
+      physicsShape: []
+      tessellationDetail: 0.49
+      bones: []
+      spriteID: 1884e6bc0c7fbafa0800000000000000
+      internalID: -5788260488635856767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sapin et autres_12
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 126
+        width: 75
+        height: 72
+      alignment: 9
+      pivot: {x: 0.49102136, y: 0.45323604}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 20.5, y: -7}
+        - {x: 30.5, y: 4}
+        - {x: 34.5, y: 5}
+        - {x: 37.5, y: 7}
+        - {x: 37.5, y: 11}
+        - {x: 32.5, y: 15}
+        - {x: 23.5, y: 17}
+        - {x: 20.5, y: 16}
+        - {x: 16.5, y: 13}
+        - {x: 14.5, y: 10}
+        - {x: 16.5, y: 1}
+        - {x: 8.5, y: 1}
+        - {x: 1.5, y: -4}
+        - {x: -0.5, y: 0}
+        - {x: 1.5, y: 8}
+        - {x: 7.5, y: 15}
+        - {x: 7.5, y: 18}
+        - {x: 4.5, y: 19}
+        - {x: -0.5, y: 18}
+        - {x: -4.5, y: 25}
+        - {x: -7.5, y: 29}
+        - {x: -14.5, y: 29}
+        - {x: -16.5, y: 24}
+        - {x: -10.5, y: 12}
+        - {x: -14.5, y: 0}
+        - {x: -23.5, y: 11}
+        - {x: -23.5, y: 19}
+        - {x: -27.5, y: 22}
+        - {x: -32.5, y: 24}
+        - {x: -35.5, y: 23}
+        - {x: -33.5, y: 16}
+        - {x: -36.5, y: 14}
+        - {x: -37.5, y: 10}
+        - {x: -31.5, y: 1}
+        - {x: -33.5, y: -1}
+        - {x: -32.5, y: -4}
+        - {x: -25.5, y: -5}
+        - {x: -22.5, y: -5}
+        - {x: -15.5, y: -12}
+        - {x: -13.5, y: -15}
+        - {x: -12.5, y: -16}
+        - {x: -12.5, y: -36}
+        - {x: 9.5, y: -36}
+        - {x: 8.5, y: -29}
+        - {x: 7.5, y: -21}
+        - {x: 12.5, y: -13}
+      physicsShape: []
+      tessellationDetail: 0.5
+      bones: []
+      spriteID: 9b5186e1bbd061db0800000000000000
+      internalID: -4821651253733354055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sapin et autres_14
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 25
+        width: 40
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 20, y: -10}
+        - {x: 17, y: -10}
+        - {x: 12, y: -12}
+        - {x: 8, y: -11}
+        - {x: 17, y: -7}
+        - {x: 19, y: -4}
+        - {x: 18, y: -1}
+        - {x: 8, y: -2}
+        - {x: 13, y: 4}
+        - {x: 18, y: 9}
+        - {x: 16, y: 12}
+        - {x: 13, y: 12}
+        - {x: 10, y: 11}
+        - {x: 12, y: 12}
+        - {x: 14, y: 14}
+        - {x: 13, y: 17}
+        - {x: 8, y: 19}
+        - {x: 11, y: 22}
+        - {x: 10, y: 25}
+        - {x: 4, y: 26}
+        - {x: 4, y: 34}
+        - {x: 3, y: 35}
+        - {x: -2, y: 35}
+        - {x: -3, y: 29}
+        - {x: -7, y: 23}
+        - {x: -7, y: 22}
+        - {x: -3, y: 19}
+        - {x: -3, y: 14}
+        - {x: -7, y: 15}
+        - {x: -9, y: 12}
+        - {x: -6, y: 9}
+        - {x: -6, y: 7}
+        - {x: -12, y: 7}
+        - {x: -14, y: 4}
+        - {x: -7, y: -4}
+        - {x: -9, y: -5}
+        - {x: -9, y: -7}
+        - {x: -4, y: -12}
+        - {x: -8, y: -11}
+        - {x: -11, y: -11}
+        - {x: -14, y: -13}
+        - {x: -20, y: -12}
+        - {x: -20, y: -17}
+        - {x: -18, y: -19}
+        - {x: -13, y: -20}
+        - {x: -4, y: -24}
+        - {x: -5, y: -26}
+        - {x: -5, y: -35}
+        - {x: 8, y: -35}
+        - {x: 9, y: -32}
+        - {x: 9, y: -21}
+        - {x: 20, y: -15}
+      physicsShape: []
+      tessellationDetail: 0.56
+      bones: []
+      spriteID: 77c9fb8074cdaf2d0800000000000000
+      internalID: -3244038383919457161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sapin et autres_16
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 80
+        width: 63
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8132e0f83ed395e40800000000000000
+      internalID: 5645611655452566296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sapin et autres_1
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 3
+        width: 55
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcc14d6f2a1e884a0800000000000000
+      internalID: -6590769964614673203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sapin et autres_4
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 3
+        width: 58
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f38f273aebd440ad0800000000000000
+      internalID: -2736977192353073089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
