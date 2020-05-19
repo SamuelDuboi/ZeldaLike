@@ -15,17 +15,22 @@ MonoBehaviour:
   m_PixelRect:
     serializedVersion: 2
     x: 0
-    y: 43.2
-    width: 1536
-    height: 780.8
+    y: 43
+    width: 1920
+    height: 997
   m_ShowMode: 4
   m_Title: 
+<<<<<<< HEAD
   m_RootView: {fileID: 2}
 <<<<<<< HEAD
   m_MinSize: {x: 875, y: 613}
 =======
   m_MinSize: {x: 875, y: 392}
 >>>>>>> Clémen_GA
+=======
+  m_RootView: {fileID: 6}
+  m_MinSize: {x: 875, y: 763}
+>>>>>>> RiwanPM
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 1
 --- !u!114 &2
@@ -47,6 +52,7 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
     y: 0
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -64,6 +70,18 @@ MonoBehaviour:
   m_MinSize: {x: 875, y: 392}
 >>>>>>> Clémen_GA
   m_MaxSize: {x: 10000, y: 10000}
+=======
+    y: 221
+    width: 950
+    height: 331
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
+  m_ActualView: {fileID: 16}
+  m_Panes:
+  - {fileID: 16}
+  m_Selected: 0
+  m_LastSelected: 0
+>>>>>>> RiwanPM
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -72,14 +90,21 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
+<<<<<<< HEAD
   m_EditorHideFlags: 1
   m_Script: {fileID: 12011, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
+=======
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: ProjectBrowser
+>>>>>>> RiwanPM
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
     y: 0
     width: 1536
     height: 30
@@ -94,6 +119,20 @@ MonoBehaviour:
 =======
   m_LastLoadedLayoutName: 
 >>>>>>> Clémen_GA
+=======
+    y: 552
+    width: 950
+    height: 395
+  m_MinSize: {x: 232, y: 271}
+  m_MaxSize: {x: 10002, y: 10021}
+  m_ActualView: {fileID: 17}
+  m_Panes:
+  - {fileID: 18}
+  - {fileID: 17}
+  - {fileID: 12}
+  m_Selected: 1
+  m_LastSelected: 1
+>>>>>>> RiwanPM
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -106,6 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 12042, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   m_Children: []
   m_Position:
     serializedVersion: 2
@@ -115,6 +155,22 @@ MonoBehaviour:
     height: 20
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
+=======
+  m_Children:
+  - {fileID: 10}
+  - {fileID: 2}
+  - {fileID: 3}
+  m_Position:
+    serializedVersion: 2
+    x: 254
+    y: 0
+    width: 950
+    height: 947
+  m_MinSize: {x: 232, y: 713}
+  m_MaxSize: {x: 10002, y: 18063}
+  vertical: 1
+  controlID: 218
+>>>>>>> RiwanPM
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -123,6 +179,7 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
+<<<<<<< HEAD
   m_EditorHideFlags: 1
   m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
@@ -178,6 +235,10 @@ MonoBehaviour:
 <<<<<<< HEAD
   m_Name: SceneView
 =======
+=======
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+>>>>>>> RiwanPM
   m_Name: SceneHierarchyWindow
 >>>>>>> SamuelLP
   m_EditorClassIdentifier: 
@@ -186,6 +247,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     width: 1024
@@ -222,6 +284,18 @@ MonoBehaviour:
   m_LastSelected: 0
 >>>>>>> SamuelLP
 --- !u!114 &7
+=======
+    width: 254
+    height: 947
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 15}
+  m_Panes:
+  - {fileID: 15}
+  m_Selected: 0
+  m_LastSelected: 0
+--- !u!114 &6
+>>>>>>> RiwanPM
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -234,14 +308,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Children:
+<<<<<<< HEAD
   - {fileID: 8}
   - {fileID: 9}
   - {fileID: 10}
+=======
+  - {fileID: 7}
+  - {fileID: 9}
+  - {fileID: 8}
+>>>>>>> RiwanPM
   m_Position:
     serializedVersion: 2
 <<<<<<< HEAD
     x: 201
     y: 0
+<<<<<<< HEAD
 <<<<<<< HEAD
     width: 896
     height: 947
@@ -268,6 +349,13 @@ MonoBehaviour:
   controlID: 63378
 >>>>>>> Clémen_GA
 --- !u!114 &8
+=======
+    width: 1920
+    height: 997
+  m_MinSize: {x: 875, y: 300}
+  m_MaxSize: {x: 10000, y: 10000}
+--- !u!114 &7
+>>>>>>> RiwanPM
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -288,6 +376,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     width: 896
@@ -322,6 +411,14 @@ MonoBehaviour:
   m_LastSelected: 0
 >>>>>>> Clémen_GA
 --- !u!114 &9
+=======
+    width: 1920
+    height: 30
+  m_MinSize: {x: 0, y: 0}
+  m_MaxSize: {x: 0, y: 0}
+  m_LastLoadedLayoutName: 
+--- !u!114 &8
+>>>>>>> RiwanPM
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -341,6 +438,7 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     y: 0
@@ -374,6 +472,14 @@ MonoBehaviour:
 >>>>>>> Clémen_GA
   m_LastSelected: 0
 --- !u!114 &10
+=======
+    y: 977
+    width: 1920
+    height: 20
+  m_MinSize: {x: 0, y: 0}
+  m_MaxSize: {x: 0, y: 0}
+--- !u!114 &9
+>>>>>>> RiwanPM
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -386,7 +492,14 @@ MonoBehaviour:
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: ConsoleWindow
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   m_Children: []
+=======
+  m_Children:
+  - {fileID: 5}
+  - {fileID: 4}
+  - {fileID: 11}
+>>>>>>> RiwanPM
   m_Position:
     serializedVersion: 2
 <<<<<<< HEAD
@@ -399,6 +512,7 @@ MonoBehaviour:
   m_ActualView: {fileID: 20}
 =======
     x: 0
+<<<<<<< HEAD
     y: 501
     width: 827
     height: 230
@@ -413,6 +527,16 @@ MonoBehaviour:
   m_Selected: 0
   m_LastSelected: 1
 --- !u!114 &11
+=======
+    y: 30
+    width: 1920
+    height: 947
+  m_MinSize: {x: 534, y: 713}
+  m_MaxSize: {x: 18004, y: 18063}
+  vertical: 0
+  controlID: 23
+--- !u!114 &10
+>>>>>>> RiwanPM
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -435,6 +559,7 @@ MonoBehaviour:
 <<<<<<< HEAD
     x: 1028
     y: 0
+<<<<<<< HEAD
 <<<<<<< HEAD
     width: 325
     height: 608
@@ -469,6 +594,19 @@ MonoBehaviour:
   m_LastSelected: 0
 --- !u!114 &11
 >>>>>>> Clémen_GA
+=======
+    width: 950
+    height: 221
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
+  m_ActualView: {fileID: 14}
+  m_Panes:
+  - {fileID: 14}
+  - {fileID: 19}
+  m_Selected: 0
+  m_LastSelected: 1
+--- !u!114 &11
+>>>>>>> RiwanPM
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -478,11 +616,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+<<<<<<< HEAD
   m_Name: ProjectBrowser
+=======
+  m_Name: AnimationWindow
+>>>>>>> RiwanPM
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
     serializedVersion: 2
+<<<<<<< HEAD
 <<<<<<< HEAD
     x: 1305
     y: 0
@@ -510,6 +653,22 @@ MonoBehaviour:
   m_LastSelected: 0
 --- !u!114 &12
 >>>>>>> Clémen_GA
+=======
+    x: 1204
+    y: 0
+    width: 716
+    height: 947
+  m_MinSize: {x: 101, y: 121}
+  m_MaxSize: {x: 4001, y: 4021}
+  m_ActualView: {fileID: 20}
+  m_Panes:
+  - {fileID: 21}
+  - {fileID: 13}
+  - {fileID: 20}
+  m_Selected: 2
+  m_LastSelected: 1
+--- !u!114 &12
+>>>>>>> RiwanPM
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -521,15 +680,80 @@ MonoBehaviour:
   m_Script: {fileID: 12015, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MinSize: {x: 200, y: 200}
+<<<<<<< HEAD
+=======
+  m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
-    m_Text: Game
-    m_Image: {fileID: 257045534191678443, guid: 0000000000000000d000000000000000,
+    m_Text: Project Settings
+    m_Image: {fileID: 8487775502441791945, guid: 0000000000000000d000000000000000,
       type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+    x: 200.8
+    y: 560
+    width: 822
+    height: 223
+  m_ViewDataDictionary: {fileID: 0}
+  m_PosLeft: {x: 0, y: 0}
+  m_PosRight: {x: 0, y: 0}
+  m_Scope: 1
+  m_SplitterFlex: 0.22418478
+--- !u!114 &13
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f683d99f24875748a6656966ca9cea0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 240, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Tile Palette
+    m_Image: {fileID: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 1204
+    y: 73
+    width: 715
+    height: 926
+  m_ViewDataDictionary: {fileID: 0}
+  m_PreviewResizer:
+    m_CachedPref: 50
+    m_ControlHash: 1964396721
+    m_PrefName: Preview_TilemapBrushInspector
+  m_Palette: {fileID: 8875647702784111766, guid: 4aea2a71fea431d4da227817947896cd,
+    type: 3}
+--- !u!114 &14
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12015, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+>>>>>>> RiwanPM
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Game
+    m_Image: {fileID: -2087823869225018852, guid: 0000000000000000d000000000000000,
+      type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+<<<<<<< HEAD
 <<<<<<< HEAD
     x: 200.8
     y: 73.6
@@ -541,6 +765,12 @@ MonoBehaviour:
     width: 541
     height: 515
 >>>>>>> Clémen_GA
+=======
+    x: 254
+    y: 73
+    width: 948
+    height: 200
+>>>>>>> RiwanPM
   m_ViewDataDictionary: {fileID: 0}
   m_SerializedViewsNames: []
   m_SerializedViewsValues: []
@@ -549,10 +779,14 @@ MonoBehaviour:
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_TargetSize: {x: 318, y: 179}
 =======
   m_TargetSize: {x: 541, y: 304}
 >>>>>>> Clémen_GA
+=======
+  m_TargetSize: {x: 318, y: 179}
+>>>>>>> RiwanPM
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
@@ -567,6 +801,7 @@ MonoBehaviour:
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_HBaseRangeMin: -127.200005
     m_HBaseRangeMax: 127.200005
     m_VBaseRangeMin: -71.6
@@ -577,6 +812,12 @@ MonoBehaviour:
     m_VBaseRangeMin: -276.4
     m_VBaseRangeMax: 276.4
 >>>>>>> Clémen_GA
+=======
+    m_HBaseRangeMin: -159
+    m_HBaseRangeMax: 159
+    m_VBaseRangeMin: -89.5
+    m_VBaseRangeMax: 89.5
+>>>>>>> RiwanPM
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -595,6 +836,7 @@ MonoBehaviour:
       x: 0
       y: 21
 <<<<<<< HEAD
+<<<<<<< HEAD
       width: 825
       height: 179
     m_Scale: {x: 1, y: 1}
@@ -605,12 +847,19 @@ MonoBehaviour:
     m_Scale: {x: 1, y: 1}
     m_Translation: {x: 768, y: 345.5}
 >>>>>>> Clémen_GA
+=======
+      width: 948
+      height: 179
+    m_Scale: {x: 1, y: 1}
+    m_Translation: {x: 474, y: 89.5}
+>>>>>>> RiwanPM
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
+<<<<<<< HEAD
 <<<<<<< HEAD
       x: -412.5
       y: -89.5
@@ -628,16 +877,29 @@ MonoBehaviour:
   m_defaultScale: 1
   m_LastWindowPixelSize: {x: 1920, y: 890}
 >>>>>>> Clémen_GA
+=======
+      x: -474
+      y: -89.5
+      width: 948
+      height: 179
+    m_MinimalGUI: 1
+  m_defaultScale: 1
+  m_LastWindowPixelSize: {x: 948, y: 200}
+>>>>>>> RiwanPM
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000100000100
   m_XRRenderMode: 0
   m_RenderTexture: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!114 &14
 =======
 --- !u!114 &13
 >>>>>>> Clémen_GA
+=======
+--- !u!114 &15
+>>>>>>> RiwanPM
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -653,12 +915,13 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Hierarchy
-    m_Image: {fileID: -9000905672528348964, guid: 0000000000000000d000000000000000,
+    m_Image: {fileID: -590624980919486359, guid: 0000000000000000d000000000000000,
       type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
     y: 73.6
 <<<<<<< HEAD
     width: 200
@@ -666,10 +929,16 @@ MonoBehaviour:
     width: 277
 >>>>>>> Clémen_GA
     height: 710
+=======
+    y: 73
+    width: 253
+    height: 926
+>>>>>>> RiwanPM
   m_ViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
 <<<<<<< HEAD
       m_SelectedIDs: 
       m_LastClickedID: 0
@@ -679,6 +948,11 @@ MonoBehaviour:
       m_LastClickedID: 119886
       m_ExpandedIDs: 1e40fffff25efffff268ffff18cbffff8ce5ffff40fbffffbc410000164300002e4400006044000092b80100bccd010064ce0100ded1010022d201005ed40100
 >>>>>>> Clémen_GA
+=======
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 0e50ffffd075ffff58950000349600003e990000b0990000f4990000
+>>>>>>> RiwanPM
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -694,7 +968,7 @@ MonoBehaviour:
         m_IsRenaming: 0
         m_OriginalEventType: 11
         m_IsRenamingFilename: 0
-        m_ClientGUIView: {fileID: 6}
+        m_ClientGUIView: {fileID: 5}
       m_SearchString: 
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
@@ -702,6 +976,7 @@ MonoBehaviour:
       m_IsLocked: 0
     m_CurrentSortingName: TransformSorting
   m_WindowGUID: 7c176fbb34831db4babbd7f4c145d073
+<<<<<<< HEAD
 <<<<<<< HEAD
 --- !u!114 &15
 MonoBehaviour:
@@ -926,6 +1201,9 @@ MonoBehaviour:
   m_LayerEditor:
     m_SelectedLayerIndex: 0
 --- !u!114 &15
+=======
+--- !u!114 &16
+>>>>>>> RiwanPM
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -941,15 +1219,22 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Scene
-    m_Image: {fileID: -131512000283675692, guid: 0000000000000000d000000000000000,
+    m_Image: {fileID: 2318424515335265636, guid: 0000000000000000d000000000000000,
       type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 278.4
     y: 73.6
     width: 541
     height: 515
+=======
+    x: 254
+    y: 294
+    width: 948
+    height: 310
+>>>>>>> RiwanPM
   m_ViewDataDictionary: {fileID: 0}
 >>>>>>> Clémen_GA
   m_ShowContextualTools: 0
@@ -962,6 +1247,7 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     m_Target: {x: 133.70753, y: 14.66413, z: -989.0078}
@@ -977,6 +1263,11 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 34.11864, y: 10.7611, z: -311.225}
 >>>>>>> Clémen_GA
+=======
+    m_Target: {x: -6.5150084, y: 42.86209, z: -91.843414}
+    speed: 2
+    m_Value: {x: -6.5150084, y: 42.86209, z: -91.843414}
+>>>>>>> RiwanPM
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1032,6 +1323,7 @@ MonoBehaviour:
   m_Size:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: 51.006767
     speed: 2
     m_Value: 53.41023
@@ -1045,6 +1337,11 @@ MonoBehaviour:
     speed: 2
     m_Value: 190.15718
 >>>>>>> Clémen_GA
+=======
+    m_Target: 24.107634
+    speed: 2
+    m_Value: 24.107634
+>>>>>>> RiwanPM
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1069,6 +1366,7 @@ MonoBehaviour:
   m_SceneVisActive: 1
   m_LastLockedObject: {fileID: 0}
   m_ViewIsLockedToObject: 0
+<<<<<<< HEAD
 <<<<<<< HEAD
 --- !u!114 &17
 =======
@@ -1144,6 +1442,9 @@ MonoBehaviour:
   m_LastSelectedObjectID: 119886
 >>>>>>> Clémen_GA
 --- !u!114 &18
+=======
+--- !u!114 &17
+>>>>>>> RiwanPM
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1380,11 +1681,12 @@ MonoBehaviour:
   m_MaxSize: {x: 10000, y: 10000}
   m_TitleContent:
     m_Text: Project
-    m_Image: {fileID: -2032128904892744680, guid: 0000000000000000d000000000000000,
+    m_Image: {fileID: -7501376956915960154, guid: 0000000000000000d000000000000000,
       type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
 <<<<<<< HEAD
     x: 1304.8
     y: 73.6
@@ -1395,6 +1697,12 @@ MonoBehaviour:
     width: 409
 >>>>>>> Clémen_GA
     height: 710
+=======
+    x: 254
+    y: 625
+    width: 948
+    height: 374
+>>>>>>> RiwanPM
   m_ViewDataDictionary: {fileID: 0}
   m_SearchFilter:
     m_NameFilter: 
@@ -1409,6 +1717,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     - Assets/Scenes/MainScenes
@@ -1452,22 +1761,42 @@ MonoBehaviour:
     m_LastClickedID: 25128
     m_ExpandedIDs: 00000000a83e00009460000096600000986000009a6000009c6000009e60000000ca9a3b
 >>>>>>> Clémen_GA
+=======
+    - Assets/Sprites/Ennemi/Boss2/Boss Nouveau Design/Chute tete P1
+  m_ViewMode: 1
+  m_StartGridSize: 16
+  m_LastFolders:
+  - Assets/Sprites/Ennemi/Boss2/Boss Nouveau Design/Chute tete P1
+  m_LastFoldersGridSize: 16
+  m_LastProjectPath: C:\Users\Admin\Documents\Rubika\Zeldaction\ZeldaLike\ZeldaLike\ZeldaLikeUnity
+  m_LockTracker:
+    m_IsLocked: 0
+  m_FolderTreeState:
+    scrollPos: {x: 0, y: 540}
+    m_SelectedIDs: 5eae0000
+    m_LastClickedID: 44638
+    m_ExpandedIDs: 00000000e87d00007a8f00007c8f00007e8f0000808f0000828f0000b28f0000e28f0000929000002eae000000ca9a3b
+>>>>>>> RiwanPM
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: Chute tete P1
+      m_OriginalName: Chute tete P1
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 44638
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
+<<<<<<< HEAD
       m_ClientGUIView: {fileID: 12}
+=======
+      m_ClientGUIView: {fileID: 3}
+>>>>>>> RiwanPM
     m_SearchString: 
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
@@ -1481,6 +1810,7 @@ MonoBehaviour:
     m_LastClickedID: 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_ExpandedIDs: 00000000a63e0000445800004658000000ca9a3b
 =======
     m_ExpandedIDs: 0000000058810000a88a0000aa8a000000ca9a3b
@@ -1488,6 +1818,9 @@ MonoBehaviour:
 =======
     m_ExpandedIDs: 00000000a83e00009460000096600000986000009a6000009c6000009e60000000ca9a3b
 >>>>>>> Clémen_GA
+=======
+    m_ExpandedIDs: 00000000e87d00007a8f00007c8f00007e8f0000808f0000828f0000
+>>>>>>> RiwanPM
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1515,6 +1848,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_HadKeyboardFocusLastEvent: 1
 <<<<<<< HEAD
     m_ExpandedInstanceIDs: c6230000022e000012450000303d0000183d0000e6620000f2390000643c0000
@@ -1525,26 +1859,34 @@ MonoBehaviour:
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000d83e0100486600006e730000cc6000004066000000000000
 >>>>>>> Clémen_GA
+=======
+    m_HadKeyboardFocusLastEvent: 1
+    m_ExpandedInstanceIDs: c623000054a200003cae0000f6a20000
+>>>>>>> RiwanPM
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: Chute tete P1
+      m_OriginalName: Chute tete P1
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 44638
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
       m_ClientGUIView: {fileID: 12}
 =======
       m_ClientGUIView: {fileID: 11}
 >>>>>>> Clémen_GA
+=======
+      m_ClientGUIView: {fileID: 3}
+>>>>>>> RiwanPM
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -1556,7 +1898,168 @@ MonoBehaviour:
     m_GridSize: 16
   m_SkipHiddenPackages: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_DirectoriesAreaWidth: 110
 =======
   m_DirectoriesAreaWidth: 172
 >>>>>>> Clémen_GA
+=======
+  m_DirectoriesAreaWidth: 249
+--- !u!114 &18
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12003, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Console
+    m_Image: {fileID: 111653112392082826, guid: 0000000000000000d000000000000000,
+      type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 254
+    y: 827
+    width: 1023
+    height: 172
+  m_ViewDataDictionary: {fileID: 0}
+--- !u!114 &19
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12914, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Animator
+    m_Image: {fileID: 663490763026382308, guid: 0000000000000000d000000000000000,
+      type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 200.8
+    y: 73.6
+    width: 822
+    height: 245
+  m_ViewDataDictionary: {fileID: 0}
+  m_ViewTransforms:
+    m_KeySerializationHelper:
+    - {fileID: 2759255078094050332, guid: 163716d62fefc3745bb285ad8f003237, type: 2}
+    m_ValueSerializationHelper:
+    - e00: 0.6465555
+      e01: 0
+      e02: 0
+      e03: -54.869125
+      e10: 0
+      e11: 0.6465555
+      e12: 0
+      e13: 58.332497
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+  m_PreviewAnimator: {fileID: 0}
+  m_AnimatorController: {fileID: 9100000, guid: 163716d62fefc3745bb285ad8f003237,
+    type: 2}
+  m_BreadCrumbs:
+  - m_Target: {fileID: 2759255078094050332, guid: 163716d62fefc3745bb285ad8f003237,
+      type: 2}
+    m_ScrollPosition: {x: 0, y: 0}
+  stateMachineGraph: {fileID: 0}
+  stateMachineGraphGUI: {fileID: 0}
+  blendTreeGraph: {fileID: 0}
+  blendTreeGraphGUI: {fileID: 0}
+  m_AutoLiveLink: 1
+  m_MiniTool: 0
+  m_LockTracker:
+    m_IsLocked: 0
+  m_CurrentEditor: 0
+  m_LayerEditor:
+    m_SelectedLayerIndex: 0
+--- !u!114 &20
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12071, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Animation
+    m_Image: {fileID: 1561878555887300916, guid: 0000000000000000d000000000000000,
+      type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 1204
+    y: 73
+    width: 715
+    height: 926
+  m_ViewDataDictionary: {fileID: 0}
+  m_LockTracker:
+    m_IsLocked: 0
+  m_LastSelectedObjectID: 39412
+--- !u!114 &21
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12019, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Inspector
+    m_Image: {fileID: -6905738622615590433, guid: 0000000000000000d000000000000000,
+      type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 1204
+    y: 73
+    width: 715
+    height: 926
+  m_ViewDataDictionary: {fileID: 0}
+  m_OpenAddComponentMenu: 0
+  m_ObjectsLockedBeforeSerialization: []
+  m_InstanceIDsLockedBeforeSerialization: 
+  m_LockTracker:
+    m_IsLocked: 0
+  m_PreviewResizer:
+    m_CachedPref: 160
+    m_ControlHash: -371814159
+    m_PrefName: Preview_InspectorPreview
+  m_PreviewWindow: {fileID: 0}
+  m_LastInspectedObjectInstanceID: -1
+  m_LastVerticalScrollValue: 0
+>>>>>>> RiwanPM
