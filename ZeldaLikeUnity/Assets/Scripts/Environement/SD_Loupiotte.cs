@@ -145,11 +145,9 @@ public class SD_Loupiotte : MonoBehaviour
             if (!stayOpen)
             {
                 loupiottes[loupiottesCount].GetComponent<SD_LoupiotteActivated>().activated = false;
-                loupiottes[loupiottesCount].GetComponent<SD_LoupiotteActivated>().shield.SetActive(false);
                 loupiottes[loupiottesCount].GetComponent<Animator>().SetTrigger("Off");
                 loupiottes[0].GetComponent<SD_LoupiotteActivated>().activated = true;
-                loupiottes[0].GetComponent<Animator>().SetTrigger("On");
-                loupiottes[0].GetComponent<SD_LoupiotteActivated>().shield.SetActive(true);
+                loupiottes[0].GetComponent<Animator>().SetTrigger("Activated");
             }
             closeDoor = false;
         }
@@ -177,8 +175,8 @@ public class SD_Loupiotte : MonoBehaviour
             closeDoor = true;
             foreach (GameObject loupiots in loupiottes)
             {
-                loupiots.GetComponent<Animator>().SetTrigger("Off");
-                loupiots.GetComponent<SD_LoupiotteActivated>().activated = false;
+                loupiots.GetComponent<Animator>().SetTrigger("On");
+                loupiots.GetComponent<Animator>().SetTrigger("Activated");
 
             }
             distance = Mathf.Abs(Vector2.Distance(new Vector3(transform.GetChild(0).position.x, transform.GetChild(0).position.y, -10), camera.transform.position))*0.1f;
@@ -199,11 +197,9 @@ public class SD_Loupiotte : MonoBehaviour
             if (i > -1)
             {
                 loupiottes[(int)i].GetComponent<SD_LoupiotteActivated>().activated = false;
-                loupiottes[(int)i].GetComponent<Animator>().SetTrigger("Off");
-                loupiottes[(int)i].GetComponent<SD_LoupiotteActivated>().shield.SetActive(false);
+                loupiottes[(int)i].GetComponent<Animator>().SetTrigger("On");
                 loupiottes[(int)i + 1].GetComponent<SD_LoupiotteActivated>().activated = true;
-                loupiottes[(int)i + 1].GetComponent<Animator>().SetTrigger("On");
-                loupiottes[(int)i].GetComponent<SD_LoupiotteActivated>().shield.SetActive(true);
+                loupiottes[(int)i + 1].GetComponent<Animator>().SetTrigger("Activated");
             }
         }
     }
