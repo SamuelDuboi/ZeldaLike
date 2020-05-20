@@ -1,7 +1,19 @@
 fileFormatVersion: 2
 guid: b5462feb65420cf4e947e4d393c4371a
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 5987651625011726257
+    second: cerf volant_0
+  - first:
+      213: -6798201765584039791
+    second: cerf volant_1
+  - first:
+      213: -7176648613000262575
+    second: cerf volant_2
+  - first:
+      213: 3606759612759707043
+    second: cerf volant_3
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -40,7 +52,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -84,7 +96,91 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: cerf volant_0
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 17
+        width: 146
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b74d93dd69681350800000000000000
+      internalID: 5987651625011726257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cerf volant_1
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 16
+        width: 142
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1901eea338fe7a1a0800000000000000
+      internalID: -6798201765584039791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cerf volant_2
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 16
+        width: 140
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15cc1582c1c676c90800000000000000
+      internalID: -7176648613000262575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cerf volant_3
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 17
+        width: 145
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ad84c422c8cd0230800000000000000
+      internalID: 3606759612759707043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
