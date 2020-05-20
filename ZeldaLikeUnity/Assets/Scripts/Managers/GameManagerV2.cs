@@ -76,13 +76,18 @@ namespace Management
                     case 2:
                         AudioManager.Instance.Stop("Village_Music");
                         AudioManager.Instance.Play("Ambience_Ronchonchon");
+                        AudioManager.Instance.Play("Music_Ronchonchon");
                         break;
 
                     case 3:
+                        AudioManager.Instance.Stop("Ambience_Ronchonchon");
                         break;
                     case 4:
+                        AudioManager.Instance.Stop("Music_Ronchonchon");
+                        AudioManager.Instance.Play("Music_Donjon");
                         break;
                     case 5:
+                        AudioManager.Instance.Stop("Music_Donjon");
                         break;
                     case 6:
                         break;
@@ -397,7 +402,7 @@ namespace Management
 
         public void Pause()
         {
-            AudioManager.Instance.StopAll();
+            AudioManager.Instance.Pause();
             Time.timeScale = 0;
             pause.SetActive(true);
             evenSystem.GetComponent<SD_EventSystem>().ChangePanel();
@@ -405,6 +410,7 @@ namespace Management
         }
         public void Unpause()
         {
+            AudioManager.Instance.UnPause();
             StartCoroutine(UnpauseCoroutine());
         }
         IEnumerator UnpauseCoroutine()

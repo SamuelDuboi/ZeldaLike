@@ -43,6 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 551c26dbbe9a4964fadff001c707071c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  masterMixer: {fileID: 24100000, guid: 30074e79190fbb3438e58f58430b627d, type: 2}
   sounds:
   - name: Charge_Ronchonchon
     clip: {fileID: 8300000, guid: aa93ab3a70be260458d74814b7e11e31, type: 3}
@@ -265,7 +266,7 @@ MonoBehaviour:
   - name: Ambience_Ronchonchon
     clip: {fileID: 8300000, guid: 38a53408dc4c66649960d13c7108670c, type: 3}
     source: {fileID: 0}
-    group: {fileID: -5340942388665521260, guid: 30074e79190fbb3438e58f58430b627d,
+    group: {fileID: -2934808699073203160, guid: 30074e79190fbb3438e58f58430b627d,
       type: 2}
     volume: 1
     pitch: 1
@@ -467,6 +468,22 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 0568c54255d711e469c98dbd3933bb43, type: 3}
     source: {fileID: 0}
     group: {fileID: -3316062924797532152, guid: 30074e79190fbb3438e58f58430b627d,
+      type: 2}
+    volume: 0.5
+    pitch: 1
+    loop: 1
+  - name: Music_Ronchonchon
+    clip: {fileID: 8300000, guid: 7aa4fffe609c71f47b796846da7a0ddf, type: 3}
+    source: {fileID: 0}
+    group: {fileID: -2934808699073203160, guid: 30074e79190fbb3438e58f58430b627d,
+      type: 2}
+    volume: 0.5
+    pitch: 1
+    loop: 1
+  - name: Music_Donjon
+    clip: {fileID: 8300000, guid: b48f1d25d3de8cd48bfa4e068c07df33, type: 3}
+    source: {fileID: 0}
+    group: {fileID: -2934808699073203160, guid: 30074e79190fbb3438e58f58430b627d,
       type: 2}
     volume: 0.5
     pitch: 1

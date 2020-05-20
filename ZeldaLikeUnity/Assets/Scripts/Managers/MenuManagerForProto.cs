@@ -49,6 +49,7 @@ public class MenuManagerForProto : MonoBehaviour
     public void LoadMenu()
     {
         Time.timeScale = 1;
+        AudioManager.Instance.StopAll();
         SceneManager.LoadScene(0);
     }
     public void Quite()

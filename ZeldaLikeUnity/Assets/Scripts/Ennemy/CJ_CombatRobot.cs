@@ -281,8 +281,14 @@ namespace Ennemy
             ennemyAnimator.ResetTrigger("Stunned");
             ennemyAnimator.SetTrigger("Sleep");
             ennemyAnimator.SetBool("Stun", false);
+            StopSlashSounds();
             base.Desaggro(collision);
 
+        }
+        public void StopSlashSounds()
+        {
+            AudioManager.Instance.Stop("Combat_Slash");
+            AudioManager.Instance.Stop("Combat_Slash_Preparation");
         }
     }
 }
