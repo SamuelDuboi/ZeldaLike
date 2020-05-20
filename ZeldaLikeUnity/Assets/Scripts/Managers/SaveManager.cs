@@ -76,7 +76,7 @@ public class SaveManager : MonoBehaviour
     }
     public void RuinesArenes()
     {
-        CreatScene(true, new Vector2(-61.89f, 27.65f), 10, 3, false, true, 0);
+        CreatScene(true, new Vector2(61.89f, 27.65f), 10, 3, false, true, 0);
     }
     public void RuinesVent()
     {
@@ -84,7 +84,7 @@ public class SaveManager : MonoBehaviour
     }
     public void RuinesSud()
     {
-        CreatScene(true, new Vector2(1.6f, 50f), 12, 3, false, true, 0);
+        CreatScene(true, new Vector2(1.6f, -50f), 12, 3, false, true, 0);
     }
     public void DonjonStart()
     {
@@ -100,7 +100,7 @@ public class SaveManager : MonoBehaviour
     }
     public void Donjon2ndPartt()
     {
-        CreatScene(true, new Vector2(-71.04f, 9.6f), 14, 4, true, true, 0);
+        CreatScene(true, new Vector2(69.3f, 4.1f), 14, 4, true, true, 0);
     }
     public void Boss()
     {

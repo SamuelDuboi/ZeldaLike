@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class SD_Paralax : MonoBehaviour
 {
-    GameObject camera;
+    public GameObject camera;
     [Range(0,1)]
     public float paralaxSpeed;
     Vector2 lasteCamera;
     // Start is called before the first frame update
     void Start()
     {
-        camera = Camera.main.gameObject;
         lasteCamera = camera.transform.position;
     }
 

@@ -21,20 +21,22 @@ public class OptionManager : MonoBehaviour
         YSize = Screen.height;
         xaxyis.text = XSize.ToString();
         yaxis.text = YSize.ToString();
-        //volume.text = sondmnager.instance.masterMixer.getFloat("MasterVolume");
-        volume.text = 100.ToString();
+        float volumeF = 0f;
+        AudioManager.Instance.masterMixer.GetFloat("MasterVolume",out volumeF );
+        volumeF = volumeF * 10 / 9 + 80;
+        volume.text = volumeF.ToString();
         soundSlider.value = float.Parse(volume.text);
     }
 
     public void SoundSlider(Slider slider)
     {
         volume.text = slider.value.ToString();
-        //AudioManager.Instance.OptionSound(soundSlider.value);
+        AudioManager.Instance.OptionSound(slider.value * 0.9f - 80);
     }
     public void SoundValue(string value)
     {
         soundSlider.value = int.Parse(value);
-        //AudioManager.Instance.OptionSound(soundSlider.value);
+        AudioManager.Instance.OptionSound(soundSlider.value*0.9f -80);
     }
     public void XsizeChange(string size)
     {

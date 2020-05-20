@@ -23,6 +23,7 @@ public class Intro : MonoBehaviour
         AudioManager.Instance.Play("Intro_Music");
         fade = introImage.GetComponent<Image>();
         playerCam.GetComponentInChildren<AudioListener>().enabled = false;
+        GameManagerV2.Instance.cantPause = true;
     }
 
     // Update is called once per frame
@@ -92,7 +93,7 @@ public class Intro : MonoBehaviour
 
         playerCam.GetComponentInChildren<AudioListener>().enabled = true;
         yield return new WaitForSeconds(2.5f);
-
+        GameManagerV2.Instance.cantPause = false;
         alya.enabled = true;
         SD_PlayerMovement.Instance.cantDash = false;
         SD_PlayerMovement.Instance.cantMove = false;

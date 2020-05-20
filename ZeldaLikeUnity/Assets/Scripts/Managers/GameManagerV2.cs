@@ -39,7 +39,7 @@ namespace Management
         bool deathActive;
 
         public bool wantToGetAttributeOfPreviousScene;
-
+        [HideInInspector] public bool cantPause;
         public GameObject LoadPlayerPosition;
         GameObject fade;
         TextMeshProUGUI scenName;
@@ -103,7 +103,7 @@ namespace Management
 
         private void Update()
         {
-            if (Input.GetButtonDown("Pause"))
+            if (Input.GetButtonDown("Pause") && !cantPause)
                 Pause();
         }
 
