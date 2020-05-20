@@ -7,6 +7,7 @@ using Management;
 
 public class AudioManager : Singleton<AudioManager>
 {
+    public AudioMixer masterMixer;
     public List<Sound> sounds = new List<Sound>();
 
     int FallEffect = 0;
@@ -114,6 +115,11 @@ public class AudioManager : Singleton<AudioManager>
         {
             FallEffect = 0;
         }
+    }
+
+    public void OptionSound(float volume)
+    {
+        masterMixer.SetFloat("MasterVolume", volume);
     }
 
 }
