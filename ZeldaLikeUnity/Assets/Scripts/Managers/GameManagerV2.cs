@@ -402,7 +402,7 @@ namespace Management
 
         public void Pause()
         {
-            AudioManager.Instance.StopAll();
+            AudioManager.Instance.Pause();
             Time.timeScale = 0;
             pause.SetActive(true);
             evenSystem.GetComponent<SD_EventSystem>().ChangePanel();
@@ -410,6 +410,7 @@ namespace Management
         }
         public void Unpause()
         {
+            AudioManager.Instance.UnPause();
             StartCoroutine(UnpauseCoroutine());
         }
         IEnumerator UnpauseCoroutine()
