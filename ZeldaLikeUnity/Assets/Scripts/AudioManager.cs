@@ -106,11 +106,11 @@ public class AudioManager : Singleton<AudioManager>
             s.source.Play();
             FallEffect++;
         }
-        else if (FallEffect > 0 && FallEffect < 5)
+        else if (FallEffect > 0 && FallEffect < 3)
         {
             FallEffect++;
         }
-        else if (FallEffect >= 5)
+        else if (FallEffect >= 3) 
         {
             FallEffect = 0;
         }
