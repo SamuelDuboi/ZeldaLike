@@ -101,6 +101,7 @@ namespace Player
                     life --;
                     if (life <= 0)
                     {
+                        lifes[0].GetComponent<Image>().color = new Color(0, 0, 0, 0);
                         dead = true;
 
                         StartCoroutine(GameManagerV2.Instance.Death());

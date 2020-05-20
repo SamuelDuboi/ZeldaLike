@@ -13,7 +13,7 @@ public class SD_LoupiotteActivated : MonoBehaviour
     {
         shield.SetActive(false);
         if (activated)
-            GetComponent<Animator>().SetTrigger("On");
+            GetComponent<Animator>().SetTrigger("Activated");
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
