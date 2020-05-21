@@ -10142,8 +10142,8 @@ MonoBehaviour:
   sprint: 1
   sprintForce: 1.4
   playerRGB: {fileID: 0}
-  dashTime: 0.2
-  dashForce: 6
+  dashTime: 0.25
+  dashForce: 7
   dashCooldown: 0
   dashSound: 0
   fallDamage: 1
@@ -10155,11 +10155,11 @@ MonoBehaviour:
   windPlatform: {fileID: 6539879599454388918, guid: 231fb5cf83a866e4aaa6de418eef4998,
     type: 3}
   isAbleToRunOnHole: 0
-  platformLifeTime: 4
+  platformLifeTime: 3
   currentPlatform: {fileID: 0}
   platformNumber: 1
-  inertieAfterDash: 11
-  timeBeforAbleToMoveAfterFall: 0.4
+  inertieAfterDash: 1
+  timeBeforAbleToMoveAfterFall: 0.1
   isOnPlatformDestructible: 0
   keyNumber: 0
   keyUI:

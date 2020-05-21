@@ -54,7 +54,7 @@ namespace Player
         [HideInInspector] public GameObject currentPlatform;
         public int platformNumber = 1;
 
-        [Range(8, 11)]
+        [Range(0.1f, 1)]
         public float inertieAfterDash;
         Vector2 playerRespawnAfterFall;
         [Range(0,1)]
