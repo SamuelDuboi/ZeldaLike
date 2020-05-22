@@ -117,12 +117,19 @@ namespace Player
                 sprint = 1;
                 playerRGB.drag = 10;
 
-                if (grosPoussière.activeInHierarchy)
+                if (grosPoussière.activeSelf)
+                {
                     grosPoussière.SetActive(false);
+                    AudioManager.Instance.Stop("Sprint_Herbe");
+                }
                 AudioManager.Instance.Stop("Marche_Herbe");
-                AudioManager.Instance.Stop("Sprint_Herbe");
             }
-
+            if (grosPoussière.activeSelf)
+            {
+                SD_PlayerAnimation.Instance.PlayerAnimator.SetBool("Run", true);
+            }
+            else
+                SD_PlayerAnimation.Instance.PlayerAnimator.SetBool("Run", false);
 
         }
 
@@ -245,6 +252,7 @@ namespace Player
                     }*/
                     playerRGB.velocity = new Vector2(XAxis, YAxis).normalized * speed * sprint;
                     SD_PlayerAnimation.Instance.PlayerAnimator.SetTrigger("Dash");
+                    SD_PlayerAnimation.Instance.PlayerAnimator.SetBool("Run", true);
                     cantMove = true;
                     cantDash = true;
                     dashTrail.SetActive(true);
@@ -301,7 +309,6 @@ namespace Player
                     cantMove = false;
                     dashIsActive = false;
                     sprint = sprintForce;
-                    
                     playerRGB.drag = 10 / inertieAfterDash;
                     dashTrail.SetActive(false);
                     yield return new WaitForSeconds(dashCooldown);

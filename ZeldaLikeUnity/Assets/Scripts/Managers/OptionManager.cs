@@ -10,8 +10,6 @@ public class OptionManager : MonoBehaviour
     int XSize ;
     int YSize;
     bool screenMode = true;
-    public TMP_InputField xaxyis;
-    public TMP_InputField yaxis;
     public TMP_InputField volume;
     public Slider soundSlider;
     // Start is called before the first frame update
@@ -19,8 +17,6 @@ public class OptionManager : MonoBehaviour
     {
         XSize = Screen.width;
         YSize = Screen.height;
-        xaxyis.text = XSize.ToString();
-        yaxis.text = YSize.ToString();
         float volumeF = 0f;
         AudioManager.Instance.masterMixer.GetFloat("MasterVolume",out volumeF );
         volumeF = volumeF * 10 / 9 + 80;

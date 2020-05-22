@@ -178,6 +178,7 @@ namespace Ennemy
                 ennemyRGB.velocity = Vector2.zero;
                 isAggro = false;
                 canMove = false;
+                isAttacking = false;
                 yield break;
             }
             

@@ -13,7 +13,7 @@ using UnityEngine;
     public int scenceIndex;
     public bool hasWind;
     public bool canParry;
-
+    public bool canAttack;
     public int HenryNumber;
     [HideInInspector] public int Alyah1;
     [HideInInspector] public int Alyah2;
