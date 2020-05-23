@@ -15,6 +15,7 @@ namespace Management
          GameObject player;
          GameObject death;
          GameObject pause;
+         public GameObject loadingScreen;
         //  public List<GameObject> ennemies
          List<Vector3> ronchonchonsPositions= new List<Vector3>();
          List<Vector3> robotScoutPosition = new List<Vector3>();
@@ -162,98 +163,7 @@ namespace Management
         /// <param name="loadScene"></param>
        public void LoadSave(bool loadScene)
         {
-            if (File.Exists(Application.persistentDataPath + "/gamesave.save"))
-            {
-                SD_PlayerMovement.Instance.StopCoroutine();
-                SD_PlayerMovement.Instance.dashIsActive = false;
-                SD_PlayerMovement.Instance.cantDash = true;
-
-                BinaryFormatter bf = new BinaryFormatter();
-                FileStream file = File.Open(Application.persistentDataPath + "/gamesave.save", FileMode.Open);
-                Save save = (Save)bf.Deserialize(file);
-                file.Close();
-                if (save.scenceIndex != SceneManager.GetActiveScene().buildIndex && loadScene || SceneManager.GetActiveScene().buildIndex ==5 || SceneManager.GetActiveScene().buildIndex == 7)
-                {
-                    Instantiate(LoadPlayerPosition, transform.position, Quaternion.identity);
-                    SceneManager.LoadScene(save.scenceIndex);
-
-                }
-                StartCoroutine(SwitchCamera());
-                SD_PlayerMovement.Instance.isAbleToRunOnHole = true;
-                player.transform.position = new Vector2(save.playerPositionX, save.playerPositionY);
-                SD_PlayerRessources.Instance.currentMaxLife = save.pvMax;
-                SD_PlayerAttack.Instance.canParry = save.canParry;
-                SD_PlayerAttack.Instance.hasWind = save.hasWind;
-                if (save.hasWind)
-                    SD_PlayerAnimation.Instance.halo.SetActive(true);
-                SD_PlayerRessources.Instance.life = save.currentPv;
-                SD_PlayerRessources.Instance.Heal(SD_PlayerRessources.Instance.currentMaxLife);
-                SD_PlayerMovement.Instance.platformNumber = 1;
-
-                //load the cpt of the dialogue so it doesnt repeat itself
-                SD_PlayerRessources.Instance.Alyah1 = save.Alyah1 ;
-                SD_PlayerRessources.Instance.Alyah2 = save.Alyah2 ;
-                SD_PlayerRessources.Instance.Henry1 = save.Henry1 ;
-                SD_PlayerRessources.Instance.Henry2 = save.Henry2 ;
-                SD_PlayerRessources.Instance.WindMother = save.WindMother ;
-                SD_PlayerRessources.Instance.Pepe = save.Pepe ;
-                if (ronchonchons != null)
-                foreach (GameObject ennemi in ronchonchons)
-                    Destroy(ennemi);
-                if (robotScout != null)
-                    foreach (GameObject ennemi in robotScout)
-                    Destroy(ennemi);
-                if (combatRobot != null)
-                    foreach (GameObject ennemi in combatRobot)
-                    Destroy(ennemi);
-                if (gardianRobot != null)
-                    foreach (GameObject ennemi in gardianRobot)
-                    Destroy(ennemi);
-                foreach (Vector3 position in ronchonchonsPositions)
-                {
-                    GameObject newRonchonchon = Instantiate(ennemiesPrefabs[(int)ennemies.ronchonchon], position, Quaternion.identity);
-                }
-                  
-                foreach (Vector3 position in robotScoutPosition)
-                {
-                    GameObject newScout= Instantiate(ennemiesPrefabs[(int)ennemies.scoutRobot], position, Quaternion.identity);
-                }
-                    
-                foreach (Vector3 position in combatRobotPosition)
-                {
-                    GameObject newCombat= Instantiate(ennemiesPrefabs[(int)ennemies.combatRobot], position, Quaternion.identity);
-                }
-                   
-                foreach (Vector3 position in gardianRobotPosition)
-                {
-                    GameObject newGardian= Instantiate(ennemiesPrefabs[(int)ennemies.gardianRobot], position, Quaternion.identity);
-                }
-                   
-
-                ronchonchons.Clear();
-                combatRobot.Clear();
-                gardianRobot.Clear();
-                robotScout.Clear();
-                ronchonchonsPositions.Clear();
-                combatRobotPosition.Clear();
-                gardianRobotPosition.Clear();
-                robotScoutPosition.Clear();
-                StartCoroutine(FadeOut());
-                Time.timeScale = 1;
-                death.SetActive(false);
-                pause.SetActive(false);
-                Debug.Log("Game Loaded");
-                SD_PlayerAttack.Instance.cantAttack = save.canAttack;
-                SD_PlayerMovement.Instance.cantMove = false;
-                StartCoroutine(waitToNotDash());
-                SD_PlayerMovement.Instance.isAbleToRunOnHole = false;
-                SD_PlayerAttack.Instance.cantAim = false;
-
-            }
-            else
-            {
-                Debug.Log("No game saved!");
-            }
+            StartCoroutine(LoadingSave(loadScene));
         }
         IEnumerator waitToNotDash()
         {
@@ -276,8 +186,14 @@ namespace Management
                 Save save = (Save)bf.Deserialize(file);
                 file.Close();
                 if (save.scenceIndex != SceneManager.GetActiveScene().buildIndex && loadScene)
-                    SceneManager.LoadScene(save.scenceIndex);
-
+                {
+                    AsyncOperation levelLoading = SceneManager.LoadSceneAsync(save.scenceIndex);
+                    if (levelLoading.progress < 1)
+                        loadingScreen.SetActive(true);
+                    else if (levelLoading.progress >= 1)
+                        loadingScreen.SetActive(false);
+                }
+                    
                 SD_PlayerRessources.Instance.currentMaxLife = save.pvMax;
                 SD_PlayerAttack.Instance.canParry = save.canParry;
                 SD_PlayerAttack.Instance.hasWind = save.hasWind;
@@ -474,6 +390,105 @@ namespace Management
                 yield return new WaitForSeconds(0.01f);
             }
             scenName.color = new Color(162, 97, 16, 0);
+        }
+
+        public IEnumerator LoadingSave(bool loadScene)
+        {
+            if (File.Exists(Application.persistentDataPath + "/gamesave.save"))
+            {
+                SD_PlayerMovement.Instance.StopCoroutine();
+                SD_PlayerMovement.Instance.dashIsActive = false;
+                SD_PlayerMovement.Instance.cantDash = true;
+
+                BinaryFormatter bf = new BinaryFormatter();
+                FileStream file = File.Open(Application.persistentDataPath + "/gamesave.save", FileMode.Open);
+                Save save = (Save)bf.Deserialize(file);
+                file.Close();
+                if (save.scenceIndex != SceneManager.GetActiveScene().buildIndex && loadScene || SceneManager.GetActiveScene().buildIndex == 5 || SceneManager.GetActiveScene().buildIndex == 7)
+                {
+                    Instantiate(LoadPlayerPosition, transform.position, Quaternion.identity);
+                    AsyncOperation levelLoading = SceneManager.LoadSceneAsync(save.scenceIndex);
+                    levelLoading.allowSceneActivation = false;
+                    loadingScreen.SetActive(true);
+                    yield return new WaitForSeconds(2f);
+                    levelLoading.allowSceneActivation = true;
+                }
+                StartCoroutine(SwitchCamera());
+                SD_PlayerMovement.Instance.isAbleToRunOnHole = true;
+                player.transform.position = new Vector2(save.playerPositionX, save.playerPositionY);
+                SD_PlayerRessources.Instance.currentMaxLife = save.pvMax;
+                SD_PlayerAttack.Instance.canParry = save.canParry;
+                SD_PlayerAttack.Instance.hasWind = save.hasWind;
+                if (save.hasWind)
+                    SD_PlayerAnimation.Instance.halo.SetActive(true);
+                SD_PlayerRessources.Instance.life = save.currentPv;
+                SD_PlayerRessources.Instance.Heal(SD_PlayerRessources.Instance.currentMaxLife);
+                SD_PlayerMovement.Instance.platformNumber = 1;
+
+                //load the cpt of the dialogue so it doesnt repeat itself
+                SD_PlayerRessources.Instance.Alyah1 = save.Alyah1;
+                SD_PlayerRessources.Instance.Alyah2 = save.Alyah2;
+                SD_PlayerRessources.Instance.Henry1 = save.Henry1;
+                SD_PlayerRessources.Instance.Henry2 = save.Henry2;
+                SD_PlayerRessources.Instance.WindMother = save.WindMother;
+                SD_PlayerRessources.Instance.Pepe = save.Pepe;
+                if (ronchonchons != null)
+                    foreach (GameObject ennemi in ronchonchons)
+                        Destroy(ennemi);
+                if (robotScout != null)
+                    foreach (GameObject ennemi in robotScout)
+                        Destroy(ennemi);
+                if (combatRobot != null)
+                    foreach (GameObject ennemi in combatRobot)
+                        Destroy(ennemi);
+                if (gardianRobot != null)
+                    foreach (GameObject ennemi in gardianRobot)
+                        Destroy(ennemi);
+                foreach (Vector3 position in ronchonchonsPositions)
+                {
+                    GameObject newRonchonchon = Instantiate(ennemiesPrefabs[(int)ennemies.ronchonchon], position, Quaternion.identity);
+                }
+
+                foreach (Vector3 position in robotScoutPosition)
+                {
+                    GameObject newScout = Instantiate(ennemiesPrefabs[(int)ennemies.scoutRobot], position, Quaternion.identity);
+                }
+
+                foreach (Vector3 position in combatRobotPosition)
+                {
+                    GameObject newCombat = Instantiate(ennemiesPrefabs[(int)ennemies.combatRobot], position, Quaternion.identity);
+                }
+
+                foreach (Vector3 position in gardianRobotPosition)
+                {
+                    GameObject newGardian = Instantiate(ennemiesPrefabs[(int)ennemies.gardianRobot], position, Quaternion.identity);
+                }
+
+
+                ronchonchons.Clear();
+                combatRobot.Clear();
+                gardianRobot.Clear();
+                robotScout.Clear();
+                ronchonchonsPositions.Clear();
+                combatRobotPosition.Clear();
+                gardianRobotPosition.Clear();
+                robotScoutPosition.Clear();
+                StartCoroutine(FadeOut());
+                Time.timeScale = 1;
+                death.SetActive(false);
+                pause.SetActive(false);
+                Debug.Log("Game Loaded");
+                SD_PlayerAttack.Instance.cantAttack = save.canAttack;
+                SD_PlayerMovement.Instance.cantMove = false;
+                StartCoroutine(waitToNotDash());
+                SD_PlayerMovement.Instance.isAbleToRunOnHole = false;
+                SD_PlayerAttack.Instance.cantAim = false;
+
+            }
+            else
+            {
+                Debug.Log("No game saved!");
+            }
         }
     }
 }
