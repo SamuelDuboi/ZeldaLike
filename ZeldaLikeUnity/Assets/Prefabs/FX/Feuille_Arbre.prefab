@@ -42,7 +42,7 @@ ParticleSystem:
   m_GameObject: {fileID: 3319755844386468483}
   serializedVersion: 6
   lengthInSec: 5
-  simulationSpeed: 0.5
+  simulationSpeed: 0.2
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
@@ -866,7 +866,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 2
+      scalar: 3
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -919,7 +919,7 @@ ParticleSystem:
     rateOverDistance:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.72
+      scalar: 0
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -4731,7 +4731,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 3
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -4796,7 +4796,7 @@ ParticleSystem:
   m_GameObject: {fileID: 6745348319111460718}
   serializedVersion: 6
   lengthInSec: 5
-  simulationSpeed: 0.5
+  simulationSpeed: 0.38
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
@@ -5620,7 +5620,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 2
+      scalar: 3
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -9485,7 +9485,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 3
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -9552,7 +9552,7 @@ ParticleSystem:
   m_GameObject: {fileID: 6745348319135559008}
   serializedVersion: 6
   lengthInSec: 5
-  simulationSpeed: 0.5
+  simulationSpeed: 0.42
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
@@ -10376,7 +10376,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 2
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -10429,7 +10429,7 @@ ParticleSystem:
     rateOverDistance:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.24
+      scalar: 0
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -14241,7 +14241,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 3
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
