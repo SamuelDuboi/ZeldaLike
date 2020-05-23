@@ -12,9 +12,11 @@ public class SD_LaserLD : MonoBehaviour
     public bool willStayOpen;
     public float timeOff;
      float timer;
+
+    public Animator anim;
     void Start()
     {
-       
+        anim.SetTrigger("Activated");
         playerMask = 1 << 11;
     }
 
@@ -30,7 +32,7 @@ public class SD_LaserLD : MonoBehaviour
                                                           playerMask);
             if (raycastHit.collider != null)
             {
-                SD_PlayerRessources.Instance.TakingDamage(laserDamage, SD_PlayerRessources.Instance.gameObject, false, 5);
+               StartCoroutine( SD_PlayerRessources.Instance.TakingDamage(laserDamage, SD_PlayerRessources.Instance.gameObject, false, 5));
             }
             target.GetComponent<LineRenderer>().SetPosition(0, transform.position);
             target.GetComponent<LineRenderer>().SetPosition(1, target.transform.position);
@@ -45,6 +47,7 @@ public class SD_LaserLD : MonoBehaviour
                 if (timer > timeOff)
                 {
                     timer = 0;
+                    anim.SetTrigger("Off");
                     cantShoot = false;
                 }
             }
@@ -56,8 +59,12 @@ public class SD_LaserLD : MonoBehaviour
     {
         if (collision.gameObject.layer == 14 && collision.gameObject.tag == "WindProjectil")
         {
-            if(!cantShoot)
-            cantShoot = true;
+            if (!cantShoot)
+            {
+                cantShoot = true;
+                anim.SetTrigger("On");
+            }
+
         }
     }
 }
