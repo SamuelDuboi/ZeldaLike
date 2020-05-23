@@ -19,7 +19,7 @@ namespace Ennemy
 
         float timerMove;
         bool isMoving;
-        bool isCharging;
+      public   bool isCharging;
         bool chargeOrRUn;
         public override void Start()
         {
@@ -42,6 +42,7 @@ namespace Ennemy
                     ennemyAnimator.SetFloat("Left", 0);
                 else
                     ennemyAnimator.SetFloat("Left", 1);
+
                 ennemyRGB.velocity = new Vector2(player.transform.position.x - transform.position.x, player.transform.position.y - transform.position.y).normalized * followSpeed;
                 timerMove += Time.deltaTime;
                 if (timerMove > 1f)
@@ -75,6 +76,7 @@ namespace Ennemy
                 ennemyAnimator.ResetTrigger("PreparCharge");
                 AudioManager.Instance.Stop("Combat_Slash_Preparation");
                 AudioManager.Instance.Play("Hit_Robot");
+                ennemyAnimator.ResetTrigger("PreparCharge");
                 ennemyAnimator.SetInteger("attackNumber", 0);
                 ennemyAnimator.ResetTrigger("Attack");
                 isAttacking = false;
@@ -91,10 +93,30 @@ namespace Ennemy
                     ennemyAnimator.SetFloat("Left", 1);
 
                 ennemyAnimator.SetBool("Stun", true);
+
+                ennemyAnimator.ResetTrigger("PreparCharge");
                 ennemyAnimator.SetBool("Charge", false);
                 ennemyRGB.velocity = Vector2.zero;
             }
-       }
+           
+        }
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            if (collision.gameObject.layer == 9 && isCharging)
+            {
+                StopAllCoroutines();
+                notStunable = false;
+                ennemyAnimator.SetBool("Stun", false);
+                canMove = true;
+                StartCoroutine(Stun(0.5f));
+                ennemyAnimator.SetBool("Walk", true);
+                ennemyAnimator.ResetTrigger("PreparCharge");
+                ennemyRGB.velocity = Vector2.zero;
+                isCharging = false;
+                canTakeDamage = true;
+                isAttacking = false;
+            }
+        }
 
         public override void Mouvement()
         {
@@ -122,7 +144,10 @@ namespace Ennemy
                         if (chargeOrRUn)
                             StartCoroutine(Charge());
                         else
+                        {
                             isMoving = true;
+                            ennemyAnimator.SetBool("Walk", true);
+                        }
                         chargeOrRUn = !chargeOrRUn;
                     }
                 }
@@ -135,6 +160,7 @@ namespace Ennemy
         {
             isCharging = true;
             isMoving = false;
+            ennemyAnimator.SetBool("Walk", false);
             canMove = false;
             timerMove = 0;
             canTakeDamage = false;
@@ -169,7 +195,7 @@ namespace Ennemy
                     ennemyAnimator.SetFloat("Left", 1);
                 ennemyRGB.velocity = new Vector2(chargeRay.point.x - transform.position.x, chargeRay.point.y - transform.position.y).normalized * chargeSpeed;
                 cpt += 0.01f;
-                if (Mathf.Abs(Mathf.Abs(transform.position.x) - Mathf.Abs(chargeRay.point.x)) < 0.1f)
+                if (Mathf.Abs(Mathf.Abs(transform.position.x) - Mathf.Abs(chargeRay.point.x)) < 0.2f)
                     break;
                 yield return new WaitForSeconds(0.01f);
             }
@@ -177,19 +203,22 @@ namespace Ennemy
             ennemyAnimator.SetBool("Charge", false);
             ennemyRGB.velocity = Vector2.zero;
 
+            canTakeDamage = true;
             yield return new WaitForSeconds(1f);
             notStunable = false;
             ennemyAnimator.SetBool("Stun", false);
             canMove = true;
             isMoving = true;
+            ennemyAnimator.SetBool("Walk", true);
             isCharging = false;
-            canTakeDamage = true;
             isAttacking = false;
         }
 
         public IEnumerator SlashAttack()
         {
             isMoving = false;
+
+            ennemyAnimator.SetBool("Walk", false);
             Vector2 Aim;
             isAttacking = true;
             canMove = false;
@@ -224,6 +253,7 @@ namespace Ennemy
                     ennemyAnimator.SetTrigger("Stun");
                     ennemyAnimator.SetInteger("attackNumber", 0);
 
+                    ennemyAnimator.ResetTrigger("PreparCharge");
                     AudioManager.Instance.Stop("Combat_Slash_Preparation");
                     yield break;
                 }
@@ -254,6 +284,7 @@ namespace Ennemy
 
             cacAttack++;
             isMoving = true;
+            ennemyAnimator.SetBool("Walk", true);
         }
         public void ResetAttack()
         {
@@ -273,7 +304,11 @@ namespace Ennemy
         public override void Desaggro(Collider2D collision)
         {
             StopAllCoroutines();
-
+            isAttacking = false;
+            canTakeDamage = true;
+            isMoving = false;
+            ennemyAnimator.SetBool("Walk", false);
+            isCharging = false;
             ennemyAnimator.SetInteger("attackNumber", 0);
             ennemyAnimator.ResetTrigger("Aggro");
             ennemyAnimator.ResetTrigger("PreparCharge");
@@ -290,5 +325,6 @@ namespace Ennemy
             AudioManager.Instance.Stop("Combat_Slash");
             AudioManager.Instance.Stop("Combat_Slash_Preparation");
         }
+        
     }
 }

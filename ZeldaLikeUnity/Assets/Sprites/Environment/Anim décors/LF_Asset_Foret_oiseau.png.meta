@@ -11,6 +11,15 @@ TextureImporter:
   - first:
       213: -2455393628971285536
     second: LF_Asset_Foret_oiseau_2
+  - first:
+      213: 5637936724242829317
+    second: LF_Asset_Foret_oiseau_0
+  - first:
+      213: 4156731208667651091
+    second: LF_Asset_Foret_oiseau_1
+  - first:
+      213: -6002527964981160545
+    second: LF_Asset_Foret_oiseau_2
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -102,15 +111,15 @@ TextureImporter:
         y: 0
         width: 16
         height: 16
-      alignment: 9
-      pivot: {x: 0.51398027, y: 0.1132128}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e75fc96f02fbe80d0800000000000000
-      internalID: -3418584918830287490
+      spriteID: 5009f926499fd3e40800000000000000
+      internalID: 5637936724242829317
       vertices: []
       indices: 
       edges: []
@@ -123,15 +132,15 @@ TextureImporter:
         y: 0
         width: 16
         height: 14
-      alignment: 9
-      pivot: {x: 0.5116503, y: 0.13251884}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 174b37a1f639c9dd0800000000000000
-      internalID: -2477943589566172047
+      spriteID: 31c5a6fc20dafa930800000000000000
+      internalID: 4156731208667651091
       vertices: []
       indices: 
       edges: []
@@ -140,19 +149,19 @@ TextureImporter:
       name: LF_Asset_Foret_oiseau_2
       rect:
         serializedVersion: 2
-        x: 35
+        x: 34
         y: 0
         width: 16
         height: 15
-      alignment: 9
-      pivot: {x: 0.45106936, y: 0.122222215}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0e3c861f080bcedd0800000000000000
-      internalID: -2455393628971285536
+      spriteID: f9513fc5e9cb2bca0800000000000000
+      internalID: -6002527964981160545
       vertices: []
       indices: 
       edges: []

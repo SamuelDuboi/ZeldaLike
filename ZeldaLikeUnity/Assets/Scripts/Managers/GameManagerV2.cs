@@ -37,7 +37,7 @@ namespace Management
         GamePadState prevState;
 
         bool deathActive;
-
+        bool cantAttack;
         public bool wantToGetAttributeOfPreviousScene;
         [HideInInspector] public bool cantPause;
         public GameObject LoadPlayerPosition;
@@ -150,6 +150,8 @@ namespace Management
             save.Henry2 = SD_PlayerRessources.Instance.Henry2;
             save.WindMother = SD_PlayerRessources.Instance.WindMother;
             save.Pepe = SD_PlayerRessources.Instance.Pepe;
+
+            save.canAttack = SD_PlayerAttack.Instance.cantAttack;
             return save;
         }
 
@@ -241,7 +243,7 @@ namespace Management
                 death.SetActive(false);
                 pause.SetActive(false);
                 Debug.Log("Game Loaded");
-                SD_PlayerAttack.Instance.cantAttack = false;
+                SD_PlayerAttack.Instance.cantAttack = save.canAttack;
                 SD_PlayerMovement.Instance.cantMove = false;
                 StartCoroutine(waitToNotDash());
                 SD_PlayerMovement.Instance.isAbleToRunOnHole = false;
@@ -312,7 +314,7 @@ namespace Management
             {
                 deathActive = true;
                 SD_PlayerAnimation.Instance.PlayerAnimator.SetTrigger("Death");
-                SD_PlayerAttack.Instance.cantAttack = true;
+                
                 SD_PlayerAttack.Instance.hasWind = false;
                 SD_PlayerMovement.Instance.cantDash = true;
                 SD_PlayerMovement.Instance.cantMove = true;
