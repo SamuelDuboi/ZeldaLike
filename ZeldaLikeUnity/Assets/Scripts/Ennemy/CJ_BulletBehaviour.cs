@@ -62,7 +62,9 @@ namespace Ennemy
         }
         private void FixedUpdate()
         {
-            if(isParry)
+            if (parent == null)
+                Destroy(gameObject);
+            if(isParry && parent !=null)
                 transform.position = Vector2.MoveTowards(transform.position, parent.transform.position, Time.deltaTime * bulletParrySpeed);
 
             time += Time.deltaTime;
