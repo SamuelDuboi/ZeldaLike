@@ -4,7 +4,6 @@ using UnityEngine;
 using Ennemy;
 using Player;
 using Management;
-using Cinemachine;
 
 public class SD_BossBody : MonoBehaviour
 {
@@ -133,8 +132,8 @@ public class SD_BossBody : MonoBehaviour
             
             cameranormal.SetActive(false);
             camerashake.SetActive(true);
-            transform.localPosition = Vector3.MoveTowards(transform.localPosition, bossPositionPhase2.transform.position, 10 * Time.deltaTime);           
-           fakeArms.transform.localPosition = Vector3.MoveTowards(transform.localPosition, bossPositionPhase2.transform.position, 10 * Time.deltaTime);
+            transform.localPosition = Vector3.MoveTowards(transform.localPosition, bossPositionPhase2.transform.position, 20 * Time.deltaTime);           
+           fakeArms.transform.localPosition = Vector3.MoveTowards(transform.localPosition, bossPositionPhase2.transform.position, 20 * Time.deltaTime);
             firstBullet = new Vector2(transform.position.x - bossCollider.bounds.extents.x, transform.position.y - bossCollider.bounds.extents.y);
 
             if ( Vector2.Distance(transform.localPosition, bossPositionPhase2.transform.position)< 0.5f)
@@ -158,7 +157,7 @@ public class SD_BossBody : MonoBehaviour
         {
             cameranormal.SetActive(false);
             camerashake.SetActive(true);
-            transform.localPosition = Vector3.MoveTowards(transform.localPosition, bossPositionPhase3.transform.position, 10 * Time.deltaTime);
+            transform.localPosition = Vector3.MoveTowards(transform.localPosition, bossPositionPhase3.transform.position, 20 * Time.deltaTime);
             firstBullet = new Vector2(transform.position.x - bossCollider.bounds.extents.x, transform.position.y - bossCollider.bounds.extents.y);
             if (Vector2.Distance(transform.localPosition, bossPositionPhase3.transform.position) < 0.5f)
             {

@@ -13,7 +13,7 @@ public class SD_BossArms : MonoBehaviour
     public int rayDamage;
     public GameObject touche;
     public bool isLeft;
-    [Range(0.1f,5)]
+    [Range(0.1f,10)]
     public float speed;
   [HideInInspector]  public float direction =1;
     

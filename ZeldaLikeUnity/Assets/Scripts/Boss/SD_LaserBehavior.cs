@@ -23,7 +23,7 @@ public class SD_LaserBehavior : MonoBehaviour
     IEnumerator ShootingLaser()
     {
         line.SetPosition(0, transform.position);
-        line.SetPosition(1, new Vector2(transform .position.x, transform.position.y - 100));
+        line.SetPosition(1, new Vector2(transform .position.x, transform.position.y - 150));
         line.startWidth = 0.2f;
         yield return new WaitForSeconds(timeBeforBigRay);
         float timerWhile = 0;
