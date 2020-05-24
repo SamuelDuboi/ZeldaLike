@@ -26,4 +26,15 @@ public class SD_LoupiotteActivated : MonoBehaviour
 
     }
 
+    void Play(string name)
+    {
+        AudioManager.Instance.SpecialPlay(name);
+    }
+
+    void Stop(string name)
+    {
+        AudioManager.Instance.Stop(name);
+    }
+
+
 }

@@ -52,6 +52,11 @@ namespace Management
         }
         void Start()
         {
+            if(SceneManager.GetActiveScene().buildIndex == 0)
+            {
+                AudioManager.Instance.StopAll();
+                AudioManager.Instance.Play("Music_Menu");
+            }
             if(SceneManager.GetActiveScene().buildIndex != 0)
             {
                 player = GameObject.Find("PlayerMovement");
@@ -71,6 +76,9 @@ namespace Management
 
                 switch (SceneManager.GetActiveScene().buildIndex)
                 {
+                    case 1:
+                        AudioManager.Instance.Stop("Music_Menu");
+                        break;
                     case 2:
                         AudioManager.Instance.Stop("Village_Music");
                         AudioManager.Instance.Play("Ambience_Ronchonchon");

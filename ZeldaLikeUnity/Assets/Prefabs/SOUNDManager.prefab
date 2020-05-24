@@ -488,3 +488,19 @@ MonoBehaviour:
     volume: 0.5
     pitch: 1
     loop: 1
+  - name: Music_Menu
+    clip: {fileID: 8300000, guid: fc09b56c3f7b94142bd18f34d0c46891, type: 3}
+    source: {fileID: 0}
+    group: {fileID: -2934808699073203160, guid: 30074e79190fbb3438e58f58430b627d,
+      type: 2}
+    volume: 0.5
+    pitch: 1
+    loop: 1
+  - name: Loupiotte_Activated
+    clip: {fileID: 8300000, guid: 8ac5ea300f874744fb78a85d334067c6, type: 3}
+    source: {fileID: 0}
+    group: {fileID: -7424492628125874587, guid: 30074e79190fbb3438e58f58430b627d,
+      type: 2}
+    volume: 0.5
+    pitch: 1
+    loop: 0
