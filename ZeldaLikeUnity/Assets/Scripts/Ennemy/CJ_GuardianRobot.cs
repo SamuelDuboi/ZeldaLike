@@ -80,10 +80,10 @@ namespace Ennemy
 
         public IEnumerator Shoot()
         {
+            isAttacking = true;
             float timer = 2f;
             canAttack = false;
             canMove = false;
-            isAttacking = true;
             target.GetComponent<SpriteRenderer>().color = Color.white;
             limit++;
 
