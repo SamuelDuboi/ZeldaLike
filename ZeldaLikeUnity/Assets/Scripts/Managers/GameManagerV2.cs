@@ -68,8 +68,6 @@ namespace Management
                 fade.GetComponent<Image>().color = Color.black;
                 scenName.color = Color.black;
                 StartCoroutine(FadeOut());
-                if (SD_PlayerAttack.Instance.hasWind)
-                    SD_PlayerAnimation.Instance.halo.SetActive(true);
 
                 switch (SceneManager.GetActiveScene().buildIndex)
                 {
@@ -184,8 +182,7 @@ namespace Management
                 SD_PlayerRessources.Instance.currentMaxLife = save.pvMax;
                 SD_PlayerAttack.Instance.canParry = save.canParry;
                 SD_PlayerAttack.Instance.hasWind = save.hasWind;
-                if (save.hasWind)
-                    SD_PlayerAnimation.Instance.halo.SetActive(true);
+                SD_PlayerAnimation.Instance.halo.SetActive(save.hasWind);
                 SD_PlayerRessources.Instance.life = save.currentPv;
                 SD_PlayerRessources.Instance.Heal(SD_PlayerRessources.Instance.currentMaxLife);
                 SD_PlayerMovement.Instance.platformNumber = 1;
@@ -281,6 +278,10 @@ namespace Management
                 SD_PlayerRessources.Instance.currentMaxLife = save.pvMax;
                 SD_PlayerAttack.Instance.canParry = save.canParry;
                 SD_PlayerAttack.Instance.hasWind = save.hasWind;
+               
+                    SD_PlayerAnimation.Instance.halo.SetActive(save.hasWind);
+                
+
                 SD_PlayerRessources.Instance.life = save.currentPv;
                 SD_PlayerRessources.Instance.Heal(SD_PlayerRessources.Instance.currentMaxLife);
                 SD_PlayerMovement.Instance.platformNumber = 1;

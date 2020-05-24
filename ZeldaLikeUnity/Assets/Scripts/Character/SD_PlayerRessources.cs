@@ -85,8 +85,10 @@ namespace Player
                 // remove at the end of the game
 
                     StartCoroutine(GameManagerV2.Instance.GamePadeShake(.2f, .2f));
-
-
+                SD_PlayerMovement.Instance.StopAllCoroutines();
+                SD_PlayerMovement.Instance.speed = SD_PlayerMovement.Instance.initialSpeed;
+                SD_PlayerMovement.Instance.dashIsActive = false;
+                SD_PlayerMovement.Instance.dashTrail.SetActive(false);
                 SD_PlayerMovement.Instance.playerRGB.velocity = bump * SD_PlayerMovement.Instance.speed * bumpPower;
                 SD_PlayerMovement.Instance.cantMove = true;
                 SD_PlayerMovement.Instance.cantDash = true;
