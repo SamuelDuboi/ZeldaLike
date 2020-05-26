@@ -21,6 +21,7 @@ namespace Ennemy
         [HideInInspector]public GameObject target;
         public GameObject ennemyBullet;
         LineRenderer trail;
+        List<GameObject> projectilListe = new List<GameObject>();
       public override void Start()
     {
             base.Start();
@@ -177,5 +178,7 @@ namespace Ennemy
             ennemyAnimator.SetBool("Attack", false);
             return base.Stun(timer);
         }
+
+        
     }
 }

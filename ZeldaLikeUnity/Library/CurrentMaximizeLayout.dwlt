@@ -33,11 +33,18 @@ MonoBehaviour:
 =======
     width: 1536
     height: 731
+<<<<<<< HEAD
   m_MinSize: {x: 679, y: 342}
   m_MaxSize: {x: 12004, y: 8042}
   vertical: 0
   controlID: 13698
 >>>>>>> Clémen_GA
+=======
+  m_MinSize: {x: 909, y: 521}
+  m_MaxSize: {x: 22004, y: 12021}
+  vertical: 0
+  controlID: 7981
+>>>>>>> SamuelLP
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -123,7 +130,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 0
+    m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -388,10 +395,17 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
+<<<<<<< HEAD
       scrollPos: {x: 0, y: 1480}
       m_SelectedIDs: 
       m_LastClickedID: 0
       m_ExpandedIDs: 709dffff26caffff9accffffa4ccffffacccffffb4ccffffecd8ffffeed8fffff0d8ffff08d9ffff40fbffff4c4100009a4100007844000020520000
+=======
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: bc39ffff226ffffff289ffff66c7ffff62d5ffffd4ecffffe6ecffffececffff40fbffff06780000be7e00001cc0000062c000008cc500004ec70000
+>>>>>>> SamuelLP
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -428,11 +442,67 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 12914, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
+<<<<<<< HEAD
 =======
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: GameView
 >>>>>>> Clémen_GA
+=======
+  m_EditorClassIdentifier: 
+  m_Children:
+  - {fileID: 6}
+  - {fileID: 8}
+  - {fileID: 10}
+  m_Position:
+    serializedVersion: 2
+    x: 201
+    y: 0
+    width: 827
+    height: 731
+  m_MinSize: {x: 202, y: 521}
+  m_MaxSize: {x: 4002, y: 12021}
+  vertical: 1
+  controlID: 7897
+--- !u!114 &6
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: GameView
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 827
+    height: 221
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
+  m_ActualView: {fileID: 2}
+  m_Panes:
+  - {fileID: 2}
+  - {fileID: 7}
+  m_Selected: 0
+  m_LastSelected: 1
+--- !u!114 &7
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12914, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+>>>>>>> SamuelLP
   m_EditorClassIdentifier: 
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 4000, y: 4000}
@@ -443,6 +513,7 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
 <<<<<<< HEAD
     x: 0
     y: 73
@@ -462,6 +533,26 @@ MonoBehaviour:
       e11: 2.869147
       e12: 0
       e13: -289.4375
+=======
+    x: 200.8
+    y: 73.6
+    width: 825
+    height: 102
+  m_ViewDataDictionary: {fileID: 0}
+  m_ViewTransforms:
+    m_KeySerializationHelper:
+    - {fileID: 2759255078094050332, guid: 163716d62fefc3745bb285ad8f003237, type: 2}
+    - {fileID: -5683206407417072461, guid: 437861da92959214aa7a2a98bb29270d, type: 2}
+    - {fileID: 7880124916601705734, guid: 00ba34db7e513784c8e182e9f0b9b78b, type: 2}
+    m_ValueSerializationHelper:
+    - e00: 0.1
+      e01: 0
+      e02: 0
+      e03: 198
+      e10: 0
+      e11: 0.1
+      e12: 0
+      e13: 19.5
       e20: 0
       e21: 0
       e22: 1
@@ -470,6 +561,24 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
+    - e00: 0.3970659
+      e01: 0
+      e02: 0
+      e03: 27.43966
+      e10: 0
+      e11: 0.3970659
+      e12: 0
+      e13: 67.4437
+>>>>>>> SamuelLP
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+<<<<<<< HEAD
     - e00: 1
       e01: 0
       e02: 0
@@ -478,6 +587,16 @@ MonoBehaviour:
       e11: 1
       e12: 0
       e13: 0
+=======
+    - e00: 0.19411765
+      e01: 0
+      e02: 0
+      e03: 151.08823
+      e10: 0
+      e11: 0.19411765
+      e12: 0
+      e13: 15
+>>>>>>> SamuelLP
       e20: 0
       e21: 0
       e22: 1
@@ -487,10 +606,17 @@ MonoBehaviour:
       e32: 0
       e33: 1
   m_PreviewAnimator: {fileID: 0}
+<<<<<<< HEAD
   m_AnimatorController: {fileID: 9100000, guid: 19551c7e48ad18f42a48cddd9eec51cf,
     type: 2}
   m_BreadCrumbs:
   - m_Target: {fileID: 4345847706639922592, guid: 19551c7e48ad18f42a48cddd9eec51cf,
+=======
+  m_AnimatorController: {fileID: 9100000, guid: 00ba34db7e513784c8e182e9f0b9b78b,
+    type: 2}
+  m_BreadCrumbs:
+  - m_Target: {fileID: 7880124916601705734, guid: 00ba34db7e513784c8e182e9f0b9b78b,
+>>>>>>> SamuelLP
       type: 2}
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
@@ -521,11 +647,19 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 221
+<<<<<<< HEAD
     width: 1024
     height: 726
   m_MinSize: {x: 201, y: 221}
   m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 10}
+=======
+    width: 827
+    height: 282
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 9}
+>>>>>>> SamuelLP
   m_Panes:
   - {fileID: 10}
   m_Selected: 0
@@ -572,6 +706,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
     x: 0
     y: 294
     width: 1023
@@ -590,6 +725,16 @@ MonoBehaviour:
   m_WindowGUID: 6b0a82254e318b94983f74e1da93c3d7
   m_Gizmos: 0
 >>>>>>> Clémen_GA
+=======
+    x: 200.8
+    y: 294.4
+    width: 825
+    height: 261
+  m_ViewDataDictionary: {fileID: 0}
+  m_ShowContextualTools: 0
+  m_WindowGUID: aa7aeaa20c46d6c42b0524fb758741e9
+  m_Gizmos: 0
+>>>>>>> SamuelLP
   m_SceneIsLit: 1
   m_SceneLighting: 1
   m_2DMode: 1
@@ -597,6 +742,7 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
+<<<<<<< HEAD
 <<<<<<< HEAD
     m_Target: {x: -44.207134, y: 315.10785, z: -2255.7188}
     speed: 2
@@ -606,6 +752,11 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 60.41323, y: -120.753876, z: -415.15936}
 >>>>>>> Clémen_GA
+=======
+    m_Target: {x: 20.614798, y: -18.72437, z: -1.4375}
+    speed: 2
+    m_Value: {x: 20.614798, y: -18.72437, z: -1.4375}
+>>>>>>> SamuelLP
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -656,6 +807,7 @@ MonoBehaviour:
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: 142.10468
     speed: 2
     m_Value: 135.98534
@@ -664,6 +816,11 @@ MonoBehaviour:
     speed: 2
     m_Value: 132.99551
 >>>>>>> Clémen_GA
+=======
+    m_Target: 10.435597
+    speed: 2
+    m_Value: 10.435597
+>>>>>>> SamuelLP
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -698,14 +855,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< HEAD
   m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
+=======
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: AnimationWindow
+>>>>>>> SamuelLP
   m_EditorClassIdentifier: 
   m_Children:
   - {fileID: 12}
   - {fileID: 20}
   m_Position:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 1024
     y: 0
     width: 896
@@ -718,6 +881,22 @@ MonoBehaviour:
 =======
 --- !u!114 &9
 >>>>>>> Clémen_GA
+=======
+    x: 0
+    y: 503
+    width: 827
+    height: 228
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 12}
+  m_Panes:
+  - {fileID: 11}
+  - {fileID: 12}
+  - {fileID: 13}
+  m_Selected: 1
+  m_LastSelected: 0
+--- !u!114 &11
+>>>>>>> SamuelLP
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -759,10 +938,17 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 468
     y: 181
     width: 973
     height: 501
+=======
+    x: 200.8
+    y: 648
+    width: 825
+    height: 135
+>>>>>>> SamuelLP
   m_ViewDataDictionary: {fileID: 0}
 --- !u!114 &10
 >>>>>>> Clémen_GA
@@ -813,6 +999,7 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 1024
     y: 73
     width: 199
@@ -869,6 +1056,17 @@ MonoBehaviour:
   m_LastSelected: 0
 --- !u!114 &11
 >>>>>>> Clémen_GA
+=======
+    x: 200.8
+    y: 576
+    width: 825
+    height: 207
+  m_ViewDataDictionary: {fileID: 0}
+  m_LockTracker:
+    m_IsLocked: 0
+  m_LastSelectedObjectID: -54424
+--- !u!114 &13
+>>>>>>> SamuelLP
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -928,10 +1126,17 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
     x: 1225
     y: 73
     width: 275
     height: 586
+=======
+    x: 200.8
+    y: 560
+    width: 822
+    height: 223
+>>>>>>> SamuelLP
   m_ViewDataDictionary: {fileID: 0}
   m_OpenAddComponentMenu: 0
   m_ObjectsLockedBeforeSerialization: []
@@ -971,6 +1176,7 @@ MonoBehaviour:
 <<<<<<< HEAD
     x: 478
     y: 0
+<<<<<<< HEAD
     width: 418
     height: 607
   m_MinSize: {x: 242, y: 221}
@@ -990,6 +1196,13 @@ MonoBehaviour:
   m_MinSize: {x: 275, y: 50}
   m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 13}
+=======
+    width: 277
+    height: 731
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 15}
+>>>>>>> SamuelLP
   m_Panes:
   - {fileID: 13}
   - {fileID: 14}
@@ -1050,10 +1263,16 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
+<<<<<<< HEAD
   m_LastInspectedObjectInstanceID: -38688
   m_LastVerticalScrollValue: 0
 --- !u!114 &14
 >>>>>>> Clémen_GA
+=======
+  m_LastInspectedObjectInstanceID: -54424
+  m_LastVerticalScrollValue: 0
+--- !u!114 &16
+>>>>>>> SamuelLP
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1074,6 +1293,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
     x: 1502
     y: 73
     width: 417
@@ -1082,6 +1302,11 @@ MonoBehaviour:
     x: 904
     y: 73.6
     width: 631
+=======
+    x: 1028
+    y: 73.6
+    width: 275
+>>>>>>> SamuelLP
     height: 710
 >>>>>>> Clémen_GA
   m_ViewDataDictionary: {fileID: 0}
@@ -1122,6 +1347,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
     x: 0
     y: 607
     width: 896
@@ -1129,6 +1355,15 @@ MonoBehaviour:
   m_MinSize: {x: 231, y: 271}
   m_MaxSize: {x: 10001, y: 10021}
   m_ActualView: {fileID: 21}
+=======
+    x: 1305
+    y: 0
+    width: 231
+    height: 731
+  m_MinSize: {x: 230, y: 250}
+  m_MaxSize: {x: 10000, y: 10000}
+  m_ActualView: {fileID: 18}
+>>>>>>> SamuelLP
   m_Panes:
   - {fileID: 21}
   m_Selected: 0
@@ -1195,11 +1430,19 @@ MonoBehaviour:
     m_SearchArea: 1
     m_Folders:
 <<<<<<< HEAD
+<<<<<<< HEAD
     - Assets/Scripts/Boss
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
   - Assets/Scripts/Boss
+=======
+    - Assets/Scenes/MainScenes
+  m_ViewMode: 1
+  m_StartGridSize: 16
+  m_LastFolders:
+  - Assets/Scenes/MainScenes
+>>>>>>> SamuelLP
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\thiba\OneDrive\Documents\Projet Rogue Like\ZeldaLike\ZeldaLike\ZeldaLikeUnity
   m_LockTracker:
@@ -1220,11 +1463,18 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
+<<<<<<< HEAD
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 08700000
     m_LastClickedID: 28680
     m_ExpandedIDs: 00000000b43e000000ca9a3b
 >>>>>>> Clémen_GA
+=======
+    scrollPos: {x: 0, y: 240}
+    m_SelectedIDs: a86b0000
+    m_LastClickedID: 27560
+    m_ExpandedIDs: 00000000b83e00005269000056690000586900005a6900005c6900005e69000060690000626900006469000066690000686900006a69000000ca9a3b
+>>>>>>> SamuelLP
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1253,10 +1503,14 @@ MonoBehaviour:
     m_SelectedIDs: 
     m_LastClickedID: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_ExpandedIDs: 00000000d03e0000327700003877000000ca9a3b
 =======
     m_ExpandedIDs: 00000000b43e000000ca9a3b
 >>>>>>> Clémen_GA
+=======
+    m_ExpandedIDs: 00000000b83e00005269000056690000586900005a6900005c6900005e69000060690000626900006469000066690000686900006a69000000ca9a3b
+>>>>>>> SamuelLP
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1282,6 +1536,7 @@ MonoBehaviour:
       m_ResourceFile: 
   m_ListAreaState:
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_SelectedInstanceIDs: 50b70100
     m_LastClickedInstanceID: 112464
     m_HadKeyboardFocusLastEvent: 0
@@ -1292,6 +1547,12 @@ MonoBehaviour:
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c62300008075000038750000
 >>>>>>> Clémen_GA
+=======
+    m_SelectedInstanceIDs: 682bffff
+    m_LastClickedInstanceID: -54424
+    m_HadKeyboardFocusLastEvent: 0
+    m_ExpandedInstanceIDs: c62300009e990000feb30000
+>>>>>>> SamuelLP
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

@@ -72,6 +72,8 @@ namespace Player
 
         [Space]
         [Header("Fire")]
+        public GameObject fireCanvas;
+        public Image fireBurn;
         float timer;
         public int burnStade;
         float damageTimer;
@@ -140,18 +142,21 @@ namespace Player
             {
                 StartCoroutine(Dash());
             }
-            if (burnStade > 0)
+            if (burnStade ==1)
             {
                 timer += Time.deltaTime;
+                fireBurn.fillAmount = timer / timeBeforBurning;
                 if (timer >= timeBeforBurning)
                 {
                     burnStade = 2;
+                    StartCoroutine(SD_PlayerRessources.Instance.TakingDamage(1, fire, false, 1));
                 }
             }
 
             if (burnStade == 2)
             {
                 damageTimer += Time.deltaTime;
+                fireBurn.fillAmount = damageTimer / timeBetweenBurn;
                 if (damageTimer >= timeBetweenBurn)
                 {
                     StartCoroutine(SD_PlayerRessources.Instance.TakingDamage(1, fire, false, 1));
@@ -277,6 +282,11 @@ namespace Player
                     burnStade--;
                     if (burnStade <= 0)
                         burnStade = 0;
+                    if (burnStade == 0)
+                    {
+                        fireCanvas.SetActive(false);
+                        SD_PlayerAnimation.Instance.GetComponent<SpriteRenderer>().color = Color.white;
+                    }
                     yield return new WaitForSeconds(dashTime);
                     // end of the dash, reset of the speed, the player can move and the player can dash again
 
@@ -395,6 +405,8 @@ namespace Player
                 if (burnStade == 0)
                 {
                     burnStade++;
+                    SD_PlayerAnimation.Instance.GetComponent<SpriteRenderer>().color = Color.red;
+                    fireCanvas.SetActive(true);
                     timer = 0;
                     fire = collision.gameObject;
                 }
@@ -453,6 +465,8 @@ namespace Player
             if (isAbleToRunOnHole && collision.tag == "WindPlatform" )
             {
                 isAbleToRunOnHole = false;
+
+                SD_PlayerAnimation.Instance.halo.SetActive(true);
                 Destroy(currentPlatform);
             }
          
@@ -466,16 +480,19 @@ namespace Player
             {
                 isOnPlatformDestructible = false;
             }
-
-            if (collision.tag == "Fire")
+            if(collision.tag == "Fire")
             {
-                if (burnStade != 2)
+                if(burnStade != 2)
                 {
                     burnStade = 0;
+                    fireCanvas.SetActive(false);
                     timer = 0;
+                    damageTimer = 0;
+                    SD_PlayerAnimation.Instance.GetComponent<SpriteRenderer>().color = Color.white;
                 }
-
             }
+
+           
         }
 
 
