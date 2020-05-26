@@ -258,8 +258,7 @@ MonoBehaviour:
   - name: Coeur_Up
     clip: {fileID: 8300000, guid: 7758354b0a29f0e48b689a68c5ebd1ee, type: 3}
     source: {fileID: 0}
-    group: {fileID: -6641241638245339165, guid: 30074e79190fbb3438e58f58430b627d,
-      type: 2}
+    group: {fileID: -745629671045047629, guid: 30074e79190fbb3438e58f58430b627d, type: 2}
     volume: 1
     pitch: 1
     loop: 0
@@ -502,5 +501,19 @@ MonoBehaviour:
     group: {fileID: -7424492628125874587, guid: 30074e79190fbb3438e58f58430b627d,
       type: 2}
     volume: 0.5
+    pitch: 1
+    loop: 0
+  - name: Voix_Pepe
+    clip: {fileID: 8300000, guid: ee8438ca96853f44fb9fc52324b16fb1, type: 3}
+    source: {fileID: 0}
+    group: {fileID: 4024073945416849157, guid: 30074e79190fbb3438e58f58430b627d, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: Heal_Coeur
+    clip: {fileID: 8300000, guid: 6e49bebdd0084204ca0eacbd9bf6ab98, type: 3}
+    source: {fileID: 0}
+    group: {fileID: -745629671045047629, guid: 30074e79190fbb3438e58f58430b627d, type: 2}
+    volume: 1
     pitch: 1
     loop: 0
