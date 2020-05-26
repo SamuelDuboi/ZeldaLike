@@ -17,12 +17,13 @@ public class SD_LoupiotteActivated : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == 14 && script.loupiottes.Count > 1)
+
+        if (activated)
         {
             isTriggered = true;
+            script.Triggered(collision);
         }
         
-        script.Triggered(collision);
 
     }
 

@@ -908,6 +908,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34b95f178647bab429db52bcfe0ce62e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WontRepop: 0
   player: {fileID: 0}
   ennemyRGB: {fileID: 0}
   aggroZone: {fileID: 1062186084}
@@ -933,6 +934,7 @@ MonoBehaviour:
   healDrop: {fileID: 7435818835512353066, guid: 85e9539271ca936479b5b4621a349221,
     type: 3}
   etincelles: {fileID: 8965897139733253052}
+  notStunable: 0
   attackRange: 6
   target: {fileID: 7998620808516715664}
   ennemyBullet: {fileID: 6087731643462856925, guid: 998d8c51e6fef04478c490bca838203c,

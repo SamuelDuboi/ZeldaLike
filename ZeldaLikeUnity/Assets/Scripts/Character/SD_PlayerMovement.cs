@@ -512,56 +512,59 @@ namespace Player
         {
             AudioManager.Instance.Fall();
 
-                if (!dashIsActive)
+            if (!dashIsActive)
+            {
+                cantDash = true;
+                cantMove = true;
+                SD_PlayerAttack.Instance.cantAttack = true;
+                playerRGB.simulated = false;
+                SD_PlayerAnimation.Instance.PlayerAnimator.SetBool("Fall", true);
+                for (float i = 0; i < 50; i++)
                 {
-                    cantDash = true;
-                    cantMove = true;
-                    SD_PlayerAttack.Instance.cantAttack = true;
-                    playerRGB.simulated = false;
-                    SD_PlayerAnimation.Instance.PlayerAnimator.SetBool("Fall", true);
-                    for (float i = 0; i < 50; i++)
-                    {
-                        fade.GetComponent<Image>().color = new Color(0, 0, 0, i / 50);
-                        Vector2 reduction = Vector2Extensions.addVector(SD_PlayerAnimation.Instance.gameObject.transform.localScale, -new Vector2(0.02f, 0.02f));
-                        if( reduction.x>0 && reduction.y>0)
+                    fade.GetComponent<Image>().color = new Color(0, 0, 0, i / 50);
+                    Vector2 reduction = Vector2Extensions.addVector(SD_PlayerAnimation.Instance.gameObject.transform.localScale, -new Vector2(0.02f, 0.02f));
+                    if (reduction.x > 0 && reduction.y > 0)
                         SD_PlayerAnimation.Instance.gameObject.transform.localScale = reduction;
-                        yield return new WaitForSeconds(0.01f);
-                    }
-                    fade.GetComponent<Image>().color = new Color(0, 0, 0, 0);
-                    SD_PlayerAnimation.Instance.PlayerAnimator.SetBool("Fall", false);
-                    SD_PlayerAnimation.Instance.gameObject.transform.localScale = Vector2.one;
-                    speed = 0;
-                    if (!isAbleToRunOnHole)
-                    {
-                        transform.position = new Vector2(playerRespawnAfterFall.x, playerRespawnAfterFall.y);
-                        LayerMask holeMaks = 1 << 9;
-                        RaycastHit2D raycastHit2D = Physics2D.Raycast(transform.position, new Vector2(-XAxis, -YAxis), 0.1f, holeMaks); 
-                        while(raycastHit2D.collider !=null && raycastHit2D.collider.gameObject.tag == "Hole")
-                        {
-
-                            transform.position = new Vector2(transform.position.x - XAxis * 0.1f, transform.position.y - YAxis * 0.1f);
-
-                             raycastHit2D = Physics2D.Raycast(transform.position, new Vector2(-XAxis, -YAxis), 0.1f, holeMaks);
-                        }
-                    }
-                       
-                    StartCoroutine(SD_PlayerRessources.Instance.TakingDamage(fallDamage, collisionPoint.gameObject, false, 1));
-                    speed = initialSpeed;
-                    playerRGB.simulated = true;
-                    yield return new WaitForSeconds(0.2f);
-                    playerRGB.velocity = Vector2.zero;
-                    cantDash = true;
-                    cantMove = true;
-                    SD_PlayerAttack.Instance.cantAttack = true;
-                    SD_PlayerRessources.Instance.cantTakeDamage = true;
-                    yield return new WaitForSeconds(timeBeforAbleToMoveAfterFall);
-
-                    //isOnPlatformDestructible = false;
-                    cantDash = false;
-                    cantMove = false;
-                    SD_PlayerAttack.Instance.cantAttack = false;
-                    SD_PlayerRessources.Instance.cantTakeDamage = false;
+                    yield return new WaitForSeconds(0.01f);
                 }
+                fade.GetComponent<Image>().color = new Color(0, 0, 0, 0);
+                SD_PlayerAnimation.Instance.PlayerAnimator.SetBool("Fall", false);
+                SD_PlayerAnimation.Instance.gameObject.transform.localScale = Vector2.one;
+                speed = 0;
+                playerRGB.velocity = Vector2.zero;
+                cantDash = true;
+                cantMove = true;
+                SD_PlayerAttack.Instance.cantAttack = true;
+                SD_PlayerRessources.Instance.cantTakeDamage = true;
+                transform.position = new Vector2(playerRespawnAfterFall.x, playerRespawnAfterFall.y);
+                LayerMask holeMaks = 1 << 9;
+                RaycastHit2D raycastHit2D = Physics2D.Raycast(transform.position, new Vector2(-XAxis, -YAxis), 0.1f, holeMaks);
+                while (raycastHit2D.collider != null && raycastHit2D.collider.gameObject.tag == "Hole")
+                {
+
+                    transform.position = new Vector2(transform.position.x - XAxis * 0.1f, transform.position.y - YAxis * 0.1f);
+
+                    raycastHit2D = Physics2D.Raycast(transform.position, new Vector2(-XAxis, -YAxis), 0.1f, holeMaks);
+                }
+
+
+                StartCoroutine(SD_PlayerRessources.Instance.TakingDamage(fallDamage, collisionPoint.gameObject, false, 1));
+                speed = initialSpeed;
+                playerRGB.simulated = true;
+                yield return new WaitForSeconds(0.2f);
+                playerRGB.velocity = Vector2.zero;
+                cantDash = true;
+                cantMove = true;
+                SD_PlayerAttack.Instance.cantAttack = true;
+                SD_PlayerRessources.Instance.cantTakeDamage = true;
+                yield return new WaitForSeconds(timeBeforAbleToMoveAfterFall);
+
+                //isOnPlatformDestructible = false;
+                cantDash = false;
+                cantMove = false;
+                SD_PlayerAttack.Instance.cantAttack = false;
+                SD_PlayerRessources.Instance.cantTakeDamage = false;
+            }
         }
         public void Death()
         {
