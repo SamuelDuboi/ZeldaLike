@@ -68,7 +68,7 @@ public class PepeDonjon : MonoBehaviour
         cpt++;
         text.SetActive(true);
 
-        AudioManager.Instance.Play("Voix_Henry");
+        AudioManager.Instance.Play("Voix_Pepe");
         StartCoroutine(text.GetComponentInChildren<SD_TextTest>().Text());
         GameManagerV2.Instance.Saving(false);
 

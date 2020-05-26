@@ -101,7 +101,7 @@ public  class SD_PNJ : MonoBehaviour
                     case 5:
                         break;
                     case 6:
-                        AudioManager.Instance.Play("Note_Obtenu");
+                        AudioManager.Instance.Play("Voix_Pepe");
                         break;
                 }
                 StartCoroutine(text[cpt].GetComponentInChildren<SD_TextTest>().Text());
