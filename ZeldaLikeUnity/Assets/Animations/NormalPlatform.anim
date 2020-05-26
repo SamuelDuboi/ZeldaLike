@@ -20,10 +20,18 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: -4716454520115593557, guid: 5aa109cadfad7104aa1aa3a6988cc697,
+      value: {fileID: 2433911915349597729, guid: 5009d18372de09e4aa2824e330deb3ad,
         type: 3}
     attribute: m_Sprite
     path: 
+    classID: 212
+    script: {fileID: 0}
+  - curve:
+    - time: 0
+      value: {fileID: 6821385624711610605, guid: 5009d18372de09e4aa2824e330deb3ad,
+        type: 3}
+    attribute: m_Sprite
+    path: GameObject
     classID: 212
     script: {fileID: 0}
   m_SampleRate: 60
@@ -40,8 +48,16 @@ AnimationClip:
       typeID: 212
       customType: 23
       isPPtrCurve: 1
+    - serializedVersion: 2
+      path: 1482111001
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 212
+      customType: 23
+      isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: -4716454520115593557, guid: 5aa109cadfad7104aa1aa3a6988cc697, type: 3}
+    - {fileID: 2433911915349597729, guid: 5009d18372de09e4aa2824e330deb3ad, type: 3}
+    - {fileID: 6821385624711610605, guid: 5009d18372de09e4aa2824e330deb3ad, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
