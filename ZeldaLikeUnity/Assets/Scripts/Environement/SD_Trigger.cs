@@ -184,4 +184,9 @@ public class SD_Trigger : MonoBehaviour
     {
         AudioManager.Instance.Stop(name);
     }
+
+    public void StopAll()
+    {
+        AudioManager.Instance.StopAll();
+    }
 }

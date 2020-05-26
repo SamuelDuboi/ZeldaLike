@@ -52,6 +52,7 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
+    isMusic: 0
   - name: Fuite_Ronchonchon
     clip: {fileID: 8300000, guid: abb09794b0f239649817f83e9d80e160, type: 3}
     source: {fileID: 0}
@@ -59,6 +60,7 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
+    isMusic: 0
   - name: Aggro_Ronchonchon
     clip: {fileID: 8300000, guid: 1d6b27c352bfc074494f71e2bb5805da, type: 3}
     source: {fileID: 0}
@@ -66,6 +68,7 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
+    isMusic: 0
   - name: Hit_Ronchonchon
     clip: {fileID: 8300000, guid: 5224e98e54d49ab4ea567bc140381a13, type: 3}
     source: {fileID: 0}
@@ -73,6 +76,7 @@ MonoBehaviour:
     volume: 0.65
     pitch: 1
     loop: 0
+    isMusic: 0
   - name: Inoh_Slash1
     clip: {fileID: 8300000, guid: a5e0782851f1c8d41ba18e6e1878f018, type: 3}
     source: {fileID: 0}
@@ -80,6 +84,7 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
+    isMusic: 0
   - name: Inoh_Slash2
     clip: {fileID: 8300000, guid: bd774dae5aa8a974ea000d57594a7c94, type: 3}
     source: {fileID: 0}
@@ -87,6 +92,7 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
+    isMusic: 0
   - name: Inoh_Tourbillon
     clip: {fileID: 8300000, guid: 02ca0d3fa0797a647bb3625adf3b4139, type: 3}
     source: {fileID: 0}
@@ -94,6 +100,7 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
+    isMusic: 0
   - name: Inoh_Dash1
     clip: {fileID: 8300000, guid: e111abb637cf88c469a8d76f29d90f1e, type: 3}
     source: {fileID: 0}
@@ -101,6 +108,7 @@ MonoBehaviour:
     volume: 0.12
     pitch: 1
     loop: 0
+    isMusic: 0
   - name: Inoh_Dash2
     clip: {fileID: 8300000, guid: 81e3d26429700144e87980eaf11a34ce, type: 3}
     source: {fileID: 0}
@@ -108,6 +116,7 @@ MonoBehaviour:
     volume: 0.12
     pitch: 1
     loop: 0
+    isMusic: 0
   - name: Inoh_Dash3
     clip: {fileID: 8300000, guid: cc4f7596b3db8024ba87edbe6ab5f4d0, type: 3}
     source: {fileID: 0}
@@ -115,6 +124,7 @@ MonoBehaviour:
     volume: 0.12
     pitch: 1
     loop: 0
+    isMusic: 0
   - name: Inoh_TakeDamage
     clip: {fileID: 8300000, guid: 65b6c0b3931c77d4b8c736352389b286, type: 3}
     source: {fileID: 0}
@@ -122,6 +132,7 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
+    isMusic: 0
   - name: Inoh_Chute
     clip: {fileID: 8300000, guid: a53edf065a7c3a4469465b86c653ff66, type: 3}
     source: {fileID: 0}
@@ -129,6 +140,7 @@ MonoBehaviour:
     volume: 0.4
     pitch: 1
     loop: 0
+    isMusic: 0
   - name: Marche_Herbe
     clip: {fileID: 8300000, guid: 922a89abcadcd8547bc512165e60524c, type: 3}
     source: {fileID: 0}
@@ -136,6 +148,7 @@ MonoBehaviour:
     volume: 0.185
     pitch: 1
     loop: 1
+    isMusic: 0
   - name: Sprint_Herbe
     clip: {fileID: 8300000, guid: 70c197360189b414b85090cb66085843, type: 3}
     source: {fileID: 0}
@@ -143,6 +156,7 @@ MonoBehaviour:
     volume: 0.185
     pitch: 1
     loop: 1
+    isMusic: 0
   - name: Stun_Ronchonchon
     clip: {fileID: 8300000, guid: 6a1a8b4ba9de00d4294f61643f8d6ebb, type: 3}
     source: {fileID: 0}
@@ -150,6 +164,7 @@ MonoBehaviour:
     volume: 0.5
     pitch: 1
     loop: 1
+    isMusic: 0
   - name: Activation_Scout
     clip: {fileID: 8300000, guid: 9329fe7469a5e334280f9920ca85085b, type: 3}
     source: {fileID: 0}
@@ -157,6 +172,7 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
+    isMusic: 0
   - name: Charge_Scout
     clip: {fileID: 8300000, guid: a206f73b0989fd048906435b478dbf3b, type: 3}
     source: {fileID: 0}
@@ -164,6 +180,7 @@ MonoBehaviour:
     volume: 0.8
     pitch: 1
     loop: 0
+    isMusic: 0
   - name: Tir_Scout
     clip: {fileID: 8300000, guid: f2eef3177f1d6094ca3be40b1c73d085, type: 3}
     source: {fileID: 0}
@@ -171,6 +188,7 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
+    isMusic: 0
   - name: Explosion_Scout
     clip: {fileID: 8300000, guid: 852be6e52430f7e419fde4ee83585426, type: 3}
     source: {fileID: 0}
@@ -178,6 +196,7 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
+    isMusic: 0
   - name: Hit_Robot
     clip: {fileID: 8300000, guid: 16f87c8fc957e22428fbf78dcfc7f8e0, type: 3}
     source: {fileID: 0}
@@ -185,6 +204,7 @@ MonoBehaviour:
     volume: 0.8
     pitch: 1
     loop: 0
+    isMusic: 0
   - name: Voix_Henry
     clip: {fileID: 8300000, guid: 358557f1b8de1bd45b79ce8653942b1e, type: 3}
     source: {fileID: 0}
@@ -192,6 +212,7 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
+    isMusic: 0
   - name: Voix_Alyah
     clip: {fileID: 8300000, guid: 834043a8cd9e68a49b3b2293e65e2df7, type: 3}
     source: {fileID: 0}
@@ -199,6 +220,7 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
+    isMusic: 0
   - name: Intro_Music
     clip: {fileID: 8300000, guid: 90c7c99b85b71754aa102292b6dbc919, type: 3}
     source: {fileID: 0}
@@ -207,6 +229,7 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 1
+    isMusic: 1
   - name: Village_Music
     clip: {fileID: 8300000, guid: 446c5d40037dd574ca930189d2590bee, type: 3}
     source: {fileID: 0}
@@ -215,6 +238,7 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 1
+    isMusic: 1
   - name: Altar_Activation
     clip: {fileID: 8300000, guid: bdb9a9c166006e044a36d2c79cd5f113, type: 3}
     source: {fileID: 0}
@@ -223,6 +247,7 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
+    isMusic: 0
   - name: Tresor_Obtenu
     clip: {fileID: 8300000, guid: 648a0376440c4534aa3a442893aee2c2, type: 3}
     source: {fileID: 0}
@@ -231,6 +256,7 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
+    isMusic: 0
   - name: Grododo_Slap
     clip: {fileID: 8300000, guid: 58fad265101fd004a8d6c1a05c06f07a, type: 3}
     source: {fileID: 0}
@@ -239,6 +265,7 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
+    isMusic: 0
   - name: Grododo_Fuite
     clip: {fileID: 8300000, guid: c7f0a8f639a1c114ea1ddbb56ca269cc, type: 3}
     source: {fileID: 0}
@@ -247,6 +274,7 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
+    isMusic: 0
   - name: Grododo_Fuite
     clip: {fileID: 8300000, guid: c7f0a8f639a1c114ea1ddbb56ca269cc, type: 3}
     source: {fileID: 0}
@@ -255,6 +283,7 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
+    isMusic: 0
   - name: Coeur_Up
     clip: {fileID: 8300000, guid: 7758354b0a29f0e48b689a68c5ebd1ee, type: 3}
     source: {fileID: 0}
@@ -262,6 +291,7 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
+    isMusic: 0
   - name: Ambience_Ronchonchon
     clip: {fileID: 8300000, guid: 38a53408dc4c66649960d13c7108670c, type: 3}
     source: {fileID: 0}
@@ -270,6 +300,7 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 1
+    isMusic: 0
   - name: Door_Activation
     clip: {fileID: 8300000, guid: 909c097af0ff22845b332d75890a33e0, type: 3}
     source: {fileID: 0}
@@ -278,6 +309,7 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
+    isMusic: 0
   - name: Levier_Activation
     clip: {fileID: 8300000, guid: 7f13e9f827a5274448119b07bcf4b354, type: 3}
     source: {fileID: 0}
@@ -286,6 +318,7 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
+    isMusic: 0
   - name: Levier_Desactivation
     clip: {fileID: 8300000, guid: c573da4db4a2d094889db517f8e7eca8, type: 3}
     source: {fileID: 0}
@@ -294,6 +327,7 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
+    isMusic: 0
   - name: Platform_Destruction
     clip: {fileID: 8300000, guid: 3260f99344fa21b4cb08444cab445356, type: 3}
     source: {fileID: 0}
@@ -302,6 +336,7 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
+    isMusic: 0
   - name: Note_Obtenu
     clip: {fileID: 8300000, guid: 9c0d7219cedea8f4cb17d62ba385a7a9, type: 3}
     source: {fileID: 0}
@@ -310,6 +345,7 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
+    isMusic: 0
   - name: Dialogue_Skip
     clip: {fileID: 8300000, guid: bde955d3e7e0b2d47997e6f8d943b47d, type: 3}
     source: {fileID: 0}
@@ -317,6 +353,7 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
+    isMusic: 0
   - name: Combat_Activation
     clip: {fileID: 8300000, guid: ba3b1124e7b832b4bbe89ef8045edf81, type: 3}
     source: {fileID: 0}
@@ -324,6 +361,7 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
+    isMusic: 0
   - name: Combat_Charge
     clip: {fileID: 8300000, guid: ee2939dcb502a404581b162357a41f83, type: 3}
     source: {fileID: 0}
@@ -331,6 +369,7 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
+    isMusic: 0
   - name: Combat_Explosion
     clip: {fileID: 8300000, guid: 56a7d707eeffc6a499099857bd215b12, type: 3}
     source: {fileID: 0}
@@ -338,6 +377,7 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
+    isMusic: 0
   - name: Combat_Slash
     clip: {fileID: 8300000, guid: dda042266d723b14fab9469edab69c88, type: 3}
     source: {fileID: 0}
@@ -345,6 +385,7 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
+    isMusic: 0
   - name: Combat_Slash_Preparation
     clip: {fileID: 8300000, guid: 79d7ee37f5b073043961ec56874bf887, type: 3}
     source: {fileID: 0}
@@ -352,6 +393,7 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 1
+    isMusic: 0
   - name: Gardien_Activation
     clip: {fileID: 8300000, guid: 6bf532677e19d3443bc8c80f53c7b951, type: 3}
     source: {fileID: 0}
@@ -359,6 +401,7 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
+    isMusic: 0
   - name: Gardien_Bouclier_Actif
     clip: {fileID: 8300000, guid: 022fb7d474db0f3488a1b3a3b3197b7e, type: 3}
     source: {fileID: 0}
@@ -366,6 +409,7 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
+    isMusic: 0
   - name: Gardien_Bouclier_Desactiver
     clip: {fileID: 8300000, guid: 0568c54255d711e469c98dbd3933bb43, type: 3}
     source: {fileID: 0}
@@ -373,6 +417,7 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
+    isMusic: 0
   - name: Gardien_Charge_Tir
     clip: {fileID: 8300000, guid: 22fd553cbeee344469b1a9a52fef0575, type: 3}
     source: {fileID: 0}
@@ -380,6 +425,7 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
+    isMusic: 0
   - name: Gardien_Explosion
     clip: {fileID: 8300000, guid: 0a704bc58e4bc8442810d7607afa403b, type: 3}
     source: {fileID: 0}
@@ -387,6 +433,7 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
+    isMusic: 0
   - name: Gardien_Tir
     clip: {fileID: 8300000, guid: 9a39406dd0c924146b7b6f786223f7f8, type: 3}
     source: {fileID: 0}
@@ -394,6 +441,7 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
+    isMusic: 0
   - name: Gardien_Choc
     clip: {fileID: 8300000, guid: 6a088283afa124547ab28c95567650a9, type: 3}
     source: {fileID: 0}
@@ -401,6 +449,7 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
+    isMusic: 0
   - name: Gardien_Stomp
     clip: {fileID: 8300000, guid: 7c2f0dce239506e419331a12660ee4b6, type: 3}
     source: {fileID: 0}
@@ -408,6 +457,7 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
+    isMusic: 0
   - name: Voix_Alyah2
     clip: {fileID: 8300000, guid: 1769b25f1ecc00740843258358f1e3fc, type: 3}
     source: {fileID: 0}
@@ -415,6 +465,7 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
+    isMusic: 0
   - name: Boss_Cri_Intro
     clip: {fileID: 8300000, guid: 4b1c612e510ebf94da45ccd442081f88, type: 3}
     source: {fileID: 0}
@@ -423,6 +474,7 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
+    isMusic: 0
   - name: Boss_Tremblement
     clip: {fileID: 8300000, guid: 8445aac8a93fea54e8f70c867b46a7b1, type: 3}
     source: {fileID: 0}
@@ -431,6 +483,7 @@ MonoBehaviour:
     volume: 0.3
     pitch: 1
     loop: 0
+    isMusic: 0
   - name: Boss1_Explosion
     clip: {fileID: 8300000, guid: 4b7aa38f7d4f2554db8a0004ea6f1ecc, type: 3}
     source: {fileID: 0}
@@ -439,6 +492,7 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
+    isMusic: 0
   - name: Boss_Laser_Corps
     clip: {fileID: 8300000, guid: 0533206c355641b479efd4194cc6ba82, type: 3}
     source: {fileID: 0}
@@ -447,6 +501,7 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
+    isMusic: 0
   - name: Boss1_Laser_Bras
     clip: {fileID: 8300000, guid: 4b7aa38f7d4f2554db8a0004ea6f1ecc, type: 3}
     source: {fileID: 0}
@@ -455,6 +510,7 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
+    isMusic: 0
   - name: Boss1_Laser_Mains
     clip: {fileID: 8300000, guid: 8fcb4851dd5eabb48ad0c3dff8ba922c, type: 3}
     source: {fileID: 0}
@@ -463,6 +519,7 @@ MonoBehaviour:
     volume: 0.5
     pitch: 1
     loop: 1
+    isMusic: 0
   - name: Boss1_Bras_Off
     clip: {fileID: 8300000, guid: 0568c54255d711e469c98dbd3933bb43, type: 3}
     source: {fileID: 0}
@@ -471,6 +528,7 @@ MonoBehaviour:
     volume: 0.5
     pitch: 1
     loop: 1
+    isMusic: 0
   - name: Music_Ronchonchon
     clip: {fileID: 8300000, guid: 7aa4fffe609c71f47b796846da7a0ddf, type: 3}
     source: {fileID: 0}
@@ -479,6 +537,7 @@ MonoBehaviour:
     volume: 0.5
     pitch: 1
     loop: 1
+    isMusic: 1
   - name: Music_Donjon
     clip: {fileID: 8300000, guid: b48f1d25d3de8cd48bfa4e068c07df33, type: 3}
     source: {fileID: 0}
@@ -487,6 +546,7 @@ MonoBehaviour:
     volume: 0.5
     pitch: 1
     loop: 1
+    isMusic: 1
   - name: Music_Menu
     clip: {fileID: 8300000, guid: fc09b56c3f7b94142bd18f34d0c46891, type: 3}
     source: {fileID: 0}
@@ -495,6 +555,7 @@ MonoBehaviour:
     volume: 0.5
     pitch: 1
     loop: 1
+    isMusic: 1
   - name: Loupiotte_Activated
     clip: {fileID: 8300000, guid: 8ac5ea300f874744fb78a85d334067c6, type: 3}
     source: {fileID: 0}
@@ -503,6 +564,7 @@ MonoBehaviour:
     volume: 0.5
     pitch: 1
     loop: 0
+    isMusic: 0
   - name: Voix_Pepe
     clip: {fileID: 8300000, guid: ee8438ca96853f44fb9fc52324b16fb1, type: 3}
     source: {fileID: 0}
@@ -510,6 +572,7 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
+    isMusic: 0
   - name: Heal_Coeur
     clip: {fileID: 8300000, guid: 6e49bebdd0084204ca0eacbd9bf6ab98, type: 3}
     source: {fileID: 0}
@@ -517,3 +580,4 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
+    isMusic: 0

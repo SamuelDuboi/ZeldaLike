@@ -60,6 +60,7 @@ namespace Player
             else if (collision.gameObject.tag == "Heal")
             {
                  Heal(collision.gameObject.GetComponent<Heal>().healAmount);
+                AudioManager.Instance.Play("Heal_Coeur");
                 Destroy(collision.gameObject);
             }
             else if (collision.gameObject.tag == "LifeUpgrade")
@@ -150,7 +151,7 @@ namespace Player
 
         public void Heal(int amount)
         {
-            life += amount; 
+            life += amount;
             if (life > currentMaxLife)
                 life = currentMaxLife;
             for (int i = 0; i < maxLifePossible - currentMaxLife; i++)

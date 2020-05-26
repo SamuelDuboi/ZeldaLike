@@ -55,7 +55,7 @@ namespace Management
         {
             if(SceneManager.GetActiveScene().buildIndex == 0)
             {
-                AudioManager.Instance.StopAll();
+                AudioManager.Instance.StopAllMusic();
                 AudioManager.Instance.Play("Music_Menu");
             }
             if(SceneManager.GetActiveScene().buildIndex != 0)

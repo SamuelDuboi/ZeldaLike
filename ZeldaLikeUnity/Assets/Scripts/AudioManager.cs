@@ -71,7 +71,7 @@ public class AudioManager : Singleton<AudioManager>
     {
         foreach(Sound s in sounds)
         {
-            if(s.name != "BackGroundMusic")
+            if(s.isMusic != true)
             {
                 s.source.Pause();
             }
@@ -92,10 +92,18 @@ public class AudioManager : Singleton<AudioManager>
     {
         foreach (Sound s in sounds)
         {
-            if (s.name != "BackGroundMusic")
+            if (s.isMusic != true)
             {
                 s.source.Stop();
             }
+        }
+    }
+
+    public void StopAllMusic()
+    {
+        foreach (Sound s in sounds)
+        {
+            s.source.Stop();
         }
     }
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Management;
+using UnityEngine.Audio;
 
 namespace Ennemy
 {
@@ -22,9 +23,12 @@ namespace Ennemy
         public GameObject ennemyBullet;
         LineRenderer trail;
         List<GameObject> projectilListe = new List<GameObject>();
+        AudioSource attackSound;
+       
       public override void Start()
     {
             base.Start();
+            attackSound = gameObject.transform.GetComponent<AudioSource>();
             target = gameObject.transform.GetChild(0).gameObject;
             target.SetActive(false);
             trail = GetComponent<LineRenderer>();
@@ -82,7 +86,7 @@ namespace Ennemy
             canShoot = false;
             target.GetComponent<SpriteRenderer>().color = Color.white;
             ennemyAnimator.SetBool("Attack", true);
-            AudioManager.Instance.Play("Charge_Scout");
+            AttackSound();
             while (timer > 0)
             {
                 trail.SetPosition(0, new Vector3(transform.position.x,transform.position.y + 0.4f,0));
@@ -144,7 +148,7 @@ namespace Ennemy
         {
             base.Desaggro(collision);
             ennemyAnimator.SetTrigger("Sleep");
-            AudioManager.Instance.Stop("Charge_Scout");
+            StopAttack();
         }
         public void Desapear()
         {
@@ -179,6 +183,15 @@ namespace Ennemy
             return base.Stun(timer);
         }
 
+        public void AttackSound()
+        {
+            attackSound.Play();
+        }
+
+        public void StopAttack()
+        {
+            attackSound.Stop();
+        }
         
     }
 }
