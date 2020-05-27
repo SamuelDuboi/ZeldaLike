@@ -296,7 +296,8 @@ namespace Player
                         RaycastHit2D Raycast = Physics2D.Raycast(transform.position, playerRGB.velocity.normalized, 1f, wallMask);
                         if(Raycast.collider != null && Raycast.collider.gameObject.tag == "Hole")
                         {
-                                                        currentPlatform = Instantiate(windPlatform, new Vector2(transform.position.x + playerRGB.velocity.normalized.x * 0.2f, transform.position.y + playerRGB.velocity.normalized.y * 0.2f), Quaternion.identity);
+                            AudioManager.Instance.Play("Spawn_Platform");
+                            currentPlatform = Instantiate(windPlatform, new Vector2(transform.position.x + playerRGB.velocity.normalized.x * 0.2f, transform.position.y + playerRGB.velocity.normalized.y * 0.2f), Quaternion.identity);
                             canSpawnPlatform = false;
                             isAbleToRunOnHole = true;
                             platformNumber--;

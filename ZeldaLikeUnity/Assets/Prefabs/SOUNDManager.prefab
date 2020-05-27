@@ -581,3 +581,27 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     isMusic: 0
+  - name: Spawn_Platform
+    clip: {fileID: 8300000, guid: e88ebc18413e5c84baac713ab3f23f33, type: 3}
+    source: {fileID: 0}
+    group: {fileID: 1604241929038478150, guid: 30074e79190fbb3438e58f58430b627d, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    isMusic: 0
+  - name: Sphere_Tir
+    clip: {fileID: 8300000, guid: 6b95bbd38548a7b45ab859e0b41d0304, type: 3}
+    source: {fileID: 0}
+    group: {fileID: 1604241929038478150, guid: 30074e79190fbb3438e58f58430b627d, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    isMusic: 0
+  - name: Sphere_Charge
+    clip: {fileID: 8300000, guid: bd557a2bcd9007049ba76b469798a4ed, type: 3}
+    source: {fileID: 0}
+    group: {fileID: 1604241929038478150, guid: 30074e79190fbb3438e58f58430b627d, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    isMusic: 0

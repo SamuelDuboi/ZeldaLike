@@ -137,6 +137,7 @@ namespace Player
                 {
                     if(slow)
                     Time.timeScale = 0.2f;
+                    AudioManager.Instance.Play("Sphere_Charge");
                     SD_PlayerAnimation.Instance.PlayerAnimator.SetBool("Wind", true);
                     float angle = 0;
                     cantWind = true;
@@ -189,6 +190,8 @@ namespace Player
             {
                 Time.timeScale = 1;
                 cantWind = false;
+                AudioManager.Instance.Stop("Sphere_Charge");
+                AudioManager.Instance.Play("Sphere_Tir");
                 GameObject currentprojectil = Instantiate(projectile, transform.position, Quaternion.identity);
                 if (Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") == 0)
                     currentprojectil.GetComponent<Rigidbody2D>().velocity = new Vector2(XForWind, YForWind).normalized * projectilSpeed;
