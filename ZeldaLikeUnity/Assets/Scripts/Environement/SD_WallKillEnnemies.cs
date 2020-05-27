@@ -25,6 +25,7 @@ public class SD_WallKillEnnemies : MonoBehaviour
                 {
                     once = true;
                     doorAnimator.SetTrigger("Open");
+                    AudioManager.Instance.Play("Door_Activation");
                     StartCoroutine(GameManagerV2.Instance.GamePadeShake(0.5f, 0.3f));
                 }
                 if(timer>0.85f)

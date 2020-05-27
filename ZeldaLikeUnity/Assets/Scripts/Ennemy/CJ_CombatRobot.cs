@@ -3,7 +3,6 @@ using UnityEngine;
 using Management;
 using System;
 using Player;
-using UnityEngine.Experimental.Rendering.Universal;
 
 namespace Ennemy
 {
@@ -16,10 +15,13 @@ namespace Ennemy
         [Range(0, 20)]
         public float followSpeed;
         bool moveFirst;
-        public GameObject hit;
         bool isMoving;
+        public Material normalMat;
+        public Material hitMat;
+        SpriteRenderer cmbatSprite;
         public override void Start()
         {
+            cmbatSprite = GetComponent<SpriteRenderer>();
             base.Start();
             if (!WontRepop)
                 GameManagerV2.Instance.AddEnnemieToList(GameManagerV2.ennemies.combatRobot, gameObject);
@@ -48,8 +50,7 @@ namespace Ennemy
         {
             if (collision.gameObject.layer == 8  && canTakeDamage)
             {
-                StopSlashSounds();
-                hit.SetActive(true);
+                StopSlashSounds();StartCoroutine(hit());
             }
             base.OnTriggerEnter2D(collision);         
            
@@ -160,6 +161,14 @@ namespace Ennemy
             AudioManager.Instance.Stop("Combat_Slash");
             AudioManager.Instance.Stop("Combat_Slash_Preparation");
         }
-        
+
+        IEnumerator hit()
+        {
+
+            cmbatSprite.material = hitMat;
+            yield return new WaitForSeconds(0.2f);
+            cmbatSprite.material = normalMat;
+        }
+
     }
 }
