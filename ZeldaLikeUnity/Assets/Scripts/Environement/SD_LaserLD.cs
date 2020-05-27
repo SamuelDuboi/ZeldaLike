@@ -32,7 +32,7 @@ public class SD_LaserLD : MonoBehaviour
                                                           playerMask);
             if (raycastHit.collider != null)
             {
-               StartCoroutine( SD_PlayerRessources.Instance.TakingDamage(laserDamage, SD_PlayerRessources.Instance.gameObject, false, 5));
+               StartCoroutine( SD_PlayerRessources.Instance.TakingDamage(laserDamage, SD_PlayerRessources.Instance.gameObject, false, 5, true));
             }
             target.GetComponent<LineRenderer>().SetPosition(0, transform.position);
             target.GetComponent<LineRenderer>().SetPosition(1, target.transform.position);

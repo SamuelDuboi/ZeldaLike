@@ -47,7 +47,7 @@ public class SD_BossHands : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             bumpPoint.transform.position = new Vector2(collision.transform.position.x, collision.transform.position.y - 1f);
-            StartCoroutine(SD_PlayerRessources.Instance.TakingDamage(laserDamage, bumpPoint, false, 5));
+            StartCoroutine(SD_PlayerRessources.Instance.TakingDamage(laserDamage, bumpPoint, false, 5,true));
         }
         else
             handsRGB.velocity = Vector2.zero;

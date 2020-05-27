@@ -134,7 +134,7 @@ public class SD_LaserAAA2 : MonoBehaviour
                 if (raycastHit.collider != null)
                 {
                     target.transform.position = raycastHit.point;
-                    StartCoroutine(SD_PlayerRessources.Instance.TakingDamage(laserDamage, target.gameObject, false, 1));
+                    StartCoroutine(SD_PlayerRessources.Instance.TakingDamage(laserDamage, target.gameObject, false, 1, true));
 
                 }
 
@@ -224,7 +224,7 @@ public class SD_LaserAAA2 : MonoBehaviour
                 if (raycastHit.collider != null)
                 {
                     target.transform.position = raycastHit.point;
-                    StartCoroutine(SD_PlayerRessources.Instance.TakingDamage(laserDamage, target.gameObject, false, 1));
+                    StartCoroutine(SD_PlayerRessources.Instance.TakingDamage(laserDamage, target.gameObject, false, 1, true));
 
                 }
 
@@ -269,7 +269,7 @@ public class SD_LaserAAA2 : MonoBehaviour
                     if (raycastHit.collider != null)
                     {
                         target.transform.position = raycastHit.point;
-                        StartCoroutine(SD_PlayerRessources.Instance.TakingDamage(laserDamage, target.gameObject, false, 1));
+                        StartCoroutine(SD_PlayerRessources.Instance.TakingDamage(laserDamage, target.gameObject, false, 1, true));
 
                     }
 
@@ -312,7 +312,7 @@ public class SD_LaserAAA2 : MonoBehaviour
                     if (raycastHit.collider != null)
                     {
                         target.transform.position = raycastHit.point;
-                        StartCoroutine(SD_PlayerRessources.Instance.TakingDamage(laserDamage, target.gameObject, false, 1));
+                        StartCoroutine(SD_PlayerRessources.Instance.TakingDamage(laserDamage, target.gameObject, false, 1, true));
 
                     }
 

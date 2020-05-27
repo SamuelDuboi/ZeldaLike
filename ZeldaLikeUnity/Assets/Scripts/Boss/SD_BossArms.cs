@@ -90,7 +90,7 @@ public class SD_BossArms : MonoBehaviour
                 if (raycastHit.transform.gameObject.tag == "Player")
                 {
                     touche.transform.position = new Vector2(raycastHit.transform.position.x, raycastHit.transform.position.y + 1);
-                    StartCoroutine(SD_PlayerRessources.Instance.TakingDamage(rayDamage, touche, false, 1));
+                    StartCoroutine(SD_PlayerRessources.Instance.TakingDamage(rayDamage, touche, false, 1, true));
 
                     
                 }

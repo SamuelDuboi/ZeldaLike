@@ -28,7 +28,7 @@ namespace Ennemy
 
             if (collision.gameObject.CompareTag("Player") && collision.gameObject.layer == 11)
             {
-                StartCoroutine(SD_PlayerRessources.Instance.TakingDamage(bulletDamage, gameObject, true, 1));
+                StartCoroutine(SD_PlayerRessources.Instance.TakingDamage(bulletDamage, gameObject, true, 1, true));
                 transform.position -= new Vector3(0,0,15);
                 GetComponent<Collider2D>().enabled = false;
             }

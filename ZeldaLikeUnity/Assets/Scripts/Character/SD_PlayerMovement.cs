@@ -149,7 +149,7 @@ namespace Player
                 if (timer >= timeBeforBurning)
                 {
                     burnStade = 2;
-                    StartCoroutine(SD_PlayerRessources.Instance.TakingDamage(1, fire, false, 1));
+                    StartCoroutine(SD_PlayerRessources.Instance.TakingDamage(1, fire, false, 1, true));
                 }
             }
 
@@ -159,7 +159,7 @@ namespace Player
                 fireBurn.fillAmount = damageTimer / timeBetweenBurn;
                 if (damageTimer >= timeBetweenBurn)
                 {
-                    StartCoroutine(SD_PlayerRessources.Instance.TakingDamage(1, fire, false, 1));
+                    StartCoroutine(SD_PlayerRessources.Instance.TakingDamage(1, fire, false, 1, true));
                     damageTimer = 0;
                     timer = 0;
                 }
@@ -411,7 +411,7 @@ namespace Player
                     fire = collision.gameObject;
                 }
                 if(!collision.GetComponent<Animator>().GetBool("Burning"))
-                    StartCoroutine(SD_PlayerRessources.Instance.TakingDamage(1, fire, false, 5));
+                    StartCoroutine(SD_PlayerRessources.Instance.TakingDamage(1, fire, false, 5, true));
             }
             if (collision.gameObject.tag == "Wind" && collision.gameObject.layer == 9)
             {
@@ -510,10 +510,10 @@ namespace Player
 
         IEnumerator Fall(Collider2D collisionPoint)
         {
-            AudioManager.Instance.Fall();
-
             if (!dashIsActive)
             {
+                AudioManager.Instance.Fall();
+
                 cantDash = true;
                 cantMove = true;
                 SD_PlayerAttack.Instance.cantAttack = true;
@@ -535,7 +535,6 @@ namespace Player
                 cantDash = true;
                 cantMove = true;
                 SD_PlayerAttack.Instance.cantAttack = true;
-                SD_PlayerRessources.Instance.cantTakeDamage = true;
                 transform.position = new Vector2(playerRespawnAfterFall.x, playerRespawnAfterFall.y);
                 LayerMask holeMaks = 1 << 9;
                 RaycastHit2D raycastHit2D = Physics2D.Raycast(transform.position, new Vector2(-XAxis, -YAxis), 0.1f, holeMaks);
@@ -548,15 +547,12 @@ namespace Player
                 }
 
 
-                StartCoroutine(SD_PlayerRessources.Instance.TakingDamage(fallDamage, collisionPoint.gameObject, false, 1));
+                StartCoroutine(SD_PlayerRessources.Instance.TakingDamage(fallDamage, collisionPoint.gameObject, false, 1, false));
                 speed = initialSpeed;
                 playerRGB.simulated = true;
                 yield return new WaitForSeconds(0.2f);
                 playerRGB.velocity = Vector2.zero;
-                cantDash = true;
-                cantMove = true;
-                SD_PlayerAttack.Instance.cantAttack = true;
-                SD_PlayerRessources.Instance.cantTakeDamage = true;
+               
                 yield return new WaitForSeconds(timeBeforAbleToMoveAfterFall);
 
                 //isOnPlatformDestructible = false;

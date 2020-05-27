@@ -127,7 +127,7 @@ namespace Ennemy
                 if (hitpoint.collider != null)
                 {
                     if (hitpoint.collider.gameObject.tag == "Player")
-                        StartCoroutine(SD_PlayerRessources.Instance.TakingDamage(laserDamage, target.gameObject, false, 0.1f));
+                        StartCoroutine(SD_PlayerRessources.Instance.TakingDamage(laserDamage, target.gameObject, false, 0.1f, true));
                 }
                 yield return new WaitForSeconds(0.01f);
             }

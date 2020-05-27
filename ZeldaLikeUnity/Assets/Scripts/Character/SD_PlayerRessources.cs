@@ -55,7 +55,7 @@ namespace Player
             if (collision.gameObject.layer == 12)
             {
                 if(collision.gameObject.GetComponent<SD_EnnemyGlobalBehavior>().isAttacking && !collision.gameObject.GetComponent<SD_EnnemyGlobalBehavior>().dontAttackPlayerOnCOllision)
-                StartCoroutine(TakingDamage(collision.gameObject.GetComponent<SD_EnnemyGlobalBehavior>().damage, collision.gameObject, false, 1));
+                StartCoroutine(TakingDamage(collision.gameObject.GetComponent<SD_EnnemyGlobalBehavior>().damage, collision.gameObject, false, 1,true));
             }
             else if (collision.gameObject.tag == "Heal")
             {
@@ -70,23 +70,24 @@ namespace Player
             }
             else if (collision.gameObject.layer == 17)
             {
-                StartCoroutine(TakingDamage(collision.gameObject.GetComponent<SD_EnnemyGlobalBehavior>().damage, collision.gameObject, false, 1));
+                StartCoroutine(TakingDamage(collision.gameObject.GetComponent<SD_EnnemyGlobalBehavior>().damage, collision.gameObject, false, 1, true));
             }
         }
 
         #region LifeChange
-        public IEnumerator TakingDamage(int damage, GameObject ennemy, bool isDestroy, float bumpPower)
+        public IEnumerator TakingDamage(int damage, GameObject ennemy, bool isDestroy, float bumpPower, bool isBump)
         {
             if (!cantTakeDamage)
             {
                 cantTakeDamage = true;
                 SD_PlayerAnimation.Instance.PlayerAnimator.SetTrigger("Hit");
                 AudioManager.Instance.Play("Inoh_TakeDamage");
-                Vector2 bump = new Vector2(gameObject.transform.position.x - ennemy.transform.position.x, gameObject.transform.position.y - ennemy.transform.position.y);
+                Vector2 bump = Vector2.zero;
+                if (isBump)
+               bump  = new Vector2(gameObject.transform.position.x - ennemy.transform.position.x, gameObject.transform.position.y - ennemy.transform.position.y);
                 // remove at the end of the game
 
                     StartCoroutine(GameManagerV2.Instance.GamePadeShake(.2f, .2f));
-                SD_PlayerMovement.Instance.StopAllCoroutines();
                 SD_PlayerMovement.Instance.speed = SD_PlayerMovement.Instance.initialSpeed;
                 SD_PlayerMovement.Instance.dashIsActive = false;
                 SD_PlayerMovement.Instance.dashTrail.SetActive(false);
@@ -119,7 +120,6 @@ namespace Player
                         }
                         else
                             lifes[(int)life].GetComponent<Image>().color = new Color(0, 0, 0, 0);
-
                     }
 
                     else
@@ -141,9 +141,6 @@ namespace Player
                     if (isDestroy)
                         Destroy(ennemy);
                 }
-
-
-
             }
 
 
@@ -230,7 +227,7 @@ namespace Player
 
         public void StartTakingDamage(int damage)
         {
-            StartCoroutine(TakingDamage(damage, SD_PlayerMovement.Instance.gameObject, false, 1));
+            StartCoroutine(TakingDamage(damage, SD_PlayerMovement.Instance.gameObject, false, 1,true));
         }
     }
 

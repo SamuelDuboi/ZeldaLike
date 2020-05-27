@@ -73,7 +73,7 @@ public class SD_Boss2Bullets : MonoBehaviour
         }
         else if (collision.gameObject.layer == 11)
         {
-           StartCoroutine( SD_PlayerRessources.Instance.TakingDamage(bulletDamage, gameObject, true, 1));
+           StartCoroutine( SD_PlayerRessources.Instance.TakingDamage(bulletDamage, gameObject, true, 1, true));
             GetComponent<SpriteRenderer>().enabled = false;
             GetComponent<BoxCollider2D>().enabled = false;
             gonnaDie = true;
