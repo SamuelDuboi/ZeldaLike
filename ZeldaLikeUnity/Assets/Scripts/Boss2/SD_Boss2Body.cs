@@ -108,6 +108,7 @@ public class SD_Boss2Body : Singleton<SD_Boss2Body>
             {
                 life--;
                 lifeBar.fillAmount = life / maxLife;
+                AudioManager.Instance.Play("Hit_Robot");
                 if (life <= maxLife / 4)
                 {
                     life = maxLife / 4;
@@ -137,6 +138,7 @@ public class SD_Boss2Body : Singleton<SD_Boss2Body>
             GameObject currentBullet = Instantiate(bulletPrefab,
                                                 RocketLunchPoint[0].transform.position,
                                                 Quaternion.identity);
+            AudioManager.Instance.Play("Boss_Rocket");
             currentBullet.GetComponent<SD_Boss2Bullets>().target = target;
             currentBullet.GetComponent<SD_Boss2Bullets>().bulletRGB.velocity = new Vector2(-5, 10);
             currentBullet.transform.SetParent(transform);
@@ -167,6 +169,7 @@ public class SD_Boss2Body : Singleton<SD_Boss2Body>
             {if (P2)
                     break;
                 GameObject currentNapalm = Instantiate(Napalm, SD_PlayerMovement.Instance.transform.position, Quaternion.identity);
+                AudioManager.Instance.SpecialPlay("Boss_Fire");
                 napalmList.Add(currentNapalm);
                 foreach( Animator fire in currentNapalm.GetComponentsInChildren<Animator>())
                 fire.speed = animationSpeed;
