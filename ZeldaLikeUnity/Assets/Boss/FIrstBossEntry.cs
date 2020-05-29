@@ -121,11 +121,13 @@ public class FIrstBossEntry : MonoBehaviour
         AwakeForce.SetActive(true);
         yield return new WaitForSeconds(1f);
         AwakeForce.SetActive(false);
+        AudioManager.Instance.Play("Music_Boss1");
         yield return new WaitForSeconds(2f);
 
         StartCoroutine(GameManagerV2.Instance.GamePadeShake(1, 1f));
         transform.position = Vector3.back*15;
         Boss.SetActive(true);
+
         cameraPlayer.GetComponentInChildren<CinemachineVirtualCamera>().m_Lens.OrthographicSize = 10;
         cameraPlayer.transform.position = new Vector3(camera.transform.parent.position.x, camera.transform.parent.position.y, -10);
         cameraPlayer.SetActive(true);

@@ -605,3 +605,30 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     isMusic: 0
+  - name: Music_Boss1
+    clip: {fileID: 8300000, guid: 15a378b8667089b4eb21b395eed8e3c1, type: 3}
+    source: {fileID: 0}
+    group: {fileID: -2934808699073203160, guid: 30074e79190fbb3438e58f58430b627d,
+      type: 2}
+    volume: 1
+    pitch: 1
+    loop: 1
+    isMusic: 1
+  - name: Boss_Fire
+    clip: {fileID: 8300000, guid: 36bdeca9c5fcd02498f1ac9e916820e1, type: 3}
+    source: {fileID: 0}
+    group: {fileID: -3316062924797532152, guid: 30074e79190fbb3438e58f58430b627d,
+      type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    isMusic: 0
+  - name: Boss_Rocket
+    clip: {fileID: 8300000, guid: dc5c760c53633a34da689e1ffd8761d6, type: 3}
+    source: {fileID: 0}
+    group: {fileID: -3316062924797532152, guid: 30074e79190fbb3438e58f58430b627d,
+      type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    isMusic: 0

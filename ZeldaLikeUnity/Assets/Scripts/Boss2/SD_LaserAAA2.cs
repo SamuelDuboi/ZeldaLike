@@ -125,7 +125,6 @@ public class SD_LaserAAA2 : MonoBehaviour
         {
             if (p2)
                 break;
-
             direction = new Vector2((float)Mathf.Cos(Mathf.Deg2Rad * (angle - degrees * sign)), (float)Mathf.Sin(Mathf.Deg2Rad * (angle - degrees * sign)));
                 RaycastHit2D raycastHit = Physics2D.Raycast(transform.position,
                                                                  direction,

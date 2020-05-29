@@ -21,6 +21,7 @@ public class BossEnding : Singleton<BossEnding>
         if(cpt>= 4)
         {
             animator.SetTrigger("On");
+            AudioManager.Instance.Stop("Music_Boss1");
         }
     }
 
