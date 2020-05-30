@@ -74,32 +74,42 @@ namespace Management
 
                 switch (SceneManager.GetActiveScene().buildIndex)
                 {
-                    case 1:
-                        AudioManager.Instance.Stop("Music_Menu");
+                    case 1:
+
+                        AudioManager.Instance.StopAllMusic();                     
                         break;
-                    case 2:
-                        AudioManager.Instance.Stop("Village_Music");
+                    case 2:
+
+                        AudioManager.Instance.StopAllMusic();
                         AudioManager.Instance.Play("Ambience_Ronchonchon");
                         AudioManager.Instance.Play("Music_Ronchonchon");
                         break;
 
                     case 3:
 
-                        AudioManager.Instance.Play("Music_Ronchonchon");
-                        AudioManager.Instance.Stop("Ambience_Ronchonchon");
+                        AudioManager.Instance.StopAllMusic();
+
+                        AudioManager.Instance.Play("Music_Ronchonchon");                     
                         break;
-                    case 4:
-                        AudioManager.Instance.Stop("Music_Ronchonchon");
+                    case 4:
+
+                        AudioManager.Instance.StopAllMusic();
                         AudioManager.Instance.Play("Music_Donjon");
                         break;
-                    case 5:
-                        AudioManager.Instance.Stop("Music_Donjon");
+                    case 5:
+
+                        AudioManager.Instance.StopAllMusic();
                         break;
                     case 6:
+
+                        AudioManager.Instance.StopAllMusic();
+
                         AudioManager.Instance.Play("Music_Boss1");                        
                         break;
-                    case 7:                        AudioManager.Instance.Play("Music_Boss1");
-                        break;
+                    case 7:
+
+                        AudioManager.Instance.StopAllMusic();                        AudioManager.Instance.Play("Music_Boss1");
+                                                break;
 
                     default: break;
                 }
