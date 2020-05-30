@@ -13,8 +13,8 @@ namespace Management
     public class GameManagerV2 : Singleton<GameManagerV2>
     {
          GameObject player;
-         GameObject death;
-         GameObject pause;
+         public GameObject death;
+         public GameObject pause;
          public GameObject loadingScreen;
         //  public List<GameObject> ennemies
          List<Vector3> ronchonchonsPositions= new List<Vector3>();
@@ -42,7 +42,7 @@ namespace Management
         public bool wantToGetAttributeOfPreviousScene;
         [HideInInspector] public bool cantPause;
         public GameObject LoadPlayerPosition;
-        GameObject fade;
+        public GameObject fade;
         TextMeshProUGUI scenName;
 
   [HideInInspector]     public List<NameArea> nameAreas = new List<NameArea>();
@@ -61,14 +61,11 @@ namespace Management
             if(SceneManager.GetActiveScene().buildIndex != 0)
             {
                 player = GameObject.Find("PlayerMovement");
-                death = GameObject.FindGameObjectWithTag("Death");
-                pause = GameObject.FindGameObjectWithTag("Pause");
                 death.SetActive(false);
                 pause.SetActive(false);
                 if (wantToGetAttributeOfPreviousScene)
                     NewScene(false);
-                // Saving(false);
-                fade = GameObject.FindGameObjectWithTag("Fade");
+                // Saving(false);
                 scenName = fade.GetComponentInChildren<TextMeshProUGUI>();
                 scenName.text = SceneManager.GetActiveScene().name;
                 fade.GetComponent<Image>().color = Color.black;

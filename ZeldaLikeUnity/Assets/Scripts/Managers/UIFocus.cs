@@ -6,8 +6,7 @@ public class UIFocus : MonoBehaviour
 {
     GameObject lastselect;
     void Start()
-    {
-        DontDestroyOnLoad(gameObject);
+    {       
         lastselect = new GameObject();
     }
     void Update()

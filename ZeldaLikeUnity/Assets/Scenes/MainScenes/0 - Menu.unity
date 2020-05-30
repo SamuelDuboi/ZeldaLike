@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -16151,6 +16151,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a27f3579b88612742b84d27cc7d9bf40, type: 3}
+--- !u!1 &2125793736 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3300064352576800891, guid: a27f3579b88612742b84d27cc7d9bf40,
+    type: 3}
+  m_PrefabInstance: {fileID: 2125793735}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2125793737 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1070879311551285005, guid: a27f3579b88612742b84d27cc7d9bf40,
+    type: 3}
+  m_PrefabInstance: {fileID: 2125793735}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2125793738 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8054220582377600748, guid: a27f3579b88612742b84d27cc7d9bf40,
+    type: 3}
+  m_PrefabInstance: {fileID: 2125793735}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2129662191
 GameObject:
   m_ObjectHideFlags: 0
@@ -16551,6 +16569,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1eb68e79f54e2948bb9d26d3ca710d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  death: {fileID: 2125793738}
+  pause: {fileID: 2125793737}
   loadingScreen: {fileID: 1407386231}
   ennemiesPrefabs:
   - {fileID: 7449929291154221862, guid: abf51c92468fc48419c039a47bee775c, type: 3}
@@ -16562,6 +16582,7 @@ MonoBehaviour:
   cantPause: 0
   LoadPlayerPosition: {fileID: 3811199481043928927, guid: 42d076620c5468f4bbaa32b86dbbd2cd,
     type: 3}
+  fade: {fileID: 2125793736}
   nameAreas: []
 --- !u!1 &4870816394412020026
 GameObject:
