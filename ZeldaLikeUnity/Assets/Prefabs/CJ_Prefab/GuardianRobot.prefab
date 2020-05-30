@@ -60,7 +60,7 @@ GameObject:
   - component: {fileID: 6190511753232685348}
   m_Layer: 12
   m_Name: SmashZone (1)
-  m_TagString: Untagged
+  m_TagString: Smash
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -461,7 +461,7 @@ GameObject:
   - component: {fileID: 7100301740780942942}
   m_Layer: 17
   m_Name: SmashZone
-  m_TagString: Untagged
+  m_TagString: Smash
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -945,6 +945,8 @@ MonoBehaviour:
   laserDamage: 2
   smashDamage: 0
   cooldownAfterSmash: 0
+  normalMat: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  hitMat: {fileID: -6814478532088900510, guid: 45ed7b125d5d2eb4a9094c90d0268718, type: 2}
 --- !u!212 &7998620809461349177
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1185,7 +1187,7 @@ GameObject:
   - component: {fileID: 5640871276912370046}
   m_Layer: 12
   m_Name: SmashZone (2)
-  m_TagString: Untagged
+  m_TagString: Smash
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

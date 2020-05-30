@@ -67,4 +67,8 @@ public class SD_LaserLD : MonoBehaviour
 
         }
     }
+    public void Play(string name)
+    {
+        AudioManager.Instance.Play(name);
+    }
 }

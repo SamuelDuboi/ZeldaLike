@@ -66,7 +66,7 @@ namespace Player
         public GameObject[] keyUI;
         bool positionForDestroyedPlatformIsAlreadyChose;
 
-
+        bool canAttackAfterFall;
         GameObject fade;
         bool canWind;
 
@@ -287,7 +287,7 @@ namespace Player
                         fireCanvas.SetActive(false);
                         SD_PlayerAnimation.Instance.GetComponent<SpriteRenderer>().color = Color.white;
                     }
-                    yield return new WaitForSeconds(dashTime);
+                    yield return new WaitForSeconds(dashTime - 0.05f);
                     // end of the dash, reset of the speed, the player can move and the player can dash again
 
                     if (canSpawnPlatform && platformNumber > 0)
@@ -297,6 +297,7 @@ namespace Player
                         if(Raycast.collider != null && Raycast.collider.gameObject.tag == "Hole")
                         {
                             AudioManager.Instance.Play("Spawn_Platform");
+                            yield return new WaitForSeconds(0.05f);
                             currentPlatform = Instantiate(windPlatform, new Vector2(transform.position.x + playerRGB.velocity.normalized.x * 0.2f, transform.position.y + playerRGB.velocity.normalized.y * 0.2f), Quaternion.identity);
                             canSpawnPlatform = false;
                             isAbleToRunOnHole = true;
@@ -505,6 +506,7 @@ namespace Player
             }
            
             platformNumber = 1;
+            if(SD_PlayerAttack.Instance.hasWind)
             SD_PlayerAnimation.Instance.halo.SetActive(true);
         }
 
@@ -517,7 +519,11 @@ namespace Player
 
                 cantDash = true;
                 cantMove = true;
-                SD_PlayerAttack.Instance.cantAttack = true;
+                if (!SD_PlayerAttack.Instance.cantAttack)
+                {
+                    SD_PlayerAttack.Instance.cantAttack = true;
+                    canAttackAfterFall = true;
+                }
                 playerRGB.simulated = false;
                 SD_PlayerAnimation.Instance.PlayerAnimator.SetBool("Fall", true);
                 for (float i = 0; i < 50; i++)
@@ -559,6 +565,7 @@ namespace Player
                 //isOnPlatformDestructible = false;
                 cantDash = false;
                 cantMove = false;
+                if(canAttackAfterFall)
                 SD_PlayerAttack.Instance.cantAttack = false;
                 SD_PlayerRessources.Instance.cantTakeDamage = false;
             }

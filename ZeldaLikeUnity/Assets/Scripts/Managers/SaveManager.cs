@@ -72,7 +72,7 @@ public class SaveManager : MonoBehaviour
     }
     public void RuinesStart()
     {
-        CreatScene(true, new Vector2(-50f, 2.4f), 10, 3, false, true,0);
+        CreatScene(true, new Vector2(-42.2f, 2.4f), 10, 3, false, true,0);
     }
     public void RuinesArenes()
     {
@@ -88,43 +88,40 @@ public class SaveManager : MonoBehaviour
     }
     public void DonjonStart()
     {
-        CreatScene(true, new Vector2(114.3f, -62.43f), 14, 4, false, true, 0);
+        CreatScene(true, new Vector2(112.88f, -57.86f), 14, 4, false, true, 0);
     }
     public void DonjonVent()
     {
         CreatScene(true, new Vector2(52.17f, -49.3f), 14, 4, false, true, 0);
     }
-    public void Donjon1stPart()
+    public void DonjonPepe()
     {
         CreatScene(true, new Vector2(101.7f, 3.6f), 14, 4, true, true, 0);
     }
-    public void Donjon2ndPartt()
+    public void DonjonPlatformes()
     {
-        CreatScene(true, new Vector2(69.3f, 4.1f), 14, 4, true, true, 0);
+        CreatScene(true, new Vector2(92.7f, 39.5f), 14, 4, true, true, 0);
     }
     public void Boss()
     {
-        CreatScene(true, new Vector2(-3.14f, -32.04f), 16, 5, true, true, 0);
+        CreatScene(true, new Vector2(-3.6f, -26.5f), 16, 5, true, true, 0);
     }
     public void FireForestStart()
     {
-        CreatScene(true, new Vector2(178f, 14.92f), 12, 6, true, true, 0);
+        CreatScene(true, new Vector2(178f, 14.92f), 16, 6, true, true, 0);
     }
-    public void FireForestHenry()
+    
+    public void FireCarrefour()
     {
-        CreatScene(true, new Vector2(-4.6f, 13.7f), 12, 6, true, true, 0);
+        CreatScene(true, new Vector2(32.9f, -2.02f), 62, 6, true, true, 0);
     }
-    public void FireForestRight()
+    public void FireFragmentation()
     {
-        CreatScene(true, new Vector2(30.03f, 103.13f), 12, 6, true, true, 0);
+        CreatScene(true, new Vector2(-49.8f, 144.2f), 17, 6, true, true, 0);
     }
-    public void FireForestLeft()
+    public void FireForestBrdige()
     {
-        CreatScene(true, new Vector2(-45.1f, 102f), 17, 6, true, true, 0);
-    }
-    public void FireForestWindTemple()
-    {
-        CreatScene(true, new Vector2(-36.1f, 126.3f), 18, 6, true, true, 0);
+        CreatScene(true, new Vector2(-74.15f, 142.72f), 18, 6, true, true, 0);
     }
     public void Boss2()
     {

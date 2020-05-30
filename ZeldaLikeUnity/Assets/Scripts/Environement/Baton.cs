@@ -19,6 +19,8 @@ public class Baton : MonoBehaviour
         {
             if(Mathf.Abs(Vector2.Distance(transform.position,player.transform.position))< range)
             {
+                if(!interactButton.activeSelf)
+                interactButton.SetActive(true);
                 if (Input.GetButtonDown("Interact"))
                 {
                     interactButton.SetActive(false);

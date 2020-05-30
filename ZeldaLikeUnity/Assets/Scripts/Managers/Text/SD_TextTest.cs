@@ -35,7 +35,7 @@ public class SD_TextTest : MonoBehaviour
         }
         if (listnumber >= textDialogue.Count)
         {
-            listnumber = 0;
+            listnumber --;
             SD_PlayerMovement.Instance.cantDash = false;
             SD_PlayerMovement.Instance.cantMove = false;
             SD_PlayerAttack.Instance.cantAim = false;          

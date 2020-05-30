@@ -15,9 +15,12 @@ public class TriggerActivated : MonoBehaviour
     bool canInteract;
     [Range(0, 10)]
     public float range = 2f;
+
+    bool first;
     private void Start()
     {
-
+        if (previousTrigger == null)
+        first = true;
         interactButton = transform.GetChild(0).gameObject;
         interactButton.transform.SetParent(SD_PlayerMovement.Instance.transform);
         interactButton.transform.position = new Vector2(interactButton.transform.parent.position.x,
@@ -66,7 +69,7 @@ public class TriggerActivated : MonoBehaviour
                 interactButton.SetActive(false);
                 SD_TriggerRonchonchon.Instance.TriggerUp();
             }
-            else if (previousTrigger.GetComponent<TriggerActivated>().isActivated && isActivated == false)
+            else if (!first && previousTrigger.GetComponent<TriggerActivated>().isActivated && isActivated == false)
             {
                 isActivated = true;
                 interactButton.SetActive(false);

@@ -60,6 +60,7 @@ public class SD_WindPower : MonoBehaviour
         SD_PlayerMovement.Instance.cantMove = false;
         SD_PlayerMovement.Instance.cantDash = false;
         GetComponent<Animator>().enabled = false;
+        Destroy(this);
     }
 
     IEnumerator glow()

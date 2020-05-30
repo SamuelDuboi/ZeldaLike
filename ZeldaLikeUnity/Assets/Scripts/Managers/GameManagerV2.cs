@@ -86,7 +86,9 @@ namespace Management
                         AudioManager.Instance.Play("Music_Ronchonchon");
                         break;
 
-                    case 3:
+                    case 3:
+
+                        AudioManager.Instance.Play("Music_Ronchonchon");
                         AudioManager.Instance.Stop("Ambience_Ronchonchon");
                         break;
                     case 4:
@@ -96,9 +98,10 @@ namespace Management
                     case 5:
                         AudioManager.Instance.Stop("Music_Donjon");
                         break;
-                    case 6:
+                    case 6:
+                        AudioManager.Instance.Play("Music_Boss1");                        
                         break;
-                    case 7:
+                    case 7:                        AudioManager.Instance.Play("Music_Boss1");
                         break;
 
                     default: break;
@@ -192,12 +195,8 @@ namespace Management
                 Save save = (Save)bf.Deserialize(file);
                 file.Close();
                 if (save.scenceIndex != SceneManager.GetActiveScene().buildIndex && loadScene)
-                {
-                    AsyncOperation levelLoading = SceneManager.LoadSceneAsync(save.scenceIndex);
-                    if (levelLoading.progress < 1)
-                        loadingScreen.SetActive(true);
-                    else if (levelLoading.progress >= 1)
-                        loadingScreen.SetActive(false);
+                {
+                    SceneManager.LoadScene(save.scenceIndex);
                 }
                     
                 SD_PlayerRessources.Instance.currentMaxLife = save.pvMax;
@@ -417,11 +416,7 @@ namespace Management
                 if (save.scenceIndex != SceneManager.GetActiveScene().buildIndex && loadScene || SceneManager.GetActiveScene().buildIndex == 5 || SceneManager.GetActiveScene().buildIndex == 7)
                 {
                     Instantiate(LoadPlayerPosition, transform.position, Quaternion.identity);
-                    AsyncOperation levelLoading = SceneManager.LoadSceneAsync(save.scenceIndex);
-                    levelLoading.allowSceneActivation = false;
-                    loadingScreen.SetActive(true);
-                    yield return new WaitForSeconds(2f);
-                    levelLoading.allowSceneActivation = true;
+                   SceneManager.LoadScene(save.scenceIndex);                    yield return new WaitForEndOfFrame();
                 }
                 StartCoroutine(SwitchCamera());
                 SD_PlayerMovement.Instance.isAbleToRunOnHole = true;

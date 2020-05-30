@@ -28,6 +28,9 @@ namespace Ennemy
         [Header("Smash")]
         public int smashDamage;
         public float cooldownAfterSmash;
+
+        public Material normalMat;
+        public Material hitMat;
         public override void Start()
         {
             base.Start();
@@ -70,13 +73,11 @@ namespace Ennemy
                     ennemyAnimator.SetFloat("Left", 1);
 
                     ennemyAnimator.SetTrigger("Moving");
-
-
-            }
-                
+            }             
            
 
         }
+        
 
         public IEnumerator Shoot()
         {
@@ -179,6 +180,10 @@ namespace Ennemy
                     StartCoroutine(ShieldPopOut());
 ;
             }
+            else if(collision.gameObject.layer == 8 && canTakeDamage)
+            {
+                StartCoroutine(Hit());
+            }
         }
 
         IEnumerator ShieldPopOut()
@@ -200,6 +205,14 @@ namespace Ennemy
         {
             yield return new WaitForSeconds(2f);
             canAttack = true;
+        }
+
+        IEnumerator Hit()
+        {
+            GetComponent<SpriteRenderer>().material = hitMat;
+            PlaySound("Hit_Robot");
+            yield return new WaitForSeconds(0.1f);
+            GetComponent<SpriteRenderer>().material = normalMat;
         }
     }
 }

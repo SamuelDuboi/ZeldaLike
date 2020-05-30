@@ -37,6 +37,7 @@ public class Intro : MonoBehaviour
             }
 
             SD_PlayerAttack.Instance.cantAttack = true;
+            SD_PlayerMovement.Instance.cantDash = true;
         }
         
     }
@@ -57,7 +58,6 @@ public class Intro : MonoBehaviour
             i--;
             yield return new WaitForSeconds(0.01f);     
 
-            SD_PlayerMovement.Instance.cantDash = true;
             SD_PlayerMovement.Instance.cantMove = true;
         }
 

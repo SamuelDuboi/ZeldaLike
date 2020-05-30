@@ -15870,17 +15870,17 @@ PrefabInstance:
     - target: {fileID: 8137111751122466298, guid: 518062a6b8ec8fb48a692be9227fe87c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.022
+      value: -0.011
       objectReference: {fileID: 0}
     - target: {fileID: 8137111751122466298, guid: 518062a6b8ec8fb48a692be9227fe87c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.417
+      value: -0.323
       objectReference: {fileID: 0}
     - target: {fileID: 8137111751122466298, guid: 518062a6b8ec8fb48a692be9227fe87c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.043
+      value: 0.033
       objectReference: {fileID: 0}
     - target: {fileID: 8137111751122466298, guid: 518062a6b8ec8fb48a692be9227fe87c,
         type: 3}
@@ -15941,6 +15941,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: feedback nuage
+      objectReference: {fileID: 0}
+    - target: {fileID: 8272283049819790649, guid: 518062a6b8ec8fb48a692be9227fe87c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8290765567005063958, guid: 518062a6b8ec8fb48a692be9227fe87c,
         type: 3}

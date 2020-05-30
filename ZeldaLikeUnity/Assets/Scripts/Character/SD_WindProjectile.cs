@@ -20,7 +20,7 @@ public class SD_WindProjectile : MonoBehaviour
     {
         if (collision.tag == "Fire")
             Destroy(collision.gameObject);
-        if(collision.gameObject.layer == 12)
+        if(collision.gameObject.layer == 12 && collision.gameObject.tag != "Smash")
         {
             collision.GetComponent<SD_EnnemyGlobalBehavior>().StunLunch(1);
             Destroy(gameObject);
