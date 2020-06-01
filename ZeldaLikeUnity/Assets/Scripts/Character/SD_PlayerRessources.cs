@@ -52,7 +52,11 @@ namespace Player
         }
         private void OnCollisionStay2D(Collision2D collision)
         {
-            if (collision.gameObject.layer == 12)
+             if (collision.collider.gameObject.layer == 17)
+            {
+                StartCoroutine(TakingDamage(collision.gameObject.GetComponentInParent<SD_EnnemyGlobalBehavior>().damage, collision.gameObject, false, 1, true));
+            }
+           else  if (collision.collider.gameObject.layer == 12)
             {
                 if(collision.gameObject.GetComponent<SD_EnnemyGlobalBehavior>().isAttacking && !collision.gameObject.GetComponent<SD_EnnemyGlobalBehavior>().dontAttackPlayerOnCOllision)
                 StartCoroutine(TakingDamage(collision.gameObject.GetComponent<SD_EnnemyGlobalBehavior>().damage, collision.gameObject, false, 1,true));
@@ -68,10 +72,7 @@ namespace Player
                  LifeUpgrade(1);
                 Destroy(collision.gameObject);
             }
-            else if (collision.gameObject.layer == 17)
-            {
-                StartCoroutine(TakingDamage(collision.gameObject.GetComponent<SD_EnnemyGlobalBehavior>().damage, collision.gameObject, false, 1, true));
-            }
+            
         }
 
         #region LifeChange

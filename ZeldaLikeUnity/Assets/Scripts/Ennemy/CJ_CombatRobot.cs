@@ -21,6 +21,7 @@ namespace Ennemy
         SpriteRenderer cmbatSprite;
         public override void Start()
         {
+            dontAttackPlayerOnCOllision = true;
             cmbatSprite = GetComponent<SpriteRenderer>();
             base.Start();
             if (!WontRepop)

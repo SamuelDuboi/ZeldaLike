@@ -34,7 +34,8 @@ namespace Ennemy
         public override void Start()
         {
             base.Start();
-           
+
+            dontAttackPlayerOnCOllision = true;
             target.SetActive(false);
             if(!WontRepop)
             GameManagerV2.Instance.AddEnnemieToList(GameManagerV2.ennemies.gardianRobot, gameObject);
