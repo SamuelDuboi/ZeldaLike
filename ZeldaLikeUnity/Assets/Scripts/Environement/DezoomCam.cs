@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Management;
 using UnityEngine;
 using Player;
 using UnityEngine.SocialPlatforms;
@@ -69,6 +68,8 @@ public class DezoomCam : MonoBehaviour
                                                            SD_PlayerMovement.Instance.transform.position.y,
                                                            -10);
                 camPlayer.SetActive(true);
+                
+            GameManagerV2.Instance.cantPause = false;
                 cam.SetActive(false);
                 left.enabled = true;
                 right.enabled = true;
@@ -110,6 +111,7 @@ public class DezoomCam : MonoBehaviour
 
                 cameraCam.orthographicSize = 5.6f;
                 cam.SetActive(true);
+                GameManagerV2.Instance.cantPause = true;
                 camPlayer.SetActive(false);
             }
             else

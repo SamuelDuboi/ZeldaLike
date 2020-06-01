@@ -62,6 +62,7 @@ public class SD_Trigger : MonoBehaviour
             Time.timeScale = 0;
             timer = 1;
             moveBack = false;
+            GameManagerV2.Instance.cantPause = true;
             SD_PlayerMovement.Instance.cantDash = true;
             SD_PlayerMovement.Instance.cantMove = true;
             SD_PlayerAttack.Instance.cantAttack = true;
@@ -142,6 +143,8 @@ public class SD_Trigger : MonoBehaviour
                 AudioManager.Instance.UnPause();
                 moveBack = false;
                 Time.timeScale = 1;
+
+                GameManagerV2.Instance.cantPause = false;
                 SD_PlayerMovement.Instance.cantDash = false;
                 SD_PlayerMovement.Instance.cantMove = false;
                 SD_PlayerAttack.Instance.cantAttack = false;

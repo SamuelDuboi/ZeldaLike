@@ -171,6 +171,8 @@ public class SD_TriggerRonchonchon : Singleton<SD_TriggerRonchonchon>
             {
                 moveBack = false;
                 Time.timeScale = 1;
+
+                GameManagerV2.Instance.cantPause = false;
                 SD_PlayerMovement.Instance.cantDash = false;
                 SD_PlayerMovement.Instance.cantMove = false;
                 SD_PlayerAttack.Instance.cantAttack = false;

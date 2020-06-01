@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Player;
+using Management;
+
 public class SD_Loupiotte : MonoBehaviour
 {
     public GameObject camera;
@@ -104,6 +106,8 @@ public class SD_Loupiotte : MonoBehaviour
             {
                 moveBack = false;
                 Time.timeScale = 1;
+
+                GameManagerV2.Instance.cantPause = false;
                 SD_PlayerMovement.Instance.cantDash = false;
                 SD_PlayerMovement.Instance.cantMove = false;
                 SD_PlayerAttack.Instance.cantAttack = false;
@@ -159,6 +163,7 @@ public class SD_Loupiotte : MonoBehaviour
         {
             if (SD_PlayerMovement.Instance.grosPoussière.activeSelf)
                 SD_PlayerMovement.Instance.grosPoussière.SetActive(false);
+            GameManagerV2.Instance.cantPause = true;
             Time.timeScale = 0;
             moveBack = false;
             SD_PlayerMovement.Instance.cantDash = true;

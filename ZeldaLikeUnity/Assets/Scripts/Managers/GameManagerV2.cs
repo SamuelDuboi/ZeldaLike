@@ -54,7 +54,7 @@ namespace Management
         void Start()
         {
             if(SceneManager.GetActiveScene().buildIndex == 0)
-            {
+            {                cantPause = true;
                 AudioManager.Instance.StopAllMusic();
                 AudioManager.Instance.Play("Music_Menu");
             }
@@ -80,41 +80,41 @@ namespace Management
                         break;
                     case 2:
 
+                        cantPause = false;
                         AudioManager.Instance.StopAllMusic();
                         AudioManager.Instance.Play("Ambience_Ronchonchon");
                         AudioManager.Instance.Play("Music_Ronchonchon");
                         break;
 
                     case 3:
-
+                        cantPause = false;
                         AudioManager.Instance.StopAllMusic();
 
                         AudioManager.Instance.Play("Music_Ronchonchon");                     
                         break;
                     case 4:
-
+                        cantPause = false;
                         AudioManager.Instance.StopAllMusic();
                         AudioManager.Instance.Play("Music_Donjon");
                         break;
                     case 5:
-
+                        cantPause = false;
                         AudioManager.Instance.StopAllMusic();
                         break;
                     case 6:
-
+                        cantPause = false;
                         AudioManager.Instance.StopAllMusic();
 
                         AudioManager.Instance.Play("Music_Boss1");                        
                         break;
                     case 7:
-
+                        cantPause = false;
                         AudioManager.Instance.StopAllMusic();                        AudioManager.Instance.Play("Music_Boss1");
                                                 break;
 
                     default: break;
-                }
-            }
-           
+                }
+            }         
 
         }
 
@@ -139,8 +139,7 @@ namespace Management
                         altarTriggered.gameObject.GetComponentInChildren<Animator>().SetBool("On", true);
                         AudioManager.Instance.Play("Altar_Activation");
                         Saving(true);
-                    }
-                    
+                    }                    
                 }
                 else
                 {
