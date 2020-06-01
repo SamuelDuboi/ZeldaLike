@@ -59,6 +59,7 @@ public class SD_WindPower : MonoBehaviour
         SD_PlayerAttack.Instance.cantAttack = false;
         SD_PlayerMovement.Instance.cantMove = false;
         SD_PlayerMovement.Instance.cantDash = false;
+        GameManagerV2.Instance.Saving(false);
         GetComponent<Animator>().enabled = false;
         Destroy(this);
     }
