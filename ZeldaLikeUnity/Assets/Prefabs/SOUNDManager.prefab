@@ -503,18 +503,26 @@ MonoBehaviour:
     loop: 0
     isMusic: 0
   - name: Boss1_Laser_Bras
-    clip: {fileID: 8300000, guid: 4b7aa38f7d4f2554db8a0004ea6f1ecc, type: 3}
+    clip: {fileID: 8300000, guid: c9c4583d2e8862345b27ac8ae5fe3fd6, type: 3}
     source: {fileID: 0}
-    group: {fileID: -3316062924797532152, guid: 30074e79190fbb3438e58f58430b627d,
+    group: {fileID: -991917792847366353, guid: 30074e79190fbb3438e58f58430b627d, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 1
+    isMusic: 0
+  - name: Boss1_Laser_Bras2
+    clip: {fileID: 8300000, guid: c9c4583d2e8862345b27ac8ae5fe3fd6, type: 3}
+    source: {fileID: 0}
+    group: {fileID: -7630250971377660233, guid: 30074e79190fbb3438e58f58430b627d,
       type: 2}
     volume: 1
     pitch: 1
-    loop: 0
+    loop: 1
     isMusic: 0
   - name: Boss1_Laser_Mains
     clip: {fileID: 8300000, guid: 8fcb4851dd5eabb48ad0c3dff8ba922c, type: 3}
     source: {fileID: 0}
-    group: {fileID: -3316062924797532152, guid: 30074e79190fbb3438e58f58430b627d,
+    group: {fileID: -1435864804127119411, guid: 30074e79190fbb3438e58f58430b627d,
       type: 2}
     volume: 0.5
     pitch: 1

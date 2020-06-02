@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Player;
+using UnityEngine.Audio;
 using UnityEngine.Timeline;
 
 [RequireComponent(typeof(LineRenderer))]
@@ -20,19 +21,27 @@ public class SD_BossArms : MonoBehaviour
     public float timeBeforChangingDirection;
     Rigidbody2D armRGB;
     bool cantShoot;
+
     LayerMask player;
     float timer;
     [Range(0.1f, 5)]
     public float timeOff;
     public GameObject shield;
     public GameObject laserBoule;
+
+    [Header("Sound")]
+    float masterVolume;
+    public float offSetSound;
+    public float distanceMaxSound;
+
+
     void Start()
     {
         Vector3[] initLaserPositions = new Vector3[2] { Vector3.zero, Vector3.zero };
         laserLineRenderer.SetPositions(initLaserPositions);
         laserLineRenderer.startWidth =laserWidth;
         armRGB = GetComponent<Rigidbody2D>();
-        player = 1 << 11; 
+        player = 1 << 11;
     }
 
     void Update()
@@ -40,11 +49,13 @@ public class SD_BossArms : MonoBehaviour
       if (isLeft && direction == 1)
         {
             ShootLaserFromTargetPosition(rayOrigine.transform.position, Vector3.right);
+            AudioManager.Instance.Play("Boss1_Laser_Bras");
 
         }
         else if (!isLeft && direction == 1)
         {
             ShootLaserFromTargetPosition(rayOrigine.transform.position, Vector3.left);
+            AudioManager.Instance.Play("Boss1_Laser_Bras2");
             
         }
             
@@ -70,6 +81,37 @@ public class SD_BossArms : MonoBehaviour
                 cantShoot = false;
                 timer = 0;
             }
+        }
+        else
+        {
+            if (isLeft)
+            {
+                if (Mathf.Abs(SD_PlayerMovement.Instance.transform.position.y - transform.position.y) <= distanceMaxSound)
+                {
+                    AudioManager.Instance.masterMixer.GetFloat("MasterVolume", out masterVolume);
+
+                    AudioManager.Instance.masterMixer.SetFloat("Bras1Volume", (masterVolume + 80 + offSetSound) * ((distanceMaxSound -Mathf.Abs(SD_PlayerMovement.Instance.transform.position.y - transform.position.y)) / distanceMaxSound) - 80);
+                }
+                else
+                {
+                    AudioManager.Instance.masterMixer.SetFloat("Bras1Volume", -80);
+                }
+
+            }
+            else
+            {
+                if (Mathf.Abs(SD_PlayerMovement.Instance.transform.position.y - transform.position.y) <= distanceMaxSound)
+                {
+                    AudioManager.Instance.masterMixer.GetFloat("MasterVolume", out masterVolume);
+                    AudioManager.Instance.masterMixer.SetFloat("Bras2Volume", (masterVolume + 80 + offSetSound) * ((distanceMaxSound - Mathf.Abs(SD_PlayerMovement.Instance.transform.position.y - transform.position.y)) / distanceMaxSound) - 80);
+                }
+                else
+                {
+
+                    AudioManager.Instance.masterMixer.SetFloat("Bras2Volume", -80);
+                }
+            }
+
         }
     }
     /// <summary>
@@ -129,7 +171,11 @@ public class SD_BossArms : MonoBehaviour
         {
             if (!cantShoot)
             {
-                AudioManager.Instance.Play("Boss1_Laser_Bras");
+                if (isLeft)
+                    AudioManager.Instance.Stop("Boss1_Laser_Bras");
+                else
+                    AudioManager.Instance.Stop("Boss1_Laser_Bras2");
+
                 shield.SetActive(false);
                 laserBoule.SetActive(false);
                 laserLineRenderer.enabled=false ;

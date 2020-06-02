@@ -9,7 +9,7 @@ public class SD_BossHands : MonoBehaviour
     public int laserDamage;
     [Space]
     [Header("Phase1")]
-    [Range(0.1f,5)]
+    [Range(0.1f, 5)]
     public float laserSpeedPhase1;
 
     [Space]
@@ -22,6 +22,11 @@ public class SD_BossHands : MonoBehaviour
     [Range(0.1f, 5)]
     public float laserSpeedPhase3;
 
+    [Header("Sound")]
+    float masterVolume;
+    public float offSetSound;
+    public float distanceMaxSound;
+
     Rigidbody2D handsRGB;
     void Start()
     {
@@ -32,25 +37,41 @@ public class SD_BossHands : MonoBehaviour
     {
         if (SD_BossBehavior.Instance.canMove)
             handsRGB.velocity = Vector2.zero;
-        else if (SD_BossBehavior.Instance.phaseNumber == 1)
+        else
         {
             AudioManager.Instance.Play("Boss1_Laser_Mains");
-            handsRGB.velocity = Vector2.up * laserSpeedPhase1;
+            if (Mathf.Abs(SD_PlayerMovement.Instance.transform.position.y - transform.position.y) <= distanceMaxSound)
+            {
+                AudioManager.Instance.masterMixer.GetFloat("MasterVolume", out masterVolume);
+                AudioManager.Instance.masterMixer.SetFloat("Mains1Volume", (masterVolume + 80 + offSetSound) * ((distanceMaxSound - Mathf.Abs(SD_PlayerMovement.Instance.transform.position.y - transform.position.y)) / distanceMaxSound) - 80);
+            }
+            else
+            {
+
+                AudioManager.Instance.masterMixer.SetFloat("Mains1Volume", -80);
+            }
+            if (SD_BossBehavior.Instance.phaseNumber == 1)
+            {
+                handsRGB.velocity = Vector2.up * laserSpeedPhase1;
+            }
+            else if (SD_BossBehavior.Instance.phaseNumber == 2)
+            {
+                handsRGB.velocity = Vector2.up * laserSpeedPhase2;
+            }
+
+            else if (SD_BossBehavior.Instance.phaseNumber == 3)
+                handsRGB.velocity = Vector2.up * laserSpeedPhase3;
         }
-        else if (SD_BossBehavior.Instance.phaseNumber == 2)
-            handsRGB.velocity = Vector2.up * laserSpeedPhase2;
-        else if (SD_BossBehavior.Instance.phaseNumber == 3)
-            handsRGB.velocity = Vector2.up * laserSpeedPhase3;
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
             bumpPoint.transform.position = new Vector2(collision.transform.position.x, collision.transform.position.y - 1f);
-            StartCoroutine(SD_PlayerRessources.Instance.TakingDamage(laserDamage, bumpPoint, false, 5,true));
+            StartCoroutine(SD_PlayerRessources.Instance.TakingDamage(laserDamage, bumpPoint, false, 5, true));
         }
         else
             handsRGB.velocity = Vector2.zero;
-            
+
     }
 }

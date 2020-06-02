@@ -31,6 +31,7 @@ public class SD_MegaLaser : MonoBehaviour
             LineRenderer laserRender = GetComponent<LineRenderer>();
             laserRender.enabled = true;
             laserRender.startWidth = 0.2f;
+            AudioManager.Instance.Play("Charge_Scout");
             for (float i = 0; i < 100 * (chargeTimer- esquiveTime); i++)
             {
                 if (stop)
@@ -44,6 +45,8 @@ public class SD_MegaLaser : MonoBehaviour
             }
 
             yield return new WaitForSeconds(esquiveTime);
+            AudioManager.Instance.Stop("Charge_Scout");
+            AudioManager.Instance.Play("Gardien_Tir");
             LayerMask playermask = 1 << 11;
             while (timer < laserTIme)
             {

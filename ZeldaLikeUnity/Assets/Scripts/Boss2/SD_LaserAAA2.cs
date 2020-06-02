@@ -118,9 +118,11 @@ public class SD_LaserAAA2 : MonoBehaviour
         target.GetComponent<LineRenderer>().SetPosition(1, target.transform.position);
         target.GetComponent<LineRenderer>().startWidth = 0.2f;
 
+        AudioManager.Instance.SpecialPlay("Boss_Laser_Corps");
         yield return new WaitForSeconds(timeSmallBigRay);
 
         float timerWhile = 0;
+
         while (timerWhile < timeLAserStay)
         {
             if (p2)
@@ -203,6 +205,7 @@ public class SD_LaserAAA2 : MonoBehaviour
 
     public IEnumerator ShootStraightLaser(bool vertical, GameObject target, Vector2 position)
     {
+        AudioManager.Instance.SpecialPlay("Boss_Laser_Corps");
         if (vertical)
         {
             target.transform.position = new Vector2(position.x, position.y -100);
