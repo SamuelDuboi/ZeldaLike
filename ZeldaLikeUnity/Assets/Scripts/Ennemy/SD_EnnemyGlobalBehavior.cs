@@ -172,6 +172,7 @@ namespace Ennemy
                 }
                 else
                     SD_PlayerRessources.Instance.chanceDropHeal++;
+                GetComponent<BoxCollider2D>().enabled = false;
                 CJ_PlayerCameraManager.Instance.ennemyList.Remove(gameObject);
                 GetComponent<SpriteRenderer>().color = Color.white;
                 ennemyAnimator.SetTrigger("Death");

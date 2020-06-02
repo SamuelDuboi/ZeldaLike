@@ -116,7 +116,6 @@ public class SD_BossBody : MonoBehaviour
                 if (collider.GetComponent<BoxCollider2D>().IsTouching(collision))
                 {
                     weakPointNumber--;
-                    Debug.Log(weakPointNumber);
                     shield[cpt].SetActive(false);
                     phaseWeakPoins[cpt].SetActive(true);
                 }

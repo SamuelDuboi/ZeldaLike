@@ -108,7 +108,7 @@ namespace Player
                     {
                         lifes[0].GetComponent<Image>().color = new Color(0, 0, 0, 0);
                         dead = true;
-
+                        SD_PlayerMovement.Instance.playerRGB.velocity = Vector2.zero;
                         StartCoroutine(GameManagerV2.Instance.Death());
                         break;
 

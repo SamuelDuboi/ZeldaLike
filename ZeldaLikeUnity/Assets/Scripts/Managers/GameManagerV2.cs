@@ -245,7 +245,7 @@ namespace Management
             {
                 deathActive = true;
                 SD_PlayerAnimation.Instance.PlayerAnimator.SetTrigger("Death");
-                
+
                 SD_PlayerAttack.Instance.hasWind = false;
                 SD_PlayerMovement.Instance.cantDash = true;
                 SD_PlayerMovement.Instance.cantMove = true;
@@ -253,6 +253,7 @@ namespace Management
                 SD_PlayerAttack.Instance.cantAim = true;
                 SD_PlayerMovement.Instance.Death();
 
+                SD_PlayerMovement.Instance.playerRGB.velocity = Vector2.zero;
                 GamePadeShake(0, 0);
                 yield return new WaitForSeconds(1);
                 StartCoroutine(FadeUp());

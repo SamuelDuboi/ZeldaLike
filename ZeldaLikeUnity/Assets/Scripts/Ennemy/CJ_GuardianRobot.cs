@@ -123,7 +123,7 @@ namespace Ennemy
                 laser.SetPosition(1, target.transform.position);
                 RaycastHit2D hitpoint = Physics2D.Raycast(transform.position,
                                                      new Vector2(target.transform.position.x - transform.position.x, target.transform.position.y - transform.position.y),
-                                                     2000,
+                                                     Vector2.Distance(transform.position, target.transform.position),
                                                     playermask);
                 timer += 0.01f;
                 if (hitpoint.collider != null)

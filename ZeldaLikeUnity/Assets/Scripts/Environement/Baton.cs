@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Player;
+using Management;
+
 public class Baton : MonoBehaviour
 {
     bool canCircle;
@@ -40,6 +42,7 @@ public class Baton : MonoBehaviour
                     GetComponent<SpriteRenderer>().enabled = false;
                     halo.SetActive(false);
                     GetComponent<BoxCollider2D>().enabled = false;
+                    GameManagerV2.Instance.Saving(false);
                 }
             }
             else

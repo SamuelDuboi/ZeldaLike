@@ -113,7 +113,7 @@ public class SaveManager : MonoBehaviour
     
     public void FireCarrefour()
     {
-        CreatScene(true, new Vector2(32.9f, -2.02f), 62, 6, true, true, 0);
+        CreatScene(true, new Vector2(32.9f, -2.02f), 16, 6, true, true, 0);
     }
     public void FireFragmentation()
     {
