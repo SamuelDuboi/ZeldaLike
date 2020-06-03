@@ -84,7 +84,7 @@ MonoBehaviour:
   currentMaxLife: 6
   maxLifePossible: 10
   cantTakeDamage: 0
-  invincibleTime: 1
+  invincibleTime: 0.74
   Alyah1: 0
   Alyah2: 0
   Henry1: 0
@@ -10263,8 +10263,8 @@ MonoBehaviour:
   fireCanvas: {fileID: 9208160171846816900}
   fireBurn: {fileID: 4131641240222534458}
   burnStade: 0
-  timeBeforBurning: 1
-  timeBetweenBurn: 1.1
+  timeBeforBurning: 0.5
+  timeBetweenBurn: 0.75
   "grosPoussi\xE8re": {fileID: 4625648380748017913}
   cantSprint: 0
 --- !u!1 &4455326355006402086
@@ -10425,18 +10425,18 @@ MonoBehaviour:
   Damage: 1
   cooldownAfterFirst: 0
   cooldownAfterSecond: 0
-  cooldownAfterThird: 0.5
+  cooldownAfterThird: 0.75
   cantAttack: 0
   windAttack: {fileID: 7512021111983014010, guid: 653393627bcc77b4aa4922c6b393b890,
     type: 3}
   canParry: 1
   hasWind: 1
-  windCD: 1
+  windCD: 0.5
   cantWind: 0
   arrow: {fileID: 1469801797470844360}
   projectile: {fileID: 858628731614125657, guid: 2871c4434a79c8f459979e6258c8f076,
     type: 3}
-  projectilSpeed: 10
+  projectilSpeed: 13
   cantAim: 0
   slow: 1
   canPushBack: 0
