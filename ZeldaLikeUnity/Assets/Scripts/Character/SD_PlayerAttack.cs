@@ -70,10 +70,10 @@ namespace Player
         }
         void Update()
         {
-            if(Input.GetAxisRaw("Horizontal") != 0 && Input.GetAxisRaw("Vertical") != 0)
+            if(Input.GetAxisRaw("Horizontal2") != 0 && Input.GetAxisRaw("Vertical2") != 0)
             {
-                XForWind = Input.GetAxisRaw("Horizontal");
-                YForWind = Input.GetAxisRaw("Vertical");
+                XForWind = Input.GetAxisRaw("Horizontal2");
+                YForWind = Input.GetAxisRaw("Vertical2");
             }
 
 
@@ -193,11 +193,11 @@ namespace Player
                 AudioManager.Instance.Stop("Sphere_Charge");
                 AudioManager.Instance.Play("Sphere_Tir");
                 GameObject currentprojectil = Instantiate(projectile, transform.position, Quaternion.identity);
-                if (Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") == 0)
+                if (Input.GetAxisRaw("Horizontal2") == 0 && Input.GetAxisRaw("Vertical2") == 0)
                     currentprojectil.GetComponent<Rigidbody2D>().velocity = new Vector2(XForWind, YForWind).normalized * projectilSpeed;
                 else
-                    currentprojectil.GetComponent<Rigidbody2D>().velocity = new Vector2(Input.GetAxisRaw("Horizontal"),
-                                                                        Input.GetAxisRaw("Vertical")).normalized * projectilSpeed;
+                    currentprojectil.GetComponent<Rigidbody2D>().velocity = new Vector2(Input.GetAxisRaw("Horizontal2"),
+                                                                        Input.GetAxisRaw("Vertical2")).normalized * projectilSpeed;
                 CanMoveWind();
                 SD_PlayerAnimation.Instance.PlayerAnimator.SetBool("Wind", false);
                 StartCoroutine(WindCooldown());
