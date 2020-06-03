@@ -9637,6 +9637,7 @@ GameObject:
   - component: {fileID: 4043999322879821497}
   - component: {fileID: 4043999322879821492}
   - component: {fileID: 246668980}
+  - component: {fileID: 4565867423826678399}
   m_Layer: 9
   m_Name: loupiottesDonjon
   m_TagString: Untagged
@@ -9781,6 +9782,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.60953903}
   m_EdgeRadius: 0
+--- !u!114 &4565867423826678399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4043999322879821498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70bd99bc9809c22478296c9d75175f8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4830855206203514067
 GameObject:
   m_ObjectHideFlags: 0

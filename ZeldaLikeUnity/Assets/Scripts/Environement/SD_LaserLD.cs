@@ -48,6 +48,7 @@ public class SD_LaserLD : MonoBehaviour
                 {
                     timer = 0;
                     anim.SetTrigger("Off");
+                    anim.SetTrigger("Activated");
                     cantShoot = false;
                 }
             }

@@ -416,6 +416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b05c3cba9c76404c83a2919c52f97bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WontRepop: 0
   player: {fileID: 0}
   ennemyRGB: {fileID: 0}
   aggroZone: {fileID: 2203752920297478274}
@@ -441,6 +442,8 @@ MonoBehaviour:
   healDrop: {fileID: 7435818835512353066, guid: 85e9539271ca936479b5b4621a349221,
     type: 3}
   etincelles: {fileID: 4381900845571631297}
+  feet: {fileID: 836217433358885379}
+  notStunable: 0
   timeCharging: 1
   timeResting: 4
 --- !u!95 &5725253169311120615

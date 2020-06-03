@@ -104,12 +104,7 @@ namespace Ennemy
             float cpt = 0;
 
             AudioManager.Instance.Play("Combat_Slash_Preparation");
-            while (cpt < 1f)
-            {
-                cpt += 0.1f;
-               
-                yield return new WaitForSeconds(0.1f);
-            }
+            yield return new WaitForSeconds(1f);
 
             ennemyAnimator.SetTrigger("Attack");
             AudioManager.Instance.Stop("Combat_Slash_Preparation");

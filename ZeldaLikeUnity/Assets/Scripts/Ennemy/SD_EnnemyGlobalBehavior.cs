@@ -48,7 +48,7 @@ namespace Ennemy
 
         public GameObject etincelles;
         LayerMask attackMask;
-
+        public GameObject feet;
 
         bool stunCantStun;
         public virtual void Start()
@@ -172,6 +172,7 @@ namespace Ennemy
                 }
                 else
                     SD_PlayerRessources.Instance.chanceDropHeal++;
+                feet.SetActive(false);
                 GetComponent<BoxCollider2D>().enabled = false;
                 CJ_PlayerCameraManager.Instance.ennemyList.Remove(gameObject);
                 GetComponent<SpriteRenderer>().color = Color.white;

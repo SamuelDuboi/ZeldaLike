@@ -237,24 +237,13 @@ namespace Player
                     // add a force for the dash
                     speed *= dashForce;
                     sprint = 1;
-                  /*  if (Mathf.Abs(XAxis) < 0.6f && Mathf.Abs(YAxis) < 0.6f)
-                    {
+                    if (Mathf.Abs( Input.GetAxis("Horizontal")) > 0.2f)
+                        XAxis = Input.GetAxisRaw("Horizontal");                   
+                    if (Mathf.Abs( Input.GetAxis("Vertical")) > 0.2f)
+                        YAxis = Input.GetAxisRaw("Vertical");
 
-                        if (Mathf.Abs(XAxis) > Mathf.Abs(YAxis))
-                        {
-                            if (XAxis < 0)
-                                XAxis = -1;
-                            else
-                                XAxis = 1;
-                        }
-                        else
-                        {
-                            if (YAxis < 0)
-                                YAxis = -1f;
-                            else
-                                YAxis = 1;
-                        }
-                    }*/
+                    Move();
+
                     playerRGB.velocity = new Vector2(XAxis, YAxis).normalized * speed * sprint;
                     SD_PlayerAnimation.Instance.PlayerAnimator.SetTrigger("Dash");
                     SD_PlayerAnimation.Instance.PlayerAnimator.SetBool("Run", true);
