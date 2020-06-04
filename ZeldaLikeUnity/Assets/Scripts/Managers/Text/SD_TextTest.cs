@@ -16,6 +16,8 @@ public class SD_TextTest : MonoBehaviour
     bool resetAttack;
     [Range(0,0.1f)]
     public float timeBetweenLetter = 0.1f;
+
+    public bool reset;
     private void Awake()
     {
         pnj =(int) textDialogue[0].pnj;
@@ -46,7 +48,8 @@ public class SD_TextTest : MonoBehaviour
                 resetAttack = false;
             }
             transform.parent.gameObject.SetActive(false);
-
+            if (reset)
+                listnumber = 0;
             yield break;
         }
         if (listnumber > 0)
