@@ -69,11 +69,13 @@ public class SD_Boss2Bullets : MonoBehaviour
         else if( collision.gameObject.layer == 16 && isParry)
         {
             collision.transform.parent.GetComponent<SD_Boss2Body>().Stun();
+            AudioManager.Instance.Play("Roquette_Explosion");
             Destroy(gameObject);
         }
         else if (collision.gameObject.layer == 11)
         {
            StartCoroutine( SD_PlayerRessources.Instance.TakingDamage(bulletDamage, gameObject, true, 1, true));
+            AudioManager.Instance.Play("Roquette_Explosion");
             GetComponent<SpriteRenderer>().enabled = false;
             GetComponent<BoxCollider2D>().enabled = false;
             gonnaDie = true;

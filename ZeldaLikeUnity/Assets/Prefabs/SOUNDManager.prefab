@@ -640,3 +640,48 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     isMusic: 0
+  - name: Music_Ronchonchon2
+    clip: {fileID: 8300000, guid: 54cff5bf66b08334097fd6ee3bb116e2, type: 3}
+    source: {fileID: 0}
+    group: {fileID: -2934808699073203160, guid: 30074e79190fbb3438e58f58430b627d,
+      type: 2}
+    volume: 1
+    pitch: 1
+    loop: 1
+    isMusic: 0
+  - name: Music_Boss2
+    clip: {fileID: 8300000, guid: a877ba882c06dda4590c30b524eeee15, type: 3}
+    source: {fileID: 0}
+    group: {fileID: -2934808699073203160, guid: 30074e79190fbb3438e58f58430b627d,
+      type: 2}
+    volume: 1
+    pitch: 1
+    loop: 1
+    isMusic: 0
+  - name: Boss2_Mega_Laser
+    clip: {fileID: 8300000, guid: c7233edcf39536b4bb69ad2e16c02d69, type: 3}
+    source: {fileID: 0}
+    group: {fileID: -3316062924797532152, guid: 30074e79190fbb3438e58f58430b627d,
+      type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    isMusic: 0
+  - name: Boss2_Charge_Laser
+    clip: {fileID: 8300000, guid: f27a061419a8cec40a56a5611382e2d4, type: 3}
+    source: {fileID: 0}
+    group: {fileID: -3316062924797532152, guid: 30074e79190fbb3438e58f58430b627d,
+      type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    isMusic: 0
+  - name: Roquette_Explosion
+    clip: {fileID: 8300000, guid: 573ac8087806a394e93eee2b8cee8d0d, type: 3}
+    source: {fileID: 0}
+    group: {fileID: -3316062924797532152, guid: 30074e79190fbb3438e58f58430b627d,
+      type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    isMusic: 0
