@@ -21,12 +21,17 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 321}
 =======
   m_RootView: {fileID: 4}
   m_MinSize: {x: 875, y: 542}
 >>>>>>> CorentinGD
+=======
+  m_RootView: {fileID: 2}
+  m_MinSize: {x: 875, y: 300}
+>>>>>>> SamuelLP
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 1
 --- !u!114 &2
@@ -37,15 +42,25 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
+<<<<<<< HEAD
   m_EditorHideFlags: 0
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: ProjectBrowser
+=======
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12008, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+>>>>>>> SamuelLP
   m_EditorClassIdentifier: 
-  m_Children: []
+  m_Children:
+  - {fileID: 3}
+  - {fileID: 5}
+  - {fileID: 4}
   m_Position:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 541
     height: 373
   m_MinSize: {x: 231, y: 271}
@@ -55,6 +70,12 @@ MonoBehaviour:
   - {fileID: 17}
   m_Selected: 0
   m_LastSelected: 0
+=======
+    width: 1536
+    height: 781
+  m_MinSize: {x: 875, y: 300}
+  m_MaxSize: {x: 10000, y: 10000}
+>>>>>>> SamuelLP
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -63,8 +84,13 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
+<<<<<<< HEAD
   m_EditorHideFlags: 0
   m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
+=======
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12011, guid: 0000000000000000e000000000000000, type: 0}
+>>>>>>> SamuelLP
   m_Name: 
   m_EditorClassIdentifier: 
   m_Children:
@@ -73,6 +99,7 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
     y: 574
     width: 1587
     height: 373
@@ -80,6 +107,14 @@ MonoBehaviour:
   m_MaxSize: {x: 14003, y: 10021}
   vertical: 0
   controlID: 1887
+=======
+    y: 0
+    width: 1536
+    height: 30
+  m_MinSize: {x: 0, y: 0}
+  m_MaxSize: {x: 0, y: 0}
+  m_LastLoadedLayoutName: Sam
+>>>>>>> SamuelLP
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -89,6 +124,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 1
+<<<<<<< HEAD
   m_Script: {fileID: 12008, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -108,6 +144,20 @@ MonoBehaviour:
   m_MinSize: {x: 875, y: 300}
 >>>>>>> CorentinGD
   m_MaxSize: {x: 10000, y: 10000}
+=======
+  m_Script: {fileID: 12042, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 761
+    width: 1536
+    height: 20
+  m_MinSize: {x: 0, y: 0}
+  m_MaxSize: {x: 0, y: 0}
+>>>>>>> SamuelLP
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -117,19 +167,37 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 1
+<<<<<<< HEAD
   m_Script: {fileID: 12011, guid: 0000000000000000e000000000000000, type: 0}
+=======
+  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
+>>>>>>> SamuelLP
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Children: []
+  m_Children:
+  - {fileID: 6}
+  - {fileID: 7}
+  - {fileID: 11}
+  - {fileID: 12}
   m_Position:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
     y: 0
     width: 1920
     height: 30
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
   m_LastLoadedLayoutName: 2D WORK
+=======
+    y: 30
+    width: 1536
+    height: 731
+  m_MinSize: {x: 911, y: 563}
+  m_MaxSize: {x: 22006, y: 12063}
+  vertical: 0
+  controlID: 18389
+>>>>>>> SamuelLP
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -146,11 +214,24 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
     y: 977
     width: 1920
     height: 20
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
+=======
+    y: 0
+    width: 201
+    height: 731
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
+  m_ActualView: {fileID: 14}
+  m_Panes:
+  - {fileID: 14}
+  m_Selected: 0
+  m_LastSelected: 0
+>>>>>>> SamuelLP
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -159,7 +240,11 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
+<<<<<<< HEAD
   m_EditorHideFlags: 1
+=======
+  m_EditorHideFlags: 0
+>>>>>>> SamuelLP
   m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -169,6 +254,7 @@ MonoBehaviour:
   - {fileID: 7}
   - {fileID: 8}
   - {fileID: 9}
+<<<<<<< HEAD
 =======
   - {fileID: 8}
   - {fileID: 13}
@@ -190,6 +276,19 @@ MonoBehaviour:
   m_MaxSize: {x: 18003, y: 14042}
   vertical: 0
   controlID: 379
+=======
+  - {fileID: 10}
+  m_Position:
+    serializedVersion: 2
+    x: 201
+    y: 0
+    width: 827
+    height: 731
+  m_MinSize: {x: 202, y: 563}
+  m_MaxSize: {x: 4002, y: 12063}
+  vertical: 1
+  controlID: 18272
+>>>>>>> SamuelLP
 --- !u!114 &8
 >>>>>>> CorentinGD
 MonoBehaviour:
@@ -200,8 +299,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 1
+<<<<<<< HEAD
   m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
+=======
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: GameView
+>>>>>>> SamuelLP
   m_EditorClassIdentifier: 
   m_Children:
   - {fileID: 9}
@@ -210,6 +314,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
 <<<<<<< HEAD
     width: 201
     height: 947
@@ -228,6 +333,18 @@ MonoBehaviour:
   m_MaxSize: {x: 14003, y: 14042}
   vertical: 1
   controlID: 380
+=======
+    width: 827
+    height: 221
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
+  m_ActualView: {fileID: 13}
+  m_Panes:
+  - {fileID: 13}
+  - {fileID: 15}
+  m_Selected: 0
+  m_LastSelected: 1
+>>>>>>> SamuelLP
 --- !u!114 &9
 >>>>>>> CorentinGD
 MonoBehaviour:
@@ -238,6 +355,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: SceneView
@@ -245,6 +363,11 @@ MonoBehaviour:
   m_EditorHideFlags: 1
   m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
+=======
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: SceneView
+>>>>>>> SamuelLP
   m_EditorClassIdentifier: 
   m_Children:
   - {fileID: 10}
@@ -252,6 +375,7 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
     y: 0
     width: 1587
     height: 574
@@ -259,6 +383,18 @@ MonoBehaviour:
   m_MaxSize: {x: 8002, y: 4021}
   vertical: 0
   controlID: 381
+=======
+    y: 221
+    width: 827
+    height: 289
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
+  m_ActualView: {fileID: 16}
+  m_Panes:
+  - {fileID: 16}
+  m_Selected: 0
+  m_LastSelected: 0
+>>>>>>> SamuelLP
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -267,14 +403,21 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
+<<<<<<< HEAD
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
 >>>>>>> CorentinGD
+=======
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: AnimationWindow
+>>>>>>> SamuelLP
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 201
     y: 0
 <<<<<<< HEAD
@@ -299,6 +442,20 @@ MonoBehaviour:
   m_Panes:
   - {fileID: 15}
   m_Selected: 0
+=======
+    x: 0
+    y: 510
+    width: 827
+    height: 221
+  m_MinSize: {x: 102, y: 121}
+  m_MaxSize: {x: 4002, y: 4021}
+  m_ActualView: {fileID: 18}
+  m_Panes:
+  - {fileID: 17}
+  - {fileID: 18}
+  - {fileID: 19}
+  m_Selected: 1
+>>>>>>> SamuelLP
   m_LastSelected: 0
 --- !u!114 &11
 MonoBehaviour:
@@ -310,11 +467,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+<<<<<<< HEAD
   m_Name: SceneView
+=======
+  m_Name: InspectorWindow
+>>>>>>> SamuelLP
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 369
     y: 0
     width: 1218
@@ -325,6 +487,18 @@ MonoBehaviour:
   m_Panes:
   - {fileID: 16}
   - {fileID: 14}
+=======
+    x: 1028
+    y: 0
+    width: 277
+    height: 731
+  m_MinSize: {x: 277, y: 71}
+  m_MaxSize: {x: 4002, y: 4021}
+  m_ActualView: {fileID: 20}
+  m_Panes:
+  - {fileID: 20}
+  - {fileID: 21}
+>>>>>>> SamuelLP
   m_Selected: 0
   m_LastSelected: 1
 --- !u!114 &12
@@ -336,13 +510,18 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
-  m_EditorHideFlags: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+<<<<<<< HEAD
   m_Name: AnimationWindow
+=======
+  m_Name: ProjectBrowser
+>>>>>>> SamuelLP
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
     serializedVersion: 2
+<<<<<<< HEAD
 <<<<<<< HEAD
     x: 1220
     y: 0
@@ -371,6 +550,18 @@ MonoBehaviour:
   - {fileID: 18}
   - {fileID: 20}
   m_Selected: 1
+=======
+    x: 1305
+    y: 0
+    width: 231
+    height: 731
+  m_MinSize: {x: 231, y: 271}
+  m_MaxSize: {x: 10001, y: 10021}
+  m_ActualView: {fileID: 22}
+  m_Panes:
+  - {fileID: 22}
+  m_Selected: 0
+>>>>>>> SamuelLP
   m_LastSelected: 0
 --- !u!114 &13
 >>>>>>> CorentinGD
@@ -382,6 +573,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 1
+<<<<<<< HEAD
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -448,6 +640,24 @@ MonoBehaviour:
     width: 1216
     height: 553
 >>>>>>> CorentinGD
+=======
+  m_Script: {fileID: 12015, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Game
+    m_Image: {fileID: 257045534191678443, guid: 0000000000000000d000000000000000,
+      type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 200.8
+    y: 73.6
+    width: 825
+    height: 200
+>>>>>>> SamuelLP
   m_ViewDataDictionary: {fileID: 0}
   m_SerializedViewsNames: []
   m_SerializedViewsValues: []
@@ -463,7 +673,7 @@ MonoBehaviour:
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
-  m_MaximizeOnPlay: 0
+  m_MaximizeOnPlay: 1
   m_VSyncEnabled: 0
   m_Gizmos: 0
   m_Stats: 0
@@ -542,10 +752,14 @@ MonoBehaviour:
   m_XRRenderMode: 0
   m_RenderTexture: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!114 &11
 =======
 --- !u!114 &15
 >>>>>>> CorentinGD
+=======
+--- !u!114 &14
+>>>>>>> SamuelLP
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -580,6 +794,7 @@ MonoBehaviour:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
       m_SelectedIDs: 447c0000
       m_LastClickedID: 0
       m_ExpandedIDs: 40fbffff
@@ -588,6 +803,11 @@ MonoBehaviour:
       m_LastClickedID: 0
       m_ExpandedIDs: c2dbfeffb25effffd4a8ffffeaeaffffd6edffff02f5ffff6cfbffff824c00005abb00006cbb0000
 >>>>>>> CorentinGD
+=======
+      m_SelectedIDs: f6770000
+      m_LastClickedID: 0
+      m_ExpandedIDs: 5ae7ffffa6f4ffffa4f9ffff226e0000
+>>>>>>> SamuelLP
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -612,7 +832,11 @@ MonoBehaviour:
     m_CurrentSortingName: TransformSorting
   m_WindowGUID: 7c176fbb34831db4babbd7f4c145d073
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!114 &12
+=======
+--- !u!114 &15
+>>>>>>> SamuelLP
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -628,22 +852,35 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Animator
+<<<<<<< HEAD
     m_Image: {fileID: 663490763026382308, guid: 0000000000000000d000000000000000,
+=======
+    m_Image: {fileID: -6973158847631862895, guid: 0000000000000000d000000000000000,
+>>>>>>> SamuelLP
       type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
     x: 200.8
     y: 73.6
+<<<<<<< HEAD
     width: 825
     height: 200
+=======
+    width: 822
+    height: 245
+>>>>>>> SamuelLP
   m_ViewDataDictionary: {fileID: 0}
   m_ViewTransforms:
     m_KeySerializationHelper:
     - {fileID: 2759255078094050332, guid: 163716d62fefc3745bb285ad8f003237, type: 2}
+<<<<<<< HEAD
     - {fileID: 6712289050133782014, guid: 1ae9b642aeface345884ef93a2d1ddf9, type: 2}
     - {fileID: 7277419184326096025, guid: 1fdb46ff1ed225840a0d87dadeb28c5a, type: 2}
     - {fileID: 1787680294819736615, guid: dcd603ca2e1300b499bd560b3077b62e, type: 2}
+=======
+    - {fileID: 4962402675815514516, guid: 2f284a358332727459f0585cc366f8db, type: 2}
+>>>>>>> SamuelLP
     m_ValueSerializationHelper:
     - e00: 0.6465555
       e01: 0
@@ -661,6 +898,7 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
+<<<<<<< HEAD
     - e00: 0.3205771
       e01: 0
       e02: 0
@@ -701,6 +939,16 @@ MonoBehaviour:
       e11: 0.5010526
       e12: 0
       e13: 37.910526
+=======
+    - e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+>>>>>>> SamuelLP
       e20: 0
       e21: 0
       e22: 1
@@ -710,10 +958,17 @@ MonoBehaviour:
       e32: 0
       e33: 1
   m_PreviewAnimator: {fileID: 0}
+<<<<<<< HEAD
   m_AnimatorController: {fileID: 9100000, guid: 163716d62fefc3745bb285ad8f003237,
     type: 2}
   m_BreadCrumbs:
   - m_Target: {fileID: 2759255078094050332, guid: 163716d62fefc3745bb285ad8f003237,
+=======
+  m_AnimatorController: {fileID: 9100000, guid: 2f284a358332727459f0585cc366f8db,
+    type: 2}
+  m_BreadCrumbs:
+  - m_Target: {fileID: 4962402675815514516, guid: 2f284a358332727459f0585cc366f8db,
+>>>>>>> SamuelLP
       type: 2}
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
@@ -724,6 +979,7 @@ MonoBehaviour:
   m_MiniTool: 0
   m_LockTracker:
     m_IsLocked: 0
+<<<<<<< HEAD
   m_CurrentEditor: 1
   m_LayerEditor:
     m_SelectedLayerIndex: 0
@@ -731,6 +987,12 @@ MonoBehaviour:
 =======
 --- !u!114 &16
 >>>>>>> CorentinGD
+=======
+  m_CurrentEditor: 0
+  m_LayerEditor:
+    m_SelectedLayerIndex: 0
+--- !u!114 &16
+>>>>>>> SamuelLP
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -752,6 +1014,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
     x: 201
     y: 73
     width: 1017
@@ -762,6 +1025,12 @@ MonoBehaviour:
     width: 1216
     height: 553
 >>>>>>> CorentinGD
+=======
+    x: 200.8
+    y: 294.4
+    width: 825
+    height: 268
+>>>>>>> SamuelLP
   m_ViewDataDictionary: {fileID: 0}
   m_ShowContextualTools: 0
   m_WindowGUID: aa7aeaa20c46d6c42b0524fb758741e9
@@ -774,6 +1043,7 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_Position:
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: {x: 33.779408, y: 24.952574, z: -1798.1328}
     speed: 2
     m_Value: {x: 33.779408, y: 24.952574, z: -1798.1328}
@@ -782,6 +1052,11 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 10.582336, y: 39.042427, z: -157.07573}
 >>>>>>> CorentinGD
+=======
+    m_Target: {x: 38.700684, y: -5.772233, z: -6.58418}
+    speed: 2
+    m_Value: {x: 38.700684, y: -5.772233, z: -6.58418}
+>>>>>>> SamuelLP
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -832,6 +1107,7 @@ MonoBehaviour:
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: 42.145603
     speed: 2
     m_Value: 42.145603
@@ -840,6 +1116,11 @@ MonoBehaviour:
     speed: 2
     m_Value: 76.83424
 >>>>>>> CorentinGD
+=======
+    m_Target: 8.333174
+    speed: 2
+    m_Value: 8.725837
+>>>>>>> SamuelLP
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -865,7 +1146,11 @@ MonoBehaviour:
   m_LastLockedObject: {fileID: 0}
   m_ViewIsLockedToObject: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!114 &14
+=======
+--- !u!114 &17
+>>>>>>> SamuelLP
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -874,6 +1159,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 1
+<<<<<<< HEAD
   m_Script: {fileID: 12019, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -882,10 +1168,21 @@ MonoBehaviour:
   m_TitleContent:
     m_Text: Inspector
     m_Image: {fileID: -6905738622615590433, guid: 0000000000000000d000000000000000,
+=======
+  m_Script: {fileID: 12003, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Console
+    m_Image: {fileID: -3303252850963283158, guid: 0000000000000000d000000000000000,
+>>>>>>> SamuelLP
       type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 1220
     y: 73
     width: 359
@@ -938,6 +1235,142 @@ MonoBehaviour:
 =======
 --- !u!114 &17
 >>>>>>> CorentinGD
+=======
+    x: 200.8
+    y: 683.2
+    width: 825
+    height: 100
+  m_ViewDataDictionary: {fileID: 0}
+--- !u!114 &18
+>>>>>>> SamuelLP
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12071, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Animation
+    m_Image: {fileID: -8967370667835289719, guid: 0000000000000000d000000000000000,
+      type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 200.8
+    y: 583.2
+    width: 825
+    height: 200
+  m_ViewDataDictionary: {fileID: 0}
+  m_LockTracker:
+    m_IsLocked: 0
+  m_LastSelectedObjectID: 28620
+--- !u!114 &19
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 13854, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 300, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Project Settings
+    m_Image: {fileID: -6304849327172165113, guid: 0000000000000000d000000000000000,
+      type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 200.8
+    y: 560
+    width: 822
+    height: 223
+  m_ViewDataDictionary: {fileID: 0}
+  m_PosLeft: {x: 0, y: 0}
+  m_PosRight: {x: 0, y: 0}
+  m_Scope: 1
+  m_SplitterFlex: 0.2
+--- !u!114 &20
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12019, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Inspector
+    m_Image: {fileID: 8356117983803934776, guid: 0000000000000000d000000000000000,
+      type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 1028
+    y: 73.6
+    width: 275
+    height: 710
+  m_ViewDataDictionary: {fileID: 0}
+  m_OpenAddComponentMenu: 0
+  m_ObjectsLockedBeforeSerialization: []
+  m_InstanceIDsLockedBeforeSerialization: 
+  m_LockTracker:
+    m_IsLocked: 0
+  m_PreviewResizer:
+    m_CachedPref: 160
+    m_ControlHash: -371814159
+    m_PrefName: Preview_InspectorPreview
+  m_PreviewWindow: {fileID: 0}
+  m_LastInspectedObjectInstanceID: -1
+  m_LastVerticalScrollValue: 0
+--- !u!114 &21
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f683d99f24875748a6656966ca9cea0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 240, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Tile Palette
+    m_Image: {fileID: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 1028
+    y: 73.6
+    width: 275
+    height: 710
+  m_ViewDataDictionary: {fileID: 0}
+  m_PreviewResizer:
+    m_CachedPref: 50
+    m_ControlHash: 1964396721
+    m_PrefName: Preview_TilemapBrushInspector
+  m_Palette: {fileID: 8875647702784111766, guid: 4aea2a71fea431d4da227817947896cd,
+    type: 3}
+--- !u!114 &22
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -984,15 +1417,23 @@ MonoBehaviour:
     m_SearchArea: 1
     m_Folders:
 <<<<<<< HEAD
+<<<<<<< HEAD
     - "Assets/Dialogue/2 - For\xEAt des Ronchonchons"
 =======
     - Assets/Audio/Boss/Boss2
 >>>>>>> CorentinGD
+=======
+    - Assets/Dialogue/4 - Donjon
+>>>>>>> SamuelLP
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
 <<<<<<< HEAD
+<<<<<<< HEAD
   - "Assets/Dialogue/2 - For\xEAt des Ronchonchons"
+=======
+  - Assets/Dialogue/4 - Donjon
+>>>>>>> SamuelLP
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\Admin\Documents\Rubika\Zeldaction\ZeldaLike\ZeldaLike\ZeldaLikeUnity
 =======
@@ -1005,6 +1446,7 @@ MonoBehaviour:
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_SelectedIDs: 66750000
     m_LastClickedID: 30054
     m_ExpandedIDs: 00000000c83e0000c8620000ca620000cc620000627500008875000000ca9a3b
@@ -1013,6 +1455,11 @@ MonoBehaviour:
     m_LastClickedID: 33238
     m_ExpandedIDs: 00000000fc6b00008e8100009081000094810000968100009c810000d0810000d281000004820000488200007282000000ca9a3b
 >>>>>>> CorentinGD
+=======
+    m_SelectedIDs: 42650000
+    m_LastClickedID: 25922
+    m_ExpandedIDs: 00000000c83e00009063000092630000946300003a6500006c6500009665000000ca9a3b
+>>>>>>> SamuelLP
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1045,10 +1492,14 @@ MonoBehaviour:
     m_SelectedIDs: 
     m_LastClickedID: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_ExpandedIDs: 00000000c83e0000c8620000ca620000cc620000
 =======
     m_ExpandedIDs: 00000000fc6b00008e8100009081000092810000948100009681000000ca9a3b
 >>>>>>> CorentinGD
+=======
+    m_ExpandedIDs: 00000000c83e00009063000092630000946300003a6500006c6500009665000000ca9a3b
+>>>>>>> SamuelLP
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1077,10 +1528,14 @@ MonoBehaviour:
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_ExpandedInstanceIDs: c6230000
 =======
     m_ExpandedInstanceIDs: c623000076550000
 >>>>>>> CorentinGD
+=======
+    m_ExpandedInstanceIDs: c623000002a100007a4e0000
+>>>>>>> SamuelLP
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1097,10 +1552,14 @@ MonoBehaviour:
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
       m_ClientGUIView: {fileID: 9}
 =======
       m_ClientGUIView: {fileID: 13}
 >>>>>>> CorentinGD
+=======
+      m_ClientGUIView: {fileID: 12}
+>>>>>>> SamuelLP
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -1111,6 +1570,7 @@ MonoBehaviour:
     m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 64
   m_SkipHiddenPackages: 0
+<<<<<<< HEAD
 <<<<<<< HEAD
   m_DirectoriesAreaWidth: 158
 =======
@@ -1373,3 +1833,6 @@ MonoBehaviour:
   m_RegisteredViewInstances:
   - {fileID: 0}
 >>>>>>> CorentinGD
+=======
+  m_DirectoriesAreaWidth: 110
+>>>>>>> SamuelLP

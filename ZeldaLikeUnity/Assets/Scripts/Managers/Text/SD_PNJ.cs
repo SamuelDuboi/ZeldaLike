@@ -99,6 +99,7 @@ public  class SD_PNJ : MonoBehaviour
                     case 4:
                         break;
                     case 5:
+                        AudioManager.Instance.Play("Voix_Pepe");
                         break;
                     case 6:
                         AudioManager.Instance.Play("Note_Obtenu");
