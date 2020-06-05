@@ -14,10 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Cells:
 <<<<<<< HEAD
+<<<<<<< HEAD
   - m_Tile: {fileID: 0}
 =======
   - m_Tile: {fileID: 11400000, guid: 8dabcbc32e00b05409c5a77bef7ed9d5, type: 2}
 >>>>>>> CorentinGD
+=======
+  - m_Tile: {fileID: 11400000, guid: 9bfec45dd91292e49b793e66c7e121d5, type: 2}
+>>>>>>> ThibautGDt
     m_Matrix:
       e00: 1
       e01: 0
@@ -37,10 +41,14 @@ MonoBehaviour:
       e33: 1
     m_Color: {r: 1, g: 1, b: 1, a: 1}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_Size: {x: 1, y: 1, z: 1}
   m_Pivot: {x: 0, y: 0, z: 0}
 =======
   - m_Tile: {fileID: 11400000, guid: 24dd2d7c65a73bc4e8a922f9d6bd57a1, type: 2}
+=======
+  - m_Tile: {fileID: 11400000, guid: 3e259b1b5e18e7d4a96435dcbc79dc4b, type: 2}
+>>>>>>> ThibautGDt
     m_Matrix:
       e00: 1
       e01: 0
@@ -59,7 +67,7 @@ MonoBehaviour:
       e32: 0
       e33: 1
     m_Color: {r: 1, g: 1, b: 1, a: 1}
-  - m_Tile: {fileID: 11400000, guid: 38960c605a174204b882a74943d725ba, type: 2}
+  - m_Tile: {fileID: 11400000, guid: b20f09bacbb707942949c81128f390a1, type: 2}
     m_Matrix:
       e00: 1
       e01: 0
@@ -78,7 +86,7 @@ MonoBehaviour:
       e32: 0
       e33: 1
     m_Color: {r: 1, g: 1, b: 1, a: 1}
-  - m_Tile: {fileID: 11400000, guid: a61ed2dff9088794eb089fe99140c5cc, type: 2}
+  - m_Tile: {fileID: 11400000, guid: 9dbba5be261d0b94e82944b61e7cb989, type: 2}
     m_Matrix:
       e00: 1
       e01: 0
@@ -97,7 +105,50 @@ MonoBehaviour:
       e32: 0
       e33: 1
     m_Color: {r: 1, g: 1, b: 1, a: 1}
+<<<<<<< HEAD
   m_Size: {x: 2, y: 2, z: 1}
   m_Pivot: {x: 1, y: 0, z: 0}
 >>>>>>> CorentinGD
+=======
+  - m_Tile: {fileID: 11400000, guid: 58d078cbf5b07f54a97419360685f2b8, type: 2}
+    m_Matrix:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_Color: {r: 1, g: 1, b: 1, a: 1}
+  - m_Tile: {fileID: 11400000, guid: 3251f000312c0a5428c95de6bf67a082, type: 2}
+    m_Matrix:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Size: {x: 3, y: 2, z: 1}
+  m_Pivot: {x: 2, y: 0, z: 0}
+>>>>>>> ThibautGDt
   m_CanChangeZPosition: 0
