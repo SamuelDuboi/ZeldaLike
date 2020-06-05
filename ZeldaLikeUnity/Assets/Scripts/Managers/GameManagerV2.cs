@@ -105,11 +105,11 @@ namespace Management
                         cantPause = false;
                         AudioManager.Instance.StopAllMusic();
 
-                        AudioManager.Instance.Play("Music_Boss1");                        
+                        AudioManager.Instance.Play("Music_Ronchonchon2");                        
                         break;
                     case 7:
                         cantPause = false;
-                        AudioManager.Instance.StopAllMusic();                        AudioManager.Instance.Play("Music_Boss1");
+                        AudioManager.Instance.StopAllMusic();
                                                 break;
 
                     default: break;
