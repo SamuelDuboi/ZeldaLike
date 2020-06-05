@@ -174,7 +174,6 @@ namespace Ennemy
         }
         public override void OnTriggerEnter2D(Collider2D collision)
         {
-            base.OnTriggerEnter2D(collision);
             if(collision.gameObject.layer == 14)
             {
                 if (shield.activeInHierarchy)
@@ -185,6 +184,8 @@ namespace Ennemy
             {
                 StartCoroutine(Hit());
             }
+
+            base.OnTriggerEnter2D(collision);
         }
 
         IEnumerator ShieldPopOut()

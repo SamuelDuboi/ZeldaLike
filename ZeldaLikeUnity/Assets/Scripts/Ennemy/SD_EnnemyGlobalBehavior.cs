@@ -408,5 +408,12 @@ namespace Ennemy
         {
             AudioManager.Instance.Stop(name);
         }
+
+        public void StopMove()
+        {
+            ennemyRGB.velocity = Vector2.zero;
+                canMove = false;
+            isAvoidingObstacles = false;
+        }
     }
 }
