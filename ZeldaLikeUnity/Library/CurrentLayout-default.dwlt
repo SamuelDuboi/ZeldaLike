@@ -16,11 +16,15 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> SamuelM
     y: 43
     width: 1920
     height: 997
   m_ShowMode: 4
   m_Title: 
+<<<<<<< HEAD
   m_RootView: {fileID: 9}
   m_MinSize: {x: 875, y: 300}
 =======
@@ -32,6 +36,10 @@ MonoBehaviour:
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 592}
 >>>>>>> SamuelLP
+=======
+  m_RootView: {fileID: 6}
+  m_MinSize: {x: 875, y: 542}
+>>>>>>> SamuelM
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 1
 --- !u!114 &2
@@ -73,12 +81,22 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
     y: 0
     width: 1536
     height: 781
   m_MinSize: {x: 875, y: 592}
   m_MaxSize: {x: 10000, y: 10000}
 >>>>>>> SamuelLP
+=======
+    y: 30
+    width: 1920
+    height: 947
+  m_MinSize: {x: 679, y: 492}
+  m_MaxSize: {x: 14002, y: 14042}
+  vertical: 0
+  controlID: 77
+>>>>>>> SamuelM
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -101,6 +119,7 @@ MonoBehaviour:
   - {fileID: 2}
   m_Position:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 0
 <<<<<<< HEAD
     y: 30
@@ -118,6 +137,19 @@ MonoBehaviour:
   m_MaxSize: {x: 0, y: 0}
   m_LastLoadedLayoutName: Sam
 >>>>>>> SamuelLP
+=======
+    x: 1531
+    y: 0
+    width: 389
+    height: 947
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
+  m_ActualView: {fileID: 14}
+  m_Panes:
+  - {fileID: 14}
+  m_Selected: 0
+  m_LastSelected: 0
+>>>>>>> SamuelM
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -142,11 +174,19 @@ MonoBehaviour:
 <<<<<<< HEAD
     x: 780
     y: 0
+<<<<<<< HEAD
     width: 393
     height: 707
   m_MinSize: {x: 277, y: 71}
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 16}
+=======
+    width: 379
+    height: 573
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
+  m_ActualView: {fileID: 15}
+>>>>>>> SamuelM
   m_Panes:
   - {fileID: 16}
   m_Selected: 0
@@ -181,6 +221,7 @@ MonoBehaviour:
   - {fileID: 4}
   m_Position:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 389
     y: 0
     width: 1173
@@ -205,6 +246,20 @@ MonoBehaviour:
   vertical: 0
   controlID: 24326
 >>>>>>> SamuelLP
+=======
+    x: 0
+    y: 573
+    width: 1531
+    height: 374
+  m_MinSize: {x: 231, y: 271}
+  m_MaxSize: {x: 10001, y: 10021}
+  m_ActualView: {fileID: 13}
+  m_Panes:
+  - {fileID: 13}
+  - {fileID: 18}
+  m_Selected: 0
+  m_LastSelected: 0
+>>>>>>> SamuelM
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -234,6 +289,7 @@ MonoBehaviour:
     x: 0
     y: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     width: 1920
     height: 707
   m_MinSize: {x: 911, y: 271}
@@ -251,6 +307,12 @@ MonoBehaviour:
   m_Selected: 0
   m_LastSelected: 0
 >>>>>>> SamuelLP
+=======
+    width: 1920
+    height: 997
+  m_MinSize: {x: 875, y: 300}
+  m_MaxSize: {x: 10000, y: 10000}
+>>>>>>> SamuelM
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -269,6 +331,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1562
     y: 0
+<<<<<<< HEAD
     width: 358
     height: 707
   m_MinSize: {x: 231, y: 271}
@@ -298,6 +361,13 @@ MonoBehaviour:
   vertical: 1
   controlID: 24303
 >>>>>>> SamuelLP
+=======
+    width: 1920
+    height: 30
+  m_MinSize: {x: 0, y: 0}
+  m_MaxSize: {x: 0, y: 0}
+  m_LastLoadedLayoutName: 
+>>>>>>> SamuelM
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -318,6 +388,7 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
     y: 0
 <<<<<<< HEAD
     width: 389
@@ -340,6 +411,13 @@ MonoBehaviour:
 >>>>>>> SamuelLP
   m_Selected: 0
   m_LastSelected: 1
+=======
+    y: 977
+    width: 1920
+    height: 20
+  m_MinSize: {x: 0, y: 0}
+  m_MaxSize: {x: 0, y: 0}
+>>>>>>> SamuelM
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -361,6 +439,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 1920
     height: 997
   m_MinSize: {x: 875, y: 300}
@@ -385,6 +464,14 @@ MonoBehaviour:
   m_Selected: 0
   m_LastSelected: 0
 >>>>>>> SamuelLP
+=======
+    width: 1531
+    height: 947
+  m_MinSize: {x: 403, y: 492}
+  m_MaxSize: {x: 10001, y: 14042}
+  vertical: 1
+  controlID: 78
+>>>>>>> SamuelM
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -409,11 +496,20 @@ MonoBehaviour:
     x: 0
 <<<<<<< HEAD
     y: 0
+<<<<<<< HEAD
     width: 1920
     height: 30
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
   m_LastLoadedLayoutName: 
+=======
+    width: 1531
+    height: 573
+  m_MinSize: {x: 403, y: 221}
+  m_MaxSize: {x: 8003, y: 4021}
+  vertical: 0
+  controlID: 79
+>>>>>>> SamuelM
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -461,14 +557,19 @@ MonoBehaviour:
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_Name: 
 =======
   m_Name: InspectorWindow
 >>>>>>> SamuelLP
+=======
+  m_Name: SceneView
+>>>>>>> SamuelM
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
     serializedVersion: 2
+<<<<<<< HEAD
 <<<<<<< HEAD
     x: 0
     y: 0
@@ -492,6 +593,15 @@ MonoBehaviour:
   m_MinSize: {x: 277, y: 71}
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 20}
+=======
+    x: 379
+    y: 0
+    width: 1152
+    height: 573
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
+  m_ActualView: {fileID: 16}
+>>>>>>> SamuelM
   m_Panes:
   - {fileID: 20}
   - {fileID: 21}
@@ -563,7 +673,6 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-<<<<<<< HEAD
     x: 468
     y: 181
     width: 973
@@ -662,10 +771,17 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
     x: 1562
     y: 73
     width: 357
     height: 686
+=======
+    x: 0
+    y: 646
+    width: 1530
+    height: 353
+>>>>>>> SamuelM
   m_ViewDataDictionary: {fileID: 0}
   m_SearchFilter:
     m_NameFilter: 
@@ -680,20 +796,34 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
+<<<<<<< HEAD
     - Assets/Sprites/Ennemi/Boss2/Boss Nouveau Design/IDLE P1
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
   - Assets/Sprites/Ennemi/Boss2/Boss Nouveau Design/IDLE P1
+=======
+    - Assets/Scenes/MainScenes
+  m_ViewMode: 1
+  m_StartGridSize: 64
+  m_LastFolders:
+  - Assets/Scenes/MainScenes
+>>>>>>> SamuelM
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\Admin\Documents\Rubika\Zeldaction\ZeldaLike\ZeldaLike\ZeldaLikeUnity
+  m_LastProjectPath: C:\Users\J0ker\Documents\Projet Zeldaction\ZeldaLike\ZeldaLikeUnity
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
     m_SelectedIDs: 36570000
     m_LastClickedID: 22326
     m_ExpandedIDs: 00000000c83e000022570000245700002a5700003057000000ca9a3b
+=======
+    m_SelectedIDs: 106a0000
+    m_LastClickedID: 27152
+    m_ExpandedIDs: 00000000c83e0000fc680000fe68000000690000026900000469000006690000086900000a69000000ca9a3b
+>>>>>>> SamuelM
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -721,7 +851,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
     m_ExpandedIDs: 00000000c83e0000
+=======
+    m_ExpandedIDs: 00000000c83e0000fc680000fe68000000690000026900000469000006690000086900000a690000
+>>>>>>> SamuelM
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -836,10 +970,17 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 1169
     y: 73
     width: 391
     height: 686
+=======
+    x: 1531
+    y: 73
+    width: 388
+    height: 926
+>>>>>>> SamuelM
   m_ViewDataDictionary: {fileID: 0}
   m_OpenAddComponentMenu: 0
   m_ObjectsLockedBeforeSerialization: []
@@ -853,7 +994,11 @@ MonoBehaviour:
   m_PreviewWindow: {fileID: 0}
   m_LastInspectedObjectInstanceID: -1
   m_LastVerticalScrollValue: 0
+<<<<<<< HEAD
 --- !u!114 &17
+=======
+--- !u!114 &15
+>>>>>>> SamuelM
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -886,17 +1031,30 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
     x: 0
     y: 73
     width: 388
     height: 686
+=======
+    x: 0
+    y: 73
+    width: 378
+    height: 552
+>>>>>>> SamuelM
   m_ViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
       m_SelectedIDs: f0420000
       m_LastClickedID: 17136
       m_ExpandedIDs: 40fbffff8043000068470000
+=======
+      m_SelectedIDs: 6ae80000
+      m_LastClickedID: 59498
+      m_ExpandedIDs: 166ffffffe83ffff56a6ffff40fbffff3443000034440000164b0000284b00004cef0000
+>>>>>>> SamuelM
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -919,6 +1077,7 @@ MonoBehaviour:
     m_LockTracker:
       m_IsLocked: 0
     m_CurrentSortingName: TransformSorting
+<<<<<<< HEAD
   m_WindowGUID: 91a2b8ff384d4d1409a341a129a423d9
 --- !u!114 &18
 =======
@@ -1084,6 +1243,9 @@ MonoBehaviour:
   m_CurrentEditor: 1
   m_LayerEditor:
     m_SelectedLayerIndex: 0
+=======
+  m_WindowGUID: c0deb9d2ee582ed46b5ffaf1c8cb8788
+>>>>>>> SamuelM
 --- !u!114 &16
 >>>>>>> SamuelLP
 MonoBehaviour:
@@ -1107,6 +1269,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
     x: 389
     y: 73
     width: 778
@@ -1123,6 +1286,15 @@ MonoBehaviour:
   m_ShowContextualTools: 0
   m_WindowGUID: aa7aeaa20c46d6c42b0524fb758741e9
 >>>>>>> SamuelLP
+=======
+    x: 379
+    y: 73
+    width: 1150
+    height: 552
+  m_ViewDataDictionary: {fileID: 0}
+  m_ShowContextualTools: 0
+  m_WindowGUID: 958f59b3b4c7aab4890fff64521c97a0
+>>>>>>> SamuelM
   m_Gizmos: 1
   m_SceneIsLit: 1
   m_SceneLighting: 1
@@ -1132,6 +1304,7 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_Position:
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: {x: 12.073852, y: 56.80694, z: -15.2734375}
     speed: 2
     m_Value: {x: 12.073852, y: 56.80694, z: -15.2734375}
@@ -1140,6 +1313,11 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: -2.8125696, y: 3.5212576, z: -10.777546}
 >>>>>>> SamuelLP
+=======
+    m_Target: {x: 98.34889, y: -20.394852, z: -1072.3438}
+    speed: 2
+    m_Value: {x: 98.34889, y: -20.394852, z: -1072.3438}
+>>>>>>> SamuelM
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1190,6 +1368,7 @@ MonoBehaviour:
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: 65.521255
     speed: 2
     m_Value: 65.521255
@@ -1198,6 +1377,11 @@ MonoBehaviour:
     speed: 2
     m_Value: 24.308876
 >>>>>>> SamuelLP
+=======
+    m_Target: 221.30222
+    speed: 2
+    m_Value: 211.77246
+>>>>>>> SamuelM
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1247,10 +1431,17 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 200.8
     y: 683.2
     width: 825
     height: 100
+=======
+    x: 379
+    y: 73
+    width: 1150
+    height: 552
+>>>>>>> SamuelM
   m_ViewDataDictionary: {fileID: 0}
 <<<<<<< HEAD
   m_SerializedViewsNames: []
@@ -1259,10 +1450,10 @@ MonoBehaviour:
   m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
-  m_TargetSize: {x: 640, y: 480}
+  m_TargetSize: {x: 1150, y: 531}
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
-  m_RenderIMGUI: 0
+  m_RenderIMGUI: 1
   m_MaximizeOnPlay: 0
   m_VSyncEnabled: 0
   m_Gizmos: 0
@@ -1273,10 +1464,10 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
-    m_HBaseRangeMin: -766
-    m_HBaseRangeMax: 766
-    m_VBaseRangeMin: -395
-    m_VBaseRangeMax: 395
+    m_HBaseRangeMin: -575
+    m_HBaseRangeMax: 575
+    m_VBaseRangeMin: -276
+    m_VBaseRangeMax: 276
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -1285,7 +1476,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 1
+    m_EnableMouseInput: 0
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -1294,23 +1485,23 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 0
-      width: 1532
-      height: 790
+      width: 1150
+      height: 552
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 766, y: 395}
+    m_Translation: {x: 575, y: 276}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -766
-      y: -395
-      width: 1532
-      height: 790
+      x: -575
+      y: -276
+      width: 1150
+      height: 552
     m_MinimalGUI: 1
   m_defaultScale: 1
-  m_LastWindowPixelSize: {x: 1532, y: 790}
+  m_LastWindowPixelSize: {x: 1150, y: 552}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
@@ -1344,6 +1535,7 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 200.8
     y: 545.60004
     width: 825
@@ -1596,3 +1788,10 @@ MonoBehaviour:
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 110
 >>>>>>> SamuelLP
+=======
+    x: 8
+    y: 718
+    width: 1366
+    height: 308
+  m_ViewDataDictionary: {fileID: 0}
+>>>>>>> SamuelM
