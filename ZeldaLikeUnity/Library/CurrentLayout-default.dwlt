@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 16
+  controlID: 77
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -68,8 +68,8 @@ MonoBehaviour:
     y: 0
     width: 389
     height: 947
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -94,8 +94,8 @@ MonoBehaviour:
     y: 0
     width: 379
     height: 573
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -219,7 +219,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 17
+  controlID: 78
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -244,7 +244,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 18
+  controlID: 79
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -338,20 +338,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Sprites/Environment/Sky
+    - Assets/Scenes/MainScenes
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Sprites/Environment/Sky
+  - Assets/Scenes/MainScenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\J0ker\Documents\Projet Zeldaction\ZeldaLike\ZeldaLikeUnity
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 275}
-    m_SelectedIDs: 6a690000
-    m_LastClickedID: 26986
-    m_ExpandedIDs: 00000000f03e0000ee670000f0670000f2670000f4670000f6670000fa670000fc670000fe6700006a69000000ca9a3b
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 106a0000
+    m_LastClickedID: 27152
+    m_ExpandedIDs: 00000000c83e0000fc680000fe68000000690000026900000469000006690000086900000a69000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -379,7 +379,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000f03e0000ee670000f0670000f2670000f4670000f6670000f8670000fa670000fc670000fe670000
+    m_ExpandedIDs: 00000000c83e0000fc680000fe68000000690000026900000469000006690000086900000a690000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -502,9 +502,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 00e2feff
-      m_LastClickedID: -73216
-      m_ExpandedIDs: f2f0feffcaf4feff5a19ffffde1cffff7637ffff864effff884effff8a4effff964effff1071ffff2a76ffffde9dffffded4ffffc4faffff48880000cc8c0000d88c0000a8cf0000b2eb000056040100c4070100b6090100320a0100440a0100740a01007a0a0100820a0100880a0100740b0100e00b0100fe0b0100140c0100400c0100820c0100d00c0100240e0100be0e0100d20e0100f80e0100040f0100200f0100a010010038110100d8110100e0120100c0130100
+      m_SelectedIDs: 6ae80000
+      m_LastClickedID: 59498
+      m_ExpandedIDs: 166ffffffe83ffff56a6ffff40fbffff3443000034440000164b0000284b00004cef0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -564,9 +564,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 67.7765, y: -43.85181, z: -879.34375}
+    m_Target: {x: 98.34889, y: -20.394852, z: -1072.3438}
     speed: 2
-    m_Value: {x: 67.7765, y: -43.85181, z: -879.34375}
+    m_Value: {x: 98.34889, y: -20.394852, z: -1072.3438}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -616,9 +616,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 204.62169
+    m_Target: 221.30222
     speed: 2
-    m_Value: 195.81023
+    m_Value: 211.77246
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -691,8 +691,8 @@ MonoBehaviour:
     vZoomLockedByDefault: 0
     m_HBaseRangeMin: -575
     m_HBaseRangeMax: 575
-    m_VBaseRangeMin: -265.5
-    m_VBaseRangeMax: 265.5
+    m_VBaseRangeMin: -276
+    m_VBaseRangeMax: 276
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -709,11 +709,11 @@ MonoBehaviour:
     m_DrawArea:
       serializedVersion: 2
       x: 0
-      y: 21
+      y: 0
       width: 1150
-      height: 531
+      height: 552
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 575, y: 265.5}
+    m_Translation: {x: 575, y: 276}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
@@ -721,9 +721,9 @@ MonoBehaviour:
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
       x: -575
-      y: -265.5
+      y: -276
       width: 1150
-      height: 531
+      height: 552
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_LastWindowPixelSize: {x: 1150, y: 552}
