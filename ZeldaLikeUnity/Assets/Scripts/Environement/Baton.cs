@@ -52,11 +52,11 @@ public class Baton : MonoBehaviour
         }
       else if(canCircle)
         {
-            if(Mathf.Abs(Vector2.Distance(transform.position, player.transform.position)) < 8f && !AttackButton.activeSelf)
+            if(Mathf.Abs(Vector2.Distance(transform.position, player.transform.position)) < 3f && !AttackButton.activeSelf)
             {
                 AttackButton.SetActive(true);
             }
-            else if (Mathf.Abs(Vector2.Distance(transform.position, player.transform.position)) >= 8f)
+            else if (Mathf.Abs(Vector2.Distance(transform.position, player.transform.position)) >= 3f)
             {
                 AttackButton.SetActive(false);
             }

@@ -66,7 +66,7 @@ public class Dodos : MonoBehaviour
                 SpriteRenderer.flipX = false;
             RaycastHit2D raycastHit = Physics2D.Raycast(transform.position,
                                                         new Vector2(randomx - transform.position.x, randomy - transform.position.y),
-                                                        2,
+                                                        2f,
                                                         wallMask);
             Debug.DrawRay(transform.position, new Vector2(randomx - transform.position.x, randomy - transform.position.y));
             if (raycastHit.collider != null  ||cantRun)
