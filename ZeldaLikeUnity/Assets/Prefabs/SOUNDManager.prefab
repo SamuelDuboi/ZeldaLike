@@ -685,3 +685,52 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     isMusic: 0
+  - name: Village_Poulet
+    clip: {fileID: 8300000, guid: 44efee2a9df0a1b4d8df02edcb589c53, type: 3}
+    source: {fileID: 0}
+    group: {fileID: -2934808699073203160, guid: 30074e79190fbb3438e58f58430b627d,
+      type: 2}
+    volume: 1
+    pitch: 1
+    loop: 1
+    isMusic: 1
+  - name: PNJ_F1
+    clip: {fileID: 8300000, guid: 827d647ef5e58dc49bd5b41b3ff2c9cc, type: 3}
+    source: {fileID: 0}
+    group: {fileID: 4024073945416849157, guid: 30074e79190fbb3438e58f58430b627d, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    isMusic: 0
+  - name: PNJ_F2
+    clip: {fileID: 8300000, guid: 013c2b2406d98264c96b70e3f64c7016, type: 3}
+    source: {fileID: 0}
+    group: {fileID: 4024073945416849157, guid: 30074e79190fbb3438e58f58430b627d, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    isMusic: 0
+  - name: PNJ_H1
+    clip: {fileID: 8300000, guid: 61b7eafa905a8164e9e88c3f693fb5ec, type: 3}
+    source: {fileID: 0}
+    group: {fileID: 4024073945416849157, guid: 30074e79190fbb3438e58f58430b627d, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    isMusic: 0
+  - name: PNJ_H2
+    clip: {fileID: 8300000, guid: 2165d653002dba147b071e11477c3b2f, type: 3}
+    source: {fileID: 0}
+    group: {fileID: 4024073945416849157, guid: 30074e79190fbb3438e58f58430b627d, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    isMusic: 0
+  - name: Hit_Dodo
+    clip: {fileID: 8300000, guid: bc669178fe672b2478318d9e143cb3b0, type: 3}
+    source: {fileID: 0}
+    group: {fileID: 4291617978152650875, guid: 30074e79190fbb3438e58f58430b627d, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    isMusic: 0
