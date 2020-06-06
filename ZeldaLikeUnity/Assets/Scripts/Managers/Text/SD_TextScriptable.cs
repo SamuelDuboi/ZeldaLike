@@ -11,7 +11,7 @@ public class SD_TextScriptable : ScriptableObject
     public Sprite ImageCharacter;
     [TextArea]
     public string text;
-    public enum character { alyah1,alyah2,Henry1,Henry2,WindMother,Pepe,Note }
+    public enum character { alyah1,alyah2,Henry1,Henry2,WindMother,Pepe,Note,Homme1,Homme2,Femme1,Femme2,PanneauDonjon }
     public character pnj;
    /* //to make the creation prettier
     [CustomPropertyDrawer(typeof(Sprite))]

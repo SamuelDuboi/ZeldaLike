@@ -85,6 +85,7 @@ public class Intro : MonoBehaviour
         Sky.SetActive(true);
         playerCam.SetActive(true);
         AudioManager.Instance.Play("Village_Music");
+        AudioManager.Instance.Play("Village_Poulet");
         StartCoroutine(GameManagerV2.Instance.SwitchCamera());
         SD_PlayerMovement.Instance.transform.position = playerCam.transform.position;
         StartCoroutine(GameManagerV2.Instance.FadeOut());

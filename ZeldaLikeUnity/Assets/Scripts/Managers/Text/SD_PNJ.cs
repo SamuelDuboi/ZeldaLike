@@ -104,6 +104,21 @@ public  class SD_PNJ : MonoBehaviour
                     case 6:
                         AudioManager.Instance.Play("Note_Obtenu");
                         break;
+                    case 7:
+                        AudioManager.Instance.Play("PNJ_H1");
+                        break;
+                    case 8:
+                        AudioManager.Instance.Play("PNJ_H2");
+                        break;
+                    case 9:
+                        AudioManager.Instance.Play("PNJ_F1");
+                        break;
+                    case 10:
+                        AudioManager.Instance.Play("PNJ_F2");
+                        break;
+                    case 11:
+                        AudioManager.Instance.Play("Heal_Coeur");
+                        break;
                 }
                 StartCoroutine(text[cpt].GetComponentInChildren<SD_TextTest>().Text());
                 if (cpt < text.Count - 1)
