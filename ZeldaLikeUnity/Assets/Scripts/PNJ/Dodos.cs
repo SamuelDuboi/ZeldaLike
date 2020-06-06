@@ -36,7 +36,7 @@ public class Dodos : MonoBehaviour
     }
     public IEnumerator Death()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.4f);
         Destroy(gameObject);
     }
     IEnumerator MovingRandom()
